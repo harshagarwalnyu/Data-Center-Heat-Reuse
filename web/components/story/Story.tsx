@@ -30,9 +30,10 @@ export function Story({ data }: { data: AppData }) {
   const [short, setShort] = useState(() => (hash0 !== null ? !steps[hash0].deepDive : true)); // default = ~5-minute path; S toggles the deep dive
   const [secs, setSecs] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [presenter] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("presenter") === "1");
   // Presenter chrome (notes, presenter window, deep dive, step counter, key hints) only with ?present=1.
-  const [present] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("present") === "1"); // ?presenter=1 window: notes + next slide, no audience slide
+  const [present] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("present") === "1");
+  // ?present=1&presenter=1 window: notes + next slide, no audience slide
+  const [presenter] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("present") === "1" && new URLSearchParams(window.location.search).get("presenter") === "1");
   const chan = useRef<BroadcastChannel | null>(null);
   const applyingRemote = useRef(false); // set when a state change came from the other window; consumed by the publish effect
   const mounted = useRef(false); // first render never publishes; the hello reply is adopted instead
@@ -108,7 +109,7 @@ export function Story({ data }: { data: AppData }) {
   }, [notes, presenter]);
 
   const openPresenter = useCallback(() => {
-    window.open(`${window.location.pathname}?presenter=1${window.location.hash}`, "thermal-commons-presenter", "popup,width=1100,height=800");
+    window.open(`${window.location.pathname}?present=1&presenter=1${window.location.hash}`, "thermal-commons-presenter", "popup,width=1100,height=800");
   }, []);
 
   useEffect(() => {

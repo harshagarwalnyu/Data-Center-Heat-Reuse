@@ -40,7 +40,7 @@ export function Home({ data }: { data: AppData }) {
           </div>
           <ul className="list-none m-0 p-0 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
             <li className="card p-4"><div className="t-stat num text-teal-text">{usd(saving)}<span className="unit">a year</span></div><div className="t-caption">saved by a typical propane home; community heat is priced at <span className="num">${int(f.tariff_usd_mwh)}</span> per MWh</div></li>
-            {cbaPct !== undefined && <li className="card p-4"><div className="t-stat num text-ink">{dec(cbaPct, 1)}%<span className="unit">of the build</span></div><div className="t-caption">a Community Benefit Agreement that funds the home program</div></li>}
+            {cbaPct !== undefined && <li className="card p-4"><div className="t-stat num text-ink">{dec(cbaPct, 1)}%<span className="unit">of the data center&apos;s cost</span></div><div className="t-caption">a Community Benefit Agreement of this size would fund the home program</div></li>}
           </ul>
         </section>
 

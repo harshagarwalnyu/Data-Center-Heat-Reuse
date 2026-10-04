@@ -82,7 +82,7 @@ export function Explore({ data }: { data: AppData }) {
               <Kpi label="Heat the data center produces" value={int(s.heatAvailableGWh)} unit="GWh/yr" delta={`${dec(s.surplusGWh, 0)} GWh/yr left over`} />
               <Kpi label="Heat delivered to Lansing" value={int(s.heatDeliveredMWh / 1000)} unit="GWh/yr" delta={`${dec(s.sharePct, 1)}% of what is produced`} />
               <Kpi label="Average heat pump COP" value={dec(s.avgCop, 1)} unit="" delta={cp.t} good={cp.g} />
-              <Kpi label="Cost to make heat" value={`$${int(s.lcohUsdMWh)}`} unit="per MWh" delta={noTown ? `+$${Math.round(s.lcohUsdMWh) - Math.round(noTown.lcohUsdMWh)} per MWh from adding the town ring` : lc.t} good={noTown ? false : lc.g} before={noTown ? `$${int(noTown.lcohUsdMWh)}` : undefined} badge={noTown ? "fails the cost test" : undefined} />
+              <Kpi label="Cost to make heat" value={`$${int(s.lcohUsdMWh)}`} unit="per MWh" delta={noTown ? `+$${Math.round(s.lcohUsdMWh) - Math.round(noTown.lcohUsdMWh)} per MWh from adding the town ring` : lc.t} good={noTown ? false : lc.g} before={noTown ? `$${int(noTown.lcohUsdMWh)}` : undefined} badge={noTown ? `town ring alone: $${int(d.extras?.with_town?.town_ring_lcoh_usd_mwh ?? s.lcohUsdMWh)} per MWh` : undefined} />
               <Kpi label="Saving for a propane home" value={usd(s.householdSavingsPropane)} unit="per year" delta={hh.g === null ? `unchanged: tariff fixed at ${int((s.tariffUsdMWh / d.finance.incumbent_usd_mwh.propane) * 100)}% of propane` : hh.t} good={hh.g} />
               <Kpi label="CO₂ avoided" value={int(s.co2TYr)} unit="t/yr" delta={co.t} good={co.g} />
             </div>
