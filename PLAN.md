@@ -24,6 +24,23 @@ Sites: **Site 1** 111 8th Ave, NYC (commissioned, urban, multi-tenant carrier ho
 - **Timeline:** more than a week. **Team:** solo + agents.
 - No organizer files on hand; use public versions.
 
+## Reality check and reframe (verified 2026-10-03)
+
+| Fact | Source | Consequence |
+|---|---|---|
+| Lansing Town Board (2026-09-29) told its attorney to draft a local law **banning data centers**; 36/38 speakers opposed; $500k legal reserve | [Ithaca Voice](https://ithacavoice.org/2026/09/lansing-board-data-center-ban/), [FingerLakes1](https://www.fingerlakes1.com/2026/10/02/lansing-moves-toward-data-center-ban-as-terawulf-debate-reaches-turning-point/), [607 News Now](https://607newsnow.com/news/258852-town-of-lansing-moving-forward-with-drafting-a-data-center-ban/) | Pitch = **"the conditions under which Lansing could say yes"**: heat reuse written into a binding Community Benefit + Heat Supply Agreement. Not a green add-on. |
+| Current proposal ~**150 MW** (phase 1), not 400 | same | Base case 150 MW (~1 TWh/yr heat at 80% load). 300-400 MW as a build-out scenario. Supply still ≫ local demand. |
+| TeraWulf: **sealed closed-loop glycol** cooling, fan (dry) coolers, no consumptive water in operation; DEC renewed 1.008 MGD withdrawal permit Apr 2026 | [Inside Climate News](https://insideclimatenews.org/news/08112025/lansing-new-york-data-center-development/), research/facts-site2.md | Our side-stream HX on the glycol loop fits their design exactly. Water claim = heat that would go to fans/air, plus a covenant to keep the 1 MGD permit unused for cooling. No 1:1 lake-water claim. |
+| Town-center anchors (school, town hall, library) are **~5-7 mi** from the site | research/facts-site2.md | Long transmission main. **Bring users to the heat:** a heat-anchored agri/food/rec campus on the ~250 unleased acres comes first. The town-center main only runs if its LCOH passes. |
+| NYSEG **gas moratorium** in Lansing since ~2014; many homes on propane/oil (propane $2.85/gal, oil $5.19/gal, Sept 2026) | research/facts-site2.md | The affordability hook: heat for a town that can't get gas. |
+| No designated disadvantaged communities nearby (HDR site pack) | resources/text site pack | Equity = rural energy burden + older residents, not EJ status. |
+| Deep Green 24 MW heat-reuse DC + BWL is in **Lansing, Michigan** | search results | Precedent only; never conflate with Lansing NY. |
+
+**Revised concept (three rings):**
+1. **On-site ring (Phase 1):** greenhouse + aquaculture + food processing + community rec center/pool on the unleased acreage. Year-round sink, local jobs, and a nutrients story for HDR (phosphorus-impaired Cayuga Lake: closed-loop aquaponics captures nutrients instead of runoff).
+2. **Corridor ring (Phase 2):** homes and farms along the route to the town center on an ambient loop, gated by sign-up density.
+3. **Town-center ring (Phase 3, conditional):** school campus + town buildings via a transmission main, only if LCOH beats propane/oil by the target margin.
+
 ## Product: the web app
 
 Python model (`src/heatreuse`) → JSON/CSV in `outputs/` → export script → `web/public/data/` → Next.js app (TS, Tailwind, shadcn/ui, MapLibre, charts, Framer Motion; bun; static export so it runs offline).
