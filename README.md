@@ -1,3 +1,5 @@
+[![CI](https://github.com/harshagarwalnyu/Data-Center-Heat-Reuse/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/harshagarwalnyu/Data-Center-Heat-Reuse/actions/workflows/ci.yml)
+
 # Thermal Commons: Heat for Lansing
 
 HDR x Grundfos "Data Center Heat Reuse" challenge, BAC x iMasons hackathon 2026. Track: Waste Heat Reusage.
