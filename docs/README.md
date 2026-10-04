@@ -30,13 +30,18 @@ Start with the root [README](../README.md). This index is a selected list of doc
 | [risk-matrix.md](risk-matrix.md) | Scored risk register, heat-continuity cascade and cooling independence statement. |
 | [stakeholders.md](stakeholders.md) | Power and interest map and profiles of the people and institutions involved. |
 
-## docs/proposal/ and presentation
+## docs/proposal/, presentation and live judging
 
 | File | What it is |
 |---|---|
 | [proposal/12-implementation-timeline.md](proposal/12-implementation-timeline.md) | 2026 to 2032 schedule, decision gates and phasing by ring. |
 | [proposal/13-regenerative-scorecard.md](proposal/13-regenerative-scorecard.md) | Audit table for HDR's seven regenerative domains, judging lenses and supply-demand matching axes. |
+| [deck/Thermal-Commons-Heat-for-Lansing.pdf](deck/Thermal-Commons-Heat-for-Lansing.pdf) | The 9-slide presentation deck (PDF; a PPTX with speaker notes sits beside it). |
+| [team-brief.md](team-brief.md) | One-page brief: video demo vs live presentation, who says what. |
 | [video-script.md](video-script.md) | Script for the video presentation. |
+| [presentation-script.md](presentation-script.md) | Five-minute live presentation script: nine slides, speaker handoffs and clicker cues, then a 60-second demo. |
+| [demo-runbook.md](demo-runbook.md) | Judging-room demo runbook: setup commands, offline build and the demo path, using the same `outputs/site2.json` numbers as the slides. |
+| [judge-qa.md](judge-qa.md) | Twenty-five anticipated judge questions with answers, each tied to a key in `outputs/site2.json` or a verification row. |
 
 ## docs/audit/ : independent reviews
 
@@ -44,6 +49,7 @@ Read-only reviews of the numbers, copy and interface. Findings were fed back int
 
 | File | What it is |
 |---|---|
+| [audit/numbers-v3.md](audit/numbers-v3.md) | Numbers audit v3: every judge-facing figure checked against `site2.json` (model v3.1). |
 | [audit/numbers-supply.md](audit/numbers-supply.md) | Supply-side numbers against config and physics. |
 | [audit/numbers-demand.md](audit/numbers-demand.md) | Ring demand, greenhouse intensity, homes and seasonality. |
 | [audit/numbers-finance.md](audit/numbers-finance.md) | Capex, LCOH, incumbents, tariff, household savings. |
@@ -55,6 +61,7 @@ Read-only reviews of the numbers, copy and interface. Findings were fed back int
 | [audit/ux-walkthrough.md](audit/ux-walkthrough.md) | Cognitive walkthrough for a first-time executive reader. |
 | [audit/ux-wcag.md](audit/ux-wcag.md) | WCAG 2.2 AA accessibility review. |
 | [audit/ux-visual.md](audit/ux-visual.md) | Visual design review. |
+| [audit/a11y-projector.md](audit/a11y-projector.md) | Projector and senior-reader audit: type size, one takeaway per screen, keyboard navigation, no hover-only information. |
 
 ## docs/research/
 
