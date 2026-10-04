@@ -76,6 +76,7 @@ Prerequisite: [uv](https://docs.astral.sh/uv/) and Python 3.11 or newer.
 ```bash
 uv sync
 uv run python -m heatreuse.run             # model -> outputs/site2.json, site1.json, offtakers.json, charts/
+uv run python -m heatreuse.verify          # self-check + input register (run before the export)
 uv run python scripts/export_web_data.py   # copy outputs into web/public/data/
 uv run pytest                              # 8,760-hour balance, COP, LCOH hand checks, JSON contract tests
 ```
