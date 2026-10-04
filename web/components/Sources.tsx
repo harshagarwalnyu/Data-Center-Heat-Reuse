@@ -44,16 +44,16 @@ export function Sources({ data }: { data: AppData }) {
   return (
     <div className="min-h-dvh flex flex-col">
       <NavBar active="/sources/" />
-      <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1500px] w-full mx-auto text-[1.125rem]">
-        <p className="kicker !text-[1.125rem] m-0 mb-2">Data &amp; sources</p>
+      <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1500px] w-full mx-auto text-body">
+        <p className="kicker !text-body m-0 mb-2">Data &amp; sources</p>
         <h1 className="t-h1 m-0 max-w-[30ch]">Every numeric input is either sourced or labeled as our assumption</h1>
         <p className="mt-3 text-ink2 max-w-[70ch]">
           Generated {d.meta.generated} ({d.meta.scenario} case). The model reads these inputs from <code>config/*.yaml</code>; a self-check (<code>python -m heatreuse.verify</code>) fails if any input has no source note. Assumptions are marked as assumptions, not presented as facts.
         </p>
 
-        <section className="card p-5 mt-5" aria-labelledby="src-h">
-          <h2 id="src-h" className="m-0 text-[1.5rem] serif">Sources ({d.sources.length})</h2>
-          <ul className="m-0 mt-3 pl-5 grid gap-2 leading-snug">
+        <section className="card p-6 mt-6" aria-labelledby="src-h">
+          <h2 id="src-h" className="m-0 text-h2 serif">Sources ({d.sources.length})</h2>
+          <ul className="m-0 mt-3 pl-6 grid gap-2 leading-snug">
             {d.sources.map((s) => (
               <li key={s.id}>
                 {s.label}{" "}
@@ -67,8 +67,8 @@ export function Sources({ data }: { data: AppData }) {
           </ul>
         </section>
 
-        <section className="card p-5 mt-5" aria-labelledby="reg-h">
-          <h2 id="reg-h" className="m-0 text-[1.5rem] serif">Input register{rows ? ` (${int(rows.length)} inputs)` : ""}</h2>
+        <section className="card p-6 mt-6" aria-labelledby="reg-h">
+          <h2 id="reg-h" className="m-0 text-h2 serif">Input register{rows ? ` (${int(rows.length)} inputs)` : ""}</h2>
           {err && <p role="alert">The input register could not be loaded right now. Please reload the page in a moment.</p>}
           {!rows && !err && <p>Loading the input register.</p>}
           {rows && (

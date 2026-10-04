@@ -2,6 +2,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { useApp } from "./AppProvider";
+import { Swash } from "./look/Paper";
 import type { AppData } from "@/lib/types";
 import { PROJECT_TAGLINE, PROJECT_TITLE } from "@/lib/config";
 
@@ -32,29 +33,35 @@ const NAV = [
   { href: "/sources/", label: "Sources" },
 ];
 
-export function NavBar({ active, extra }: { active: string; extra?: ReactNode }) {
+/** Clean top bar: wordmark left, links right, outlined pill. `overlay` floats it over the home hero. */
+export function NavBar({ active, extra, overlay = false }: { active: string; extra?: ReactNode; overlay?: boolean }) {
   return (
-    <header className="no-print flex flex-wrap items-center gap-x-3 gap-y-1 px-[clamp(0.75rem,2vw,1.25rem)] py-2 border-b border-line bg-bg">
-      <Link prefetch={false} href="/" className="serif font-bold text-[1.25rem] mr-3 whitespace-nowrap text-ink no-underline">
-        <span className="text-ember">&#9650;</span> {PROJECT_TITLE}<span className="hidden lg:inline font-sans font-semibold text-[1rem] text-ink2 ml-2">{PROJECT_TAGLINE}</span>
+    <header className={`no-print z-30 flex flex-wrap items-center gap-x-4 gap-y-1 px-[clamp(1rem,4vw,4.5rem)] py-3 ${overlay ? "absolute inset-x-0 top-0 bg-transparent" : "bg-bg border-b border-line/70"}`}>
+      <Link prefetch={false} href="/" className="serif text-ink no-underline whitespace-nowrap mr-auto md:mr-4" style={{ fontSize: "clamp(1.5rem, 1.2rem + 0.8vw, 1.9rem)", fontWeight: 500, letterSpacing: "-0.02em" }}>
+        {PROJECT_TITLE}<span className="sr-only">: {PROJECT_TAGLINE}</span>
       </Link>
-      <nav aria-label="Primary" className="order-last w-full md:order-none md:w-auto flex gap-1 overflow-x-auto -mx-1 px-1">
+      <nav aria-label="Primary" className="order-last w-full md:order-none md:w-auto md:ml-auto flex gap-1 overflow-x-auto -mx-1 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-md:[mask-image:linear-gradient(to_right,#000_calc(100%-1.75rem),transparent)]">
         {NAV.map((n) => (
           <Link prefetch={false}
             key={n.href}
             href={n.href}
             aria-current={active === n.href ? "page" : undefined}
-            className="min-h-[44px] inline-flex items-center px-2 sm:px-3 rounded-lg font-semibold text-[1rem] sm:text-[1.0625rem] no-underline whitespace-nowrap"
-            style={active === n.href ? { background: "var(--navy)", color: "var(--bg)" } : { color: "var(--ink)" }}
+            className="min-h-[44px] inline-flex items-center px-2.5 sm:px-3 font-bold text-caption no-underline whitespace-nowrap text-ink underline-offset-[6px] decoration-2 hover:underline aria-[current=page]:underline"
           >
             {n.label}
           </Link>
         ))}
       </nav>
-      <div className="ml-auto flex items-center gap-3">
+      <div className="flex items-center gap-3">
         {extra}
         <PlaceholderBadge />
-        <ThemeButton />
+        {!overlay && (
+          <div aria-hidden className="pointer-events-none absolute right-0 top-14 w-[min(560px,70vw)] h-[260px] -z-10 overflow-hidden">
+            <Swash color="var(--sage)" className="right-[-40px] top-0 w-[480px]" seed={5} />
+            <Swash color="var(--peach)" className="right-[120px] top-[90px] w-[300px] opacity-80" seed={8} />
+          </div>
+        )}
+        <Link prefetch={false} href="/explore/" className="pill-outline hidden sm:inline-flex text-caption text-ink hover:bg-ink hover:text-bg transition-colors">Try the model</Link>
       </div>
     </header>
   );
@@ -62,8 +69,8 @@ export function NavBar({ active, extra }: { active: string; extra?: ReactNode })
 
 export function DataGate({ children }: { children: (d: AppData) => ReactNode }) {
   const { data, error } = useApp();
-  if (error) return <div className="p-10 text-[1.25rem]">Could not load data files: {error}. Run the app from a web server (for example <code>bunx serve out</code>).</div>;
-  if (!data) return <div className="p-10 text-[1.25rem] text-ink2" role="status">Loading data...</div>;
+  if (error) return <div className="p-8 text-h3">Could not load data files: {error}. Run the app from a web server (for example <code>bunx serve out</code>).</div>;
+  if (!data) return <div className="p-8 text-h3 text-ink2" role="status">Loading data...</div>;
   return <>{children(data)}</>;
 }
 
@@ -75,7 +82,7 @@ export function Stat({ value, unit, label, tone = "ink", big = false }: { value:
         {value}
         {unit && <span className="unit">{unit}</span>}
       </div>
-      <div className="text-ink2 mt-1 text-[1.0625rem]">{label}</div>
+      <div className="text-ink2 mt-1 text-caption">{label}</div>
     </div>
   );
 }
@@ -83,6 +90,6 @@ export function Stat({ value, unit, label, tone = "ink", big = false }: { value:
 export function RingDot({ ring }: { ring: string }) {
   return <span aria-hidden className="inline-block w-3.5 h-3.5 rounded-full mr-2 align-middle" style={{ background: ringColor(ring) }} />;
 }
-export const ringColor = (id: string) => (id === "onsite" ? "var(--ember)" : id === "corridor" ? "var(--teal)" : id === "town" ? "var(--violet)" : "var(--ink2)");
-export const ringText = (id: string) => (id === "onsite" ? "var(--ember-text)" : id === "corridor" ? "var(--teal-text)" : "var(--violet-text)");
+export const ringColor = (id: string) => (id === "onsite" ? "var(--teal)" : id === "corridor" ? "var(--ember)" : id === "town" ? "var(--violet)" : "var(--ink2)");
+export const ringText = (id: string) => (id === "onsite" ? "var(--teal-text)" : id === "corridor" ? "var(--ember-text)" : "var(--violet-text)");
 export const ringShort = (id: string) => (id === "onsite" ? "On-site campus" : id === "corridor" ? "Corridor homes" : "Town center");
