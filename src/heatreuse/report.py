@@ -158,6 +158,7 @@ def build(cfg: dict | None = None, with_tornado: bool = True) -> tuple[dict, Res
         entry = {
             "id": rid, "name": rc["name"], "phase": rc["phase"],
             "users": [USER_LABELS[u] for u in r.users],
+            "users_MWh": {USER_LABELS[u]: round(float(v.sum())) for u, v in r.users.items()},
             "annual_MWh": round(float(r.customer.sum())),
             "peak_MW": _r(r.customer.max(), 2),
             "supply_temp_C": temp_C,
@@ -178,6 +179,8 @@ def build(cfg: dict | None = None, with_tornado: bool = True) -> tuple[dict, Res
                 "breakeven_capex_grant_frac": (None if (g := breakeven_grant(f, cfg)) is None else _r(g, 2)),
             },
         }
+        if rid == "onsite":
+            entry["greenhouse_ha"] = rc["users"]["greenhouse"]["area_ha"]
         if rid == "corridor":
             entry["homes"] = rc["homes"]
             entry["gate"]["path"] = corridor_gate_path(cfg)
@@ -246,6 +249,7 @@ def build(cfg: dict | None = None, with_tornado: bool = True) -> tuple[dict, Res
             "lcoh_usd_mwh": {k: _r(finance.system_lcoh(bfins, cfg, k)) for k in fin_cfg["discount_rates"]},
             "incumbent_usd_mwh": fin_cfg["incumbent_usd_per_MWh"],
             "tariff_usd_mwh": _r(tariff),
+            "tariff_k_of_propane": fin_cfg["tariff_k_of_propane"],
             "low_income_tariff_usd_mwh": _r(fin_cfg["low_income_k_of_propane"] * propane),
             "household": {
                 "typical_MWh_yr": hh,
@@ -262,9 +266,40 @@ def build(cfg: dict | None = None, with_tornado: bool = True) -> tuple[dict, Res
         },
         "value_by_stakeholder": _stakeholders(cfg, fins, imp, tariff, propane, hh, exit_),
         "hdr_scorecard": _hdr(imp, onsite, summer_share),
+        "context": cfg["context"],
+        "explore": _explore(cfg, res, fins),
         "sources": cfg["sources"],
     }
     return out, res
+
+
+def _explore(cfg: dict, res: Results, fins: dict) -> dict:
+    """Per-ring cost building blocks so the app can recompute LCOH client-side (Explore sliders)."""
+    fin = cfg["finance"]
+    rings = {}
+    for rid, f in fins.items():
+        r = res.rings[rid]
+        rings[rid] = {
+            "capex_usd": round(f.capex), "om_frac": fin["om_frac_of_capex"], "heat_MWh": round(f.heat_MWh),
+            "hp_elec_MWh": round(float(r.hp_elec.sum())), "pump_elec_MWh": round(float(r.pump_elec.sum())),
+            "elec_tariff": "residential" if r.cfg["kind"] == "building_hp" else "commercial",
+            "backup_MWh": round(float(r.flows["backup"].sum())),
+            "backup_usd_mwh": fin["incumbent_usd_per_MWh"][r.cfg["backup_fuel"]],
+            "peak_MW": _r(r.customer.max(), 2), "per_home": rid == "corridor",
+        }
+    hp = cfg["heat_pump"]
+    return {
+        "rings": rings, "years": fin["years"],
+        "elec_commercial_usd_per_kWh": fin["elec_commercial_usd_per_kWh"],
+        "elec_residential_usd_per_kWh": fin["elec_residential_usd_per_kWh"],
+        "homes": cfg["rings"]["corridor"]["homes"],
+        "heat_pump": {k: hp[k] for k in ("eta_carnot", "approach_K", "cop_min", "cop_max")},
+        "onsite_supply_C": cfg["rings"]["onsite"]["supply_temp_C"],
+        "air_cooled_capture_C": 30, "central_hp_usd_per_kW": fin["unit_costs"]["central_hp_usd_per_kW"],
+        "markup": (1 + fin["soft_cost_frac"]) * (1 + fin["contingency_frac"]),
+        "supply": {k: cfg["supply"][k] for k in ("it_load_MW", "capture_fraction")},
+        "outage_hours": int(res.outage.sum()),
+    }
 
 
 def _stakeholders(cfg, fins, imp, tariff, propane, hh, exit_) -> list[dict]:

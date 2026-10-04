@@ -138,6 +138,11 @@ rings:
       town_hall:      {annual_MWh: 110}    # 8,200 sq ft x 150 kWh/m2 [fact:town_capital_plan] [assumption intensity]
       library_center: {annual_MWh: 150}    # [unverified]
 
+context:
+  town_households: 4450                # [fact:acs_b25002] research/facts-site2.md
+  ban_speakers_opposed: "36 of 38"     # Town Board hearing 2026-09-29 [fact:ban_news]
+  ban_legal_reserve_usd: 500000        # [fact:ban_news]
+
 finance:
   years: 30
   discount_rates: {coop_4pct: 0.04, utility_7pct: 0.07, private_10pct: 0.10}
@@ -208,4 +213,6 @@ sources:
   - {id: ownership_deal, label: "docs/ownership-deal.md tariff and HSA", url: "docs/ownership-deal.md"}
   - {id: epa_ef, label: "EPA GHG Emission Factors Hub", url: "https://www.epa.gov/climateleadership/ghg-emission-factors-hub"}
   - {id: egrid, label: "EPA eGRID2023 NYUP", url: "https://www.epa.gov/egrid"}
+  - {id: acs_b25002, label: "ACS 2023 5-yr B25002 occupied housing units", url: "https://data.census.gov/table/ACSDT5Y2023.B25002"}
+  - {id: ban_news, label: "FingerLakes1: Lansing moves toward data center ban", url: "https://www.fingerlakes1.com/2026/10/02/lansing-moves-toward-data-center-ban-as-terawulf-debate-reaches-turning-point/"}
   - {id: model, label: "Lansing heat reuse model (this repo)", url: "src/heatreuse"}

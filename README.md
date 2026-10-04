@@ -29,3 +29,7 @@ uv run pytest                   # energy balance, COP bounds, storage, LCOH hand
 ```
 
 Every input lives in `assumptions.yaml`, tagged `[fact:<id>]`, `[assumption]` or `[unverified]`. Drop an 8,760-row `data/raw/tmy_ithaca.csv` with a `temp_C` column to replace the synthetic weather year.
+
+## Web app
+
+`web/` is a static Next.js app with a guided Story mode and an Explore mode. See `web/README.md`. Rebuild data with `python3 scripts/export_web_data.py` after any model run.
