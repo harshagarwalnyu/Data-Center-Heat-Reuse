@@ -18,7 +18,7 @@ export function Story({ data }: { data: AppData }) {
   const [i, setI] = useState(0);
   const [dir, setDir] = useState(1);
   const [notes, setNotes] = useState(false);
-  const [short, setShort] = useState(false);
+  const [short, setShort] = useState(true); // default = ~5-minute path; S toggles the deep dive
   const [secs, setSecs] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -53,7 +53,7 @@ export function Story({ data }: { data: AppData }) {
   // hash sync (#3 = step 3)
   useEffect(() => {
     const h = parseInt(window.location.hash.replace("#", ""), 10);
-    if (h >= 1 && h <= steps.length) setI(h - 1);
+    if (h >= 1 && h <= steps.length) { setI(h - 1); if (steps[h - 1].deepDive) setShort(false); }
   }, [steps.length]);
   useEffect(() => {
     history.replaceState(null, "", `#${i + 1}`);
@@ -145,8 +145,8 @@ export function Story({ data }: { data: AppData }) {
         <button className="btn" onClick={() => move(-1)} aria-label="Previous step" disabled={pos === 0}>&larr; Back</button>
         <button className="btn" onClick={() => move(1)} aria-label="Next step" disabled={pos === path.length - 1}>Next &rarr;</button>
         <span className="num font-bold text-ink text-[1.125rem]" aria-live="polite">Step {pos + 1} of {path.length}</span>
-        <button className="btn" aria-pressed={short} onClick={() => setShort((v) => !v)} title="Skip the deep-dive steps (key S)">5-minute path</button>
-        <span className="ml-auto hidden xl:inline">Arrows, space or PageDown to move · P notes · F fullscreen · S short path</span>
+        <button className="btn" aria-pressed={short} onClick={() => setShort((v) => !v)} title="Switch between the 5-minute path and the full deep dive (key S)">{short ? "Show deep dive" : "Back to 5-minute path"}</button>
+        <span className="ml-auto hidden xl:inline">Arrows, space or PageDown to move · P notes · F fullscreen · S deep dive on/off</span>
         <button className="btn" aria-pressed={notes} onClick={() => setNotes((n) => !n)}>Notes (P)</button>
       </footer>
 

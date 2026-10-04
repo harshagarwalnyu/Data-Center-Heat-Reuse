@@ -1,16 +1,18 @@
 # Copy vs facts — user-facing strings in `web/`
 
-Audit of factual claims in user-facing copy under `web/app`, `web/components`, `web/lib`, and `web/content` against `research/verification.md` (overrides older files). Model numbers cross-checked to `web/public/data/*.json` where the claim is a modeled output.
+Audit of factual claims in user-facing copy under `web/app`, `web/components`, `web/lib`, and `web/content` against `research/verification.md` (overrides older files). Model numbers cross-checked to `web/public/data/*.json` where the claim is a modeled output. Organizer text in `resources/text/` outranks web sources.
 
 Scope: Cursor task C46. Owner file only. Read-only on `web/`. Team: Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev).
+
+`web/content/` does not exist. No `.json` files live under `web/app`, `web/components`, or `web/lib`. Strings in `web/public/data/*.json` are included only when a component renders them (speaker notes count: `Story.tsx` shows them with the Notes button).
 
 Checked (verified 2026-10-03 unless a row says otherwise):
 
 - "36 of 38" speakers opposed at the 2026-09-29 Lansing Town Board meeting
 - "2014" NYSEG natural-gas moratorium
-- "40-50%" heat-recovery fraction
+- "40-50%" heat-recovery or ITC fraction
 - Executive Order 62 (EO 62)
-- 400 MW stated as the current Lake Hawkeye proposal (reality: ~150 MW phase 1; 300–400 MW is a build-out scenario)
+- 400 MW stated as the current Lake Hawkeye proposal (reality in verification.md row 3a/3b: ~400 MW gross / ~320 MW critical IT, operations ~2029; ~150 MW phase 1 is the project website, basis unstated)
 - Deep Green / Lansing, Michigan mixed up with Lansing, New York
 - Unsourced numbers in user-facing strings
 
@@ -18,27 +20,90 @@ Columns: `file:line | claim | problem | corrected text`
 
 ## Method
 
-Grep of `.tsx`, `.ts`, and `.json` under `web/app`, `web/components`, `web/lib`, and `web/content`. Each flagged claim is checked against `research/verification.md` and, for model outputs, `web/public/data/*.json`. Organizer text in `resources/text/` outranks web sources. Unverified claims are marked `[unverified]`. Assumptions are marked ASSUMPTION.
+Grep of `.tsx` and `.ts` under `web/app`, `web/components`, and `web/lib`, plus rendered fields from `web/public/data/site1.json` and `site2.json`. Each flagged claim is checked against `research/verification.md`. Unverified claims are marked `[unverified]`. Assumptions are marked ASSUMPTION.
 
 ## Flags
 
-_Findings appended as verified. Empty until the first pass completes._
+Rows are problems. Passes for the named watch-items are in the next section.
 
-## Pass log
+| file:line | claim | problem | corrected text |
+|---|---|---|---|
+| `web/components/story/steps.tsx:77` | "most of its heat still comes from delivered fuel" | Majority claim. Not in `verification.md`. The project fact file says utility gas is the largest share, not delivered fuel: ~38% utility gas, ~26% propane, ~24% electricity, ~8% fuel oil, ~4% wood (`research/facts-site2.md` heating-fuel table, ACS B25040, https://data.census.gov/table/ACSDT5Y2023.B25040 (verified 2026-10-03 in that file; not re-audited as a row in `verification.md`)). Propane + oil is about a third, not most. | "Lansing is about to ban data centers, and a large share of homes still heat with propane or oil because new gas hookups have been blocked since February 2015." |
+| `web/components/story/steps.tsx:84` | "2015" / "Rural Lansing has no gas pipe." | Year matches row 6a (February 2015, not 2014). "No gas pipe" does not. NYSEG already serves the town; the moratorium is on new or expanded service (row 6a, 6b). The same app later says gas is already cheap (`Misc.tsx:120`). 2026 status of the moratorium is unverifiable; last confirmation is the 2025-07-14 NYSEG/RG&E filing (row 6c-update). https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE068C615-B8EE-4CB9-AF92-3153A49BE4E4%7D (verified 2026-10-03) | "February 2015: NYSEG invoked a moratorium on new and expanded gas service in the Town of Lansing. Many homes still heat with propane or oil. Whether the moratorium is still in force in 2026 was not re-verified (last filing check: 14 July 2025)." |
+| `web/components/story/steps.tsx:80` (notes) and `Compare.tsx:36` | "NYSEG has had a gas moratorium here since 2015" / "a gas moratorium" (present tense) | Start year is right (row 6a: February 2015). Present tense through October 2026 is not. Row 6c-update: confirmed as of 2025-07-14; 2026 status UNVERIFIABLE. | "NYSEG invoked the moratorium in February 2015. It was still described as in effect in a July 2025 filing. 2026 status: [unverified]." |
+| `web/components/story/steps.tsx:85` | "propane ran $2.74 to $3.46 per gallon last season, NYSERDA Central NY" | Not in `verification.md`. Row 7b: Central propane $/gal could not be read; statewide propane was $3.120 on 2026-09-21 and $3.116 on 2026-09-14. $2.849 is not the current statewide price. The data-file source label repeats 2.74–3.46 and points at the heating-oil page, not a propane table (`site2.json` source `nyserda_prop`). https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Average-Home-Heating-Oil-Prices (verified 2026-10-03, row 7b) | Drop the gallon range. "Propane price on screen is the model incumbent, $136/MWh (`site2.json` `finance.incumbent_usd_mwh.propane`). Central NY gallon price: [unverified]. Statewide propane was $3.120/gal on 21 September 2026." Heating-oil $156/MWh can stay if it is labeled as built from the Central monthly average $5.186/gal, not a late-September weekly price (row 7a). |
+| `web/components/story/steps.tsx:78` and notes at `:80` | Lansing, Michigan: free heat, "withdrew hours before a council vote, and a moratorium followed"; notes add Deep Green, "$120M", "downtown", "April 6, 2026", "6-month moratorium" | Geography is correct: Michigan is named, then New York. No swap with Lake Hawkeye. Row 12 does not support the rest. Verified: Lansing, Michigan; announced 2025-11-05; 24 MW; $120M+; heat to the Board of Water & Light downtown hot-water system; withdrawn 2026-04-06 ("withdrawing its application Monday afternoon"). Not in row 12: "free", "hours before a council vote", "downtown" as the data-center site, and a 6-month moratorium. Those four are [unverified]. https://www.wkar.org/michigans-data-center-divide/2026-04-06/proposed-data-center-wont-move-forward-in-lansing-as-deep-green-withdraws (verified 2026-10-03) | "Precedent, Lansing, Michigan, not Lansing, New York: Deep Green’s 24 MW proposal (more than $120 million) would have sent heat to the city utility’s downtown hot-water system. Deep Green withdrew the rezoning application on 6 April 2026. It is not proceeding. Free heat, without ownership and a binding contract, is not a plan." Delete "hours before a council vote" and "6-month moratorium" unless a source is added. |
+| `web/components/story/steps.tsx:93` and notes `:95` | "Our base case is a 150 MW first phase" | 150 matches `site2.json` `supply.it_load_MW`. Row 3a: lakehawkeyedata.com says ~150 MW phase 1 with the basis unstated; the Aug 2025 138 MW figure is stale; the Q2 2026 release has no phase-1 split. "First phase" reads as TeraWulf’s phasing. https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm (verified 2026-10-03) | "Our model base is 150 MW of IT, the figure on the project website (basis unstated). TeraWulf’s latest release states about 400 MW gross, about 320 MW critical IT, operations about 2029, and does not split out a phase 1." |
+| `web/components/story/steps.tsx:93` | "about 75% of its power can be captured as 50 °C heat" | 75% and 50 °C are model inputs, not measured TeraWulf performance. `site2.json` provenance: capture fraction is ASSUMPTION, range 0.40–0.85. 50 °C is a liquid-cooling design point (RII 45–55 °C), not a figure in verification row 4a. Row 4a confirms a sealed glycol loop and dry coolers; it does not state return temperature or a 75% recovery. | "In the base case we assume 75% of IT power is captured at 50 °C (liquid cooling we would specify). The recovery range in the model is 40–85%. TeraWulf’s published design is a sealed glycol loop and dry coolers; it does not publish this capture rate." |
+| `web/components/Explore.tsx:65` | Slider "Data center IT load" max 400 MW | 400 MW in the filing is gross capacity, not IT. Critical IT is about 320 MW (rows 3a/3b). Sliding to 400 MW IT overstates the build-out. | Keep the base at 150 MW IT. Cap the slider at 320 MW IT, or label the top tick "400 MW gross (about 320 MW IT)". |
+| `web/components/story/steps.tsx:95` (notes) | "400 MW gross, 320 MW critical IT, operations around 2029" | This sentence matches rows 3a/3b. Listed so it is not "fixed" into "400 MW is the current phase." Do not shorten it to "400 MW" on screen. | Leave the gross / critical-IT split. Do not say 400 MW is today’s proposal or 400 MW of IT. |
+| `web/components/story/steps.tsx:205` and `:283`; notes `:184` | "if federal credits qualify" and a second, lower funding gap | No "40-50%" string on screen (good). The parenthetical still shows a credit case. Rows 9d-i and 9h: a waste-heat network likely does not qualify as IRC 48 geothermal heat-pump property. Do not claim 40–50% of capex. The base-case note in `site2.json` `extras.funding` already says the ITC is not assumed. | "Gap a benefit fund, grants, or cheap capital must cover: $22.3 million. Federal energy credits are not in the base case. A waste-heat network likely does not qualify; only a ground-source portion might, and only of eligible basis, with tax counsel (verification.md 9h)." |
+| `web/components/story/steps.tsx:266` and `site2.json:3059` (rendered at `steps.tsx:260`) | "No designated disadvantaged community" and "Affordable heat for a town without gas"; "equity here means older residents" | The no-DAC clause matches the site pack: "There are also no disadvantaged communities nearby." `resources/text/2026_10_01_Hackathon_NYU_-_Suburban_Site_-_Lake_Hawkeye.txt` page 24 (verified 2026-10-03). "Town without gas" repeats the false "no pipe" claim. "Older residents" overreads the pack: the site is the 56th percentile for age 65+ (page 39); the pack points at a population across the lake as older, not this site. | "No disadvantaged communities nearby (site pack, p. 24). Do not pitch this as an EJ site. Equity here means households that cannot get a new gas hookup and pay propane or oil prices. Age 65+ at the site is near the median (56th percentile, p. 39)." |
+| `web/components/story/steps.tsx:266` | "Up to 69 days above 90 °F by 2050 (19 today)." | This one is sourced. Site pack page 26: "up to 69 days above 90 degrees compared with 19 days today" (verified 2026-10-03). Not a problem. Kept here so the hardcoded number is not mistaken for an unsourced invention. | No change. Optional attribution: "Site pack, future climate, p. 26." |
+| `web/components/story/steps.tsx:245` (notes) and `site2.json:3077` | "phosphorus-impaired Cayuga Lake" / aquaponics "instead of runoff" | Impairment matches the site pack page 19: "The lake is impaired with phosphorous." (verified 2026-10-03). The petal states a design intent as if it were a measured nutrient credit. 5,500 t/yr is the model field `local_food_t_yr`, not a weighed harvest. `fish_t_yr` is a separate 1,500 t. | "Cayuga Lake is impaired for phosphorus (site pack, p. 19). Closed-loop aquaponics is a proposal so the campus does not add nutrient runoff. It is not a claimed cleanup of the lake. Food tonnes are modeled." |
+| `web/components/story/steps.tsx:277` (notes) | "keep the 1 MGD lake permit unused for cooling" | Permit volume is 1,008,000 gallons per day, not a flat 1 MGD that heat reuse saves. Row 5a. Holder Cayuga Operating Company LLC; letter 2026-04-13. https://dec.ny.gov/sites/default/files/2026-04/cayugaoperatingwwpermit.pdf (verified 2026-10-03). On-screen ask (`steps.tsx:282`) correctly says "lake permit" without a 1:1 water-savings claim. The water petal (`site2.json:3083`) correctly says no lake-water claim. | "Keep the 1.008 MGD Cayuga Lake withdrawal permit unused for cooling. Heat reuse does not save that water 1:1; cooling is already a sealed dry-cooler loop (verification.md 4a, 5a)." |
+| `web/components/PrintSheet.tsx:23` | "15.4× more than Lansing can use" (ratio of `heat_available_GWh` to `totals.heat_delivered_MWh`, one decimal) | The denominator is modeled Phase 1–2 demand (50,576 MWh), not the town’s heating load. 777.6 GWh / 50.576 GWh = 15.4×, so the digit matches the file. The words do not. The story headline rounds the same ratio to 15× (`steps.tsx:92`). | "15.4× the heat this network uses (Phase 1–2 model), with most of the campus heat still rejected at the dry coolers." |
+| `web/components/story/steps.tsx:63` and `:158` | "Storage (5,558 m³, about 11 h of peak)" | 5,558 m³ matches `totals.storage_m3`. The hours use a hardcoded 40 K swing and 1.163 kWh/m³/K in the component (`steps.tsx:63`). That swing is not a field in `site2.json`. ASSUMPTION. | "5,558 m³ hot-water tank (model). Hours of coverage assume a 40 K swing (ASSUMPTION in the story component, not in the data file)." |
+| `web/components/story/steps.tsx:206` and `:275` | "Community Benefit Agreement: about 1.9% of the data center build" | 1.87% matches `extras.cba.as_pct_of_dc_capex`. The denominator is ASSUMPTION: "$10 million per MW IT × 150 MW" (`dc_capex_basis`), a Turner & Townsend midpoint, not TeraWulf’s budget. https://reports.turnerandtownsend.com/data-centre-construction-cost-index-2025/ (cited in the data file; the 1.9% is not an external fact) | "About 1.9% of an assumed data-center build at $10 million per MW (Turner & Townsend 2025 midpoint × 150 MW IT). Not TeraWulf’s disclosed budget." |
+| `web/components/story/steps.tsx:243` | "126 local jobs" and "5,500 tonnes of local food" every year | These match `impact.jobs` (126) and `impact.local_food_t_yr` (5500). They are model outputs (`site2.json` `generated` 2026-10-04), shown as annual facts. | "Modeled illustration: about 126 jobs and 5,500 tonnes of food a year if the on-site campus is built at the assumed size. Not a committed offtake." |
+| `web/components/Compare.tsx:24` | "Lansing wins: hotter heat, a cleaner grid" | Hotter capture (50 °C vs 32 °C) matches the two supply blocks. Cleaner upstate grid matches the data-file eGRID label (NYUP 242.8 vs NYCW 865.7 lb/MWh), which is not a row in `verification.md`. The same page’s table uses average COP 4.7 vs 5.2 and CO₂ 11,456 vs 11,502 t/yr, and the check marks land on New York for both. The headline overclaims the table. | "Lansing has hotter capture temperature and a cleaner grid factor in this model. It does not win every row: New York’s modeled average COP and annual CO₂ are higher." |
+| `web/components/Compare.tsx:41` rendering `web/public/data/site1.json:64` | "COP 5.1 vs 6.0 at Lansing" | 5.13 and 6.0 are `cop_compare` design points, not `totals.avg_cop` (4.71 Lansing, 5.23 New York). The table on the same page shows the averages and marks New York better. | "At a hot loop, the design COP is about 6.0 from 50 °C liquid cooling versus 5.1 from a 32 °C condenser loop. Network-average COP in the table is 4.7 in Lansing and 5.2 in New York, because Lansing’s homes use building heat pumps." |
+| `web/public/data/site1.json:64` via `Compare.tsx:41` | "blended LCOH to $288/MWh vs Con Ed steam at $119/MWh, a thin margin; Lansing’s blended phase 1–2 are $100/MWh vs propane $136/MWh" | $288, $119, $100, and $136 match 7% figures: site1 `utility_7pct` 287.9, steam 118.7, site2 `utility_7pct` 100.2, propane 136.1. The table beside the bullets is 4% community finance (about $83 vs $238). $288 vs $119 is not a thin margin; site 1 is far more expensive than steam. | "At 7% finance, Manhattan’s blended cost is about $288/MWh, well above Con Ed steam at about $119/MWh. Lansing’s 7% blend is about $100/MWh versus propane at $136/MWh. The table uses 4% community finance (about $83 vs $238)." |
+| `web/public/data/site1.json:64` via `Compare.tsx:41` | "the grid is dirtier (NYCW 0.39 kg/kWh), so CO₂ benefit per MWh is lower" | 0.39 kg/kWh matches the file’s NYCW 865.7 lb/MWh (865.7 × 0.4536 / 1000 ≈ 0.39). The "so … lower" clause does not match the file. CO₂ per MWh delivered is about 11,502 / 32,595 = 0.35 t at site 1 and 11,456 / 50,576 = 0.23 t at site 2. Site 1 is higher, not lower. Annual tonnes are also slightly higher at site 1. eGRID factors are in the JSON source label, not in `verification.md`. | "The New York City grid factor in this file is about 0.39 kg/kWh (eGRID NYCW). In the same file, CO₂ avoided per MWh delivered is higher at site 1 than at Lansing, and annual tonnes are close (about 11,500 either way). Do not say site 1’s CO₂ benefit per MWh is lower." |
+| `web/public/data/site1.json:64` via `Compare.tsx:41` | "Chelsea UTEN pilot at 85 10th Ave already targets the same NYCHA Fulton Houses" | Not in `verification.md`. The verified UTEN row (8b) is the Ithaca pilot, not Chelsea. `research/facts-site1.md` asserts the Chelsea pilot with weak homepage citations. Treat as [unverified] until a primary Con Edison or PSC document is in the verification file. | "A Chelsea utility thermal pilot serving NYCHA Fulton Houses from 85 10th Avenue is [unverified] in verification.md. Do not state it as confirmed. Site 1 is still the weaker fit on capture temperature and trench cost in this model." |
+| `web/components/viz/RingMap.tsx:29` | "town center ring about nine kilometres south-east" | Straight-line distance between the hand-placed points in `web/lib/geo.ts` (plant −76.6336, 42.6028 and town −76.532, 42.566) is about 9.3 km, southeast. The file comment says the points are approximate. The model pipe is 14.0 km (`rings` town `pipe_km`). 9 km is about 5.6 miles, inside the 5–7 mile planning range, but it is not the pipe length. Distance is not a row in `verification.md`. | "Schematic: town center is on the order of 9 km southeast of the plant as drawn (about 5–7 miles). The modeled transmission main is 14 km and fails the cost test. Not a survey." |
+| `web/components/viz/Charts.tsx:154` | On-site ring verdict "pays for itself" | $38/MWh matches `rings[onsite].lcoh_usd_mwh_7pct` 37.5, which is below propane at $136/MWh. "Pays for itself" sounds like a signed customer. It is a modeled cost of heat. Corridor at $272/MWh is correctly labeled "needs a benefit fund." | "On-site campus: modeled cost about $38/MWh, below propane. Not a signed contract." |
 
-_Running notes. Not a substitute for the Flags table._
+## Watch-items checked, no bad hit
+
+| Watch-item | Result |
+|---|---|
+| "36 of 38" | Not in `web/` `.tsx`/`.ts`. Correct to leave it out. Row 1b: the count is single-source (607 News Now); Ithaca Voice says only two speakers against the ban. Cite with attribution or drop. https://607newsnow.com/news/258852-town-of-lansing-moving-forward-with-drafting-a-data-center-ban/ (verified 2026-10-03) |
+| "2014" | Not in `web/` copy. The year on screen is 2015, which matches row 6a. Remaining problems are "no gas pipe" and present tense through 2026 (rows above). |
+| "40-50%" of capex or of heat recovery as an ITC | Not in user-facing strings. Do not add it. Row 9h forbids "40-50% of total capex." The 40–85% recovery range is a model assumption and should stay labeled as one (see the 75% row). |
+| EO 62 | Not in user-facing strings. Correct to leave it out. Row 2b: do not claim EO 62 covers Lake Hawkeye. https://www.governor.ny.gov/executive-order/no-62-establishing-temporary-moratorium-data-centers-new-york-while-state-develops (verified 2026-10-03) |
+| 400 MW as the current proposal | Not stated on the audience-facing slides. It appears only as the Explore slider ceiling (flagged) and in speaker notes with the gross / 320 MW IT split (acceptable). |
+| Deep Green place-name swap | Not present. Michigan and New York are distinguished. Extra details in that story are flagged above. |
+| Propylene-glycol as a specific fluid | Not claimed. Notes say "glycol," which matches row 4a ("food-grade, non-toxic glycol," type unspecified). https://lakehawkeyedata.com/closed-loop-cooling (verified 2026-10-03) |
+| Heat reuse saves 1.008 MGD 1:1 | Not claimed on screen. Water petal: "no lake-water claim." |
+| Sept 29 ban mechanics and $500,000 | Matches rows 1a/1c: the board directed its attorney to draft a ban; $500,000 is in next year’s proposed budget, not an existing reserve. Copy at `steps.tsx:83` says that. https://ithacavoice.org/2026/09/lansing-board-data-center-ban/ (verified 2026-10-03) |
+| 183 acres, 80-year lease | Speaker notes only (`steps.tsx:104`). Matches row 3c. Do not add "~250 unleased acres" (row 3d, unverifiable). https://www.sec.gov/Archives/edgar/data/1083301/000110465925078086/tm2523008d1_8k.htm (verified 2026-10-03) |
+
+## Model figures that match `site2.json` (2026-10-04)
+
+These are modeled, not external measurements. The digits agree with the file. They are not listed again as errors.
+
+- IT load 150 MW; load factor 0.8; heat available 777.6 GWh; capture 50 °C.
+- Phase 1–2 heat delivered 50,576 MWh; share of available 6.5%; so the story’s "15×" and "6.5%" match the arithmetic.
+- Unmet hours 0. Average COP 4.71. Liquid vs air design COP 6.0 vs 4.73.
+- Community / utility / private cost of heat: $82.7 / $100.2 / $119.7 per MWh. Propane $136.1, heating oil $155.8, tariff $108.9, low-income $88.5.
+- Household: 27 MWh, $735/yr vs propane, $1,266/yr vs oil. Tariff is 108.9/136.1 ≈ 80% of the propane incumbent, so the notes’ "about 20% below propane" matches the file.
+- CO₂ 11,456 t/yr; 500 homes; on-site 7% cost $37.5/MWh; corridor $272.3/MWh; town ring $717.6/MWh and `passes_gate: false`. Explore’s "fails the cost test today" matches that.
+- Print and story dollars use `int()` / `dec()`, so $83, $136, and $156 are the rounded file values.
+
+`site1.json` supply used by the compare table: 30 MW, 32 °C, 107 GWh, average COP 5.23, 4% cost $237.6/MWh, CO₂ 11,502 t/yr. Those table cells match the file. The prose wrapped around them does not (flags above).
 
 ## Lane status
 
 ### Done
 
-- File created with headings before the string pass.
+- Headings written before the string pass.
+- Read user-facing copy in `web/app`, `web/components`, and `web/lib` (`.tsx`/`.ts`). `web/content/` is absent. No JSON in those three trees.
+- Checked rendered claims from `site1.json` `why_not_chosen` and `site2.json` `hdr_scorecard`.
+- Watch-list: "36 of 38", "2014", "40-50%", EO 62, 400 MW as current, Deep Green place-name swap, unsourced numbers.
+- Cross-check against `research/verification.md`, the Lake Hawkeye site pack in `resources/text/`, and `web/public/data/site2.json` / `site1.json`.
 
 ### Missing
 
-- Full string pass against `research/verification.md`.
-- Flag table rows.
+- No browser pass. This lane was read-only on `web/` and did not click Story, Explore, Compare, or Print.
+- Did not re-open the NYSERDA price dashboard, so the $2.74–$3.46 band stays [unverified] rather than corrected to a new gallon figure.
+- Did not re-fetch a primary source for a Lansing, Michigan "6-month moratorium" or "hours before a council vote."
+- Did not fact-check each offtaker name in `web/public/data/offtakers.json` (map tooltips only).
+- Did not audit every hourly chart point. Headline totals were checked; the 8,760-hour series was not.
 
 ### Open questions
 
-- None yet.
+- Is Central NY propane actually in a $2.74–$3.46/gal seasonal band, or should the tile show only the modeled $/MWh plus the verified statewide weekly price ($3.120 on 2026-09-21)?
+- Is the NYSEG moratorium still in force on 2026-10-04? Verification stops at the 2025-07-14 filing.
+- Did Lansing, Michigan, pass a 6-month data-center moratorium after Deep Green withdrew on 2026-04-06? Not in `verification.md`.
+- ACS fuel shares (~38% gas / ~26% propane) are in `research/facts-site2.md` and were not re-audited as `verification.md` rows. They are enough to kill the word "most," not enough to print as a new verified table without a fresh census check.

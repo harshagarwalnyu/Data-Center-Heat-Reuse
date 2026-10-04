@@ -35,8 +35,31 @@ def test_soc_nonnegative_and_bounded(base):
     assert d["soc"].min() >= -1e-9 and d["soc"].max() <= d["cap_mwh"] + 1e-6
 
 
-def test_zero_unmet_hours(base):
+def test_unmet_is_zero_by_construction_only_when_backup_full(base):
+    # unmet=0 is a design identity (backup 100% of peak), so test it can fail: shrink backup and it must go positive
     assert (base["sim"]["disp"]["unmet"] > 1e-6).sum() == 0
+    small = model.full(C.override(C.load("site2"), "eng", "backup.capacity_share", 0.2))
+    assert (small["sim"]["disp"]["unmet"] > 1e-6).sum() > 0
+
+
+def test_peak_share_served_by_dc_route(base):
+    from heatreuse import report
+    t = report._totals(base)
+    assert t["peak_share_dc_pct"] >= 90.0       # DC/heat-pump route carries the coldest-hour peak
+    assert t["peak_share_backup_pct"] <= 10.0
+    assert t["backup_share_annual_pct"] < 10.0
+    bad = model.full(C.override(C.load("site2"), "eng", "supply.capture_fraction", 0.05))
+    assert report._totals(bad)["peak_share_backup_pct"] > t["peak_share_backup_pct"] + 5
+
+
+def test_tornado_uptake_scales_customers():
+    cfg = C.load("site2")
+    c0 = cfg["eng"]["corridor"]
+    pot = c0["homes"] / c0["uptake"]
+    T, _ = weather.load_temps(cfg)
+    u = [t for t in model.tornado(cfg, T) if t["driver"].startswith("Uptake")][0]
+    assert u["low_input"] != u["high_input"] and u["low"] != u["high"]
+    assert pot == pytest.approx(500 / 0.70)
 
 
 def test_cop_bounds():
@@ -62,7 +85,9 @@ def test_lcoh_hand_check():
 
 def test_lcoh_matches_components(base):
     f = base["fin"]
-    tot = sum(v["capex"] * finance.crf(0.07, 30) + v["fixed"] + v["var"] for v in f["ring"].values()) / f["D"]
+    life = C.load("site2")["fin"]["life_years"]
+    ann = sum(usd * finance.crf(0.07, life[c]) for v in f["ring"].values() for c, usd in v["cls"].items())
+    tot = (ann + sum(v["fixed"] + v["var"] for v in f["ring"].values())) / f["D"]
     assert tot == pytest.approx(f["lcoh"]["utility_7pct"])
     assert f["lcoh"]["coop_4pct"] < f["lcoh"]["utility_7pct"] < f["lcoh"]["private_10pct"]
 

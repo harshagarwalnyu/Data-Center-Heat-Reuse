@@ -114,7 +114,7 @@ function ringDemandFactor(r: Ring, p: Params): number {
   return 1;
 }
 
-function raw(d: Site2Data, p: Params): Raw {
+function raw(d: Site2Data, p: Params, baseElecRaw?: number): Raw {
   const T = CAPTURE_TEMP_C[p.cooling];
   const availMWh = p.loadMW * 8760 * d.supply.load_factor * d.supply.capture_fraction;
   let rings = d.rings.map((r) => {
@@ -143,8 +143,11 @@ function raw(d: Site2Data, p: Params): Raw {
   const incPipe = d.rings.reduce((s, r) => s + (ringDemandFactor(r, p) > 0 ? r.pipe_km : 0), 0);
   const incPeak = d.rings.reduce((s, r) => s + r.peak_MW * ringDemandFactor(r, p), 0);
   const scale = 0.55 * (incPipe / totPipe) + 0.45 * (incPeak / totPeak);
-  // opex_musd_yr already contains electricity at the base price, so only the price DELTA is added (no double count).
-  const l = lcoh(d.finance.capex_musd.total * 1e6 * scale, d.finance.opex_musd_yr * 1e6 * scale, p.elecPrice - baseElecPrice(d), elec, delivered, p.discountPct / 100);
+  // opex_musd_yr already contains electricity. Split it: non-electric opex (scaled with the network) plus
+  // electricity re-priced at the slider value, so electricity is counted exactly once.
+  const elecFileMWh = d.totals.hp_elec_MWh * (elec / (baseElecRaw ?? (elec || 1)));
+  const opexOther = Math.max(0, d.finance.opex_musd_yr * 1e6 - baseElecPrice(d) * d.totals.hp_elec_MWh);
+  const l = lcoh(d.finance.capex_musd.total * 1e6 * scale, opexOther * scale, p.elecPrice, elecFileMWh, delivered, p.discountPct / 100);
 
   const ef = d.assumptions?.ef_kg_per_MWh_th ?? {};
   const eff = d.assumptions?.fuel_efficiency ?? {};
@@ -189,7 +192,7 @@ function rate(s: number, b: number): number {
 
 export function scenario(d: Site2Data, p: Params): Scenario {
   const b = raw(d, baseParams(d));
-  const s = raw(d, p);
+  const s = raw(d, p, b.hpElecMWh);
   const deliveredMWh = d.totals.heat_delivered_MWh * rate(s.deliveredMWh, b.deliveredMWh);
   const availGWh = d.supply.heat_available_GWh * rate(s.availMWh, b.availMWh);
   const lcohV = d.finance.lcoh_usd_mwh.coop_4pct * rate(s.lcoh, b.lcoh);

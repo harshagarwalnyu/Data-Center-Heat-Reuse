@@ -34,12 +34,18 @@ def main():
     b1 = model.full(cfg1)
     cop1 = model.cop_compare(cfg1, b1["sim"]["T"])
     f1, f2 = b1["fin"], base["fin"]
-    why = ("Site 1 is a real option but a weaker proposal. (1) The Chelsea UTEN pilot at 85 10th Ave already targets the same NYCHA Fulton Houses, so a second source competes with the utility rather than filling a gap. "
-           "(2) Legacy air-side/chilled-water cooling gives only ~32 C capture, so heat pumps work harder (COP %.1f vs %.1f at Lansing) with no chance to specify liquid cooling. "
-           "(3) Manhattan trenching drives blended LCOH to $%.0f/MWh vs Con Ed steam at $%.0f/MWh, a thin margin; Lansing's %s are $%.0f/MWh vs propane $%.0f/MWh. "
-           "(4) At 30 MW the source is small and the grid is dirtier (NYCW 0.39 kg/kWh), so CO2 benefit per MWh is lower. "
-           "(5) Lansing's live ban fight makes heat reuse a decision-changing concession, not an add-on."
-           % (cop1["liquid"], cop["liquid"], f1["lcoh"]["utility_7pct"], f1["incumbents"].get("steam", 0), "blended phase 1-2", f2["lcoh"]["utility_7pct"], f2["incumbents"]["propane"]))
+    i1, i2 = b1["imp"], base["imp"]
+    co2_1, co2_2 = i1["co2_avoided_t_yr"] / f1["D"], i2["co2_avoided_t_yr"] / f2["D"]
+    steam = f1["incumbents"].get("steam", 0)
+    ratio = f1["lcoh"]["utility_7pct"] / steam if steam else float("nan")
+    why = ("Site 1 is feasible but the weaker proposal for this challenge, and the numbers say so. "
+           "(1) Cost: Manhattan LCOH is $%.0f/MWh against Con Ed steam at $%.0f/MWh, %.1fx the incumbent, so a 0.8x tariff cannot cover cost without large subsidy; Lansing blended phases 1-2 are $%.0f/MWh against propane-equivalent $%.0f/MWh. "
+           "(2) Carbon: Site 1 avoids MORE CO2 per MWh delivered (%.3f vs %.3f t/MWh) because steam is a fossil incumbent, so carbon alone does not favour Lansing; Site 1 wins on tonnes per heat-MWh, loses on cost per tonne. "
+           "(3) Source: legacy air-side cooling gives ~%d C capture; like-for-like COP %.1f vs %.1f for liquid cooling at Lansing, and a retrofit cannot specify the cooling architecture. "
+           "(4) Competition: the Chelsea UTEN pilot at 85 10th Ave already targets the same NYCHA Fulton Houses, so a second source competes with the utility rather than filling a gap. "
+           "(5) Leverage: Lansing is a new build with a live ban fight, so heat reuse is a decision-changing concession and liquid cooling can be specified from day one."
+           % (f1["lcoh"]["utility_7pct"], steam, ratio, f2["lcoh"]["utility_7pct"], f2["incumbents"]["propane"], co2_1, co2_2,
+              cfg1["eng"]["supply"]["capture_temp_c"], cop1["liquid"], cop["liquid"]))
     _dump(report.build_site1(cfg1, b1, cop1, why), "site1.json")
     charts.make(base, with_town, tor, cop, OUT / "charts")
     f, i, d = base["fin"], base["imp"], base["sim"]["disp"]

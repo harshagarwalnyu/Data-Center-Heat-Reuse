@@ -106,6 +106,7 @@ export interface Extras {
   linear_heat_density_corridor_MWh_per_m?: number;
   cba?: { corridor_gap_musd?: number; per_year_musd?: number; per_year_annuitized_7pct_musd?: number; as_pct_of_dc_capex?: number; dc_capex_musd?: number; whole_project_gap_musd?: number; breakeven_homes_if_cba_pays_pipe?: Record<string, unknown> };
   air_source_hp_seasonal_cop?: number;
+  electricity_rates_usd_kwh?: Partial<Record<string, number>>;
   lcoh_incentive_scenario_if_qualifies_usd_mwh?: number;
 }
 
@@ -116,6 +117,7 @@ export interface Site1Data {
   totals: Totals;
   finance: { lcoh_usd_mwh: Site2Data["finance"]["lcoh_usd_mwh"]; incumbent_usd_mwh?: Partial<Record<FuelKey, number>> };
   impact: { co2_avoided_t_yr: number; co2_cars_equiv: number; homes_served: number; fossil_displaced_MWh: number };
+  cop_compare?: { source: string; cop: number }[];
   why_not_chosen?: string | { point: string; detail: string }[];
 }
 

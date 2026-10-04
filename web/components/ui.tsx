@@ -28,18 +28,19 @@ const NAV = [
   { href: "/", label: "Story" },
   { href: "/explore/", label: "Explore" },
   { href: "/compare/", label: "Compare sites" },
+  { href: "/how/", label: "How it works" },
   { href: "/print/", label: "One-pager" },
 ];
 
 export function NavBar({ active, extra }: { active: string; extra?: ReactNode }) {
   return (
     <header className="no-print flex items-center gap-3 px-5 py-2 border-b border-line bg-bg">
-      <Link href="/" className="serif font-bold text-[1.25rem] mr-3 whitespace-nowrap text-ink no-underline">
+      <Link prefetch={false} href="/" className="serif font-bold text-[1.25rem] mr-3 whitespace-nowrap text-ink no-underline">
         <span className="text-ember">&#9650;</span> {PROJECT_TITLE}<span className="hidden md:inline font-sans font-semibold text-[1rem] text-ink2 ml-2">{PROJECT_TAGLINE}</span>
       </Link>
       <nav aria-label="Primary" className="flex gap-1">
         {NAV.map((n) => (
-          <Link
+          <Link prefetch={false}
             key={n.href}
             href={n.href}
             aria-current={active === n.href ? "page" : undefined}

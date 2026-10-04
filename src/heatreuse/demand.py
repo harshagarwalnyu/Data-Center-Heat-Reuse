@@ -89,7 +89,7 @@ def town(cfg, T):
     direct = (cfg["eng"]["supply"]["capture_temp_c"] - 2 * h["approach_k"]) >= sink
     E = np.where(direct, 0.0, G / cop)
     S = G - E
-    return dict(id="town", direct_hx_share=float(np.mean(direct)),, D=D, L=L, E=E, S=S, comp={"schools": D * 0 + 0}, pipe_km=pipe_km, cop=cop,
+    return dict(id="town", direct_hx_share=float(np.mean(direct)), D=D, L=L, E=E, S=S, comp={"schools": D * 0 + 0}, pipe_km=pipe_km, cop=cop,
                 supply_temp_c=t["supply_temp_c"], units=None, annual_design=total)
 
 

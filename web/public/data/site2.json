@@ -28,7 +28,7 @@
       "peak_MW": 16.36,
       "supply_temp_C": 45,
       "pipe_km": 0.5,
-      "lcoh_usd_mwh_7pct": 37.5,
+      "lcoh_usd_mwh_7pct": 40.6,
       "direct_heat_exchange": true
     },
     {
@@ -40,7 +40,7 @@
       "peak_MW": 6.84,
       "supply_temp_C": 20,
       "pipe_km": 20.9,
-      "lcoh_usd_mwh_7pct": 272.3,
+      "lcoh_usd_mwh_7pct": 285.8,
       "linear_heat_density_MWh_per_m": 0.65,
       "building_hp_cop": 4.71
     },
@@ -53,7 +53,7 @@
       "supply_temp_C": 65,
       "pipe_km": 14.0,
       "conditional": true,
-      "lcoh_usd_mwh_7pct": 717.6,
+      "lcoh_usd_mwh_7pct": 734.2,
       "passes_gate": false,
       "pipe_loss_MWh": 1840.0,
       "central_hp_cop": 6.0
@@ -61,6 +61,11 @@
   ],
   "totals": {
     "heat_delivered_MWh": 50576.0,
+    "peak_share_dc_pct": 95.3,
+    "peak_share_backup_pct": 4.7,
+    "backup_share_annual_pct": 0.73,
+    "peak_hours_counted": 88,
+    "unmet_note": "unmet_hours is 0 by construction (backup boilers sized 100% of peak); read peak_share_* / backup_share_annual_pct for real resilience.",
     "share_of_available_pct": 6.5,
     "hp_elec_MWh": 2843.0,
     "backup_MWh": 373.0,
@@ -2921,9 +2926,9 @@
     },
     "opex_musd_yr": 1.94,
     "lcoh_usd_mwh": {
-      "coop_4pct": 82.7,
-      "utility_7pct": 100.2,
-      "private_10pct": 119.7
+      "coop_4pct": 89.5,
+      "utility_7pct": 106.1,
+      "private_10pct": 124.6
     },
     "incumbent_usd_mwh": {
       "propane": 136.1,
@@ -2934,6 +2939,11 @@
     },
     "tariff_usd_mwh": 108.9,
     "low_income_tariff_usd_mwh": 88.5,
+    "elec_price_usd_mwh": {
+      "industrial": 108,
+      "residential": 245
+    },
+    "tariff_rule": "0.8 x propane, fixed",
     "household": {
       "typical_MWh_yr": 27,
       "savings_vs_propane_usd": 735.0,
@@ -2942,54 +2952,54 @@
     "tornado": [
       {
         "driver": "Discount rate",
-        "low": 82.7,
-        "high": 119.7,
-        "base": 100.2,
+        "low": 89.5,
+        "high": 124.6,
+        "base": 106.1,
         "low_input": 0.04,
         "high_input": 0.1,
         "unit": "rate"
       },
       {
         "driver": "Pipe cost",
-        "low": 92.7,
-        "high": 110.2,
-        "base": 100.2,
+        "low": 98.5,
+        "high": 116.1,
+        "base": 106.1,
         "low_input": 0.7,
         "high_input": 1.4,
         "unit": "x base"
       },
       {
-        "driver": "Uptake (signed share of corridor homes)",
-        "low": 95.6,
-        "high": 111.6,
-        "base": 100.2,
+        "driver": "Uptake (signed share of potential corridor homes)",
+        "low": 111.7,
+        "high": 97.7,
+        "base": 106.1,
         "low_input": 0.9,
         "high_input": 0.45,
         "unit": "share"
       },
       {
         "driver": "Electricity price (both rates scaled)",
-        "low": 93.6,
-        "high": 104.9,
-        "base": 100.2,
+        "low": 99.5,
+        "high": 110.8,
+        "base": 106.1,
         "low_input": 0.14,
         "high_input": 0.32,
         "unit": "$/kWh"
       },
       {
         "driver": "Heat pump efficiency (COP via eta)",
-        "low": 98.3,
-        "high": 103.4,
-        "base": 100.2,
+        "low": 104.2,
+        "high": 109.2,
+        "base": 106.1,
         "low_input": 0.6,
         "high_input": 0.4,
         "unit": "fraction of Carnot"
       },
       {
         "driver": "Data-center IT load (MW)",
-        "low": 100.2,
-        "high": 100.2,
-        "base": 100.2,
+        "low": 106.1,
+        "high": 106.1,
+        "base": 106.1,
         "low_input": 320,
         "high_input": 75,
         "unit": "MW"
@@ -3195,47 +3205,67 @@
         "delivered_GWh": 50.575755,
         "unmet_hours": 0,
         "backup_MWh": 373.42440539009607,
-        "lcoh7": 100.1888882419252
+        "lcoh7": 106.06938917428567
       },
       "recovery_base_0.75": {
         "heat_available_GWh": 777.614362101839,
         "delivered_GWh": 50.575755,
         "unmet_hours": 0,
         "backup_MWh": 373.42440539009607,
-        "lcoh7": 100.1888882419252
+        "lcoh7": 106.06938917428567
       },
       "recovery_high_0.85": {
         "heat_available_GWh": 881.2962770487509,
         "delivered_GWh": 50.575755,
         "unmet_hours": 0,
         "backup_MWh": 373.42440539009607,
-        "lcoh7": 100.1888882419252
+        "lcoh7": 106.06938917428567
       },
       "dc_320MW_full_build": {
         "heat_available_GWh": 1658.91063915059,
         "delivered_GWh": 50.575755,
         "share_of_available_pct": 3.0487329339147675,
         "unmet_hours": 0,
-        "lcoh7": 100.1888882419252
+        "lcoh7": 106.06938917428567
       },
       "town_hot_loop": {
-        "lcoh7_ring_65C": 717.5909668478384,
-        "lcoh7_ring_70C_sensitivity": 717.5909668478384
+        "lcoh7_ring_65C": 734.2381496820483,
+        "lcoh7_ring_70C_sensitivity": 734.2381496820483
+      },
+      "capture_65C_town": {
+        "base_50C": {
+          "lcoh7_ring": 734.2381496820483,
+          "hp_elec_MWh": 951.5589019060462,
+          "avg_cop_if_hp": 6.000000000000001,
+          "direct_hx_share_of_hours": 0.0
+        },
+        "capture_65C": {
+          "lcoh7_ring": 721.3445643397993,
+          "hp_elec_MWh": 524.2456816864318,
+          "avg_cop_if_hp": 11.4698366542044,
+          "direct_hx_share_of_hours": 0.7136986301369863
+        },
+        "note": "65 C capture feeds the 55-65 C town sink directly in mild hours; HP lift only when sink > 59 C"
       },
       "central_at_residential_rate": {
-        "lcoh7": 102.2438882419252,
+        "lcoh7": 108.12438917428568,
         "note": "central HP + pumping at residential 0.245 instead of industrial"
       },
       "propane_2.85_low_sensitivity": {
         "propane_usd_mwh": 125.10974539069359,
         "tariff_usd_mwh": 100.08779631255487,
         "household_savings_vs_propane_usd": 675.5926251097454,
-        "lcoh7": 100.11105856017907
+        "lcoh7": 105.99155949253955
       }
     },
     "with_town": {
       "totals": {
         "heat_delivered_MWh": 54153.0,
+        "peak_share_dc_pct": 95.4,
+        "peak_share_backup_pct": 4.6,
+        "backup_share_annual_pct": 0.7,
+        "peak_hours_counted": 88,
+        "unmet_note": "unmet_hours is 0 by construction (backup boilers sized 100% of peak); read peak_share_* / backup_share_annual_pct for real resilience.",
         "share_of_available_pct": 6.96,
         "hp_elec_MWh": 3742.0,
         "backup_MWh": 383.0,
@@ -3244,12 +3274,12 @@
         "storage_m3": 6240.0
       },
       "lcoh_usd_mwh": {
-        "coop_4pct": 113.6,
-        "utility_7pct": 140.7,
-        "private_10pct": 171.0
+        "coop_4pct": 121.2,
+        "utility_7pct": 147.3,
+        "private_10pct": 176.4
       },
       "capex_musd": 64.34,
-      "town_ring_lcoh_usd_mwh": 717.6,
+      "town_ring_lcoh_usd_mwh": 734.2,
       "town_pipe_share_of_ring_capex": 0.82,
       "verdict": "FAILS gate: long transmission main makes town-center heat dearer than propane; build only with grant funding or a larger anchor (e.g. Cargill mine)"
     },
@@ -3259,40 +3289,49 @@
       "sources": "EIA EPM Table 5.6.A NY industrial 10.81 c/kWh Jul 2026; NYSEG residential $0.245 (facts-site2 sec 4)"
     },
     "cba": {
-      "corridor_gap_musd": 28.06,
-      "per_year_musd": 0.935,
-      "per_year_annuitized_7pct_musd": 2.261,
-      "whole_project_gap_musd": 22.32,
-      "whole_project_per_year_musd": 0.744,
+      "headline_gap_musd": 26.01,
+      "headline_annuitized_7pct_musd_per_yr": 2.096,
+      "headline_basis": "ONE number: whole-project (phases 1-2) PV funding gap at 7%, 30 yr, separate asset lives. The on-site ring earns a surplus that cross-subsidises the corridor; the corridor stand-alone gap is the larger memo number below.",
+      "corridor_standalone_gap_musd": 30.32,
+      "reconciliation": "Corridor stand-alone gap $30.3M minus on-site surplus $4.3M = whole-project gap $26.0M. Quote the whole-project figure; the corridor-only figure applies if on-site customers are not served.",
+      "straight_line_undiscounted_per_year_musd": 0.867,
+      "straight_line_note": "Gap divided by 30 years with no discounting; understates the true annual cost. Use the annuitized figure.",
+      "corridor_gap_musd": 30.32,
+      "per_year_musd": 1.011,
+      "per_year_annuitized_7pct_musd": 2.443,
+      "whole_project_gap_musd": 26.01,
+      "whole_project_per_year_musd": 0.867,
+      "whole_project_per_year_annuitized_7pct_musd": 2.096,
       "dc_capex_musd": 1500.0,
-      "as_pct_of_dc_capex": 1.87,
-      "whole_project_as_pct_of_dc_capex": 1.49,
+      "as_pct_of_dc_capex": 2.02,
+      "whole_project_as_pct_of_dc_capex": 1.73,
+      "headline_as_pct_of_dc_capex": 1.73,
       "dc_capex_basis": "10 $M per MW IT x 150 MW; Turner & Townsend Data Centre Construction Cost Index 2025 (US$6.6-13.3/W, ~$10/W midpoint assumed)",
       "breakeven_homes_if_cba_pays_pipe": {
         "cba_pays_pipe_and_laterals": {
           "min_homes": null,
-          "lcoh_ring_at_2000_homes": 166.1,
+          "lcoh_ring_at_2000_homes": 179.6,
           "blend_tariff": 104.8
         },
         "cba_pays_pipe_plus_half_of_building_hps": {
           "min_homes": null,
-          "lcoh_ring_at_2000_homes": 127.9,
+          "lcoh_ring_at_2000_homes": 135.8,
           "blend_tariff": 104.8
         },
         "cba_pays_pipe_and_all_building_hps": {
           "min_homes": 50,
-          "lcoh_ring": 100.5,
+          "lcoh_ring": 103.3,
           "blend_tariff": 104.8
         },
         "finding": "Pipe alone is not enough: the building heat pumps (~$16k each) must also be funded (NYSEG NPA / NYSERDA Clean Heat / CBA) for 0.8x-propane tariffs to cover cost."
       },
       "note": "Corridor gap = PV shortfall of the corridor ring at the blended tariff (0.8x propane, 20% low-income tier), 7%, 30 yr."
     },
-    "lcoh_incentive_scenario_if_qualifies_usd_mwh": 81.7,
+    "lcoh_incentive_scenario_if_qualifies_usd_mwh": 85.8,
     "funding": {
-      "npv7_musd": -22.32,
-      "funding_gap_musd": 22.32,
-      "funding_gap_incentive_scenario_if_qualifies_musd": 10.69,
+      "npv7_musd": -26.01,
+      "funding_gap_musd": 26.01,
+      "funding_gap_incentive_scenario_if_qualifies_musd": 13.28,
       "revenue_musd_yr": 3.27,
       "note": "Gap = what grants, a Community Benefit contribution from the data center, or low-cost capital must cover so tariffs stay below incumbents. Federal ITC for waste-heat networks is NOT assumed (research/verification.md 9d-i)."
     },
@@ -3300,34 +3339,37 @@
       {
         "multiple_of_ref": 0.85,
         "tariff_usd_mwh": 115.67,
-        "margin_vs_lcoh7_usd_mwh": 15.48,
+        "realised_revenue_usd_mwh": 66.08,
+        "margin_vs_lcoh7_usd_mwh": -39.99,
         "margin_over_hp_elec_usd_mwh": 63.68,
-        "npv7_musd": -21.41,
-        "npv7_itc_musd": -9.78,
+        "npv7_musd": -25.1,
+        "npv7_itc_musd": -12.36,
         "household_savings_vs_propane_usd": 551.14
       },
       {
         "multiple_of_ref": 0.8,
         "tariff_usd_mwh": 108.87,
-        "margin_vs_lcoh7_usd_mwh": 8.68,
+        "realised_revenue_usd_mwh": 64.62,
+        "margin_vs_lcoh7_usd_mwh": -41.45,
         "margin_over_hp_elec_usd_mwh": 56.88,
-        "npv7_musd": -22.32,
-        "npv7_itc_musd": -10.69,
+        "npv7_musd": -26.01,
+        "npv7_itc_musd": -13.28,
         "household_savings_vs_propane_usd": 734.86
       },
       {
         "multiple_of_ref": 0.75,
         "tariff_usd_mwh": 102.06,
-        "margin_vs_lcoh7_usd_mwh": 1.87,
+        "realised_revenue_usd_mwh": 63.17,
+        "margin_vs_lcoh7_usd_mwh": -42.9,
         "margin_over_hp_elec_usd_mwh": 50.07,
-        "npv7_musd": -23.23,
-        "npv7_itc_musd": -11.61,
+        "npv7_musd": -26.92,
+        "npv7_itc_musd": -14.19,
         "household_savings_vs_propane_usd": 918.57
       }
     ],
     "ring_lcoh_usd_mwh": {
-      "onsite": 37.5,
-      "corridor": 272.3
+      "onsite": 40.6,
+      "corridor": 285.8
     },
     "air_source_hp_seasonal_cop": 2.53,
     "cop_design_60C_sink": {

@@ -2,7 +2,7 @@
 from __future__ import annotations
 import datetime as dt
 import numpy as np
-from . import weather, scoring
+from . import weather, scoring, finance
 
 SOURCES = [
     {"id": "nyserda_prop", "label": "NYSERDA Central NY heating oil / propane prices (propane base $3.10/gal, season range 2.74-3.46; oil $5.186 Central monthly avg)", "url": "https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Average-Home-Heating-Oil-Prices"},
@@ -55,7 +55,15 @@ def _totals(res):
     d, R, fin = res["sim"]["disp"], res["sim"]["rings"], res["fin"]
     hp_heat = sum(float(((R[r]["D"] if r == "corridor" else R[r]["D"] + R[r]["L"]) * d["f"]).sum()) for r in d["active"] if r != "onsite")
     hp_el = float(d["e_served"].sum())
-    return dict(heat_delivered_MWh=round(fin["D"], 0), share_of_available_pct=round(100 * fin["D"] / float(res["sim"]["A"].sum()), 2),
+    G = sum(R[r]["D"] + R[r]["L"] for r in d["active"])
+    k = max(int(round(0.01 * len(G))), 1)
+    pk = np.argsort(G)[-k:]
+    bk_pk = float(((G * (1 - d["f"]))[pk]).sum() / G[pk].sum())
+    bk_yr = float(((G * (1 - d["f"]))).sum() / G.sum())
+    return dict(heat_delivered_MWh=round(fin["D"], 0),
+                peak_share_dc_pct=round(100 * (1 - bk_pk), 1), peak_share_backup_pct=round(100 * bk_pk, 1),
+                backup_share_annual_pct=round(100 * bk_yr, 2), peak_hours_counted=k,
+                unmet_note="unmet_hours is 0 by construction (backup boilers sized 100% of peak); read peak_share_* / backup_share_annual_pct for real resilience.", share_of_available_pct=round(100 * fin["D"] / float(res["sim"]["A"].sum()), 2),
                 hp_elec_MWh=round(hp_el, 0), backup_MWh=round(float((d["D"] * (1 - d["f"])).sum()), 0),
                 unmet_hours=int((d["unmet"] > 1e-6).sum()), avg_cop=round(hp_heat / hp_el, 2) if hp_el else 0,
                 storage_m3=round(d["vol_m3"], 0))
@@ -116,6 +124,8 @@ def build_site2(cfg, base, with_town, tor, scen, cop, offt, be=None) -> dict:
             lcoh_usd_mwh={k: round(v, 1) for k, v in fin["lcoh"].items()},
             incumbent_usd_mwh=inc,
             tariff_usd_mwh=round(fin["tariff"], 1), low_income_tariff_usd_mwh=round(fin["li_tariff"], 1),
+            elec_price_usd_mwh=dict(industrial=round(1000 * cfg["fin"]["elec_price_central_usd_kwh"]), residential=round(1000 * cfg["fin"]["elec_price_usd_kwh"])),
+            tariff_rule="0.8 x propane, fixed",
             household=dict(typical_MWh_yr=fin["household"]["typical_MWh_yr"],
                            savings_vs_propane_usd=round(fin["household"]["savings_vs_propane_usd"], 0),
                            savings_vs_oil_usd=round(fin["household"]["savings_vs_oil_usd"], 0)),
@@ -164,11 +174,20 @@ def build_site2(cfg, base, with_town, tor, scen, cop, offt, be=None) -> dict:
                            verdict="PASSES gate (LCOH <= 80% of propane-equivalent)" if town_ok else "FAILS gate: long transmission main makes town-center heat dearer than propane; build only with grant funding or a larger anchor (e.g. Cargill mine)"),
             electricity_rates_usd_kwh=dict(central_hp_and_pumping_industrial=cfg["fin"]["elec_price_central_usd_kwh"], corridor_building_hps_residential=cfg["fin"]["elec_price_usd_kwh"],
                                            sources="EIA EPM Table 5.6.A NY industrial 10.81 c/kWh Jul 2026; NYSEG residential $0.245 (facts-site2 sec 4)"),
-            cba=dict(corridor_gap_musd=round(cba_gap, 2), per_year_musd=round(cba_gap / cfg["fin"]["years"], 3),
-                     per_year_annuitized_7pct_musd=round(cba_gap * 0.0805864, 3),
+            cba=dict(headline_gap_musd=round(proj_gap, 2),
+                     headline_annuitized_7pct_musd_per_yr=round(proj_gap * finance.crf(0.07, cfg["fin"]["years"]), 3),
+                     headline_basis="ONE number: whole-project (phases 1-2) PV funding gap at 7%%, %d yr, separate asset lives. The on-site ring earns a surplus that cross-subsidises the corridor; the corridor stand-alone gap is the larger memo number below." % cfg["fin"]["years"],
+                     corridor_standalone_gap_musd=round(cba_gap, 2),
+                     reconciliation="Corridor stand-alone gap $%.1fM minus on-site surplus $%.1fM = whole-project gap $%.1fM. Quote the whole-project figure; the corridor-only figure applies if on-site customers are not served." % (cba_gap, cba_gap - proj_gap, proj_gap),
+                     straight_line_undiscounted_per_year_musd=round(proj_gap / cfg["fin"]["years"], 3),
+                     straight_line_note="Gap divided by %d years with no discounting; understates the true annual cost. Use the annuitized figure." % cfg["fin"]["years"],
+                     corridor_gap_musd=round(cba_gap, 2), per_year_musd=round(cba_gap / cfg["fin"]["years"], 3),
+                     per_year_annuitized_7pct_musd=round(cba_gap * finance.crf(0.07, cfg["fin"]["years"]), 3),
                      whole_project_gap_musd=round(proj_gap, 2), whole_project_per_year_musd=round(proj_gap / cfg["fin"]["years"], 3),
+                     whole_project_per_year_annuitized_7pct_musd=round(proj_gap * finance.crf(0.07, cfg["fin"]["years"]), 3),
                      dc_capex_musd=round(dc_capex / 1e6, 0), as_pct_of_dc_capex=round(100 * cba_gap * 1e6 / dc_capex, 2),
                      whole_project_as_pct_of_dc_capex=round(100 * proj_gap * 1e6 / dc_capex, 2),
+                     headline_as_pct_of_dc_capex=round(100 * proj_gap * 1e6 / dc_capex, 2),
                      dc_capex_basis="%.0f $M per MW IT x %d MW; Turner & Townsend Data Centre Construction Cost Index 2025 (US$6.6-13.3/W, ~$10/W midpoint assumed)" % (cfg["fin"]["cba"]["dc_capex_usd_per_mw_it"] / 1e6, cfg["eng"]["supply"]["it_load_mw"]),
                      breakeven_homes_if_cba_pays_pipe=be,
                      note="Corridor gap = PV shortfall of the corridor ring at the blended tariff (0.8x propane, 20% low-income tier), 7%, 30 yr."),
@@ -211,7 +230,9 @@ def build_site1(cfg, base, cop, why) -> dict:
         totals=_totals(base),
         finance=dict(capex_musd=dict(total=round(fin["capex_total"] / 1e6, 2)), opex_musd_yr=round(fin["opex_total"] / 1e6, 2),
                      lcoh_usd_mwh={k: round(v, 1) for k, v in fin["lcoh"].items()}, incumbent_usd_mwh=inc,
-                     tariff_usd_mwh=round(fin["tariff"], 1), ring_lcoh_usd_mwh={k: round(v, 1) for k, v in fin["lcoh_ring"].items()},
+                     tariff_usd_mwh=round(fin["tariff"], 1),
+                     elec_price_usd_mwh=dict(industrial=round(1000 * cfg["fin"]["elec_price_central_usd_kwh"]), residential=round(1000 * cfg["fin"]["elec_price_usd_kwh"])),
+                     tariff_rule="0.8 x propane-equivalent (Site 1 reference: Con Ed steam), fixed", ring_lcoh_usd_mwh={k: round(v, 1) for k, v in fin["lcoh_ring"].items()},
                      reference=fin["ref_name"]),
         impact=dict(co2_avoided_t_yr=round(imp["co2_avoided_t_yr"], 0), co2_cars_equiv=round(imp["cars"], 0),
                     homes_served=int(base["sim"]["rings"]["corridor"]["units"]), fossil_displaced_MWh=round(imp["fossil_displaced_MWh"], 0),
