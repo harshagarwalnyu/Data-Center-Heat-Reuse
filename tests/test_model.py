@@ -108,3 +108,11 @@ def test_onsite_ring_always_built(site2):
 
 def test_supply_far_exceeds_demand(site2):
     assert site2["totals"]["share_of_available_pct"] < 25
+
+
+def test_every_input_is_tagged():
+    from heatreuse import verify
+
+    rows = verify.register(model.ROOT / "assumptions.yaml")
+    untagged = [r["path"] for r in rows if not r["tag"] and r["path"].rsplit(".", 1)[-1] not in verify.SKIP]
+    assert untagged == []

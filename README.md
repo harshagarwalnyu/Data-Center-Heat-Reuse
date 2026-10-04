@@ -33,3 +33,11 @@ Every input lives in `assumptions.yaml`, tagged `[fact:<id>]`, `[assumption]` or
 ## Web app
 
 `web/` is a static Next.js app with a guided Story mode and an Explore mode. See `web/README.md`. Rebuild data with `python3 scripts/export_web_data.py` after any model run.
+
+## Check the inputs
+
+```bash
+uv run python -m heatreuse.verify   # input register + one-at-a-time swing; writes outputs/verify_report.md
+```
+
+Findings and changes from the first red-team pass are in `docs/red-team.md`.

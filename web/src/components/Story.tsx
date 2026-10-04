@@ -22,6 +22,8 @@ const exit = fin.dc_exit;
 const winterOutage = site.supply.outages[0];
 const gatePath = corridor.gate.path!;
 const firstIn = corridor.gate.first_in!;
+const lastStep = gatePath[gatePath.length - 1];
+const cheaperStep = gatePath.find((p) => p.label.includes("cheaper build"))!;
 const baseboard = firstIn.find((f) => f.fuel === "electric_resistance")!;
 const townLossShare = town.network_loss_MWh / (town.network_loss_MWh + town.annual_MWh);
 const julyShare = site.monthly[6].demand_MWh / (site.monthly.reduce((a, m) => a + m.demand_MWh, 0) / 12);
@@ -199,7 +201,7 @@ const slides: Slide[] = [
       <>
         <p>A ring is built only when its cost of heat beats what its users pay today. We ran the test on all three.</p>
         <ul className="space-y-2">
-          <li><Status pass={true}>Ring 1 passes</Status> by a factor of five.</li>
+          <li><Status pass={true}>Ring 1 passes</Status> at {perMWh(onsite.gate.lcoh_usd_mwh)} against a {perMWh(tariff)} tariff.</li>
           <li><Status pass={null}>Ring 2 is not there yet</Status>; the next slide shows what it takes.</li>
           <li><Status pass={false}>Ring 3 fails</Status> and we say no to it.</li>
         </ul>
@@ -227,8 +229,15 @@ const slides: Slide[] = [
     body: (
       <>
         <p>
-          Today it costs about {usd(round(gatePath[0].capex_per_home_usd, 500))} per home to build the loop and connect a house. Grants alone don&apos;t close the gap. Grants, a cheaper
-          build and lower upkeep together do.
+          Today it costs about {usd(round(gatePath[0].capex_per_home_usd, 500))} per home to build the loop and connect a house. Grants alone
+          don&apos;t close the gap. With grants and a cheaper build, heat costs {perMWh(cheaperStep.lcoh_usd_mwh)}, less than the{" "}
+          {perMWh(propane)} every propane home pays today.
+        </p>
+        <p>
+          {lastStep.passes
+            ? <>Lower upkeep on top brings it to {perMWh(lastStep.lcoh_usd_mwh)}, under the {perMWh(tariff)} tariff, so the 25% discount is funded.</>
+            : <>Lower upkeep on top gets within {usd(lastStep.lcoh_usd_mwh - tariff, 2)}/MWh of the {perMWh(tariff)} tariff. Funding the full
+              25% discount is the last step still to prove.</>}
         </p>
         <p className="font-semibold">
           {FUEL_LABEL[baseboard.fuel]} homes ({pct(baseboard.share_of_homes)} of the corridor, paying {perMWh(baseboard.incumbent_usd_mwh)}) come out

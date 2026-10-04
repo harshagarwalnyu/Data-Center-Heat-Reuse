@@ -55,9 +55,9 @@
       "network_loss_MWh": 328,
       "storage_m3": 2470,
       "avg_cop": null,
-      "capex_musd": 7.46,
+      "capex_musd": 7.05,
       "gate": {
-        "lcoh_usd_mwh": 17.9,
+        "lcoh_usd_mwh": 17.0,
         "benchmark_usd_mwh": 93.8,
         "benchmark": "heat tariff",
         "passes": true,
@@ -86,50 +86,50 @@
       "network_loss_MWh": 0,
       "storage_m3": 0,
       "avg_cop": 5.88,
-      "capex_musd": 18.21,
+      "capex_musd": 20.28,
       "gate": {
-        "lcoh_usd_mwh": 193.6,
+        "lcoh_usd_mwh": 210.4,
         "benchmark_usd_mwh": 93.8,
         "benchmark": "heat tariff",
         "passes": false,
         "linear_density_MWh_per_m": 0.96,
         "density_gate_MWh_per_m": 1.5,
-        "breakeven_capex_grant_frac": 0.91,
+        "breakeven_capex_grant_frac": 0.96,
         "path": [
           {
             "label": "Base case",
             "grant_frac": 0.0,
-            "capex_per_home_usd": 45527,
-            "lcoh_usd_mwh": 193.6,
+            "capex_per_home_usd": 50702,
+            "lcoh_usd_mwh": 210.4,
             "passes": false
           },
           {
             "label": "+ 30% federal ITC",
             "grant_frac": 0.3,
-            "capex_per_home_usd": 45527,
-            "lcoh_usd_mwh": 160.7,
+            "capex_per_home_usd": 50702,
+            "lcoh_usd_mwh": 173.8,
             "passes": false
           },
           {
             "label": "+ 25% NYSEG Non-Pipe Alternatives",
             "grant_frac": 0.55,
-            "capex_per_home_usd": 45527,
-            "lcoh_usd_mwh": 133.3,
+            "capex_per_home_usd": 50702,
+            "lcoh_usd_mwh": 143.2,
             "passes": false
           },
           {
             "label": "+ cheaper build ($8k HP, $5k service, 15 m trench/home)",
             "grant_frac": 0.55,
-            "capex_per_home_usd": 28967,
-            "lcoh_usd_mwh": 101.6,
+            "capex_per_home_usd": 32072,
+            "lcoh_usd_mwh": 107.5,
             "passes": false
           },
           {
             "label": "+ O&M at 1% of capex",
             "grant_frac": 0.55,
-            "capex_per_home_usd": 28967,
-            "lcoh_usd_mwh": 89.5,
-            "passes": true
+            "capex_per_home_usd": 32072,
+            "lcoh_usd_mwh": 94.1,
+            "passes": false
           }
         ],
         "first_in": [
@@ -180,9 +180,9 @@
       "network_loss_MWh": 3679,
       "storage_m3": 560,
       "avg_cop": 6.0,
-      "capex_musd": 31.04,
+      "capex_musd": 27.18,
       "gate": {
-        "lcoh_usd_mwh": 623.1,
+        "lcoh_usd_mwh": 550.8,
         "benchmark_usd_mwh": 64.0,
         "benchmark": "natural gas today",
         "passes": false,
@@ -3333,7 +3333,7 @@
   ],
   "finance": {
     "capex_musd": {
-      "total": 7.46,
+      "total": 7.05,
       "lines": [
         {
           "item": "Sidestream plate HX + pumps at DC (onsite)",
@@ -3342,7 +3342,7 @@
         },
         {
           "item": "Campus pre-insulated pipe (onsite)",
-          "musd": 2.25,
+          "musd": 1.95,
           "source": "assumption"
         },
         {
@@ -3357,16 +3357,16 @@
         },
         {
           "item": "Soft costs + contingency",
-          "musd": 2.06,
+          "musd": 1.95,
           "source": "assumption"
         }
       ]
     },
-    "opex_musd_yr": 0.26,
+    "opex_musd_yr": 0.25,
     "lcoh_usd_mwh": {
-      "coop_4pct": 17.9,
-      "utility_7pct": 22.3,
-      "private_10pct": 27.2
+      "coop_4pct": 17.0,
+      "utility_7pct": 21.2,
+      "private_10pct": 25.9
     },
     "incumbent_usd_mwh": {
       "propane": 125,
@@ -3386,9 +3386,9 @@
     "tornado": [
       {
         "driver": "homes_uptake",
-        "base": 52.9,
-        "low": 37.3,
-        "high": 65.6,
+        "base": 55.6,
+        "low": 38.4,
+        "high": 69.6,
         "scope": [
           "onsite",
           "corridor"
@@ -3400,9 +3400,9 @@
       },
       {
         "driver": "discount_rate",
-        "base": 52.9,
-        "low": 49.3,
-        "high": 65.0,
+        "base": 55.6,
+        "low": 51.7,
+        "high": 68.5,
         "scope": [
           "onsite",
           "corridor"
@@ -3414,9 +3414,9 @@
       },
       {
         "driver": "pipe_cost",
-        "base": 52.9,
-        "low": 48.0,
-        "high": 57.7,
+        "base": 55.6,
+        "low": 49.9,
+        "high": 61.2,
         "scope": [
           "onsite",
           "corridor"
@@ -3428,9 +3428,9 @@
       },
       {
         "driver": "elec_price",
-        "base": 52.9,
-        "low": 49.9,
-        "high": 55.9,
+        "base": 55.6,
+        "low": 52.5,
+        "high": 58.6,
         "scope": [
           "onsite",
           "corridor"
@@ -3442,9 +3442,9 @@
       },
       {
         "driver": "hp_efficiency",
-        "base": 52.9,
-        "low": 52.7,
-        "high": 53.5,
+        "base": 55.6,
+        "low": 55.4,
+        "high": 56.1,
         "scope": [
           "onsite",
           "corridor"
@@ -3456,9 +3456,9 @@
       },
       {
         "driver": "dc_load_factor",
-        "base": 52.9,
-        "low": 52.9,
-        "high": 52.9,
+        "base": 55.6,
+        "low": 55.6,
+        "high": 55.6,
         "scope": [
           "onsite",
           "corridor"
@@ -3472,7 +3472,7 @@
     "dc_exit": {
       "year": 10,
       "stranded_musd": 0.79,
-      "fallback_lcoh_usd_mwh": 85.47,
+      "fallback_lcoh_usd_mwh": 84.64,
       "fallback": "Pipes, tanks, building heat pumps and backup boilers keep working. The sidestream HX is the only DC-specific asset; an air-source central heat pump on the same pad replaces the DC heat, and the HSA decommissioning reserve pays for it."
     }
   },
@@ -3495,7 +3495,7 @@
     {
       "who": "Residents",
       "value": "A heat price below propane for a town under a gas moratorium",
-      "metric": "Ambient-loop heat at $94/MWh vs $125 propane: $750/yr per typical home. Corridor LCOH $194/MWh needs a 91% capex grant first."
+      "metric": "Ambient-loop heat at $94/MWh vs $125 propane: $750/yr per typical home. Corridor LCOH $210/MWh needs a 96% capex grant first."
     },
     {
       "who": "Town of Lansing",
@@ -3510,7 +3510,7 @@
     {
       "who": "Greenhouse / aquaculture operators",
       "value": "Near-free low-temperature heat year round",
-      "metric": "On-site LCOH $18/MWh vs $125 propane"
+      "metric": "On-site LCOH $17/MWh vs $125 propane"
     },
     {
       "who": "Cayuga Lake",
@@ -3564,7 +3564,7 @@
   "explore": {
     "rings": {
       "onsite": {
-        "capex_usd": 7464173,
+        "capex_usd": 7050173,
         "om_frac": 0.02,
         "heat_MWh": 38612,
         "hp_elec_MWh": 0,
@@ -3576,7 +3576,7 @@
         "per_home": false
       },
       "corridor": {
-        "capex_usd": 18210774,
+        "capex_usd": 20280774,
         "om_frac": 0.02,
         "heat_MWh": 9600,
         "hp_elec_MWh": 1615,
@@ -3588,7 +3588,7 @@
         "per_home": true
       },
       "town": {
-        "capex_usd": 31044955,
+        "capex_usd": 27180955,
         "om_frac": 0.02,
         "heat_MWh": 4160,
         "hp_elec_MWh": 1299,

@@ -2,27 +2,27 @@
   "heat_available_GWh": 780.8,
   "heat_delivered_GWh": 38.3,
   "share_of_available_pct": 4.97,
-  "lcoh_usd_mwh_coop": 17.9,
+  "lcoh_usd_mwh_coop": 17.0,
   "tariff_usd_mwh": 93.8,
   "household_savings_vs_propane_usd": 750,
   "co2_avoided_t_yr": 9397.1,
   "unmet_hours": 0,
-  "capex_musd": 7.46,
+  "capex_musd": 7.05,
   "jobs": 71,
   "rings": {
     "onsite": {
       "built": true,
-      "lcoh_usd_mwh": 17.9,
+      "lcoh_usd_mwh": 17.0,
       "benchmark_usd_mwh": 93.8
     },
     "corridor": {
       "built": false,
-      "lcoh_usd_mwh": 193.6,
+      "lcoh_usd_mwh": 210.4,
       "benchmark_usd_mwh": 93.8
     },
     "town": {
       "built": false,
-      "lcoh_usd_mwh": 623.1,
+      "lcoh_usd_mwh": 550.8,
       "benchmark_usd_mwh": 64.0
     }
   }
