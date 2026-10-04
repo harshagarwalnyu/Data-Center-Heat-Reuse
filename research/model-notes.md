@@ -47,3 +47,5 @@ Site 1 inputs (loads, Manhattan unit costs, gas $2.20/therm) are rough; Site 1 L
 - Tornado uptake holds potential homes fixed and scales customers; tariff-scenario margin uses realised blended revenue.
 - Town ring direct-HX logic when capture - 2*approach >= sink; scenarios.capture_65C_town added.
 - finance.elec_price_usd_mwh and tariff_rule added to site2.json and site1.json.
+
+- v3.1: corridor mix renormalised Census 26/8/24/4 (config/impact.yaml); counterfactual covers all customer heat so backup hours are credited; car factor 4.29 t (EPA calculator); report strings use %.0f. CO2 11,408 t, 2,659 cars, fossil 52,016 MWh.

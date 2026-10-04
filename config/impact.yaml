@@ -4,10 +4,12 @@ ef_kg_kwh:                      # facts-site2.md sec 7 (EPA GHG Hub; eGRID2023 N
   propane: 0.2145              # corrected: liquid propane 62.87 kg/MMBtu (research/verification.md 10d), not 61.46 (gaseous)
   oil: 0.2520
   gas: 0.1810
-mix_corridor: {propane: 0.45, oil: 0.15, electric: 0.35, other: 0.05}   # [A] from Census B25040 non-gas shares (26/8/24/4)
+# Census ACS 2023 B25040 (https://data.census.gov/table/ACSDT5Y2023.B25040), town non-gas household shares propane 26 / oil 8 / electric 24 / other 4 (sum 62),
+# renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].
+mix_corridor: {propane: 0.419355, oil: 0.129032, electric: 0.387097, other: 0.064516}
 mix_onsite: {propane: 1.0}      # [A] no piped gas near plant (facts-site2.md)
 mix_town: {propane: 0.4, oil: 0.3, gas: 0.3}   # [A]
-kg_co2_per_car_yr: 4600         # EPA 4.6 t/yr passenger vehicle
+kg_co2_per_car_yr: 4290         # EPA GHG Equivalencies Calculator 4.29 t CO2e/vehicle-yr (FHWA 2022 22.8 mpg, 10,917 mi; https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references, verified 2026-10-04)
 fan_kwh_per_kwh_rejected: 0.02  # [A] dry-cooler fan electricity per kWh heat rejected
 jobs:                           # CG Table 2 (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130)
   gh_fte_10ac: 6.5
