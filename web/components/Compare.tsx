@@ -29,40 +29,40 @@ export function Compare({ data }: { data: AppData }) {
       <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1500px] w-full mx-auto">
         <p className="kicker m-0 mb-2">Why this site</p>
         <h1 className="t-h1 m-0 max-w-[28ch]">Lansing wins: hotter heat, a cleaner grid, and a community that needs an answer</h1>
-        <div role="radiogroup" aria-label="Choose a site" className="flex gap-2 mt-5 flex-wrap">
+        <div role="radiogroup" aria-label="Choose a site" className="flex gap-2 mt-6 flex-wrap">
           <button role="radio" aria-checked={site === 2} className="btn" onClick={() => setSite(2)}>Site 2 · Lansing, NY (our proposal)</button>
           <button role="radio" aria-checked={site === 1} className="btn" onClick={() => setSite(1)}>Site 1 · 111 8th Ave, New York</button>
         </div>
-        <div className="grid gap-6 mt-5 lg:grid-cols-2">
-          <section className="card p-5" aria-live="polite">
-            <h2 className="m-0 text-[1.5rem]">{sel.meta.site}</h2>
+        <div className="grid gap-6 mt-6 lg:grid-cols-2">
+          <section className="card p-6" aria-live="polite">
+            <h2 className="m-0 text-h2">{sel.meta.site}</h2>
             {site === 2 ? (
-              <ul className="mt-3 pl-5 text-[1.125rem] leading-snug grid gap-2">
+              <ul className="mt-3 pl-6 text-body leading-snug grid gap-2">
                 <li>New-build campus: we can specify direct liquid cooling, which returns heat at {a.supply.capture_temp_C} °C.</li>
                 <li>Cleaner upstate grid, so heat pumps save more carbon.</li>
                 <li>A live town fight and a town under a NYSEG gas-connection moratorium (since February 2015; current status unverified) make heat reuse a real answer, not an add-on.</li>
                 <li>Unused acreage lets us bring users to the heat.</li>
               </ul>
             ) : (
-              <ul className="mt-3 pl-5 text-[1.125rem] leading-snug grid gap-2">
+              <ul className="mt-3 pl-6 text-body leading-snug grid gap-2">
                 {typeof b.why_not_chosen === "string" ? [...s1pts, ...gen].map((t, i) => <li key={i}>{t}</li>) : (b.why_not_chosen ?? []).map((w) => (<li key={w.point}><b>{w.point}.</b> {w.detail}</li>))}
               </ul>
             )}
           </section>
-          <section className="card p-5 overflow-x-auto">
-            <table className="w-full text-[1.125rem]">
+          <section className="card p-6 overflow-x-auto">
+            <table className="w-full text-body">
               <thead><tr className="text-left text-ink2"><th className="pb-2">Measure</th><th className="pb-2 text-right">Site 2 Lansing</th><th className="pb-2 text-right">Site 1 NYC</th></tr></thead>
               <tbody>
                 {rows.map((r) => (
                   <tr key={r.k} className="border-t border-line">
-                    <td className="py-2 pr-3">{r.k} <span className="text-ink2 text-[1rem]">{r.unit}</span></td>
+                    <td className="py-2 pr-3">{r.k} <span className="text-ink2 text-caption">{r.unit}</span></td>
                     <td className="num text-right font-bold" style={r.better === "2" ? { color: "var(--teal-text)" } : undefined}>{r.v2}{r.better === "2" && <span aria-label="better"> ✓</span>}</td>
                     <td className="num text-right font-bold" style={r.better === "1" ? { color: "var(--teal-text)" } : undefined}>{r.v1}{r.better === "1" && <span aria-label="better"> ✓</span>}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <p className="text-[1rem] text-ink2 mb-0 mt-3">A check mark shows the better value on that row. Site 1 totals include its central town-ring heat pump; Lansing totals cover Phases 1-2 only, so the COP row compares like-for-like capture temperatures.</p>
+            <p className="text-caption text-ink2 mb-0 mt-3">A check mark shows the better value on that row. Site 1 totals include its central town-ring heat pump; Lansing totals cover Phases 1-2 only, so the COP row compares like-for-like capture temperatures.</p>
           </section>
         </div>
       </main>

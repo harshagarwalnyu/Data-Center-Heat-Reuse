@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { Site2Data } from "@/lib/types";
 import { MONTHS, dec, int } from "@/lib/format";
@@ -9,12 +9,12 @@ const tip = { contentStyle: { background: "var(--surface)", border: "1px solid v
 const axisTick = { fill: "var(--ink2)", fontSize: 17 };
 const axisLine = { stroke: "var(--line)" };
 
-export function Legend({ items }: { items: { color: string; label: string; dashed?: boolean }[] }) {
+export function Legend({ items }: { items: { color: string; label: string; dashed?: boolean; hatch?: boolean }[] }) {
   return (
-    <ul className="flex flex-wrap gap-x-5 gap-y-1 text-[1.0625rem] text-ink list-none p-0 m-0">
+    <ul className="flex flex-wrap gap-x-5 gap-y-1 text-caption text-ink list-none p-0 m-0">
       {items.map((i) => (
         <li key={i.label} className="flex items-center gap-2">
-          <span aria-hidden className="inline-block w-5 h-1.5 rounded" style={{ background: i.dashed ? "transparent" : i.color, borderTop: i.dashed ? `3px dashed ${i.color}` : undefined }} />
+          <span aria-hidden className={i.hatch ? "inline-block w-5 h-3 rounded-sm hatch-swatch" : "inline-block w-5 h-1.5 rounded"} style={i.hatch ? undefined : { background: i.dashed ? "transparent" : i.color, borderTop: i.dashed ? `3px dashed ${i.color}` : undefined }} />
           {i.label}
         </li>
       ))}
@@ -96,9 +96,20 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
           </AreaChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-[1.0625rem] text-ink2 m-0">Outdoor temperature (°C) for the same week.</p>
+      <p className="text-caption text-ink2 m-0">Outdoor temperature (°C) for the same week.</p>
     </div>
   );
+}
+
+/** Insight title for the cost chart. Every clause is checked against the data, so it can never overclaim (the live bar included). */
+export function lcohTitle(d: Site2Data, live?: number): string {
+  const f = d.finance;
+  const rivals = [f.incumbent_usd_mwh.propane, f.incumbent_usd_mwh.heating_oil, f.incumbent_usd_mwh.electric_resistance];
+  const cheapest = Math.min(...rivals);
+  const worst = Math.max(f.lcoh_usd_mwh.coop_4pct, f.lcoh_usd_mwh.utility_7pct, f.lcoh_usd_mwh.private_10pct, live ?? 0);
+  if (worst < cheapest) return "Recovered heat costs less than propane, oil and electric heat";
+  if (live !== undefined) return `At your settings heat costs $${int(live)} per MWh, against $${int(f.incumbent_usd_mwh.propane)} for propane`;
+  return "Recovered heat can undercut propane, oil and electric heat";
 }
 
 /** Horizontal bars of cost per MWh of delivered heat: ours (3 ownership models) vs what Lansing pays today. */
@@ -117,25 +128,36 @@ export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: num
     kind: k === "natural_gas" ? "gas" : "inc",
   }));
   const rows = [...ours, ...inc];
-  const color = (k: string) => (k === "live" ? "var(--ink)" : k === "ours" ? "var(--teal)" : k === "gas" ? "var(--ink2)" : "var(--ember)");
+  const hid = useId().replace(/:/g, "");
+  // Hatched fill for what Lansing pays today, so the two groups differ by pattern as well as colour.
+  const color = (k: string) => (k === "live" ? "var(--ink)" : k === "ours" ? "var(--teal)" : k === "gas" ? `url(#${hid}-gas)` : `url(#${hid}-inc)`);
+  const stroke = (k: string) => (k === "gas" ? "var(--ink2)" : k === "inc" ? "var(--ember)" : "none");
   return (
     <div className="flex flex-col h-full min-h-0">
-      <Legend items={[{ color: "var(--teal)", label: "Recovered heat, cost to produce" }, { color: "var(--ember)", label: "What Lansing pays today" }]} />
+      <Legend items={[{ color: "var(--teal)", label: "Recovered heat, cost to produce" }, { color: "var(--ember)", label: "What Lansing pays today", hatch: true }]} />
       <div className="flex-1 min-h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={rows} layout="vertical" margin={{ top: 10, right: 70, left: 6, bottom: 4 }}>
+            <defs>
+              {([["inc", "var(--ember)"], ["gas", "var(--ink2)"]] as const).map(([k, c]) => (
+                <pattern key={k} id={`${hid}-${k}`} width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <rect width="8" height="8" fill={c} fillOpacity={0.16} />
+                  <rect width="3.5" height="8" fill={c} />
+                </pattern>
+              ))}
+            </defs>
             <CartesianGrid horizontal={false} strokeDasharray="3 4" />
             <XAxis type="number" tick={axisTick} axisLine={axisLine} tickLine={false} unit="" domain={[0, "dataMax + 20"]} tickFormatter={(v) => `$${v}`} />
             <YAxis type="category" dataKey="name" width={236} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
             <Tooltip {...tip} formatter={(v) => `$${int(Number(v))} per MWh of heat`} />
             <Bar isAnimationActive={false} dataKey="v" radius={[0, 6, 6, 0]} barSize={26}>
-              {rows.map((r) => <Cell key={r.name} fill={color(r.kind)} />)}
-              <LabelList dataKey="v" position="right" formatter={(v) => `$${int(Number(v))}`} fill="var(--ink)" fontSize={17} fontWeight={700} />
+              {rows.map((r) => <Cell key={r.name} fill={color(r.kind)} stroke={stroke(r.kind)} strokeWidth={1.5} />)}
+              <LabelList dataKey="v" position="right" formatter={(v) => `$${int(Number(v))}`} fill="var(--ink)" fontSize={17} fontWeight={700} className="num" />
             </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-[1.0625rem] text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).</p>
+      <p className="text-caption text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).</p>
     </div>
   );
 }
@@ -170,10 +192,11 @@ export function RingLcoh({ d, ringL }: { d: Site2Data; ringL: Partial<Record<str
   const propane = d.finance.incumbent_usd_mwh.propane;
   const rows: { id: string; name: string; v: number }[] = (["onsite", "corridor", "town"] as const).filter((k) => ringL[k] !== undefined).map((k) => ({ id: k, name: RING_NAME[k], v: ringL[k] as number }));
   rows.push({ id: "ashp", name: "Air-source heat pump per home", v: d.finance.incumbent_usd_mwh.air_source_hp });
+  const below = rows.filter((r) => r.id !== "ashp" && r.v < propane);
   const max = Math.max(propane * 1.4, ...rows.map((r) => r.v)) * 1.3;
   return (
     <div className="flex flex-col h-full min-h-0">
-      <p className="m-0 font-bold text-[1.125rem]">Cost to make heat, by ring ($ per MWh, 7% finance)</p>
+      <p className="m-0 font-bold text-body">{below.length === 1 ? `Only the ${RING_NAME[below[0].id].toLowerCase()} undercuts propane's $${int(propane)} per MWh` : "Cost to make heat, by ring"} <span className="font-semibold text-ink2">($ per MWh, 7% finance)</span></p>
       <div className="flex-1 min-h-[220px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={rows} layout="vertical" margin={{ top: 26, right: 30, left: 6, bottom: 4 }}>

@@ -31,7 +31,7 @@ export function Home({ data }: { data: AppData }) {
     <div className="min-h-dvh flex flex-col">
       <NavBar active="/" />
       <main className="flex-1 w-full max-w-[1400px] mx-auto px-[clamp(1rem,3vw,3rem)] py-[clamp(1.5rem,4vh,3rem)] grid gap-[clamp(2rem,5vh,3.5rem)]">
-        <section aria-labelledby="home-h" className="grid gap-5 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end">
+        <section aria-labelledby="home-h" className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end">
           <div>
             <p className="kicker m-0 mb-3">Data-center heat for Lansing, NY</p>
             <h1 id="home-h" className="t-h1 m-0">
@@ -51,7 +51,7 @@ export function Home({ data }: { data: AppData }) {
 
         <section aria-labelledby="rings-h" className="grid gap-4">
           <h2 id="rings-h" className="t-h2 m-0 section-rule">Three rings, built only where the numbers pass</h2>
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-stretch">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-stretch">
             <ol className="list-none m-0 p-0 grid gap-3 content-start">
               {rings.map((r) => (
                 <li key={r.id} className="card p-4">
