@@ -7,7 +7,7 @@ import { cop, FUEL_LABEL, HOME_SIZES, household, isDirect, CAPTURE_TEMP_C } from
 import { dec, int, usd } from "@/lib/format";
 import { ringColor, ringShort, ringText } from "../ui";
 
-export function QrCode({ url, size = 160, label }: { url: string; size?: number; label?: string }) {
+export function QrCode({ url, size = 160, label, hideCaption }: { url: string; size?: number; label?: string; hideCaption?: boolean }) {
   const [svg, setSvg] = useState("");
   useEffect(() => {
     let live = true;
@@ -19,7 +19,7 @@ export function QrCode({ url, size = 160, label }: { url: string; size?: number;
   return (
     <figure className="m-0 inline-flex flex-col items-center gap-1">
       <div style={{ width: size, height: size, background: "#fff", borderRadius: 8, padding: 4 }} role="img" aria-label={label ?? `QR code linking to ${url}`} dangerouslySetInnerHTML={{ __html: svg }} />
-      <figcaption className="text-[1rem] text-ink2 break-all text-center" style={{ maxWidth: size + 40 }}>{url}</figcaption>
+      {!hideCaption && <figcaption className="text-[1rem] text-ink2 break-all text-center" style={{ maxWidth: size + 40 }}>{url}</figcaption>}
     </figure>
   );
 }
@@ -28,29 +28,30 @@ export function QrCode({ url, size = 160, label }: { url: string; size?: number;
 export function RatioBars({ d }: { d: Site2Data }) {
   const calm = useReducedMotion();
   const availMWh = d.supply.heat_available_GWh * 1000;
-  const demand = d.rings.reduce((s, r) => s + r.annual_MWh, 0);
+  const demand = d.totals.heat_delivered_MWh;
   const ratio = availMWh / demand;
-  const pct = (demand / availMWh) * 100;
+  const pct = d.totals.share_of_available_pct;
+  const used = d.rings.filter((r) => !r.conditional);
   return (
     <div className="flex flex-col gap-6 w-full">
       <div className="flex items-end gap-4 flex-wrap">
         <div className="serif font-bold num leading-none text-ember-text" style={{ fontSize: "clamp(4rem,9vw,8rem)" }}>{dec(ratio, 1)}&times;</div>
-        <div className="text-[1.375rem] text-ink2 pb-3 max-w-[16ch] leading-tight">more heat than all three rings can use</div>
+        <div className="text-[1.375rem] text-ink2 pb-3 max-w-[16ch] leading-tight">more heat than the network uses</div>
       </div>
       <div>
         <div className="flex justify-between text-[1.125rem] mb-1.5"><b>Heat the data center produces</b><span className="num">{int(d.supply.heat_available_GWh)} GWh per year</span></div>
         <motion.div className="h-14 rounded-xl origin-left" style={{ background: "var(--amber)" }} initial={calm ? false : { scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.9, ease: "easeOut" }} aria-hidden />
       </div>
       <div>
-        <div className="flex justify-between text-[1.125rem] mb-1.5"><b>Heat Lansing can use (all 3 rings)</b><span className="num">{int(demand / 1000)} GWh per year</span></div>
+        <div className="flex justify-between text-[1.125rem] mb-1.5"><b>Heat the network uses ({dec(pct, 1)}%)</b><span className="num">{dec(demand / 1000, 0)} GWh per year</span></div>
         <div className="flex h-14 rounded-xl overflow-hidden" style={{ width: `${pct}%`, minWidth: 90, gap: 2 }} aria-hidden>
-          {d.rings.map((r) => (
+          {used.map((r) => (
             <motion.div key={r.id} style={{ flex: r.annual_MWh, background: ringColor(r.id) }} initial={calm ? false : { scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }} className="origin-left" />
           ))}
         </div>
         <ul className="flex flex-wrap gap-x-5 gap-y-1 mt-2 list-none p-0 text-[1.0625rem]">
-          {d.rings.map((r) => (
-            <li key={r.id}><span aria-hidden className="inline-block w-3.5 h-3.5 rounded-sm mr-2 align-middle" style={{ background: ringColor(r.id) }} />{ringShort(r.id)} <span className="num text-ink2">{int(r.annual_MWh / 1000)} GWh</span></li>
+          {used.map((r) => (
+            <li key={r.id}><span aria-hidden className="inline-block w-3.5 h-3.5 rounded-sm mr-2 align-middle" style={{ background: ringColor(r.id) }} />{ringShort(r.id)} <span className="num text-ink2">{dec(r.annual_MWh / 1000, 1)} GWh</span></li>
           ))}
         </ul>
       </div>
@@ -61,10 +62,10 @@ export function RatioBars({ d }: { d: Site2Data }) {
 /** Temperature ladder: what each user needs vs what the data center can hand over. */
 export function TempLadder({ data }: { data: AppData }) {
   const d = data.site2;
-  const rows = [...data.offtakers].sort((a, b) => a.supply_temp_C - b.supply_temp_C);
+  const rows = data.offtakers.filter((o) => o.ring !== "none").sort((a, b) => a.supply_temp_C - b.supply_temp_C);
   const Tliq = d.supply.capture_temp_C;
   const Tair = CAPTURE_TEMP_C.air;
-  const x0 = 330, x1 = 960, tMin = 10, tMax = 80, rowH = 46, top = 74;
+  const x0 = 360, x1 = 960, tMin = 10, tMax = 80, rowH = 38, top = 74;
   const X = (t: number) => x0 + ((t - tMin) / (tMax - tMin)) * (x1 - x0);
   const H = top + rows.length * rowH + 50;
   return (
@@ -89,11 +90,11 @@ export function TempLadder({ data }: { data: AppData }) {
         const c = cop(o.supply_temp_C, Tliq);
         return (
           <g key={o.id}>
-            <text x={x0 - 14} y={y + 6} fontSize="18" fontWeight="600" fill="var(--ink)" textAnchor="end">{o.name}</text>
+            <text x={x0 - 14} y={y + 6} fontSize="18" fontWeight="600" fill="var(--ink)" textAnchor="end">{o.name.length > 30 ? o.name.slice(0, 29).replace(/[ /,]+$/, "") + "…" : o.name}</text>
             <line x1={X(tMin)} x2={X(o.supply_temp_C)} y1={y} y2={y} stroke={ringColor(o.ring)} strokeWidth="3" opacity="0.5" />
             <circle cx={X(o.supply_temp_C)} cy={y} r="9" fill={ringColor(o.ring)} stroke="var(--bg)" strokeWidth="3" />
-            <text x={X(o.supply_temp_C) + 16} y={y + 6} fontSize="17" fill="var(--ink)" className="num" fontWeight="700">
-              {o.supply_temp_C} °C <tspan fill="var(--ink2)" fontWeight="500">{direct ? "direct" : `heat pump, COP ${dec(c, 1)}`}</tspan>
+            <text x={X(o.supply_temp_C) + (o.supply_temp_C > 60 ? -16 : 16)} textAnchor={o.supply_temp_C > 60 ? "end" : "start"} y={y + 6} fontSize="17" fill="var(--ink)" className="num" fontWeight="700" stroke="var(--bg)" strokeWidth="4" paintOrder="stroke">
+              {o.supply_temp_C} °C <tspan fill="var(--ink2)" fontWeight="500">{direct ? "direct" : c >= 8 ? "small boost" : `boost, COP ${dec(c, 1)}`}</tspan>
             </text>
           </g>
         );
@@ -144,8 +145,8 @@ export function HouseholdCalc({ d }: { d: Site2Data }) {
             <div className="text-ink2">{saves ? "saved on heating" : "vs today (extra cost)"}</div>
           </div>
           <div>
-            <div className="serif num font-bold leading-none text-ink" style={{ fontSize: "clamp(2.5rem,4.6vw,4.5rem)" }}>{dec(Math.abs(r.co2KgSaved) / 1000, 1)}<span className="unit">t CO₂ per year</span></div>
-            <div className="text-ink2">{r.co2KgSaved >= 0 ? "avoided" : "added"} for this home</div>
+            <div className="serif num font-bold leading-none text-ink" style={{ fontSize: "clamp(2.5rem,4.6vw,4.5rem)" }}>{dec(Math.abs(r.co2KgSaved) / 1000, 1)}<span className="unit">t</span></div>
+            <div className="text-ink2">tonnes of CO₂ {r.co2KgSaved >= 0 ? "avoided" : "added"} per year</div>
           </div>
         </div>
         <div className="grid gap-3">

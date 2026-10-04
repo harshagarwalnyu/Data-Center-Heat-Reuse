@@ -48,8 +48,11 @@ def tornado(cfg, T) -> list[dict]:
     pk = ["loop_pipe_usd_m", "onsite_pipe_usd_m", "trunk_usd_m"]
     run("Pipe cost", scale_capex(cfg, pk, t["pipe_cost"][0]), scale_capex(cfg, pk, t["pipe_cost"][1]),
         t["pipe_cost"][0], t["pipe_cost"][1], "x base")
-    run("Electricity price", C.override(cfg, "fin", "elec_price_usd_kwh", t["elec_price"][0]),
-        C.override(cfg, "fin", "elec_price_usd_kwh", t["elec_price"][1]), t["elec_price"][0], t["elec_price"][1], "$/kWh")
+    def ep(v):
+        c = C.override(cfg, "fin", "elec_price_usd_kwh", v)
+        return C.override(c, "fin", "elec_price_central_usd_kwh", cfg["fin"]["elec_price_central_usd_kwh"] * v / cfg["fin"]["elec_price_usd_kwh"])
+
+    run("Electricity price (both rates scaled)", ep(t["elec_price"][0]), ep(t["elec_price"][1]), t["elec_price"][0], t["elec_price"][1], "$/kWh")
     run("Heat pump efficiency (COP via eta)", C.override(cfg, "eng", "hp.eta", t["eta"][1]),
         C.override(cfg, "eng", "hp.eta", t["eta"][0]), t["eta"][1], t["eta"][0], "fraction of Carnot")
     run("Uptake (signed share of corridor homes)", C.override(cfg, "eng", "corridor.uptake", t["uptake"][1]),
@@ -89,14 +92,37 @@ def scenarios(cfg, T) -> dict:
                          unmet_hours=int((r["sim"]["disp"]["unmet"] > 1e-6).sum()),
                          backup_MWh=float(((r["sim"]["disp"]["D"]) * (1 - r["sim"]["disp"]["f"])).sum()),
                          lcoh7=r["fin"]["lcoh"]["utility_7pct"])
-    r400 = full(C.override(cfg, "eng", "supply.it_load_mw", 400), T=T)
-    out["dc_400MW"] = dict(heat_available_GWh=float(r400["sim"]["A"].sum() / 1000), delivered_GWh=r400["fin"]["D"] / 1000,
+    r400 = full(C.override(cfg, "eng", "supply.it_load_mw", 320), T=T)
+    out["dc_320MW_full_build"] = dict(heat_available_GWh=float(r400["sim"]["A"].sum() / 1000), delivered_GWh=r400["fin"]["D"] / 1000,
                            share_of_available_pct=100 * r400["fin"]["D"] / float(r400["sim"]["A"].sum()),
                            unmet_hours=int((r400["sim"]["disp"]["unmet"] > 1e-6).sum()), lcoh7=r400["fin"]["lcoh"]["utility_7pct"])
-    r70 = full(C.override(cfg, "eng", "town.sink.t_max", 70), include_town=True, T=T)
+    r70 = full(C.override(cfg, "eng", "town.sink", {"t_min": 70, "t_max": 70, "slope": 0.0, "t_ref": 10}), include_town=True, T=T)
     r65 = full(cfg, include_town=True, T=T)
     out["town_hot_loop"] = dict(lcoh7_ring_65C=r65["fin"]["lcoh_ring"]["town"], lcoh7_ring_70C_sensitivity=r70["fin"]["lcoh_ring"]["town"])
     # low-electricity-price (industrial rate) scenario
-    r12 = full(C.override(cfg, "fin", "elec_price_usd_kwh", 0.12), T=T)
-    out["elec_0.12"] = dict(lcoh7=r12["fin"]["lcoh"]["utility_7pct"])
+    r12 = full(C.override(cfg, "fin", "elec_price_central_usd_kwh", cfg["fin"]["elec_price_usd_kwh"]), T=T)
+    out["central_at_residential_rate"] = dict(lcoh7=r12["fin"]["lcoh"]["utility_7pct"], note="central HP + pumping at residential 0.245 instead of industrial")
+    rp = full(C.override(cfg, "fin", "prices.propane_usd_gal", 2.85), T=T)
+    out["propane_2.85_low_sensitivity"] = dict(propane_usd_mwh=rp["fin"]["incumbents"]["propane"], tariff_usd_mwh=rp["fin"]["tariff"],
+                                               household_savings_vs_propane_usd=rp["fin"]["household"]["savings_vs_propane_usd"],
+                                               lcoh7=rp["fin"]["lcoh"]["utility_7pct"])
     return out
+
+
+def _scan(cfg, T):
+    r = None
+    for n in range(50, 2001, 50):
+        r = full(C.override(cfg, "eng", "corridor.homes", n), T=T)["fin"]
+        if r["lcoh_ring"]["corridor"] <= r["blend_tariff"]:
+            return dict(min_homes=n, lcoh_ring=round(r["lcoh_ring"]["corridor"], 1), blend_tariff=round(r["blend_tariff"], 1))
+    return dict(min_homes=None, lcoh_ring_at_2000_homes=round(r["lcoh_ring"]["corridor"], 1), blend_tariff=round(r["blend_tariff"], 1))
+
+
+def breakeven_homes(cfg, T) -> dict:
+    """Homes at which corridor ring LCOH(7%) <= blended tariff under different capex-payer assumptions."""
+    c_pipe = C.override(C.override(cfg, "fin", "capex.loop_pipe_usd_m", 0.0), "fin", "capex.lateral_usd", 0.0)
+    c_hp = C.override(c_pipe, "fin", "capex.building_hp_usd", cfg["fin"]["capex"]["building_hp_usd"] * 0.5)
+    c_all = C.override(c_pipe, "fin", "capex.building_hp_usd", 0.0)
+    return dict(cba_pays_pipe_and_laterals=_scan(c_pipe, T), cba_pays_pipe_plus_half_of_building_hps=_scan(c_hp, T),
+                cba_pays_pipe_and_all_building_hps=_scan(c_all, T),
+                finding="Pipe alone is not enough: the building heat pumps (~$16k each) must also be funded (NYSEG NPA / NYSERDA Clean Heat / CBA) for 0.8x-propane tariffs to cover cost.")

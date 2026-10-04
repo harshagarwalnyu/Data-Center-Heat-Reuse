@@ -1,0 +1,27 @@
+import { chromium } from "playwright";
+import fs from "node:fs";
+const base = process.env.BASE || "http://localhost:4173";
+const sizes = [[1920, 1080], [1366, 768]];
+fs.mkdirSync("screenshots", { recursive: true });
+const b = await chromium.launch({ executablePath: process.env.CHROME || undefined });
+for (const [w, h] of sizes) {
+  const ctx = await b.newContext({ viewport: { width: w, height: h } });
+  const p = await ctx.newPage();
+  const errs = [];
+  p.on("pageerror", (e) => errs.push(String(e)));
+  p.on("console", (m) => m.type() === "error" && errs.push(m.text()));
+  for (let i = 1; i <= 11; i++) {
+    await p.goto(`${base}/#${i}`);
+    await p.reload();
+    await p.waitForTimeout(1800);
+    await p.screenshot({ path: `screenshots/story-${String(i).padStart(2, "0")}-${w}.png` });
+  }
+  for (const r of ["explore", "compare", "print"]) {
+    await p.goto(`${base}/${r}/`);
+    await p.waitForTimeout(1500);
+    await p.screenshot({ path: `screenshots/${r}-${w}.png`, fullPage: r !== "print" });
+  }
+  console.log(w, "errors:", [...new Set(errs)].slice(0, 8));
+  await ctx.close();
+}
+await b.close();

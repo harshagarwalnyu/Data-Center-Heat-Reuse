@@ -2,13 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Offtaker } from "@/lib/types";
+import { BASE_PATH } from "@/lib/config";
 import { BOUNDS, LAKE, ONSITE_R_KM, PLANT, ROUTE, TOWN, TOWN_R_KM, circle, makeProjector, type LonLat } from "@/lib/geo";
 import { ringColor } from "../ui";
 
 const LABELS: { at: LonLat; text: string; ring: string; dx: number; dy: number }[] = [
-  { at: PLANT, text: "Data center", ring: "dc", dx: -10, dy: -26 },
-  { at: [-76.59, 42.592], text: "Corridor homes + farms", ring: "corridor", dx: 0, dy: -22 },
-  { at: TOWN, text: "Town center", ring: "town", dx: 14, dy: -34 },
+  { at: PLANT, text: "Data center", ring: "dc", dx: -120, dy: -44 },
+  { at: [-76.59, 42.592], text: "Corridor homes", ring: "corridor", dx: -40, dy: -34 },
+  { at: TOWN, text: "Town center", ring: "town", dx: -40, dy: 74 },
 ];
 
 function cssVar(name: string, fallback: string) {
@@ -27,7 +28,7 @@ export function RingMapSvg({ offtakers }: { offtakers: Offtaker[] }) {
   return (
     <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east." className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
       <path d={path(LAKE)} fill="var(--teal)" opacity="0.22" />
-      <text x={60} y={H * 0.45} fontSize="22" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
+      <text x={60} y={H * 0.45} fontSize="34" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
       <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth={ONSITE_R_KM * pxPerKm * 0.9} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.28" />
       <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth="3.5" strokeDasharray="2 9" strokeLinecap="round" fill="none" />
       <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="var(--ember)" opacity="0.28" />
@@ -36,31 +37,32 @@ export function RingMapSvg({ offtakers }: { offtakers: Offtaker[] }) {
       <circle cx={tx} cy={ty} r={TOWN_R_KM * pxPerKm} fill="none" stroke="var(--violet)" strokeWidth="3" strokeDasharray="10 7" />
       {offtakers.map((o) => {
         const [x, y] = project([o.lon, o.lat]);
-        return <circle key={o.id} cx={x} cy={y} r="7" fill="var(--bg)" stroke={ringColor(o.ring)} strokeWidth="4"><title>{o.name}</title></circle>;
+        return <circle key={o.id} cx={x} cy={y} r="10" fill="var(--bg)" stroke={ringColor(o.ring)} strokeWidth="5"><title>{o.name}</title></circle>;
       })}
       <path d={`M${px},${py - 12} l11,19 h-22 z`} fill="var(--navy)" />
       {LABELS.map((l) => {
         const [x, y] = project(l.at);
-        const w = l.text.length * 11.5 + 20;
+        const w = l.text.length * 18.5 + 24;
         return (
           <g key={l.text} transform={`translate(${x + l.dx},${y + l.dy})`}>
-            <rect x={-8} y={-22} width={w} height={32} rx={8} fill="var(--bg)" opacity="0.92" />
-            <text x={0} y={0} fontSize="21" fontWeight="700" fill="var(--ink)">{l.text}</text>
+            <rect x={-10} y={-32} width={w} height={46} rx={10} fill="var(--bg)" opacity="0.92" />
+            <text x={0} y={0} fontSize="32" fontWeight="700" fill="var(--ink)">{l.text}</text>
           </g>
         );
       })}
       <g transform={`translate(${W - 190},${H - 30})`}>
         <line x1="0" x2={5 * pxPerKm} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />
-        <text x={5 * pxPerKm + 8} y="6" fontSize="18" fill="var(--ink)">5 km</text>
+        <text x={5 * pxPerKm + 8} y="8" fontSize="26" fill="var(--ink)">5 km</text>
       </g>
     </svg>
   );
 }
 
 /** MapLibre view with an offline-safe, tile-free vector style. Falls back to SVG if WebGL/MapLibre fails. */
-export function RingMap({ offtakers }: { offtakers: Offtaker[] }) {
+export function RingMap({ offtakers: all }: { offtakers: Offtaker[] }) {
+  const offtakers = all.filter((o) => o.lon >= BOUNDS[0][0] && o.lon <= BOUNDS[1][0] && o.lat >= BOUNDS[0][1] && o.lat <= BOUNDS[1][1]);
   const el = useRef<HTMLDivElement>(null);
-  const [failed, setFailed] = useState(false);
+  const [ready, setReady] = useState(false);
   const [streets, setStreets] = useState(false);
   const mapRef = useRef<import("maplibre-gl").Map | null>(null);
 
@@ -70,6 +72,7 @@ export function RingMap({ offtakers }: { offtakers: Offtaker[] }) {
     (async () => {
       try {
         const ml = await import("maplibre-gl");
+        ml.setWorkerUrl(`${BASE_PATH}/maplibre/maplibre-gl-worker.mjs`);
         if (cancelled || !el.current) return;
         const poly = (c: LonLat[]) => ({ type: "Feature" as const, properties: {}, geometry: { type: "Polygon" as const, coordinates: [c] } });
         const map = new ml.Map({
@@ -101,7 +104,7 @@ export function RingMap({ offtakers }: { offtakers: Offtaker[] }) {
                 id: "pts", type: "circle", source: "pts",
                 paint: {
                   "circle-radius": 7, "circle-color": cssVar("--bg", "#fbf7f0"), "circle-stroke-width": 4,
-                  "circle-stroke-color": ["match", ["get", "ring"], "onsite", cssVar("--ember", "#c2410c"), "corridor", cssVar("--teal", "#0b8ca6"), cssVar("--violet", "#7c4dcc")],
+                  "circle-stroke-color": ["match", ["get", "ring"], "onsite", cssVar("--ember", "#c2410c"), "corridor", cssVar("--teal", "#0b8ca6"), "town", cssVar("--violet", "#7c4dcc"), cssVar("--ink2", "#3a4856")],
                 },
               },
             ],
@@ -115,14 +118,15 @@ export function RingMap({ offtakers }: { offtakers: Offtaker[] }) {
           d.style.cssText = "font:700 17px var(--font-sans);color:var(--ink);background:color-mix(in srgb,var(--bg) 90%,transparent);padding:3px 9px;border-radius:8px;white-space:nowrap;pointer-events:none";
           new ml.Marker({ element: d, offset: [l.dx + 20, l.dy + 10] }).setLngLat(l.at).addTo(map);
         }
+        map.on("load", () => { if (!cancelled) setReady(true); });
         map.on("error", (e) => {
           // Tile errors are expected offline; only a style/WebGL failure is fatal.
-          const msg = String((e as { error?: Error }).error?.message ?? "");
-          if (/webgl/i.test(msg)) setFailed(true);
+          const msg = String(e.error?.message ?? "");
+          if (/webgl/i.test(msg)) setReady(false);
         });
         cleanup = () => { map.remove(); mapRef.current = null; };
       } catch {
-        if (!cancelled) setFailed(true);
+        if (!cancelled) setReady(false);
       }
     })();
     return () => { cancelled = true; cleanup(); };
@@ -133,13 +137,13 @@ export function RingMap({ offtakers }: { offtakers: Offtaker[] }) {
     if (m && m.getLayer("osm")) m.setLayoutProperty("osm", "visibility", streets ? "visible" : "none");
   }, [streets]);
 
-  if (failed) return <RingMapSvg offtakers={offtakers} />;
   return (
     <div className="relative w-full h-full min-h-[260px]">
-      <div ref={el} className="absolute inset-0 rounded-2xl overflow-hidden" role="img" aria-label="Interactive map of the three heat rings around the Lansing data center." />
-      <button className="btn absolute bottom-3 left-3 z-10 !min-h-[44px] text-[1rem]" aria-pressed={streets} onClick={() => setStreets((s) => !s)}>
+      <div className="absolute inset-0"><RingMapSvg offtakers={offtakers} /></div>
+      <div ref={el} className="absolute inset-0 rounded-2xl overflow-hidden" style={{ opacity: ready ? 1 : 0, pointerEvents: ready ? "auto" : "none" }} role="img" aria-label="Interactive map of the three heat rings around the Lansing data center." />
+      {ready && <button className="btn absolute bottom-3 left-3 z-10 !min-h-[44px] text-[1rem]" aria-pressed={streets} onClick={() => setStreets((s) => !s)}>
         Streets (needs internet)
-      </button>
+      </button>}
     </div>
   );
 }

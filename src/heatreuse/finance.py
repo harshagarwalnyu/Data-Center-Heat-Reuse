@@ -96,7 +96,8 @@ def evaluate(cfg, sim) -> dict:
     d, R, T = sim["disp"], sim["rings"], sim["T"]
     act = d["active"]
     n_years = fin["years"]
-    price = fin["elec_price_usd_kwh"] * 1000  # $/MWh
+    price = fin["elec_price_usd_kwh"] * 1000  # residential $/MWh (building HPs)
+    price_c = fin["elec_price_central_usd_kwh"] * 1000  # large-industrial $/MWh (central HP, pumping)
     lines = capex_lines(cfg, sim)
     capex_total = sum(x["usd"] for x in lines)
     capex_ring, share = allocate(lines, sim)
@@ -114,7 +115,8 @@ def evaluate(cfg, sim) -> dict:
         if r == "corridor":
             fixed += R[r]["units"] * (o["hp_service_usd_home"] + o["customer_usd_home"])
         fixed += o["program_usd_yr"] * share[r]
-        var = (Er + pump) * price + bk * backup_cost_mwh + o["heat_purchase_usd_mwh"] * Dr
+        p_hp = price if r == "corridor" else price_c
+        var = Er * p_hp + pump * price_c + bk * backup_cost_mwh + o["heat_purchase_usd_mwh"] * Dr
         ring[r] = dict(D=Dr, capex=capex_ring[r], fixed=fixed, var=var, elec_mwh=Er + pump, backup_mwh=bk)
     D = sum(v["D"] for v in ring.values())
     capex = sum(v["capex"] for v in ring.values())
@@ -165,6 +167,8 @@ def evaluate(cfg, sim) -> dict:
                          npv7_musd=(rv * af - opex_tot * af - capex) / 1e6,
                          npv7_itc_musd=(rv * af - opex_tot * af - capex * (1 - fin["incentives"]["itc_pct"])) / 1e6,
                          household_savings_vs_propane_usd=typ * (inc["propane"] - tf)))
+    rc = ring["corridor"]
+    npv_cor = (rc["D"] * blend - rc["fixed"] - rc["var"]) * af - rc["capex"]
     mult = 1 + fin["capex"]["soft_cost_pct"] + fin["capex"]["contingency_pct"]
     dc_specific = sum(x["usd"] for x in lines if x["item"].startswith(("DC-side", "Source-side", "On-site"))) * mult
     yr = fin["dc_exit"]["year"]
@@ -172,12 +176,12 @@ def evaluate(cfg, sim) -> dict:
     peakS_cor = float(R["corridor"]["S"].max())
     repl = peakS_cor * 1000 * fin["dc_exit"]["replacement_source_usd_kw"]
     S_cor = float(R["corridor"]["S"].sum())
-    uplift = (repl * crf(rates["utility_7pct"], n_years - yr) + S_cor / 4.5 * price) / max(ring["corridor"]["D"], 1)
+    uplift = (repl * crf(rates["utility_7pct"], n_years - yr) + S_cor / 4.5 * price_c) / max(ring["corridor"]["D"], 1)
     out = dict(lines=lines, capex_total=capex_total, ring=ring, opex_fixed=fixed, opex_var=var, opex_total=opex_tot, D=D,
                lcoh=lcoh_tot, lcoh_ring=lcoh_ring, lcoh_itc7=lcoh_itc_tot, lcoh_itc_ring=lcoh_itc_ring, incumbents=inc, tariff=tariff, li_tariff=li, blend_tariff=blend,
                ref=ref, ref_name=ref_name, household=hh, revenue=rev, npv7=npv, npv7_itc=npv_itc,
                funding_gap_musd=max(0, -npv) / 1e6, funding_gap_itc_musd=max(0, -npv_itc) / 1e6,
-               tariff_scenarios=scen, share=share, capex_ring=capex_ring,
+               tariff_scenarios=scen, share=share, corridor_npv7=npv_cor, corridor_gap_musd=max(0, -npv_cor) / 1e6, capex_ring=capex_ring,
                dc_exit=dict(year=yr, stranded_musd=stranded / 1e6, replacement_source_musd=repl / 1e6,
                             corridor_cost_uplift_usd_mwh=uplift))
     tr = [x for x in lines if x["item"].startswith("Town transmission")]

@@ -1,51 +1,29 @@
-# Cooling integration — Lake Hawkeye (Site 2)
+# Cooling integration — Lake Hawkeye (TeraWulf / former Cayuga), Lansing NY
 
-Data-center side of the heat-reuse interface for the proposed TeraWulf campus at the former Cayuga plant, Lansing, NY. Heat recovery is a sidestream. Facility cooling does not depend on offtakers.
+Data-center side of heat capture for the proposed Lake Hawkeye campus. Site 1 (111 8th Ave, NYC) is the comparison case only where a cooling interface differs.
 
-Scope: capture point, air vs direct-liquid temperatures, sidestream plate heat exchanger, dry-cooler retention, control priority, heat meter, ownership boundary, heat-pump COP screen, hydraulic layout, failure modes.
+**Status:** in progress. Findings are appended as they are verified. Unverified claims are marked `[unverified]`. Assumptions are marked **ASSUMPTION**.
 
-Comparison site (not designed here): Site 1, 111 8th Avenue, New York (commissioned carrier hotel).
+**Model basis (reality check, verified 2026-10-03):** ~150 MW phase 1 base; 300–400 MW build-out scenario. Sealed closed-loop water/propylene-glycol cooling rejected by fan dry coolers. Dry coolers stay the primary heat sink.
 
-Status: skeleton written first; sections below are filled as claims are verified. Date basis: 2026-10-03.
+## 1. What this lane covers
 
-## 1. What this interface is
+## 2. Organizer source notes (HDR / Grundfos pack)
 
-## 2. Lake Hawkeye cooling architecture (as stated)
+## 3. Lake Hawkeye cooling system as stated
 
-## 3. Capture point
-
-## 4. Temperatures: air cooling vs direct liquid cooling
-
-### 4.1 Organizer source ranges
-
-### 4.2 ASHRAE water classes
-
-### 4.3 NVIDIA GB200 / GB300-class facility water
+## 4. Capture point and temperatures
 
 ## 5. Sidestream plate heat exchanger
 
-## 6. Dry coolers retained at 100%
+## 6. Dry coolers, control priority, heat meter, ownership
 
-## 7. Control priority — cooling always wins
+## 7. Heat-pump COP table
 
-## 8. Heat meter at the demarcation
+## 8. Hydraulic layout
 
-## 9. Ownership boundary
+## 9. Failure modes
 
-## 10. COP screen (0.5 × Carnot, 3 K approach per heat exchanger)
-
-## 11. Hydraulic layout
-
-## 12. Failure modes
-
-## 13. Design implications for Lansing offtakers
+## 10. Design implications for the covenant
 
 ## Lane status
-
-### Done
-
-### Missing
-
-### Open questions
-
-## Sources

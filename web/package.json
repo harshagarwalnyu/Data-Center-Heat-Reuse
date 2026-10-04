@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/copy-maplibre.mjs && node scripts/gen-placeholder.mjs",
     "build": "next build",
     "test": "vitest run",
     "shots": "node scripts/shots.mjs"

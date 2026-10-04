@@ -8,7 +8,7 @@ site:
   lon: -76.635978
   epw_glob: "ith/*.epw"   # Climate.OneBuilding TMYx 2009-2023, Ithaca Tompkins Rgnl AP 725155
 supply:
-  it_load_mw: 150         # PLAN.md reality check; [F2] phase 1 138-150 MW
+  it_load_mw: 150         # news-reported phase 1 ~150 MW; verification.md 3a: TeraWulf filing = 400 MW gross / 320 MW critical IT (full-build scenario), ops ~2029
   load_factor: 0.8        # PLAN.md section 1 (0.7-0.9)
   capture_fraction: 0.75  # [A] base; scenarios 0.40 (RII 33-42% of power) and 0.85 (T5 s11 / opening deck s7-8 "up to 85% recoverable")
   capture_temp_c: 50      # [CG] DLC waste heat 45-55 C; [HR] 45-65 C

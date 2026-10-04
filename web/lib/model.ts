@@ -12,7 +12,7 @@ export const COP_MAX = 8;
 export const DIRECT_PUMP_FRACTION = 0.02; // pumping power when heat is used directly, no lift
 export const CAPTURE_TEMP_C = { air: 30, liquid: 50 } as const;
 // Default sink temperatures if a ring does not carry sink_temp_C (assumption, documented in docs/frontend-notes.md).
-export const DEFAULT_SINK_C: Record<string, number> = { onsite: 45, corridor: 55, town: 60 };
+export const DEFAULT_SINK_C: Record<string, number> = { onsite: 45, corridor: 55, town: 65 };
 // Share of displaced fuel, used only to blend emission factors for ring-level CO2 (assumption).
 export const FUEL_MIX: Partial<Record<FuelKey, number>> = { propane: 0.55, heating_oil: 0.25, natural_gas: 0.2 };
 const FALLBACK_EF: Record<FuelKey, number> = { propane: 210, heating_oil: 252, natural_gas: 181, electric_resistance: 0, air_source_hp: 0 };
@@ -44,7 +44,7 @@ export function cop(tSinkC: number, tSourceC: number, eta = ETA, approach = APPR
 
 /** True when the source is warm enough to feed the user directly with no heat pump lift. */
 export function isDirect(tSinkC: number, tSourceC: number, approach = APPROACH_K): boolean {
-  return tSourceC - 2 * approach >= tSinkC;
+  return tSourceC - approach >= tSinkC;
 }
 
 export function crf(rate: number, n = LIFETIME_YR): number {
@@ -80,7 +80,7 @@ export function baseParams(d: Site2Data): Params {
     uptakePct: 100,
     discountPct: d.assumptions?.discount_rate_base_pct ?? 4,
     loadMW: d.supply.it_load_MW,
-    includeTown: true,
+    includeTown: false, // data-file totals cover Phases 1-2; the town ring is reported separately
   };
 }
 
@@ -226,11 +226,12 @@ export function household(d: Site2Data, fuel: FuelKey, factor: number): Househol
   const mwh = d.finance.household.typical_MWh_yr * factor;
   const inc = d.finance.incumbent_usd_mwh[fuel];
   const tariff = d.finance.tariff_usd_mwh;
+  const given = factor === 1 ? (fuel === "propane" ? d.finance.household.savings_vs_propane_usd : fuel === "heating_oil" ? d.finance.household.savings_vs_oil_usd : undefined) : undefined;
   const ef = d.assumptions?.ef_kg_per_MWh_th?.[fuel] ?? FALLBACK_EF[fuel];
   const eff = d.assumptions?.fuel_efficiency?.[fuel] ?? FALLBACK_EFF[fuel];
   const grid = d.assumptions?.grid_kg_per_MWh ?? FALLBACK_GRID;
   const electric = fuel === "electric_resistance" || fuel === "air_source_hp";
   const oldKg = mwh * ((electric ? grid : ef) / eff);
   const newKg = (mwh / d.totals.avg_cop) * grid;
-  return { heatMWh: mwh, incumbentCost: mwh * inc, coopCost: mwh * tariff, savingsUsd: householdSavings(mwh, inc, tariff), co2KgSaved: oldKg - newKg };
+  return { heatMWh: mwh, incumbentCost: mwh * inc, coopCost: mwh * tariff, savingsUsd: given ?? householdSavings(mwh, inc, tariff), co2KgSaved: oldKg - newKg };
 }

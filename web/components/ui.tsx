@@ -82,6 +82,6 @@ export function Stat({ value, unit, label, tone = "ink", big = false }: { value:
 export function RingDot({ ring }: { ring: string }) {
   return <span aria-hidden className="inline-block w-3.5 h-3.5 rounded-full mr-2 align-middle" style={{ background: ringColor(ring) }} />;
 }
-export const ringColor = (id: string) => (id === "onsite" ? "var(--ember)" : id === "corridor" ? "var(--teal)" : "var(--violet)");
+export const ringColor = (id: string) => (id === "onsite" ? "var(--ember)" : id === "corridor" ? "var(--teal)" : id === "town" ? "var(--violet)" : "var(--ink2)");
 export const ringText = (id: string) => (id === "onsite" ? "var(--ember-text)" : id === "corridor" ? "var(--teal-text)" : "var(--violet-text)");
 export const ringShort = (id: string) => (id === "onsite" ? "On-site campus" : id === "corridor" ? "Corridor homes" : "Town center");

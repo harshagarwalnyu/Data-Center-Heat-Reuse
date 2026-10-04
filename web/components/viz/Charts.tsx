@@ -80,7 +80,7 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={rows} margin={{ top: 4, right: 12, left: 6, bottom: 0 }}>
             <XAxis dataKey="h" type="number" domain={[0, 167]} hide />
-            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" °C" domain={["dataMin - 2", "dataMax + 2"]} tickCount={3} />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" °C" domain={[Math.floor(Math.min(...rows.map((r) => r.outdoor_C))) - 2, Math.ceil(Math.max(...rows.map((r) => r.outdoor_C))) + 2]} tickCount={3} />
             <ReferenceLine y={0} stroke="var(--line)" />
             <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} °C`} />
             <Area type="monotone" dataKey="outdoor_C" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />
@@ -146,6 +146,45 @@ export function Tornado({ d }: { d: Site2Data }) {
           <Bar dataKey="high" stackId="s" fill="var(--ember)" name="High case" />
         </BarChart>
       </ResponsiveContainer>
+    </div>
+  );
+}
+
+const RING_NAME: Record<string, string> = { onsite: "On-site farm campus", corridor: "Corridor homes", town: "Town center" };
+const RING_VERDICT: Record<string, string> = { onsite: "pays for itself", corridor: "needs a benefit fund", town: "not yet", ashp: "the honest alternative" };
+const RING_COLOR: Record<string, string> = { onsite: "var(--teal)", corridor: "var(--ember)", town: "var(--violet)", ashp: "var(--ink2)" };
+
+/** Cost of heat by ring (7% finance) against what propane costs today. */
+export function RingLcoh({ d, ringL }: { d: Site2Data; ringL: Partial<Record<string, number>> }) {
+  const propane = d.finance.incumbent_usd_mwh.propane;
+  const rows: { id: string; name: string; v: number }[] = (["onsite", "corridor", "town"] as const).filter((k) => ringL[k] !== undefined).map((k) => ({ id: k, name: RING_NAME[k], v: ringL[k] as number }));
+  rows.push({ id: "ashp", name: "Air-source heat pump per home", v: d.finance.incumbent_usd_mwh.air_source_hp });
+  const max = Math.max(propane * 1.4, ...rows.map((r) => r.v)) * 1.3;
+  return (
+    <div className="flex flex-col h-full min-h-0">
+      <p className="m-0 font-bold text-[1.125rem]">Cost to make heat, by ring ($ per MWh, 7% finance)</p>
+      <div className="flex-1 min-h-[220px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={rows} layout="vertical" margin={{ top: 26, right: 30, left: 6, bottom: 4 }}>
+            <CartesianGrid horizontal={false} strokeDasharray="3 4" />
+            <XAxis type="number" domain={[0, Math.ceil(max / 100) * 100]} tick={axisTick} axisLine={axisLine} tickLine={false} tickFormatter={(v) => `$${v}`} />
+            <YAxis type="category" dataKey="name" width={210} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
+            <Tooltip {...tip} formatter={(v) => `$${int(Number(v))} per MWh`} />
+            <ReferenceLine x={propane} stroke="var(--ember)" strokeWidth={2.5} strokeDasharray="6 4" label={{ value: `Propane today $${int(propane)}`, position: "top", fill: "var(--ember-text)", fontSize: 15, fontWeight: 700 }} />
+            <Bar dataKey="v" barSize={34} radius={[0, 6, 6, 0]}>
+              {rows.map((r) => <Cell key={r.id} fill={RING_COLOR[r.id]} />)}
+              <LabelList dataKey="v" position="right" content={(p) => {
+                const i = Number(p.index ?? 0);
+                const r = rows[i];
+                if (!r) return null;
+                const x = Number(p.x ?? 0) + Number(p.width ?? 0) + 8;
+                const y = Number(p.y ?? 0) + Number(p.height ?? 0) / 2;
+                return <text x={x} y={y} dominantBaseline="middle" fontSize={16} fill="var(--ink)"><tspan fontWeight={700}>${int(r.v)}</tspan><tspan fill="var(--ink2)"> {RING_VERDICT[r.id]}</tspan></text>;
+              }} />
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }

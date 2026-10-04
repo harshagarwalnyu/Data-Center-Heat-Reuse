@@ -62,10 +62,10 @@ export function Explore({ data }: { data: AppData }) {
             </div>
             <Slider id="uptake" label="Home sign-up along the corridor" value={p.uptakePct} min={10} max={100} step={5} unit="%" onChange={(v) => set("uptakePct", v)} />
             <Slider id="disc" label="Cost of money (discount rate)" value={p.discountPct} min={1} max={12} step={0.5} unit="%" onChange={(v) => set("discountPct", v)} fmt={(v) => dec(v, 1)} />
-            <Slider id="load" label="Data center IT load" value={p.loadMW} min={30} max={400} step={10} unit="MW" onChange={(v) => set("loadMW", v)} />
+            <Slider id="load" label="Data center IT load" value={p.loadMW} min={5} max={400} step={5} unit="MW" onChange={(v) => set("loadMW", v)} />
             <label className="flex items-center gap-3 font-semibold text-[1.125rem] min-h-[44px]">
               <input type="checkbox" className="w-6 h-6" style={{ accentColor: "var(--teal)" }} checked={p.includeTown} onChange={(e) => set("includeTown", e.target.checked)} />
-              Build the town-center ring (Phase 3)
+              Add the town-center ring (Phase 3; fails the cost test today)
             </label>
             <button className="btn" onClick={() => setP(base)}>Reset to the base case</button>
           </section>

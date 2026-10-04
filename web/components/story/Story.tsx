@@ -119,7 +119,7 @@ export function Story({ data }: { data: AppData }) {
               {s.full ? (
                 <div className="w-full max-w-[1500px] mx-auto">{s.full}</div>
               ) : s.layout === "split" ? (
-                <div className="w-full max-w-[1600px] mx-auto grid gap-[clamp(1.5rem,3vw,3.5rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-center">
+                <div className={`w-full max-w-[1600px] mx-auto grid gap-[clamp(1.5rem,3vw,3.5rem)]  items-center ${s.visualWide ? "lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]" : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"}`}>
                   <div>
                     <p className="kicker m-0 mb-3">{s.kicker}</p>
                     <h1 id="step-h" className="headline m-0">{s.headline}</h1>
@@ -131,7 +131,7 @@ export function Story({ data }: { data: AppData }) {
                 <div className="w-full max-w-[1600px] mx-auto grid gap-4 content-center">
                   <div>
                     <p className="kicker m-0 mb-2">{s.kicker}</p>
-                    <h1 id="step-h" className="headline m-0 max-w-[26ch] !text-[clamp(2.25rem,3.2vw+0.3rem,3.5rem)]">{s.headline}</h1>
+                    <h1 id="step-h" className="headline m-0 max-w-[44ch] !text-[clamp(2rem,2.6vw,3.25rem)]">{s.headline}</h1>
                   </div>
                   <div className="min-w-0">{s.visual}</div>
                 </div>

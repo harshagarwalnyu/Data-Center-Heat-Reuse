@@ -33,6 +33,7 @@ engineering:
       - {name: "Chelsea Market (Google)", mwh: 6000}              # [A]
 finance:
   elec_price_usd_kwh: 0.25   # [A] ConEd commercial/multifamily
+  elec_price_central_usd_kwh: 0.20   # [A] ConEd large commercial
   prices: {steam_usd_mwh: 118.7, gas_usd_therm: 2.2}   # steam $41.53/Mlb x (1/1.194 MMBtu/Mlb) -> $34.8/MMBtu = $118.7/MWh (ConEd 10-K via facts-site1.md); gas [A]
   capex: {loop_pipe_usd_m: 3500, onsite_pipe_usd_m: 4500, trunk_usd_m: 5000, building_hp_usd: 9000, lateral_usd: 4000}   # [A] Manhattan trenching 4-8x rural
   tariff: {onsite_tariff_usd_mwh: 60}

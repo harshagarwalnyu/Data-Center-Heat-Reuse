@@ -38,7 +38,7 @@ export function Compare({ data }: { data: AppData }) {
               </ul>
             ) : (
               <ul className="mt-3 pl-5 text-[1.125rem] leading-snug grid gap-2">
-                {(b.why_not_chosen ?? []).map((w) => (<li key={w.point}><b>{w.point}.</b> {w.detail}</li>))}
+                {typeof b.why_not_chosen === "string" ? b.why_not_chosen.split(/\(\d\)\s*/).filter(Boolean).map((t, i) => <li key={i}>{t.trim()}</li>) : (b.why_not_chosen ?? []).map((w) => (<li key={w.point}><b>{w.point}.</b> {w.detail}</li>))}
               </ul>
             )}
           </section>

@@ -14,6 +14,10 @@ export interface Ring {
   sink_temp_C?: number;
   pipe_km: number;
   conditional?: boolean;
+  lcoh_usd_mwh_7pct?: number;
+  passes_gate?: boolean;
+  direct_heat_exchange?: boolean;
+  linear_heat_density_MWh_per_m?: number;
 }
 
 export interface Totals {
@@ -69,14 +73,16 @@ export interface Site2Data {
     low_income_tariff_usd_mwh: number;
     household: { typical_MWh_yr: number; savings_vs_propane_usd: number; savings_vs_oil_usd: number };
     tornado: { driver: string; low: number; high: number }[];
-    dc_exit: { year: number; stranded_musd: number; fallback: string };
+    dc_exit: { year: number; stranded_musd: number; fallback: string; replacement_source_musd?: number; corridor_cost_uplift_usd_mwh?: number };
   };
+  extras?: Extras;
   impact: {
     co2_avoided_t_yr: number;
     co2_cars_equiv: number;
     homes_served: number;
     fossil_displaced_MWh: number;
     erf: number;
+    ere?: number;
     water: { note: string; fan_energy_saved_MWh: number };
     jobs: number;
     local_food_t_yr: number;
@@ -92,6 +98,17 @@ export interface Site2Data {
   sources: { id: string; label: string; url: string }[];
 }
 
+export interface Extras {
+  ring_lcoh_usd_mwh?: Partial<Record<"onsite" | "corridor" | "town", number>>;
+  funding?: { npv7_musd?: number; funding_gap_musd?: number; funding_gap_incentive_scenario_if_qualifies_musd?: number; revenue_musd_yr?: number; note?: string };
+  with_town?: { totals?: Partial<Site2Data["totals"]>; lcoh_usd_mwh?: Partial<Site2Data["finance"]["lcoh_usd_mwh"]>; capex_musd?: number; town_ring_lcoh_usd_mwh?: number; verdict?: string };
+  greenhouse_check?: { peak_MW?: number; area_ha?: number };
+  linear_heat_density_corridor_MWh_per_m?: number;
+  cba?: { corridor_gap_musd?: number; per_year_musd?: number; as_pct_of_dc_capex?: number; dc_capex_musd?: number; whole_project_gap_musd?: number; breakeven_homes_if_cba_pays_pipe?: Record<string, unknown> };
+  air_source_hp_seasonal_cop?: number;
+  lcoh_incentive_scenario_if_qualifies_usd_mwh?: number;
+}
+
 export interface Site1Data {
   placeholder?: boolean;
   meta: { site: string; generated: string; scenario: string };
@@ -99,7 +116,7 @@ export interface Site1Data {
   totals: Totals;
   finance: { lcoh_usd_mwh: Site2Data["finance"]["lcoh_usd_mwh"]; incumbent_usd_mwh?: Partial<Record<FuelKey, number>> };
   impact: { co2_avoided_t_yr: number; co2_cars_equiv: number; homes_served: number; fossil_displaced_MWh: number };
-  why_not_chosen?: { point: string; detail: string }[];
+  why_not_chosen?: string | { point: string; detail: string }[];
 }
 
 export interface Offtaker {

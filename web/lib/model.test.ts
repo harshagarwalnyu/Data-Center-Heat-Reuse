@@ -15,11 +15,11 @@ describe("formulas", () => {
     expect(cop(70, 50)).toBeGreaterThan(cop(70, 30));
   });
   it("cop is capped for tiny lift", () => {
-    expect(cop(45, 50)).toBe(8);
+    expect(cop(53, 50)).toBe(8);
   });
-  it("direct use needs source above sink plus two approaches", () => {
+  it("direct use needs source above sink plus one approach", () => {
     expect(isDirect(40, 50)).toBe(true);
-    expect(isDirect(45, 50)).toBe(false);
+    expect(isDirect(48, 50)).toBe(false);
   });
   it("crf hand check: 4%, 30 yr = 0.05783", () => {
     expect(crf(0.04, 30)).toBeCloseTo(0.057830, 5);
@@ -77,12 +77,12 @@ describe("scenario (calibrated to the data file)", () => {
     expect(s.heatAvailableGWh).toBeCloseTo(s0.heatAvailableGWh * 2, 3);
   });
   it("a very small data center becomes supply-limited", () => {
-    const s = scenario(d, { ...base, loadMW: 10 });
+    const s = scenario(d, { ...base, loadMW: 5 });
     expect(s.supplyLimited).toBe(true);
     expect(s.heatDeliveredMWh).toBeLessThan(s0.heatDeliveredMWh);
   });
-  it("dropping the town ring cuts delivered heat", () => {
-    expect(scenario(d, { ...base, includeTown: false }).heatDeliveredMWh).toBeLessThan(s0.heatDeliveredMWh);
+  it("adding the town ring raises delivered heat", () => {
+    expect(scenario(d, { ...base, includeTown: true }).heatDeliveredMWh).toBeGreaterThan(s0.heatDeliveredMWh);
   });
 });
 

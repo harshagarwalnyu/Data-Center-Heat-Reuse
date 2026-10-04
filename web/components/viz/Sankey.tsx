@@ -24,7 +24,7 @@ export function Sankey({ d }: { d: Site2Data }) {
   const unused = cap - drawn;
   const s = 2.3;
   const NW = 24;
-  const X = [0, 235, 470, 705];
+  const X = [0, 250, 500, 700];
   const top = 46;
 
   const itH = it * s;
@@ -35,11 +35,11 @@ export function Sankey({ d }: { d: Site2Data }) {
   const hpH = del * s;
   const drawnH = drawn * s;
   const unusedH = unused * s;
-  const dryY = top + 150;
+  const dryY = top + 190;
   const dryH = (unc + unused) * s;
 
   // user slots
-  const rings = d.rings;
+  const rings = d.rings.filter((r) => !r.conditional);
   const slot = 50;
   let hpOff = 0;
   const userLinks = rings.map((r, i) => {
@@ -61,7 +61,7 @@ export function Sankey({ d }: { d: Site2Data }) {
   ];
 
   return (
-    <svg viewBox="0 0 1000 480" role="img" className="w-full h-full block" aria-label={`Heat flow: ${dec(it, 0)} megawatts of IT power become heat. ${dec(cap, 0)} megawatts are captured. About ${dec(del, 1)} megawatts reach users through heat pumps. The rest goes to dry coolers, which can reject 100 percent of heat on their own.`}>
+    <svg viewBox="0 0 1000 520" role="img" className="w-full h-full block" aria-label={`Heat flow: ${dec(it, 0)} megawatts of IT power become heat. ${dec(cap, 0)} megawatts are captured. About ${dec(del, 1)} megawatts reach users through heat pumps. The rest goes to dry coolers, which can reject 100 percent of heat on their own.`}>
       {/* ribbons */}
       {flows.map((f, i) => (
         <g key={i}>
@@ -74,8 +74,8 @@ export function Sankey({ d }: { d: Site2Data }) {
           <path d={ribbon(X[2] + NW, u.y0, X[3], u.y1, Math.max(u.h, 4))} fill={ringColor(u.r.id)} opacity="0.65" />
           <path d={center(X[2] + NW, u.y0, X[3], u.y1, Math.max(u.h, 4))} className="flow-anim" stroke="var(--bg)" strokeWidth="2" fill="none" opacity="0.85" />
           <rect x={X[3]} y={u.y1} width={NW} height={Math.max(u.h, 6)} rx="3" fill={ringColor(u.r.id)} />
-          <text x={X[3] + NW + 12} y={u.y1 + 9} fontSize="20" fontWeight="700" fill="var(--ink)">{ringShort(u.r.id)}</text>
-          <text x={X[3] + NW + 12} y={u.y1 + 31} fontSize="18" fill="var(--ink2)" className="num">{dec(u.mw, 1)} MW avg</text>
+          <text x={X[3] + NW + 12} y={u.y1 + 9} fontSize="25" fontWeight="700" fill="var(--ink)">{ringShort(u.r.id)}</text>
+          <text x={X[3] + NW + 12} y={u.y1 + 31} fontSize="22" fill="var(--ink2)" className="num">{dec(u.mw, 1)} MW avg</text>
           {i === 99 && null}
         </g>
       ))}
@@ -88,24 +88,24 @@ export function Sankey({ d }: { d: Site2Data }) {
       <rect x={X[3]} y={dryY} width={NW} height={dryH} rx="4" fill="var(--ink2)" />
 
       {/* labels */}
-      <text x={X[0]} y={top - 24} fontSize="20" fontWeight="700" fill="var(--ink)">IT power in</text>
-      <text x={X[0]} y={top - 4} fontSize="18" fill="var(--ink2)" className="num">{dec(it, 0)} MW avg, all becomes heat</text>
-      <text x={X[1]} y={top - 24} fontSize="20" fontWeight="700" fill="var(--ember-text)">Heat captured</text>
-      <text x={X[1]} y={top - 4} fontSize="18" fill="var(--ink2)" className="num">{dec(cap, 0)} MW avg at {d.supply.capture_temp_C} °C</text>
-      <text x={X[1] + NW + 10} y={uncY + uncH / 2 + 6} fontSize="18" fill="var(--ink2)" className="num">{dec(unc, 0)} MW not captured</text>
-      <text x={X[2]} y={top - 24} fontSize="20" fontWeight="700" fill="var(--ember-text)">Heat pumps</text>
-      <text x={X[2]} y={top - 4} fontSize="18" fill="var(--ink2)" className="num">{dec(del, 1)} MW delivered</text>
-      <text x={X[2] - 8} y={hpY + hpH + 26} fontSize="17" fill="var(--ink2)" textAnchor="start" className="num">
-        <tspan fill="var(--ember-text)" fontWeight="700">■</tspan> includes {dec(hpe, 1)} MW grid power
+      <text x={X[0]} y={top - 24} fontSize="25" fontWeight="700" fill="var(--ink)">IT power in</text>
+      <text x={X[0]} y={top - 4} fontSize="22" fill="var(--ink2)" className="num">{dec(it, 0)} MW avg</text>
+      <text x={X[1]} y={top - 24} fontSize="25" fontWeight="700" fill="var(--ember-text)">Heat captured</text>
+      <text x={X[1]} y={top - 4} fontSize="22" fill="var(--ink2)" className="num">{dec(cap, 0)} MW at {d.supply.capture_temp_C} °C</text>
+      <text x={X[1] + NW + 10} y={uncY + uncH / 2 + 6} fontSize="22" fill="var(--ink2)" className="num">{dec(unc, 0)} MW not captured</text>
+      <text x={X[2]} y={top - 24} fontSize="25" fontWeight="700" fill="var(--ember-text)">Heat pumps</text>
+      <text x={X[2]} y={top - 4} fontSize="22" fill="var(--ink2)" className="num">{dec(del, 1)} MW delivered</text>
+      <text x={X[2] - 8} y={hpY + hpH + 26} fontSize="21" fill="var(--ink2)" textAnchor="start" className="num">
+        <tspan fill="var(--ember-text)" fontWeight="700">■</tspan> incl. {dec(hpe, 1)} MW grid power
       </text>
 
       {/* cooling safeguard */}
-      <rect x={X[3] - 14} y={dryY - 14} width={282} height={dryH + 28} rx="14" fill="none" stroke="var(--teal)" strokeWidth="3" strokeDasharray="9 7" />
-      <text x={X[3] + NW + 12} y={dryY + 14} fontSize="20" fontWeight="700" fill="var(--teal-text)">Dry coolers</text>
-      <text x={X[3] + NW + 12} y={dryY + 40} fontSize="18" fill="var(--ink)">Always on. Can reject</text>
-      <text x={X[3] + NW + 12} y={dryY + 62} fontSize="18" fill="var(--ink)">100% of the heat alone.</text>
-      <text x={X[3] + NW + 12} y={dryY + 94} fontSize="18" fill="var(--ink2)" className="num">{dec(unc + unused, 0)} MW avg here</text>
-      <text x={X[3] + NW + 12} y={dryY + 116} fontSize="18" fill="var(--ink2)">(heat users take the rest)</text>
+      <rect x={X[3] - 14} y={dryY - 14} width={288} height={dryH + 28} rx="14" fill="none" stroke="var(--teal)" strokeWidth="3" strokeDasharray="9 7" />
+      <text x={X[3] + NW + 12} y={dryY + 14} fontSize="25" fontWeight="700" fill="var(--teal-text)">Dry coolers</text>
+      <text x={X[3] + NW + 12} y={dryY + 40} fontSize="22" fill="var(--ink)">Always on. Can reject</text>
+      <text x={X[3] + NW + 12} y={dryY + 62} fontSize="22" fill="var(--ink)">100% of the heat alone.</text>
+      <text x={X[3] + NW + 12} y={dryY + 94} fontSize="22" fill="var(--ink2)" className="num">{dec(unc + unused, 0)} MW avg here</text>
+      <text x={X[3] + NW + 12} y={dryY + 116} fontSize="22" fill="var(--ink2)">(heat users take the rest)</text>
     </svg>
   );
 }

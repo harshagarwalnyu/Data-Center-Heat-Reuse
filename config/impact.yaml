@@ -1,7 +1,7 @@
 ef_kg_kwh:                      # facts-site2.md sec 7 (EPA GHG Hub; eGRID2023 NYUP 242.8 lb/MWh)
   grid: 0.1101
   grid_marginal: 0.315          # NYISO Zone C marginal 0.28-0.35, midpoint
-  propane: 0.2100
+  propane: 0.2145              # corrected: liquid propane 62.87 kg/MMBtu (research/verification.md 10d), not 61.46 (gaseous)
   oil: 0.2520
   gas: 0.1810
 mix_corridor: {propane: 0.45, oil: 0.15, electric: 0.35, other: 0.05}   # [A] from Census B25040 non-gas shares (26/8/24/4)
