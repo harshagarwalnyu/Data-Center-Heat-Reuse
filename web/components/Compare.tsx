@@ -40,7 +40,7 @@ export function Compare({ data }: { data: AppData }) {
               <ul className="mt-3 pl-5 text-[1.125rem] leading-snug grid gap-2">
                 <li>New-build campus: we can specify direct liquid cooling, which returns heat at {a.supply.capture_temp_C} °C.</li>
                 <li>Cleaner upstate grid, so heat pumps save more carbon.</li>
-                <li>A live town fight and a gas moratorium make heat reuse a real answer, not an add-on.</li>
+                <li>A live town fight and a restricted-gas town make heat reuse a real answer, not an add-on.</li>
                 <li>Unused acreage lets us bring users to the heat.</li>
               </ul>
             ) : (

@@ -26,7 +26,7 @@ export function RingMapSvg({ offtakers }: { offtakers: Offtaker[] }) {
   const [px, py] = project(PLANT);
   const [tx, ty] = project(TOWN);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east." className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
+    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east in a straight line (14 kilometres by pipe route)." className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
       <path d={path(LAKE)} fill="var(--teal)" opacity="0.22" />
       <text x={60} y={H * 0.45} fontSize="34" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
       <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth={ONSITE_R_KM * pxPerKm * 0.9} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.28" />

@@ -33,7 +33,7 @@ Each numbered claim above uses the URL here. Verification date is 2026-10-03 unl
 13. Ground lease, 183 acres, 80 years. https://www.sec.gov/Archives/edgar/data/1083301/000110465925078086/tm2523008d1_8k.htm (row 3c) (verified 2026-10-03).
 14. Co-op statute [unverified]. `research/verification.md` rows 11a–11d; `docs/ownership-deal.md`.
 15. Waste-heat networks left out of IRC 48 in the base case. `research/verification.md` rows 9d–9h (verified 2026-10-03).
-16. Carbon: use 11,408 t/yr. The model file prints 11,456. `docs/audit/numbers-impact.md`. Grid factor https://www.epa.gov/egrid (row 10a) (verified 2026-10-03).
+16. Carbon: 11,408 t/yr (model v3.1). Grid factor https://www.epa.gov/egrid (row 10a) (verified 2026-10-03).
 
 ## Lane status
 

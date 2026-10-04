@@ -15,18 +15,18 @@
 
 Data center development in rural and suburban communities faces an unprecedented crisis of social license. On September 29, 2026, the Town Board of Lansing, New York, directed its town attorney to draft a local law prohibiting data centers, setting aside $500,000 in next year's proposed budget for anticipated litigation. Just five months earlier, on April 6, 2026, Deep Green abruptly withdrew its rezoning application for a 24 MW data center in Lansing, Michigan, demonstrating that offering "free waste heat" as corporate goodwill is fundamentally insufficient to overcome community opposition. 
 
-Thermal Commons provides the comprehensive technical, economic, and institutional blueprint under which Lansing can say yes. Sited at TeraWulf's Lake Hawkeye high-performance computing facility at the former Cayuga coal plant on Cayuga Lake, our system converts an industrial liability into an essential municipal asset. Operating at an initial Phase 1 critical IT capacity of 150 MW with an 80% annual load factor, Lake Hawkeye rejects 777.6 GWh of thermal energy annually at an average rate of 88.8 MW thermal. 
+Thermal Commons provides the comprehensive technical, economic, and institutional blueprint under which Lansing can say yes. Sited at TeraWulf's Lake Hawkeye high-performance computing facility at the former Cayuga coal plant on Cayuga Lake, our system converts an industrial liability into an essential municipal asset. Operating at a modeled 150 MW first phase with an 80% annual load factor, Lake Hawkeye makes 777.6 GWh of heat available annually (capture-limited at 75% and 50 °C, not total rejection) at an average rate of 88.8 MW thermal. 
 
 Our core architectural principle is that data center cooling always wins. Heat recovery is accomplished through a sidestream plate-and-frame heat exchanger with automatic modulating bypass controls, leaving the data center's primary closed-loop dry coolers 100% functional and fully primary. Thermal Commons deploys the right engineering tool at every spatial density across three distinct network rings:
 1. Ring 1 (On-Site Agricultural and Community Campus): A 0.5 km loop supplying 37,076.0 MWh/yr of direct 45 °C heat to a 10-hectare controlled-environment greenhouse, a commercial aquaculture recirculating facility, and a community recreation pool at an unsubsidized Levelized Cost of Heat (LCOH) of $40.6/MWh (at a 7% utility discount rate).
 2. Ring 2 (Corridor Homes and Farms): A 20.9 km ambient-temperature 5th-generation district loop (18 °C to 20 °C) serving 500 households via decentralized water-to-water heat pumps with an average seasonal Coefficient of Performance (COP) of 4.71, delivering 13,500.0 MWh/yr at an LCOH of $285.8/MWh.
 3. Ring 3 (Town Center Transmission Main): A 14.0 km transmission line to the Lansing school campus and municipal hall requiring a central heat pump boost to 65 °C. Our thermodynamic and economic model proves that Ring 3 suffers 1,840.0 MWh/yr in thermal losses (51.4% of delivered energy) and an LCOH of $734.2/MWh. We fail Ring 3 honestly; scattered rural density is best served by stand-alone cold-climate heat pumps supported by utility rebates.
 
-Combined Phase 1 and Phase 2 delivery totals 50,576.0 MWh/yr (50.6 GWh/yr), utilizing 6.5% of available data center rejection. Total capital expenditure is $38.76M ($38.8M), with annual operating expenses of $1.94M/yr. Blended project LCOH across Phases 1 and 2 is $89.5/MWh at a 4% cooperative cost of capital, $106.1/MWh at a 7% municipal utility rate, and $124.6/MWh at a 10% private rate. These figures decisively undercut local fossil fuels: delivered propane costs $136.1/MWh ($3.10/gal), heating oil costs $155.8/MWh ($5.186/gal Central NY average), and electric resistance heating costs $245.0/MWh ($0.245/kWh). 
+Combined Phase 1 and Phase 2 delivery totals 50,576.0 MWh/yr (50.6 GWh/yr), utilizing 6.5% of the heat made available. Total capital expenditure is $38.76M ($38.8M), with annual operating expenses of $1.94M/yr. Blended project LCOH across Phases 1 and 2 is $89.5/MWh at a 4% cooperative cost of capital, $106.1/MWh at a 7% utility-rate case, and $124.6/MWh at a 10% private rate. These figures decisively undercut local fossil fuels: delivered propane costs $136.1/MWh ($3.10/gal), heating oil costs $155.8/MWh ($5.186/gal Central NY average), and electric resistance heating costs $245.0/MWh ($0.245/kWh). 
 
-To overcome Lansing's historic 2015 natural gas moratorium without placing financial burdens on rural homeowners, heat is delivered at a fixed tariff of $108.9/MWh (0.80 times propane equivalent), saving a typical 27 MWh/yr household $735/yr compared to propane and $1,266/yr compared to oil. A dedicated low-income tariff tier ($88.5/MWh) saves burdened households $1,286/yr. This tariff structure leaves a whole-project present value (PV) funding gap of $26.01M ($26.0M) at a 7% discount rate over 30 years, equal to an annuitized requirement of $2.096M/yr (~$2.10M/yr). We propose funding this gap through a legally binding Community Benefit Agreement (CBA) and Heat Supply Agreement (HSA). Sited on an estimated $1.50B data center facility ($10M/MW IT across 150 MW), the $26.01M PV commitment represents just 1.73% of data center capital expenditure.
+To work around Lansing's NYSEG moratorium on new gas connections (since February 2015; 2026 status unverified) without placing financial burdens on rural homeowners, heat is delivered at a fixed tariff of $108.9/MWh (0.80 times propane equivalent), saving a typical 27 MWh/yr household $735/yr compared to propane and $1,266/yr compared to oil. A dedicated low-income tariff tier ($88.5/MWh) saves burdened households $1,286/yr. This tariff structure leaves a whole-project present value (PV) funding gap of $26.01M ($26.0M) at a 7% discount rate over 30 years, equal to an annuitized requirement of $2.096M/yr (~$2.10M/yr). We propose funding this gap through a legally binding Community Benefit Agreement (CBA) and Heat Supply Agreement (HSA). Sited on an estimated $1.50B data center facility ($10M/MW IT across 150 MW), the $26.01M PV commitment represents just 1.73% of data center capital expenditure.
 
-In exchange, the modeled scenario provides 11,408 t CO2/yr of avoided greenhouse gas emissions (audited figure; the raw model file prints 11,456), 126 full-time jobs, 5,500 t/yr of fresh produce, 1,500 t/yr of commercial fish (jobs and production are assumptions, not guaranteed outcomes), a binding water covenant prohibiting evaporative lake consumption, and an open public dashboard providing real-time operational transparency.
+In exchange, the modeled scenario provides 11,408 t CO2/yr of avoided greenhouse gas emissions, 126 full-time jobs, 5,500 t/yr of fresh produce, 1,500 t/yr of commercial fish (jobs and production are assumptions, not guaranteed outcomes), a binding water covenant prohibiting evaporative lake consumption, and an open public dashboard providing real-time operational transparency.
 
 ---
 
@@ -40,17 +40,17 @@ According to TeraWulf's Q2 2026 filings with the Securities and Exchange Commiss
 ### 2.2 Local Energy Inequity and the Natural Gas Moratorium
 Lansing faces severe thermal constraints. In February 2015, the local gas utility, New York State Electric & Gas (NYSEG), invoked a binding moratorium on new natural gas connections throughout the Town of Lansing (NYS Public Service Commission Case 20-G-0131). The moratorium was caused by severe low-pressure distribution bottlenecks where operational pressure drops below 50% of the Maximum Allowable Operating Pressure (MAOP) during peak winter design conditions. NYSEG's non-pipe alternative (NPA) program addressed these low-pressure conditions as of its Q1 2024 report; that the conditions and the moratorium persist in 2026 is unverified.
 
-Because natural gas is unavailable, Lansing residents and commercial establishments rely heavily on delivered fuels. According to NYSERDA surveys and local price monitoring, delivered propane averages $3.10/gal ($136.1/MWh at an 85% appliance efficiency), while #2 ultra-low-sulfur heating oil averages $5.186/gal Central Region monthly mean ($155.8/MWh at an 83% appliance efficiency). For rural households consuming an average of 27 MWh of space heating and domestic hot water annually, winter heating bills frequently exceed $3,600 to $4,200 per heating season, imposing an acute rural energy burden on a municipality where the individual poverty rate is 13.4%.
+Because new natural gas connections have been unavailable as of the last verified filing (2025-07-14), Lansing residents and commercial establishments rely heavily on delivered fuels. According to NYSERDA surveys and local price monitoring, delivered propane averages $3.10/gal ($136.1/MWh at an 85% appliance efficiency), while #2 ultra-low-sulfur heating oil averages $5.186/gal Central Region monthly mean ($155.8/MWh at an 83% appliance efficiency). For rural households consuming an average of 27 MWh of space heating and domestic hot water annually, winter heating bills frequently exceed $3,600 to $4,200 per heating season, imposing an acute rural energy burden on a municipality where the individual poverty rate is 13.4%.
 
 ### 2.3 Water Permitting and Environmental Tensions
 On April 13, 2026, the New York State Department of Environmental Conservation (DEC) renewed an Article 15 Title 15 Water Withdrawal Permit (Permit ID 7-5032-00019/00024) to Cayuga Operating Company LLC. The permit authorizes withdrawals of up to 1,008,000 gallons per day (gpd) from Cayuga Lake through April 30, 2031. The permit lists its authorized uses as "system maintenance, sump pumping, and dust control." Whether that scope legally bars process cooling, heat rejection, or evaporative misting is not established by the permit text alone; any stronger restriction needs a separate legal basis.
 
 Public controversy regarding water use is intense. On January 20, 2026, the Tompkins County Legislature passed Resolution 2026-3 by a 14-1 vote, formally requesting that DEC reject modified water withdrawal applications for data center cooling and require an exhaustive, site-specific environmental review. Seneca County adopted a parallel resolution (Res. 63-26). TeraWulf's public design commitments state that Lake Hawkeye will operate a closed-loop cooling architecture using air-cooled dry coolers and food-grade glycol, with zero lake-water intake or thermal discharge. However, local residents remain skeptical that dry coolers will maintain server efficiencies during hot summer peaks without supplemental evaporative misting.
 
-### 2.4 Political Impasse: The Imminent Ban
-Lansing's political friction culminated on September 29, 2026, during a contentious Town Board special meeting where citizens voiced near-unanimous opposition to data center expansion. The Town Board instructed its municipal attorney to draft a local zoning law to prohibit data centers entirely, with $500,000 proposed in next year's budget for legal costs (not an existing reserve). Simultaneously, New York Executive Order 62, signed on July 14, 2026, states a temporary DEC permitting moratorium on discretionary permits for new or expanded data centers of 50 MW or greater while the Department of Public Service prepares a Generic Environmental Impact Statement. Whether it covers this project is unverified. 
+### 2.4 Political Impasse: The Draft Ban
+Lansing's political friction culminated on September 29, 2026, during a contentious Town Board special meeting. Public comment was heavily contested (counts differ between outlets). The Town Board told its attorney to draft a local zoning law to prohibit data centers entirely, with $500,000 proposed in next year's budget for legal costs (not an existing reserve). Simultaneously, New York Executive Order 62, signed on July 14, 2026, states a temporary DEC permitting moratorium on discretionary permits for new or expanded data centers of 50 MW or greater while the Department of Public Service prepares a Generic Environmental Impact Statement. Whether it covers this project is unverified. 
 
-The collapse of the Deep Green project in Lansing, Michigan, on April 6, 2026, demonstrated that offering uncoordinated "free heat" to a municipal utility does not build public support. Overcoming Lansing's data center ban requires a verifiable engineering design, an enforceable governance structure, and a clear distribution of economic benefits.
+The collapse of the Deep Green project in Lansing, Michigan, on April 6, 2026, demonstrated that offering uncoordinated "free heat" to a municipal utility does not build public support. Answering Lansing's draft data-center ban requires a verifiable engineering design, an enforceable governance structure, and a clear distribution of economic benefits.
 
 ---
 
@@ -58,7 +58,7 @@ The collapse of the Deep Green project in Lansing, Michigan, on April 6, 2026, d
 
 ```
 +---------------------------------------------------------------------------------+
-|                    TERAWULF LAKE HAWKEYE (150 MW IT LOAD)                       |
+|                    TERAWULF LAKE HAWKEYE (150 MW MODELED)                     |
 |                                                                                 |
 |   Server Racks (Direct Liquid Cooling) -------> Primary Loop: 50 C Glycol       |
 |                                                       |                         |
@@ -276,7 +276,7 @@ Table 4 compares the levelized cost of heat delivered by Thermal Commons against
 | Delivered Propane (Current Lansing Baseline) | $136.1/MWh | Propane at $3.10/gal, 85% appliance efficiency | High carbon (62.87 kg/MMBtu) |
 | Delivered #2 Heating Oil (Central NY Mean) | $155.8/MWh | Heating oil at $5.186/gal, 83% appliance eff. | High carbon (73.96 kg/MMBtu) |
 | Electric Baseboard Resistance Heating | $245.0/MWh | Electricity at $0.245/kWh, 100% efficiency | Clean grid but high peak stress |
-| Natural Gas (Moratorium In Place Since 2015) | $64.2/MWh | Gas at $1.50/therm, 85% appliance efficiency | **Unavailable in Lansing** |
+| Natural Gas (NYSEG moratorium on new connections since Feb 2015) | $64.2/MWh | Gas at $1.50/therm, 85% appliance efficiency | **Unavailable for new connections as of the last verified filing (2025-07-14)** |
 
 ---
 
@@ -286,7 +286,7 @@ Table 4 compares the levelized cost of heat delivered by Thermal Commons against
 To guarantee immediate, tangible economic relief to Lansing residents, the community thermal co-op implements a heat-as-a-service tariff structure:
 - Corridor Standard Tariff: Pegged at a permanent 20% discount to delivered propane ($108.9/MWh delivered heat, equivalent to $0.1089/kWh thermal).
 - Low-Income / Energy-Burdened Tier: Qualifying households (aligned with Tompkins County HEAP eligibility) receive an additional 35% discount on the volumetric rate ($88.5/MWh delivered).
-- Zero Customer Upfront Cost: Trenching, service laterals, indoor hydronic heat exchangers, and building heat pumps ($16,000 per home) are capitalized entirely by the utility. Residents pay only for metered thermal energy consumed.
+- Zero Customer Upfront Cost: Trenching, service laterals, indoor hydronic heat exchangers, and building heat pumps ($16,000 per home) are capitalized entirely by the co-op. Residents pay only for metered thermal energy consumed.
 
 Under this tariff:
 - A standard corridor home consuming 27.0 MWh/yr saves $735/yr compared to propane and $1,266/yr compared to heating oil.
@@ -303,7 +303,7 @@ Operating under a 7% utility discount rate over a 30-year lifecycle:
 - On an undiscounted straight-line accounting basis over 30 years, this gap represents $0.867M/yr ($26.01M / 30 years). However, sound engineering finance dictates using the annuitized figure of $2.096M/yr to account for the time value of money.
 
 ### 6.3 The Community Benefit Agreement (CBA) Funding Mechanism
-TeraWulf's Lake Hawkeye data center represents a massive private capital expenditure. Sited at an industry benchmark cost of $10.0M per MW of critical IT load (derived from the Turner & Townsend 2025 Data Centre Construction Cost Index range of $6.60 to $13.30 per watt), the 150 MW Phase 1 facility requires approximately $1.50B in capital investment.
+TeraWulf's Lake Hawkeye data center represents a massive private capital expenditure. Sited at an industry benchmark cost of $10.0M per MW of critical IT load (derived from the Turner & Townsend 2025 Data Centre Construction Cost Index range of $6.60 to $13.30 per watt), the modeled 150 MW first-phase facility requires approximately $1.50B in capital investment.
 
 The $26.01M PV funding gap represents exactly 1.73% of data center capital expenditure. Funding this gap through an annual Community Benefit Agreement payment of $2.096M/yr (or a lump-sum initial infrastructure endowment) is an extraordinary commercial bargain for TeraWulf:
 1. Social License and Permit Survival: Sponsoring the thermal network resolves the Town Board's pending data center ban and lifts the threat of municipal zoning exclusion.
@@ -334,16 +334,16 @@ Thermal Commons evaluates environmental and community value across the seven pet
 **Table 5: HDR Seven-Domain Sustainability Scorecard**
 | Framework Domain | Petal | Specific Project Impact | Quantified Metric |
 | :--- | :--- | :--- | :--- |
-| **Community** | Community | Affordable, non-combustion heat in a gas-moratorium rural town | $735/yr savings per standard home; $1,286/yr low-income |
-| **Community** | Human Health | Eradication of indoor combustion appliances (CO, NOx, particulates) | 52,842 MWh/yr fossil fuel combustion displaced |
-| **Ecology** | Carbon | Displaces high-carbon fuels using New York's low-emission grid | 11,408 t CO2/yr avoided (audited; raw model 11,456; 10,718 t marginal grid) |
+| **Community** | Community | Affordable, non-combustion heat in a rural town with restricted gas (2026 status unverified) | $735/yr savings per standard home; $1,286/yr low-income |
+| **Community** | Human Health | Eradication of indoor combustion appliances (CO, NOx, particulates) | 52,016 MWh/yr fossil fuel combustion displaced |
+| **Ecology** | Carbon | Displaces high-carbon fuels using New York's low-emission grid | 11,408 t CO2/yr avoided (10,670 t on a marginal grid) |
 | **Ecology** | Nutrients | Controlled agricultural runoff; brownfield nutrient capture | 5,500 t/yr produce + 1,500 t/yr fish produced |
-| **Ecology** | Water | Preserves Cayuga Lake; zero industrial evaporative consumption | 0 gal/yr lake water claimed; 970 MWh/yr fan power saved |
+| **Ecology** | Water | Developer-stated design: no lake-water intake for cooling, no evaporative consumption (to be confirmed by public metering) | 0 gal/yr lake water claimed; 970 MWh/yr fan power saved |
 | **Ecology** | Biodiversity | Reclaims post-industrial coal ash brownfield for clean agri-park | 10 ha active food cultivation on industrial parcel |
 | **Health** | Air Quality | Eliminates local sulfur dioxide and particulate matter emissions | 500 residential oil/propane heating burners retired |
 
 ### 7.1 Detailed Environmental Impact Analysis
-1. Carbon Abatement: Displacing 52,842 MWh/yr of residential and commercial propane and fuel oil eliminates 11,408 metric tons (audited; the raw model file prints 11,456) of CO2 equivalent annually. Upstate New York electricity is among the cleanest grids in North America (EPA eGRID2023 Summary Tables Rev 2, released June 2025: NYUP subregion emission factor of 242.8 lb CO2e/MWh). Powering building heat pumps with NYUP grid electricity emits a fraction of the carbon released by onsite combustion. Even under a conservative marginal gas-peaker displacement factor, net annual carbon savings equal 10,718 t CO2/yr, equivalent to permanently removing 2,490 gasoline-powered passenger vehicles from New York highways.
+1. Carbon Abatement: Displacing 52,016 MWh/yr of residential and commercial propane and fuel oil eliminates 11,408 metric tons of CO2 equivalent annually. Upstate New York electricity is among the cleanest grids in North America (EPA eGRID2023 Summary Tables Rev 2, released June 2025: NYUP subregion emission factor of 242.8 lb CO2e/MWh). Powering building heat pumps with NYUP grid electricity emits a fraction of the carbon released by onsite combustion. Even under a conservative marginal gas-peaker displacement factor, net annual carbon savings equal 10,670 t CO2/yr; the 11,408 t headline equals about 2,659 gasoline-powered passenger vehicles (EPA factor 4.29 t/vehicle-year) from New York highways.
 2. Cayuga Lake Protection: Cayuga Lake is listed on the New York State Section 303(d) list of impaired water bodies due to phosphorus enrichment and seasonal harmful algal blooms (HABs). Thermal Commons does not extract lake water for cooling and adds zero thermal discharge to the lake. Furthermore, by transitioning 10 hectares of food production to a closed-loop aquaponics facility, agricultural nutrients are captured in closed recirculating filtration systems rather than running off into the Cayuga Lake watershed.
 3. Food Security and Economic Diversification: Siting a 10 ha commercial greenhouse and commercial RAS facility at the plant boundary generates 126 permanent, full-time jobs across agricultural management, processing, packaging, and network maintenance (benchmarked against the Resource Innovation Institute 2025 Virginia Data Center and Greenhouse Colocation Study). The campus produces 5,500 metric tons of fresh vine crops and greens and 1,500 metric tons of fresh fish annually, bolstering regional food resilience in Central New York.
 
@@ -370,10 +370,10 @@ The HSA is executed between Lake Hawkeye LLC, Cayuga Operating Company LLC (land
 
 ### 8.3 Community Benefit Agreement (CBA) Term Sheet
 The CBA is executed between the Town of Lansing, Tompkins County, and TeraWulf Inc., functioning as a binding condition of all municipal building permits and site plan approvals:
-1. Enforceable Water Covenant: TeraWulf and Cayuga Operating Company LLC formally covenant never to use any portion of the 1,008,000 gpd DEC Water Withdrawal Permit for process cooling, evaporative cooling, or misting for the data center, restricting withdrawals exclusively to site maintenance and dust control. The covenant is a contractual restriction; remedies for a violation (for example utility step-in or damages) are contractual and defined in the CBA, and any DEC enforcement or permit action is a separate process subject to DEC authority, not an automatic consequence.
+1. Enforceable Water Covenant: TeraWulf and Cayuga Operating Company LLC formally covenant never to use any portion of the 1,008,000 gpd DEC Water Withdrawal Permit for process cooling, evaporative cooling, or misting for the data center, restricting withdrawals exclusively to site maintenance, sump pumping and dust control. The covenant is a contractual restriction; remedies for a violation (for example utility step-in or damages) are contractual and defined in the CBA, and any DEC enforcement or permit action is a separate process subject to DEC authority, not an automatic consequence.
 2. Annual Thermal Equity Contribution: TeraWulf commits to funding the $2.096M/yr whole-project funding gap throughout the operating term, ensuring that residential tariffs remain capped at 0.80 times propane equivalent.
 3. Local Economic Inclusion: TeraWulf and the agricultural campus operators establish a local hiring preference for qualified Lansing and Tompkins County residents, targeting 75% local employment for the 126 newly created operational positions.
-4. Open Public Dashboard: TeraWulf and the utility co-fund an independently audited, publicly accessible IoT dashboard reporting real-time data on heat extraction rates, server coolant temperatures, secondary loop flow rates, lake water intake (verified zero for cooling), and ambient noise levels at property boundaries.
+4. Open Public Dashboard: TeraWulf and the utility co-fund an independently audited, publicly accessible IoT dashboard reporting real-time data on heat extraction rates, server coolant temperatures, secondary loop flow rates, lake water intake (developer-stated zero for cooling, to be confirmed by public metering), and ambient noise levels at property boundaries.
 
 ---
 
@@ -422,7 +422,7 @@ Phase 3:                                                   [Monitoring & Tech Tr
 - Civil trenching and horizontal directional drilling for 20.9 km of uninsulated HDPE ambient loop piping along Route 34B.
 - Installation of 500 residential service laterals, ultrasonic BTU submeters, and centralized dual-fuel backup boilers.
 - Turnkey installation of 500 high-efficiency water-to-water heat pumps in participating corridor homes.
-- Commissioning of the 5G ambient loop (18 °C to 20 °C), delivering 13,500.0 MWh/yr and abating 11,408 t CO2/yr (audited; raw model 11,456).
+- Commissioning of the 5G ambient loop (18 °C to 20 °C), delivering 13,500.0 MWh/yr and abating 11,408 t CO2/yr.
 
 ### Phase 3: Long-Term Monitoring and Technology Transition (Months 43 to 60)
 - Launch of the public IoT transparency dashboard and real-time community monitoring portal.
@@ -468,7 +468,7 @@ To maintain absolute professional integrity, the following modeling limitations 
     `https://www.govinfo.gov/content/pkg/FR-2024-12-12/html/2024-28190.htm`
 12. New York State Public Service Commission, Case 20-G-0131 (Order Invoking Gas Moratorium in the Town of Lansing, Tompkins County, May 12, 2022):  
     `https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE068C615-B8EE-4CB9-AF92-3153A49BE4E4%7D`
-13. New York State Department of Environmental Conservation, Water Withdrawal Permit ID 7-5032-00019/00024 (Issued to Cayuga Operating Company LLC, April 13, 2026, 1.008 MGD limit restricted to maintenance and dust control):  
+13. New York State Department of Environmental Conservation, Water Withdrawal Permit ID 7-5032-00019/00024 (Issued to Cayuga Operating Company LLC, April 13, 2026, 1.008 MGD limit restricted to maintenance, sump pumping and dust control):  
     `https://dec.ny.gov/sites/default/files/2026-04/cayugaoperatingwwpermit.pdf`
 14. Tompkins County Legislature, Resolution 2026-3 (Adopted January 20, 2026; Requesting DEC Require Project-Appropriate Environmental Review for Cayuga Site):  
     `https://tompkinscountyny.iqm2.com/Citizens/Detail_LegiFile.aspx?CssClass=&Frame=&ID=13804&MediaPosition=&MeetingID=4213`

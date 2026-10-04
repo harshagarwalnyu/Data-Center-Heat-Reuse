@@ -32,8 +32,8 @@ Base case for Site 2, Lake Hawkeye, Lansing NY: phases 1 and 2 (on-site campus p
 | Same, annuitized | 2.096 | million USD/yr | `extras.cba.headline_annuitized_7pct_musd_per_yr` |
 | Gap as share of data-center capex benchmark | 1.73 | percent of 1,500 million USD | `extras.cba.headline_as_pct_of_dc_capex` |
 | Household savings vs propane / oil (27 MWh/yr home) | 735 / 1,266 | USD/yr | `finance.household` |
-| CO2 avoided | 11,456 | t CO2/yr (10,718 with marginal grid) | `impact.co2_avoided_t_yr` |
-| Fossil fuel displaced | 52,842 | MWh/yr | `impact.fossil_displaced_MWh` |
+| CO2 avoided | 11,408 | t CO2/yr (10,670 with marginal grid) | `impact.co2_avoided_t_yr` |
+| Fossil fuel displaced | 52,016 | MWh/yr | `impact.fossil_displaced_MWh` |
 | Energy reuse factor, ERF | 0.0462 | ratio | `impact.erf` |
 | Energy reuse effectiveness, ERE | 1.154 | ratio (PUE 1.2) | `impact.ere` |
 | Jobs / local food | 126 / 5,500 | FTE-equivalent / t per year | `impact.jobs`, `impact.local_food_t_yr` |
@@ -137,10 +137,10 @@ Site 1 is 111 8th Ave, Manhattan, a legacy carrier hotel (outputs/site1.json, co
 | LCOH at 7 percent | 106.1 | 304.9 | USD/MWh |
 | Incumbent reference | propane 136.1 | Con Ed steam 118.7 | USD/MWh |
 | LCOH relative to incumbent | 0.78 x | 2.6 x | |
-| CO2 avoided | 11,456 | 11,502 | t CO2/yr |
+| CO2 avoided | 11,408 | 11,888 | t CO2/yr |
 | ERF | 0.046 | 0.134 | |
 
-Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`): Manhattan LCOH is 2.6 times the steam incumbent; Site 1 avoids slightly more CO2 per MWh delivered (0.353 versus 0.227 t/MWh) because steam is a fossil incumbent, so carbon does not decide it; legacy air-side cooling limits capture to about 32 deg C; Con Edison's pilot at 85 10th Ave already targets the same NYCHA buildings; and Lansing is a new build where liquid cooling can be specified from day one and where a heat agreement can change a live local decision. Site 1 has the higher ERF and the denser load, and it wins on density. It loses on cost and on the leverage to act.
+Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`): Manhattan LCOH is 2.6 times the steam incumbent; Site 1 avoids slightly more CO2 per MWh delivered (0.365 versus 0.226 t/MWh) because steam is a fossil incumbent, so carbon does not decide it; legacy air-side cooling limits capture to about 32 deg C; Con Edison's pilot at 85 10th Ave already targets the same NYCHA buildings; and Lansing is a new build where liquid cooling can be specified from day one and where a heat agreement can change a live local decision. Site 1 has the higher ERF and the denser load, and it wins on density. It loses on cost and on the leverage to act.
 
 ## Limitations
 

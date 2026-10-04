@@ -92,7 +92,7 @@ Price inputs: NYSEG rates are verified; the propane ($0.125/kWh_th) and heating-
 | Heat purchase from TeraWulf | Utility pays TeraWulf | `$0` (near-zero) | PROPOSAL |
 | Residential/commercial heat tariff (volumetric) | Customer | `Tariff = k x propane delivered`; with `k = 0.75`, tariff = 0.75 x $0.125 = **$0.094/kWh_th** | k is ASSUMPTION; $0.125 is illustrative and unverified |
 | Utility electricity cost for heat pump lift | Utility | `$0.245 / COP`: **$0.070** at COP 3.5, **$0.054** at COP 4.5 per kWh_th | NYSEG rate FACT; COP ASSUMPTION |
-| Gross margin before capex/O&M | | `0.094 - 0.070 = $0.024` to `0.094 - 0.054 = $0.040` per kWh_th ($24 to $40 per MWh_th) | arithmetic on above; thin, so grants and ITC matter |
+| Gross margin before capex/O&M | | `0.094 - 0.070 = $0.024` to `0.094 - 0.054 = $0.040` per kWh_th ($24 to $40 per MWh_th) | arithmetic on above; thin, so grants matter; ITC is upside only |
 | Capacity (fixed) charge | Customer | `$/kW_th contracted/yr` set to recover [x%] of debt service | level [unverified] |
 | Connection fee | Customer, financeable | `Fee = trench + HX per household, minus grants/ITC` ; low-income waiver | level [unverified]; rural trenching $200 to $400 per ft in research/site-selection.md (not independently checked) |
 | Anchor contract (greenhouse/aquaculture) | Operator | Low heat price per kWh_th plus minimum annual take; soaks summer surplus | PROPOSAL; demand [unverified] |

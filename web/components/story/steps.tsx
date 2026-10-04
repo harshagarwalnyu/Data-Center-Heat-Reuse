@@ -79,14 +79,14 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "fight",
       kicker: "1 · Lansing today",
-      headline: "Lansing is about to ban data centers, and most of its heat still comes from delivered fuel",
-      lede: "Free heat was not enough in Lansing, Michigan: a data center that offered it withdrew hours before a council vote, and a moratorium followed. Lansing, New York needs ownership, guarantees and proof.",
+      headline: "Lansing's Town Board has told its attorney to draft a data-center ban, and most of its heat still comes from delivered fuel",
+      lede: "Free heat was not enough in Lansing, Michigan: a data center that offered free heat withdrew its application on April 6, 2026. Lansing, New York needs ownership, guarantees and proof.",
       layout: "split",
-      notes: "Open with the fight, not the technology. Precedent: Deep Green's $120M downtown Lansing, Michigan data center offered free heat to the city utility, was withdrawn on April 6, 2026 hours before the council vote, and Lansing MI then passed a 6-month moratorium. Free heat is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG has had a gas moratorium here since 2015, so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
+      notes: "Open with the fight, not the technology. Precedent: Deep Green's $120M downtown Lansing, Michigan data center offered free heat to the city utility, withdrew its application on April 6, 2026. Free heat is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG has had a moratorium on new gas connections here since February 2015 (2026 status unverified), so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
       visual: (
         <div className="grid gap-4">
           <Tile big="Sept 29" label="2026: the Town Board directed its attorney to draft a data-center ban, and set aside $500,000 in next year's proposed budget for legal costs" />
-          <Tile tone="teal" big="2015" label="year the NYSEG gas moratorium began. Rural Lansing has no gas pipe." />
+          <Tile tone="teal" big="2015" label="year the NYSEG moratorium on new gas connections began (2026 status unverified)" />
           <Tile big={`$${int(f.incumbent_usd_mwh.propane)}`} unit="per MWh" label={<>what a propane home pays for each MWh of heat (propane ran $2.74 to $3.46 per gallon last season, NYSERDA Central NY). Heating oil: <b className="num">${int(f.incumbent_usd_mwh.heating_oil)}</b>.</>} />
         </div>
       ),
@@ -97,7 +97,7 @@ export function buildSteps(data: AppData): Step[] {
       headline: <>The data center makes <span className="text-ember-text num">{dec(ratio, 0)}&times;</span> more heat than we use: only <span className="text-ember-text num">{dec(sharePct, 1)}%</span> is needed</>,
       lede: <>Our base case is a {int(d.supply.it_load_MW)} MW first phase; about {int(d.supply.capture_fraction * 100)}% of its power can be captured as {d.supply.capture_temp_C} °C heat. Supply is not the constraint. Matching it to users is.</>,
       layout: "split",
-      notes: "This is the whole thesis. Supply is effectively unlimited: demand is the constraint, so we design from the user side. Our base case is a 150 MW first phase. TeraWulf's filing is larger (400 MW gross, 320 MW critical IT, operations around 2029), which only widens the gap. Heat is only waste if we choose to waste it.",
+      notes: "This is the whole thesis. Supply is effectively unlimited: demand is the constraint, so we design from the user side. Our base case is a modeled 150 MW first phase. TeraWulf's filing is larger (400 MW gross, 320 MW critical IT, operations around 2029), which only widens the gap. Heat is only waste if we choose to waste it.",
       visual: <RatioBars d={d} />,
     },
     {
@@ -186,7 +186,7 @@ export function buildSteps(data: AppData): Step[] {
       kicker: "8 · Who pays, who owns",
       headline: ringL.onsite !== undefined ? "The right tool at every density: the farm first, a loop where homes cluster, rebates for the rest" : allBeatOil ? "Heat from the data center beats propane and oil under every ownership model; community ownership is cheapest" : `Community ownership cuts the cost of heat from $${int(f.lcoh_usd_mwh.private_10pct)} to $${int(f.lcoh_usd_mwh.coop_4pct)} per MWh`,
       layout: "wide",
-      notes: "A community thermal utility, the Thermal Commons co-op, owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but there are no new gas hookups in Lansing. Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
+      notes: "A community thermal utility, the Thermal Commons co-op, owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but new gas hookups have been restricted in Lansing since 2015 (2026 status unverified). Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
       visual: (
         <div className="grid gap-4 min-h-0">
           <div className="grid grid-cols-[1fr_auto_1.2fr_auto_1fr] items-stretch gap-2 text-center">
