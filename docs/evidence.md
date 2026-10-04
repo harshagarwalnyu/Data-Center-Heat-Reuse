@@ -6,7 +6,7 @@ Our-side values are read from `outputs/site2.json` and `research/model-notes.md`
 
 ## Summary
 
-- Literature supports the architecture: data-center heat plus heat pumps into district heating is operating at scale (Odense 45 MW, Espoo under construction, Kajaani 30 MW, Stockholm, Tallaght), and low-temperature or ambient loops have measured seasonal COPs of 3 to 5.
+- Literature supports the architecture: data-center heat plus heat pumps into district heating is operating at scale (Odense 45 MW, Stockholm, Tallaght), with more being built (Espoo; Kajaani 30 MW, 12 MW scheduled from May 2026 and 18 MW in 2027), and low-temperature or ambient loops have measured seasonal COPs of 3 to 5.
 - Our corridor building-heat-pump COP of 4.71 sits at the top of the measured 5th-generation range (3 to 5), so "consistent but upper end". The town-ring central COP of 6.0 is a clip at the cap, not a result, and is optimistic.
 - Our weakest-supported inputs are the $16k per-home heat pump and the ~$449/m ambient pipe cost (no ambient-loop cost source opened; insulated 2-pipe DH in Ireland is EUR 782-869/m). Both are optimistic until sourced.
 - The corridor ring has a peak heat density of about 0.33 kW per metre of pipe (6.84 MW over 20.9 km), versus a 1.2 kW/m feasibility threshold cited for traditional DH. The model already shows this: corridor LCOH $285.8/MWh. The $106 blended LCOH is pulled down by the $40.6 on-site ring.
@@ -47,7 +47,7 @@ Our-side values are read from `outputs/site2.json` and `research/model-notes.md`
 | Item | What it says | Source |
 |---|---|---|
 | EU Energy Efficiency Directive, Art. 12 and Art. 26(6) | Data centres at or above 500 kW IT must report energy performance publicly (Art. 12). Data centres over 1 MW total energy supply must use waste heat or other recovery unless shown technically or economically infeasible (Art. 26(6)). Sweden's implementing proposal was in consultation to 4 Nov 2025. | https://www.energimyndigheten.se/en/climate/climate/data-centre-energy-performance-reporting/ |
-| German EnEfG | Applies above 300 kW connected load. New data centres starting from July 2026 must reach an energy reuse factor of 10%, 15% from 2027, 20% from 2028. | https://www.cundall.com/ideas/blog/why-germanys-energy-efficiency-act-makes-waste-heat-recovery-a-national-priority |
+| German EnEfG | Applies to data centres with at least 300 kW non-redundant rated electrical connection capacity. New data centres starting from July 2026 must reach an energy reuse factor of 10%, 15% from 2027, 20% from 2028. | https://www.cundall.com/ideas/blog/why-germanys-energy-efficiency-act-makes-waste-heat-recovery-a-national-priority |
 | Danish consumer-owned heat co-ops | About 400 DH companies: 50 municipal (about 66% of heat) and about 350 predominantly consumer-owned cooperatives, only a handful private; all non-profit by law (INFORSE slide deck, 2021). DBDH: price equals cost of production including overheads; profits returned to consumers. Cost-recovery principle and a consumer price cap since 1 Jan 2025 (Conventus Law). | https://www.inforse.org/europe/pdfs/S_21-08-18_EnergyCommunities_Denmark_Henning_Madsen_INFORSE.pdf ; https://dbdh.org/all-about-district-energy/district-heating-in-denmark/ ; https://conventuslaw.com/report/the-heat-transition-investment-opportunities-and-the-legal-framework-in-denmark-part-5/ |
 
 ## Contradictions and caveats
@@ -66,6 +66,6 @@ Our-side values are read from `outputs/site2.json` and `research/model-notes.md`
 
 ## Three lines for judges
 
-1. Data-center heat plus large heat pumps feeding district heating is already running at utility scale (Odense 45 MW since 2019, Kajaani 30 MW, Tallaght, Stockholm) and is now being written into law (EU EED Art. 26, German EnEfG 10 to 20% reuse).
+1. Data-center heat plus large heat pumps feeding district heating is already running at utility scale (Odense 45 MW since 2019, Tallaght, Stockholm), with more under construction (Espoo, Kajaani), and it is already required by law in Europe (EU EED Art. 26, German EnEfG 10 to 20% reuse).
 2. Our cheap numbers come from putting the greenhouse and fish campus next to the data center ($40.6/MWh); the ambient-loop corridor to homes is $285.8/MWh and needs a community-benefit subsidy, which is what the literature on low-density networks and data-center heat sales also says.
 3. Where we are most exposed: COP 4.71 (top of a 3 to 5 measured range), COP 6.0 on the town ring (a cap), and pipe and in-home heat pump costs that we could not tie to an opened source.
