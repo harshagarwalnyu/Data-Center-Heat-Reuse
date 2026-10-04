@@ -41,8 +41,11 @@ Skill gates: `frontend` + `dataviz` while building; `design-audit` (nielsen, wca
 | C21-C23 | Cursor, queue of 1 | UX research, frontend spec, design system |
 | B | agy WSL `claude-opus-4-6-thinking` | `research/facts-site2.md` |
 | C | agy Windows `claude-opus-4-6-thinking` | `research/facts-site1.md`, `research/site-selection.md` |
-| D | Claude Code (blocked: re-login + permission rule) | engineering model: `pyproject.toml`, `config/engineering.yaml`, `src/heatreuse/{__init__,supply,demand,heatpump,storage,dispatch}.py`, tests |
-| F | Claude Code (after C22/C23 land) | `web/` frontend build |
+| C30 | Cursor, batch 3 (first) | engineering model: `pyproject.toml`, `config/engineering.yaml`, `src/heatreuse/{__init__,supply,demand,heatpump,storage,dispatch}.py`, tests |
+| C24-C29 | Cursor, batch 3 | organizer-doc digests (HDR, Grundfos, DATA HEAT, iGRID, white papers, NYS) |
+| C31 | Cursor, batch 3 (last) | `web/` frontend build + `scripts/export_web_data.py` |
+
+Claude CLI lanes are unavailable (user, 2026-10-03), so all build work goes to Cursor and agy. After C30 lands, rerun C07 finance + C10 impact against real engineering outputs (they start on placeholders).
 
 Rules for every lane: write the output file skeleton first and append as you go; no git commits; never touch another lane's files; every fact carries source URL + `(verified 2026-10-03)`; unverifiable = `[unverified]`.
 
