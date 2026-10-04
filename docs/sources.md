@@ -1,6 +1,6 @@
 # Thermal Commons: consolidated bibliography
 
-Team Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev). Proposal: the Thermal Commons co-op, a binding heat-reuse covenant for Lake Hawkeye (TeraWulf, former Cayuga coal plant, Lansing NY); Site 1 (111 8th Ave, NYC) is the comparison.
+Team Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev). Proposal: the Thermal Commons co-op, a binding heat-reuse covenant for Lake Hawkeye (TeraWulf, former Cayuga coal plant, Lansing NY); Site 1 (111 8th Ave, NYC) is the comparison.
 
 **How this list was built.** We ran a script over every `.md/.yaml/.json/.txt/.csv` file in `docs/`, `research/`, `config/` and over `outputs/site2.json`. It found 332 unique URLs. Every external one is listed below exactly once. Excluded: `localhost` demo links, and our own repo (`github.com/harshagarwalnyu/Data-Center-Heat-Reuse`).
 

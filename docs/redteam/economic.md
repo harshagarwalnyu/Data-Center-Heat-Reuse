@@ -1,6 +1,6 @@
 # Economic red team — utility CFO
 
-Attack on capex, levelized cost of heat (LCOH), tariff margin, uptake, financing, and stranded assets for the Thermal Commons co-op at Lake Hawkeye (Site 2, Lansing, NY). Site 1 (111 8th Avenue, New York City) is the comparison only. Working team: Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev.
+Attack on capex, levelized cost of heat (LCOH), tariff margin, uptake, financing, and stranded assets for the Thermal Commons co-op at Lake Hawkeye (Site 2, Lansing, NY). Site 1 (111 8th Avenue, New York City) is the comparison only. Working team: Harsh Agarwal, Linson Lee, Philip Matchev.
 
 Severity scale: **Critical** (kills the investment case or creates a covenant the town cannot enforce), **High** (materially changes payback or bankability), **Medium** (manageable with a design change), **Low** (disclosure item).
 

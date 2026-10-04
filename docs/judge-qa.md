@@ -2,7 +2,7 @@
 
 Live judging is a 5-minute presentation plus a demo. HDR and Grundfos engineers will press the machinery. Twenty-nine answers below. Each number is a key in `outputs/site2.json` (generated 2026-10-04) unless the source line names a doc section or a `research/verification.md` row. Claims we could not verify are marked `[unverified]`. Design choices are marked **PROPOSAL** or **ASSUMPTION**.
 
-Team: Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev). The community heat co-op is the Thermal Commons co-op. Site 2 is Lake Hawkeye / TeraWulf at the former Cayuga plant, Lansing, New York. Site 1 (111 Eighth Avenue) is the comparison. Deep Green with Board of Water & Light is Lansing, Michigan, and it was withdrawn (verification.md row 12).
+Team: Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev). The community heat co-op is the Thermal Commons co-op. Site 2 is Lake Hawkeye / TeraWulf at the former Cayuga plant, Lansing, New York. Site 1 (111 Eighth Avenue) is the comparison. Deep Green with Board of Water & Light is Lansing, Michigan, and it was withdrawn (verification.md row 12).
 
 ## If they only ask five things
 

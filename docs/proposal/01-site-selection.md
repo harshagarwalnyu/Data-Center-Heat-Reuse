@@ -1,6 +1,6 @@
 # Why Lansing (Site 2)
 
-_Thermal Commons — Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev. Working draft. Findings appended as verified._
+_Thermal Commons — Harsh Agarwal, Linson Lee, Philip Matchev. Working draft. Findings appended as verified._
 
 ## Why Lansing (Site 2)
 

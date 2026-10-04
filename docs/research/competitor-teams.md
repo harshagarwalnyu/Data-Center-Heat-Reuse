@@ -1,6 +1,6 @@
 # Competitor teams — anticipated approaches and differentiation
 
-Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev). Working site: Lake Hawkeye / TeraWulf, former Cayuga coal plant, Lansing, NY. Comparison site: 111 8th Avenue, New York City. The proposed community heat co-op is the Thermal Commons co-op.
+Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev). Working site: Lake Hawkeye / TeraWulf, former Cayuga coal plant, Lansing, NY. Comparison site: 111 8th Avenue, New York City. The proposed community heat co-op is the Thermal Commons co-op.
 
 This note anticipates what other student teams will pitch if they follow the organizer brief, is currently an outline: the differentiator and weakness sections are placeholders to be filled. No other team's submission was available. Every "typical approach" below is **ANTICIPATED** from the challenge text, the opening slides, and the HDR site packs. It is not an observation of a named team.
 

@@ -30,7 +30,7 @@
 - **Speakers:**
   - Harsh: cover, problem, our answer
   - Linson: rings, how it works
-  - Aryaman: results, funding
+  - Harsh: results, funding
   - Philip: what Lansing gets, the ask
 - Philip ends with "Harsh, the model." Harsh then runs the 60-second Explore demo on his laptop.
 - Harsh holds the clicker the whole time.

@@ -1,6 +1,6 @@
 # Red team: TeraWulf CFO — why sign the HSA / CBA?
 
-**Role.** CFO of TeraWulf Inc. (Nasdaq: WULF). The proposed contracts are a Heat Supply Agreement (HSA) and a Community Benefit Agreement (CBA) with the Thermal Commons co-op at Lake Hawkeye, the former Cayuga coal plant in Lansing, Tompkins County, New York. Team: Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev.
+**Role.** CFO of TeraWulf Inc. (Nasdaq: WULF). The proposed contracts are a Heat Supply Agreement (HSA) and a Community Benefit Agreement (CBA) with the Thermal Commons co-op at Lake Hawkeye, the former Cayuga coal plant in Lansing, Tompkins County, New York. Team: Harsh Agarwal, Linson Lee, Philip Matchev.
 
 **Question.** Why would we sign? What do we gain and what do we give up? Which terms block a signature? What is the version a CFO can recommend to the board?
 

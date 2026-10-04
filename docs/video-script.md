@@ -2,7 +2,7 @@
 
 **Challenge:** HDR x Grundfos "Data Center Heat Reuse" (BAC x iMasons Hackathon 2026)  
 **Track:** Waste Heat Reusage  
-**Team:** Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev)  
+**Team:** Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev)  
 **Site:** TeraWulf Lake Hawkeye Data Center (former Cayuga Coal Plant), Lansing, NY  
 **Target Duration:** 2:30 (hard maximum 3:00)  
 **Total Spoken Word Count:** 330 words (timed for a measured 132 words per minute pace)  

@@ -4,7 +4,7 @@
 **Host Facility:** TeraWulf Lake Hawkeye Data Center (former Cayuga Generating Station), 228 Cayuga Drive, Lansing, NY  
 **Competition:** HDR x Grundfos "Data Center Heat Reuse" Challenge (BAC x iMasons Hackathon 2026)  
 **Track:** Waste Heat Reusage  
-**Team Thermal Commons:** Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev  
+**Team Thermal Commons:** Harsh Agarwal, Linson Lee, Philip Matchev  
 **Date:** October 4, 2026  
 **Status:** Final Engineering Submission  
 **Document Compliance:** Professional engineering English. Units explicitly stated for all quantities. No em-dashes used.

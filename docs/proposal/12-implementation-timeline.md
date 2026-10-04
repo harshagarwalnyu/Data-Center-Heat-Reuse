@@ -1,6 +1,6 @@
 # Implementation timeline 2026–2032 — Thermal Commons
 
-Team: Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev.
+Team: Harsh Agarwal, Linson Lee, Philip Matchev.
 Proposal: Thermal Commons co-op. Site: Lake Hawkeye / TeraWulf at the former Cayuga coal plant, Lansing, NY (Site 2). Comparison site: 111 8th Avenue, New York City (Site 1), not scheduled here.
 
 This is a **condition-of-approval schedule**, not a construction forecast. The only hard external dates are TeraWulf’s statement that operations are not contemplated until approximately 2029, and the DEC water-withdrawal permit expiry of 30 April 2031. Every other bar below is a working calendar (**ASSUMPTION**) sized so the on-site heat campus can be ready when the first computing load is energized, and so that pipe which fails its gate is not built.

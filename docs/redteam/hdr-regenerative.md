@@ -1,6 +1,6 @@
 # HDR regenerative design red-team — Thermal Commons (Lake Hawkeye / Lansing, NY)
 
-Role: HDR regenerative design lead, scoring the proposal the way the site-pack framework scores a project. Team: Thermal Commons co-op (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev). Site under review: Site 2, Lake Hawkeye / former Cayuga plant, Lansing, NY (TeraWulf). Comparison site: Site 1, 111 8th Ave, New York City.
+Role: HDR regenerative design lead, scoring the proposal the way the site-pack framework scores a project. Team: Thermal Commons co-op (Harsh Agarwal, Linson Lee, Philip Matchev). Site under review: Site 2, Lake Hawkeye / former Cayuga plant, Lansing, NY (TeraWulf). Comparison site: Site 1, 111 8th Ave, New York City.
 
 This file judges the proposal. It does not replace `docs/proposal/13-regenerative-scorecard.md`. Where the live app and the audit disagree, the sentence a judge will hear is the one in `web/public/data/site2.json` `hdr_scorecard`, not the corrected figure.
 
