@@ -1,0 +1,19 @@
+# Candidate offtakers near Lake Hawkeye. Coordinates: research/offtakers.md (OSM Nominatim) where available, else research/facts-site2.md sec 3.
+# Loads are ASSUMPTIONS (floor area x intensity or stated), peak = annual / full_load_hours. "model" = taken from the engineering model.
+weights: {temp_fit: 0.20, size: 0.25, proximity: 0.25, fuel: 0.15, community: 0.15}   # [A] scoring weights
+flh: {greenhouse: 2800, constant: 7000, building: 1800}   # [A] full-load hours by load shape
+rows:
+  - {id: gh_onsite, name: "On-site greenhouse campus (10 ha)", type: greenhouse, lat: 42.6028, lon: -76.6336, annual_MWh: model, supply_temp_C: 45, fuel: propane, ring: onsite, community: 0.6, flh: greenhouse}
+  - {id: aqua_onsite, name: "On-site aquaculture (RAS)", type: aquaculture, lat: 42.6025, lon: -76.6340, annual_MWh: model, supply_temp_C: 30, fuel: propane, ring: onsite, community: 0.6, flh: constant}
+  - {id: rec_onsite, name: "Community rec center + pool", type: recreation, lat: 42.6020, lon: -76.6330, annual_MWh: model, supply_temp_C: 40, fuel: propane, ring: onsite, community: 1.0, flh: building}
+  - {id: corridor_homes, name: "Corridor homes (ambient loop)", type: residential, lat: 42.585, lon: -76.600, annual_MWh: model, supply_temp_C: 20, fuel: propane, ring: corridor, community: 1.0, flh: building}
+  - {id: mckissick, name: "McKissick Farms / Cayuga Landscape greenhouses", type: greenhouse, lat: 42.592, lon: -76.538, annual_MWh: 2500, supply_temp_C: 45, fuel: propane, ring: corridor, community: 0.6, flh: greenhouse}
+  - {id: dutch_harvest, name: "Dutch Harvest Farm", type: agri_event, lat: 42.618, lon: -76.530, annual_MWh: 300, supply_temp_C: 40, fuel: propane, ring: corridor, community: 0.4, flh: building}
+  - {id: lansing_csd, name: "Lansing Central School District campus", type: school, lat: 42.5442, lon: -76.5339, annual_MWh: model, supply_temp_C: 70, fuel: oil, ring: town, community: 1.0, flh: building}
+  - {id: town_hall, name: "Lansing Town Hall + Highway", type: municipal, lat: 42.5378, lon: -76.5036, annual_MWh: 140, supply_temp_C: 70, fuel: gas, ring: town, community: 0.9, flh: building}
+  - {id: library, name: "Lansing Community Library + Center", type: municipal, lat: 42.5377, lon: -76.5031, annual_MWh: 180, supply_temp_C: 70, fuel: gas, ring: town, community: 0.9, flh: building}
+  - {id: woodsedge, name: "Woodsedge senior apartments", type: housing, lat: 42.538, lon: -76.500, annual_MWh: 1200, supply_temp_C: 55, fuel: gas, ring: town, community: 1.0, flh: building}
+  - {id: myers_park, name: "Myers Park + Town Marina", type: recreation, lat: 42.548, lon: -76.549, annual_MWh: 250, supply_temp_C: 45, fuel: propane, ring: corridor, community: 0.7, flh: building}
+  - {id: cargill, name: "Cargill Cayuga Salt Mine (surface + mine-air preheat, load unverified)", type: industrial, lat: 42.5325, lon: -76.5258, annual_MWh: 8000, supply_temp_C: 60, fuel: gas, ring: none, community: 0.5, flh: building}
+  - {id: airport, name: "Ithaca Tompkins International Airport", type: transport, lat: 42.4918, lon: -76.4607, annual_MWh: 5000, supply_temp_C: 70, fuel: gas, ring: none, community: 0.4, flh: building}
+  - {id: cbtp, name: "Cornell Business and Technology Park", type: industrial, lat: 42.488, lon: -76.462, annual_MWh: 6000, supply_temp_C: 60, fuel: gas, ring: none, community: 0.4, flh: building}

@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fbf7f0;
+  --surface: #ffffff;
+  --surface2: #f4ede1;
+  --ink: #13202b;
+  --ink2: #3a4856;
+  --line: #d8ccba;
+  --ember: #c2410c;
+  --ember-text: #9a3412;
+  --amber: #e39b1b;
+  --teal: #0b8ca6;
+  --teal-text: #0a5a6b;
+  --violet: #7c4dcc;
+  --violet-text: #5b34a8;
+  --navy: #0f2a3f;
+  --good: #17703f;
+  --warn-bg: #fff1d6;
+  --shadow: 0 1px 2px rgba(19, 32, 43, 0.06), 0 8px 28px rgba(19, 32, 43, 0.07);
+}
+[data-theme="dark"] {
+  --bg: #0b1620;
+  --surface: #12212e;
+  --surface2: #182b3a;
+  --ink: #f4efe6;
+  --ink2: #bccad4;
+  --line: #2c4050;
+  --ember: #db6428;
+  --ember-text: #ffa070;
+  --amber: #f0b14a;
+  --teal: #1e9db8;
+  --teal-text: #62cde3;
+  --violet: #9c7de6;
+  --violet-text: #c2adf5;
+  --navy: #dbe7ee;
+  --good: #5fd397;
+  --warn-bg: #3a2c10;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface2);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-line: var(--line);
+  --color-ember: var(--ember);
+  --color-ember-text: var(--ember-text);
+  --color-amber: var(--amber);
+  --color-teal: var(--teal);
+  --color-teal-text: var(--teal-text);
+  --color-violet: var(--violet);
+  --color-navy: var(--navy);
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  font-size: 16px;
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.125rem; /* 18px minimum body */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+button, [role="button"], a { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+
+.headline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.08;
+  font-size: clamp(2.25rem, 3.7vw + 0.4rem, 4rem); /* 36px - 64px */
+  color: var(--ink);
+  text-wrap: balance;
+}
+.kicker {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ember-text);
+}
+.lede { font-size: clamp(1.125rem, 0.9vw + 0.6rem, 1.5rem); color: var(--ink2); line-height: 1.45; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.chip {
+  display: inline-flex; align-items: center; gap: .4rem;
+  border: 1px solid var(--line); background: var(--surface2); color: var(--ink);
+  border-radius: 999px; padding: .35rem .9rem; font-size: 1rem; font-weight: 600;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 44px; min-width: 44px; padding: .5rem 1.1rem; border-radius: 12px;
+  border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
+  font-weight: 600; font-size: 1.0625rem;
+}
+.btn:hover { border-color: var(--teal); }
+.btn[aria-pressed="true"], .btn[aria-checked="true"], .btn.on {
+  background: var(--navy); color: var(--bg); border-color: var(--navy);
+}
+.num { font-variant-numeric: tabular-nums; }
+.unit { font-size: .55em; font-weight: 600; color: var(--ink2); margin-left: .25em; letter-spacing: 0; }
+
+input[type="range"] { width: 100%; height: 44px; accent-color: var(--teal); background: transparent; }
+
+@keyframes flow { to { stroke-dashoffset: -48; } }
+.flow-anim { stroke-dasharray: 10 14; animation: flow 1.6s linear infinite; }
+@keyframes pulse-ring { 0%,100% { opacity: .35; } 50% { opacity: .75; } }
+.pulse { animation: pulse-ring 3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .flow-anim, .pulse { animation: none; }
+  * { scroll-behavior: auto !important; }
+}
+
+/* maplibre minimal ui */
+.maplibregl-map { font-family: var(--font-sans); }
+.maplibregl-ctrl-attrib { font-size: 12px; }
+
+/* recharts text */
+.recharts-text { fill: var(--ink2); font-size: 15px; }
+.recharts-cartesian-grid line { stroke: var(--line); }
+
+.sheet-light {
+  --bg: #ffffff; --surface: #ffffff; --surface2: #f4ede1; --ink: #13202b; --ink2: #3a4856; --line: #cfc3b0;
+  --ember: #c2410c; --ember-text: #9a3412; --amber: #e39b1b; --teal: #0b8ca6; --teal-text: #0a5a6b;
+  --violet: #7c4dcc; --violet-text: #5b34a8; --navy: #0f2a3f; --shadow: none;
+  background: #fff; color: var(--ink);
+}
+.letter { width: 8.5in; height: 11in; }
+@media print {
+  .letter { width: 100%; height: auto; box-shadow: none !important; margin: 0 !important; }
+}
+@media print {
+  @page { size: letter; margin: 0.4in; }
+  html, body { background: #fff !important; }
+  .no-print { display: none !important; }
+}

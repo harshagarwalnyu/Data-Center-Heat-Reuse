@@ -1,0 +1,151 @@
+"use client";
+import { useState } from "react";
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import type { Site2Data } from "@/lib/types";
+import { MONTHS, dec, int } from "@/lib/format";
+import { FUEL_LABEL } from "@/lib/model";
+
+const tip = { contentStyle: { background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 10, fontSize: 16, color: "var(--ink)" }, labelStyle: { color: "var(--ink)", fontWeight: 700 }, itemStyle: { color: "var(--ink)" } };
+const axisTick = { fill: "var(--ink2)", fontSize: 15 };
+const axisLine = { stroke: "var(--line)" };
+
+export function Legend({ items }: { items: { color: string; label: string; dashed?: boolean }[] }) {
+  return (
+    <ul className="flex flex-wrap gap-x-5 gap-y-1 text-[1.0625rem] text-ink list-none p-0 m-0">
+      {items.map((i) => (
+        <li key={i.label} className="flex items-center gap-2">
+          <span aria-hidden className="inline-block w-5 h-1.5 rounded" style={{ background: i.dashed ? "transparent" : i.color, borderTop: i.dashed ? `3px dashed ${i.color}` : undefined }} />
+          {i.label}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function MonthlyChart({ d }: { d: Site2Data }) {
+  const rows = d.monthly.map((m) => ({
+    name: MONTHS[m.month - 1],
+    supply: m.supply_MWh / 1000,
+    delivered: m.delivered_MWh / 1000,
+    backup: m.backup_MWh / 1000,
+    demand: m.demand_MWh / 1000,
+  }));
+  return (
+    <div className="flex flex-col h-full min-h-0">
+      <Legend items={[{ color: "var(--amber)", label: "Heat the data center produces" }, { color: "var(--ember)", label: "Heat the network delivers" }, { color: "var(--ink2)", label: "Backup fuel" }]} />
+      <div className="flex-1 min-h-[220px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <ComposedChart data={rows} margin={{ top: 14, right: 12, left: 6, bottom: 4 }}>
+            <CartesianGrid vertical={false} strokeDasharray="3 4" />
+            <XAxis dataKey="name" tick={axisTick} axisLine={axisLine} tickLine={false} />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" GWh" />
+            <Tooltip {...tip} formatter={(v) => `${dec(Number(v), 1)} GWh`} />
+            <Area type="monotone" dataKey="supply" name="Heat the data center produces" stroke="var(--amber)" strokeWidth={3} fill="var(--amber)" fillOpacity={0.22} />
+            <Bar dataKey="delivered" stackId="a" name="Heat the network delivers" fill="var(--ember)" radius={[0, 0, 0, 0]} maxBarSize={34} />
+            <Bar dataKey="backup" stackId="a" name="Backup fuel" fill="var(--ink2)" radius={[4, 4, 0, 0]} maxBarSize={34} />
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+}
+
+const DAY = (h: number) => `Day ${Math.floor(h / 24) + 1}`;
+
+export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "winter" | "summer" }) {
+  const [wk, setWk] = useState<"winter" | "summer">(initial);
+  const rows = d.weeks[wk];
+  return (
+    <div className="flex flex-col h-full min-h-0">
+      <div className="flex items-center gap-3 flex-wrap">
+        <div role="group" aria-label="Choose week" className="flex gap-2">
+          <button className="btn" aria-pressed={wk === "winter"} onClick={() => setWk("winter")}>Cold winter week</button>
+          <button className="btn" aria-pressed={wk === "summer"} onClick={() => setWk("summer")}>Summer week</button>
+        </div>
+        <Legend items={[{ color: "var(--ember)", label: "Heat delivered" }, { color: "var(--ink2)", label: "Backup" }]} />
+      </div>
+      <div className="flex-1 min-h-[170px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={rows} margin={{ top: 14, right: 12, left: 6, bottom: 0 }}>
+            <CartesianGrid vertical={false} strokeDasharray="3 4" />
+            <XAxis dataKey="h" type="number" domain={[0, 167]} ticks={[0, 24, 48, 72, 96, 120, 144]} tickFormatter={DAY} tick={axisTick} axisLine={axisLine} tickLine={false} />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" MW" />
+            <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} MW`} />
+            <Area type="monotone" dataKey="delivered_MW" stackId="1" name="Heat delivered" stroke="var(--ember)" strokeWidth={2} fill="var(--ember)" fillOpacity={0.75} />
+            <Area type="monotone" dataKey="backup_MW" stackId="1" name="Backup" stroke="var(--ink2)" strokeWidth={2} fill="var(--ink2)" fillOpacity={0.85} />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="h-[84px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={rows} margin={{ top: 4, right: 12, left: 6, bottom: 0 }}>
+            <XAxis dataKey="h" type="number" domain={[0, 167]} hide />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" °C" domain={["dataMin - 2", "dataMax + 2"]} tickCount={3} />
+            <ReferenceLine y={0} stroke="var(--line)" />
+            <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} °C`} />
+            <Area type="monotone" dataKey="outdoor_C" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-[1rem] text-ink2 m-0">Outdoor temperature (°C) for the same week.</p>
+    </div>
+  );
+}
+
+/** Horizontal bars of cost per MWh of delivered heat: ours (3 ownership models) vs what Lansing pays today. */
+export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: number }) {
+  const f = d.finance;
+  const ours = [
+    { name: "Community co-op (4% finance)", v: lcohOverride ?? f.lcoh_usd_mwh.coop_4pct, kind: "ours" },
+    { name: "Utility (7%)", v: f.lcoh_usd_mwh.utility_7pct, kind: "ours" },
+    { name: "Private (10%)", v: f.lcoh_usd_mwh.private_10pct, kind: "ours" },
+  ];
+  const inc = (["natural_gas", "propane", "heating_oil", "electric_resistance"] as const).map((k) => ({
+    name: FUEL_LABEL[k] + (k === "natural_gas" ? " (no new hookups)" : ""),
+    v: f.incumbent_usd_mwh[k],
+    kind: k === "natural_gas" ? "gas" : "inc",
+  }));
+  const rows = [...ours, ...inc];
+  const color = (k: string) => (k === "ours" ? "var(--teal)" : k === "gas" ? "var(--ink2)" : "var(--ember)");
+  return (
+    <div className="flex flex-col h-full min-h-0">
+      <Legend items={[{ color: "var(--teal)", label: "Recovered heat, cost to produce" }, { color: "var(--ember)", label: "What Lansing pays today" }]} />
+      <div className="flex-1 min-h-[300px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={rows} layout="vertical" margin={{ top: 10, right: 70, left: 6, bottom: 4 }}>
+            <CartesianGrid horizontal={false} strokeDasharray="3 4" />
+            <XAxis type="number" tick={axisTick} axisLine={axisLine} tickLine={false} unit="" domain={[0, "dataMax + 20"]} tickFormatter={(v) => `$${v}`} />
+            <YAxis type="category" dataKey="name" width={236} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
+            <Tooltip {...tip} formatter={(v) => `$${int(Number(v))} per MWh of heat`} />
+            <Bar dataKey="v" radius={[0, 6, 6, 0]} barSize={26}>
+              {rows.map((r) => <Cell key={r.name} fill={color(r.kind)} />)}
+              <LabelList dataKey="v" position="right" formatter={(v) => `$${int(Number(v))}`} fill="var(--ink)" fontSize={17} fontWeight={700} />
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-[1rem] text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).</p>
+    </div>
+  );
+}
+
+/** Tornado of LCOH sensitivity. */
+export function Tornado({ d }: { d: Site2Data }) {
+  const base = d.finance.lcoh_usd_mwh.coop_4pct;
+  const rows = d.finance.tornado.map((t) => ({ name: t.driver, low: t.low - base, high: t.high - base, lo: t.low, hi: t.high })).sort((a, b) => b.hi - b.lo - (a.hi - a.lo));
+  return (
+    <div className="h-full min-h-[260px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={rows} layout="vertical" stackOffset="sign" margin={{ top: 6, right: 40, left: 6, bottom: 4 }}>
+          <CartesianGrid horizontal={false} strokeDasharray="3 4" />
+          <XAxis type="number" tick={axisTick} axisLine={axisLine} tickLine={false} tickFormatter={(v) => `${v > 0 ? "+" : ""}$${v}`} />
+          <YAxis type="category" dataKey="name" width={220} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
+          <ReferenceLine x={0} stroke="var(--ink)" />
+          <Tooltip {...tip} formatter={(v) => `${Number(v) > 0 ? "+" : ""}$${dec(Number(v), 0)} per MWh vs base`} />
+          <Bar dataKey="low" stackId="s" fill="var(--teal)" name="Low case" />
+          <Bar dataKey="high" stackId="s" fill="var(--ember)" name="High case" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}

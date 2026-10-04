@@ -1,0 +1,145 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import "maplibre-gl/dist/maplibre-gl.css";
+import type { Offtaker } from "@/lib/types";
+import { BOUNDS, LAKE, ONSITE_R_KM, PLANT, ROUTE, TOWN, TOWN_R_KM, circle, makeProjector, type LonLat } from "@/lib/geo";
+import { ringColor } from "../ui";
+
+const LABELS: { at: LonLat; text: string; ring: string; dx: number; dy: number }[] = [
+  { at: PLANT, text: "Data center", ring: "dc", dx: -10, dy: -26 },
+  { at: [-76.59, 42.592], text: "Corridor homes + farms", ring: "corridor", dx: 0, dy: -22 },
+  { at: TOWN, text: "Town center", ring: "town", dx: 14, dy: -34 },
+];
+
+function cssVar(name: string, fallback: string) {
+  if (typeof document === "undefined") return fallback;
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+}
+
+/** Pure-SVG map. Works fully offline and with no WebGL; also the fallback for the MapLibre view. */
+export function RingMapSvg({ offtakers }: { offtakers: Offtaker[] }) {
+  const W = 900;
+  const { project, height: H, pxPerKm } = makeProjector(W);
+  const path = (pts: LonLat[]) => pts.map((p, i) => `${i ? "L" : "M"}${project(p)[0].toFixed(1)},${project(p)[1].toFixed(1)}`).join(" ") + " Z";
+  const line = (pts: LonLat[]) => pts.map((p, i) => `${i ? "L" : "M"}${project(p)[0].toFixed(1)},${project(p)[1].toFixed(1)}`).join(" ");
+  const [px, py] = project(PLANT);
+  const [tx, ty] = project(TOWN);
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east." className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
+      <path d={path(LAKE)} fill="var(--teal)" opacity="0.22" />
+      <text x={60} y={H * 0.45} fontSize="22" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
+      <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth={ONSITE_R_KM * pxPerKm * 0.9} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.28" />
+      <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth="3.5" strokeDasharray="2 9" strokeLinecap="round" fill="none" />
+      <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="var(--ember)" opacity="0.28" />
+      <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="none" stroke="var(--ember)" strokeWidth="3" />
+      <circle cx={tx} cy={ty} r={TOWN_R_KM * pxPerKm} fill="var(--violet)" opacity="0.25" />
+      <circle cx={tx} cy={ty} r={TOWN_R_KM * pxPerKm} fill="none" stroke="var(--violet)" strokeWidth="3" strokeDasharray="10 7" />
+      {offtakers.map((o) => {
+        const [x, y] = project([o.lon, o.lat]);
+        return <circle key={o.id} cx={x} cy={y} r="7" fill="var(--bg)" stroke={ringColor(o.ring)} strokeWidth="4"><title>{o.name}</title></circle>;
+      })}
+      <path d={`M${px},${py - 12} l11,19 h-22 z`} fill="var(--navy)" />
+      {LABELS.map((l) => {
+        const [x, y] = project(l.at);
+        const w = l.text.length * 11.5 + 20;
+        return (
+          <g key={l.text} transform={`translate(${x + l.dx},${y + l.dy})`}>
+            <rect x={-8} y={-22} width={w} height={32} rx={8} fill="var(--bg)" opacity="0.92" />
+            <text x={0} y={0} fontSize="21" fontWeight="700" fill="var(--ink)">{l.text}</text>
+          </g>
+        );
+      })}
+      <g transform={`translate(${W - 190},${H - 30})`}>
+        <line x1="0" x2={5 * pxPerKm} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />
+        <text x={5 * pxPerKm + 8} y="6" fontSize="18" fill="var(--ink)">5 km</text>
+      </g>
+    </svg>
+  );
+}
+
+/** MapLibre view with an offline-safe, tile-free vector style. Falls back to SVG if WebGL/MapLibre fails. */
+export function RingMap({ offtakers }: { offtakers: Offtaker[] }) {
+  const el = useRef<HTMLDivElement>(null);
+  const [failed, setFailed] = useState(false);
+  const [streets, setStreets] = useState(false);
+  const mapRef = useRef<import("maplibre-gl").Map | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    let cleanup = () => {};
+    (async () => {
+      try {
+        const ml = await import("maplibre-gl");
+        if (cancelled || !el.current) return;
+        const poly = (c: LonLat[]) => ({ type: "Feature" as const, properties: {}, geometry: { type: "Polygon" as const, coordinates: [c] } });
+        const map = new ml.Map({
+          container: el.current,
+          bounds: BOUNDS,
+          fitBoundsOptions: { padding: 10 },
+          attributionControl: { compact: true, customAttribution: "Schematic geometry, illustrative" },
+          style: {
+            version: 8,
+            sources: {
+              lake: { type: "geojson", data: poly(LAKE) },
+              onsite: { type: "geojson", data: poly(circle(PLANT, ONSITE_R_KM)) },
+              town: { type: "geojson", data: poly(circle(TOWN, TOWN_R_KM)) },
+              route: { type: "geojson", data: { type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: ROUTE } } },
+              pts: { type: "geojson", data: { type: "FeatureCollection", features: offtakers.map((o) => ({ type: "Feature" as const, properties: { ring: o.ring, name: o.name }, geometry: { type: "Point" as const, coordinates: [o.lon, o.lat] } })) } },
+              osm: { type: "raster", tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"], tileSize: 256, maxzoom: 17, attribution: "© OpenStreetMap contributors" },
+            },
+            layers: [
+              { id: "bg", type: "background", paint: { "background-color": cssVar("--surface2", "#f4ede1") } },
+              { id: "osm", type: "raster", source: "osm", layout: { visibility: "none" }, paint: { "raster-opacity": 0.75 } },
+              { id: "lake", type: "fill", source: "lake", paint: { "fill-color": cssVar("--teal", "#0b8ca6"), "fill-opacity": 0.25 } },
+              { id: "route-w", type: "line", source: "route", paint: { "line-color": cssVar("--teal", "#0b8ca6"), "line-width": 26, "line-opacity": 0.25 } },
+              { id: "route", type: "line", source: "route", paint: { "line-color": cssVar("--teal", "#0b8ca6"), "line-width": 3, "line-dasharray": [1, 3] } },
+              { id: "onsite", type: "fill", source: "onsite", paint: { "fill-color": cssVar("--ember", "#c2410c"), "fill-opacity": 0.3 } },
+              { id: "onsite-l", type: "line", source: "onsite", paint: { "line-color": cssVar("--ember", "#c2410c"), "line-width": 3 } },
+              { id: "town", type: "fill", source: "town", paint: { "fill-color": cssVar("--violet", "#7c4dcc"), "fill-opacity": 0.28 } },
+              { id: "town-l", type: "line", source: "town", paint: { "line-color": cssVar("--violet", "#7c4dcc"), "line-width": 3, "line-dasharray": [3, 2] } },
+              {
+                id: "pts", type: "circle", source: "pts",
+                paint: {
+                  "circle-radius": 7, "circle-color": cssVar("--bg", "#fbf7f0"), "circle-stroke-width": 4,
+                  "circle-stroke-color": ["match", ["get", "ring"], "onsite", cssVar("--ember", "#c2410c"), "corridor", cssVar("--teal", "#0b8ca6"), cssVar("--violet", "#7c4dcc")],
+                },
+              },
+            ],
+          },
+        });
+        mapRef.current = map;
+        map.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
+        for (const l of LABELS) {
+          const d = document.createElement("div");
+          d.textContent = l.text;
+          d.style.cssText = "font:700 17px var(--font-sans);color:var(--ink);background:color-mix(in srgb,var(--bg) 90%,transparent);padding:3px 9px;border-radius:8px;white-space:nowrap;pointer-events:none";
+          new ml.Marker({ element: d, offset: [l.dx + 20, l.dy + 10] }).setLngLat(l.at).addTo(map);
+        }
+        map.on("error", (e) => {
+          // Tile errors are expected offline; only a style/WebGL failure is fatal.
+          const msg = String((e as { error?: Error }).error?.message ?? "");
+          if (/webgl/i.test(msg)) setFailed(true);
+        });
+        cleanup = () => { map.remove(); mapRef.current = null; };
+      } catch {
+        if (!cancelled) setFailed(true);
+      }
+    })();
+    return () => { cancelled = true; cleanup(); };
+  }, [offtakers]);
+
+  useEffect(() => {
+    const m = mapRef.current;
+    if (m && m.getLayer("osm")) m.setLayoutProperty("osm", "visibility", streets ? "visible" : "none");
+  }, [streets]);
+
+  if (failed) return <RingMapSvg offtakers={offtakers} />;
+  return (
+    <div className="relative w-full h-full min-h-[260px]">
+      <div ref={el} className="absolute inset-0 rounded-2xl overflow-hidden" role="img" aria-label="Interactive map of the three heat rings around the Lansing data center." />
+      <button className="btn absolute bottom-3 left-3 z-10 !min-h-[44px] text-[1rem]" aria-pressed={streets} onClick={() => setStreets((s) => !s)}>
+        Streets (needs internet)
+      </button>
+    </div>
+  );
+}

@@ -1,0 +1,60 @@
+{
+ "placeholder": true,
+ "meta": {
+  "site": "111 8th Ave, New York NY",
+  "generated": "2026-10-03",
+  "scenario": "base"
+ },
+ "supply": {
+  "it_load_MW": 35,
+  "load_factor": 0.8,
+  "capture_fraction": 0.5,
+  "capture_temp_C": 32,
+  "heat_available_GWh": 123,
+  "heat_available_MW_avg": 14
+ },
+ "totals": {
+  "heat_delivered_MWh": 60000,
+  "share_of_available_pct": 48.9,
+  "hp_elec_MWh": 20000,
+  "backup_MWh": 4000,
+  "unmet_hours": 0,
+  "avg_cop": 3,
+  "storage_m3": 800
+ },
+ "finance": {
+  "lcoh_usd_mwh": {
+   "coop_4pct": 128,
+   "utility_7pct": 146,
+   "private_10pct": 167
+  },
+  "incumbent_usd_mwh": {
+   "natural_gas": 70,
+   "electric_resistance": 300
+  }
+ },
+ "impact": {
+  "co2_avoided_t_yr": 8000,
+  "co2_cars_equiv": 1700,
+  "homes_served": 3000,
+  "fossil_displaced_MWh": 40000
+ },
+ "why_not_chosen": [
+  {
+   "point": "Low-grade heat",
+   "detail": "Air-cooled condenser water leaves at 29 to 35 °C, so every building needs its own booster heat pump."
+  },
+  {
+   "point": "Duplicates a live project",
+   "detail": "Con Edison is already building a data-center heat network pilot for Fulton Houses, one block away."
+  },
+  {
+   "point": "Dirtier grid",
+   "detail": "The NYC grid emits about 3.5x more CO2 per kWh than upstate, so heat pumps save less carbon."
+  },
+  {
+   "point": "No community fight",
+   "detail": "Nothing forces a trade, so heat reuse would be optional, not the deciding answer."
+  }
+ ]
+}

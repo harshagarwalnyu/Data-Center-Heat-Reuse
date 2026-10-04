@@ -1,0 +1,43 @@
+# Site 1 overrides (111 8th Ave NYC), deep-merged over engineering/finance/impact. Sources: research/facts-site1.md; [A]=ASSUMPTION.
+engineering:
+  site: {name: "111 8th Ave, New York NY", lat: 40.7425, lon: -74.0033, epw_glob: "nyc/*.epw"}
+  supply:
+    it_load_mw: 30          # facts-site1.md: 22-28 MW named tenants, 30-40 MW assumed total
+    load_factor: 0.75       # [A]
+    capture_fraction: 0.55  # [A] legacy chilled water + roof cooling towers, condenser-loop capture only
+    capture_temp_c: 32      # facts-site1.md: condenser return 29-35 C
+    outage_seed: 11
+  onsite:
+    supply_temp_c: 35
+    pipe_km: 0.3
+    greenhouse: {area_ha: 0}
+    aquaculture: {fish_t_yr: 0}
+    rec: {pool_mwh: 900, building_m2: 3500, kwh_m2: 110}   # Chelsea Rec Center + McBurney YMCA pools [A] loads
+  corridor:
+    homes: 2056             # NYCHA Fulton + Elliott-Chelsea units (facts-site1.md)
+    uptake: 1.0
+    mwh_per_home: 10        # [A]
+    dhw_mwh_per_home: 2.5   # [A]
+    trunk_km: 1.4           # [A]
+    frontage_m_per_home: 0.0
+    loop_temp_c: 22
+    loop_loss_w_per_m: 8
+    label_unit: "apartments"
+  town:
+    include_in_base: true
+    trunk_km: 1.0
+    spur_km: 0.6
+    schools: {floor_m2: 25000, kwh_m2: 90}      # P.S. 11, Lab MS/HS, Bayard Rustin [A] areas
+    others:
+      - {name: "Mount Sinai Chelsea + Callen-Lorde", mwh: 2500}   # [A]
+      - {name: "Chelsea Market (Google)", mwh: 6000}              # [A]
+finance:
+  elec_price_usd_kwh: 0.25   # [A] ConEd commercial/multifamily
+  prices: {steam_usd_mwh: 118.7, gas_usd_therm: 2.2}   # steam $41.53/Mlb x (1/1.194 MMBtu/Mlb) -> $34.8/MMBtu = $118.7/MWh (ConEd 10-K via facts-site1.md); gas [A]
+  capex: {loop_pipe_usd_m: 3500, onsite_pipe_usd_m: 4500, trunk_usd_m: 5000, building_hp_usd: 9000, lateral_usd: 4000}   # [A] Manhattan trenching 4-8x rural
+  tariff: {onsite_tariff_usd_mwh: 60}
+impact:
+  ef_kg_kwh: {grid: 0.3927, grid_marginal: 0.45}   # eGRID NYCW (facts-site2.md sec 7)
+  mix_corridor: {gas: 0.7, oil: 0.3}   # [A] NYCHA gas/oil
+  mix_onsite: {gas: 1.0}
+  mix_town: {gas: 0.7, oil: 0.3}
