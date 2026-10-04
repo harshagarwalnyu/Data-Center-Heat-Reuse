@@ -113,7 +113,7 @@ export function Explore({ data }: { data: AppData }) {
               <div className="card p-4">
                 <h2 className="m-0 mb-2 text-h3">By ring</h2>
                 <table className="w-full text-caption">
-                  <thead><tr className="text-left text-ink2"><th className="pb-1 font-semibold">Ring</th><th className="pb-1 font-semibold num text-right">GWh/yr</th><th className="pb-1 font-semibold text-right">Share of heat</th></tr></thead>
+                  <thead><tr className="text-left text-ink2"><th className="pb-1 font-semibold">Ring</th><th className="pb-1 font-semibold num text-right">GWh/yr</th><th className="pb-1 pl-4 font-semibold text-right">Share of heat</th></tr></thead>
                   <tbody>
                     {s.byRing.map((r) => (
                       <tr key={r.id} className="border-t border-line"><td className="py-2 font-semibold" style={{ color: ringText(r.id) }}>{ringShort(r.id)}</td><td className="num text-right">{dec(r.demandMWh / 1000, 1)}</td><td className="num text-right">{r.demandMWh > 0 ? `${dec((r.demandMWh / Math.max(1, s.byRing.reduce((a, x) => a + x.demandMWh, 0))) * 100, 0)}%` : "off"}</td></tr>
