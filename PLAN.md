@@ -16,15 +16,33 @@ Judging lenses (every slide maps to one):
 
 Sites: **Site 1** 111 8th Ave, NYC (commissioned, urban, multi-tenant carrier hotel). **Site 2** Lake Hawkeye / former Cayuga plant, Lansing NY (proposed, TeraWulf). Working pick: Site 2 (new build lets us specify liquid cooling; live community fight makes heat reuse a real answer). Site 1 gets a short comparison table so the choice is justified, not assumed.
 
+## Decisions (user, 2026-10-03)
+
+- **Track:** HDR/Grundfos "Data Center Heat Reuse" challenge. **Site 2 Lansing is the committed proposal**; Site 1 appears as a toggle in the app for comparison only.
+- **Hero deliverable:** a deployed web app with a guided **Story mode** (15+ min pitch) and an **Explore mode** (live what-if sliders). Audience = senior corporate reviewers, so it needs big type, one takeaway per screen, plain English.
+- **Delivery:** live demo on stage (presenter mode + offline fallback), public URL (Vercel), 2-3 min video walkthrough, printed 1-page leave-behind with QR code.
+- **Timeline:** more than a week. **Team:** solo + agents.
+- No organizer files on hand; use public versions.
+
+## Product: the web app
+
+Python model (`src/heatreuse`) → JSON/CSV in `outputs/` → export script → `web/public/data/` → Next.js app (TS, Tailwind, shadcn/ui, MapLibre, charts, Framer Motion; bun; static export so it runs offline).
+
+Story mode steps: the fight → the insight (supply ≫ demand) → site map → heat-flow Sankey → temperature ladder → seasonality (winter/summer week) → "your household savings" calculator → who pays / ownership → "what if the data center leaves" → carbon and water → the ask.
+Explore mode: sliders for electricity price, air vs liquid cooling (COP), uptake %, discount rate, DC load. Headline numbers recompute client-side.
+Specs come from `research/ux-for-executives.md`, `docs/frontend-spec.md`, `docs/design-system.md`.
+Skill gates: `frontend` + `dataviz` while building; `design-audit` (nielsen, wcag, visual, walkthrough) before freeze; `plan-review` on the spec; `council` (attack-defend) on the pitch; `code-review` + `verification-before-completion` before each push.
+
 ## Agent lanes (2026-10-03)
 
 | Lane | Tool | Owns (write only these) |
 |---|---|---|
-| A | Cursor `grok-4.7-xhigh-fast` | `research/videos.md`, `research/case-studies.md` (YouTube playlist + Deep Green + precedents) |
+| C01-C20 | Cursor `grok-4.7-xhigh-fast`, queue of 4 concurrent | research/, docs/, scoring/finance/impact/gis modules, offtakers.csv (one file set per task) |
+| C21-C23 | Cursor, queue of 1 | UX research, frontend spec, design system |
 | B | agy WSL `claude-opus-4-6-thinking` | `research/facts-site2.md` |
 | C | agy Windows `claude-opus-4-6-thinking` | `research/facts-site1.md`, `research/site-selection.md` |
-| D | Claude Code WSL (sonnet) | `pyproject.toml`, `config/engineering.yaml`, `src/heatreuse/{__init__,supply,demand,heatpump,storage,dispatch}.py`, `tests/test_engineering*.py`, `outputs/engineering/` |
-| E | Claude Code Windows (sonnet) | `config/finance.yaml`, `config/scoring.yaml`, `src/heatreuse/{finance,impact,scoring}.py`, `tests/test_finance*.py`, `tests/test_scoring*.py`, `outputs/finance/` |
+| D | Claude Code (blocked: re-login + permission rule) | engineering model: `pyproject.toml`, `config/engineering.yaml`, `src/heatreuse/{__init__,supply,demand,heatpump,storage,dispatch}.py`, tests |
+| F | Claude Code (after C22/C23 land) | `web/` frontend build |
 
 Rules for every lane: write the output file skeleton first and append as you go; no git commits; never touch another lane's files; every fact carries source URL + `(verified 2026-10-03)`; unverifiable = `[unverified]`.
 
