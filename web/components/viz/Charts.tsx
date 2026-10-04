@@ -7,6 +7,11 @@ import { FUEL_LABEL } from "@/lib/model";
 
 const tip = { contentStyle: { background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 10, fontSize: 17, color: "var(--ink)" }, labelStyle: { color: "var(--ink)", fontWeight: 700 }, itemStyle: { color: "var(--ink)" } };
 const axisTick = { fill: "var(--ink2)", fontSize: 17 };
+/** Outdoor axis from finite readings only, padded 2 C; falls back to auto when a week has none. */
+const outdoorDomain = (rows: { outdoor_C: number }[]): [number, number] | ["auto", "auto"] => {
+  const t = rows.map((r) => r.outdoor_C).filter(Number.isFinite);
+  return t.length ? [Math.floor(Math.min(...t)) - 2, Math.ceil(Math.max(...t)) + 2] : ["auto", "auto"];
+};
 const axisLine = { stroke: "var(--line)" };
 
 export function Legend({ items }: { items: { color: string; label: string; dashed?: boolean; hatch?: boolean }[] }) {
@@ -93,7 +98,7 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={rows} margin={{ top: 4, right: 12, left: 6, bottom: 0 }}>
             <XAxis dataKey="h" type="number" domain={[0, 167]} hide />
-            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={80} unit=" °C" domain={[Math.floor(Math.min(...rows.map((r) => r.outdoor_C))) - 2, Math.ceil(Math.max(...rows.map((r) => r.outdoor_C))) + 2]} tickCount={3} />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={80} unit=" °C" domain={outdoorDomain(rows)} tickCount={3} />
             <ReferenceLine y={0} stroke="var(--line)" />
             <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} °C`} />
             <Area isAnimationActive={false} type="monotone" dataKey="outdoor_C" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />

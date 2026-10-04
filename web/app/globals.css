@@ -57,7 +57,7 @@
   --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 
   /* Fluid type scale (taste brief T2). Floors sit above the brief's 13/16px so the 18px-minimum body rule still holds on projectors. */
-  --text-caption: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
+  --text-caption: clamp(1.125rem, 1rem + 0.2vw, 1.1875rem);
   --text-caption--line-height: 1.45;
   --text-body: clamp(1.125rem, 1.08rem + 0.15vw, 1.25rem);
   --text-body--line-height: 1.5;
