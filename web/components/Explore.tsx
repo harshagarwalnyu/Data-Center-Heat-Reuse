@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import type { AppData } from "@/lib/types";
-import { baseParams, scenario, type Cooling, type Params } from "@/lib/model";
+import { baseParams, LCOH_ANCHOR_PCT, scenario, type Cooling, type Params } from "@/lib/model";
 import { dec, int, usd } from "@/lib/format";
 import { NavBar, ringText, ringShort } from "./ui";
 import { LcohBars } from "./viz/Charts";
@@ -33,7 +33,8 @@ function Kpi({ label, value, unit, delta, good, before, badge }: { label: string
 
 export function Explore({ data }: { data: AppData }) {
   const d = data.site2;
-  const base = useMemo(() => baseParams(d), [d]);
+  // Explore opens at 7% cost of money (utility finance), matching the model's published 7% LCOH exactly.
+  const base = useMemo(() => ({ ...baseParams(d), discountPct: LCOH_ANCHOR_PCT[1] }), [d]);
   const [p, setP] = useState<Params>(base);
   const s = scenario(d, p);
   const b = scenario(d, base);
