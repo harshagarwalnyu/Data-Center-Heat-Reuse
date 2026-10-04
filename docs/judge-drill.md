@@ -175,7 +175,7 @@ In the industry videos, an Open Compute speaker said the reason most heat deals 
 Average 4.7 (`totals.avg_cop` = 4.71): each unit of electricity delivers 4.7 units of heat. It is calculated every hour from the actual temperatures, as a fraction of the theoretical maximum, and capped between 2 and 6.
 
 **→ Isn't 4.7 high?**
-It is at the top of the measured range. A survey of 24 low-temperature networks found 3 to 5, with 17 of 24 at 4 or above (Buffa et al. 2019, in `docs/evidence.md`). Our home heat pumps lift from a 20 °C loop, which is easy.
+It is at the top of the measured range. A survey of 24 low-temperature networks found 3 to 5, with 17 of 24 at 4 or above (Buffa et al. 2019, in `docs/evidence.md`). Their figures include pumping; our 4.71 is before pumping, which we count separately. Our home heat pumps lift from a 20 °C loop, which is easy.
 
 **→→ What if it's worse?**
 The model barely moves: heat-pump efficiency is the smallest driver in our sensitivity chart, $104 to $109 per MWh. Pipe cost and financing matter far more.
@@ -284,7 +284,7 @@ The cost of heat lands between $98 and $115 per MWh (10th to 90th percentile), c
 In order: financing rate ($90-125), pipe cost ($98-116), how many corridor homes sign up ($98-112), electricity price ($100-111), heat-pump efficiency ($104-109). Data-center size doesn't matter at all, because supply is never the limit.
 
 **→→ Can someone check your work?**
-Yes. The model is open and runs with one command. There are 48 automated tests. Every input is listed with a source or an "assumption" label, and a verification report checks every one.
+Yes. The model is open and runs with one command. There are 50 Python tests and 42 web tests. Every input is listed with a source or an "assumption" label, and a verification report checks every one.
 
 ---
 
