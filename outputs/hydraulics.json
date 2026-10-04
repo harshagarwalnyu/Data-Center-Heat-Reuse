@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "source": "heatreuse.hydraulics",
+    "base_json": "outputs/site2.json (not modified)",
+    "status": "SCREENING, not design"
+  },
+  "assumptions": {
+    "delta_T": {
+      "onsite": {
+        "supply_c": 45.0,
+        "return_c": 25.0,
+        "basis": "ASSUMPTION design intent 45/25 C low-temperature campus loop"
+      },
+      "corridor": {
+        "supply_c": 20.0,
+        "return_c": 15.0,
+        "basis": "ASSUMPTION design intent 20/15 C ambient loop (building HP evaporators)"
+      },
+      "town": {
+        "supply_c": 65.0,
+        "return_c": 35.0,
+        "basis": "ASSUMPTION design intent 65/35 C hot loop"
+      }
+    },
+    "pump_eta": 0.7,
+    "motor_drive_eta": 0.93,
+    "fittings_allowance": 0.3,
+    "end_head_m": 10.0,
+    "min_flow_floor": 0.2,
+    "velocity_limits_m_s": {
+      "DN<=150": 1.5,
+      "DN>150": 2.0
+    },
+    "max_friction_pa_m": 100.0,
+    "roughness_mm": {
+      "steel": 0.05,
+      "hdpe": 0.007
+    },
+    "pipe_material": {
+      "onsite": "steel",
+      "corridor": "hdpe",
+      "town": "steel"
+    }
+  },
+  "rings": {
+    "onsite": {
+      "id": "onsite",
+      "peak_MW": 16.36,
+      "annual_MWh": 37076.0,
+      "pipe_km": 0.5,
+      "supply_C": 45.0,
+      "return_C": 25.0,
+      "delta_T_K": 20.0,
+      "delta_T_basis": "ASSUMPTION design intent 45/25 C low-temperature campus loop",
+      "water": {
+        "mean_C": 35.0,
+        "rho": 993.95,
+        "cp": 4178.5,
+        "nu": 0.0
+      },
+      "design_flow_m3_s": 0.197,
+      "design_flow_m3_h": 709.04,
+      "design_flow_L_s": 196.96,
+      "pipe_material": "steel",
+      "roughness_mm": 0.05,
+      "segments": [
+        {
+          "km": 0.5,
+          "flow_frac": 1.0,
+          "eq_factor": 1.0,
+          "note": "whole on-site main at full flow (conservative)",
+          "flow_m3h": 709.04,
+          "DN": 400,
+          "inner_d_m": 0.3938,
+          "velocity_m_s": 1.6171,
+          "v_limit_m_s": 2.0,
+          "R_pa_m": 46.31,
+          "Re": 872926.08,
+          "f": 0.014,
+          "dp_one_way_kPa": 23.15
+        }
+      ],
+      "head_m": 16.17,
+      "head_friction_m": 6.174,
+      "shaft_kW": 44.37,
+      "electrical_kW": 47.71,
+      "duty_point": {
+        "flow_m3_h": 709.04,
+        "head_m": 16.17,
+        "product_class": "variable-speed split-case (double-suction) or parallel end-suction sets, N+1"
+      },
+      "annual": {
+        "constant_speed_MWh": 417.97,
+        "variable_speed_affinity_MWh": 24.24,
+        "variable_speed_end_pressure_MWh": 91.76,
+        "profile_source": "model hourly ring demand D (8,760 h), flow proportional to load at constant delta-T",
+        "full_load_equivalent_hours": 2265.57
+      },
+      "flat_pump_share_MWh": 556.14,
+      "computed_vs_flat_ratio": 0.165,
+      "pumping_pct_of_heat_variable_speed": 0.2475,
+      "pumping_pct_of_heat_constant_speed": 1.1273,
+      "pumping_pct_of_heat_affinity": 0.0654
+    },
+    "corridor": {
+      "id": "corridor",
+      "peak_MW": 6.84,
+      "annual_MWh": 13500.0,
+      "pipe_km": 20.9,
+      "supply_C": 20.0,
+      "return_C": 15.0,
+      "delta_T_K": 5.0,
+      "delta_T_basis": "ASSUMPTION design intent 20/15 C ambient loop (building HP evaporators)",
+      "water": {
+        "mean_C": 17.5,
+        "rho": 998.58,
+        "cp": 4184.5,
+        "nu": 0.0
+      },
+      "design_flow_m3_s": 0.3274,
+      "design_flow_m3_h": 1178.59,
+      "design_flow_L_s": 327.39,
+      "pipe_material": "hdpe",
+      "roughness_mm": 0.007,
+      "segments": [
+        {
+          "km": 3.0,
+          "flow_frac": 1.0,
+          "eq_factor": 1.0,
+          "note": "trunk plant -> first cluster at full flow",
+          "flow_m3h": 1178.59,
+          "DN": 500,
+          "inner_d_m": 0.4954,
+          "velocity_m_s": 1.6985,
+          "v_limit_m_s": 2.0,
+          "R_pa_m": 36.07,
+          "Re": 779459.05,
+          "f": 0.0124,
+          "dp_one_way_kPa": 108.2
+        },
+        {
+          "km": 8.95,
+          "flow_frac": 0.5,
+          "eq_factor": 0.3333,
+          "note": "ASSUMPTION distribution split into 2 branches; flow tapers linearly to 0 (eq. length L/3)",
+          "flow_m3h": 589.3,
+          "DN": 350,
+          "inner_d_m": 0.3444,
+          "velocity_m_s": 1.7572,
+          "v_limit_m_s": 2.0,
+          "R_pa_m": 58.95,
+          "Re": 560603.97,
+          "f": 0.0132,
+          "dp_one_way_kPa": 175.87
+        }
+      ],
+      "head_m": 85.4,
+      "head_friction_m": 75.4,
+      "shaft_kW": 391.25,
+      "electrical_kW": 420.7,
+      "duty_point": {
+        "flow_m3_h": 1178.59,
+        "head_m": 85.4,
+        "product_class": "variable-speed multistage centrifugal, or end-suction sets with intermediate booster station(s) to split the head; duty/standby"
+      },
+      "annual": {
+        "constant_speed_MWh": 3685.35,
+        "variable_speed_affinity_MWh": 174.5,
+        "variable_speed_end_pressure_MWh": 282.83,
+        "profile_source": "model hourly ring demand D (8,760 h), flow proportional to load at constant delta-T",
+        "full_load_equivalent_hours": 1972.93
+      },
+      "flat_pump_share_MWh": 202.5,
+      "computed_vs_flat_ratio": 1.3967,
+      "pumping_pct_of_heat_variable_speed": 2.095,
+      "pumping_pct_of_heat_constant_speed": 27.3,
+      "pumping_pct_of_heat_affinity": 1.2926
+    },
+    "town": {
+      "id": "town",
+      "peak_MW": 2.96,
+      "annual_MWh": 3577.0,
+      "pipe_km": 14.0,
+      "supply_C": 65.0,
+      "return_C": 35.0,
+      "delta_T_K": 30.0,
+      "delta_T_basis": "ASSUMPTION design intent 65/35 C hot loop",
+      "water": {
+        "mean_C": 50.0,
+        "rho": 988.0,
+        "cp": 4181.0,
+        "nu": 0.0
+      },
+      "design_flow_m3_s": 0.0239,
+      "design_flow_m3_h": 85.99,
+      "design_flow_L_s": 23.89,
+      "pipe_material": "steel",
+      "roughness_mm": 0.05,
+      "segments": [
+        {
+          "km": 11.0,
+          "flow_frac": 1.0,
+          "eq_factor": 1.0,
+          "note": "transmission main at full flow",
+          "flow_m3h": 85.99,
+          "DN": 150,
+          "inner_d_m": 0.1603,
+          "velocity_m_s": 1.1835,
+          "v_limit_m_s": 1.5,
+          "R_pa_m": 73.14,
+          "Re": 343071.63,
+          "f": 0.0169,
+          "dp_one_way_kPa": 804.54
+        },
+        {
+          "km": 3.0,
+          "flow_frac": 1.0,
+          "eq_factor": 1.0,
+          "note": "spur to Town Hall cluster at full flow (conservative)",
+          "flow_m3h": 85.99,
+          "DN": 150,
+          "inner_d_m": 0.1603,
+          "velocity_m_s": 1.1835,
+          "v_limit_m_s": 1.5,
+          "R_pa_m": 73.14,
+          "Re": 343071.63,
+          "f": 0.0169,
+          "dp_one_way_kPa": 219.42
+        }
+      ],
+      "head_m": 284.68,
+      "head_friction_m": 274.68,
+      "shaft_kW": 94.15,
+      "electrical_kW": 101.24,
+      "duty_point": {
+        "flow_m3_h": 85.99,
+        "head_m": 284.68,
+        "product_class": "variable-speed multistage centrifugal, or end-suction sets with intermediate booster station(s) to split the head; duty/standby"
+      },
+      "annual": {
+        "constant_speed_MWh": 886.84,
+        "variable_speed_affinity_MWh": 18.4,
+        "variable_speed_end_pressure_MWh": 25.13,
+        "profile_source": "model hourly ring demand D (8,760 h), flow proportional to load at constant delta-T",
+        "full_load_equivalent_hours": 1207.1
+      },
+      "flat_pump_share_MWh": 53.66,
+      "computed_vs_flat_ratio": 0.4684,
+      "pumping_pct_of_heat_variable_speed": 0.7026,
+      "pumping_pct_of_heat_constant_speed": 24.79,
+      "pumping_pct_of_heat_affinity": 0.5144
+    }
+  },
+  "phases_1_2": {
+    "heat_MWh": 50576.0,
+    "pumping_variable_speed_MWh": 374.59,
+    "implied_pump_share": 0.0074,
+    "flat_pump_share": 0.015,
+    "lcoh_blended_7pct_at_implied_share": 105.25,
+    "lcoh_blended_7pct_base": 106.07
+  },
+  "pump_share_sweep": {
+    "base_pump_share": 0.015,
+    "base_lcoh_blended_7pct": 106.07,
+    "rows": [
+      {
+        "pump_share": 0.005,
+        "lcoh_blended_7pct": 104.99,
+        "delta_vs_base_usd_mwh": -1.08,
+        "lcoh_corridor_7pct": 284.68
+      },
+      {
+        "pump_share": 0.015,
+        "lcoh_blended_7pct": 106.07,
+        "delta_vs_base_usd_mwh": 0.0,
+        "lcoh_corridor_7pct": 285.76
+      },
+      {
+        "pump_share": 0.03,
+        "lcoh_blended_7pct": 107.69,
+        "delta_vs_base_usd_mwh": 1.62,
+        "lcoh_corridor_7pct": 287.38
+      },
+      {
+        "pump_share": 0.06,
+        "lcoh_blended_7pct": 110.93,
+        "delta_vs_base_usd_mwh": 4.86,
+        "lcoh_corridor_7pct": 290.62
+      }
+    ],
+    "note": "phases 1-2 base case; pump electricity priced at the central (industrial) rate, as in finance.evaluate"
+  }
+}

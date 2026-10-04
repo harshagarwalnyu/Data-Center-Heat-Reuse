@@ -11,6 +11,8 @@ Start with the root [README](../README.md). This index is a selected list of doc
 | [methodology.md](methodology.md) | The 8,760-hour pipeline, step by step, with formulas and code references. |
 | [assumptions.md](assumptions.md) | Every key input with value, unit, source and confidence. |
 | [architecture.md](architecture.md) | Model, JSON contract and Next.js app, with a diagram and regeneration steps. |
+| [analysis-detail.md](analysis-detail.md) | Monte Carlo uncertainty (P10/P50/P90), monthly and seasonal detail, per-ring breakdown, load-duration curve. |
+| [hydraulics.md](hydraulics.md) | Screening hydraulics: design flows, pipe DN, pump head and duty, variable- vs constant-speed pumping energy against the flat 1.5% share. |
 | [rubric.md](rubric.md) | The five judging categories and how the project addresses each. |
 
 ## docs/ : model, app and contract
@@ -27,6 +29,7 @@ Start with the root [README](../README.md). This index is a selected list of doc
 | [cooling-integration.md](cooling-integration.md) | How heat is captured from the Lake Hawkeye cooling system: capture points, temperatures, sidestream interface. |
 | [greenhouse-anchor.md](greenhouse-anchor.md) | The on-site heat sink: greenhouses, aquaculture and recreation, with demand per hectare and temperature needs. |
 | [ownership-deal.md](ownership-deal.md) | Ownership models, recommendation, and term sheets for the Heat Supply Agreement and Community Benefit Agreement. |
+| [term-sheet.md](term-sheet.md) | Plain-language draft term sheet (not legal advice): Heat Supply Agreement, Community Benefit Agreement, permit conditions, tariffs, governance, gates and open items for counsel. |
 | [risk-matrix.md](risk-matrix.md) | Scored risk register, heat-continuity cascade and cooling independence statement. |
 | [stakeholders.md](stakeholders.md) | Power and interest map and profiles of the people and institutions involved. |
 

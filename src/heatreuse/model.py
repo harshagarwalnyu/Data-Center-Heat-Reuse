@@ -4,7 +4,8 @@ import numpy as np
 from . import config as C, weather, supply, demand, dispatch as disp_mod, finance, impact, heatpump as hp
 
 
-def simulate(cfg: dict, include_town: bool | None = None, T=None) -> dict:
+def simulate(cfg: dict, include_town: bool | None = None, T: np.ndarray | None = None) -> dict:
+    """Run supply, demand and hourly dispatch for one config; returns T, A, it, rings, disp, weather_src."""
     src = None
     if T is None:
         T, src = weather.load_temps(cfg)
@@ -18,25 +19,29 @@ def simulate(cfg: dict, include_town: bool | None = None, T=None) -> dict:
     return dict(T=T, A=A, it=it, rings=rings, disp=d, weather_src=src)
 
 
-def full(cfg: dict, include_town: bool | None = None, T=None) -> dict:
+def full(cfg: dict, include_town: bool | None = None, T: np.ndarray | None = None) -> dict:
+    """simulate -> finance.evaluate -> impact.evaluate; returns {cfg, sim, fin, imp}."""
     sim = simulate(cfg, include_town, T)
     fin = finance.evaluate(cfg, sim)
     imp = impact.evaluate(cfg, sim, fin)
     return dict(cfg=cfg, sim=sim, fin=fin, imp=imp)
 
 
-def lcoh7(cfg, T=None) -> float:
+def lcoh7(cfg: dict, T: np.ndarray | None = None) -> float:
+    """Blended LCOH at the 7% utility rate ($/MWh) for one config."""
     return full(cfg, T=T)["fin"]["lcoh"]["utility_7pct"]
 
 
-def scale_capex(cfg, keys, mult):
+def scale_capex(cfg: dict, keys: list[str], mult: float) -> dict:
+    """Return a config copy with each capex key multiplied by ``mult``."""
     c = cfg
     for k in keys:
         c = C.override(c, "fin", "capex.%s" % k, cfg["fin"]["capex"][k] * mult)
     return c
 
 
-def tornado(cfg, T) -> list[dict]:
+def tornado(cfg: dict, T: np.ndarray) -> list[dict]:
+    """One-at-a-time LCOH(7%) sensitivity over the finance.yaml tornado ranges, widest swing first."""
     t = cfg["fin"]["tornado"]
     base = lcoh7(cfg, T)
     out = []
@@ -76,7 +81,8 @@ def tornado(cfg, T) -> list[dict]:
     return sorted(out, key=lambda o: -abs(o["high"] - o["low"]))
 
 
-def cop_compare(cfg, T) -> dict:
+def cop_compare(cfg: dict, T: np.ndarray) -> dict:
+    """Seasonal and 60 C design-point COP for air-side vs liquid capture temperatures."""
     h, s = cfg["eng"]["hp"], cfg["eng"]["supply"]
     t = cfg["eng"]["town"]
     sink = hp.weather_comp(T, t["sink"])
@@ -92,7 +98,8 @@ def cop_compare(cfg, T) -> dict:
     return res
 
 
-def scenarios(cfg, T) -> dict:
+def scenarios(cfg: dict, T: np.ndarray) -> dict:
+    """Named what-if runs (capture fraction, 320 MW build, town hot loop, 65 C capture, price cases)."""
     out = {}
     for name, cf in (("recovery_low_0.40", 0.40), ("recovery_base_0.75", 0.75), ("recovery_high_0.85", 0.85)):
         r = full(C.override(cfg, "eng", "supply.capture_fraction", cf), T=T)
@@ -137,7 +144,7 @@ def _scan(cfg, T):
     return dict(min_homes=None, lcoh_ring_at_2000_homes=round(r["lcoh_ring"]["corridor"], 1), blend_tariff=round(r["blend_tariff"], 1))
 
 
-def breakeven_homes(cfg, T) -> dict:
+def breakeven_homes(cfg: dict, T: np.ndarray) -> dict:
     """Homes at which corridor ring LCOH(7%) <= blended tariff under different capex-payer assumptions."""
     c_pipe = C.override(C.override(cfg, "fin", "capex.loop_pipe_usd_m", 0.0), "fin", "capex.lateral_usd", 0.0)
     c_hp = C.override(c_pipe, "fin", "capex.building_hp_usd", cfg["fin"]["capex"]["building_hp_usd"] * 0.5)

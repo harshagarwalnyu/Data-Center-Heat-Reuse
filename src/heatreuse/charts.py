@@ -1,5 +1,6 @@
 """PNG charts for the deck/app."""
 from __future__ import annotations
+from pathlib import Path
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -14,7 +15,8 @@ def _save(fig, path, name):
     plt.close(fig)
 
 
-def make(base, with_town, tor, cop, out):
+def make(base: dict, with_town: dict, tor: list[dict], cop: dict, out: Path) -> None:
+    """Render the PNG charts (weeks, monthly, tornado, COP, LCOH) into ``out``."""
     for which in ("winter", "summer"):
         rows = report._week(base, which)
         h = [r["h"] for r in rows]
