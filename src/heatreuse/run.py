@@ -12,7 +12,8 @@ def _dump(obj, name):
     (OUT / name).write_text(json.dumps(obj, indent=2, default=float), encoding="utf-8")
 
 
-def main():
+def main() -> None:
+    """Run the model and write outputs/site2.json, site1.json, offtakers.json and charts."""
     cfg = C.load("site2")
     base = model.full(cfg)
     T = base["sim"]["T"]

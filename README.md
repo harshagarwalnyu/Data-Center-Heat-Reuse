@@ -1,3 +1,5 @@
+[![CI](https://github.com/harshagarwalnyu/Data-Center-Heat-Reuse/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/harshagarwalnyu/Data-Center-Heat-Reuse/actions/workflows/ci.yml)
+
 # Thermal Commons: Heat for Lansing
 
 HDR x Grundfos "Data Center Heat Reuse" challenge, BAC x iMasons hackathon 2026. Track: Waste Heat Reusage.
@@ -79,7 +81,11 @@ uv run python -m heatreuse.run             # model -> outputs/site2.json, site1.
 uv run python -m heatreuse.verify          # self-check + input register (run before the export)
 uv run python scripts/export_web_data.py   # copy outputs into web/public/data/
 uv run pytest                              # 8,760-hour balance, COP, LCOH hand checks, JSON contract tests
+uv run python -m heatreuse.analysis        # Monte Carlo + monthly/ring/load-duration detail -> outputs/analysis_detail.json
+uv run python -m heatreuse.hydraulics      # pump/pipe screening -> outputs/hydraulics.json
 ```
+
+One command for the whole chain (model, verify, analysis, hydraulics, web export; stops on any verify FAIL): `uv run python -m heatreuse` (add `--no-export` to leave `web/public/data/` untouched).
 
 The model reads cached Ithaca and Central Park TMYx weather from `data/processed/`, so it runs offline. The raw EPW files are only needed to rebuild that cache. Refresh the app after a rerun by reloading the page: it fetches the JSON at runtime. Details: [docs/architecture.md](docs/architecture.md).
 
@@ -103,7 +109,7 @@ Full pipeline with formulas and code references: [docs/methodology.md](docs/meth
 | `scripts/` | `export_web_data.py` (outputs to web), `extract_resources.py` (organizer documents to text). |
 | `web/` | Next.js static app: `app/` routes, `components/`, `lib/` (formulas for Explore), `public/data/` (JSON), `screenshots/`. |
 | `data/processed/` | Cached hourly weather and offtaker table. |
-| `docs/` | Proposal and design documents, audits. Index: [docs/README.md](docs/README.md). |
+| `docs/` | Proposal and design documents, audits. Index: [docs/README.md](docs/README.md). Draft CBA and heat supply term sheet: [docs/term-sheet.md](docs/term-sheet.md). |
 | `research/` | Fact base, verification, model notes, case studies, organizer digest. |
 | `resources/` | Organizer materials as extracted text and pages. |
 | `PLAN.md` | Original working plan. |

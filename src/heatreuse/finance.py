@@ -5,14 +5,17 @@ from . import heatpump as hp
 
 
 def crf(r: float, n: int) -> float:
+    """Capital recovery factor: annual payment per $ of capex at rate r over n years."""
     return r * (1 + r) ** n / ((1 + r) ** n - 1)
 
 
 def annuity(r: float, n: int) -> float:
+    """Present-value factor of a level annual amount at rate r over n years (1 / crf)."""
     return (1 - (1 + r) ** -n) / r
 
 
-def incumbents(cfg, T, corridor_D) -> dict:
+def incumbents(cfg: dict, T: np.ndarray, corridor_D: np.ndarray) -> dict:
+    """Delivered-heat cost of incumbent fuels ($/MWh), incl. an air-source HP weighted by corridor demand."""
     p = cfg["fin"]["prices"]
     ef = p["eff"]
     el = cfg["fin"]["elec_price_usd_kwh"] * 1000
@@ -32,7 +35,8 @@ def incumbents(cfg, T, corridor_D) -> dict:
     return out
 
 
-def capex_lines(cfg, sim) -> list[dict]:
+def capex_lines(cfg: dict, sim: dict) -> list[dict]:
+    """Itemised capex lines (item, usd, source, ring, payer) incl. soft cost and contingency."""
     c = cfg["fin"]["capex"]
     e = cfg["eng"]
     R, d = sim["rings"], sim["disp"]
@@ -73,6 +77,7 @@ def capex_lines(cfg, sim) -> list[dict]:
 
 
 def life_class(item: str) -> str:
+    """Map a capex line to its asset-life class: pipe, tank or equip."""
     it = item.lower()
     if "pipe" in it or "lateral" in it:
         return "pipe"
@@ -81,7 +86,7 @@ def life_class(item: str) -> str:
     return "equip"
 
 
-def allocate(lines, sim):
+def allocate(lines: list[dict], sim: dict) -> tuple[dict, dict]:
     """Per-ring capex split by life class: {ring: {pipe, tank, equip}} incl. soft cost and contingency pro rata."""
     d = sim["disp"]
     act = d["active"]
@@ -102,7 +107,8 @@ def allocate(lines, sim):
     return out, share
 
 
-def evaluate(cfg, sim) -> dict:
+def evaluate(cfg: dict, sim: dict) -> dict:
+    """Capex, opex, LCOH by rate and ring, tariffs, household savings, NPV/funding gap and DC-exit exposure."""
     fin, e = cfg["fin"], cfg["eng"]
     d, R, T = sim["disp"], sim["rings"], sim["T"]
     act = d["active"]
