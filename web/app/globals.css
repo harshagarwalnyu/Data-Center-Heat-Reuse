@@ -113,6 +113,7 @@ button, [role="button"], a { cursor: pointer; }
   font-weight: 600; font-size: 1.0625rem;
 }
 .btn:hover { border-color: var(--teal); }
+.btn:disabled { opacity: .45; cursor: not-allowed; border-color: var(--line); }
 .btn[aria-pressed="true"], .btn[aria-checked="true"], .btn.on {
   background: var(--navy); color: var(--bg); border-color: var(--navy);
 }
@@ -127,7 +128,7 @@ input[type="range"] { width: 100%; height: 44px; accent-color: var(--teal); back
 .pulse { animation: pulse-ring 3s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
   .flow-anim, .pulse { animation: none; }
-  * { scroll-behavior: auto !important; }
+  * { scroll-behavior: auto !important; transition: none !important; }
 }
 
 /* maplibre minimal ui */
