@@ -125,7 +125,8 @@ def ring_hydraulics(cfg: dict, ring: dict, profile: np.ndarray) -> dict[str, Any
     dt = DELTA_T[rid]
     dT = dt["supply_c"] - dt["return_c"]
     t_mean = (dt["supply_c"] + dt["return_c"]) / 2
-    assert WATER[0][0] <= t_mean <= WATER[-1][0], f"{rid}: mean water temperature {t_mean} C outside property table {WATER[0][0]}-{WATER[-1][0]} C"
+    if not WATER[0][0] <= t_mean <= WATER[-1][0]:
+        raise ValueError(f"{rid}: mean water temperature {t_mean} C outside property table {WATER[0][0]}-{WATER[-1][0]} C")
     rho, cp, nu = water(t_mean)
     q = design_flow_m3s(ring["peak_MW"], dT, rho, cp)
     eps = ROUGHNESS_MM[PIPE_MATERIAL[rid]] / 1000
