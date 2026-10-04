@@ -7,7 +7,7 @@ import { Sankey } from "../viz/Sankey";
 import { HouseholdCalc, QrCode, RatioBars, TempLadder } from "../viz/Misc";
 import { LcohBars, MonthlyChart, RingLcoh, WeekChart } from "../viz/Charts";
 import { RingDot, ringColor, ringText, ringShort } from "../ui";
-import { PUBLIC_URL } from "@/lib/config";
+import { CREDITS, PUBLIC_URL } from "@/lib/config";
 
 export interface Step {
   id: string;
@@ -60,7 +60,7 @@ export function buildSteps(data: AppData): Step[] {
   const peakMonth = Math.max(...d.monthly.map((m) => m.demand_MWh));
   const lowMonth = Math.min(...d.monthly.map((m) => m.demand_MWh));
   const totalPeak = incl.reduce((s, r) => s + r.peak_MW, 0);
-  const storageMWh = (d.totals.storage_m3 * 1.163 * 40) / 1000; // water: 1.163 kWh/m3/K, 40 K swing
+  const storageMWh = (d.totals.storage_m3 * 1.163 * 20) / 1000; // water: 1.163 kWh/m3/K, 20 K swing (model config)
   const storageHours = storageMWh / totalPeak;
   const allBeatOil = f.lcoh_usd_mwh.private_10pct < Math.min(f.incumbent_usd_mwh.propane, f.incumbent_usd_mwh.heating_oil);
   const ringL: Partial<Record<string, number>> = { ...(ex?.ring_lcoh_usd_mwh ?? {}) };
@@ -181,29 +181,29 @@ export function buildSteps(data: AppData): Step[] {
       kicker: "8 · Who pays, who owns",
       headline: ringL.onsite !== undefined ? "The right tool at every density: the farm first, a loop where homes cluster, rebates for the rest" : allBeatOil ? "Heat from the data center beats propane and oil under every ownership model; community ownership is cheapest" : `Community ownership cuts the cost of heat from $${int(f.lcoh_usd_mwh.private_10pct)} to $${int(f.lcoh_usd_mwh.coop_4pct)} per MWh`,
       layout: "wide",
-      notes: "A community thermal utility (co-op or municipal) owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but there are no new gas hookups in Lansing. Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
+      notes: "A community thermal utility, the Thermal Commons co-op, owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but there are no new gas hookups in Lansing. Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
       visual: (
         <div className="grid gap-4 min-h-0">
           <div className="grid grid-cols-[1fr_auto_1.2fr_auto_1fr] items-stretch gap-2 text-center">
-            <div className="card p-3"><b>Data center</b><div className="text-[1rem] text-ink2">sells heat, keeps cooling independent</div></div>
+            <div className="card p-2"><b>Data center</b><div className="text-[1rem] text-ink2">sells heat, keeps cooling independent</div></div>
             <div aria-hidden className="self-center text-[1.75rem] text-ember">&rarr;</div>
-            <div className="card p-3" style={{ borderColor: "var(--teal)", borderWidth: 2 }}><b>Community thermal utility</b><div className="text-[1rem] text-ink2">owns pipes + heat pumps · ${int(f.capex_musd.total)}M capex · public finance</div></div>
+            <div className="card p-2" style={{ borderColor: "var(--teal)", borderWidth: 2 }}><b>Thermal Commons co-op</b><div className="text-[1rem] text-ink2">owns pipes + heat pumps · ${int(f.capex_musd.total)}M capex · public finance</div></div>
             <div aria-hidden className="self-center text-[1.75rem] text-ember">&rarr;</div>
-            <div className="card p-3"><b>Homes, farms, school</b><div className="text-[1rem] text-ink2">pay ${int(f.tariff_usd_mwh)} per MWh · low-income ${int(f.low_income_tariff_usd_mwh)}</div></div>
+            <div className="card p-2"><b>Homes, farms, school</b><div className="text-[1rem] text-ink2">pay ${int(f.tariff_usd_mwh)} per MWh · low-income ${int(f.low_income_tariff_usd_mwh)}</div></div>
           </div>
           {ringL.onsite !== undefined ? (
             <div className="grid gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] min-h-0">
               <div className="min-h-[260px]"><RingLcoh d={d} ringL={ringL} /></div>
-              <div className="card p-4 text-[1.0625rem] grid gap-2 content-start">
+              <div className="card p-3 text-[1.0625rem] leading-snug grid gap-1.5 content-start">
                 <div className="font-bold text-[1.125rem]">Three tools, one benefit fund</div>
                 <ol className="m-0 pl-5 grid gap-1">
                   <li><b>On-site campus:</b> data-center heat at <b className="num">${dec(ringL.onsite ?? 0, 0)}</b> per MWh, cheaper than anything else.</li>
                   <li><b>Clustered homes:</b> join a shared ambient loop where the numbers pass.</li>
                   <li><b>Scattered homes:</b> heat-pump rebates from the same fund, no pipe.</li>
                 </ol>
-                <div>Whole network: <b className="num">${dec(f.lcoh_usd_mwh.utility_7pct, 0)}</b> per MWh at 7% finance vs propane <b className="num">${dec(f.incumbent_usd_mwh.propane, 0)}</b>.</div>
+                
                 {fund?.funding_gap_musd !== undefined && <div>Gap a benefit fund, grants or cheap capital must cover: <b className="num text-ember-text">${dec(fund.funding_gap_musd, 1)}M</b>{fund.funding_gap_incentive_scenario_if_qualifies_musd !== undefined && <> (<span className="num">${dec(fund.funding_gap_incentive_scenario_if_qualifies_musd, 1)}M</span> if federal credits qualify)</>}.</div>}
-                {cba?.as_pct_of_dc_capex !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cba.as_pct_of_dc_capex, 1)}%</b> of the data center build{cba.per_year_musd !== undefined && <>, <span className="num">${dec(cba.per_year_musd, 2)}M</span> a year over 30 years</>}, funds the home program.</div>}
+                {cba?.as_pct_of_dc_capex !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cba.as_pct_of_dc_capex, 1)}%</b> of the data center build{cba.per_year_annuitized_7pct_musd !== undefined && <>, <span className="num">${dec(cba.per_year_annuitized_7pct_musd, 2)}M</span> a year (annuitized at 7% over 30 years)</>}, funds the home program.</div>}
               </div>
             </div>
           ) : (
@@ -291,6 +291,7 @@ export function buildSteps(data: AppData): Step[] {
             <QrCode url={PUBLIC_URL} size={110} hideCaption />
             <div className="text-[1.125rem]"><b>Try the model yourself.</b><div className="text-ink2">Move the sliders in Explore mode and watch the cost of heat change.</div><div className="text-[1rem] text-ink2 break-all mt-1">{PUBLIC_URL}</div></div>
           </div>
+          <p className="m-0 text-[0.9375rem] text-ink2 leading-snug">{CREDITS}</p>
         </div>
       ),
     },

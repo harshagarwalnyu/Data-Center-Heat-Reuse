@@ -4,12 +4,14 @@ import { dec, int, usd } from "@/lib/format";
 import { NavBar, ringColor, ringShort } from "./ui";
 import { RingMapSvg } from "./viz/RingMap";
 import { QrCode } from "./viz/Misc";
-import { PUBLIC_URL, PROJECT_TITLE } from "@/lib/config";
+import { CREDITS, PUBLIC_URL, PROJECT_TAGLINE, PROJECT_TITLE } from "@/lib/config";
 
 export function PrintSheet({ data }: { data: AppData }) {
   const d = data.site2, f = d.finance;
   const homes = d.rings.find((r) => r.id === "corridor")?.homes ?? d.impact.homes_served;
-  const demand = d.rings.reduce((s, r) => s + r.annual_MWh, 0);
+  const demand = d.totals.heat_delivered_MWh;
+  const ha = d.extras?.greenhouse_check?.area_ha;
+  const cbaPct = d.extras?.cba?.as_pct_of_dc_capex;
   const bars = [
     { n: "Our heat (community-owned)", v: f.lcoh_usd_mwh.coop_4pct, c: "var(--teal)" },
     { n: "Propane", v: f.incumbent_usd_mwh.propane, c: "var(--ember)" },
@@ -26,13 +28,13 @@ export function PrintSheet({ data }: { data: AppData }) {
     <div className="bg-surface2 min-h-dvh">
       <NavBar active="/print/" extra={<button className="btn" onClick={() => window.print()}>Print this page</button>} />
       <div className="py-6 flex justify-center overflow-x-auto no-print-pad">
-        <article className="letter sheet-light shadow-xl p-[0.5in] flex flex-col gap-3 overflow-hidden shrink-0" style={{ fontSize: "11pt", lineHeight: 1.35 }}>
+        <article className="letter sheet-light shadow-xl p-[0.4in] flex flex-col gap-2 overflow-hidden shrink-0" style={{ fontSize: "11pt", lineHeight: 1.35 }}>
           <header>
             <div className="flex items-center justify-between">
-              <div className="serif font-bold tracking-widest uppercase text-ember-text" style={{ fontSize: "10pt" }}>{PROJECT_TITLE} · Lansing, NY</div>
+              <div className="serif font-bold tracking-widest uppercase text-ember-text" style={{ fontSize: "10pt" }}>{PROJECT_TITLE} · {PROJECT_TAGLINE}, Lansing NY</div>
               {data.placeholder && <span className="chip" style={{ fontSize: "9pt" }}>Illustrative data</span>}
             </div>
-            <h1 className="serif font-bold m-0 mt-1" style={{ fontSize: "25pt", lineHeight: 1.08 }}>One data center could heat {int(homes)} homes and a year-round farm</h1>
+            <h1 className="serif font-bold m-0 mt-1" style={{ fontSize: "23pt", lineHeight: 1.08 }}>A data center&rsquo;s heat could warm a {ha ? `${int(ha)}-hectare ` : ""}year-round farm and {int(homes)} homes</h1>
             <p className="m-0 mt-1 text-ink2" style={{ fontSize: "12pt" }}>Heat from the data center feeds a community-owned utility. Cooling never depends on it. Lansing could say yes, with conditions.</p>
           </header>
           <section className="grid grid-cols-4 gap-2" aria-label="Headline numbers">
@@ -67,12 +69,13 @@ export function PrintSheet({ data }: { data: AppData }) {
             </div>
           </section>
           <footer className="flex items-center gap-4 border-t border-line pt-2">
-            <QrCode url={PUBLIC_URL} size={96} />
+            <QrCode url={PUBLIC_URL} size={84} hideCaption />
             <div>
               <div className="font-bold" style={{ fontSize: "12pt" }}>The ask</div>
-              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement a condition of any approval. {int(d.impact.jobs)} jobs · {int(d.impact.local_food_t_yr)} t local food/yr · scan for the live model.</div>
+              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement (about {dec(cbaPct ?? 0, 1)}% of the data-center build) a condition of any approval. {int(d.impact.jobs)} jobs · {int(d.impact.local_food_t_yr)} t local food/yr · scan for the live model: {PUBLIC_URL}</div>
             </div>
           </footer>
+          <div className="text-ink2" style={{ fontSize: "8.5pt" }}>{CREDITS}</div>
         </article>
       </div>
     </div>

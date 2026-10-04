@@ -38,3 +38,12 @@ Site 1 inputs (loads, Manhattan unit costs, gas $2.20/therm) are rough; Site 1 L
 - Electricity split: central HP + pumping at NY industrial average $0.108/kWh (EIA EPM Table 5.6.A, July 2026 10.81 c/kWh; NYSEG SC-7 tariff not checked); corridor building HPs at residential $0.245. Tornado scales both.
 - CBA: DC capex benchmark $10M/MW IT (Turner & Townsend Data Centre Construction Cost Index 2025, US$6.6-13.3/W; midpoint ASSUMED) x 150 MW = $1.5B. Corridor-ring gap $28.1M PV (1.9% of DC capex, ~$0.94M/yr straight-line over 30 yr); whole phases 1-2 gap $22.3M (1.5%).
 - Break-even: even if CBA pays all loop pipe and laterals, corridor LCOH stays $166 at 2,000 homes vs blended tariff $105. Needs building-HP funding too: pipe + half the HPs still $128; pipe + all HPs breaks even (from 50 homes). So the binding cost is the $16k in-home HP, not the pipe.
+
+## v3 changes (code-review-pr2 batch, 2026-10-04)
+- Capex annualised by asset life class (config finance.life_years: pipe 30, tank 30, equipment 20 yr); NPV uses life-class equivalent annual cost x 30-yr annuity.
+- CBA: one headline number = whole-project (phases 1-2) PV gap at 7%; corridor stand-alone gap is a memo; annuitized $/yr headline, straight-line labelled undiscounted.
+- Site 1 rationale generated from outputs (CO2/MWh higher at Site 1; LCOH multiple of steam).
+- unmet_hours is 0 by construction; totals now carry peak_share_dc_pct / peak_share_backup_pct (top 1% hours) and backup_share_annual_pct; tests can fail (capacity_share 0.2, capture 0.05).
+- Tornado uptake holds potential homes fixed and scales customers; tariff-scenario margin uses realised blended revenue.
+- Town ring direct-HX logic when capture - 2*approach >= sink; scenarios.capture_65C_town added.
+- finance.elec_price_usd_mwh and tariff_rule added to site2.json and site1.json.

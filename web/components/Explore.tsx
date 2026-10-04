@@ -60,7 +60,7 @@ export function Explore({ data }: { data: AppData }) {
                 {(["air", "liquid"] as Cooling[]).map((c) => <button key={c} role="radio" aria-checked={p.cooling === c} className="btn" onClick={() => set("cooling", c)}>{cmp(c)}</button>)}
               </div>
             </div>
-            <Slider id="uptake" label="Home sign-up along the corridor" value={p.uptakePct} min={10} max={100} step={5} unit="%" onChange={(v) => set("uptakePct", v)} />
+            <Slider id="uptake" label="Share of the signed corridor homes" value={p.uptakePct} min={10} max={100} step={5} unit="%" onChange={(v) => set("uptakePct", v)} />
             <Slider id="disc" label="Cost of money (discount rate)" value={p.discountPct} min={1} max={12} step={0.5} unit="%" onChange={(v) => set("discountPct", v)} fmt={(v) => dec(v, 1)} />
             <Slider id="load" label="Data center IT load" value={p.loadMW} min={5} max={400} step={5} unit="MW" onChange={(v) => set("loadMW", v)} />
             <label className="flex items-center gap-3 font-semibold text-[1.125rem] min-h-[44px]">
@@ -85,14 +85,14 @@ export function Explore({ data }: { data: AppData }) {
               <div className="card p-4">
                 <h2 className="m-0 mb-2 text-[1.375rem]">By ring</h2>
                 <table className="w-full text-[1.0625rem]">
-                  <thead><tr className="text-left text-ink2"><th className="pb-1 font-semibold">Ring</th><th className="pb-1 font-semibold num text-right">GWh/yr</th><th className="pb-1 font-semibold text-right">COP</th></tr></thead>
+                  <thead><tr className="text-left text-ink2"><th className="pb-1 font-semibold">Ring</th><th className="pb-1 font-semibold num text-right">GWh/yr</th><th className="pb-1 font-semibold text-right">Share of heat</th></tr></thead>
                   <tbody>
                     {s.byRing.map((r) => (
-                      <tr key={r.id} className="border-t border-line"><td className="py-1.5 font-semibold" style={{ color: ringText(r.id) }}>{ringShort(r.id)}</td><td className="num text-right">{dec(r.demandMWh / 1000, 1)}</td><td className="num text-right">{r.direct ? "direct" : dec(r.cop, 1)}</td></tr>
+                      <tr key={r.id} className="border-t border-line"><td className="py-1.5 font-semibold" style={{ color: ringText(r.id) }}>{ringShort(r.id)}</td><td className="num text-right">{dec(r.demandMWh / 1000, 1)}</td><td className="num text-right">{r.demandMWh > 0 ? `${dec((r.demandMWh / Math.max(1, s.byRing.reduce((a, x) => a + x.demandMWh, 0))) * 100, 0)}%` : "off"}</td></tr>
                     ))}
                   </tbody>
                 </table>
-                <p className="text-[1rem] text-ink2 mb-0 mt-2">Each ring&rsquo;s COP uses {p.cooling === "air" ? 30 : 50} °C source heat. Results are scaled from the full hourly model, so the base case matches it exactly.</p>
+                <p className="text-[1rem] text-ink2 mb-0 mt-2">Heat pumps use {p.cooling === "air" ? 30 : 50} °C source heat; COP is clipped to 2 to 6 like the hourly model. Results are scaled from the full hourly model, so the base case matches it exactly.</p>
               </div>
             </div>
           </section>

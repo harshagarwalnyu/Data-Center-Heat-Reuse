@@ -15,7 +15,8 @@ describe("formulas", () => {
     expect(cop(70, 50)).toBeGreaterThan(cop(70, 30));
   });
   it("cop is capped for tiny lift", () => {
-    expect(cop(53, 50)).toBe(8);
+    expect(cop(53, 50)).toBe(6);
+    expect(cop(40, 60)).toBeGreaterThanOrEqual(2);
   });
   it("direct use needs source above sink plus one approach", () => {
     expect(isDirect(40, 50)).toBe(true);
@@ -89,7 +90,8 @@ describe("scenario (calibrated to the data file)", () => {
 describe("household calculator", () => {
   it("propane savings match the formula", () => {
     const h = household(d, "propane", 1);
-    expect(h.savingsUsd).toBeCloseTo(d.finance.household.typical_MWh_yr * (d.finance.incumbent_usd_mwh.propane - d.finance.tariff_usd_mwh), 6);
+    expect(h.savingsUsd).toBeCloseTo(d.finance.household.savings_vs_propane_usd, 6);
+    expect(h.savingsUsd).toBeCloseTo(d.finance.household.typical_MWh_yr * (d.finance.incumbent_usd_mwh.propane - d.finance.tariff_usd_mwh), -1);
     expect(h.co2KgSaved).toBeGreaterThan(0);
   });
   it("larger homes scale linearly", () => {

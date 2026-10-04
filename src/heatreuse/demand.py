@@ -85,9 +85,11 @@ def town(cfg, T):
     G = D + L
     sink = hp.weather_comp(T, t["sink"])
     cop = hp.cop(sink, cfg["eng"]["supply"]["capture_temp_c"], h["eta"], h["approach_k"], h["cop_min"], h["cop_max"])
-    E = G / cop
+    # direct heat exchange when the captured stream is hot enough to feed the sink without lift
+    direct = (cfg["eng"]["supply"]["capture_temp_c"] - 2 * h["approach_k"]) >= sink
+    E = np.where(direct, 0.0, G / cop)
     S = G - E
-    return dict(id="town", D=D, L=L, E=E, S=S, comp={"schools": D * 0 + 0}, pipe_km=pipe_km, cop=cop,
+    return dict(id="town", direct_hx_share=float(np.mean(direct)), D=D, L=L, E=E, S=S, comp={"schools": D * 0 + 0}, pipe_km=pipe_km, cop=cop,
                 supply_temp_c=t["supply_temp_c"], units=None, annual_design=total)
 
 

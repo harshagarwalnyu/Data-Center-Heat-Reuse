@@ -55,8 +55,16 @@ def tornado(cfg, T) -> list[dict]:
     run("Electricity price (both rates scaled)", ep(t["elec_price"][0]), ep(t["elec_price"][1]), t["elec_price"][0], t["elec_price"][1], "$/kWh")
     run("Heat pump efficiency (COP via eta)", C.override(cfg, "eng", "hp.eta", t["eta"][1]),
         C.override(cfg, "eng", "hp.eta", t["eta"][0]), t["eta"][1], t["eta"][0], "fraction of Carnot")
-    run("Uptake (signed share of corridor homes)", C.override(cfg, "eng", "corridor.uptake", t["uptake"][1]),
-        C.override(cfg, "eng", "corridor.uptake", t["uptake"][0]), t["uptake"][1], t["uptake"][0], "share")
+    # uptake scales CUSTOMERS: potential homes (pipe length basis) held fixed, homes = potential * uptake
+    c0 = cfg["eng"]["corridor"]
+    potential = c0["homes"] / c0["uptake"]
+
+    def up(u):
+        c = C.override(cfg, "eng", "corridor.uptake", u)
+        return C.override(c, "eng", "corridor.homes", potential * u)
+
+    run("Uptake (signed share of potential corridor homes)", up(t["uptake"][1]), up(t["uptake"][0]),
+        t["uptake"][1], t["uptake"][0], "share")
     # discount rate: LCOH at 4% vs 10% (same sim)
     base_full = full(cfg, T=T)
     out.append(dict(driver="Discount rate", low=base_full["fin"]["lcoh"]["coop_4pct"], high=base_full["fin"]["lcoh"]["private_10pct"],
@@ -99,6 +107,17 @@ def scenarios(cfg, T) -> dict:
     r70 = full(C.override(cfg, "eng", "town.sink", {"t_min": 70, "t_max": 70, "slope": 0.0, "t_ref": 10}), include_town=True, T=T)
     r65 = full(cfg, include_town=True, T=T)
     out["town_hot_loop"] = dict(lcoh7_ring_65C=r65["fin"]["lcoh_ring"]["town"], lcoh7_ring_70C_sensitivity=r70["fin"]["lcoh_ring"]["town"])
+    # 65 C capture (liquid cooling at the chip / hot-water-cooled racks, videos.md #39): town ring with direct HX when stream >= sink + 2*approach
+    def _town_case(cf):
+        r = full(cf, include_town=True, T=T)
+        tw = r["sim"]["rings"]["town"]
+        G = tw["D"] + tw["L"]
+        return dict(lcoh7_ring=r["fin"]["lcoh_ring"]["town"], hp_elec_MWh=r["fin"]["ring"]["town"]["elec_mwh"],
+                    avg_cop_if_hp=float(G.sum() / max((tw["E"]).sum(), 1e-9)) if tw["E"].sum() > 0 else None,
+                    direct_hx_share_of_hours=tw.get("direct_hx_share", 0.0))
+    c65 = C.override(cfg, "eng", "supply.capture_temp_c", 65)
+    out["capture_65C_town"] = dict(base_50C=_town_case(cfg), capture_65C=_town_case(c65),
+                                  note="65 C capture feeds the 55-65 C town sink directly in mild hours; HP lift only when sink > 59 C")
     # low-electricity-price (industrial rate) scenario
     r12 = full(C.override(cfg, "fin", "elec_price_central_usd_kwh", cfg["fin"]["elec_price_usd_kwh"]), T=T)
     out["central_at_residential_rate"] = dict(lcoh7=r12["fin"]["lcoh"]["utility_7pct"], note="central HP + pumping at residential 0.245 instead of industrial")

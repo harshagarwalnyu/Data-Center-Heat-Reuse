@@ -15,6 +15,11 @@
   },
   "totals": {
     "heat_delivered_MWh": 32595.0,
+    "peak_share_dc_pct": 95.8,
+    "peak_share_backup_pct": 4.2,
+    "backup_share_annual_pct": 1.69,
+    "peak_hours_counted": 88,
+    "unmet_note": "unmet_hours is 0 by construction (backup boilers sized 100% of peak); read peak_share_* / backup_share_annual_pct for real resilience.",
     "share_of_available_pct": 30.47,
     "hp_elec_MWh": 5920.0,
     "backup_MWh": 556.0,
@@ -28,9 +33,9 @@
     },
     "opex_musd_yr": 3.58,
     "lcoh_usd_mwh": {
-      "coop_4pct": 237.6,
-      "utility_7pct": 287.9,
-      "private_10pct": 344.2
+      "coop_4pct": 257.0,
+      "utility_7pct": 304.9,
+      "private_10pct": 358.2
     },
     "incumbent_usd_mwh": {
       "propane": 136.1,
@@ -41,10 +46,15 @@
       "steam": 118.7
     },
     "tariff_usd_mwh": 95.0,
+    "elec_price_usd_mwh": {
+      "industrial": 200,
+      "residential": 250
+    },
+    "tariff_rule": "0.8 x propane-equivalent (Site 1 reference: Con Ed steam), fixed",
     "ring_lcoh_usd_mwh": {
-      "onsite": 178.0,
-      "corridor": 311.4,
-      "town": 256.0
+      "onsite": 181.0,
+      "corridor": 330.8,
+      "town": 270.2
     },
     "reference": "steam"
   },
@@ -61,7 +71,7 @@
       "cop": 5.13
     }
   ],
-  "why_not_chosen": "Site 1 is a real option but a weaker proposal. (1) The Chelsea UTEN pilot at 85 10th Ave already targets the same NYCHA Fulton Houses, so a second source competes with the utility rather than filling a gap. (2) Legacy air-side/chilled-water cooling gives only ~32 C capture, so heat pumps work harder (COP 5.1 vs 6.0 at Lansing) with no chance to specify liquid cooling. (3) Manhattan trenching drives blended LCOH to $288/MWh vs Con Ed steam at $119/MWh, a thin margin; Lansing's blended phase 1-2 are $100/MWh vs propane $136/MWh. (4) At 30 MW the source is small and the grid is dirtier (NYCW 0.39 kg/kWh), so CO2 benefit per MWh is lower. (5) Lansing's live ban fight makes heat reuse a decision-changing concession, not an add-on.",
+  "why_not_chosen": "Site 1 is feasible but the weaker proposal for this challenge, and the numbers say so. (1) Cost: Manhattan LCOH is $305/MWh against Con Ed steam at $119/MWh, 2.6x the incumbent, so a 0.8x tariff cannot cover cost without large subsidy; Lansing blended phases 1-2 are $106/MWh against propane-equivalent $136/MWh. (2) Carbon: Site 1 avoids MORE CO2 per MWh delivered (0.353 vs 0.227 t/MWh) because steam is a fossil incumbent, so carbon alone does not favour Lansing; Site 1 wins on tonnes per heat-MWh, loses on cost per tonne. (3) Source: legacy air-side cooling gives ~32 C capture; like-for-like COP 5.1 vs 6.0 for liquid cooling at Lansing, and a retrofit cannot specify the cooling architecture. (4) Competition: the Chelsea UTEN pilot at 85 10th Ave already targets the same NYCHA Fulton Houses, so a second source competes with the utility rather than filling a gap. (5) Leverage: Lansing is a new build with a live ban fight, so heat reuse is a decision-changing concession and liquid cooling can be specified from day one.",
   "sources": [
     {
       "id": "nyserda_prop",
