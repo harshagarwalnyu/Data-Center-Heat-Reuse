@@ -1,7 +1,7 @@
 "use client";
 import { useId, type ReactNode } from "react";
 import { useStill } from "@/lib/motion";
-import { dec, int } from "@/lib/format";
+import { cToF, dCToF, dec, int, tonnesToTons } from "@/lib/format";
 
 /* Inline-SVG figures for the How it works page. Colours are CSS variables so dark mode follows the site.
    Step figures use a 300-wide viewBox with 16-unit text so type stays near 14px on a 375px phone. */
@@ -25,13 +25,14 @@ function Fig({ label, w, h, max = 300, children }: { label: string; w: number; h
 const ArrowDef = ({ id }: { id: string }) => (
   <defs><marker id={id} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill={EMBER} /></marker></defs>
 );
+const f0 = (c: number) => Math.round(cToF(c));
 const useMid = () => useId().replace(/:/g, "");
 
 /* ---------- hero ---------- */
 
 export function HeroHeat({ captureC, onsiteC, corridorC, homes }: { captureC: number; onsiteC?: number; corridorC?: number; homes: number }) {
   const id = "ha" + useMid();
-  const label = `Heat flows from the servers, warm at ${captureC} degrees C, through a plate heat exchanger to the farm campus${onsiteC != null ? ` at ${onsiteC} degrees C` : ""} and to ${int(homes)} homes${corridorC != null ? ` on a ${corridorC} degrees C loop` : ""}. A tank sits beside the exchanger.`;
+  const label = `Heat flows from the servers, warm at ${f0(captureC)} degrees F, through a plate heat exchanger to the farm campus${onsiteC != null ? ` at ${f0(onsiteC)} degrees F` : ""} and to ${int(homes)} homes${corridorC != null ? ` on a ${f0(corridorC)} degrees F loop` : ""}. A tank sits beside the exchanger.`;
   const arrow = { stroke: EMBER, strokeWidth: 4, fill: "none", strokeLinecap: "round" as const, markerEnd: `url(#${id})` };
   return (
     <Fig label={label} w={400} h={240} max={460}>
@@ -45,7 +46,7 @@ export function HeroHeat({ captureC, onsiteC, corridorC, homes }: { captureC: nu
         <Tx x={190} y={106} size={17} weight={700} anchor="middle">exchanger</Tx>
         <path d="M86 82 C100 70 112 70 133 84" {...arrow} />
         <path d="M134 106 C112 118 100 118 86 108" stroke={TEAL} strokeWidth={4} fill="none" strokeLinecap="round" strokeDasharray="2 7" />
-        <Tx x={110} y={62} size={17} weight={700} anchor="middle" fill="var(--ember-text)">{captureC} °C</Tx>
+        <Tx x={110} y={62} size={17} weight={700} anchor="middle" fill="var(--ember-text)">{f0(captureC)} °F</Tx>
         {/* tank */}
         <path d="M190 128 V158" stroke={EMBER} strokeWidth={3} strokeDasharray="4 5" strokeLinecap="round" />
         <path d="M168 168 V212 Q168 220 190 220 Q212 220 212 212 V168" fill="var(--lake)" stroke={LINE} strokeWidth={W} />
@@ -210,7 +211,7 @@ export function ThermoPair({ src, sink, cop }: { src: number; sink: number; cop:
   );
   const ax = 205, y1 = y(src), y2 = y(sink);
   return (
-    <Fig label={`Heat pump lift: source ${src} degrees C, delivery ${sink} degrees C, a lift of ${lift} degrees and a COP of ${dec(cop, 2)}.`} w={300} h={196}>
+    <Fig label={`Heat pump lift: source ${f0(src)} degrees F, delivery ${f0(sink)} degrees F, a lift of ${Math.round(dCToF(lift))} degrees and a COP of ${dec(cop, 2)}.`} w={300} h={196}>
       <ArrowDef id={id} />
       <g aria-hidden>
         {tube(50, src, TEAL)}
@@ -219,9 +220,9 @@ export function ThermoPair({ src, sink, cop }: { src: number; sink: number; cop:
         <path d={`M142 ${y2} H${ax + 8}`} stroke={EMBER} strokeWidth={1.6} strokeDasharray="3 4" style={{ transition: tr }} />
         {lift > 4 && <path d={`M${ax} ${y1} V${y2 + 8}`} stroke={EMBER} strokeWidth={4} strokeLinecap="round" markerEnd={`url(#${id})`} style={{ transition: tr }} />}
         <Tx x={ax + 16} y={(y1 + y2) / 2 - 2} weight={700}>{lift > 4 ? "lift" : "no lift"}</Tx>
-        {lift > 4 && <Tx x={ax + 16} y={(y1 + y2) / 2 + 18} weight={700} fill="var(--ember-text)">{lift} °C</Tx>}
-        <Tx x={50} y={170} anchor="middle" fill={INK2}>Source</Tx><Tx x={50} y={188} anchor="middle" weight={700}>{src} °C</Tx>
-        <Tx x={130} y={170} anchor="middle" fill={INK2}>Delivery</Tx><Tx x={130} y={188} anchor="middle" weight={700}>{sink} °C</Tx>
+        {lift > 4 && <Tx x={ax + 16} y={(y1 + y2) / 2 + 18} weight={700} fill="var(--ember-text)">{Math.round(dCToF(lift))} °F</Tx>}
+        <Tx x={50} y={170} anchor="middle" fill={INK2}>Source</Tx><Tx x={50} y={188} anchor="middle" weight={700}>{f0(src)} °F</Tx>
+        <Tx x={130} y={170} anchor="middle" fill={INK2}>Delivery</Tx><Tx x={130} y={188} anchor="middle" weight={700}>{f0(sink)} °F</Tx>
       </g>
     </Fig>
   );
@@ -284,7 +285,7 @@ export function CarsRow({ cars, per = 250, tonnes }: { cars: number; per?: numbe
     </g>
   );
   return (
-    <Fig label={`${int(tonnes)} tonnes of CO2 avoided a year is about ${int(cars)} cars off the road. Each car icon stands for ${int(per)} cars.`} w={300} h={86}>
+    <Fig label={`${int(tonnesToTons(tonnes))} tons of CO2 avoided a year is about ${int(cars)} cars off the road. Each car icon stands for ${int(per)} cars.`} w={300} h={86}>
       <g aria-hidden>
         <defs><clipPath id={cid}><rect x="0" y="0" width={24 * part} height="24" /></clipPath></defs>
         {Array.from({ length: count }, (_, i) => (i < full ? <g key={i}>{car(i * 27)}</g> : <g key={i} transform={`translate(${i * 27} 0)`}>{car(0, `url(#${cid})`)}</g>))}

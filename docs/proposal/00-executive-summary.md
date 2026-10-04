@@ -6,13 +6,13 @@ Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev) proposes a co-op for
 
 On 29 September 2026 the Board directed counsel to draft a data-center ban and has not voted. Next year’s proposed budget sets aside $500,000 for legal costs [2]. One outlet reported 36 of 38 speakers opposed [3]. No designated disadvantaged communities are nearby [4]. About 26% of occupied town homes use propane and about 8% use oil [5]. The NYSEG moratorium dates from 2015 and was still a low-pressure case in July 2025; 2026 status is [unverified] [6]. Town hall and the library are 5.7 miles out; the school campus is 7.0 miles [7].
 
-The model uses 150 MW IT. The 5 August 2026 release is about 400 MW gross and 320 MW critical IT, operations about 2029, with no phase split [8]. At 80% load and 75% capture, 777.6 GWh/yr is available at 50 °C (flat 150 x 8,760 x 0.80 x 0.75 = 788.4 GWh, less simulated capture outages). Phases 1–2 deliver 50,576 MWh/yr, 6.5% of supply. More IT adds no customers [9].
+The model uses 150 MW IT. The 5 August 2026 release is about 400 MW gross and 320 MW critical IT, operations about 2029, with no phase split [8]. At 80% load and 75% capture, 777.6 GWh/yr is available at 122 °F (flat 150 x 8,760 x 0.80 x 0.75 = 788.4 GWh, less simulated capture outages). Phases 1–2 deliver 50,576 MWh/yr, 6.5% of supply. More IT adds no customers [9].
 
-On site, greenhouse, aquaculture, and recreation take 37,076 MWh/yr at 45 °C over 0.5 km, at $40.6/MWh. Five hundred homes on 20.9 km at 20 °C cost $285.8/MWh (0.65 MWh per metre per year). The 14 km town main at 65 °C costs $734/MWh, loses 1,840 MWh/yr, and fails [9]. Cooling stays on sealed dry coolers; backup is 0.73% of annual heat [9][10]. A 13 April 2026 permit allows up to 1,008,000 gallons a day for maintenance, sump pumping, and dust control [11]. The proposed covenant would keep that water off cooling.
+On site, greenhouse, aquaculture, and recreation take 37,076 MWh/yr at 113 °F over 0.3 mi, at $40.6/MWh. Five hundred homes on 13.0 mi at 68 °F cost $285.8/MWh (0.20 MWh per foot per year). The 8.7 mi town main at 149 °F costs $734/MWh, loses 1,840 MWh/yr, and fails [9]. Cooling stays on sealed dry coolers; backup is 0.73% of annual heat [9][10]. A 13 April 2026 permit allows up to 1,008,000 gallons a day for maintenance, sump pumping, and dust control [11]. The proposed covenant would keep that water off cooling.
 
 The tariff is $108.9/MWh, 20% under propane at $136.1/MWh: $735 a year for 27 MWh, and $1,266 versus oil. Co-op cost is $89.5/MWh at 4%. The gap is $26.0 million, 1.7% of an assumed $1,500 million campus ($10/W midpoint of $6.6–13.3/W, an ASSUMPTION) [9], [12]. The lease is 183 acres and 80 years [13]. Heat opens on a 10-year term with renewals and step-in [9]. A year-10 exit strands $5.7 million and needs $10.4 million to replace the source [9]. A New York heat-co-op statute is [unverified] [14]. Federal credits are excluded [15].
 
-Carbon to use is 11,408 t/yr [16]. Energy reuse is 4.6% of IT energy [9]. The lake is phosphorus-impaired [4]. Nutrients stay in closed-loop growing. No mass and no lake gallons are claimed.
+Carbon to use is 12,575 short tons/yr [16]. Energy reuse is 4.6% of IT energy [9]. The lake is phosphorus-impaired [4]. Nutrients stay in closed-loop growing. No mass and no lake gallons are claimed.
 
 ## Sources
 
@@ -33,7 +33,7 @@ Each numbered claim above uses the URL here. Verification date is 2026-10-03 unl
 13. Ground lease, 183 acres, 80 years. https://www.sec.gov/Archives/edgar/data/1083301/000110465925078086/tm2523008d1_8k.htm (row 3c) (verified 2026-10-03).
 14. Co-op statute [unverified]. `research/verification.md` rows 11a–11d; `docs/ownership-deal.md`.
 15. Waste-heat networks left out of IRC 48 in the base case. `research/verification.md` rows 9d–9h (verified 2026-10-03).
-16. Carbon: 11,408 t/yr (model v3.1). Grid factor https://www.epa.gov/egrid (row 10a) (verified 2026-10-03).
+16. Carbon: 12,575 short tons/yr (model v3.1). Grid factor https://www.epa.gov/egrid (row 10a) (verified 2026-10-03).
 
 ## Lane status
 
@@ -41,7 +41,7 @@ Each numbered claim above uses the URL here. Verification date is 2026-10-03 unl
 
 - One-page summary in this file only, led by the Michigan Deep Green withdrawal and the New York covenant.
 - Heat, costs, tariff, gap, and exit dollars from `web/public/data/site2.json`. Capacity, ban, water, cooling, moratorium, lease, and fuel mix from `research/verification.md` or `research/facts-site2.md`, each with a URL.
-- Town main reported as a failed gate. No disadvantaged-community claim. No gallon-for-gallon lake-water claim. Moratorium year set at 2015; 2026 status left open. Carbon uses the audited 11,408 t/yr.
+- Town main reported as a failed gate. No disadvantaged-community claim. No gallon-for-gallon lake-water claim. Moratorium year set at 2015; 2026 status left open. Carbon uses the audited 12,575 short tons/yr.
 
 ### Missing
 
@@ -52,5 +52,5 @@ Each numbered claim above uses the URL here. Verification date is 2026-10-03 unl
 
 ### Open questions
 
-- Should the 500-home corridor stay inside the headline while density is 0.65 MWh per metre per year, under the plan’s 1.5 screen?
+- Should the 500-home corridor stay inside the headline while density is 0.20 MWh per foot per year, under the plan’s 0.46 MWh per foot screen?
 - Is a $10/W ASSUMPTION acceptable in public as the denominator for the 1.7% benefit share?

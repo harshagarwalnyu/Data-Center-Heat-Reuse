@@ -2,14 +2,14 @@
 import { useId, useState } from "react";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { Site2Data } from "@/lib/types";
-import { MONTHS, dec, int } from "@/lib/format";
+import { MONTHS, cToF, dec, int } from "@/lib/format";
 import { FUEL_LABEL, LCOH_ANCHOR_PCT } from "@/lib/model";
 
 const tip = { contentStyle: { background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 10, fontSize: 17, color: "var(--ink)" }, labelStyle: { color: "var(--ink)", fontWeight: 700 }, itemStyle: { color: "var(--ink)" } };
 const axisTick = { fill: "var(--ink2)", fontSize: 17 };
-/** Outdoor axis from finite readings only, padded 2 C; falls back to auto when a week has none. */
-const outdoorDomain = (rows: { outdoor_C: number }[]): [number, number] | ["auto", "auto"] => {
-  const t = rows.map((r) => r.outdoor_C).filter(Number.isFinite);
+/** Outdoor axis from finite readings only, padded 2 degrees F; falls back to auto when a week has none. */
+const outdoorDomain = (rows: { outdoor_F: number }[]): [number, number] | ["auto", "auto"] => {
+  const t = rows.map((r) => r.outdoor_F).filter(Number.isFinite);
   return t.length ? [Math.floor(Math.min(...t)) - 2, Math.ceil(Math.max(...t)) + 2] : ["auto", "auto"];
 };
 const axisLine = { stroke: "var(--line)" };
@@ -75,6 +75,7 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
   );
   if (!rows?.length) return <div className="flex flex-col gap-3">{buttons}<p className="text-caption text-ink2 m-0">No hourly data for this week in the current data file.</p></div>;
   const peak = rows.reduce((m, r) => (r.backup_MW > m.backup_MW ? r : m), rows[0]);
+  const rowsF = rows.map((r) => ({ ...r, outdoor_F: cToF(r.outdoor_C) }));
   const showPeak = peak && peak.backup_MW >= 0.05;
   return (
     <div className="flex flex-col h-full min-h-0">
@@ -96,16 +97,16 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
       </div>
       <div className="h-[60px]">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={rows} margin={{ top: 4, right: 12, left: 6, bottom: 0 }}>
+          <AreaChart data={rowsF} margin={{ top: 4, right: 12, left: 6, bottom: 0 }}>
             <XAxis dataKey="h" type="number" domain={[0, 167]} hide />
-            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={80} unit=" °C" domain={outdoorDomain(rows)} tickCount={3} />
-            <ReferenceLine y={0} stroke="var(--line)" />
-            <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} °C`} />
-            <Area isAnimationActive={false} type="monotone" dataKey="outdoor_C" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={80} unit=" °F" domain={outdoorDomain(rowsF)} tickCount={3} />
+            <ReferenceLine y={32} stroke="var(--line)" />
+            <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} °F`} />
+            <Area isAnimationActive={false} type="monotone" dataKey="outdoor_F" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-caption text-ink2 m-0">Outdoor temperature (°C) for the same week.</p>
+      <p className="text-caption text-ink2 m-0">Outdoor temperature (°F) for the same week.</p>
     </div>
   );
 }

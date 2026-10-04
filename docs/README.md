@@ -27,7 +27,7 @@ Start with the root [README](../README.md). This index is a selected list of doc
 | File | What it is |
 |---|---|
 | [cooling-integration.md](cooling-integration.md) | How heat is captured from the Lake Hawkeye cooling system: capture points, temperatures, sidestream interface. |
-| [greenhouse-anchor.md](greenhouse-anchor.md) | The on-site heat sink: greenhouses, aquaculture and recreation, with demand per hectare and temperature needs. |
+| [greenhouse-anchor.md](greenhouse-anchor.md) | The on-site heat sink: greenhouses, aquaculture and recreation, with demand per acre and temperature needs. |
 | [ownership-deal.md](ownership-deal.md) | Ownership models, recommendation, and term sheets for the Heat Supply Agreement and Community Benefit Agreement. |
 | [term-sheet.md](term-sheet.md) | Plain-language draft term sheet (not legal advice): Heat Supply Agreement, Community Benefit Agreement, permit conditions, tariffs, governance, gates and open items for counsel. |
 | [risk-matrix.md](risk-matrix.md) | Scored risk register, heat-continuity cascade and cooling independence statement. |

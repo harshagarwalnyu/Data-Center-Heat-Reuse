@@ -32,7 +32,7 @@ Base case, Site 2, phases 1-2 (on-site campus plus 500 corridor homes). Values a
 | Capex | 38.76 | million USD | [methodology: capex](docs/methodology.md#capex-financepycapex_lines) |
 | Whole-project funding gap (7%, 30 yr, PV) | 26.0 | million USD, about 2.1 million USD/yr annuitized | [results: funding answer](docs/results.md#the-funding-answer) |
 | Gap as share of data-center capex benchmark | 1.73 | % of 1.5 billion USD | [results: funding answer](docs/results.md#the-funding-answer) |
-| CO2 avoided | 11,408 | t CO2/yr | [methodology: impact](docs/methodology.md#7-impact) |
+| CO2 avoided | 12,575 | short tons CO2/yr | [methodology: impact](docs/methodology.md#7-impact) |
 | Energy reuse factor (ERF) | 0.046 | ratio | [methodology: impact](docs/methodology.md#7-impact) |
 | Average heat-pump COP | 4.71 | dimensionless, clipped to [2, 6] | [methodology: COP](docs/methodology.md#4-heat-pump-cop) |
 | Unmet hours | 0 | h/yr (backup sized at 100% of peak) | [methodology: dispatch](docs/methodology.md#5-storage-and-dispatch) |
@@ -124,7 +124,7 @@ The official rubric is in [docs/rubric.md](docs/rubric.md). Each category is sco
 | Presentation | 11-step story with presenter notes, one-pager with QR, video script, every headline traced to a method and source | [results](docs/results.md), [video script](docs/video-script.md), `/` and `/print/` |
 | Innovation | "The conditions under which Lansing could say yes": binding CBA and Heat Supply Agreement, a community thermal co-op as owner, public metering; right tool at every density; honest funding gap instead of a pooled average | [ownership-deal](docs/ownership-deal.md), [results](docs/results.md), [risk-matrix](docs/risk-matrix.md) |
 | Execution | Tests pass, build is static, works at 1366 and 1920 widths, independent number and UX audits with findings fed back | [docs/audit/](docs/audit/), [frontend-notes](docs/frontend-notes.md), [web/screenshots/](web/screenshots/) |
-| Theme | Waste heat becomes community value: a 10-hectare year-round farm, 500 homes, jobs, local food, CO2; HDR regenerative scorecard | [regenerative scorecard](docs/proposal/13-regenerative-scorecard.md), [greenhouse-anchor](docs/greenhouse-anchor.md), [stakeholders](docs/stakeholders.md) |
+| Theme | Waste heat becomes community value: a 25-acre year-round farm, 500 homes, jobs, local food, CO2; HDR regenerative scorecard | [regenerative scorecard](docs/proposal/13-regenerative-scorecard.md), [greenhouse-anchor](docs/greenhouse-anchor.md), [stakeholders](docs/stakeholders.md) |
 
 ## Honest limits
 

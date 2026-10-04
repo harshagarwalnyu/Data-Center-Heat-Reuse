@@ -2,6 +2,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { AppData, Offtaker, Site1Data, Site2Data } from "@/lib/types";
 import { BASE_PATH } from "@/lib/config";
+import { imperialize } from "@/lib/format";
 
 type Theme = "light" | "dark";
 interface Ctx {
@@ -16,7 +17,7 @@ export const useApp = () => useContext(C);
 async function getJson<T>(name: string): Promise<T> {
   const res = await fetch(`${BASE_PATH}/data/${name}`, { cache: "no-cache" });
   if (!res.ok) throw new Error(`${name}: HTTP ${res.status}`);
-  return (await res.json()) as T;
+  return imperialize((await res.json()) as T);
 }
 
 export function AppProvider({ children }: { children: ReactNode }) {

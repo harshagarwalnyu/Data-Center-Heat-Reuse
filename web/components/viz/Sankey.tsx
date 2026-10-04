@@ -1,6 +1,6 @@
 "use client";
 import type { Site2Data } from "@/lib/types";
-import { dec } from "@/lib/format";
+import { cToF, dec } from "@/lib/format";
 import { ringColor, ringShort } from "../ui";
 
 const H = 8760;
@@ -91,7 +91,7 @@ export function Sankey({ d }: { d: Site2Data }) {
       <text x={X[0]} y={top - 36} fontSize="25" fontWeight="700" fill="var(--ink)">IT power in</text>
       <text x={X[0]} y={top - 10} fontSize="22" fill="var(--ink2)" className="num">{dec(it, 0)} MW avg</text>
       <text x={X[1]} y={top - 36} fontSize="25" fontWeight="700" fill="var(--ember-text)">Heat captured</text>
-      <text x={X[1]} y={top - 10} fontSize="22" fill="var(--ink2)" className="num">{dec(cap, 0)} MW at {d.supply.capture_temp_C} °C</text>
+      <text x={X[1]} y={top - 10} fontSize="22" fill="var(--ink2)" className="num">{dec(cap, 0)} MW at {Math.round(cToF(d.supply.capture_temp_C))} °F</text>
       <text x={X[1] + NW + 10} y={uncY + uncH / 2 + 6} fontSize="22" fill="var(--ink2)" className="num">{dec(unc, 0)} MW not captured</text>
       <text x={X[2]} y={top - 36} fontSize="25" fontWeight="700" fill="var(--ember-text)">Heat pumps</text>
       <text x={X[2]} y={top - 10} fontSize="22" fill="var(--ink2)" className="num">{dec(del, 1)} MW delivered</text>

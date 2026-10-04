@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Offtaker } from "@/lib/types";
 import { BASE_PATH } from "@/lib/config";
+import { kmToMi } from "@/lib/format";
 import { BOUNDS, LAKE, ONSITE_R_KM, PLANT, ROUTE, TOWN, TOWN_R_KM, circle, makeProjector, type LonLat } from "@/lib/geo";
 import { ringColor } from "../ui";
 
@@ -19,15 +20,15 @@ function cssVar(name: string, fallback: string) {
 
 /** Pure-SVG map. Works fully offline and with no WebGL; also the fallback for the MapLibre view. */
 export function RingMapSvg({ offtakers, townPipeKm }: { offtakers: Offtaker[]; townPipeKm?: number }) {
-  const pipeText = townPipeKm !== undefined ? ` (${Math.round(townPipeKm)} kilometres by pipe route)` : "";
+  const pipeText = townPipeKm !== undefined ? ` (${Math.round(kmToMi(townPipeKm))} miles by pipe route)` : "";
   const W = 900;
-  const { project, height: H, pxPerKm } = makeProjector(W);
+  const { project, height: H, pxPerKm, pxPerMi } = makeProjector(W);
   const path = (pts: LonLat[]) => pts.map((p, i) => `${i ? "L" : "M"}${project(p)[0].toFixed(1)},${project(p)[1].toFixed(1)}`).join(" ") + " Z";
   const line = (pts: LonLat[]) => pts.map((p, i) => `${i ? "L" : "M"}${project(p)[0].toFixed(1)},${project(p)[1].toFixed(1)}`).join(" ");
   const [px, py] = project(PLANT);
   const [tx, ty] = project(TOWN);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east in a straight line${pipeText}.`} className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
+    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about six miles south-east in a straight line${pipeText}.`} className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
       <path d={path(LAKE)} fill="var(--lake)" opacity="0.55" />
       <text x={60} y={H * 0.45} fontSize="34" fill="var(--lake-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
       <path d={line(ROUTE)} stroke="var(--ember)" strokeWidth={ONSITE_R_KM * pxPerKm * 0.9} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.28" />
@@ -52,8 +53,8 @@ export function RingMapSvg({ offtakers, townPipeKm }: { offtakers: Offtaker[]; t
         );
       })}
       <g transform={`translate(${W - 190},${H - 30})`}>
-        <line x1="0" x2={5 * pxPerKm} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />
-        <text x={5 * pxPerKm + 8} y="8" fontSize="26" fill="var(--ink)">5 km</text>
+        <line x1="0" x2={3 * pxPerMi} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />
+        <text x={3 * pxPerMi + 8} y="8" fontSize="26" fill="var(--ink)">3 mi</text>
       </g>
     </svg>
   );
