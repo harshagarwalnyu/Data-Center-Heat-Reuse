@@ -104,7 +104,7 @@ export interface Extras {
   with_town?: { totals?: Partial<Site2Data["totals"]>; lcoh_usd_mwh?: Partial<Site2Data["finance"]["lcoh_usd_mwh"]>; capex_musd?: number; town_ring_lcoh_usd_mwh?: number; verdict?: string };
   greenhouse_check?: { peak_MW?: number; area_ha?: number };
   linear_heat_density_corridor_MWh_per_m?: number;
-  cba?: { corridor_gap_musd?: number; per_year_musd?: number; per_year_annuitized_7pct_musd?: number; as_pct_of_dc_capex?: number; dc_capex_musd?: number; whole_project_gap_musd?: number; breakeven_homes_if_cba_pays_pipe?: Record<string, unknown> };
+  cba?: { headline_gap_musd?: number; headline_annuitized_7pct_musd_per_yr?: number; headline_as_pct_of_dc_capex?: number; corridor_gap_musd?: number; per_year_musd?: number; per_year_annuitized_7pct_musd?: number; as_pct_of_dc_capex?: number; dc_capex_musd?: number; whole_project_gap_musd?: number; breakeven_homes_if_cba_pays_pipe?: Record<string, unknown> };
   air_source_hp_seasonal_cop?: number;
   electricity_rates_usd_kwh?: Partial<Record<string, number>>;
   lcoh_incentive_scenario_if_qualifies_usd_mwh?: number;

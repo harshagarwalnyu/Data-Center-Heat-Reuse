@@ -14,13 +14,13 @@ def evaluate(cfg, sim, fin_res) -> dict:
     fossil_mwh = 0.0
     for r in d["active"]:
         served = float((R[r]["D"] * f).sum())
+        total = float(R[r]["D"].sum())  # counterfactual covers ALL customer heat; backup-served hours burn project fuel (added term)
         for fuel, sh in mixes[r].items():
             if fuel in effs:
-                fuel_mwh = served * sh / effs[fuel]
-                fossil_mwh += fuel_mwh
-                displaced_kg += fuel_mwh * 1000 * ef[fuel]
+                fossil_mwh += served * sh / effs[fuel]
+                displaced_kg += total * sh / effs[fuel] * 1000 * ef[fuel]
             elif fuel == "electric":
-                displaced_kg += served * sh * 1000 * ef["grid"]
+                displaced_kg += total * sh * 1000 * ef["grid"]
     elec = float(d["e_served"].sum())
     pump = e["network"]["pump_share"] * float(d["D"].sum())
     backup_fuel = float(d["backup_gate"].sum()) / e["backup"]["efficiency"]

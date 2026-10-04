@@ -7,7 +7,7 @@ import { Sankey } from "../viz/Sankey";
 import { HouseholdCalc, QrCode, RatioBars, TempLadder } from "../viz/Misc";
 import { LcohBars, MonthlyChart, RingLcoh, WeekChart } from "../viz/Charts";
 import { RingDot, ringColor, ringText, ringShort } from "../ui";
-import { CREDITS, PUBLIC_URL } from "@/lib/config";
+import { CBA_ANNUITY, CREDITS, PUBLIC_URL } from "@/lib/config";
 
 export interface Step {
   id: string;
@@ -67,6 +67,11 @@ export function buildSteps(data: AppData): Step[] {
   for (const r of d.rings) if (r.lcoh_usd_mwh_7pct !== undefined) ringL[r.id] = r.lcoh_usd_mwh_7pct;
   const fund = ex?.funding;
   const cba = ex?.cba;
+  // Whole-project headline (on-site surplus cross-subsidises corridor); corridor-only figures are the fallback.
+  // Use the headline pair only when both exist, else the corridor pair together (never mix bases).
+  const hasHeadline = cba?.headline_as_pct_of_dc_capex !== undefined && cba?.headline_annuitized_7pct_musd_per_yr !== undefined;
+  const cbaPct = hasHeadline ? cba?.headline_as_pct_of_dc_capex : cba?.as_pct_of_dc_capex;
+  const cbaYr = hasHeadline ? cba?.headline_annuitized_7pct_musd_per_yr : cba?.per_year_annuitized_7pct_musd;
   const backupPct = (T.backup_MWh / T.heat_delivered_MWh) * 100;
   const cleanCarbonCars = d.impact.co2_cars_equiv;
 
@@ -74,14 +79,14 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "fight",
       kicker: "1 · Lansing today",
-      headline: "Lansing is about to ban data centers, and most of its heat still comes from delivered fuel",
-      lede: "Free heat was not enough in Lansing, Michigan: a data center that offered it withdrew hours before a council vote, and a moratorium followed. Lansing, New York needs ownership, guarantees and proof.",
+      headline: "Lansing's Town Board has told its attorney to draft a data-center ban, and most of its heat still comes from delivered fuel",
+      lede: "Free heat was not enough in Lansing, Michigan: a data center that offered free heat withdrew its application on April 6, 2026. Lansing, New York needs ownership, guarantees and proof.",
       layout: "split",
-      notes: "Open with the fight, not the technology. Precedent: Deep Green's $120M downtown Lansing, Michigan data center offered free heat to the city utility, was withdrawn on April 6, 2026 hours before the council vote, and Lansing MI then passed a 6-month moratorium. Free heat is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG has had a gas moratorium here since 2015, so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
+      notes: "Open with the fight, not the technology. Precedent: Deep Green's $120M downtown Lansing, Michigan data center offered free heat to the city utility, withdrew its application on April 6, 2026. Free heat is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG has had a moratorium on new gas connections here since February 2015 (2026 status unverified), so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
       visual: (
         <div className="grid gap-4">
           <Tile big="Sept 29" label="2026: the Town Board directed its attorney to draft a data-center ban, and set aside $500,000 in next year's proposed budget for legal costs" />
-          <Tile tone="teal" big="2015" label="year the NYSEG gas moratorium began. Rural Lansing has no gas pipe." />
+          <Tile tone="teal" big="2015" label="year the NYSEG moratorium on new gas connections began (2026 status unverified)" />
           <Tile big={`$${int(f.incumbent_usd_mwh.propane)}`} unit="per MWh" label={<>what a propane home pays for each MWh of heat (propane ran $2.74 to $3.46 per gallon last season, NYSERDA Central NY). Heating oil: <b className="num">${int(f.incumbent_usd_mwh.heating_oil)}</b>.</>} />
         </div>
       ),
@@ -92,7 +97,7 @@ export function buildSteps(data: AppData): Step[] {
       headline: <>The data center makes <span className="text-ember-text num">{dec(ratio, 0)}&times;</span> more heat than we use: only <span className="text-ember-text num">{dec(sharePct, 1)}%</span> is needed</>,
       lede: <>Our base case is a {int(d.supply.it_load_MW)} MW first phase; about {int(d.supply.capture_fraction * 100)}% of its power can be captured as {d.supply.capture_temp_C} °C heat. Supply is not the constraint. Matching it to users is.</>,
       layout: "split",
-      notes: "This is the whole thesis. Supply is effectively unlimited: demand is the constraint, so we design from the user side. Our base case is a 150 MW first phase. TeraWulf's filing is larger (400 MW gross, 320 MW critical IT, operations around 2029), which only widens the gap. Heat is only waste if we choose to waste it.",
+      notes: "This is the whole thesis. Supply is effectively unlimited: demand is the constraint, so we design from the user side. Our base case is a modeled 150 MW first phase. TeraWulf's filing is larger (400 MW gross, 320 MW critical IT, operations around 2029), which only widens the gap. Heat is only waste if we choose to waste it.",
       visual: <RatioBars d={d} />,
     },
     {
@@ -104,7 +109,7 @@ export function buildSteps(data: AppData): Step[] {
       notes: "Three rings. Ring 1, Phase 1 (proposed): on-site greenhouse, aquaculture and a community rec center with pool on adjacent land. The 183-acre site is on an 80-year lease to TeraWulf's Lake Hawkeye LLC and the landlord is an affiliate, so the campus is framed as proposed. It is a year-round sink with no public trenching. Ring 2: homes and farms along the road on an ambient loop, gated by sign-up density. Ring 3: school campus and town buildings, 5-7 miles away, built only if its cost of heat beats propane and oil.",
       visual: (
         <div className="flex flex-col gap-4 h-full min-h-0">
-          <div className="h-[min(44dvh,420px)] lg:h-auto lg:flex-1 min-h-[260px]"><RingMap offtakers={data.offtakers} /></div>
+          <div className="h-[min(44dvh,420px)] lg:h-auto lg:flex-1 min-h-[260px]"><RingMap offtakers={data.offtakers} townPipeKm={d.rings.find((r) => r.id === "town")?.pipe_km} /></div>
           <ul className="grid gap-2 list-none p-0 m-0 sm:grid-cols-3">
             {d.rings.map((r) => (
               <li key={r.id} className="card p-3">
@@ -181,7 +186,7 @@ export function buildSteps(data: AppData): Step[] {
       kicker: "8 · Who pays, who owns",
       headline: ringL.onsite !== undefined ? "The right tool at every density: the farm first, a loop where homes cluster, rebates for the rest" : allBeatOil ? "Heat from the data center beats propane and oil under every ownership model; community ownership is cheapest" : `Community ownership cuts the cost of heat from $${int(f.lcoh_usd_mwh.private_10pct)} to $${int(f.lcoh_usd_mwh.coop_4pct)} per MWh`,
       layout: "wide",
-      notes: "A community thermal utility, the Thermal Commons co-op, owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but there are no new gas hookups in Lansing. Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
+      notes: "A community thermal utility, the Thermal Commons co-op, owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but new gas hookups have been restricted in Lansing since 2015 (2026 status unverified). Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
       visual: (
         <div className="grid gap-4 min-h-0">
           <div className="grid grid-cols-[1fr_auto_1.2fr_auto_1fr] items-stretch gap-2 text-center">
@@ -203,7 +208,7 @@ export function buildSteps(data: AppData): Step[] {
                 </ol>
                 
                 {fund?.funding_gap_musd !== undefined && <div>Gap a benefit fund, grants or cheap capital must cover: <b className="num text-ember-text">${dec(fund.funding_gap_musd, 1)}M</b>{fund.funding_gap_incentive_scenario_if_qualifies_musd !== undefined && <> (<span className="num">${dec(fund.funding_gap_incentive_scenario_if_qualifies_musd, 1)}M</span> if federal credits qualify)</>}.</div>}
-                {cba?.as_pct_of_dc_capex !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cba.as_pct_of_dc_capex, 1)}%</b> of the data center build{cba.per_year_annuitized_7pct_musd !== undefined && <>, <span className="num">${dec(cba.per_year_annuitized_7pct_musd, 2)}M</span> a year (annuitized at 7% over 30 years)</>}, funds the home program.</div>}
+                {cbaPct !== undefined && <div className="text-[1.125rem]">Community Benefit Agreement: about <b className="num text-teal-text">{dec(cbaPct, 1)}%</b> of the data center build{cbaYr !== undefined && <>, <span className="num">${dec(cbaYr, 2)}M</span> a year (annuitized at {CBA_ANNUITY.ratePct}% over {CBA_ANNUITY.years} years)</>}, funds the home program.</div>}
               </div>
             </div>
           ) : (
@@ -248,8 +253,8 @@ export function buildSteps(data: AppData): Step[] {
           <div className="grid gap-3 grid-cols-2 lg:grid-cols-4">
             <Tile tone="teal" big={int(d.impact.co2_avoided_t_yr)} unit="t CO₂/yr" label={<>about {int(cleanCarbonCars)} cars off the road</>} />
             <Tile big={int(d.impact.homes_served)} unit="homes" label="on recovered heat" />
-            <Tile tone="violet" big={int(d.impact.jobs)} unit="jobs" label="on the on-site campus" />
-            <Tile big={int(d.impact.local_food_t_yr)} unit="t food/yr" label="grown with heat, in winter too" />
+            <Tile tone="violet" big={int(d.impact.jobs)} unit="jobs" label="on the on-site campus (scenario assumption)" />
+            <Tile big={int(d.impact.local_food_t_yr)} unit="t food/yr" label="grown with heat, in winter too (scenario assumption)" />
           </div>
           <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
             {d.hdr_scorecard.map((s) => (
@@ -272,13 +277,13 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "ask",
       kicker: "11 · The ask",
-      headline: cba?.as_pct_of_dc_capex !== undefined ? `Say yes with conditions: a Community Benefit Agreement worth ${dec(cba.as_pct_of_dc_capex, 1)}% of the build` : "Say yes with conditions: write heat reuse into a binding Community Benefit and Heat Supply Agreement",
+      headline: cbaPct !== undefined ? `Say yes with conditions: a Community Benefit Agreement worth ${dec(cbaPct, 1)}% of the build` : "Say yes with conditions: write heat reuse into a binding Community Benefit and Heat Supply Agreement",
       layout: "split",
       notes: "Close on three asks. Town: make heat reuse a condition of any approval. TeraWulf: sign the Heat Supply Agreement, keep cooling independent, keep the 1 MGD lake permit unused for cooling. Funders: NYSERDA FlexTech and large-scale thermal programs to pay for the feasibility work. Point to the QR code for the live model.",
       visual: (
         <div className="grid gap-4">
           {[
-            { who: "Town of Lansing", what: cba?.as_pct_of_dc_capex !== undefined ? `Make a binding Community Benefit Agreement (about ${dec(cba.as_pct_of_dc_capex, 1)}% of the data center build, funding the home program) and a Heat Supply Agreement a condition of approval, instead of a flat ban.` : "Make a Heat Supply Agreement a condition of any approval, instead of a flat ban." },
+            { who: "Town of Lansing", what: cbaPct !== undefined ? `Make a binding Community Benefit Agreement (about ${dec(cbaPct, 1)}% of the data center build, funding the home program) and a Heat Supply Agreement a condition of approval, instead of a flat ban.` : "Make a Heat Supply Agreement a condition of any approval, instead of a flat ban." },
             { who: "The data center", what: "Sign it: sell heat, keep cooling independent, keep the lake permit unused for cooling, fund the exit reserve." },
             { who: "Funders and state", what: "Co-fund the feasibility study and the Phase 1 on-site campus (NYSERDA programs; federal tax credits may apply if structured to qualify)." },
           ].map((a, i) => (
