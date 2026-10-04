@@ -76,7 +76,7 @@ Density picks the tool. Ring one, on site: a greenhouse, a fish farm and a pool,
 
 [Trace the schematic left to right with a finger.]
 
-A side-stream plate exchanger sits on their sealed glycol loop. If cooling ever needs it, a bypass sends everything to the dry coolers: cooling always wins. Forty-five-degree heat goes straight to the farm. A central heat pump lifts heat to a sixty-five-degree loop with storage. A twenty-degree ambient loop reaches five hundred homes, each with its own heat pump. Variable-speed pumps move every loop. We run every one of the 8,760 hours of an Ithaca year.
+A side-stream plate exchanger sits on their sealed glycol loop. If cooling ever needs it, a bypass sends everything to the dry coolers: cooling always wins. Forty-five-degree heat goes straight to the farm. A twenty-degree ambient loop reaches five hundred homes, each with its own heat pump. A storage tank on the source side rides through cold snaps. The dashed hot main to the town center is modeled, and it fails. Variable-speed pumps move every loop, and our pump screening checks the energy they use. We run every one of the 8,760 hours of an Ithaca year.
 
 [Linson: "Aryaman." Click to slide 6.]
 
@@ -132,7 +132,11 @@ Stop the sentence. Answer in two or three sentences from this card. Then say "Ba
 
 **"Walk me through the workings."** Go to the demo. If they want method instead of a slider: 8,760 hours, Ithaca airport typical weather, capture 50 degrees Celsius, heat-pump efficiency clipped between 2 and 6, backup boilers sized to the peak so unmet hours are zero by construction. Read the backup share, 0.73 percent of annual heat, not the zero.
 
-**"Grundfos / the pumps?"** Variable-speed distribution pumps move each loop. Homes on the corridor lift the last step with their own heat pumps, modeled COP about 4.7. We have not specified a manufacturer. Do not invent a product number.
+**"Grundfos / the pumps?"** We screened every loop: flow from heat and delta-T, pipe size, Darcy-Weisbach head, pump energy at variable versus constant speed (`outputs/hydraulics.json`, `docs/hydraulics.md`). Variable speed cuts pumping energy several-fold. Across phases one and two the computed pumping is about 0.74 percent of heat, under our flat 1.5 percent allowance; the corridor's 5-kelvin ambient loop is the exception, about 1.4 times its allowance, and the doc says so. Sweeping the allowance from 0.5 to 6 percent moves the blended cost by about minus 1 to plus 5 dollars. Screening, not a design. We have not specified a manufacturer. Do not invent a product number.
+
+**"What is the range?"** Five hundred Monte Carlo runs of the full hourly model (`outputs/analysis_detail.json`). Blended cost at seven percent: 80 percent range about 98 to 115 dollars, median about 107, against propane at 136. Below propane in every run at seven percent. The discount rate drives most of the spread.
+
+**"Did you use AI?"** Yes, as a coding and research assistant. The model itself is deterministic Python: 8,760 hours, 50 tests and a verify step in CI, and every number on screen traces to `outputs/site2.json`. Every fact we cite is checked against a source in `research/verification.md`. We made the calls ourselves, including refusing the town ring.
 
 **"Phosphorus and the lake?"** Closed-loop fish and greenhouse production is a design intent so nutrients stay in the building. Do not quote a tonnes-of-phosphorus removal. The file's 5,500 tonnes is a food-output figure. Lake impairment status was not re-checked: [unverified] if a judge presses for the regulatory label.
 
@@ -141,7 +145,7 @@ Stop the sentence. Answer in two or three sentences from this card. Then say "Ba
 **Who:** Harsh Agarwal, on this laptop. Philip stays at the side and does not talk over him.
 **When:** the instant Philip says "Harsh, the model."
 **Screen:** the app's **Explore** page (`/explore/`).
-**Before you walk:** load Explore, press **Reset to the base case**, and touch nothing else. Cooling should read **Liquid-cooled (50 °C)**. The town-ring checkbox stays off. The cost-of-money slider sits at **4.0%**.
+**Before you walk:** load Explore, press **Reset to the base case**, and touch nothing else. Cooling should read **Liquid-cooled (50 °C)**. The town-ring checkbox stays off. The cost-of-money slider sits at **7.0%** and the cost card reads **$106**.
 
 **0:00-0:05.** Point at the cost card.
 
@@ -153,9 +157,9 @@ Stop the sentence. Answer in two or three sentences from this card. Then say "Ba
 
 Untick it. The cost returns.
 
-**0:20-0:35.** Drag **Cost of money (discount rate)** from **4.0%** to **7.0%** and stop. Do not touch electricity, uptake, or IT load.
+**0:20-0:35.** Drag **Cost of money (discount rate)** from **7.0%** down to **4.0%** and stop. Do not touch electricity, uptake, or IT load.
 
-> Cost of money, four percent to seven. It lands on one hundred six, the number on the slide.
+> That is the utility case, one hundred six. Finance it as a co-op at four percent and it drops to ninety. Who owns it changes the bill.
 
 **0:35-0:40.** Point at **Saving for a propane home**, which stays at **$735 per year**.
 
