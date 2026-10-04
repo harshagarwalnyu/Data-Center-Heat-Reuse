@@ -174,7 +174,7 @@ export function LcohBars({ d, lcohOverride, onPickRate, activePct }: { d: Site2D
             </defs>
             <CartesianGrid horizontal={false} strokeDasharray="3 4" />
             <XAxis type="number" tick={axisTick} axisLine={axisLine} tickLine={false} unit="" domain={[0, "dataMax + 20"]} tickFormatter={(v) => `$${v}`} />
-            <YAxis type="category" dataKey="name" width={narrow ? 124 : 236} tickFormatter={(n: string) => (narrow ? n.replace(" finance", "").replace(" (no new hookups)", "") : n)} tick={{ fill: "var(--ink)", fontSize: narrow ? 14 : 16 }} axisLine={false} tickLine={false} />
+            <YAxis type="category" dataKey="name" width={narrow ? 132 : 236} tickFormatter={(n: string) => (narrow ? n.replace(" finance", "").replace(" (no new hookups)", "") : n)} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
             <Tooltip {...tip} content={onPickRate ? (p) => <PickTip p={p} /> : undefined} formatter={(v) => `$${int(Number(v))} per MWh of heat`} />
             <Bar isAnimationActive={false} dataKey="v" radius={[0, 6, 6, 0]} barSize={26}>
               {rows.map((r) => {
