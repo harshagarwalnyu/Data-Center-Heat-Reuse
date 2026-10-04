@@ -22,11 +22,31 @@ Weather: real TMYx EPW (Ithaca Tompkins Rgnl AP 725155, 2009-2023, climate.onebu
 ## Corrections applied from research/verification.md and coordinator
 Propane base $3.10/gal (NYSERDA Central 2025-26 range 2.74-3.46; low sensitivity 2.85 in extras.scenarios); oil $5.186 Central monthly average; propane EF 62.87 kg/MMBtu (0.2145 kg/kWh); no federal credit in base, 30% incentive case labelled "if structured to qualify (counsel needed)" (waste-heat network likely not eligible, verification 9d-i); phase 1 = 150 MW IT (news), full build = 320 MW critical IT (TeraWulf filing, ops ~2029); gas moratorium Feb 2015; COP clipped [2,6]; hot loop 65 C base.
 
-## Headline findings (honest)
+## Headline findings (CURRENT v3)
+
+Source: `outputs/site2.json` (meta.generated 2026-10-04, scenario base, scope phases 1-2). Figures below are that file's rounded fields. Model output, so there is no web URL; read the file rather than this paragraph if they diverge. Superseded headline figures are under History.
+
+- Heat delivered (phases 1-2) 50,576 MWh/yr (50.6 GWh) = 6.5% of available 777.6 GWh (`totals.heat_delivered_MWh` 50576.0, `totals.share_of_available_pct` 6.5, `supply.heat_available_GWh` 777.6; IT 150 MW, load factor 0.8, capture 0.75). Delivered heat stays 50.576 GWh and LCOH at 7% stays 106.069 when capture is 0.40, 0.75, or 0.85, and in the 320 MW full-build case (`extras.scenarios`). Tornado driver "Data-center IT load (MW)" is flat: low 106.1, high 106.1, base 106.1 (inputs 320 MW and 75 MW).
+- Resilience: `totals.unmet_hours` is 0. Of the top 1% of hours (88 h), DC heat covers 95.3% of peak and backup covers 4.7%; backup is 0.73% of annual customer heat (`peak_share_dc_pct`, `peak_share_backup_pct`, `backup_share_annual_pct`). HP electricity 2,843 MWh; backup 373 MWh; average COP 4.71; storage 5,558 m3.
+- Blended LCOH at 7% is $106.1/MWh (`finance.lcoh_usd_mwh.utility_7pct`). Coop 4% $89.5/MWh; private 10% $124.6/MWh. Incumbents: propane $136.1, heating oil $155.8, air-source heat pump $96.9, natural gas $64.2, electric resistance $245.0. On-site ring $40.6/MWh (37,076 MWh/yr, direct heat exchange, 45 C). Corridor ring $285.8/MWh (500 homes, 13,500 MWh/yr, linear heat density 0.65 MWh/m/yr), above the air-source heat pump. Town ring is conditional and outside totals/finance: $734.2/MWh, `passes_gate` false, 3,577 MWh/yr.
+- Tariff $108.9/MWh (`finance.tariff_usd_mwh`; `tariff_rule` "0.8 x propane, fixed"). Low-income tariff $88.5/MWh. Capex $38.76 M; opex $1.94 M/yr. Whole-project (phases 1-2) PV funding gap at 7% is $26.01 M (`extras.cba.headline_gap_musd`, same as `extras.funding.funding_gap_musd`), 1.73% of the $1,500 M DC capex benchmark; annuitized $2.096 M/yr. Corridor stand-alone gap $30.32 M; the file's reconciliation is corridor $30.3 M minus on-site surplus $4.3 M = whole-project $26.0 M. Incentive case, labelled only if it qualifies: LCOH $85.8/MWh and gap $13.28 M (`extras.lcoh_incentive_scenario_if_qualifies_usd_mwh`, `extras.funding.funding_gap_incentive_scenario_if_qualifies_musd`).
+- Current break-even (`extras.cba.breakeven_homes_if_cba_pays_pipe`): pipe and laterals paid, corridor LCOH at 2,000 homes $179.6 vs blend tariff $104.8, `min_homes` null. Pipe plus half the building heat pumps: $135.8 at 2,000 homes, `min_homes` null. Pipe plus all building heat pumps: `min_homes` 50, ring LCOH $103.3 vs blend tariff $104.8.
+- Household: 27 MWh/yr; $735/yr vs propane; $1,266/yr vs oil (`finance.household` savings_vs_propane_usd 735.0, savings_vs_oil_usd 1266.0). Low-income stakeholder metric in the same file: $1,286/yr vs propane.
+- CO2 avoided 11,408 t/yr; 2,659 car-equivalents; fossil displaced 52,016 MWh (`impact.co2_avoided_t_yr`, `co2_cars_equiv`, `fossil_displaced_MWh`). Marginal-grid case 10,670 t/yr (`extras.co2_avoided_marginal_grid_t_yr`; also the climate stakeholder string "11408 t/yr (10670 with marginal grid)"). ERF 0.0462. Fan energy saved 970 MWh/yr. Water note in `impact.water`: no lake-water savings are claimed. Jobs 126; greenhouse 10 ha; local food 5,500 t/yr; fish 1,500 t/yr.
+
+## History
+
+Superseded headline values. The v2 changes and v3 changes sections below are unchanged. v2 headline figures are copied here as the archive.
+
+### v1 (previous Headline findings text)
 - Heat delivered (phases 1-2) 50.6 GWh/yr = 6.5% of available 778 GWh. Supply never binds: recovery 0.40/0.75/0.85 and 320 MW IT all give identical LCOH. DC load is the tornado's flattest bar.
 - Blended LCOH (7%) $102/MWh vs propane $136, oil $156, ASHP $97, gas $64. But blended is dominated by the cheap on-site ring ($40/MWh). The CORRIDOR ring alone is $274/MWh (capex ~$50k per home all-in, in line with MIT OCW ~$50k/residence for networked systems) and is WORSE than an air-source heat pump ($97). With the 20% propane discount tariff ($109/MWh) the project has a funding gap of $23.6 M NPV (7%); a 30% incentive, if it could be structured to qualify, cuts it to $12 M. The corridor case works only as a Community Benefit-funded program or at higher density.
 - Household: 27 MWh/yr; saves $735/yr vs propane, $1,266 vs oil at the 20% tariff.
 - CO2 avoided 11,456 t/yr (10,5xx t with marginal grid factor), ~2,490 cars.
+
+### v2 (headline figures from the v2 changes section)
+- CBA: corridor-ring gap $28.1 M PV (1.9% of DC capex, ~$0.94 M/yr straight-line over 30 yr); whole phases 1-2 gap $22.3 M (1.5%).
+- Break-even: even if CBA pays all loop pipe and laterals, corridor LCOH stays $166 at 2,000 homes vs blended tariff $105. Pipe + half the HPs still $128; pipe + all HPs breaks even (from 50 homes).
 
 ## ASSUMPTIONs that most affect results (flagged in config)
 building_hp_usd 16,000; loop_pipe_usd_m 450 and frontage 25 m/home; uptake 0.70; elec price 0.245 retail for everything (an industrial-rate 0.12 gives LCOH $93); greenhouse U_eff, area and tariff $50/MWh; central HP COP at the 6.0 cap (optimistic); capture_fraction 0.75; mix of displaced fuels; backup sized 100% of peak.
@@ -49,3 +69,19 @@ Site 1 inputs (loads, Manhattan unit costs, gas $2.20/therm) are rough; Site 1 L
 - finance.elec_price_usd_mwh and tariff_rule added to site2.json and site1.json.
 
 - v3.1: corridor mix renormalised Census 26/8/24/4 (config/impact.yaml); counterfactual covers all customer heat so backup hours are credited; car factor 4.29 t (EPA calculator); report strings use %.0f. CO2 11,408 t, 2,659 cars, fossil 52,016 MWh.
+
+## Lane status
+
+### Done
+- Headline findings rewritten as CURRENT v3 from `outputs/site2.json` (generated 2026-10-04): delivered heat 50,576 MWh (6.5% of 777.6 GWh), LCOH at 7% $106.1/MWh, on-site $40.6, corridor $285.8, town $734.2 (fails gate), tariff $108.9, whole-project gap $26.01 M, household $735 / $1,266, CO2 11,408 t and 2,659 cars.
+- Previous headline block kept verbatim under History (v1). v2 gap and break-even figures copied under History (v2).
+- Spot-check: the same headline fields in `web/public/data/site2.json` match (utility LCOH 106.1, gap 26.01, CO2 11,408, cars 2,659, ring LCOHs 40.6 / 285.8 / 734.2, heat delivered 50,576).
+
+### Missing
+- Model was not re-run. Headlines are a read of the existing JSON.
+- Full file diff of `web/public/data/site2.json` vs `outputs/site2.json` was not done. Only the headline fields above were compared.
+- Method decisions, ASSUMPTIONS, Gaps, and the v2/v3 changelog sections were left as written. They still contain older figures (town-ring LCOH $754 in Method decisions; corridor LCOH $274 and gap $23.6 M only in History; v2 changelog still says gap $22.3 M / $28.1 M and break-even LCOH $166).
+
+### Open questions
+- Quote the Headline findings (CURRENT v3) block, not Method decisions or the v2 changelog, when a slide needs LCOH, the funding gap, or CO2.
+- Whether the $4.3 M on-site surplus is a stored number or only the reconciliation sentence. The JSON has the sentence; there is no separate surplus field.
