@@ -294,7 +294,7 @@ Then nothing is built and nobody loses money. Checkpoint G0 (31 March 2027) is t
 ## 20. "Is this legal? Who runs it?"
 
 **Q. Can a town do this?**
-We do not claim legal authority. That is the first item on our list for a New York lawyer (term sheet 8.1). We propose a checkpoint (G0.5) for a legal opinion before any spending.
+We do not claim legal authority. That is the first item on our list for a New York lawyer (term sheet 8.1). Checkpoint G2 requires a lawyer's memo on the co-op's legal form by 30 June 2027, before any design spending.
 
 **→ Can't the town just create a heating district?**
 Possibly not. Our check of New York Town Law section 190 suggests it doesn't list heating districts, but we rate that unconfirmed. That is one reason the co-op, not the town, owns and runs the network.
@@ -311,7 +311,10 @@ Dated checkpoints in the term sheet:
 - **G0, 31 March 2027:** the town chooses to negotiate instead of banning.
 - **G1, 31 March 2028:** lawful data-center approval with these agreements attached.
 - **G2, 30 June 2027:** legal form memo.
+- **G3, 30 September 2027:** benefit agreement and heat supply agreement signed (G4 freezes scope to the farm campus at the same time).
+- **G5, about late 2029:** heat flows when the first IT load is switched on.
 - **G6, by 31 March 2031:** the corridor go or no-go, cluster by cluster.
+- **G7, re-test by 30 June 2032:** the town-center main. Fails today; nothing is built.
 
 TeraWulf's operations start around 2029.
 
