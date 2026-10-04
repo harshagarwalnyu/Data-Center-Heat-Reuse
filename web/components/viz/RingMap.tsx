@@ -52,7 +52,7 @@ export function RingMapSvg({ offtakers, townPipeKm }: { offtakers: Offtaker[]; t
           </g>
         );
       })}
-      <g transform={`translate(${W - 190},${H - 30})`}>
+      <g transform={`translate(${W - 3 * pxPerMi - 100},${H - 30})`}>
         <line x1="0" x2={3 * pxPerMi} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />
         <text x={3 * pxPerMi + 8} y="8" fontSize="26" fill="var(--ink)">3 mi</text>
       </g>

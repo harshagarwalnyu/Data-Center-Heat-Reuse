@@ -75,7 +75,7 @@ export function PrintSheet({ data }: { data: AppData }) {
             <QrCode url={PUBLIC_URL} size={84} hideCaption />
             <div>
               <div className="font-bold" style={{ fontSize: "12pt" }}>The ask</div>
-              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement (about {dec(cbaPct ?? 0, 1)}% of the data-center build) a condition of any approval, plus a proposed $150k a year for computer science in Lansing&apos;s public schools. About {int(d.impact.jobs)} jobs and {int(d.impact.local_food_t_yr)} t of local food a year (estimates). Code and model: {PUBLIC_URL}</div>
+              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement (about {dec(cbaPct ?? 0, 1)}% of the data-center build) a condition of any approval, plus a proposed $150k a year for computer science in Lansing&apos;s public schools. About {int(d.impact.jobs)} jobs and {int(tonnesToTons(d.impact.local_food_t_yr))} tons of local food a year (estimates). Code and model: {PUBLIC_URL}</div>
             </div>
           </footer>
           <div className="text-ink2" style={{ fontSize: "8.5pt" }}>{CREDITS}</div>
