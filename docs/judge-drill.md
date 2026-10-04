@@ -12,10 +12,10 @@ How to read this: **Q** is the judge's first question, **→** is the follow-up,
 About 778 GWh a year (`supply.heat_available_GWh` = 777.6). That is the heat we could capture, not the total the building makes.
 
 **→ How did you get 778?**
-150 MW of IT load (TeraWulf's first phase, from news reports) × 80% average load × 75% of the heat captured in liquid at about 50 °C × 99% uptime of our heat connection, summed hour by hour over a year. Roughly: 150 × 0.8 × 0.75 × 0.99 × 8,760 h ≈ 780 GWh; the hourly model gives 777.6.
+150 MW of IT load (TeraWulf's first phase, from news reports) × 80% average load × 75% of the heat captured in liquid at about 122 °F × 99% uptime of our heat connection, summed hour by hour over a year. Roughly: 150 × 0.8 × 0.75 × 0.99 × 8,760 h ≈ 780 GWh; the hourly model gives 777.6.
 
-**→→ Why 75% captured? Why 50 °C?**
-75% is our base assumption ([A] in `config/engineering.yaml`). We test 40% and 85% as scenarios: the low end is the share of heat in liquid in a Virginia greenhouse study (33-42% of power), and the high end is the organizers' "up to 85% recoverable". 50 °C is a direct-to-chip liquid-cooling return temperature (45-55 °C in the same Virginia study, 45-65 °C in the Open Compute heat-reuse paper). **It does not matter for the answer:** at 40% capture the cost of heat is still $106 per MWh, because we only use 6.5% of the heat anyway.
+**→→ Why 75% captured? Why 122 °F?**
+75% is our base assumption ([A] in `config/engineering.yaml`). We test 40% and 85% as scenarios: the low end is the share of heat in liquid in a Virginia greenhouse study (33-42% of power), and the high end is the organizers' "up to 85% recoverable". 122 °F is a direct-to-chip liquid-cooling return temperature (113-131 °F in the same Virginia study, 113-149 °F in the Open Compute heat-reuse paper; 113-131 °F and 113-149 °F in the sources). **It does not matter for the answer:** at 40% capture the cost of heat is still $106 per MWh, because we only use 6.5% of the heat anyway.
 
 ---
 
@@ -78,12 +78,12 @@ Pipe per unit of heat.
 
 | Ring | Heat a year | Pipe | Cost per MWh at 7% |
 |---|---|---|---|
-| On-site farm campus | 37.1 GWh | 0.5 km | $41 |
-| Corridor homes | 13.5 GWh | 20.9 km | $286 |
-| Town center | 3.6 GWh | 14 km | $734 |
+| On-site farm campus | 37.1 GWh | 0.3 mi | $41 |
+| Corridor homes | 13.5 GWh | 13.0 mi | $286 |
+| Town center | 3.6 GWh | 8.7 mi | $734 |
 
 **→ Why is the corridor so expensive?**
-21 km of pipe and 500 home heat pumps for 13.5 GWh. That is 0.65 MWh per metre of pipe a year, about 0.33 kW per metre at peak, well under the 1.2 kW per metre usually cited for a traditional heat network (`docs/evidence.md`). It is a thin load.
+13.0 mi of pipe and 500 home heat pumps for 13.5 GWh. That is 0.20 MWh per foot of pipe a year, about 0.10 kW per foot at peak, well under the 0.37 kW per foot (1.2 kW per metre in the source) usually cited for a traditional heat network (`docs/evidence.md`). It is a thin load.
 
 **→→ Then why build it at all?**
 Because these homes have no gas line (Lansing has had a gas moratorium since February 2015) and burn propane, oil or electric heat. They are who the town wants helped. We build it one cluster at a time, only where homes sign up and heat pumps are funded (checkpoint G6 in the term sheet), and the data center covers the gap.
@@ -109,7 +109,7 @@ $38.8M for the farm campus and corridor (`finance.capex_musd.total` = 38.76).
 - **On-site pipe:** $0.45M
 
 **→→ Where do those unit costs come from?**
-Mostly assumptions, and we label them. Pipe at $450 per metre and heat pumps at $16k each come from an MIT course that puts a networked geothermal connection at about $50k per home, roughly one third in-home. Our research doc flags both as possibly optimistic: insulated heat pipe in Ireland ran €782-869 per metre in 2020. Ours is uninsulated plastic pipe, but we have no direct source. If pipe costs 40% more, the cost of heat rises to $116; if it costs 30% less, it falls to $98.
+Mostly assumptions, and we label them. Pipe at $137 per foot and heat pumps at $16k each come from an MIT course that puts a networked geothermal connection at about $50k per home, roughly one third in-home. Our research doc flags both as possibly optimistic: insulated heat pipe in Ireland ran about €238-265 per foot in 2020 (€782-869 per metre in the source). Ours is uninsulated plastic pipe, but we have no direct source. If pipe costs 40% more, the cost of heat rises to $116; if it costs 30% less, it falls to $98.
 
 ---
 
@@ -175,7 +175,7 @@ In the industry videos, an Open Compute speaker said the reason most heat deals 
 Average 4.7 (`totals.avg_cop` = 4.71): each unit of electricity delivers 4.7 units of heat. It is calculated every hour from the actual temperatures, as a fraction of the theoretical maximum, and capped between 2 and 6.
 
 **→ Isn't 4.7 high?**
-It is at the top of the measured range. A survey of 24 low-temperature networks found 3 to 5, with 17 of 24 at 4 or above (Buffa et al. 2019, in `docs/evidence.md`). Their figures include pumping; our 4.71 is before pumping, which we count separately. Our home heat pumps lift from a 20 °C loop, which is easy.
+It is at the top of the measured range. A survey of 24 low-temperature networks found 3 to 5, with 17 of 24 at 4 or above (Buffa et al. 2019, in `docs/evidence.md`). Their figures include pumping; our 4.71 is before pumping, which we count separately. Our home heat pumps lift from a 68 °F loop, which is easy.
 
 **→→ What if it's worse?**
 The model barely moves: heat-pump efficiency is the smallest driver in our sensitivity chart, $104 to $109 per MWh. Pipe cost and financing matter far more.
@@ -191,7 +191,7 @@ Zero hours without heat in the model. But that is because we size backup boilers
 At peak, the data center covers 95.3% and backup 4.7%. Over the year, backup supplies 0.73% of the heat. Across 88 peak hours, the data center does almost all the work.
 
 **→→ What buffers the swings?**
-A 5,558 m³ hot-water tank at the data center: 6 hours of peak demand. The weather is a real hourly year for Ithaca (TMYx 2009-2023), so cold snaps are in the model, not averaged out.
+A 1.47 million gallon hot-water tank at the data center: 6 hours of peak demand. The weather is a real hourly year for Ithaca (TMYx 2009-2023), so cold snaps are in the model, not averaged out.
 
 ---
 
@@ -219,10 +219,10 @@ Left open on purpose (term sheet 8.3). $5.7M is the starting reference. Whether 
 It costs $734 per MWh, more than five times propane.
 
 **→ Why so high?**
-14 km of pipe to deliver 3.6 GWh. The town's buildings need 65 °C water, so the long main runs hot and loses 1,840 MWh a year, about half as much as it delivers. Pipe is 82% of that ring's cost.
+8.7 mi of pipe to deliver 3.6 GWh. The town's buildings need 149 °F water, so the long main runs hot and loses 1,840 MWh a year, about half as much as it delivers. Pipe is 82% of that ring's cost.
 
 **→→ Would hotter data-center water fix it?**
-Not really. Even with 65 °C capture, which lets the main run without a heat pump 71% of the time, the cost only drops to $721. Adding the town would push the average for everything to $147, worse than propane. So it fails our gate. It is only worth building with grant money or a big new anchor customer.
+Not really. Even with 149 °F capture, which lets the main run without a heat pump 71% of the time, the cost only drops to $721. Adding the town would push the average for everything to $147, worse than propane. So it fails our gate. It is only worth building with grant money or a big new anchor customer.
 
 ---
 
@@ -235,22 +235,22 @@ We assumed 1.5% of delivered heat, a common rule of thumb. Then we checked it bo
 For each ring: design flow from heat load and temperature drop, pipe size from velocity and friction limits, pressure loss with a 30% allowance for fittings, then pump power at 70% pump and 93% motor-drive efficiency, run hourly with a 20% minimum flow.
 
 **→→ What matters most for pumping?**
-Temperature difference. The corridor loop runs only 5 °C between supply and return, so it moves four times as much water as a 20 °C loop for the same heat. If that drops by 1 °C, flow rises 25% and pump power rises about 95%. Keeping delta-T up is the main operating target, which is exactly where variable-speed pumps and controls earn their keep.
+Temperature difference. The corridor loop runs only 9 °F between supply and return, so it moves four times as much water as a 36 °F loop for the same heat. If that drops by 1.8 °F, flow rises 25% and pump power rises about 95%. Keeping delta-T up is the main operating target, which is exactly where variable-speed pumps and controls earn their keep.
 
 ---
 
 ## 16. "Carbon"
 
 **Q. How much CO2 do you avoid?**
-11,408 tonnes a year, about 2,659 cars off the road (EPA's 4.29 t per car).
+12,575 short tons a year, about 2,659 cars off the road (EPA's 4.73 short tons per car).
 
 **→ How?**
 - **Fuel displaced:** 52,016 MWh a year of propane, oil and electric heat, by the mix from the Census survey of Lansing's non-gas homes.
-- **Emissions emitted:** subtract the electricity for heat pumps and pumps (upstate New York grid, 0.11 kg per kWh) and the backup fuel.
+- **Emissions emitted:** subtract the electricity for heat pumps and pumps (upstate New York grid, 0.24 lb per kWh) and the backup fuel.
 - **The rest is net avoided.**
 
 **→→ What if you use the dirtier marginal grid?**
-10,670 tonnes, still positive. In the uncertainty run, the range is 10,900 to 11,800 tonnes.
+11,762 short tons, still positive. In the uncertainty run, the range is 12,000 to 13,000 short tons.
 
 ---
 
@@ -342,13 +342,13 @@ The farm campus: short pipe, cheapest heat, and it earns a surplus. Homes follow
 ## 22. "The farm, fish and jobs"
 
 **Q. What is on the farm campus?**
-A 10-hectare greenhouse, fish farming and a rec center with a pool, all fed directly with 45 °C water, no heat pump.
+A 25-acre greenhouse, fish farming and a rec center with a pool, all fed directly with 113 °F water, no heat pump.
 
 **→ How do you size the greenhouse?**
-About 1 MW of heat per hectare (Virginia greenhouse study). The campus uses 37.1 GWh a year with a 16.4 MW peak. The greenhouse figure (310 kWh per m² a year) matches a Dutch benchmark (`docs/evidence.md`).
+About 0.4 MW of heat per acre (Virginia greenhouse study). The campus uses 37.1 GWh a year with a 16.4 MW peak. The greenhouse figure (29 kWh per ft² a year) matches a Dutch benchmark (`docs/evidence.md`).
 
-**→→ And 126 jobs, 5,500 tonnes of food?**
-Jobs come from a greenhouse jobs benchmark plus our assumptions for the fish farm (one job per 40 tonnes), rec center (12) and network operations (8). Food is 5,500 tonnes a year, 1,500 of it fish. **These are indicative, not commitments.** Say so if asked.
+**→→ And 126 jobs, 6,060 short tons of food?**
+Jobs come from a greenhouse jobs benchmark plus our assumptions for the fish farm (one job per 44 short tons), rec center (12) and network operations (8). Food is 6,060 short tons a year, 1,650 of it fish. **These are indicative, not commitments.** Say so if asked.
 
 ---
 
@@ -436,9 +436,9 @@ The framing (consent, not cheap heat), the deal structure, the decision to kill 
 | $2.1M/yr | what the data center pays | $26M as a 30-year payment at 7% |
 | 1.7% | gap ÷ estimated build cost | $26M ÷ $1.5B (our estimate: 150 MW × $10M/MW) |
 | $150k/yr | school computer science fund | our proposal; on top of the heat payment |
-| $734 | town ring cost per MWh | 14 km for 3.6 GWh; rejected |
+| $734 | town ring cost per MWh | 8.7 mi for 3.6 GWh; rejected |
 | 4.7 | heat-pump efficiency | hourly, capped 2-6 |
 | 0.74% | pumping energy, checked bottom-up | vs 1.5% assumed |
 | $98-115 | cost range (500 runs) | 10th to 90th percentile |
-| 11,408 t | CO2 avoided a year | fuel displaced minus electricity used |
+| 12,575 short tons | CO2 avoided a year | fuel displaced minus electricity used |
 | $5.7M | stranded if the DC leaves at year 10 | covered by reserve and step-in |

@@ -1,7 +1,7 @@
 "use client";
 import type { ReactNode } from "react";
 import type { AppData } from "@/lib/types";
-import { dec, int, usd } from "@/lib/format";
+import { cToF, dec, haToAcres, int, m3ToGal, tonnesToTons, usd } from "@/lib/format";
 import { RingMap } from "../viz/RingMap";
 import { Sankey } from "../viz/Sankey";
 import { HouseholdCalc, QrCode, RatioBars, TempLadder } from "../viz/Misc";
@@ -97,7 +97,7 @@ export function buildSteps(data: AppData): Step[] {
       id: "insight",
       kicker: "The insight",
       headline: <>The data center makes <span className="text-ember-text num">{dec(ratio, 0)}&times;</span> more heat than we use: only <span className="text-ember-text num">{dec(sharePct, 1)}%</span> is needed</>,
-      lede: <>Our base case is a {int(d.supply.it_load_MW)} MW first phase; about {int(d.supply.capture_fraction * 100)}% of its power can be captured as {d.supply.capture_temp_C} °C heat. Supply is not the constraint. Matching it to users is.</>,
+      lede: <>Our base case is a {int(d.supply.it_load_MW)} MW first phase; about {int(d.supply.capture_fraction * 100)}% of its power can be captured as {int(cToF(d.supply.capture_temp_C))} °F heat. Supply is not the constraint. Matching it to users is.</>,
       layout: "split",
       notes: "This is the whole thesis. Supply is effectively unlimited: demand is the constraint, so we design from the user side. Our base case is a modeled 150 MW first phase. TeraWulf's filing is larger (400 MW gross, 320 MW critical IT, operations around 2029), which only widens the gap. Heat is only waste if we choose to waste it.",
       visual: <RatioBars d={d} />,
@@ -105,7 +105,7 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "plan",
       kicker: "The plan",
-      headline: `A data center's heat could warm a ${ha ? `${int(ha)}-hectare ` : ""}year-round farm campus and ${int(homes)} homes`,
+      headline: `A data center's heat could warm a ${ha ? `${int(haToAcres(ha))}-acre ` : ""}year-round farm campus and ${int(homes)} homes`,
       lede: <>Bring the users to the heat. Start next to the data center (a proposed campus on adjacent land), then follow the road toward town, and reach the town center only if the numbers pass.{townNo && <> They do not pass today: Ring 3 would cost <b className="num">${int(townLcoh)}</b> per MWh against <b className="num">${int(f.incumbent_usd_mwh.propane)}</b> for propane, so we leave it out.</>}</>,
       layout: "split",
       notes: "Three rings. Ring 1, Phase 1 (proposed): on-site greenhouse, aquaculture and a community rec center with pool on adjacent land. The 183-acre site is on an 80-year lease to TeraWulf's Lake Hawkeye LLC and the landlord is an affiliate, so the campus is framed as proposed. It is a year-round sink with no public trenching. Ring 2: homes and farms along the road on an ambient loop, gated by sign-up density. Ring 3: school campus and town buildings, 5-7 miles away, built only if its cost of heat beats propane and oil.",
@@ -142,11 +142,11 @@ export function buildSteps(data: AppData): Step[] {
       id: "ladder",
       visualWide: true,
       kicker: "Temperature ladder",
-      headline: `Liquid cooling hands over ${d.supply.capture_temp_C} °C heat: greenhouses take it directly, buildings get a small boost`,
+      headline: `Liquid cooling hands over ${int(cToF(d.supply.capture_temp_C))} °F heat: greenhouses take it directly, buildings get a small boost`,
       lede: <>Average heat-pump COP across the network is <b className="num">{dec(T.avg_cop, 1)}</b>: one unit of electricity moves about {dec(T.avg_cop, 1)} units of heat.</>,
       layout: "split",
       deepDive: true,
-      notes: "Temperature match. Air-cooled data centers hand over about 30 °C heat, which needs a big lift. Direct liquid cooling returns about 50 °C, so the greenhouse and aquaculture sit at or below source temperature and need no heat pump. Homes need the loop plus a building heat pump; town buildings need a 55-65 °C hot loop. Show the COP comparison between air and liquid.",
+      notes: "Temperature match. Air-cooled data centers hand over about 86 °F heat, which needs a big lift. Direct liquid cooling returns about 122 °F, so the greenhouse and aquaculture sit at or below source temperature and need no heat pump. Homes need the loop plus a building heat pump; town buildings need a 131-149 °F hot loop. Show the COP comparison between air and liquid.",
       visual: (
         <div className="grid gap-3 h-full min-h-0">
           <div className="min-h-[320px]"><TempLadder data={data} /></div>
@@ -165,9 +165,9 @@ export function buildSteps(data: AppData): Step[] {
       visual: (
         <div className="grid gap-4 h-full min-h-0 grid-rows-[auto_minmax(0,1fr)]">
           <ul className="grid gap-3 grid-cols-2 lg:grid-cols-5 list-none p-0 m-0">
-            <li><Pill n="1" title="Temperature" tone="var(--ember-text)">{d.supply.capture_temp_C} °C capture. On-site direct; homes and town via heat pumps, COP {dec(T.avg_cop, 1)}.</Pill></li>
+            <li><Pill n="1" title="Temperature" tone="var(--ember-text)">{int(cToF(d.supply.capture_temp_C))} °F capture. On-site direct; homes and town via heat pumps, COP {dec(T.avg_cop, 1)}.</Pill></li>
             <li><Pill n="2" title="Capacity" tone="var(--ember-text)">{dec(ratio, 0)}× more heat than the {dec(demandAll / 1000, 0)} GWh/yr demand.</Pill></li>
-            <li><Pill n="3" title="Timing" tone="var(--ember-text)">Storage ({int(T.storage_m3)} m³, about {dec(storageHours, 0)} h of peak) smooths daily peaks.</Pill></li>
+            <li><Pill n="3" title="Timing" tone="var(--ember-text)">Storage ({int(m3ToGal(T.storage_m3))} gallons, about {dec(storageHours, 0)} h of peak) smooths daily peaks.</Pill></li>
             <li><Pill n="4" title="Seasonality" tone="var(--ember-text)">Summer demand is {int((lowMonth / peakMonth) * 100)}% of January; on-site users keep the base load.</Pill></li>
             <li><Pill n="5" title="Continuity" tone="var(--ember-text)">{int(T.unmet_hours)} unmet hours; backup supplies {dec(backupPct, 1)}% of heat.</Pill></li>
           </ul>
@@ -233,7 +233,7 @@ export function buildSteps(data: AppData): Step[] {
       visual: (
         <div className="grid gap-4 md:grid-cols-4">
           {[
-            { t: "First hours", h: "Storage carries the load", b: `${int(d.totals.storage_m3)} m³ of hot water holds about ${dec(storageHours, 0)} hours of peak demand.` },
+            { t: "First hours", h: "Storage carries the load", b: `${int(m3ToGal(d.totals.storage_m3))} gallons of hot water holds about ${dec(storageHours, 0)} hours of peak demand.` },
             { t: "Days", h: "Backup boilers take over", b: `Sized for 100% of ${dec(totalPeak, 0)} MW peak. Today they cover ${dec(backupPct, 1)}% of annual heat.` },
             { t: "Months", h: "Step-in rights", b: f.dc_exit.corridor_cost_uplift_usd_mwh !== undefined ? `The utility keeps the loop. Without the data center, corridor heat costs about $${int(f.dc_exit.corridor_cost_uplift_usd_mwh)} more per MWh${f.dc_exit.replacement_source_musd !== undefined ? `; a replacement source is about $${dec(f.dc_exit.replacement_source_musd, 0)}M` : ""}.` : "The utility can keep running the loop. Fallback: " + f.dc_exit.fallback },
             { t: `Year ${f.dc_exit.year}`, h: "Reserve covers the stranded asset", b: `Exposure of about $${dec(f.dc_exit.stranded_musd, 0)}M is covered by a decommissioning reserve in the Heat Supply Agreement.` },
@@ -253,16 +253,16 @@ export function buildSteps(data: AppData): Step[] {
       id: "impact",
       kicker: "Impact",
       lede: <><b className="text-ink">Lansing context:</b> no designated disadvantaged community, so equity here means older residents and propane and oil households. Up to 69 days above 90 °F by 2050 (19 today).</>,
-      headline: `Every year: ${int(d.impact.co2_avoided_t_yr)} tonnes of CO₂ avoided, ${int(d.impact.jobs)} local jobs, ${int(d.impact.local_food_t_yr)} tonnes of local food`,
+      headline: `Every year: ${int(tonnesToTons(d.impact.co2_avoided_t_yr))} tons of CO₂ avoided, ${int(d.impact.jobs)} local jobs, ${int(tonnesToTons(d.impact.local_food_t_yr))} tons of local food`,
       layout: "wide",
       notes: "Map it to the four judging lenses and HDR's seven regenerative domains. Technical and economic were covered in steps 4 to 8. Environmental: CO2 avoided is displaced fuel minus heat-pump electricity at the upstate grid factor. Social and regenerative: Lansing has no designated disadvantaged community, so equity here means older residents and propane and oil households. Lake: closed-loop aquaponics keeps phosphorus out of an already phosphorus-impaired Cayuga Lake.",
       visual: (
         <div className="grid gap-3 min-h-0">
           <div className="grid gap-3 grid-cols-2 lg:grid-cols-4">
-            <Tile tone="teal" big={int(d.impact.co2_avoided_t_yr)} unit="t CO₂/yr" label={<>about {int(cleanCarbonCars)} cars off the road</>} />
+            <Tile tone="teal" big={int(tonnesToTons(d.impact.co2_avoided_t_yr))} unit="tons CO₂/yr" label={<>about {int(cleanCarbonCars)} cars off the road</>} />
             <Tile big={int(d.impact.homes_served)} unit="homes" label="on recovered heat" />
             <Tile tone="violet" big={int(d.impact.jobs)} unit="jobs" label="on the on-site campus (scenario assumption)" />
-            <Tile big={int(d.impact.local_food_t_yr)} unit="t food/yr" label="grown with heat, in winter too (scenario assumption)" />
+            <Tile big={int(tonnesToTons(d.impact.local_food_t_yr))} unit="tons food/yr" label="grown with heat, in winter too (scenario assumption)" />
           </div>
           <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
             {d.hdr_scorecard.map((s) => (

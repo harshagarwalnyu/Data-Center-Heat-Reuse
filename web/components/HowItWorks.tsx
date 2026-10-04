@@ -2,7 +2,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { AppData } from "@/lib/types";
-import { dec, int } from "@/lib/format";
+import { cToF, dec, int, m3ToGal } from "@/lib/format";
 import { NavBar } from "./ui";
 import { MathSteps } from "./MathSteps";
 import { Swash } from "./look/Paper";
@@ -46,19 +46,19 @@ export function HowItWorks({ data }: { data: AppData }) {
 
         <h2 className="t-h2 m-0 mt-14">How the heat moves</h2>
         <ol className="list-none m-0 mt-5 p-0 grid gap-1" aria-label="How the heat moves">
-          <Flow n={1} icon={<RackIcon />} bg="var(--peach)" temp={`${d.supply.capture_temp_C} °C`} title="Servers heat a liquid loop">
-            The data center cools its chips with liquid. That loop comes back warm, about {d.supply.capture_temp_C} °C.
+          <Flow n={1} icon={<RackIcon />} bg="var(--peach)" temp={`${int(cToF(d.supply.capture_temp_C))} °F`} title="Servers heat a liquid loop">
+            The data center cools its chips with liquid. That loop comes back warm, about {int(cToF(d.supply.capture_temp_C))} °F.
           </Flow>
           <Arrow />
           <Flow n={2} icon={<ExchangerIcon />} bg="var(--butter)" title="A plate heat exchanger takes the heat">
             It sits on a side loop. Cooling always wins: if we take too little or nothing, dry coolers carry the full load.
           </Flow>
           <Arrow />
-          <Flow n={3} icon={<FarmHomesIcon />} bg="var(--sage)" temp={on && co ? `${on.supply_temp_C} °C / ${co.supply_temp_C} °C` : undefined} title="Farm and homes use it">
-            {on && co ? <>The farm campus is fed directly at {on.supply_temp_C} °C. The {int(co.homes ?? d.impact.homes_served)} homes sit on a {co.supply_temp_C} °C loop and each has its own small heat pump.</> : <>Ring data is unavailable.</>}
+          <Flow n={3} icon={<FarmHomesIcon />} bg="var(--sage)" temp={on && co ? `${int(cToF(on.supply_temp_C))} °F / ${int(cToF(co.supply_temp_C))} °F` : undefined} title="Farm and homes use it">
+            {on && co ? <>The farm campus is fed directly at {int(cToF(on.supply_temp_C))} °F. The {int(co.homes ?? d.impact.homes_served)} homes sit on a {int(cToF(co.supply_temp_C))} °F loop and each has its own small heat pump.</> : <>Ring data is unavailable.</>}
           </Flow>
           <Arrow />
-          <Flow n={4} icon={<TankFlameIcon />} bg="var(--sky)" temp={`${int(d.totals.storage_m3)} m³`} title="A tank and backup boilers cover the gaps">
+          <Flow n={4} icon={<TankFlameIcon />} bg="var(--sky)" temp={`${int(m3ToGal(d.totals.storage_m3))} gal`} title="A tank and backup boilers cover the gaps">
             The tank holds about 6 hours of peak heat. Backup boilers are sized for 100% of peak, so no home goes cold.
           </Flow>
         </ol>

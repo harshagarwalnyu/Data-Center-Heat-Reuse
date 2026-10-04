@@ -4,7 +4,7 @@ import QRCode from "qrcode";
 import { motion, useReducedMotion } from "framer-motion";
 import type { AppData, FuelKey, Site2Data } from "@/lib/types";
 import { cop, FUEL_LABEL, HOME_SIZES, household, isDirect, CAPTURE_TEMP_C } from "@/lib/model";
-import { dec, int, usd } from "@/lib/format";
+import { cToF, dec, int, tonnesToTons, usd } from "@/lib/format";
 import { ringColor, ringShort, ringText } from "../ui";
 
 export function QrCode({ url, size = 160, label, hideCaption }: { url: string; size?: number; label?: string; hideCaption?: boolean }) {
@@ -75,13 +75,13 @@ export function TempLadder({ data }: { data: AppData }) {
       {[20, 30, 40, 50, 60, 70, 80].map((t) => (
         <g key={t}>
           <line x1={X(t)} x2={X(t)} y1={top - 10} y2={top + rows.length * rowH + 4} stroke="var(--line)" />
-          <text x={X(t)} y={top + rows.length * rowH + 30} fontSize="17" fill="var(--ink2)" textAnchor="middle" className="num">{t} °C</text>
+          <text x={X(t)} y={top + rows.length * rowH + 30} fontSize="17" fill="var(--ink2)" textAnchor="middle" className="num">{Math.round(cToF(t))} °F</text>
         </g>
       ))}
       <line x1={X(Tair)} x2={X(Tair)} y1={top - 18} y2={top + rows.length * rowH + 4} stroke="var(--ink2)" strokeWidth="3" strokeDasharray="6 5" />
       <line x1={X(Tliq)} x2={X(Tliq)} y1={top - 18} y2={top + rows.length * rowH + 4} stroke="var(--ember)" strokeWidth="4" />
-      <text x={X(Tair) - 6} y={top - 30} fontSize="18" fontWeight="700" fill="var(--ink)" textAnchor="end">Air-cooled: {Tair} °C</text>
-      <text x={X(Tliq) + 8} y={top - 30} fontSize="18" fontWeight="700" fill="var(--ember-text)">Liquid-cooled: {Tliq} °C</text>
+      <text x={X(Tair) - 6} y={top - 30} fontSize="18" fontWeight="700" fill="var(--ink)" textAnchor="end">Air-cooled: {Math.round(cToF(Tair))} °F</text>
+      <text x={X(Tliq) + 8} y={top - 30} fontSize="18" fontWeight="700" fill="var(--ember-text)">Liquid-cooled: {Math.round(cToF(Tliq))} °F</text>
       <text x={x0 - 12} y={top - 30} fontSize="17" fill="var(--teal-text)" textAnchor="end" fontWeight="700">Direct heat</text>
       <text x={x1} y={top - 52} fontSize="17" fill="var(--ember-text)" textAnchor="end" fontWeight="700">Heat pump boost</text>
       {rows.map((o, i) => {
@@ -94,7 +94,7 @@ export function TempLadder({ data }: { data: AppData }) {
             <line x1={X(tMin)} x2={X(o.supply_temp_C)} y1={y} y2={y} stroke={ringColor(o.ring)} strokeWidth="3" opacity="0.5" />
             <circle cx={X(o.supply_temp_C)} cy={y} r="9" fill={ringColor(o.ring)} stroke="var(--bg)" strokeWidth="3" />
             <text x={X(o.supply_temp_C) + (o.supply_temp_C > 60 ? -16 : 16)} textAnchor={o.supply_temp_C > 60 ? "end" : "start"} y={y + 6} fontSize="17" fill="var(--ink)" className="num" fontWeight="700" stroke="var(--bg)" strokeWidth="4" paintOrder="stroke">
-              {o.supply_temp_C} °C <tspan fill="var(--ink2)" fontWeight="500">{direct ? "direct" : c >= 8 ? "small boost" : `boost, COP ${dec(c, 1)}`}</tspan>
+              {Math.round(cToF(o.supply_temp_C))} °F <tspan fill="var(--ink2)" fontWeight="500">{direct ? "direct" : c >= 8 ? "small boost" : `boost, COP ${dec(c, 1)}`}</tspan>
             </text>
           </g>
         );
@@ -145,8 +145,8 @@ export function HouseholdCalc({ d, kicker = "Your household" }: { d: Site2Data; 
             <div className="text-ink2">{saves ? "saved on heating" : "vs today (extra cost)"}</div>
           </div>
           <div>
-            <div className="serif num font-bold leading-none text-ink" style={{ fontSize: "clamp(2.5rem,4.6vw,4.5rem)" }}>{dec(Math.abs(r.co2KgSaved) / 1000, 1)}<span className="unit">t</span></div>
-            <div className="text-ink2">tonnes of CO₂ {r.co2KgSaved >= 0 ? "avoided" : "added"} per year</div>
+            <div className="serif num font-bold leading-none text-ink" style={{ fontSize: "clamp(2.5rem,4.6vw,4.5rem)" }}>{dec(tonnesToTons(Math.abs(r.co2KgSaved) / 1000), 1)}<span className="unit">tons</span></div>
+            <div className="text-ink2">tons of CO₂ {r.co2KgSaved >= 0 ? "avoided" : "added"} per year</div>
           </div>
         </div>
         <div className="grid gap-3">

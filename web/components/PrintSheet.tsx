@@ -1,6 +1,6 @@
 "use client";
 import type { AppData } from "@/lib/types";
-import { dec, int, usd } from "@/lib/format";
+import { cToF, dec, haToAcres, int, tonnesToTons, usd } from "@/lib/format";
 import { NavBar, ringColor, ringShort } from "./ui";
 import { LCOH_ANCHOR_PCT } from "@/lib/model";
 import { RingMapSvg } from "./viz/RingMap";
@@ -24,7 +24,7 @@ export function PrintSheet({ data }: { data: AppData }) {
     [int(d.supply.heat_available_GWh), "GWh/yr heat produced", "var(--ember-text)"],
     [`${dec((d.supply.heat_available_GWh * 1000) / demand, 1)}×`, "more than Lansing can use", "var(--ember-text)"],
     [usd(f.household.savings_vs_propane_usd), "saved per propane home per year", "var(--teal-text)"],
-    [int(d.impact.co2_avoided_t_yr), "t CO₂ avoided per year", "var(--teal-text)"],
+    [int(tonnesToTons(d.impact.co2_avoided_t_yr)), "tons CO₂ avoided per year", "var(--teal-text)"],
   ];
   return (
     <div className="bg-surface2 min-h-dvh print:bg-white print:min-h-0">
@@ -36,7 +36,7 @@ export function PrintSheet({ data }: { data: AppData }) {
               <div className="serif font-bold tracking-widest uppercase text-ember-text" style={{ fontSize: "10pt" }}>{PROJECT_TITLE} · {PROJECT_TAGLINE}, Lansing NY</div>
               {data.placeholder && <span className="chip" style={{ fontSize: "9pt" }}>Illustrative data</span>}
             </div>
-            <h1 className="serif font-bold m-0 mt-1" style={{ fontSize: "23pt", lineHeight: 1.08 }}>A data center&rsquo;s heat could warm a {ha ? `${int(ha)}-hectare ` : ""}year-round farm and {int(homes)} homes</h1>
+            <h1 className="serif font-bold m-0 mt-1" style={{ fontSize: "23pt", lineHeight: 1.08 }}>A data center&rsquo;s heat could warm a {ha ? `${int(haToAcres(ha))}-acre ` : ""}year-round farm and {int(homes)} homes</h1>
             <p className="m-0 mt-1 text-ink2" style={{ fontSize: "12pt" }}>Heat from the data center feeds a community-owned utility. Cooling never depends on it. Lansing could say yes, with conditions.</p>
           </header>
           <section className="grid grid-cols-4 gap-2" aria-label="Headline numbers">
@@ -57,7 +57,7 @@ export function PrintSheet({ data }: { data: AppData }) {
               {d.rings.map((r) => (
                 <div key={r.id} className="border-l-4 pl-2" style={{ borderColor: ringColor(r.id) }}>
                   <div className="font-bold" style={{ fontSize: "11pt" }}>Phase {r.phase}: {ringShort(r.id)}{r.conditional ? " (fails the cost test today)" : ""}</div>
-                  <div className="num text-ink2" style={{ fontSize: "10pt" }}>{int(r.annual_MWh / 1000)} GWh/yr · {r.supply_temp_C} °C{r.homes ? ` · ${int(r.homes)} homes` : ""}</div>
+                  <div className="num text-ink2" style={{ fontSize: "10pt" }}>{int(r.annual_MWh / 1000)} GWh/yr · {int(cToF(r.supply_temp_C))} °F{r.homes ? ` · ${int(r.homes)} homes` : ""}</div>
                 </div>
               ))}
               <h2 className="serif m-0 mt-1" style={{ fontSize: "13pt" }}>Cost of heat, $ per MWh</h2>
@@ -75,7 +75,7 @@ export function PrintSheet({ data }: { data: AppData }) {
             <QrCode url={PUBLIC_URL} size={84} hideCaption />
             <div>
               <div className="font-bold" style={{ fontSize: "12pt" }}>The ask</div>
-              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement (about {dec(cbaPct ?? 0, 1)}% of the data-center build) a condition of any approval, plus a proposed $150k a year for computer science in Lansing&apos;s public schools. About {int(d.impact.jobs)} jobs and {int(d.impact.local_food_t_yr)} t of local food a year (estimates). Code and model: {PUBLIC_URL}</div>
+              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement (about {dec(cbaPct ?? 0, 1)}% of the data-center build) a condition of any approval, plus a proposed $150k a year for computer science in Lansing&apos;s public schools. About {int(d.impact.jobs)} jobs and {int(tonnesToTons(d.impact.local_food_t_yr))} tons of local food a year (estimates). Code and model: {PUBLIC_URL}</div>
             </div>
           </footer>
           <div className="text-ink2" style={{ fontSize: "8.5pt" }}>{CREDITS}</div>

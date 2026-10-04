@@ -35,10 +35,10 @@ Pace: about 130 words a minute. If you are long at 3:50, Philip drops slide 8 to
 | One hundred six dollars per megawatt-hour at seven percent | `finance.lcoh_usd_mwh.utility_7pct` = 106.1 | Ninety dollars. That is the four-percent co-op case (89.5), and it is what Explore shows after you slide cost of money from 7% to 4%. |
 | Forty-one / two hundred eighty-six / seven hundred thirty-four | Ring LCOH at 7%: 40.6 / 285.8 / 734.2 | That the town ring is in the blend. `passes_gate` is false. |
 | Fifty-point-six gigawatt-hours; six and a half percent | `totals.heat_delivered_MWh` = 50,576 | That this is most of the waste heat. |
-| Eleven thousand four hundred eight tonnes | `impact.co2_avoided_t_yr` = 11,408 | A lake-water credit. The file claims 0 gallons. |
+| Twelve thousand five hundred seventy-five short tons | `impact.co2_avoided_t_yr` = 11,408 | A lake-water credit. The file claims 0 gallons. |
 | Four-point-six percent energy reuse factor | `impact.erf` = 0.0462 | That it is supply-limited. It is demand-limited. |
 | About one-point-seven percent of the build | Gap 26.01 million dollars PV = 1.73% of an **ASSUMPTION** 1,500 million dollar campus; paid as 2.096 million dollars/yr (0.14% of the build a year) | "TeraWulf's budget." Ten dollars per watt is a midpoint assumption. |
-| Jobs and food | 126 jobs, 5,500 t food, 1,500 t fish | Anything but "scenario estimate". |
+| Jobs and food | 126 jobs, 6,060 short tons food, 1,650 short tons fish | Anything but "scenario estimate". |
 
 ## Script
 
@@ -84,7 +84,7 @@ A side-stream plate exchanger sits on their sealed glycol loop. If cooling ever 
 
 [Hand on the big number.]
 
-Here is the number that matters. A typical propane home saves seven hundred thirty-five dollars a year, because the tariff is eighty percent of propane. The system delivers fifty-point-six gigawatt-hours at a blended one hundred six dollars a megawatt-hour, and avoids eleven thousand four hundred eight tonnes of carbon dioxide a year. That is six and a half percent of the heat we can capture. The scarce thing is a signed customer.
+Here is the number that matters. A typical propane home saves seven hundred thirty-five dollars a year, because the tariff is eighty percent of propane. The system delivers fifty-point-six gigawatt-hours at a blended one hundred six dollars a megawatt-hour, and avoids twelve thousand five hundred seventy-five short tons of carbon dioxide a year. That is six and a half percent of the heat we can capture. The scarce thing is a signed customer.
 
 [Click to slide 7.]
 
@@ -114,7 +114,7 @@ Stop the sentence. Answer in two or three sentences from this card. Then say "Ba
 
 **"Isn't this the Lansing project that already failed?"** That was Lansing, Michigan. Deep Green, 24 megawatts, heat offered to the Board of Water and Light, withdrawn April 6, 2026. Precedent for why a voluntary offer dies. It is not this site.
 
-**"Why not the school?"** Fourteen kilometers of pipe in the model. Levelized cost 734 dollars a megawatt-hour. It fails against propane. Build it only with outside money, or not at all. The school campus distance of several miles is the planning reason; 14.0 km is the model input.
+**"Why not the school?"** Nearly nine miles of pipe in the model. Levelized cost 734 dollars a megawatt-hour. It fails against propane. Build it only with outside money, or not at all. The school campus distance of several miles is the planning reason; 8.7 mi is the model input.
 
 **"What if TeraWulf leaves?"** The agreement is the point. At a year-10 exit the file shows about 5.7 million dollars stranded and about 10.4 million dollars to replace the source. Corridor heat gets dearer by about 93 dollars a megawatt-hour. Pipes and building heat pumps stay. Boilers cover the gap until a new source is in. Cooling of the servers was never ours to lose.
 
@@ -128,9 +128,9 @@ Stop the sentence. Answer in two or three sentences from this card. Then say "Ba
 
 **"Where is the equity?"** The Lake Hawkeye site pack says there are no disadvantaged communities nearby. Older houses on propane and oil are the burden we can defend. A low-income tariff of 88.50 dollars a megawatt-hour is in the model. We do not call this an environmental-justice project.
 
-**"Jobs and food?"** Scenario estimates from a published greenhouse co-location study, not measurements. 126 jobs, 5,500 tonnes of food, 1,500 tonnes of fish. We would not put them in a contract.
+**"Jobs and food?"** Scenario estimates from a published greenhouse co-location study, not measurements. 126 jobs, 6,060 short tons of food, 1,650 short tons of fish. We would not put them in a contract.
 
-**"Walk me through the workings."** Go to the demo. If they want method instead of a slider: 8,760 hours, Ithaca airport typical weather, capture 50 degrees Celsius, heat-pump efficiency clipped between 2 and 6, backup boilers sized to the peak so unmet hours are zero by construction. Read the backup share, 0.73 percent of annual heat, not the zero.
+**"Walk me through the workings."** Go to the demo. If they want method instead of a slider: 8,760 hours, Ithaca airport typical weather, capture 122 degrees Fahrenheit, heat-pump efficiency clipped between 2 and 6, backup boilers sized to the peak so unmet hours are zero by construction. Read the backup share, 0.73 percent of annual heat, not the zero.
 
 **"Grundfos / the pumps?"** We screened every loop: flow from heat and delta-T, pipe size, Darcy-Weisbach head, pump energy at variable versus constant speed (`outputs/hydraulics.json`, `docs/hydraulics.md`). Variable speed cuts pumping energy several-fold. Across phases one and two the computed pumping is about 0.74 percent of heat, under our flat 1.5 percent allowance; the corridor's 5-kelvin ambient loop is the exception, about 1.4 times its allowance, and the doc says so. Sweeping the allowance from 0.5 to 6 percent moves the blended cost by about minus 1 to plus 5 dollars. Screening, not a design. We have not specified a manufacturer. Do not invent a product number.
 
@@ -138,14 +138,14 @@ Stop the sentence. Answer in two or three sentences from this card. Then say "Ba
 
 **"Did you use AI?"** Yes, as a coding and research assistant. The model itself is deterministic Python: 8,760 hours, 50 tests and a verify step in CI, and every number on screen traces to `outputs/site2.json`. Every fact we cite is checked against a source in `research/verification.md`. We made the calls ourselves, including refusing the town ring.
 
-**"Phosphorus and the lake?"** Closed-loop fish and greenhouse production is a design intent so nutrients stay in the building. Do not quote a tonnes-of-phosphorus removal. The file's 5,500 tonnes is a food-output figure. Lake impairment status was not re-checked: [unverified] if a judge presses for the regulatory label.
+**"Phosphorus and the lake?"** Closed-loop fish and greenhouse production is a design intent so nutrients stay in the building. Do not quote a tons-of-phosphorus removal. The file's 6,060 short tons is a food-output figure. Lake impairment status was not re-checked: [unverified] if a judge presses for the regulatory label.
 
 ## Live demo handoff (40 seconds)
 
 **Who:** Harsh Agarwal, on this laptop. Philip stays at the side and does not talk over him.
 **When:** the instant Philip says "Harsh, the model."
 **Screen:** the app's **Explore** page (`/explore/`).
-**Before you walk:** load Explore, press **Reset to the base case**, and touch nothing else. Cooling should read **Liquid-cooled (50 °C)**. The town-ring checkbox stays off. The cost-of-money slider sits at **7.0%** and the cost card reads **$106**.
+**Before you walk:** load Explore, press **Reset to the base case**, and touch nothing else. Cooling should read **Liquid-cooled (122 °F)**. The town-ring checkbox stays off. The cost-of-money slider sits at **7.0%** and the cost card reads **$106**.
 
 **0:00-0:05.** Point at the cost card.
 
@@ -173,9 +173,9 @@ Untick it. The cost returns.
 
 ## Sources
 
-Model figures (blended 106.1 dollars/MWh at 7 percent; rings 40.6 / 285.8 / 734.2; 50,576 MWh delivered; 777.6 GWh captured; 6.5 percent share; ERF 0.0462; 11,408 t CO2; 735 dollars/yr; tariff 108.9; propane 136.1; gap 26.01 million dollars; 2.096 million dollars/yr; 1.73 percent; campus 1,500 million dollars as an assumption; year-10 exit 5.71 / 10.35 million dollars and +93.2 dollars/MWh; backup share 0.73 percent; 500 corridor homes; town pipe 14.0 km; town gate false). Source: `outputs/site2.json`, generated 2026-10-04. Not an external measurement.
+Model figures (blended 106.1 dollars/MWh at 7 percent; rings 40.6 / 285.8 / 734.2; 50,576 MWh delivered; 777.6 GWh captured; 6.5 percent share; ERF 0.0462; 12,575 short tons CO2; 735 dollars/yr; tariff 108.9; propane 136.1; gap 26.01 million dollars; 2.096 million dollars/yr; 1.73 percent; campus 1,500 million dollars as an assumption; year-10 exit 5.71 / 10.35 million dollars and +93.2 dollars/MWh; backup share 0.73 percent; 500 corridor homes; town pipe 8.7 mi; town gate false). Source: `outputs/site2.json`, generated 2026-10-04. Not an external measurement.
 
-Jobs (126), local food (5,500 t) and fish (1,500 t) are scenario estimates in `outputs/site2.json` `impact`, not measurements.
+Jobs (126), local food (6,060 short tons) and fish (1,650 short tons) are scenario estimates in `outputs/site2.json` `impact`, not measurements.
 
 Campus denominator. **ASSUMPTION:** 10 dollars per watt, the midpoint of a published band, times 150 MW. Turner & Townsend Data Centre Construction Cost Index 2025, band 6.6-13.3 dollars per watt: https://reports.turnerandtownsend.com/data-centre-construction-cost-index-2025/ (cited from the model file). The 1.73 percent is arithmetic on that assumption, not a TeraWulf filing.
 

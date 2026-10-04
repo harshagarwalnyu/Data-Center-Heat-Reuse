@@ -188,7 +188,7 @@ export function Story({ data }: { data: AppData }) {
         <div className="h-full" style={{ width: `${((pos + 1) / path.length) * 100}%`, background: "linear-gradient(90deg,var(--ember),var(--amber))", transition: calm ? "none" : "width .4s" }} />
       </div>
 
-      <main className="flex-1 min-h-0 relative">
+      <main className="flex-1 min-h-0 relative z-40">
         <AnimatePresence mode="wait" custom={dir}>
           <motion.section
             key={s.id}

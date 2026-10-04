@@ -27,7 +27,7 @@ Originals are in `resources/raw/`; text extracts are in `resources/text/`. The p
 | Topic 5: Heat reuse, Connecting DC to DE systems v5 | Organizers | n.d. | **M** Heat pump COP 2-5; 4th-generation networks at 50-60 C |
 | Data Centers Heat Reuse 101 (20230623, v3.2) | Open Compute Project | 2023 | **M** Direct-liquid-cooling return 45-65 C (p6); cost split (p7-8) |
 | CBS Data center white paper: District Heating | CBS | n.d. | **M** 10 MW heat pump ~EUR 6M; ~9-year payback; connection cost vs distance (p13, 17, 19) |
-| Colocating Data Centers and Greenhouses (Virginia) | Resource Innovation Institute (RII) | 2025 | **M** 1 MWth/ha; 2 acres/MW; jobs (Table 2). Web PDF: https://resourceinnovation.org/wp-content/uploads/2026/02/Colocating-Data-Centers_Greenhouses-RII-Virginia.pdf |
+| Colocating Data Centers and Greenhouses (Virginia) | Resource Innovation Institute (RII) | 2025 | **M** 0.4 MWth/acre (1 MWth/ha in the source); 2 acres/MW; jobs (Table 2). Web PDF: https://resourceinnovation.org/wp-content/uploads/2026/02/Colocating-Data-Centers_Greenhouses-RII-Virginia.pdf |
 | DATA HEAT: Sector Coupling Data Centers and District Energy, Market Development Guide (3 Mar 2026) | NYSERDA | 2026 | NY program context. Web PDF: https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Large-Scale-Thermal/DATA-HEAT---Sector-Coupling-Data-Centers-and-District-Energy.pdf |
 | US Policy Landscape: Data Center Heat Reuse | David Gardener & Associates | n.d. | Policy background |
 | Every Drop Counts (Water Scarcity Paper 2026) | Grundfos | 2026 | Water lens framing |
@@ -139,7 +139,7 @@ The individual videos cited in `research/videos.md` and `docs/research/video-quo
 
 | Title | Publisher | Year | URL | Used for |
 |---|---|---|---|---|
-| GHG Emission Factors Hub (2025) | US EPA | 2025 | https://www.epa.gov/climateleadership/ghg-emission-factors-hub ; https://www.epa.gov/system/files/documents/2025-01/ghg-emission-factors-hub-2025.pdf | **V M** Propane 62.87, oil 73.96, gas 53.06 kg CO2/MMBtu (propane corrected; row 10d) |
+| GHG Emission Factors Hub (2025) | US EPA | 2025 | https://www.epa.gov/climateleadership/ghg-emission-factors-hub ; https://www.epa.gov/system/files/documents/2025-01/ghg-emission-factors-hub-2025.pdf | **V M** Propane 138.6, oil 163.1, gas 117.0 lb CO2/MMBtu (62.87, 73.96, 53.06 kg in the source) (propane corrected; row 10d) |
 | eGRID2023 (Rev 2) summary tables | US EPA | 2025 | https://www.epa.gov/egrid ; https://www.epa.gov/egrid/summary-data ; https://www.epa.gov/system/files/documents/2025-06/summary_tables_rev2.pdf | **V M** NYUP 242.8 and NYCW 865.7 lb CO2e/MWh (row 10a) |
 | 40 CFR Part 98 Subpart C, Appendix C | GovInfo (eCFR) | 2020 | https://www.govinfo.gov/content/pkg/CFR-2020-title40-vol23/xml/CFR-2020-title40-vol23-part98-subpartC-appC.xml | **V** Fuel emission-factor cross-check |
 | Greenhouse Gas Equivalencies Calculator: calculations and references | US EPA | n.d. | https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references | **M** Car / home equivalents (`config/impact.yaml`) |

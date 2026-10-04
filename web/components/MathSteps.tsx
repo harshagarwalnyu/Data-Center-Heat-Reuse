@@ -2,7 +2,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import type { Site2Data } from "@/lib/types";
 import { BASE_PATH, PUBLIC_URL } from "@/lib/config";
-import { dec, int } from "@/lib/format";
+import { cToF, dCToF, dec, imperialize, int, tonnesToTons } from "@/lib/format";
 import { APPROACH_K, COP_MAX, COP_MIN, ETA, cop, crf } from "@/lib/model";
 import { Term } from "./Tooltip";
 import { CarsRow, GapWaterfall, HeatChain, LcohBars, PriceBars, RangeBar, ThermoPair, Waffle } from "./HowFigures";
@@ -14,6 +14,7 @@ const HOURS = 8760;
 const PROPANE = { usdGal: 3.1, kwhGal: 26.8, eff: 0.85 }; // config/finance.yaml prices + eff
 const TARIFF_SHARE = 0.8; // config/finance.yaml tariff.discount_vs_propane = 0.20
 const LIFE = { pipe: 30, tank: 30, equip: 20 } as const; // config/finance.yaml life_years
+const F = (c: number) => Math.round(cToF(c));
 const KG_CAR = 4.29; // t CO2e per car-year, config/impact.yaml kg_co2_per_car_yr 4290 (EPA)
 const RATES = [0.04, 0.07, 0.1] as const;
 
@@ -85,7 +86,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
   useEffect(() => {
     const ac = new AbortController();
     fetch(`${BASE_PATH}/data/analysis_detail.json`, { cache: "no-cache", signal: ac.signal })
-      .then((r) => (r.ok ? (r.json() as Promise<Detail>) : null))
+      .then((r) => (r.ok ? (r.json().then(imperialize) as Promise<Detail>) : null))
       .then((j) => (j ? setDetail(j) : setDetailFailed(true)))
       .catch((e) => { if ((e as Error)?.name !== "AbortError") setDetailFailed(true); });
     return () => ac.abort();
@@ -171,16 +172,16 @@ export function MathSteps({ d }: { d: Site2Data }) {
       </Step>
 
       <Step n={5} fig={<ThermoPair src={src} sink={sink} cop={c} />} title="How well the heat pump works" stat={dec(T.avg_cop, 2)} unit="average COP (heat out per unit of power in)" tone={tone}
-        formula={<>COP = {ETA} × T<sub>sink</sub> ÷ (T<sub>sink</sub> − T<sub>source</sub> + 2 × {APPROACH_K} K), kept between {COP_MIN} and {COP_MAX}</>}
-        check={<>At {sink} °C delivery from a {src} °C source the formula gives {dec(c, 2)}{Math.abs(raw - c) > 0.005 && <> (unclipped {dec(raw, 2)})</>}. The yearly average across the heat pumps is {dec(T.avg_cop, 2)}.</>}>
+        formula={<>COP = {ETA} × T<sub>sink</sub> ÷ (T<sub>sink</sub> − T<sub>source</sub> + 2 × {APPROACH_K} K), kept between {COP_MIN} and {COP_MAX}. Temperatures here are on the absolute scale (kelvin, which is °C + 273.15), as the physics requires</>}
+        check={<>At {F(sink)} °F delivery from a {F(src)} °F source the formula gives {dec(c, 2)}{Math.abs(raw - c) > 0.005 && <> (unclipped {dec(raw, 2)})</>}. The yearly average across the heat pumps is {dec(T.avg_cop, 2)}.</>}>
         <Row label={<>Half of the ideal (<Term tip="The best any heat pump could do between two temperatures. Real ones reach about half.">Carnot</Term>) limit</>} value={String(ETA)} src={[source("dig", "organizer digest"), source("t5", "Topic 5 deck")]} />
-        <Row label="Temperature gap added by each heat exchanger" value={`${APPROACH_K} K`} src={[cfg("config/engineering.yaml")]} />
+        <Row label="Temperature gap added by each heat exchanger" value={`${dec(dCToF(APPROACH_K), 1)} °F`} src={[cfg("config/engineering.yaml")]} />
         <Row label="Allowed range" value={`${COP_MIN} to ${COP_MAX}`} src={[source("dig", "organizer digest")]} />
         <div className="grid gap-1 py-3 border-t border-line">
-          <label className="grid gap-0.5">Try it: delivery temperature <b className="num">{sink} °C</b>
+          <label className="grid gap-0.5">Try it: delivery temperature <b className="num">{F(sink)} °F</b>
             <input type="range" min={35} max={75} value={sink} onChange={(e) => setSink(+e.target.value)} />
           </label>
-          <label className="grid gap-0.5">Heat source (data center return) <b className="num">{src} °C</b>
+          <label className="grid gap-0.5">Heat source (data center return) <b className="num">{F(src)} °F</b>
             <input type="range" min={20} max={60} value={src} onChange={(e) => setSrc(+e.target.value)} />
           </label>
           <div className="num font-bold" style={{ color: "var(--teal-text)" }}>COP {dec(c, 2)}</div>
@@ -209,12 +210,12 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="Data center build cost (our assumption)" value={`$${int(build)}M`} src={[source("tt", "Turner & Townsend"), cfg("config/finance.yaml")]} />
       </Step>
 
-      <Step n={8} fig={<CarsRow cars={cars} tonnes={im.co2_avoided_t_yr} />} title="Carbon we avoid" stat={int(im.co2_avoided_t_yr)} unit="tonnes of CO₂ per year" tone={tone}
-        formula="CO₂ from the fuel we replace − CO₂ from the power and backup fuel we add. Cars = tonnes ÷ tonnes per car"
-        check={<>{int(im.co2_avoided_t_yr)} ÷ {KG_CAR} t per car = {int(cars)} cars (file says {int(im.co2_cars_equiv)}).</>}>
+      <Step n={8} fig={<CarsRow cars={cars} tonnes={im.co2_avoided_t_yr} />} title="Carbon we avoid" stat={int(tonnesToTons(im.co2_avoided_t_yr))} unit="tons of CO₂ per year" tone={tone}
+        formula="CO₂ from the fuel we replace − CO₂ from the power and backup fuel we add. Cars = tons ÷ tons per car"
+        check={<>{int(tonnesToTons(im.co2_avoided_t_yr))} ÷ {dec(tonnesToTons(KG_CAR), 1)} tons per car = {int(cars)} cars (file says {int(im.co2_cars_equiv)}).</>}>
         <Row label="Fossil heat displaced" value={`${int(im.fossil_displaced_MWh)} MWh`} src={[source("epa_ef", "EPA factors"), source("ver_ef", "price check")]} />
         <Row label="Grid power added for heat pumps" value={`${int(T.hp_elec_MWh)} MWh`} src={[source("egrid", "eGRID")]} />
-        <Row label="CO₂ per car per year" value={`${KG_CAR} t`} src={[cfg("config/impact.yaml")]} />
+        <Row label="CO₂ per car per year" value={`${dec(tonnesToTons(KG_CAR), 1)} tons`} src={[cfg("config/impact.yaml")]} />
       </Step>
 
       <Step n={9} fig={mc ? <RangeBar p10={mc.stats.lcoh_blended_7pct.P10} p50={mc.stats.lcoh_blended_7pct.P50} p90={mc.stats.lcoh_blended_7pct.P90} propane={f.incumbent_usd_mwh.propane} runs={mc.n_draws} /> : null} title="How sure are we" stat={mc ? usd(mc.stats.lcoh_blended_7pct.P50) : "..."} unit={mc ? `per MWh, middle of ${int(mc.n_draws)} runs` : "per MWh, middle of the runs"} tone={tone}

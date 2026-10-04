@@ -16,7 +16,7 @@ const DRAG_PX = 5;
 
 export type RingId = "onsite" | "corridor" | "town";
 /** Everything a ring tooltip shows, already formatted by the caller from site2.json. */
-export interface RingTip { id: RingId; name: string; gwh: string; lcoh: string | null; verdict: string; pipeKm: string }
+export interface RingTip { id: RingId; name: string; gwh: string; lcoh: string | null; verdict: string; pipeMi: string }
 export interface DcTip { itLoadMW: string; heatGWh: string }
 
 const demand = (mwh: number) => (mwh >= 1000 ? `${dec(mwh / 1000, 1)} GWh` : `${int(mwh)} MWh`);
@@ -33,7 +33,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
   rings: RingTip[]; dc: DcTip | null; selected?: RingId | null; onSelect?: (id: RingId | null) => void;
 }) {
   const offtakers = all.filter((o) => o.lon >= BOUNDS[0][0] && o.lon <= BOUNDS[1][0] && o.lat >= BOUNDS[0][1] && o.lat <= BOUNDS[1][1]);
-  const { project, height: H, pxPerKm } = makeProjector(W);
+  const { project, height: H, pxPerKm, pxPerMi } = makeProjector(W);
   const line = (pts: LonLat[]) => pts.map((p, i) => `${i ? "L" : "M"}${project(p)[0].toFixed(1)},${project(p)[1].toFixed(1)}`).join(" ");
   const lake = line(LAKE) + " Z";
   const corridorPts = ROUTE.slice(0, 4);
@@ -127,7 +127,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
       <>
         <b>{r.name}</b>
         <div className="num">{r.gwh} GWh a year{r.lcoh ? ` · ${r.lcoh} per MWh at 7%` : ""}</div>
-        <div className="num">{r.pipeKm} km of pipe</div>
+        <div className="num">{r.pipeMi} mi of pipe</div>
         <div style={{ marginTop: 4, fontWeight: 700, color: id === "town" ? "var(--ember-text)" : id === "onsite" ? "var(--teal-text)" : "var(--ink)" }}>{r.verdict}</div>
       </>
     );
@@ -141,7 +141,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
   const ringBox = (id: RingId): Box => { const a = ringAt[id]; const t = toLocal([a.x, a.y]); return { ...t, h: (a.h / H) * view.k * size.h }; };
   const ringAria = (id: RingId) => {
     const r = rings.find((x) => x.id === id);
-    return r ? `${r.name}: ${r.gwh} GWh a year${r.lcoh ? `, ${r.lcoh} per MWh at 7%` : ""}, ${r.verdict}, ${r.pipeKm} km of pipe` : id;
+    return r ? `${r.name}: ${r.gwh} GWh a year${r.lcoh ? `, ${r.lcoh} per MWh at 7%` : ""}, ${r.verdict}, ${r.pipeMi} mi of pipe` : id;
   };
   const show = (key: string, anchor: Box, node: ReactNode) => setHover({ key, anchor, node });
   const hide = (key: string) => setHover((h) => (h?.key === key ? null : h));
@@ -317,8 +317,8 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
           </motion.g>}
 
           <g transform={`translate(40,${H - 30})`} pointerEvents="none">
-            <line x1="0" x2={5 * pxPerKm} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />
-            <text x={5 * pxPerKm + 8} y="8" fontSize="26" fill="var(--ink)">5 km</text>
+            <line x1="0" x2={3 * pxPerMi} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />
+            <text x={3 * pxPerMi + 8} y="8" fontSize="26" fill="var(--ink)">3 mi</text>
           </g>
         </g>
       </svg>

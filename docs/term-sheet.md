@@ -15,7 +15,7 @@ This turns the pitch, "Don't ban it. Set the terms.", into terms the Town could 
 | **TeraWulf** (Lake Hawkeye LLC, the lessee, and its landlord Cayuga Operating Company LLC) | **Heat supplier.** Provides heat at the cooling-loop interface. Signs the Heat Supply Agreement (HSA) and the Community Benefit Agreement (CBA). | The landlord must also sign the water covenant in section 4, because it holds the DEC withdrawal permit (`research/verification.md` rows 3c, 5a). |
 | **Thermal Commons co-op** | **Owner and operator of the heat network.** Buys heat under the HSA, sells heat to members under the tariff, holds backup boilers and storage. Third-party beneficiary of the CBA. | Proposed legal form. Whether New York law allows a heat co-op, and whether a sale to households triggers Public Service Commission jurisdiction, is **unverified** (`research/verification.md` rows 11a to 11d). Fallback: a town-chartered entity takes the same agreements (`ownership-deal.md` section 2). |
 | **Town of Lansing** | **Permit authority and CBA counterparty.** Attaches the terms as conditions of approval, holds one seat on the co-op board, can enforce the CBA. | The Town Board directed its attorney to draft a data-center ban on 29 September 2026; no ban is enacted (`research/verification.md` row 1a). This term sheet is the alternative to that draft, not a prediction of the Board's vote. |
-| **Anchor customers** | **First heat users and co-op members:** the 10 ha greenhouse, aquaculture, and the community recreation center and pool. Later, any household that actually connects. | Model users: `rings[onsite].users`. No customer has signed anything. Anchors sign heat-purchase contracts with the co-op before their own foundations are poured, so backup heat is their obligation when the data center curtails (timeline, 2028). |
+| **Anchor customers** | **First heat users and co-op members:** the 25-acre greenhouse, aquaculture, and the community recreation center and pool. Later, any household that actually connects. | Model users: `rings[onsite].users`. No customer has signed anything. Anchors sign heat-purchase contracts with the co-op before their own foundations are poured, so backup heat is their obligation when the data center curtails (timeline, 2028). |
 
 ---
 
@@ -232,7 +232,7 @@ Consistent with [proposal/12-implementation-timeline.md](proposal/12-implementat
 | **G2** Legal form | Counsel memo by 30 June 2027 | A vehicle that can own pipe, sign the HSA and bill members. |
 | **G3** CBA and HSA signed | 30 September 2027 | Terms in sections 2 to 6 executed and recorded. Term sheet only, no construction. |
 | **G1** Lawful data-center approval | 31 March 2028, only if G0 passed | Approval the Town recognizes as lawful, with this CBA and HSA attached as conditions. No heat construction before it. |
-| **G4** Scope freeze | With G3 | On-site users only: greenhouse, aquaculture, recreation. No 14 km main added on the way. |
+| **G4** Scope freeze | With G3 | On-site users only: greenhouse, aquaculture, recreation. No 8.7 mi main added on the way. |
 | **G5** Heat with first energized IT | About the second half of 2029 | Minimum-availability schedule in force. If the data center slips, the heat users slip with it. |
 | **G6** Corridor clusters | Go or no-go by 31 March 2031 | A signed cluster passes the density screen, costs no more than propane, and has funded building heat pumps. The full corridor fails today. |
 | **G7** Town-center main | Re-test by 30 June 2032 | Failed on current numbers (`rings[town].passes_gate` = false; `rings[town].lcoh_usd_mwh_7pct` = $734.2/MWh; `rings[town].pipe_km` = 14.0). **No construction in this window.** |
@@ -276,7 +276,7 @@ The Town ring is refused, not forgotten: it costs $734.2/MWh against propane at 
 - **The 20% low-income share** is a model assumption (`extras.cba.note`), not a survey.
 - **The 150 MW base case** is our assumption. TeraWulf states about 400 MW gross, 320 MW critical IT, with no phase split (row 3a). The model's heat cost does not change across 75 to 320 MW because demand is the constraint (`finance.tornado`, "Data-center IT load").
 - **Where the exit numbers live.** The brief called them extras. In the file they are under `finance.dc_exit`, not under `extras`.
-- **Phase 1 only CO2.** The headline `impact.co2_avoided_t_yr` = 11,408 t/yr counts phases 1 and 2 fully built. Until Gate 6 passes, do not quote it as the Phase 1 result (timeline, HDR table).
+- **Phase 1 only CO2.** The headline `impact.co2_avoided_t_yr` = 12,575 short tons/yr counts phases 1 and 2 fully built. Until Gate 6 passes, do not quote it as the Phase 1 result (timeline, HDR table).
 - **Food processing** is in the concept but has no load in `site2.json`.
 - **Acreage conflict** between sources (item 3.2, Land).
 - **No customer has signed.** Demand for the on-site ring is modeled, not contracted.

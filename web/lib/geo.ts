@@ -31,5 +31,5 @@ export function makeProjector(width: number) {
   const height = spanY * scale;
   const project = ([lon, lat]: LonLat): [number, number] => [(lon - BOUNDS[0][0]) * kx * scale, (BOUNDS[1][1] - lat) * scale];
   const kmToPx = scale / (111.32 * kx / kx) / 1; // px per degree-lat unit is `scale`; 1 deg lat = 110.57 km
-  return { project, width, height, pxPerKm: scale / 110.57, kmToPx };
+  return { project, width, height, pxPerKm: scale / 110.57, pxPerMi: (scale / 110.57) * 1.609344, kmToPx };
 }

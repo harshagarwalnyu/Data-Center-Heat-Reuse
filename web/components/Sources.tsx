@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { AppData, InputRow } from "@/lib/types";
 import { BASE_PATH } from "@/lib/config";
-import { int } from "@/lib/format";
+import { imperialInput, imperialText, int } from "@/lib/format";
 import { NavBar } from "./ui";
 
 type Filter = "all" | InputRow["confidence"];
@@ -18,6 +18,8 @@ export function isUrl(s: string) {
 export function sourceLabel(s: string) {
   return s.trim() === "[A]" ? "Assumption (no source)" : s;
 }
+
+const iu = (r: InputRow) => imperialInput(r.input, r.value, r.unit);
 
 export function Sources({ data }: { data: AppData }) {
   const d = data.site2;
@@ -82,7 +84,7 @@ export function Sources({ data }: { data: AppData }) {
               </div>
               <div className="overflow-x-auto mt-3" tabIndex={0} role="region" aria-label="Input register table">
                 <table className="w-full text-left border-collapse">
-                  <caption className="sr-only">Every model input with value, unit, source and confidence</caption>
+                  <caption className="sr-only">Every model input with value, unit, source and confidence, shown in US units</caption>
                   <thead>
                     <tr className="border-b border-line">
                       <th scope="col" className="py-2 pr-3">Input</th>
@@ -96,9 +98,9 @@ export function Sources({ data }: { data: AppData }) {
                     {shown.map((r) => (
                       <tr key={r.input} className="border-b border-line align-top">
                         <th scope="row" className="py-2 pr-3 font-semibold break-all"><code>{r.input}</code></th>
-                        <td className="py-2 pr-3 num">{r.value}</td>
-                        <td className="py-2 pr-3">{r.unit}</td>
-                        <td className="py-2 pr-3 leading-snug">{sourceLabel(r.source)}</td>
+                        <td className="py-2 pr-3 num">{iu(r).value}</td>
+                        <td className="py-2 pr-3">{iu(r).unit}</td>
+                        <td className="py-2 pr-3 leading-snug">{imperialText(sourceLabel(r.source))}</td>
                         <td className="py-2 font-semibold">{confOf(r)}</td>
                       </tr>
                     ))}
