@@ -232,8 +232,9 @@ export function scenario(d: Site2Data, p: Params): Scenario {
     avgCop: d.totals.avg_cop * rate(s.avgCop, b.avgCop),
     lcohUsdMWh: lcohV,
     tariffUsdMWh: tariff,
-    householdSavingsPropane: householdSavings(hh, d.finance.incumbent_usd_mwh.propane, tariff),
-    householdSavingsOil: householdSavings(hh, d.finance.incumbent_usd_mwh.heating_oil, tariff),
+    // The tariff is policy-fixed, so the saving does not move with the sliders: use the model's published figure.
+    householdSavingsPropane: d.finance.household.savings_vs_propane_usd ?? householdSavings(hh, d.finance.incumbent_usd_mwh.propane, tariff),
+    householdSavingsOil: d.finance.household.savings_vs_oil_usd ?? householdSavings(hh, d.finance.incumbent_usd_mwh.heating_oil, tariff),
     marginUsdMWh: tariff - lcohV,
     co2TYr: d.impact.co2_avoided_t_yr * rate(s.co2, b.co2),
     supplyLimited: s.supplyLimited,

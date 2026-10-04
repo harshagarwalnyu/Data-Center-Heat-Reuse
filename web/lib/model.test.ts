@@ -93,6 +93,10 @@ describe("scenario (calibrated to the data file)", () => {
     expect(scenario(d, { ...base, discountPct: 2 }).lcohUsdMWh).toBeLessThan(s0.lcohUsdMWh);
     expect(scenario(d, { ...base, discountPct: 12 }).lcohUsdMWh).toBeGreaterThan(d.finance.lcoh_usd_mwh.private_10pct);
   });
+  it("propane-home saving is the published figure and does not move with the sliders", () => {
+    expect(s0.householdSavingsPropane).toBe(d.finance.household.savings_vs_propane_usd);
+    expect(scenario(d, { ...base, discountPct: 10, elecPrice: 200, includeTown: true }).householdSavingsPropane).toBe(d.finance.household.savings_vs_propane_usd);
+  });
   it("higher discount rate raises LCOH", () => {
     expect(scenario(d, { ...base, discountPct: 10 }).lcohUsdMWh).toBeGreaterThan(s0.lcohUsdMWh);
   });
