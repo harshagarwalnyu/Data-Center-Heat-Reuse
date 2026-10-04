@@ -20,7 +20,7 @@ function Caption({ step, index, on, setActive }: { step: Step; index: number; on
   const inBand = useInView(ref, { margin: "-45% 0px -45% 0px" });
   useEffect(() => { if (inBand) setActive(index); }, [inBand, index, setActive]);
   return (
-    <div ref={ref} data-on={on} className="py-10 lg:min-h-[70dvh] lg:flex lg:items-center transition-opacity duration-300 lg:data-[on=false]:opacity-40">
+    <div ref={ref} data-on={on} className="py-10 lg:min-h-[70dvh] lg:flex lg:items-center transition-opacity duration-300 lg:data-[on=false]:opacity-70">
       <Rise>
         <div className="flex items-center gap-3 mb-3 min-h-9">
           <p className="kicker m-0" style={{ color: ringText(step.id) }}>{step.eyebrow}</p>
