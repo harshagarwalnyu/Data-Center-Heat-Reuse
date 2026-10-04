@@ -103,7 +103,7 @@ Full pipeline with formulas and code references: [docs/methodology.md](docs/meth
 | `scripts/` | `export_web_data.py` (outputs to web), `extract_resources.py` (organizer documents to text). |
 | `web/` | Next.js static app: `app/` routes, `components/`, `lib/` (formulas for Explore), `public/data/` (JSON), `screenshots/`. |
 | `data/processed/` | Cached hourly weather and offtaker table. |
-| `docs/` | Proposal and design documents, audits. Index: [docs/README.md](docs/README.md). |
+| `docs/` | Proposal and design documents, audits. Index: [docs/README.md](docs/README.md). Draft CBA and heat supply term sheet: [docs/term-sheet.md](docs/term-sheet.md). |
 | `research/` | Fact base, verification, model notes, case studies, organizer digest. |
 | `resources/` | Organizer materials as extracted text and pages. |
 | `PLAN.md` | Original working plan. |
