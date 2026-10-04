@@ -48,7 +48,7 @@ Nav, always visible: Story, Explore, Compare sites, How it works, One-pager, plu
 
 ### Arrival
 
-They see a cream page, a serif wordmark **Thermal Commons** and the tagline **Heat for Lansing**, a thin orange progress bar, and a full-viewport slide. Body type is 18px and headlines scale from 36px to 64px (`web/app/globals.css`). Buttons are at least 44px tall. For this reader the type is large enough. There is no title page, no "start", and no sentence that says "you are in a nine-step story; press Next." Next is visible and labeled. Back is disabled. That is enough to move, once they look at the footer. The keyboard line ("Arrows, space or PageDown…") is `hidden` below the `xl` breakpoint (1280px), so a laptop at 125–150% zoom, which is normal at this age, does not show it.
+They see a cream page, a serif wordmark **Thermal Commons** and the tagline **Heat for Lansing**, a thin orange progress bar, and a full-viewport slide. Body type is 18px and headlines scale from 36px to 64px (`web/app/globals.css`). Buttons are at least 44px tall. For this reader the type is large enough. There is no title page, no "start", and no sentence that says "you are in a nine-step story; press Next." Next is visible and labeled. Back is disabled. That is enough to move, once they look at the footer. The keyboard line ("Arrows, space or PageDown…") is `hidden` below the `xl` breakpoint (1280px), so a laptop at 125–150% zoom (an assumed test condition, not a sourced prevalence figure) does not show it.
 
 Space, PageDown, and ArrowDown call `preventDefault` and advance a step (`Story.tsx`). They do not scroll the slide. The shell is `h-dvh` and `overflow-hidden`. A mouse can scroll inside the slide. A keyboard cannot. At a zoom where the ownership chart or the impact grid clips, the key they expect to use to see the rest of the page turns the page instead.
 
@@ -56,11 +56,11 @@ Space, PageDown, and ArrowDown call `preventDefault` and advance a step (`Story.
 
 ### Step 1 of 9 — Lansing today
 
-Seen in `story-01-1920.png` and `story-01-1366.png`. Headline: Lansing is about to ban data centers, and most of its heat still comes from delivered fuel. Three cards: Sept 29 (Town Board directed a ban; $500,000 legal reserve in next year's proposed budget), 2015 (NYSEG gas moratorium; "Rural Lansing has no gas pipe"), $136 per MWh propane, heating oil $156, with a parenthetical that propane was $2.74 to $3.46 per gallon (NYSERDA Central NY).
+Seen in `story-01-1920.png` and `story-01-1366.png`. Headline: Lansing is about to ban data centers, and most of its heat still comes from delivered fuel. Three cards: Sept 29 (Town Board directed its attorney to draft a ban; $500,000 proposed for next year's legal budget, not an existing reserve), 2015 (NYSEG gas moratorium; "Rural Lansing has no gas pipe"), $136 per MWh propane, heating oil $156, with a parenthetical that propane was $2.74 to $3.46 per gallon (NYSERDA Central NY).
 
 What they understand: a town is moving to ban data centers, and heat is expensive because there is no gas. Both fit the brief. $ per MWh is a unit this reader uses.
 
-Where they get lost: the first body sentence is about **Lansing, Michigan** (a data center that offered free heat, then withdrew, then a moratorium). Lansing, New York is the second place named. Nothing on the slide says Lake Hawkeye, TeraWulf, the former Cayuga plant, or 150 MW. Those names exist only in speaker notes (`steps.tsx` notes for steps 2, 3, and 11). A reader who skims the lede can spend the next four slides unsure which Lansing the proposal is for. The screen's moratorium year is 2015. `PLAN.md` reality-check table says the moratorium dates from about 2014. One year, on the opening slide, is the kind of slip this reader writes down.
+Where they get lost: the first body sentence is about **Lansing, Michigan** (a data center that offered free heat, then withdrew, then a moratorium). Lansing, New York is the second place named. Nothing on the slide says Lake Hawkeye, TeraWulf, the former Cayuga plant, or 150 MW. Those names exist only in speaker notes (`steps.tsx` notes for steps 2, 3, and 11). A reader who skims the lede can spend the next four slides unsure which Lansing the proposal is for. The screen's moratorium year, 2015, is correct (February 2015, `research/verification.md` row 6a). `PLAN.md` reality-check table says about 2014, and that is the discrepancy. The slide's 2026 status is unverified (row 6c).
 
 $136/MWh is not yet compared with the project's price. That comparison arrives at footer step 6.
 
@@ -68,7 +68,7 @@ $136/MWh is not yet compared with the project's price. That comparison arrives a
 
 Seen in `story-02-1920.png`. Headline rounds to **15×** and **6.5%**. The chart beside it says **15.4×**, **778 GWh** produced, **51 GWh** used (6.5%), split On-site campus 37.1 GWh and Corridor homes 13.5 GWh. Lede: 150 MW first phase, about 75% captured as 50 °C heat. Supply is not the constraint.
 
-What they understand: this is the thesis, and the base case is 150 MW, not a 400 MW slogan. The tiny second bar is the right picture. 50 °C is a temperature they can use.
+What they understand: this is the thesis, and the base case is 150 MW, the model's base-case assumption (not a confirmed phase size; the filing says about 400 MW gross and 320 MW critical IT). The tiny second bar is the right picture. 50 °C is a temperature they can use.
 
 Where they get lost: the headline and the chart disagree by 0.4× because the headline uses `dec(ratio, 0)` and the chart uses `dec(ratio, 1)` (`steps.tsx`, `Misc.tsx` `RatioBars`). They will assume one of them is wrong. The town ring is absent from the bar, which is correct (it is conditional) and unexplained on this slide.
 
@@ -114,7 +114,7 @@ Where they get lost: they do not see it. **Show deep dive** does not say that a 
 
 ### Step 6 of 9 — Who pays (kicker 8)
 
-Seen in `story-08-1920.png` with footer "Step 6 of 9" and **Show deep dive**. Flow: Data center sells heat → **Thermal Commons co-op** owns pipes and heat pumps, **$39M** capex, "public finance" → homes, farms, school pay **$109** per MWh, low-income **$89**. Chart title: cost to make heat by ring, **7% finance**. Bars from current `RingLcoh` and `site2.json`: on-site about **$41** "pays for itself" (40.6), corridor **$286** "needs a benefit fund" (285.8), town **$734** "not yet" (734.2), air-source heat pump about **$97** (96.9), propane reference **$136**. Side card: gap **$26.0M** ($13.3M if federal credits qualify); Community Benefit Agreement about **2.0%** of the build, **$2.44M** a year at 7% over 30 years. Capex 38.76 displays as $39M. Funding gap 26.01 and incentive gap 13.28 match the card. `cba.as_pct_of_dc_capex` is 2.02 and `per_year_annuitized_7pct_musd` is 2.443.
+Seen in `story-08-1920.png` with footer "Step 6 of 9" and **Show deep dive**. Flow: Data center sells heat → **Thermal Commons co-op** owns pipes and heat pumps, **$39M** capex, "public finance" → homes, farms, school pay **$109** per MWh, low-income **$89**. Chart title: cost to make heat by ring, **7% finance**. Bars from current `RingLcoh` and `site2.json`: on-site about **$41** "pays for itself" (40.6), corridor **$286** "needs a benefit fund" (285.8), town **$734** "not yet" (734.2), air-source heat pump about **$97** (96.9), propane reference **$136**. Side card: gap **$26.0M** ($13.3M incentive scenario only, unverified: it applies to potentially qualifying ground-source assets, not the waste-heat network itself, and needs tax counsel); Community Benefit Agreement about **2.0%** of the build, **$2.44M** a year at 7% over 30 years. Capex 38.76 displays as $39M. Funding gap 26.01 and incentive gap 13.28 match the card. `cba.as_pct_of_dc_capex` is 2.02 and `per_year_annuitized_7pct_musd` is 2.443.
 
 What they understand: a co-op, not a gift of free heat. The town pipe fails a cost test. On-site heat is the cheap sink. Someone has to fill a $26M gap. This is the covenant, and it is the first time the co-op is named in the story.
 
@@ -220,7 +220,7 @@ Page copy and behavior: `web/components/story/Story.tsx`, `web/components/story/
 
 Numbers on screen come from `web/public/data/site2.json` (`meta.generated` 2026-10-04). Displayed figures in this note were checked against that file and the formatters (`int` rounds, `dec` fixes one decimal). Screenshot pixels: `web/screenshots/story-01` through `story-11`, `explore-1920.png`, `compare-1920.png`, `print-1920.png`. `explore-1366.png` did not render the page.
 
-`PLAN.md` reality-check table (draft 2026-10-03) is the source for the "~2014" moratorium year and for the instruction not to treat Deep Green in Lansing, Michigan as this site. This walk did not re-fetch the news URLs. Claims about Michigan, the Sept 29 vote, and the $500,000 reserve are quoted as what the interface says.
+`PLAN.md` reality-check table (draft 2026-10-03) is the source for the "~2014" moratorium year (a discrepancy: the verified date is February 2015) and for the instruction not to treat Deep Green in Lansing, Michigan as this site. This walk did not re-fetch the news URLs. Claims about Michigan, the Sept 29 board action (an attorney was directed to draft a ban; no vote adopted one), and the $500,000 (proposed for next year's legal budget) are quoted as what the interface says.
 
 No public live URL was opened. `PUBLIC_URL` is the GitHub repository, not a deployed app.
 

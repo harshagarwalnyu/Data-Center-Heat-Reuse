@@ -42,8 +42,9 @@ next 16.3, react 19.3, tailwindcss 4.3, framer-motion 14, recharts 3.10, maplibr
 - No dark-mode validation pass beyond the validated 3-color ring palette (light: #C2410C/#0B8CA6/#7C4DCC, dark: #DB6428/#1E9DB8/#9C7DE6).
 
 ## Update 2026-10-04 (priority change)
+
 - Story opens on the ~5-minute path (9 of 11 steps). Key S or the footer button toggles the full deep dive (steps 5 and 7); a deep link like `#5` switches it on.
-- New `/how/` page (How it works): pipeline, live COP calculator, LCOH formula, tests (15 Python, 20 web, verified 2026-10-04), honest limits, sources from JSON.
+- New `/how/` page (How it works): pipeline, live COP calculator, LCOH formula, Python and web tests (counts not hardcoded; run `uv run pytest` and `bun run test`), honest limits, sources from JSON.
 - model.ts fixes from docs/audit/code-review-pr2.md: COP clip [2,6]; tariff fixed at the data value (0.8x propane, never scales with cost); electricity price read from `finance.elec_price_usd_mwh` (number or {industrial,residential}) else `extras.electricity_rates_usd_kwh` industrial else 108, and electricity is re-priced inside opex (counted once); storage uses a 20 K swing; CBA shows the annuitized $/yr; Explore ring table shows share of heat instead of a mismatched COP.
 - Compare: COP row uses `cop_compare` (like-for-like, capped at 6); Site 1 text drops the two claims the data contradicts and generates cost/CO2 clauses from numbers.
 - `PUBLIC_URL` = https://github.com/harshagarwalnyu/Data-Center-Heat-Reuse (QR on step 11 and /print). No deploy: demo runs locally.

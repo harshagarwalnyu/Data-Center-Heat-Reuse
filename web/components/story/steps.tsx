@@ -7,7 +7,7 @@ import { Sankey } from "../viz/Sankey";
 import { HouseholdCalc, QrCode, RatioBars, TempLadder } from "../viz/Misc";
 import { LcohBars, MonthlyChart, RingLcoh, WeekChart } from "../viz/Charts";
 import { RingDot, ringColor, ringText, ringShort } from "../ui";
-import { CREDITS, PUBLIC_URL } from "@/lib/config";
+import { CBA_ANNUITY, CREDITS, PUBLIC_URL } from "@/lib/config";
 
 export interface Step {
   id: string;
@@ -68,8 +68,10 @@ export function buildSteps(data: AppData): Step[] {
   const fund = ex?.funding;
   const cba = ex?.cba;
   // Whole-project headline (on-site surplus cross-subsidises corridor); corridor-only figures are the fallback.
-  const cbaPct = cba?.headline_as_pct_of_dc_capex ?? cba?.as_pct_of_dc_capex;
-  const cbaYr = cba?.headline_annuitized_7pct_musd_per_yr ?? cba?.per_year_annuitized_7pct_musd;
+  // Use the headline pair only when both exist, else the corridor pair together (never mix bases).
+  const hasHeadline = cba?.headline_as_pct_of_dc_capex !== undefined && cba?.headline_annuitized_7pct_musd_per_yr !== undefined;
+  const cbaPct = hasHeadline ? cba?.headline_as_pct_of_dc_capex : cba?.as_pct_of_dc_capex;
+  const cbaYr = hasHeadline ? cba?.headline_annuitized_7pct_musd_per_yr : cba?.per_year_annuitized_7pct_musd;
   const backupPct = (T.backup_MWh / T.heat_delivered_MWh) * 100;
   const cleanCarbonCars = d.impact.co2_cars_equiv;
 
@@ -206,7 +208,7 @@ export function buildSteps(data: AppData): Step[] {
                 </ol>
                 
                 {fund?.funding_gap_musd !== undefined && <div>Gap a benefit fund, grants or cheap capital must cover: <b className="num text-ember-text">${dec(fund.funding_gap_musd, 1)}M</b>{fund.funding_gap_incentive_scenario_if_qualifies_musd !== undefined && <> (<span className="num">${dec(fund.funding_gap_incentive_scenario_if_qualifies_musd, 1)}M</span> if federal credits qualify)</>}.</div>}
-                {cbaPct !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cbaPct, 1)}%</b> of the data center build{cbaYr !== undefined && <>, <span className="num">${dec(cbaYr, 2)}M</span> a year (annuitized at 7% over 30 years)</>}, funds the home program.</div>}
+                {cbaPct !== undefined && <div className="text-[1.125rem]">Community Benefit Agreement: about <b className="num text-teal-text">{dec(cbaPct, 1)}%</b> of the data center build{cbaYr !== undefined && <>, <span className="num">${dec(cbaYr, 2)}M</span> a year (annuitized at {CBA_ANNUITY.ratePct}% over {CBA_ANNUITY.years} years)</>}, funds the home program.</div>}
               </div>
             </div>
           ) : (

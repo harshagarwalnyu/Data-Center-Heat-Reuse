@@ -112,7 +112,7 @@ Overall: **6 / 10** for a projector pitch to this audience. Strong frame, unsafe
 - **Screenshots:** `story-04-1920.png`, `story-04-1366.png`
 - **What the room sees:** IT power in **120 MW avg**. Heat captured **89 MW at 50 °C**. **31 MW not captured**. Heat pumps **5.8 MW delivered**, with a small note “incl. 0.3 MW grid.” On-site campus **4.2 MW avg**. Corridor homes **1.5 MW avg**. Dry coolers **115 MW avg here**. Both widths show the full figure, including the dashed teal box around the dry coolers. The headline (“the data center never depends on us to stay cool”) is the right sentence and is large enough.
 - **Why it matters:** 115 is larger than 89, and 115 + 5.8 is not 120. The diagram is explainable (31 never captured, plus captured heat nobody took, plus a little grid electricity inside the 5.8). The explanation is not on the slide. White dashes through the ribbons read as a second encoding; in code they are a motion stroke (`web/components/viz/Sankey.tsx`).
-- **Fix:** One line under the figure, 20px or larger: “115 at the coolers = 31 never captured + the captured heat we do not sell. 4.2 + 1.5 is the 5.8 delivered, and 0.3 of that is grid electricity.” Keep the dry-cooler sentence.
+- **Fix:** One line under the figure, 20px or larger: “115 at the coolers = 31 never captured + the captured heat we do not sell. 4.2 + 1.5 is 5.7, which shows as 5.8 because each figure is rounded, and 0.3 of the delivered heat is grid electricity.” Keep the dry-cooler sentence.
 
 ### F6 — Lansing, Michigan is a paragraph under a New York headline
 
@@ -120,7 +120,7 @@ Overall: **6 / 10** for a projector pitch to this audience. Strong frame, unsafe
 - **Heuristics:** H5, H2, H6
 - **Screenshots:** `story-01-1920.png`, `story-01-1366.png`
 - **What the room sees:** Headline is about banning data centers and delivered fuel. It does not say New York. The paragraph begins “Free heat was not enough in Lansing, Michigan” and ends “Lansing, New York needs ownership…” Both state names are present. They are body size, under a headline that only says Lansing.
-- **Why it matters:** This audience will flatten the two towns into one story. The team’s own constraint is that Deep Green’s project is Lansing, Michigan, and must not be mixed with this site. The copy tries. The layout does not.
+- **Why it matters:** This audience will flatten the two towns into one story. The team’s own constraint is that Deep Green’s project is Lansing, Michigan (withdrawn in April 2026), and must not be mixed with this site. The copy tries. The layout does not.
 - **Fix:** A labeled chip above that paragraph, larger than the body: “Different city — precedent is Lansing, Michigan.” Keep the New York facts in the three cards. Also rewrite the 2015 card. It now reads “2015 / year the NYSEG gas moratorium began” (`steps.tsx` tile label starts with the word “year”). Make the card body “NYSEG stopped new gas hookups. Rural Lansing has no gas pipe.”
 - **Related, severity 2, same screenshots:** The fuel card leads with **$136 per MWh**. The gallon range ($2.74 to $3.46) and heating oil **$156** are the smaller line. For this audience, dollars per year (already on Story 7) or dollars per gallon should be the big type. MWh can sit underneath.
 

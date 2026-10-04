@@ -57,7 +57,7 @@ Source: `rings` and `extras.ring_lcoh_usd_mwh` in `outputs/site2.json`.
 
 | Heat source | USD/MWh, delivered at appliance efficiency | Note |
 |---|---|---|
-| Natural gas | 64.2 | Not available in rural Lansing: NYSEG moratorium since 2015 |
+| Natural gas | 64.2 | Moratorium on new connections began February 2015; its 2026 status and current availability in rural Lansing are unverified |
 | Air-source heat pump, seasonal COP 2.53 | 96.9 | Each home pays for its own equipment |
 | Propane | 136.1 | 3.10 USD/gal |
 | Heating oil | 155.8 | 5.186 USD/gal |
@@ -72,12 +72,12 @@ On pure cost the corridor loses to a home air-source heat pump. The case for it 
 
 Break-even scan (`extras.cba.breakeven_homes_if_cba_pays_pipe`, corridor LCOH versus the 104.8 USD/MWh blended tariff, 50 to 2,000 homes):
 
-| Who pays what | Corridor LCOH at 2,000 homes (USD/MWh) | Break-even homes |
+| Who pays what | Corridor LCOH at 2,000 homes unless noted (USD/MWh) | Break-even homes |
 |---|---|---|
 | Co-op pays everything (base) | 285.8 at 500 homes (ring LCOH) | not scanned |
 | Community Benefit pays loop pipe and laterals | 179.6 | none up to 2,000 |
 | Pays pipe, laterals and half of building heat pumps | 135.8 | none up to 2,000 |
-| Pays pipe, laterals and all building heat pumps | 103.3 (at the break-even point) | 50 homes |
+| Pays pipe, laterals and all building heat pumps | 103.3 (at 50 homes, the break-even point, not 2,000) | 50 homes |
 
 The binding cost is the roughly 16,000 USD in-home heat pump, not the trench. Paying for pipe alone, however large the network grows, does not close the gap. Tariff level is not the lever either: moving the tariff from 0.85 to 0.75 times propane changes the whole-project NPV only from -25.1 to -26.9 million USD (`extras.tariff_scenarios`), because the corridor shortfall is set by cost, not by price.
 
@@ -114,7 +114,7 @@ Reading it:
 - Uptake raises blended LCOH at higher sign-up because the metric is a weighted average and more corridor customers shift the mix toward the dearer ring. The ring-level corridor LCOH and the break-even scan are the better lens for density.
 - The tornado covers six drivers. It does not cover building heat-pump cost, loop cost per metre, or frontage per home; those are the real uncertainties and are listed in [assumptions.md](assumptions.md).
 
-Other scenarios (`extras.scenarios`): central heat pump and pumping at the residential rate gives 108.1 USD/MWh; propane at 2.85 USD/gal gives a propane-equivalent of 125.1 USD/MWh and still leaves households 675.6 USD/yr better off at the 0.8 tariff.
+Other scenarios (`extras.scenarios`): central heat pump and pumping at the residential rate gives 108.1 USD/MWh; propane at 2.85 USD/gal (a scenario assumption, not a Central NY market price) gives a propane-equivalent of 125.1 USD/MWh and still leaves households 675.6 USD/yr better off at the 0.8 tariff.
 
 ## What if the data center leaves (year 10)
 

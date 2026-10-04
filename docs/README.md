@@ -1,6 +1,6 @@
 # Documentation index
 
-Start with the root [README](../README.md). This index lists every document in `docs/` and `research/`. Files in `docs/` are the proposal and its supporting design material; files in `research/` are the fact base and working notes behind the numbers. Where two files disagree, `research/verification.md` overrides older research files, and the model outputs in `outputs/` override any number quoted in prose.
+Start with the root [README](../README.md). This index is a selected list of documents in `docs/` and `research/`, not an exhaustive one. Files in `docs/` are the proposal and its supporting design material; files in `research/` are the fact base and working notes behind the numbers. Where two files disagree, `research/verification.md` overrides older research files, and the model outputs in `outputs/` override any number quoted in prose.
 
 ## Read these first
 
