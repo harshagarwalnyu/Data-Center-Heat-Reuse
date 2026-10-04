@@ -1,0 +1,2983 @@
+SOURCE: Source Documentation\New York State\Resource Efficient Decarbonization.pdf
+
+
+--- page 1 ---
+Planning for 
+Resource 
+Efficient 
+Decarbonization
+A Phased Approach to Eliminating 
+Greenhouse Gas Emissions from Tall 
+Buildings in Cold Climates
+A holistic approach, combined with a 
+realistic phasing plan, can make 
+decarbonization technically and economically 
+feasible.
+
+
+--- page 2 ---
+Strategic decarbonization planning entails balancing 
+multiple goals
+BUDGETS & PHASE-IN
+Breaking decarbonization into 
+incremental steps can help meet 
+targets, within tight budgets.
+SIMPLE SOLUTIONS
+What is the simplest way to design a 
+solution?
+VALUES
+How can decarbonization advance 
+organizational values and goals?
+ECONOMICS
+Energy and maintenance projects can 
+save money over time.
+RESILIENCY
+Systems should be prepared 
+for disruption and protect occupants 
+from climate-related threats.
+TECH READINESS
+There is lots of work to do before 
+replacing main equipment. Take 
+enabling steps first.
+EXISTING PLANS
+How can an existing plan be leveraged to 
+shift gears and implement a new 
+trajectory? Small changes can gradually 
+yield large results.
+MAINTAINABILITY
+Find ways to reduce future maintenance 
+costs by implementing decarbonization 
+measures.
+
+
+--- page 3 ---
+FOLLOW A 
+CLEAR 3-STEP 
+PROCESS.
+A process is 
+already in use that 
+can help you trace 
+your path to 
+carbon neutrality.
+By phasing in solutions over a longer time horizon, and 
+within budgets, building decarbonization is achievable 
+and can be cost-effective.
+CHECK YOUR
+ASSUMPTIONS.
+Are any of our 
+existing beliefs 
+limiting your 
+perspective? Is 
+there another lens 
+you could look 
+through?
+SEE HOW 
+OTHERS ARE 
+DOING IT.
+Learn from what 
+others have already 
+done to put their 
+buildings on the 
+trajectory to full 
+decarbonization.
+
+
+--- page 4 ---
+Beware of mental traps that prevent early action.
+Simple 
+payback
+1:1 
+equipment 
+replace-
+ment
+My 
+engineer 
+says, "It 
+can't be 
+done."
+Electrify 
+all at 
+once
+Wait for 
+better 
+tech.
+I have 
+"THE" 
+solution!
+Electricity 
+produces 
+emissions
+Too 
+disruptive
+Decarb is 
+not 
+possible
+#1
+#2
+Long 
+term 
+capital 
+planning
+Partial 
+electrifi-
+cation and 
+right size 
+equipment
+Phase in 
+measures 
+over time
+Start 
+with 
+partial 
+electrifi-
+cation
+Start 
+now with 
+enabling 
+steps
+There is 
+no 
+'one' sol
+ution! 
+Stay 
+"tech 
+neutral"
+Grid is 
+rapidly 
+decarbo- 
+nizing
+Decision 
+tree, 
+phased 
+approac
+h
+Decarb 
+is
+viable
+The lens you look through determines what you see.
+
+
+--- page 5 ---
+Three steps to successful decarbonization planning
+CONDITION 
+ASSESSMENT. 
+Conditions, requirements 
+or events at your building 
+or company can trigger a 
+decarbonization effort. 
+Look at both technical 
+and asset baselines.
+ENGINEERING 
+SOLUTIONS. 
+Take action now. Look 
+for enabling steps and 
+pathways to 
+decarbonize efficiently 
+over time, by thinking 
+holistically.
+CAPITAL PLANNING 
+AND THE BUSINESS 
+CASE. Conduct a 
+decarbonization 
+assessment based on a 
+discounted cash flow 
+model. Look at different 
+investment scenarios, 
+over the long term.
+
+
+--- page 6 ---
+A Repeatable Process
+Step 1: Condition Assessment
+REAL ESTATE/BUILDING ASSESSMENT
+Asset conditions, repositioning, recapitalization, 
+capital cycle events, tenant turnover, facade
+compliance, CO2 emissions limits, investor 
+ESG goals, etc.
+TECHNOLOGY ASSESSMENT
+System failure, damage from an event, 
+end-of-useful life, wasted heat, tenant loads, 
+indoor air quality, etc.
+Free flow of 
+information 
+between
+decisionmakers, 
+real estate
+and technical 
+teams 
+throughout the 
+process is crucial.
+Integrating 
+results from 
+the two 
+condition 
+assessments 
+will lead to a 
+stronger,
+more strategic 
+decarbonization 
+plan.
+
+
+--- page 7 ---
+A Repeatable Process
+Apply the Resource Efficient Decarbonization model to help alleviate space constraints, 
+optimize peak thermal capacity, increase operational efficiencies, utilize waste heat, and 
+reduce the need for oversized electric thermal energy systems, creating retrofit cost 
+compression. The model contains (4) steps:
+1. REDUCE energy loads as much as possible.
+3. RECOVER as much heat as possible from air, water, and wastewater sources.
+4. REPLACE* equipment incrementally over time until full decarbonization is reached.
+2. RECONFIGURE systems to create thermal networks and enable low temperature distribution.
+Step 2: Engineering Solutions 
+* "All-or-Nothing" is a false assumption
+
+
+--- page 8 ---
+Applying Resource Efficient Decarbonization (RED)
+Existing 
+Conditions
+Building 
+Energy
+Reduce
+Recover
+Partial 
+Electrification
+Full 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+• Building Envelope 
+Improvements
+• Control Optimization
+• Ventilation Improvements
+• Dedicated Outside 
+Air System
+• Hydronic Distribution
+• Lower Heating Supply Temp.
+• Terminal Units Replacement
+Recover Wasted Heat
+• Waterside Heat Recovery
+• Airside Heat Recovery
+• Wastewater Heat Recovery
+• Thermal Energy Networks
+Partial Electrification
+Replace fossil fuel inputs and 
+prioritize the techno-
+economic portion of load
+•
+Air Source Heat Pumps
+•
+Water Source Heat Pumps
+•
+Geothermal
+•
+Thermal Layering
+Full Electrification
+In-time, replace or remove 
+the remaining peak load 
+equipment
+• Heat Pumps
+• Thermal Storage 
+• District Thermal Network
+• Grid-interactivity
+Time
+
+
+--- page 9 ---
+All paths to Resource Efficient Decarbonization 
+include heat recovery and recycling.
+Buildings lose heat through a variety of 
+processes. Holistic building decarbonization 
+requires recovering and recycling wasted heat 
+through various interventions:
+Cooling produces heat. Capture the heat and apply
+it to other uses, like domestic hot water.
+Heat goes down the drain. Extract heat 
+from wastewater with heat pumps and redirect it to
+other uses.
+Think twice about ventilation. Fresh air is fundamental
+to healthy buildings. Be certain to recover heat and cool 
+from exhaust air.
+Save it for later. Incorporate thermal 
+storage technology into designs to save recovered heat 
+for when its most needed.
+
+
+--- page 10 ---
+The way heat moves in a building is more important 
+than how it's made.
+Building infrastructure must shift 
+toward lower temperature heating 
+distribution.
+Keep your options open. Choose technology 
+neutral distribution systems and plug in low carbon 
+technology over time.
+Steam is out. Water is in. Incrementally shift steam 
+distribution systems to water/hydronic distribution.
+Embrace low temperature heating. More 
+efficient and enables heat pumps. Requires changing 
+terminal units to fan coils, radiant panels or similarly 
+performing devices.
+Location is everything. Strategically relocate or add 
+distribution infrastructure to support other goals, like heat 
+recovery.
+
+
+--- page 11 ---
+A Repeatable Process
+Step 3: Capital Planning and the Business Case
+Key Strategic Decarbonization Planning Methods
+Think beyond simple payback and prioritize projects.
+BUSINESS-AS-USUAL
+Develop a business-as-usual scenario, including information 
+from Step 1: Condition Assessment. Include cost of offsets and 
+reasonable assumptions about future cost of fossil fuels.
+NET PRESENT VALUE
+Develop a discounted cash flow model for the different 
+investment scenarios with as much detail as possible. Assess 
+the Net Present Value of different decarbonization pathways 
+compared to the business-as-usual scenario. Value non-
+energy benefits. Attempt to quantify the value at risk by 
+pursuing the business-as-usual path.
+MARGINAL COST
+Find the lowest marginal cost of decarbonization. The 
+marginal cost of decarbonization is the incremental cost 
+between measures or projects in the business-as-usual 
+scenario and the selected decarbonization pathway.
+Define the 
+decarbonization 
+period (think 
+long term)
+Start with an 
+ideal engineering 
+plan
+Develop multiple 
+investment 
+scenarios
+Evaluate NPV 
+and conduct 
+sensitivity 
+analysis
+Compare to 
+Business-As-
+Usual
+What 
+to do
+Is there value to 
+an accelerated 
+timeline?
+How can 
+implementation 
+be phased to 
+optimize 
+resources?
+What are the 
+capital and 
+financial cycles of 
+the property?
+When 
+to do it
+
+
+--- page 12 ---
+Phase 1: Hybrid electrification, with enabling steps
+Phase 2: Full electrification
+Decarbonization period: end date 2040
+Results: 100% electric and carbon free.
+Example decarbonization roadmap: 2019 -2040
+Source: JB&B Deep Carbon Reduction Group.
+
+
+--- page 13 ---
+Example phase-in plan over long time horizon
+
+
+--- page 14 ---
+Ventilation 
+Improvem
+ents
+Envelope 
+Improvem
+ents
+Heat Pump 
+Installation
+Energy 
+Recovery 
+Measure
+Energy 
+Savings and
+Avoided 
+LL97 Fines
+Façade 
+Maintenance
+Net Present Value
+($ Millions)
+Equipment 
+O&M and EUL 
+Replacement
+Valuation
+Roadmap Measures 
+Costs
+Business-As-Usual 
+(BAU) Avoided Costs
+Value Added
+Qualitative 
+benefits 
+(i.e. thermal 
+comfort, IAQ, 
+etc.)
+Net Present Value 
+(NPV) is a financial 
+calculation used to 
+determine the value of an 
+investment or project 
+over a period of 
+time by comparing the 
+present value of its 
+expected future cash 
+inflows with its expected 
+cash outflows. In other 
+words, will the investment 
+generate a positive or 
+negative return after 
+accounting for the time 
+value of money?
+Sensitivity 
+bars representing the 
+volatility or uncertainty of 
+the calculation ​due to 
+input variables.
+Example business case
+Illustration of a discounted cash flow analysis, comparing expected costs and revenues with 
+Business-As-Usual.
+
+
+--- page 15 ---
+Demonstrates strategic decarbonization planning 
+and implementation of low carbon retrofits.
+Showcases Resource Efficient Decarbonization: an 
+incremental methodology, coupled with integrated 
+design and strategic capital planning, that creates a 
+path towards efficiently decarbonizing buildings.
+Redirects focus from electricity to heat, making a case 
+to stop wasting heat in buildings, and reusing it .
+Clarifies the process to reach the lowest marginal cost 
+of decarbonization.
+About The Empire 
+Building Challenge 
+Program
+Additional information: www.nyserda.ny.gov/ebc
+Contact us: ebc@nyserda.ny.gov
+
+
+--- page 16 ---
+Empire Building Challenge
+• $50M in funding for technical assistance 
+and implementation.
+• $10M Empire Technology Prize.
+• Accelerate investment
+in decarbonization.
+• Enable replication 
+and scale across 
+New York’s existing
+large commercial 
+and multifamily 
+building stock.
+• Drive innovation and 
+market demand.
+GOALS
+FUNDING
+• Fund demonstration projects that show
+case cost-effectiveapproaches to deep 
+carbon reduction.​
+• Work with portfolio owners.​
+• Establish a REPEATABLE PROCESS.​
+• Simplify and share broadly​.
+APPROACH
+
+
+--- page 17 ---
+Sixteen New York Portfolios
+10 commercial 
+and​ 6 multifamily 
+partners​ overseeing​
+• 228 M sq. ft.
+• 70K housing units​
+With public 
+commitments to 
+decarbonize over 
+125 million sq. ft. 
+including close to 
+1,500 units of
+affordable housing.​
+
+
+--- page 18 ---
+16 premier 
+sustainability and 
+design consultants
+Experience with:​
+• Energy modeling
+• Deep energy retrofits
+• Low temperature 
+hydronic re-engineering
+• Hybrid electrification
+• Geothermal
+• Feasibility analysis
+• Decarbonization planning
+
+
+--- page 19 ---
+Technical 
+Overview 
+Presentations
+The following slides share insights into 
+each of the Empire Building Challenge 
+demonstration projects.
+
+
+--- page 20 ---
+Whitney 
+Young Manor
+•
+Yonkers, NY
+•
+230,000 SF
+•
+195 apartments
+•
+2 affordable multifamily buildings 
+built in 1974
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 21 ---
+Whitney Young Manor is an aging affordable housing 
+complex with open balconies, inefficient electric resistance 
+baseboard heating, electric window sleeve AC units, and a 
+gas-powered hot water heater. 
+The project team believes that with care, planning, and the 
+appropriate resources, retrofitting these residential 
+buildings can be equitable for tenants, beneficial to the 
+environment, and financially feasible for owners. Omni 
+leverages the recapitalization cycle of the property to 
+upgrade its infrastructure and include decarbonization 
+measures to meet its climate goals. 
+This project prioritizes intensive load reduction through 
+envelope improvements and hydronic distribution to 
+improve resident comfort while reducing carbon emissions, 
+utility spend and maintenance costs.
+How to leverage 
+recapitalization 
+to achieve carbon 
+neutrality 
+and transform 
+the affordable 
+housing sector
+NYSERDA Investment
+Total Project Investment
+$5 Million
+$12 Million
+Project Team:
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+
+
+--- page 22 ---
+Envelope Improvements: Over-cladding using Exterior Insulation and 
+Finishing System (EIFS) helps reduce heat loss and air infiltration while avoiding 
+façade maintenance costs associated with LL11. This measure is combined with 
+the new Dedicated Outside Air System (DOAS) to make sure adequate fresh air is 
+injected into the building.
+Hydronic Distribution: The new water-based distribution piping will enable 
+the integration of different heating sources and allow heat sharing between end-
+uses, such as DHW production during cooling season. The construction team 
+plans to pilot cross-linked polyethylene (PEX) piping to reduce cost and improve 
+durability. 
+Heat Source Optionality: The project team plans to integrate different heat 
+sources connected to the central hydronic piping. This includes centralized air 
+source heat pumps, Wastewater Energy Transfer (WET) system and gas-fired 
+condensing boilers as back-up.
+Whitney Young 
+Manor demonstrates 
+the benefits of over-
+cladding 
+and hydronic 
+distribution to enable 
+heat pump 
+technology
+2019 Baseline
+Expected by 2035
+96 kBtu/SF/yr 
+48 kBtu/SF/yr
+54% Natural Gas + 46% Electricity
+25% Natural Gas + 75% Electricity
+1,456 tCO2e/yr
+273 tCO2e/yr
+50%
+81%
+
+
+--- page 23 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building Energy
+Reduce
+Recover
+Partial 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+• New hydronic distribution: 
+High efficiency water-based 
+distribution system, lower supply 
+temperature  
+• Dedicated Outside Air System 
+(DOAS): decouple ventilation 
+from heat and cooling systems 
+• Envelope Improvements: 
+overclad, roof insulation and 
+window replacement
+Recover Wasted Heat
+• Wastewater Heat Recovery: 
+Recapture heat from 
+wastewater using WSHP 
+• Energy Recovery Ventilator 
+(ERV): Recapture heat from 
+ventilation exhaust to condition 
+make-up air
+Partial Electrification
+• Central Air Source Heat Pump 
+(ASHP): Maintain design 
+temperatures for the hydronic 
+loop
+• Water Source Heat Pump 
+(WSHP) for Domestic Hot 
+Water (DHW): DHW 
+production supplied by 
+hydronic loop
+• Back-up gas condensing 
+boiler: Provide supplemental 
+heat during cold events as 
+resiliency
+
+
+--- page 24 ---
+Whitney Young Manor Decarbonization Plan
+Key Takeaways: Affordable Housing Recapitalization, Tenant Total Cost Reduction, Failing Envelope
+Heating
+Cooling
+Ventilation
+AFTER
+BEFORE
+Central MAU (common areas, 
+separate exhausts)
+Electric 
+Baseboard
+Sleeve Air 
+Conditioning 
+Units
+Central ASHP
+Install 2 ASHPs to produce low temperature hot 
+water and chilled water for in-unit FCUs
+Dual-Temp Hydronic System
+New 2-pipe hydronic piping drilled through 
+common areas. 
+Central DOAS+ERV
+Heat pump DOAS with ERV to supply tempered 
+air to units via common areas, 
+Envelope Improvements
+EIFS over uninsulated masonry, new windows, 
+new roof
+Fan Coils installed in units
+Back-up Gas Boiler
+For use during power outages and extreme cold 
+events
+Wastewater Energy Transfer (WET) System
+Install 18,000 gal sewage tank and use Sharc 
+Energy heat pumps to recover heat and 
+supplement central ASHPs
+WSHP for DHW
+Install modular WSHPs supplied by hydronic loop
+Heat 
+Recovery 
+Heat Pump
+Back-up 
+Gas 
+Boiler
+Fan 
+Coils
+2-pipe 
+Hydronic 
+System
+Central 
+ASHP
+Central 
+DOAS+ERV
+Envelope 
+Improvements 
+(EIFS, Windows, 
+Roof)
+Wastewater 
+tank / city 
+main
+DHW 
+WSHP
+2023:
+2024:
+
+
+--- page 25 ---
+The Heritage
+•
+New York City
+•
+680,000 SF
+•
+600 apartments
+•
+3 mixed income multifamily buildings 
+built in 1975
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 26 ---
+The Heritage is a 3-building mixed-use development with 
+600 mixed-income residential units located in Manhattan's 
+East Harlem neighborhood on the northeast corner of 
+Central Park. These buildings have an aging infrastructure 
+with poor insulation, and high utility bills due to inefficient 
+electric resistance heating baseboards and gas-fired 
+domestic hot water heaters. 
+L+M takes advantage of the recapitalization cycle of the 
+Heritage to upgrade its infrastructure and include 
+decarbonization measures to meet its climate goals while 
+improving tenant comfort. 
+The outdated design and age of the property made it an 
+ideal candidate for a deep carbon reduction project, 
+focused on envelope improvements, high efficiency heat 
+pumps, and an integrated design approach to minimize 
+tenant disruption.
+Fully occupied 
+mixed income 
+property gets a 
+face lift
+NYSERDA Investment
+Private Investment
+$5 Million
+$14 Million
+Project Team:
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+
+
+--- page 27 ---
+Re-skin the exterior: improving the building envelope and 
+reduce energy load 
+Re-cladding of the 3 buildings is estimated to avoid $10 million of LL11 compliance 
+costs between now and 2046. One portion of the project is using pre-fabricated 
+external wall panels from Dextall to minimize installation time and therefore 
+tenant disruption.
+Heat Pump Technology: take advantage of higher efficiency
+Replacing apartment electric resistance heating baseboards and sleeve air 
+conditioning units with modular Packaged Terminal Heat Pumps 
+(PTHP), and installing CO2-based heat pumps for Domestic Hot Water (DHW) 
+production will significantly increase system efficiency and reduce energy use 
+and costs. The PTHP installation work is coordinated with the panelized external 
+wall system to integrate necessary electrical upgrades and condensate lines and 
+minimize installation time as a result.
+The Heritage 
+demonstrates how a 
+well-planned façade 
+upgrade enables 
+decarbonization with 
+less tenant disruption
+2019 Baseline
+Expected by 2030
+77 kBtu/SF/yr 
+45 kBtu/SF/yr
+35% Natural Gas + 65% Electricity
+100% Electricity
+3,414 tCO2e/yr
+1,072 tCO2e/yr
+$34,424 /year of LL97 fines 
+starting in 2030
+$0 LL97 fines
+starting in 2030
+42%
+69%
+
+
+--- page 28 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building Energy
+Reduce
+Recover
+Partial 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+• Envelope Improvement: Install exterior 
+wall and roof insulation (overclad and 
+panelized EIFS), and replace windows  
+• Heat Pumps: Replace electric 
+baseboard heating with Package 
+Terminal Heat Pumps (PTHPs) for 
+apartments and install VRF system for 
+common areas 
+• Submetering and Control 
+Optimization
+Recover Wasted Heat
+• Energy Recovery Ventilator 
+(ERV): install ERV unit into 
+exhaust risers to recapture 
+exhaust heat and preheat fresh 
+air
+Partial Electrification
+• Domestic Hot Water: 
+CO2 Air Source Heat 
+Pump (ASHP) for DHW 
+production
+• Laundry appliance
+
+
+--- page 29 ---
+The Heritage Decarbonization Plan
+Key Takeaways: Affordable Housing Recapitalization, Tenant Total Cost Reduction, Failing Envelope
+Heating
+Cooling
+Ventilation
+AFTER
+BEFORE
+2022:
+2023:
+2024:
+Central 
+MAU
+Electric 
+Baseboard
+DHW Gas 
+Boiler + 
+Storage
+Central 
+MAU
+Electric 
+Baseboard
+RTU for 
+lobby and 
+common 
+area
+Sleeve Air 
+Conditioning 
+Units
+Two Towers
+1660 Madison Ave
+PTHP
+Central MAU 
++ ERV
+Envelope Improvements 
+(EIFS, prefabricated 
+panels, Windows, Roof)
+DHW ASHP 
++ Storage
+Central 
+MAU
+Electric 
+Baseboard
+Sleeve Air 
+Conditioning 
+Units
+VRF Heat Pump 
+for lobby and 
+common area
+Two Towers
+1660 Madison Ave
+Packaged Terminal Heat Pumps
+Decentralized IceAir PTHP (no backup resistance 
+heat), integrated with Dextall wall panels 
+(electrical upgrades + condensate drainage)
+Exterior Insulation & High-Performance 
+Windows
+Unitized prefabricated ext. wall (Dextall), windows, 
+roof
+Laundry appliance electrification
+Submetering and Controls Upgrades
+Domestic Hot Water (DHW) Electrification
+CO2 ASHP for DHW
+Energy Recovery Ventilation (ERV)
+Adding ERV to rooftop fresh air unit
+Two Towers (1295 & 1309 Fifth Ave):
+1660 Madison Ave:
+Exterior Insulation
+EIFS overclad from Sto Corporation
+Submetering and Controls Upgrades
+Install VRF Heat Pump Unit for Lobby and 
+Common Area
+
+
+--- page 30 ---
+The Towers
+•
+Bronx, NY
+•
+425,000 SF
+•
+2 affordable multifamily building built 
+in 1968 and 1971
+•
+20 stories
+•
+316 apartments
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 31 ---
+Making clean 
+energy from 
+dirty water to 
+eliminate carbon 
+emissions.
+NYSERDA Investment
+EBC Funded Measures 
+Private Investment
+Full Roadmap 
+Private Investment
+$3 Million
+$16.6 Million 
+$27 Million 
+Project Team:
+Amalgamated Housing Corporation (AHC) is the oldest limited equity co-
+operative in the United States. The Towers are two of 13-buildings that 
+together comprise this multifamily campus located in the Bronx. Many of 
+systems at the property, including the piping distribution system, are beyond 
+useful life and in extremely poor condition, causing leaks and requiring 
+constant repairs and maintenance. The campus uses a central gas-powered 
+boiler plant to produce steam for heating, cooling and domestic hot water.
+As part of its recapitalization cycle, the property is embarking on a 
+decarbonization journey which will include a comprehensive retrofit of the 
+heating, cooling and domestic hot water systems, a façade upgrade, and on-
+site renewable generation in the form of geothermal and solar PV.
+This project will increase thermal comfort and secure utility affordability for its 
+low-and-moderate income residents, as well as enhance the energy efficiency 
+and climate resilience of the property.
+From the full carbon neutrality roadmap, the Empire Building Challenge is 
+funding the first two enabling measures: hydronic system retrofit and 
+wastewater heat recovery.
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+
+
+--- page 32 ---
+Current Baseline
+Expected by 2035
+111.6 kBtu/SF/yr 
+32.5 kBtu/SF/yr
+84% Natural Gas + 14% Electricity + 2% Oil
+100% Electricity
+2,771 Ton CO2e/yr
+202 Ton CO2e/yr
+71%
+93%
+Amalgamated 
+demonstrates how 
+enabling steps pave 
+the way for an all-
+electric, renewables-
+powered future.
+Enabling step: New hydronic piping
+Replace the dual temperature hydronic system with new piping supplying 
+both heating hot water and chilled water simultaneously to provide 
+heating or cooling year-round improving tenant comfort. The measure 
+includes new fan coil units with more efficient motors and designed for low 
+temperature heating hot water to reduce the load on the buildings and 
+facilitate heat pump technology integration.
+Integrate different heat sources: 
+Wastewater heat recovery: Recapture heat from wastewater lines (sinks, 
+showers, toilets) using a wastewater energy transfer (WET) system.
+Geothermal System: Drill boreholes on property land and install ground 
+source heat pumps (GSHP) to meet the remaining energy loads of the 
+buildings.
+This system will use the wastewater and boreholes as heat sinks in cooling 
+mode.
+
+
+--- page 33 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building Energy
+Reduce
+Recover
+Full 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+•
+New hydronic distribution: Replace 
+existing infrastructure that is beyond 
+EUL and install dual-temperature 2-
+pipe hydronic system (in-series 
+configuration allowing the benefits of 
+4-pipe system), with new FCUs in 
+apartments. Designed with lower 
+heating supply temperature
+•
+Envelope Improvements: roof 
+insulation, window replacement and 
+air sealing walls
+•
+Ventilation Maintenance: balancing 
+and sealing of ventilation system to 
+reduce exhaust air
+•
+Controls Upgrades: Install modern 
+control system to automate and 
+optimize new heat pump systems
+Recover Wasted Heat
+•
+Wastewater Heat Recovery: 
+Recapture heat from 
+wastewater using WSHPs to 
+produce heating, cooling and 
+DHW. Use wastewater as heat 
+sink in cooling mode to enable 
+removal of old cooling towers.
+Full Electrification
+•
+Ground Source Heat 
+Pumps: Drill boreholes on 
+property land and install 
+WSHPs to produce 
+heating, cooling and 
+DHW. Use boreholes as 
+heat sink in cooling mode
+•
+Solar PV: Install solar PV 
+system on rooftop 
+•
+Electrify Appliances: 
+install electric dryers and 
+cooking equipment
+
+
+--- page 34 ---
+The Towers Decarbonization Plan
+Key Takeaways: Affordable housing recapitalization,  Tenant total cost reduction, Failing distribution 
+infrastructures, Eliminate fossil fuel usage, Improve comfort, Resilient systems 
+AFTER
+BEFORE
+2024:
+2026:
+2028:
+2030+:
+Heating
+Cooling
+Ventilation
+Steam to HHW 
+Heat 
+Exchangers
+Fan 
+Coils
+Single-use 
+Dual-temp 2-
+pipe Hydronic 
+System
+AHC 
+Campus 
+Steam
+Steam 
+Absorption 
+Chiller
+Cooling 
+Towers
+DHW 
+Production
+Supply
+Return
+Solar PV
+Heat Recovery 
+Heat Pump
+Wastewater 
+tank / city 
+main
+Fan 
+Coils
+Dual-use 
+Dual-temp 2-
+pipe Hydronic 
+System
+Geothermal 
+Boreholes
+Ground 
+Source Heat 
+Pump
+DHW 
+Production
+Envelope 
+Improvements 
+(Roof, Windows, 
+Air Sealing)
+Wastewater Energy Transfer (WET) System
+Install sewage tank and use Sharc Energy heat pumps 
+to produce heating, cooling and DHW
+Retrofit Dual-Temp Hydronic System
+Existing distribution system and terminal units 
+beyond EUL. Install new dual-use dual-temp 2-pipe 
+hydronic piping, designed for simultaneous heating 
+and cooling, with new FCUs in apartments.
+Geothermal System
+Drill geothermal boreholes on property land and install 
+ground source heat pumps to produce heating, 
+cooling and DHW
+Envelope Improvements
+Insulate roofs, replace windows and air seal walls.
+Ventilation System Maintenance
+Cleaning and balancing of existing ventilation system
+Solar PV
+Take advantage of rooftop space to install solar PV 
+system for clean electricity generation
+Laundry and cooking appliance electrification
+Submetering and Controls Upgrades
+
+
+--- page 35 ---
+Empire State 
+Building
+•
+New York City
+•
+2.85 million SF
+•
+102 stories commercial
+•
+office building built in 1931
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 36 ---
+The Empire State Building has been an integral part of the NYC skyline since 
+1931. The 102-story art deco structure is heated by district steam. 
+Following up on a deep energy retrofit initiated in 2009, Empire State Realty 
+Trust (ESRT) has taken a step further with ESB 2.0, a 21st century plan to bring 
+the iconic building to Net Zero. 
+Through this plan, ESRT will prove the technical and economic business case 
+for investing in deep energy retrofits and share findings to drive market change 
+within the high-rise office building landscape. 
+The phased approach strategically deploys energy conservation measures 
+through 2035. ESRT will optimize existing systems, maximize energy recovery 
+and enable heat pump integration to decrease steam and electricity 
+consumption.
+New York City 
+icon reaches 
+for Net Zero by 
+2030
+NYSERDA Investment
+Private Investment
+$5 Million
+$40 Million +
+Project Team:
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+
+
+--- page 37 ---
+Optimization: ensure existing systems are operating 
+automatically and efficiently
+By enabling automation of heating and cooling systems, upgrading to high 
+performance sequences of operation, and integrating zones throughout the 
+building onto the base building BMS, the functionality and efficiency of current 
+systems are maximized, and simultaneous heating and cooling is eliminated.
+Heat Recovery: recaptures thermal energy that would otherwise 
+be wasted
+Water source heat pump(s) will recover heat from the condenser water loop to 
+displace steam usage and energy recovery ventilators (ERVs) will retain and utilize 
+heat from the building's exhaust ventilation system.
+Heat Pump Integration: install new centralized hydronic heating 
+loop to enable the use of heat pump technology 
+The team is replacing steam coils in core air handling units with low temperature 
+hot water coils supplied by air source heat pumps.
+Empire State 
+Building will 
+demonstrate phased 
+decarbonization in a 
+fully occupied 
+landmarked building
+2019 Baseline
+Expected by 2035
+84 kBtu/SF/yr 
+50 kBtu/SF/yr
+35% District Steam + 63% Electricity
+16% District Steam + 82% Electricity
+15,640 tCO2e/yr
+3,986 tCO2e/yr
+$933,000 /year of LL97 fines 
+starting in 2035
+$0 LL97 fines
+starting in 2035
+Learn more about the 
+Empire State Building project
+•
+ESB: Energy Efficiency and Sustainability
+•
+ESRT Shares New Guide in Empire 
+Building Playbook 
+•
+Empire Building Playbook: ESRT Case 
+Study 
+•
+How the Empire State Building Became a 
+Green Icon
+40%
+75%
+
+
+--- page 38 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building 
+Energy
+Reduce
+Recover
+Partial 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+• Cooling plant optimization: connect 
+the chilled water zones with heat 
+exchangers to share load, optimize 
+shoulder season usage, and increase 
+resiliency  
+• Retail Loop Condenser Water Control: 
+retro commission the CW loop to 
+enable heating mode on existing 
+tenant WSHPs 
+• Air Source Domestic Hot Water 
+Heaters Pilot: replace existing electric 
+water heaters with ASHP  
+• Steam System Optimization and 
+Improvements  
+• Airside Sequence of Operations: 
+implement high performance 
+sequence of operations to enable static 
+pressure and temperature resets and 
+eliminate simultaneous heating and 
+cooling. 
+Recover Wasted Heat
+• Energy Recovery Ventilator 
+(ERV) Pilot: install ERVs in 
+tenant MERs to recover heat 
+from AHU exhaust, temper 
+incoming outdoor air, and 
+address freeze risk 
+• 1st Floor Lobby Reheat via 
+Waterside Heat Recovery: 
+Replace lobby AHU steam coils 
+with hydronic heating coils 
+supplied by WSHP that recover 
+heat from the building 
+condenser water loop to 
+enable electrified heating and 
+reheat. Recover heat from the 
+steam condensate system to 
+provide resiliency during the 
+heating season.
+Partial Electrification
+• Steam Phase-Out 
+Enabling Step: Eliminate 
+steam usage for airside 
+heating with new low 
+temp. HHW riser (120F) 
+supplied by central ASHP
+
+
+--- page 39 ---
+Empire State Building Decarbonization Plan
+Key Takeaways: Reduce district steam usage,  decouple core ventilation heating load and perimeter heating, 
+optimize operation of cooling plant, enable heat recovery
+Heating
+Cooling
+Ventilation
+Steam 
+Radiators
+Cooling 
+Towers
+Condenser 
+Water 
+Loop
+Zonal 
+Chilled 
+Water 
+Loop
+Retail tenants: 
+steam radiators 
+for heating + 
+WSHP for 
+cooling
+2-pipe 
+Steam 
+System
+Steam 
+Station
+District 
+Steam
+Zonal 
+Electric 
+Chillers
+Zonal 
+AHU
+High-Zone
+Mid- Zone
+Lobby: 
+steam coils 
+for AHU 
+reheat
+Low-Zone
+BEFORE
+AFTER
+Retail tenants: 
+independent 
+control of 
+water temp for 
+WSHP heating
+Heat 
+Exchanger
+Heat 
+Exchanger
+Lobby: waterside heat 
+recovery with WSHP 
+for AHU reheat, steam 
+condensate heat 
+recovery as back-up
+Steam 
+Radiators
+Cooling 
+Towers
+Condenser 
+Water 
+Loop
+2-pipe 
+Steam 
+System
+Steam 
+Station
+District 
+Steam
+Zonal 
+Electric 
+Chillers
+Zonal 
+AHU
+High-Zone
+Mid- Zone
+Low-Zone
+Low Temp. 
+Hot Water
+Chilled 
+Water 
+Loop
+ASHP
+Chilled 
+Water 
+Loop
+Steam Phase-Out Enabling Step: Hydronic Riser + ASHP
+Eliminate steam usage for airside heating: new low temp. 
+HHW riser (120F) supplied by central ASHP + replace zonal 
+AHU steam coils with hydronic coils
+Central Cooling Plant Optimization
+Connect the chilled water zones with HX to share load and 
+optimize shoulder season usage
+Energy Recovery Ventilator (ERV) Pilot
+ERV on floor outdoor AHU for select floors
+Air Source Domestic Hot Water Heaters Pilot
+Convert existing electric water heaters to ASHP
+Retail Loop Condenser Water Control
+3-port valve to independently control the retail loop from 
+the building condenser loop and enable heating mode on 
+tenant WSHPs 
+1st Floor Lobby Reheat via Waterside Heat Recovery
+Replace AHU steam coils with hydronic supplied by WSHP
+Steam System Optimization and Improvements
+Automating start-up practices, convert medium-pressure to 
+low-pressure steam, etc.
+Airside Sequence of Operations
+Implement static pressure and temperature resets; 
+Optimize chilled water dT
+2022:
+2023:
+2024:
+
+
+--- page 40 ---
+345 Hudson 
+Street
+•
+New York City
+•
+857,000 GSF
+•
+17 stories commercial
+•
+office building built in 1931
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 41 ---
+345 Hudson is a commercial office building with a mid-tier energy rating 
+of 75 kBtu/SF, an ageing heating system burning natural gas and recurring 
+carbon emissions fines starting in 2035.
+The Hudson Square partnership is committed to future-proof its flagship 
+property by upgrading its building infrastructure while meeting the 
+legislative climate goals and stay competitive in the commercial office 
+market.
+The HSP team brought together a consortium of global solution providers 
+and engineering expertise to develop a long-term retrofit plan to minimize 
+energy usage and carbon emissions. 
+The 345 Hudson EBC project provides a roadmap for sustainable practices 
+by applying the Nordic design principles of holistic energy recycling and 
+electrification.
+As part of the overall decarbonization roadmap, the Empire Building 
+Challenge is funding the measures to be implemented before 2025
+Nordic design 
+principles 
+applied to 
+New York 
+real estate
+NYSERDA Investment
+EBC Funded Measure
+Private Investment
+$5 Million
+$30 Million +
+Hudson Square Partnership:
+Project Team:
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+
+
+--- page 42 ---
+Thermal Networks: enable heat sharing 
+between spaces
+Developing a hydronic loop operating at ambient 
+temperatures by converting the existing condenser water 
+riser. The ambient loop enables future optionality with the 
+integration of different heat sources and takes advantage 
+of simultaneous heating and cooling opportunities 
+between spaces and floors to reuse otherwise wasted 
+heat. 
+Electrification: take advantage of high 
+coefficient of performance
+Leverage the high efficiency of heat pump technologies, 
+enable grid interactivity, and take advantage of future 
+low-carbon electricity production planned by the state.
+345 Hudson will 
+demonstrate the 
+power of thermal 
+networking and 
+electrification
+Current Baseline
+Potential by 2030*
+75 kBtu/SF/yr
+38 kBtu/SF/yr
+24% Natural Gas  + 76% Electricity
+100% Electricity
+4,999 Ton CO2e/yr
+1,500 Ton CO2e/yr
+$204,000 /year of LL97 fines 
+starting in 2030
+$0 LL97 fines
+through 2030
+50%
+70%
+Learn more about the 
+345 Hudson project
+•
+High Rise / Low Carbon Partner 
+Profile: 345 Hudson
+•
+Empire Building Playbook: HSP 
+Case Study
+* These potential results are based on the best-case 
+scenario but are dependent on tenant plug loads and 
+tenant equipment fit-outs.
+Water Source Heat Pump by 
+Energy Machines
+
+
+--- page 43 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building 
+Energy
+Reduce
+Recover
+Partial 
+Electrification
+Full 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load and Recover 
+Wasted Heat
+• Ambient Loop Hydronic Spine: high 
+efficiency water-based distribution 
+system, lower supply temperature and 
+heat sharing between floors/zones
+• Dedicated Outside Air System (DOAS) 
+with Energy Recovery Ventilator 
+(ERV): decouple ventilation from heat 
+and cooling systems, and recapture 
+exhaust air energy to reheat fresh air 
+with 85% recovery
+• Tenant Conversion: install floor-by-floor 
+WSHPs and convert to hydronic low 
+temperature heating and high 
+temperature cooling
+• Window replacement (provisional): 
+reduce air infiltration
+Partial Electrification: right-
+size heat pump
+• Central ASHP + Adiabatic 
+Dry Cooler: heat supply and 
+heat rejection, maintain 
+design temperatures for 
+ambient loop
+Full Electrification: 
+replace/remove peak load 
+equipment
+• Thermal Storage 
+(provisional): leverage storage 
+for peak load
+• Thermal network 
+connection to neighboring 
+building: heat sharing 
+capability and leverage 
+geothermal pills in property 
+next door
+• Decommission natural gas 
+boilers
+
+
+--- page 44 ---
+345 Hudson Decarbonization Plan
+Key Takeaways: Eliminate on-site fossil fuel usage, phased-in implementation based on tenant turnover, 
+lower distribution temperatures, minimize wasted heat, heat sharing
+AFTER
+BEFORE
+Gas 
+Steam 
+Boiler
+Steam 
+System
+Water 
+source 
+tenant DX 
+Cooling 
+Units
+Cooling 
+towers, 
+condenser 
+water loop
+Central 
+H&V unit 
+with steam 
+coils
+Tenant Conversion Phase 1
+Remove steam radiators and water source DX cooling units
+Install 4-pipe hydronic, WSHP, fan-coil, radiant options
+Install Central ASHP and Adiabatic Dry Cooler
+Central plant to maintain design temp. for hydronic loop
+Install Ambient Loop Hydronic Spine
+Convert existing condenser water loop. 
+Install Central DOAS+ERV
+Fresh air supply with minimum 85% heat recovery
+Tenant Conversion Phase 2
+Phase-in tenant floor work based on tenant turnover lease
+Tenant Conversion Phase 3
+Provisional: Install rooftop Thermal Storage 
+to supplement central plant
+Provisional: Thermal network connection to neighbor
+new building with geothermal piles
+Provisional: Envelope Improvements
+Replace windows to improve air infiltration and reduce load
+2022:
+2023:
+2024:
+2025:
+2027:
+2029:
+Thermal 
+Network 
+Connection to 
+555 Greenwich
+Floor-by-floor 
+WSHP
+4-pipe 
+system to 
+tenant 
+terminal 
+units
+Ambient 
+Temp. 
+Hydronic 
+Spine
+DOAS + 
+ERV
+Thermal 
+Storage
+ASHP + Dry 
+Cooler
+Phase 
+1
+Phase 
+3
+Phase 
+2
+Heating
+Cooling
+Ventilation
+
+
+--- page 45 ---
+601
+Lexington
+•
+New York City
+•
+1.5 million SF
+•
+59 stories commercial
+•
+Office building built in 1977
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 46 ---
+601 Lexington Avenue anchors BXP’s Midtown Manhattan 
+campus, and the skyline itself, with a globally recognized 
+silhouette. The premier workplace building, with ground floor 
+retail, was constructed in 1977. The building’s infrastructure is 
+typical of NYC commercial high-rises of its vintage. Heating is 
+achieved with district steam and cooling is achieved by way of 
+a central plant featuring electric chillers and rooftop cooling 
+towers.    
+BXP strives to improve energy efficiency and has been 
+minimizing the use of district steam at the property since 2010. 
+This projects demonstrates a replicable decarbonization 
+solution in existing commercial high-rise buildings and joins a 
+list of energy conservation measures already deployed at the 
+property.    
+This project will deploy existing technology in a novel way, 
+creating a thermal network that recovers and utilizes heat 
+which would otherwise be rejected by the cooling towers. 
+The Empire Building Challenge is funding the demonstration 
+of condenser water heat recovery.
+Iconic midtown 
+office tower 
+modernizes by 
+recycling heat 
+NYSERDA Investment
+EBC Funded Measure 
+Private Investment
+$1.1 Million
+$2.5 Million 
+Project Team:
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+
+
+--- page 47 ---
+BXP deploys existing 
+technology in a 
+novel way to create a 
+thermal network to 
+re-use heat that 
+would otherwise be 
+discarded.
+Current Baseline
+Expected by 2035
+86.3 kBtu/SF/yr 
+73.6 kBtu/SF/yr
+69% Electricity + 31% District Steam
+88% Electricity + 12% District Steam
+3,920 tCO2e/yr
+2,899 tCO2e/yr
+15%
+26%
+Condenser Water Heat Recovery and Automated Bypass:
+The building condenser water system carries heat from tenant supplemental 
+systems to the cooling towers, where it is rejected to the atmosphere. Much of this 
+heat is constant in commercial office buildings and available year-round for 
+recovery. In the proposed measure, water-to-water heat pumps (WSHPs) will be 
+installed. They will replace the function of the cooling towers during the heating 
+season and will reclaim heat from the condenser water loop for beneficial use. An 
+automated bypass valve will divert condenser water from the cooling towers, 
+retaining as much heat in the building as possible for recovery by the WSHPs. The 
+heat recovered will be reused in the building’s heating systems and will 
+significantly offset reliance on fossil fuel-based steam.
+These measures will reduce annual steam consumption by an 
+estimated 30%.
+Potential Future Electrification:
+In addition to the WSHPs, air source heat pumps (ASHPs) will be installed to 
+produce low-temperature hot water to cover some of the remaining heating 
+loads. The project team plans to investigate ASHP infrastructure within the 
+physical space constraints of this occupied building to minimize reliance on steam 
+heating. 
+
+
+--- page 48 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building Energy
+Reduce & 
+Recover
+Partial 
+Electrification
+Fossil Fuel 
+Powered
+Partial Electrification: 
+Potential Future Measures 2034
+• Hydronic Coils for Ventilation 
+Preheat: Low temperature hot 
+water for preheating ventilation 
+air at select AHUs 
+• Air Source Heat Pumps: Use 
+ASHP to produce low 
+temperature hot water to serve 
+partial heating loads  
+Recover Wasted Heat: 
+EBC funded measure 2024
+• Condenser Water Heat 
+Recovery: Install WSHPs to 
+capture waste heat from the 
+condenser water loop. The 
+recovered heat will be reused 
+into the building’s perimeter 
+heating loop, reducing district 
+steam usage.
+
+
+--- page 49 ---
+601 Lexington Decarbonization Plan
+Key Takeaways: Recycle waste heat from the condenser loop and minimize reliance on district steam. Provide a 
+replicable model for waterside heat recovery industry-wide and integrate air-side heat recovery, where possible.
+AFTER
+BEFORE
+Heating
+Cooling
+Ventilation
+Zonal MAU
+Cooling 
+Towers
+Steam 
+Station
+District 
+Steam
+Chilled 
+Water Loop
+Electric 
+Chillers
+Tenant 
+Supplemental 
+Cooling Units
+Perimeter 
+Radiators
+Condenser 
+Water 
+Loop
+Steam
+Zonal MAU
+Cooling 
+Towers
+Steam 
+Station
+District 
+Steam
+Chilled 
+Water Loop
+Electric 
+Chillers
+Tenant 
+Supplemental 
+Cooling Units
+Perimeter 
+Radiators
+Condenser 
+Water 
+Loop
+WSHP
+ASHP
+Steam
+Condenser Water Heat Recovery
+Install WSHP to reclaim heat for re-use in the building’s 
+perimeter heating systems. An automated cooling tower 
+bypass valve will retain heat in the building, maximizing 
+heat available for recovery during the heating season.
+Hydronic Coils for Ventilation Preheat
+Install hydronic coils in select AHUs to supply low 
+temperature hot water for preheating ventilation air, keep 
+steam coils as back-up
+Heating and DHW Electrification: Air Source Heat 
+Pumps
+Install air source heat pumps. These will reclaim heat from 
+the atmosphere, to produce hot water for the remaining 
+heating loads. 
+2024:
+2034-2035:
+
+
+--- page 50 ---
+660 Fifth Ave.
+•
+New York City
+•
+1.4 million SF
+•
+41 stories commercial
+•
+office building built in 1957
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 51 ---
+Modern heat 
+recycling and 
+fresh air systems 
+help meet 
+accelerated 
+climate goals 
+Project Team:
+660 Fifth Ave is a 42-story commercial office building located in Midtown 
+Manhattan that is currently undergoing a full redevelopment to modernize 
+the building.    
+Brookfield Properties is leveraging the redevelopment of this property to 
+integrate decarbonization solutions that will upgrade its internal systems, 
+reducing its reliance on fossil fuels and positioning it for full decarbonization 
+by 2035.   
+The decarbonization plan for this property utilizes a variety of solutions that 
+will cut energy use, recycle heat that would otherwise be wasted, and electrify 
+existing building systems. 
+As part of the overall carbon neutrality roadmap, the Empire Building 
+Challenge is funding the measures starting implementation in 2023 and 
+2024, including: lower distribution temperatures, thermal network expansion 
+and waterside heat recovery.
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+NYSERDA Investment
+EBC Funded Measures
+Private Investment
+$3 Million
+$6.7 Million 
+
+
+--- page 52 ---
+Current Baseline
+Expected by 2035
+119.5 kBtu/SF/yr 
+47.9 kBtu/SF/yr
+62% Electricity + 38% District Steam
+94% Electricity + 6% District Steam
+12,508 Ton CO2e/yr
+3,059 Ton CO2e/yr
+$340,000 /year of LL97 fines 
+starting in 2030
+$0 LL97 fines
+starting in 2030
+60%
+76%
+Brookfield 
+demonstrates a 
+multi-faceted, 
+strategic approach 
+to decarbonization 
+of a high-rise office 
+building
+Energy Load Reduction:
+Brookfield is incorporating several measures to immediately reduce the 
+building’s steam demand and enable strategic implementation of low carbon 
+heating solutions. These include:  
+•
+Replace single pane windows with an insulated curtain wall.  
+•
+Replace steam turbine chillers with electric chillers.  
+•
+Install a full energy recovery dedicated outdoor air system (DOAS), which 
+separates the building's ventilation system from the heating system, 
+allowing each to operate independently.  
+•
+Optimize the existing hydronic system to lower heating hot water supply 
+temperatures and enable integration of air source heat pumps in the 
+future.
+Maximize Heat Recovery: 
+This project utilizes water source heat pumps in a variety of heat recovery and 
+reuse applications to dramatically reduce steam use throughout the building. 
+The team looks to maximize heat recovery by integrating retail and tenant 
+supplemental cooling loops to the main condenser water loop. 
+
+
+--- page 53 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building Energy
+Reduce
+Recover
+Partial 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+•
+New Façade: install new 
+insulated curtain walls   
+•
+Lower Heating Distribution 
+Temperatures: reduce heating 
+hot water supply temperatures to 
+120-130F 
+Recover Wasted Heat
+•
+Thermal Network Expansion: 
+connect retail tenant condenser 
+water loop to main condenser 
+water loop to maximize 
+waterside heat recovery 
+•
+Waterside Heat Recovery: 
+recapture heat from condenser 
+water loop using WSHPs (Lobby, 
+Garage, DHW production) 
+•
+Energy Recovery DOAS: 
+recapture heat from ventilation 
+exhaust to condition make-up 
+air, energy recovery units 
+replacing high-pressure 
+induction system 
+Partial Electrification
+•
+Electric Chillers: replace 
+steam turbine chillers to 
+electric chillers  
+•
+Air Source Heat Pumps: 
+ASHP to provide 
+supplemental heating and 
+cooling 
+
+
+--- page 54 ---
+660 Fifth Ave Decarbonization Plan
+Key Takeaways: Building Redevelopment, Reduce district steam usage, Maximize waterside heat recovery, Lower 
+heating hot water temp., DOAS with ERV, Remove perimeter induction units 
+AFTER
+BEFORE
+Heating
+Cooling
+Ventilation
+Steam 
+Station
+Perimeter 
+fin-tube 
+radiators
+District 
+Steam
+Retail 
+tenant 
+cooling 
+loop
+Steam to 
+HHW Heat 
+Exchanger
+Garage 
+MAU with 
+hydronic 
+coils
+Lobby AHU 
+with hydronic 
+coils
+DOAS + ERV
+Electric 
+Chillers
+Lobby 
+WSHP
+WSHP
+DHW 
+WSHP
+Cooling 
+Towers
+ASHP for 
+supplemental 
+heating and 
+cooling
+Insulated 
+Curtain 
+Walls
+Perimeter Terminal Units
+Replace high pressure perimeter induction units with fin-
+tube radiators
+Electric Chillers
+Replace steam turbine chillers with electric chillers
+Lobby Heat Pump Chiller
+Replace lobby chiller with WSHP to supply heating and 
+cooling reusing hydronic coils in lobby AHU
+Install DOAS+ERV
+Replace Make-up Air Unit (MAU) supplying high pressure 
+perimeter induction units with energy recovery DOAS with 
+heating/cooling coils
+Garage Ventilation Heat Pump
+Install water source VRF heat pump to provide minimum 
+heating, replacing steam coils in the garage MAU
+Domestic Hot Water WSHP
+Waterside heat recovery using WSHPs to produce DHW
+Thermal Network Expansion
+Connect retail tenants to main condenser water loop to 
+maximize waterside heat recovery
+Lower Distribution Temperatures
+Reducing heating hot water supply temperature to 120-130F
+Envelope Improvements
+Replace single pane windows with no wall insulation with 
+insulated curtain wall
+Air Source Heat Pumps
+Install ASHPs to provide supplemental heating and cooling
+2022:
+2023:
+2024:
+2026:
+Steam 
+Station
+Perimeter 
+Induction 
+Units with 
+HHW and 
+CHW coils
+District 
+Steam
+Retail 
+tenant 
+cooling 
+loop
+Steam to 
+HHW Heat 
+Exchanger
+Garage 
+MAU with 
+steam coils
+Lobby AHU with 
+steam and 
+CHW coils
+MAU for 
+perimeter 
+induction 
+units
+Steam 
+Turbine 
+Chillers
+Cooling 
+Towers
+Lobby 
+Chiller
+Steam
+
+
+--- page 55 ---
+Lefrak City 
+Plaza
+•
+Queens, NY
+•
+396,000 SF
+•
+20 stories commercial
+•
+office building built in 1970
+Source: XXXXXXXXXXXXXXX 
+59-17 
+Junction Boulevard
+
+
+--- page 56 ---
+Leveraging end-
+of-life building 
+upgrades to 
+support 
+decarbonization 
+and ensure 
+climate resiliency. 
+Project Team:
+59-17 Junction Boulevard is a commercial office building located in Queens, 
+New York. The building is heated and cooled by a dual temperature 2-pipe 
+hydronic system and a central plant that has reached the end of its useful life, 
+due in part to damage sustained during Hurricane Ida in 2021.    
+LeFrak will leverage these necessary upgrades to install modern, low-carbon 
+solutions that will bring the property to carbon neutrality by 2035, and 
+safeguard critical building systems from future climate events.
+The decarbonization approach employed by the project team involves 
+electrifying the central plant, incorporating heat recovery measures to utilize 
+heat that would otherwise be wasted, and transition thermal loads away from 
+inefficient steam usage. It will do so with limited disruption to its anchor 
+tenant which occupies the entire building. 
+As part of the overall decarbonization roadmap, the Empire Building 
+Challenge is funding the enabling steps for heat recovery, involving hydronic 
+piping work to separate core and perimeter loops. 
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+NYSERDA Investment
+EBC Funded Measure
+Private Investment
+$3 Million
+$6.7 Million 
+
+
+--- page 57 ---
+Current Baseline
+Expected by 2035
+103.5 kBtu/SF/yr 
+51.3 kBtu/SF/yr
+54% Natural Gas + 46% Electricity
+100% Electricity
+3,330 Ton CO2e/yr
+358 Ton CO2e/yr
+$340,000 /year of LL97 fines 
+starting in 2030
+$0 LL97 fines
+starting in 2030
+50%
+89%
+LeFrak 
+demonstrates how 
+to reconfigure an 
+inefficient system to 
+allow core and 
+perimeter zones to 
+exchange energy.
+Thermal zoning and enabling heat recovery:
+The existing, inefficient 2-pipe system, which only allows the building to be 
+in heating or cooling mode, will be re-pipped to create two separate 
+hydronic zones. This will allow the newly independent core and perimeter 
+zones of the building to exchange heat as needed.    
+This piping work will incorporate heat exchangers to possibly connect with 
+adjacent buildings also owned by LeFrak that are mostly residential and 
+create a community thermal network to share loads.
+Electrification: 
+Beginning in 2023, the existing fossil fuel driven plant will be 
+decommissioned, and a new plant that enables decarbonization will be 
+installed, including modular electric chillers with heating and cooling 
+capabilities.
+
+
+--- page 58 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building Energy
+Reduce
+Recover
+Partial 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+•
+Building Management System 
+(BMS): Install new BMS for better 
+integrated control of HVAC 
+equipment and lower distribution 
+temperature
+Recover Wasted Heat
+•
+Enabling Heat Recovery: New 
+piping work to separate core and 
+perimeter hydronic systems and 
+operate them independently. 
+Install heat exchangers to 
+facilitate heat recovery between 
+core and perimeter using electric 
+modular chillers  
+•
+Heat Recovery Ventilation: 
+Install Energy Recovery 
+Ventilators (ERV) to recapture 
+wasted heat and pre-condition 
+fresh air. 
+Partial Electrification
+•
+Electric Chillers: Replace 
+existing fuel fired steam 
+absorption chillers with 
+electric modular chillers that 
+can provide heat recovery  
+•
+Thermal Network 
+Connection: Install heat 
+exchangers and auxiliary 
+connection to allow a future 
+connection to a campus-
+wide thermal energy 
+network. 
+
+
+--- page 59 ---
+LeFrak City Plaza Decarbonization Plan
+Key Takeaways: Re-piping to enable heat recovery, Heat Recovery Chillers, Elimination of Steam Boilers and 
+absorber chillers, Thermal Energy Network connection, Building Management System (BMS) 
+AFTER
+BEFORE
+Heating
+Cooling
+Ventilation
+Enabling Heat Recovery
+New piping work to separate core and perimeter hydronic 
+systems and operate them independently. Install heat 
+exchangers to facilitate heat recovery between core and 
+perimeter using electric modular chillers
+Enabling Thermal Energy Network Connection
+The heat recovery chiller plant will have an auxiliary 
+connection and heat exchanger allowing a future 
+connection to a campus-wide thermal energy network.
+Electric Modular Chillers and BMS
+Replace damaged steam chillers with electric modular 
+chillers for electric cooling and enable waterside heat 
+recovery. This is a first step toward eliminating on-site 
+natural gas use. A new BMS system will allow better, 
+integrated control of HVAC systems.
+Electric Capacity
+Expand electrical capacity and provide backup generation 
+for resiliency. The measure will allow additional, layered 
+heat generation needed to meet peak heating loads.
+Heat Recovery Ventilation
+Extract additional heat and cool from outgoing exhaust 
+and redirect back into the building.
+2024:
+2024-2025:
+2025:
+2026+:
+Tenant 
+water-
+cooled 
+AC
+Independent 
+Dual Temp. 
+Hydronic 
+Risers
+Chilled 
+Water
+Core Air 
+Handling 
+Units
+Perimeter 
+Fan Coil 
+Units
+Cooling towers, 
+condenser 
+water loop
+Central MAU 
+with ERV
+Heating 
+Hot Water
+Gas-fired 
+condensing 
+boilers
+Heat 
+Recovery 
+Chillers
+To Thermal Energy 
+Network
+Tenant 
+water-
+cooled 
+AC
+Gas-fired 
+Steam 
+Boiler
+Steam 
+Absorber 
+Chiller
+Dual 
+Temp. 
+Hydronic 
+Risers
+Chilled 
+Water
+Core Air 
+Handling 
+Units
+Perimeter 
+Fan Coil 
+Units
+Cooling towers, 
+condenser 
+water loop
+Central MAU
+Steam to HHW 
+Heat Exchanger
+Exhaust 
+Ventilation
+Heating 
+Hot Water
+
+
+--- page 60 ---
+520 Madison 
+Avenue
+•
+New York City
+•
+1,000,000 SF
+•
+43 stories commercial
+•
+office building built in 1982
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 61 ---
+520 Madison Avenue is a class A commercial office building located in 
+Midtown Manhattan with ground floor retail and restaurant spaces. The energy 
+profile of this property is strong, with an 87.4 EUI and energy grade of A based 
+on 2019 baseline.
+Tishman Speyer is planning a lobby upgrade and restaurant renovation for the 
+building and is leveraging these improvements to simultaneously upgrade the 
+building systems. These upgrades will help position the property to reach 
+carbon neutrality by 2035.
+This project will involve reduction of energy loads, recovery and reuse of heat 
+that would conventionally be wasted, and development of an urban 
+geothermal system. The European geothermal drilling technology slated for 
+this project has never been implemented in New York City for a building of this 
+size. In doing so Tishman Speyer sets a strong precedent for scalability and 
+replication of this solution throughout the high-rise office building market.
+Tishman Speyer 
+to drill for 
+geothermal 
+energy below 
+Madison Avenue
+Project Team:
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+NYSERDA Investment
+Roadmap Phase 1
+Private Investment
+$3 Million
+$22.2 Million
+
+
+--- page 62 ---
+Tishman Speyer 
+demonstrates how 
+to strategically 
+reduce loads, 
+recover heat, and 
+electrify equipment 
+over time
+2019 Baseline
+Expected by 2030
+87.4 kBtu/SF/yr
+28 kBtu/SF/yr
+3% Natural Gas + 67% Electricity + 30% 
+District Steam
+5% Natural Gas + 95% Electricity
+2,294 tCO2e/yr
+1,166 tCO2e/yr
+23%
+49%
+Enabling Steps:
+The project team’s vision for decarbonizing 520 Madison requires enabling steps 
+to significantly reduce heating loads and facilitate heat pump integration. This is 
+achieved via envelope improvements, waterside heat recovery, ventilation 
+upgrades and lower heating hot water supply temperatures.
+Electrification:
+Heat pumps will be deployed in various applications throughout the building to 
+electrify onsite heating loads. This includes water source heat pumps (WSHPs) for 
+heat recovery, ice heating and geothermal (ground source heat pumps or GSHPs) 
+combined with air source heat pumps (ASHPs) for the remaining heating load.
+Thermal Layering:
+The decarbonization approach for this project utilizes thermal layering, in which 
+multiple heat sources overlap to meet operational energy needs in the building 
+while minimizing the use of fossil fuels and carbon emissions.
+
+
+--- page 63 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building Energy
+Reduce
+Recover
+Electrification
+Fossil Fuel 
+Powered
+Phase 1:
+• Condenser Water Heat 
+Recovery: piping work and 
+Water Source Heat Pumps 
+(WSHPs) to recapture heat 
+from cooling systems 
+• Geothermal: UrbanGeo 
+drilling and ground sources 
+heat pumps
+Phase 1 – Partial 
+Electrification:
+• WSHPs: for UrbanGeo and 
+condenser water loop heat 
+recovery
+• Domestic Hot Water (DHW): 
+point of use electric water 
+heaters to reduce district 
+steam use
+Phase 2 – Full Electrification:
+• Air Source Heat Pump: 
+integrate ASHPs
+• Ice Heating: install ice storage 
+and use WSHPs to store and 
+extract heat
+• Thermal Layering: a multi-
+source approach using 
+advanced controls to combine 
+and integrate multiple 
+equipment to meet load
+Phase 2:
+• Thermal Network 
+Expansion: interconnecting 
+central plant components 
+allows for deeper heat 
+recovery and storage
+• Energy Recovery 
+Ventilator: expanded 
+DOAHU continues air side 
+heat recovery expansion
+Phase 1:
+• New Hydronic Distribution: 
+to serve new system while 
+transitioning to low supply 
+temperature and enable heat 
+pump integration
+• Façade efficiency upgrades 
+to bottom portion of tower
+Phase 2:
+• Dedicated Outside Air 
+System (DOAS): decouple 
+ventilation from heat and 
+cooling systems using 
+terminal DOAS delivery and 
+central DOAHU
+• Envelope upgrades to top 
+portion of tower
+
+
+--- page 64 ---
+520 Madison Decarbonization Plan
+Key Takeaways: Façade improvements, urban geothermal drilling, heat recovery, low temperature heating hot 
+water, DOAS, distributed electric DHW, ice heating and ASHPs
+AFTER
+BEFORE
+Heating
+Cooling
+Ventilation
+Steam 
+Station
+Perimeter 
+Finned Tube 
+Convectors
+District 
+Steam
+Steam 
+Riser
+Chilled 
+Water Riser 
+(CHW)
+Ice 
+Storage
+Ice 
+Chiller
+Central 
+Chiller
+Tenant 
+water-cooled 
+AC
+Ducted 
+cooling
+Ducted 
+cooling, 
+heating, and 
+ventilation
+Heating Hot 
+Water Riser 
+(HHW)
+Condenser 
+Water Riser 
+(CW)
+Cooling 
+Tower
+Central 
+AHUs
+Steam 
+Station
+DOAS
+Boxes
+Chilled 
+Water Riser 
+(CHW)
+Ice 
+Storage
+Ice 
+Chiller
+Central 
+Chiller
+Tenant 
+water-cooled 
+AC
+Ducted 
+cooling
+DOAS 
+Boxes
+Heating Hot 
+Water Riser 
+(HHW)
+Ground 
+Source 
+Heat 
+Pump
+District 
+Steam
+DOAS 
+Boxes
+DOAS + ERV
+UrbanGeo 
+Geothermal 
+Boreholes
+Floor 14 
+DOAS + ERV
+New windows, 
+wall insulation 
+and air sealing
+Cooling Tower
+ASHPs
+Condenser 
+Water Riser  
+(CW)
+Condenser Water Heat Recovery
+Install WSHPs to extract wasted heat from the condenser 
+water loop and serve perimeter heating loop.
+Ground Source Heat Pump
+Install water source heat pumps for the geothermal 
+borefield.
+Envelope Improvements
+Install new windows and improve air leakage.
+UrbanGeo Geothermal Drilling
+Use ground floor vacancy to drill a geothermal borefield 
+beneath the existing building footprint using UrbanGeo 
+technology. 
+2024:
+2024-2025:
+2025:
+2025-2030:
+Domestic Hot Water
+Install point-of-use electric DHW heaters to replace central 
+system
+2023:
+Central DOAS+ERV
+Install new central DOAS with ERV to condition fresh air. 
+Air Source Heat Pumps
+Addition of ASHP capacity to serve low temperature HHW.
+2026-2035:
+2028+:
+Ice Heating 
+Reuse ice storage tanks and WSHP to enable ice heating.
+Thermal Layering
+Combine multiple heating sources (Geothermal, ASHPs, 
+Heat Recovery, Ice Heating, Steam) and optimize 
+deployment.
+Tenant Fit-out: Terminal Unit DOAS Boxes
+Replace terminal units with DOAS boxes to accommodate 
+low temp. heating hot water and incorporate conditioned 
+air.
+2026+:
+
+
+--- page 65 ---
+PENN 1
+•
+New York City
+•
+2.5 million SF
+•
+57 stories commercial
+•
+office building built in 1972
+Source: XXXXXXXXXXXXXXX 
+
+
+--- page 66 ---
+PENN 1 is a commercial office building located in Midtown Manhattan that 
+houses commercial office and retail spaces. The building is heated and cooled 
+by district steam that is supplemented by the existing cogeneration plant.
+To enable phase-out of the cogeneration plant, Vornado plans to advance a 
+series of heat recovery and thermal storage solutions that will position PENN 1 
+for carbon neutrality by 2040.
+The decarbonization approach at Penn One integrates an innovative thermal 
+dispatch model, which allows the building to intelligently prioritize low-carbon 
+thermal resources for operational building needs ahead of those that are more 
+carbon intensive. This thermal layering strategy, enabled by electrification of 
+heating loads and heat recovery measures, will reduce energy use by 22% and 
+carbon emissions by 38% by 2030. 
+From this decarbonization roadmap, the Empire Building Challenge is funding 
+one measure to demonstrate condenser water heat recovery.
+Innovating with 
+existing
+technology that 
+is scalable, 
+practical and 
+affordable. 
+NYSERDA Investment
+EBC Funded Measure
+Private Investment
+$1 Million
+$3 Million 
+Project Team:
+Disclaimer: The project plan outlined in this 
+presentation is in its early design stage and can be 
+subject to potential changes in the future.
+
+
+--- page 67 ---
+Vornado 
+demonstrates 
+creative 
+decarbonization 
+with advanced heat 
+recovery solutions 
+and thermal 
+layering. 
+Current Baseline
+Expected by 2035
+167 kBtu/SF/yr
+49 kBtu/SF/yr
+31% Electricity + 14% District Steam + 
+55% Natural Gas
+100% Electricity
+18,750 tCO2e/yr
+1,638 tCO2e/yr
+$790,000 /year of LL97 fines 
+starting in 2030
+$0 LL97 fines
+starting in 2035
+71%
+91%
+Advanced Waterside Heat Recovery:
+This tactic will use water-source heat pumps (WSHP) to utilize heat from the 
+condenser water system to supplement heating hot water for the building’s 
+hydronic system. The WSHP method creates a “heat-lifting” machine that will raise 
+the temperature of hot water to match the building’s existing supply – usefully 
+extracting heat that would be otherwise be wasted and reducing steam heat 
+emissions.
+Thermal Layering:
+Heating loads are sequenced and prioritized to first engage low-carbon 
+resources to meet the building’s heating demand, and then use next-available or 
+higher carbon thermal resources to come online. For example, first use low carbon 
+electric thermal resources, then heat from the Cogen, and finally utility steam to 
+meet remaining demand. When the ASHPs are installed, they will be dispatched 
+second, as another low carbon alternative. This approach makes it possible to 
+meet peak heating loads during extreme cold events with relative ease and low 
+carbon emissions.
+
+
+--- page 68 ---
+Resource Efficient 
+Decarbonization 
+(RED):
+An incremental methodology 
+and integrated design process 
+combined with strategic capital 
+planning creates a path towards 
+carbon neutral buildings. 
+A holistic approach and phasing 
+can make decarbonization 
+technically and economically 
+feasible. 
+Existing 
+Conditions
+Building 
+Energy
+Reduce
+Recover
+Partial 
+Electrification
+Full 
+Electrification
+Fossil Fuel 
+Powered
+Reduce Energy Load
+• Envelope Improvement: 
+Triple pane glazing 
+Induction Units 
+Replacement: replace 
+constant volume 
+perimeter induction units 
+with VAV units  
+• Enhance Tenant Fit-out: 
+Install high-efficiency 
+equipment and engage 
+with tenants to ensure 
+best-in-class fit-out 
+during turnover 
+Partial Electrification:
+• Electric Chillers: Replace 
+steam absorption chillers 
+to electric chillers
+• Partial Air Source Heat 
+Pumps: Install ASHPs to 
+partially cover heating 
+load served by the 
+secondary hot water loop
+Full Electrification:
+• Cogen 
+Decommissioning: 
+Retire cogeneration plant 
+and eliminate on-site 
+fossil fuel usage, keep 
+district steam as back-up 
+• Ice Thermal Storage: 
+Install ice storage to 
+enable full-building 
+electrification by shifting 
+and support heating and 
+cooling peaks and 
+empower grid flexibility  
+• More ASHPs: Install 
+ASHPs to cover 
+remaining heating load 
+Recover Wasted Heat
+• Condenser Water Heat 
+Recovery: Install WSHPs 
+to recapture wasted heat 
+from the condenser 
+water loop 
+• Computer Room Air 
+Conditioning (CRAC) 
+Conversion: Convert 
+existing condenser water-
+cooled DX units to chilled 
+water-cooled unit to 
+maximize heat recovery 
+and improve cooling 
+efficiency
+
+
+--- page 69 ---
+Penn One Decarbonization Plan
+Key Takeaways: Minimize district steam usage, maximize waterside heat recovery, integrate air source heat pumps 
+where possible
+AFTER
+BEFORE
+Heating
+Cooling
+Ventilation
+Steam 
+Station
+District 
+Steam
+Steam to 
+HHW Heat 
+Exchanger
+Core AHU 
+with steam 
+coils and 
+CHW coils 
+Steam 
+Absorption 
+Chillers
+Cooling 
+Towers
+Cogen 
+Plant
+Natural 
+Gas
+Electricity 
+Generation
+Steam
+CRAC: condenser 
+water-cooled DX 
+cooling units
+Perimeter 
+Induction 
+Units with 
+hydronic coils
+Steam 
+Station
+District 
+Steam
+Steam to 
+HHW Heat 
+Exchanger
+Core AHU 
+with hydronic 
+coils 
+Electric 
+Chillers
+Cooling 
+Towers
+CRAC: chilled 
+water-cooled 
+units
+Perimeter 
+VAV units with 
+hydronic coils
+Heat Recovery 
+Heat Pump
+ASHP
+ASHP
+Triple Pane 
+Glazing
+Ice 
+Storage
+Ice 
+Chiller
+Induction Unit Replacement
+Replace constant volume induction units with Variable Air 
+Volume (VAV) units
+Electric Chillers
+Replace steam absorption chillers with electric chillers
+Computer Room Air Conditioning (CRAC) Conversion
+Convert existing condenser water-cooled DX units to 
+chilled water-cooled units. Maximize heat recovery
+Cogen Decommissioning
+Retire cogeneration plant and eliminate on-site fossil-fuel 
+usage, keep district steam as back-up
+Condenser Water Heat Recovery
+Install WSHPs to reclaim rejected heat
+Envelope Improvements
+Replace existing curtain wall glazing with triple pane
+Ice Storage System
+Install ice storage to support peak demand
+2022:
+2023:
+2029:
+Partial Air Source Heat Pumps
+Install ASHPs to electrify heating and inject to secondary 
+HHW 
+Enhanced Tenant Fit-out
+Engage tenants during turnover to ensure best-in-class fit-
+out
+2024:
+2025:
+More Air Source Heat Pumps
+Install ASHPs to electrify the remaining heating load
+2030+:

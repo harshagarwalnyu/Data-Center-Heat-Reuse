@@ -1,0 +1,1993 @@
+SOURCE: Source Documentation\district-energy-application-guide-district-energy-2018-master-en.pdf
+
+
+--- page 1 ---
+APPLICATION GUIDE
+DISTRICT ENERGY 
+
+
+--- page 2 ---
+CONTENT
+3
+2
+Introduction.................................................................................................................................................... 4
+Definition of district energy............................................................................................................ 6
+		
+District Heating (DH)....................................................................................................................... 6
+		
+District Cooling (DC)........................................................................................................................ 7
+		
+Connection between heating and cooling........................................................................... 7
+A brief history of district energy................................................................................................. 8
+		
+District heating.................................................................................................................................. 8
+		
+District cooling.................................................................................................................................10
+Consumer installations.....................................................................................................................11
+	
+Direct systems...................................................................................................................................12
+		
+Indirect systems...............................................................................................................................13
+	
+Mixing loop connection...............................................................................................................16
+	
+Hot water production....................................................................................................................17
+Heat transmission net........................................................................................................................20
+		
+Large consumers.............................................................................................................................20
+District cooling...........................................................................................................................................21
+Settlement of consumption and tariffs.............................................................................21
+		
+Smart meters....................................................................................................................................23
+Load profiles globally............................................................................................................................24
+Design and operation of the network.................................................................................26
+	
+A double pipe distribution system..........................................................................................26
+	
+Installation of underground pipes..........................................................................................30
+	
+SCADA, Supervisory Control and Data Acquisition.........................................................30
+		
+Network analysis and temperature optimisation..........................................................31
+Generation of heating and cooling .......................................................................................33
+	
+Thermal needs..................................................................................................................................33
+Energy conservation and impact on climate and environment................34
+Combined heat and power generation..............................................................................36
+	
+Other available heat sources.....................................................................................................40
+		
+Generation of cooling in combination with heat and power....................................42
+Water treatment.......................................................................................................................................44
+Thermal energy storage systems.............................................................................................44
+The Danish example.............................................................................................................................50
+		
+Smart citiies for the future.........................................................................................................54
+Conclusion......................................................................................................................................................55
+PREFACE
+Access to energy has been a prerequisite for 
+generations wishing to create healthy and 
+sound living conditions for themselves and their 
+offspring. To be able to live in a comfortable and 
+warm home has always been desirable since 
+early times. 
+Energy is vital to the functioning of our socie-
+ties. We need solutions that make it possible 
+to combine sound economic growth with little 
+environmental impact. District energy (district 
+heating and cooling) is the key to sustainability. 
+Its infrastructure enables the biggest carbon 
+footprint reductions by allowing cities to utilise 
+potential renewable energies and surplus heat 
+that otherwise would be wasted, thereby sub-
+stituting fossil fuels.
+More than half of the energy we use for con-
+ventional heating and cooling is wasted. The 
+fundamental idea of district energy is simple: 
+reusing/recycling surplus energy that otherwise 
+would be wasted.
+District energy systems are therefore essential 
+for reducing CO2 emissions and increasing 
+energy efficiency in our cities, communities and 
+campuses.
+The environmental, economic and social 
+benefits of harvesting surplus heat and using 
+local renewable energy sources make district 
+heating and district cooling the sensible choice 
+for communities seeking to promote economic 
+growth while minimising the environmental 
+consequences. 
+Increasing urbanisation makes it vital to create 
+solid systems which effectively and easily pro-
+vide heating and cooling for future generations. 
+District heating and cooling can offer a sub-
+stantial solution to a number of the challenges 
+that modern societies are facing these years. 
+An increasing number of people choose to live 
+in mega cities, which increases the load on the 
+existing energy systems. 
+As more and more societies are searching for 
+renewable energy sources to utilise, challenges 
+like fluctuations in the electric grid occur, as 
+power is sometimes produced at times when 
+there is no or little need for it. Here, district 
+energy systems can “level” these fluctuations 
+by providing energy storage possibilities. This is 
+just one example of the numerous advantages 
+that district energy systems offer. We hope that 
+the content in this application guide will interest 
+the reader enough for him/her to investigate 
+this subject in more detail. We believe that 
+these are optimal solutions for society’s imme-
+diate and long-term requirements.  
+Anders Nielsen
+Application Manager 
+Grundfos Commercial 
+Building Services
+
+
+--- page 3 ---
+INTRODUCTION
+5
+4
+INTRODUCTION
+In recent years, global energy consumption 
+has been increasing rapidly. This is a serious 
+challenge to the supply security of sufficient 
+amounts of energy at reasonable prices as well 
+as for the local environment – particularly in 
+large city areas – and not least for the global 
+climate. Many people, governments and 
+organisations around the world acknowledge 
+the need for a more rational use of energy. 
+The focus is very much on the development 
+of new technologies to improve efficiency in 
+buildings, transportation and industry; also, 
+the exploitation of sustainable and renewable 
+energy sources such as geothermal, solar 
+and wind power and bio energy should be 
+strengthened.
+District heating and cooling systems offer great 
+potential for a more rational use of energy 
+and a much greater use of sustainable energy 
+sources. This guide is meant to introduce and 
+describe the characteristics of contemporary 
+district energy systems, their background 
+and the great potential of this technology for 
+modern towns and cities.
+In this guide we have described some of the 
+most important issues of district heating and 
+cooling systems. These are mainly related to 
+rational use of energy, energy conservation 
+and environmental improvements. The 
+preconditions of any district energy plant 
+depend very much on local conditions. These 
+comprise issues like climate, culture, city 
+structure, building design and admission to 
+energy resources. In other words, two district 
+energy systems will never be identical. 
+Therefore, this guide describes a number of 
+factors and aspects to take into consideration in 
+connection with planning, design, construction 
+and operation of new systems and is mainly 
+meant for inspiration in the seek for better 
+energy solutions in the future.
+District heating transmission pipes
+
+
+--- page 4 ---
+DEFINITION OF DISTRICT ENERGY
+7
+6
+DEFINITION OF
+DISTRICT ENERGY
+District Energy (DE) is a term covering both dis-
+trict heating and district cooling systems. The 
+two types of services – or utilities – are similar 
+infrastructures able to provide heating or cool-
+ing to a number of buildings. In both cases, 
+the infrastructure consists of a double pipe 
+network, connecting the energy station with 
+each costumer connected to the system. Such 
+systems may cover one or more districts with a 
+high density of buildings in a city. To an increas-
+ing extent, new city districts or new towns are 
+supplied entirely with DE, and in many cases 
+existing towns or cities use DE to a very high 
+extent (more than 90%).
+District Heating (DH)
+In DH systems, hot water is pumped through 
+the flow pipe line to the consumers, passes 
+through the consumers’ heating systems where 
+the water releases its energy to the buildings 
+and flows back to the station for reheating. In 
+contemporary systems, typical flow and return 
+temperatures may be around 75 °C and 35 °C, 
+respectively. Low temperature systems, how-
+ever, are gaining ground these years. In such 
+systems, flow and return temperatures may be 
+as low as 60/30 °C or even 55/25 °C. Some older 
+DH systems operate on steam instead of water.
+District Cooling (DC)
+In DC systems, the outgoing water is cooled 
+to below ambient temperature and is then 
+forwarded to the consumer where the excess 
+heat from the building’ air conditioning plant is 
+transferred to the DC water. The heated water is 
+returned to the plant for re-cooling in different 
+types of chillers. The excess heat then has to 
+be rejeceted to the surroundings or recycled 
+for use in a district heating system. The flow 
+temperatures of contemporary DC systems may 
+be about 10 °C and the return temperatures 
+about 20 °C. Older systems were often designed 
+for 4/12 °C.
+Connection between 
+heating and cooling
+The maximum heating and cooling loads of a 
+building in the winter and summer, respectively, 
+are often about the same level. Depending on 
+the location, the duration of the period for heat-
+ing and cooling is seldom the same. In northern 
+Europe, for example, the heating season is 
+longer than the cooling season. However, with 
+an increasing number of electrical appliances 
+such as computers and servers in modern office 
+buildings, there is an increasing need for cooling 
+in office buildings throughout the year; also, DH 
+normally runs throughout the summer in order 
+to cover the demand for hot sanitary water.
+Construction of a large district heating mainline through the 
+centre of a city.  
+
+
+--- page 5 ---
+A BRIEF HISTORY OF
+DISTRICT ENERGY
+District Heating
+Apart from some known examples in the 
+Roman Empire where water from hot springs 
+was channelled under the floors of buildings 
+in order to heat rooms, district heating on an 
+industrial scale was first built in the USA by the 
+end of the 19th century. 
+1. generation
+These first generation systems were built 
+for using steam; after heating the buildings, 
+the condensate was transferred to the sewer 
+systems. However, later systems were built with 
+return lines for the condensate which reduced 
+the loss of water and of energy, as the system 
+became a loop system with reheating of the 
+condensate. 
+2. generation
+At the beginning of the 20th century, second 
+generation systems based on high temperature 
+water (over 120 °C) appeared. Many large cities 
+in Europe took up the idea of DH in combina-
+tion with electrification where waste heat 
+from turbines or engines in local power plants 
+could be used for heating purposes. Typically, 
+the centres of cities with a large number of 
+public buildings were supplied, and over time 
+these systems also grew to include multi-storey 
+housing areas. As for the first generation plants, 
+connections to consumer plants took place via 
+heat exchangers due to the high temperatures 
+and high pressures of these plants. DH plants of 
+this type were built in large numbers in western 
+and central Europe, Russia and Asia.
+3. generation
+Third generation systems are characterised by 
+the use of hot water at temperatures below 
+120 °C. A very large number of such plants 
+were built in Denmark in the second half of the 
+20th century. In fact, a large share of all Danish 
+homes and a large number of institutional, 
+industrial and business buildings are heated 
+this way. The great majority of these plants are 
+connected to consumer installations without 
+heat exchangers, which means that the DH 
+water from the generation plants circulates 
+all the way through the pipe network into the 
+radiators and other installations of each house 
+and back. However, hot water tanks or heat 
+exchangers for hot sanitary water supply are 
+installed in the houses. 
+Typically, these plants were operated at flow 
+temperatures around 80 °C, and it appeared 
+possible to achieve return temperatures in such 
+plants of around 40 °C. However, in very hilly 
+cities with large elevations or in tall buildings, 
+high static pressures could prevail. In such 
+cases, it was necessary to use heat exchangers 
+to separate the internal piping in the house 
+from the distribution network. Today, the sys-
+tems are typically operated at lower tempera-
+tures for most of the year. 
+The use of fairly low DH temperatures made 
+it possible to extract steam from turbines 
+in combined heat and power plants at low 
+pressures which contributed to a high total 
+efficiency as relatively more electric power could 
+be generated compared to plants built for high 
+temperature DH systems. With low tempera-
+tures, greater utilisation of industrial waste 
+heat, geothermal energy and for instance solar 
+energy was also possible. 
+A BRIEF HISTORY OF DISTRICT ENERGY
+9
+8
+District heating plays a substantial role in Denmark. Some 450 
+plants – large and small – supply DH to 1,6 million homes. This 
+corresponds to about 64% of all homes and in addition a large 
+number of institutions and businesses are supplied.
+
+
+--- page 6 ---
+CONSUMER INSTALLATION
+11
+10
+In order to further improve the system effi-
+ciency of DH systems, the fourth generation is 
+now appearing. Lower energy needs in better 
+insulated houses, improved technologies in 
+piping systems, compact heat exhangers or 
+flat stations for the preparation of hot sanitary 
+water, control equipment and optimisation 
+software etc. is the background for this devel-
+opment which is happening smoothly. It has 
+already been shown in a number of applications 
+how it is possible to further reduce and control 
+flow temperatures according to day-to-day and 
+hour-to-hour needs; accordingly, lower return 
+temperatures are also achieved. 
+A number of targeted demonstration systems 
+have been introduced, using new types of twin 
+pipes with very small dimensions in order to 
+reduce heat loss, and a wide range of related ini-
+tiatives such as the use of smart equipment for 
+the preparation of hot sanitary water are seen 
+these years. A large-scale international R&D 
+project managed in Denmark called “Fourth 
+Generation District Heating” (www.4dh.dk) has 
+been launched and will focus on all aspects of 
+smart district heating in the near future.
+District Cooling
+DC systems have been known since the middle 
+of the last century. The concept is similar to DH 
+apart from the fact that the purpose is to cool 
+buildings; that is, to remove heat arising from 
+solar radiation, office equipment, lightning and 
+human activity etc. in the buildings. Cooling 
+load peaks during the summer, but even during 
+winter the need for cooling is large. 
+One of the first known examples of a district 
+cooling plant was in Hartford, Connecticut and 
+was based on cold river water taken in and used 
+for circulation in a city centre plant. Since then, 
+a very large number of much more advanced 
+and larger systems have been developed and 
+are in operation throughout America, Europe 
+and the Middle and Far East. The production 
+plants for cooling are fundamentally very differ-
+ent from heating plants, and generally speaking 
+they are much more complex in nature. Cooling 
+plants may be electrically driven compressor 
+plants and/or heat driven absorption plants, 
+and this kind of equipment has been subject to 
+considerable development over the past thirty 
+years. Also, free cooling in the shape of sea or 
+lake water is used in such plants in combination 
+with traditional chillers.
+DC plants are based on the same ideas and ben-
+efits as for DH plants: economy of scale, a more 
+rational use of energy, and a lower demand for 
+user maintenance, as professional staff takes 
+care of the centralised plant. In addition, when 
+DC and DH are operated together, the interac-
+tion between the generation of power, heat and 
+cooling can be beneficial for all services with 
+regard to economy and energy conservation. 
+4. generation
+PE protecion casing
+Diffusion barrier
+PE foam isulation
+Leak detection wires
+Media pipes in 
+steel, copper or PEX
+Twin pipe
+
+
+--- page 7 ---
+CONSUMER INSTALLATION
+13
+12
+CONSUMER
+INSTALLATIONS
+Direct systems
+The connection between a DH distribution net-
+work and the heating installations in buildings 
+can be either direct or indirect. 
+In direct systems, the DH water is led directly 
+into the internal piping system of the house 
+and circulates through the radiators. It also 
+provides the heat exchanger or the hot water 
+tank with hot sanitary water. In direct systems, 
+the maximum pressure of the system should be 
+kept low - normally 6 bar. A direct connection 
+is a very simple and low cost way to connect to 
+a consumer installation. The drawback is that 
+the consumer will have no means of adjusting 
+the incoming temperature set by the DH plant. 
+Instead, the temperature set by the plant needs 
+to be within a range that is suitable for the con-
+sumers to use. The advantage of a direct system 
+is the possibility for operation with very low 
+flow and return temperatures, as the tempera-
+ture drop over a heat exchanger can be avoided. 
+On the other hand, a maximum pressure of 6 
+bar is only possible in districts with moderate 
+hills in order not to get a too high static pres-
+sure in the system. For the same reason, the 
+height of buildings should also be moderate.
+Indirect systems
+In indirect systems, a heat exchanger will 
+separate the DH system water from the central 
+heating water circulating inside the house to be 
+heated. In this case, the pressure levels in the 
+DH system and in the house internal system do 
+not need to be the same. .
+Typically, an indirect system will need DH flow 
+temperatures about 10 °C higher than direct 
+systems, and in addition, circulation pumps 
+will be needed in each building. Also the return 
+temperature will be about 10 °C higher.
+A heat exchanger is used in both District 
+Heating and District Cooling applications. The 
+advantage is that the heat exchanger enables 
+hydraulic separation between the second-
+ary side and the primary side. Because of this 
+hydraulic separation there will be no impact on 
+the primary side if a pipe bursts on the second-
+ary side. At the same time, the advantage for 
+Direct connection between the district heating network and consumer installations
+Indirect connection between the district heating network and consumer installations. 
+District 
+heating
+network
+District 
+heating
+network
+
+
+--- page 8 ---
+CONSUMER INSTALLATION
+15
+14
+the consumer is that only a limited amount of 
+water will leak.
+The advantages of having a heat exchanger are 
+not limited to the hydraulic separation. 
+In most cases, the temperature provided by the 
+district energy plant can be either reduced (for 
+heating applications) or increased (for cooling 
+applications). By doing this, thermal losses 
+will be reduced at the consumer side. Experi-
+ence shows that savings of up to 20% can be 
+achieved in a heating application by adding this 
+type of temperature adjustment.
+The heat exchanger will allow the consumer to 
+adjust the flow temperature on the secondary 
+side to what is actually needed. This is typically 
+done by automatically adjusting the control 
+valve on the primary side. The set point for this 
+valve is given by a climate control unit, often 
+called a weather compensation unit in heating 
+applications. In this way, the flow temperature 
+is adjusted according to the outdoor tempera-
+ture. 
+Temperature levels and flow rates in a district 
+heating system has to be seen in the same 
+context: A high flow temperature enable a low 
+return temperature and therefore a relatively 
+small flow rate and low pumping costs. On the 
+other hand, low flow and return temperatures 
+means that the heat loss from the network is 
+low. The optimised balance therefor should 
+comprise the cost of electricity and the cost of 
+heat at the location of the system. This complex 
+optimisation is what is incorporated in the con-
+temporary optimisation programs presented in 
+the chapter Network analyses and temperature 
+optimisation. 
+ 
+Example of a plate heat exchanger (PHE) from the 
+company Danfoss. 
+Brazed heat exchangers: 
+Light weight, small dimensions, competitive price. 
+Cleaning only by flushing, no repair possible, max capac-
+ity ~ 2 MW 
+ 
+Gasketed heat exchangers:
+Heavy construction, can be opened for cleaning and 
+repair.
+Max capacity 30-50 MW
+Rear cover plate
+Channel plate / primary side
+Channel plate / secondary side
+Connection
+Cover plate
+Basic principles of a plate heat exchanger
+-	 The heat exchangers are made of form-pressed stainless steel plates between which the flow channels are created.
+-	 The heavy turbulence and counter flow principle enables an efficient heat transfer 
+-	 The principal basic BPHE (brazed plate heat exchanger) design relies onis constructed using a series of thin corrugated 
+Stainless 	
+	
+	
+Steel plates that are brazed together with Copper 
+-	 Every second plate is turned 180°to create separate flow paths for liquid
+
+
+--- page 9 ---
+HOT WATER PRODUCTION
+17
+16
+Mixing loop connection
+A Mixing loop connection enables the con-
+sumer to adjust the flow temperature according 
+to the actual need by adjusting the control valve 
+on the primary side. When the valve is partially 
+closed, a certain amount of water is re-circu-
+lated into the flow pipe, so the flow tempera-
+ture on the secondary side will be a mixture 
+of the primary flow pipe temperature and the 
+secondary return pipe temperature.
+The reason for adjusting the flow temperature 
+is to adapt to the different load needs during 
+the day, based on e.g. the load of the building 
+in terms of persons, computers, lighting etc. 
+The load also fluctuates over the year based on 
+actual local weather conditions. 
+Mixing loop connection enabling the user to adjust flow temperature to actual need. 
+HOT WATER 
+PRODUCTION
+Hot sanitary water can be provided in several 
+ways. The traditional solution is using a hot 
+water tank with an internal spiral is shown 
+below.
+Hot water tank
+Source: Viessmann
+Hot water outlet
+Cold water inlet
+District heating return 
+District heating flow
+Hot water circulation
+A typical load duration curve for district heating.
+Hours per year
+Load %
+Peak load
+Intermediate load
+2000
+4000
+6000
+8000
+Basic load
+0
+
+
+--- page 10 ---
+HOT WATER PRODUCTION
+19
+18
+In recent years, it has become common to use 
+heat exchangers due to the limited space need 
+of these units. Another advantage, and not the 
+least, is the high efficiency which enables hot 
+water production with a relatively low primary 
+temperature. An example of a relatively simple 
+installation is shown below.
+In situations where the peak load for hot water 
+exceeds the capacity from the district heating 
+network, one solution can be to install a heat 
+exchanger in combination with a hot water 
+tank, a so called charging circuit. 
+Using this solution, the “charging” period can 
+be extended and sufficient amounts of hot 
+water can be held “in stock”, capable of suf-
+ficient supply at peak loads. Another benefit is 
+this system’s ability to deliver the return water 
+to the district heating network at a relatively 
+low temperature. 
+For all types of hot water production, special 
+precautions should be made regarding sanitary 
+conditions to avoid for example legionella. This 
+topic will not be dealt with in this leaflet, but is 
+touched upon in the Disinfection Guide. 
+When a plate heat exchanger is part of the hot 
+water system, lime scaling and how to avoid 
+this should also be addressed, as it can have 
+A hot water charging system with a storage tank
+Plate heat exchanger installation for domestic 
+hot water production.
+Domestic hot water
+District Heating return
+District heating flow
+Domestic cold water inlet
+Hot water circulation
+a huge negative performance impact to the 
+system. Problems regarding lime scaling vary 
+quite a lot depending on the ground water 
+source. Local authorities should always be con-
+sulted prior to any decisions regarding which 
+type of system will be optimal.
+Domestic cold 
+water
+District heating flow
+District heating return
+Exchanger unit
+Hot water 
+tank
+Cold water
+Hot water 
+circulation
+Dometic 
+hot water
+
+
+--- page 11 ---
+DISTRIBUTION NET
+21
+20
+HEAT TRANSMISSION 
+NETWORK
+Depending on the structure and size of cities, 
+combinations of direct and indirect systems 
+may also be useful. In large DH systems covering 
+an entire region, an overall heat transmission 
+system may connect a number of large scale 
+substations, each of which serves local smaller 
+DH systems where consumer connections are 
+made directly. This system would still allow for 
+low temperature operation in each district and 
+may benefit from contributions from local heat 
+sources such as solar collectors or surplus heat 
+from businesses. 
+The overall system will actually be able to  
+transmit large amounts of heat over long 
+distances in much the same way that power 
+transmission systems work. 
+Large consumers 
+While small buildings like one family houses 
+normally have their own DH connections, blocks 
+of flats or office buildings with a large number 
+of tenants or other types of users like businesses 
+will normally have one branch connection from 
+the DH system. 
+Until now, such buildings have typically had 
+one common system for the preparation of 
+hot sanitary water based on a centralised hot 
+water tank typically placed in the basement of 
+the building. However, in order to reduce pipe 
+lengths and improve the quality of the hot      
+water supply, new hot water systems based 
+on having one heat exchanger for hot water in 
+each flat are now appearing in such buildings. 
+This approach will also make it easier to allow 
+for measurement of heat consumption in each 
+lease. 
+DISTRICT COOLING
+DC customers are normally large buildings 
+hosting businesses, hotels, institutions etc. 
+Typically, a DC plant is designed according to local 
+conditions, and the design often puts certain 
+restraints on the way consumer installations 
+should be designed and operated in order to 
+optimise the entire system. Therefore it is not 
+possible in this guide to set up general rules for 
+the design of such consumer systems.
+ As a general rule, however, it can be stated 
+that a system will normally encourage the use 
+of cheap and easily accessible cooling capacity 
+such as free cooling and other low cost options, 
+and the distribution system will therefore be 
+run at relatively high temperatures. Modern 
+air conditioning systems are designed for such 
+conditions but it is important - to a much higher 
+degree than for DH systems - that the demand 
+side is optimised according to the lay out of the 
+supply side.     
+SETTLEMENT OF 
+CONSUMPTION AND 
+TARIFFS
+As with any other utility like power or water 
+supply, rules for metering and billing heating or 
+cooling must be set up and be part of a contract 
+with customers. Tariffs are often split into fixed 
+and variable fees, and consumers may also 
+have to pay a connection fee when they are 
+connected to the system.
+•	
+The fixed fee reflects the fixed annual costs 	
+	
+of the distribution system and the 
+	
+production plants. This will mainly 	
+	
+District cooling plant servicing several commercial buildings.
+
+
+--- page 12 ---
+METERING
+23
+22
+	
+be capital and staff costs for operation 	
+	
+and maintenance. 
+•	
+The variable fee reflects the procurement of 	
+	
+energy which may be fuel, electricity for 	
+	
+pump operation or purchase of surplus 	
+	
+energy from industry or other sources. 
+•	
+The connection fee reflects a given 	
+	
+	
+consumer’s share of the capacity of the 	
+	
+system and will often be calculated based 	
+	
+on e.g. the size of the building to be 	 	
+	
+supplied. 
+Often, further circumstances or rules regulate 
+the economic relations between the customers 
+and the DE supplier. An example could be 
+encouraging the customers to return the DH 
+water at the lowest possible temperature, 
+which will help maximise the capacity of 
+the distribution system and minimise the 
+production costs. In order to achieve this, it is 
+possible to put an incentive on very low return 
+temperatures from each consumer or even put 
+a penalty on too high return temperatures.  
+How the fees and regulations between the 
+customers and the DE company are set up and 
+governed depends on the DE company and on 
+local or national legislation or even traditions. 
+In some countries, DE services are offered 
+and operated by competitive free enterprises 
+while in other countries, they are more or less 
+regulated by the authorities.    
+  
+80
+75
+70
+65
+60
+55
+20
+10
+0
+-10
+-20
+Flow 
+temp. °C 
+Outdoor
+temp. °C 
+Ex.  outdoor t -20 °C  = 75 °C  ﬂow t
+ 
+outdoor t   10 °C = 61 °C  ﬂow t
+Function of the climate control: 
+By adding water to the secondary side the mixing loop is adjusting the flow temperature based on outdoor temperature.
+Smart meters
+Contemporary energy meters for installation at 
+each individual customer are able to measure 
+both flow rates and forward and return 
+temperatures and on that basis calculate the 
+amount of energy actually consumed. Data are 
+registered and calculated at given intervals in 
+such meters, and these data can be collected 
+through wired or wireless connections to the DE 
+company for further processing and billing.  
+Given the data about temperatures and flows at 
+the edge of any building connection , it is now 
+possible together with similar data from the 
+central SCADA system to get a total picture at 
+any time of the energy production, distribution 
+and consumption in the complete system..
+Outdoor temperature sensor
+Climate
+Controle
+
+
+--- page 13 ---
+LOAD PROFILES
+Load in %
+Time
+Calculation proﬁle
+Load proﬁle
+420       1050                        2450                                             3080
+25
+50
+75
+100
+7000
+25
+24
+-25
+Heating demand
+Cooling demand
+Outdoor temperature °c
+0
+1000
+2000
+3000
+4000
+5000
+6000
+7000
+8000
+8760
+-20
+-15
+-10
+-5
+0
+5
+10
+15
+20
+25
+30
+35
+LOAD PROFILES 
+GLOBALLY
+The highest average temperatures occur in 
+the tropical and subtropical zones, leaving this 
+part of the world in need of more cooling than 
+heating. The greater the distance from the 
+equator (and thereby the closer the proximity 
+to the north and south poles), the colder the 
+climate gets, thereby increasing the need for 
+heating. 
+Another benefit of adjusting the flow tem-
+perature is the ability to increase the Δt in the 
+system. 
+A minor increase in Δt gives a significant 
+reduction in required flow and thereby power 
+consumption of the pump system.
+Φ	 = Energy flow
+Δt	 = Temperature difference
+Q	 = Volume flow
+Φ
+= Q
+Δt
+Distribution
+Consumer
+Δt
+Flow
+Δt
+Flow
+Load
+°C
+m3/h
+°C
+m3/h
+1
+7,5
+150
+6
+187
+2
+7,5
+90
+6
+113
+3
+7,5
+60
+6
+75
+4
+7,5
+120
+6
+150
+5
+7,5
+120
+6
+225
+Total
+600
+750
+A 1,5 degree increase in Δt gives a 20% decrease in flow
+World map with climate zones
+Load profiles based on different climate zones.
+Load profile and calculation profile
+Temperate zone
+Polar zone
+Subtropical zone
+Tropical zone
+
+
+--- page 14 ---
+THEORY
+27
+26
+DESIGN AND
+OPERATION OF 
+THE NETWORK
+A double pipe distribution 
+system
+After generation of either heat or cooling, 
+the water is distributed to the consumer via 
+a network of insulated pipes. District energy 
+systems consist of flow and return lines. Usually 
+the pipes are installed underground but there 
+are also systems with overground pipes. Due 
+to differences in Δt, the flows and thereby pipe 
+sizes vary greatly. The return temprature should 
+always be as low as possible in order to obtain 
+the largest possible Δt, and thereby the lowest 
+possible waterflow in the pipes.
+In district cooling systems, the flow tempera-
+ture is often set between 4 and 10 °C, and the 
+return temperature around 10-20 °C, depending 
+on local conditions. The system temperature 
+in district heating is more varied and can be 
+anything from a flow temperature of 55 °C in 
+the most recent low temperature systems to 
+a flow temperature of 80-90 °C or even higher. 
+In order to achieve high energy efficiency in 
+heat generation plants, the return temperature 
+should be as low as possible, which means that 
+the Δt should be as high as possible. 
+In general, there is a trend towards high tem-
+perature cooling and low temperature heating. 
+The reason for this is the aim of delivering heat 
+or cooling as cost-effectively as possible, with 
+the lowest possible thermal loss in the distribu-
+tion system. Due to the affinity laws, the Δt will 
+have a huge impact on the pumping cost.
+The energy savings achieved by reducing the 
+speed of a centrifugal pump are quite consider-
+able. As this example shows, reducing the flow 
+by 50% will result in up to a 88% reduction of 
+the original power consumption. 
+Especially in district cooling systems, where 
+the Δt is much lower than in a district heating 
+system, it is extremely important to maintain 
+Δt at an acceptable level. A pressure profile 
+is shown below to illustrate the difference in 
+required differential pressure from the main 
+pump installation, depending on different Δt 
+levels. 
+By changing the speed of the pump, the performance can be 
+changed and energy can be saved. As an example, the speed is 
+reduced to 50 %, the differential pressure (H) drops to 25 % and 
+the power consumption drops from 100 % to 12,5 %.
+The law of aﬃnity shows the link between:
+- RPM
+- Flow
+- Head
+- Power
+Q2 
+n2 
+Q1    
+n2
+=
+H2 
+n2 
+H1    
+n2
+=
+2
+P2 
+n2 
+P1    
+n2
+=
+3
+P
+Q  [%]
+50
+100
+100
+12.5
+[%]
+[%]
+H
+100
+RPM
+Fixed system
+characteristics
+100%
+50%
+FLOW > RPM
+HEAD > RPM
+POWER > RPM
+50
+100
+25
+District heating pipes ready for installation. 
+
+
+--- page 15 ---
+THEORY
+29
+28
+The design pressure loss in the distribution net 
+has a huge impact on the total pump system’s 
+energy consumption. The recommended level 
+of pressure loss per metre typically is approxi-
+mately 100 Pa/metre*. However, ideally the 
+appropriate pipe size should be determined 
+from an economic study of the life-cycle cost for 
+construction and operation.** When establish-
+ing the design flow for thermal distribution 
+systems, the diversity of consumer demands 
+should be considered, as the maximum demand 
+of various consumers does not occur at the 
+same time. 
+The heat supply and main piping may therefore 
+be sized for a maximum load that is somewhat 
+less than the sum of the maximum demands of 
+all individual consumers. Diversity factors can 
+be set as low as 0,65 but should be calculated 
+with caution, as the size and number of loads 
+affects the values. The importance of achieving 
+a high Δt is illustrated in the chart below. The 
+“Hydraulic power P4 %” mentioned is a theo-
+retically calculated value showing the relation 
+between Δt and the needed power needed for 
+pump operation. The value does not take into 
+account the efficiency of the pump. The connec-
+tion between Δt and the necessary power for 
+pump operation. 
+The chart shows the effect of increasing the 
+Δt by just 1 °C in a cooling system and 3 °C in 
+a heating system. Here it is clear that we can 
+reduce the hydraulic power demand by 27%. 
+That is why it is important to focus on Δt in all 
+operation conditions.
+The mentioned hydraulic power P4 is a theoreti-
+cally calculated value that does not take pump 
+efficiency into account. The correlation between 
+Δt and the power needed for pump operation is 
+given by the affinity laws.
+The reason why this has such a huge impact 
+is the fact that flow is proportional to power 
+in third proportion . Even a minor increase in 
+Δt will therefore decrease the need for power 
+to the pump quite substantially, especially 
+in district cooling systems as the design Δt is 
+relatively low.
+The higher the Δt, the lower the need for differential pres-
+sure in the system. Increasing the Δt by only 2,7 °C reduces 
+the need for differential pressure by a factor of 2,2.
+40
+20
+73
+100
+120
+140
+160
+80
+100
+117
+133
+150
+167
+∆%
+5
+6
+7
+8
+9
+10
+∆t
+17
+20
+23
+27
+30
+33
+∆t
+Cooling
+Heating
+Hydraulic power P4 %
+Design ∆t
+New ∆t
+The link between Δt and P4 in a system
+* Bøhm 1988 
+** 2012 Ashrae Handbook
+20
+10
+0
+30
+40
+50
+60
+70
+80
+Plant supply loss
+5.6 °C delta T
+6.7 °C delta T
+8.3 °C delta T
+Supply piping loss
+Return 
+piping loss
+Diﬀerential pressure 
+across critical customer
+Plant 
+return loss
+Pressure head mWc
+Distance from the source
+}
+}
+}
+
+
+--- page 16 ---
+SURVEILLANCE SYSTEMS
+31
+30
+Installation of underground 
+pipes
+As shown on these pictures, pipes for district 
+heating are normally pre-insulated, giving a 
+relatively low amount of thermal loss.
+Pipes for district cooling in some cases are 
+not insulated, as the temperature difference 
+between the chilled water inside the pipes 
+and the surrounding soil is relatively low. This, 
+of course, depends very much on the actual 
+location. In the Middle East, for example, 
+with high average outdoor temperatures, the 
+situation can be different, requiring insulation. 
+However, even if the pipes are not insulated, 
+they must always be coated on the outside in 
+order to protect against corrosion. 
+SCADA, Supervisory Control 
+and Data Acquisition
+In order to secure optimum performance in a 
+district energy system, it is vital that facility 
+management has the ability to monitor and 
+adjust different parameters in the system.  This 
+demand is covered by comprehensive SCADA 
+systems to be used by the operational staff. As 
+examples, these are the delivered differential 
+pressure to consumers and the actual flow 
+temperature. For optimum plant efficiency, 
+the return temperature from the consumers 
+is a vital part to monitor. In some district 
+cooling systems, the plant manager may shut 
+consumers off if the agreed return temperature 
+is not achieved. 
+NETWORK ANALYSIS 
+AND TEMPERATURE 
+OPTIMISATION
+Most DH networks undergo various alterations 
+during their lifetime. Many of the current DH 
+networks have grown naturally, as cities have 
+expanded. This means that the original net-
+works have often changed with regard to both 
+size and load. The extension of the DH systems 
+has often created more complex systems that 
+are difficult to operate without the help of 
+computers. Although many DH networks were 
+originally calculated using computer models, 
+the computer models of today have many new 
+features to offer due to the on-going develop-
+ment in computer science. 
+Besides the static computer models that 
+have been around since the late 1980es, new 
+dynamic models have started to surface from 
+approximately 2008. These models are con-
+nected to other systems like SCADA, weather 
+prognosis and remote metering systems. This 
+combination allows for more complex automa-
+tion, for example of flow temperature.  An 
+example of such a system is the TERMIS district 
+energy software.
+An example of the modules in the TERMIS 
+system is the temperature optimization module 
+which automatically minimizes heat loss in 
+district heating networks, typically reducing 
+it by 10%. This leads to significant savings of 
+up to 2% of the heat cost while reducing CO2 
+emissions.
+Underground pipes in a city center
+New pipes are ready for installation in industrial area.
+
+
+--- page 17 ---
+SURVEILLANCE SYSTEMS
+33
+32
+The inlet temperature is adjusted to be as low 
+as possible, taking into account the amount 
+of heat to be supplied to the consumers in the 
+network. The temperature optimization module 
+takes into account the accumulated energy in 
+the network, and the changes that will occur 
+as a result of weather forecasts of outdoor 
+temperature and wind conditions.
+In the future, even greater integration can be 
+expected between the various computer sys-
+tems that are used in modern DH networks. The 
+focus will continue to be on optimising heat 
+losses, but pump and production optimisation 
+will also take place. Special focus will be on the 
+return temperature where the potential savings 
+are the biggest but also the most difficult to 
+obtain.
+As a final remark, it can be concluded that 
+computerised optimisation of DH networks is 
+only in its start-up phase. The steady improve-
+ment of computer power and simulations by 
+means of software like TERMIS will continue in 
+the future. Especially as an aid to operators, it 
+is and will continue to be very valuable, giving 
+the operators valuable information in the daily 
+operation and supporting them in the often 
+complex decisions to be taken when optimisa-
+tion of the entire DH system is the primary goal.
+GENERATION OF 
+HEATING AND 
+COOLING
+Thermal needs 
+The demand for heating and/or cooling first of 
+all depends on local climate conditions and spe-
+cific needs. In temperate climate zones, there 
+will normally be a need for both heating and 
+cooling. Assuming that the peak needs for the 
+two services are equal – which is often the case 
+– the load duration curves shown below can 
+be set up.  A duration curve indicates the load 
+variation over a full year (in northern or central 
+Europe in this case). It can be seen that the 
+duration is about three times as long for heat-
+ing as for cooling. Further south, the relation 
+between the two needs will shift: less hours for 
+heating and more hours for cooling.
+Traditional and new approach showing how the flow tem-
+perature is controlled in order to fit the demand.  The result 
+is a lower supply temperature
+78
+76
+74
+72
+64
+62
+60
+58
+Traditional Approach
+Supply temperature
+(°C)
+Consumer temperature
+(°C)
+72
+70
+68
+66
+64
+62
+60
+58
+New Approach
+Supply temperature
+Consumer temperature
+Screen dump from TERMIS
+Annual load duration curves for district heating 
+and cooling (northern hemisphere).
+District
+Heating
+District 
+Cooling
+
+
+--- page 18 ---
+35
+34
+ENERGY 
+CONSERVATION AND 
+IMPACT ON CLIMATE 
+AND ENVIRONMENT
+One of the main advantages of DE is the fact 
+that DE plants offer a huge potential for reduc-
+ing the direct use of fossil fuels as compared 
+to individual systems. This is important to the 
+economy and the environment; high usage of 
+fossil fuels like coal, oil and natural gas is one of 
+the major threats to the climate as the released 
+CO2 will increase the greenhouse effect around 
+the globe.
+Typical alternative heat sources, which are 
+increasingly being used in DH plants, include 
+industrial surplus heat, heat from the incinera-
+tion of municipal waste, biogas, biofuels like 
+straw from farming or wood from foresting 
+(in the shape of chips or pellets), geothermal 
+energy, solar energy and to some extent wind 
+power. 
+In district cooling, some of the same fuels may 
+be used for the operation of absorption cooling 
+plants, and cold sea water or lake water is often 
+used for free cooling. The backbone of most DE 
+plants is the co-generation of power, heat and 
+cooling. There is a wide range of possibilities 
+for combining the generation of these services 
+such as steam turbines, which may be operated 
+on biomass or municipal waste. Another option 
+is gas turbines or gas engines operated on for 
+instance biogas. For many years, such plants 
+were – and to some extent still are – operated 
+on coal, oil or gas. It is a fact, however, that an 
+increasing number of plants are now designed 
+Renevable 
+energy resources
+Distributed 
+energy resources
+Co-generation
+Surplus heat
+Centralised fuel production,
+power and storage
+Smart energy 
+system control
+H2 vehicle
+EV
+NEXT GENERATION OF DE-SYSTEMS
+A sustainable energy system is a smarter, more unified and integrated energy system
+
+
+--- page 19 ---
+37
+36
+for or retrofitted to use more renewable energy. 
+This is another key advantage of DE systems, 
+as it is relatively easy to convert one large plant 
+from fossil fuels to more environmentally 
+friendly alternatives as compared to chang-
+ing thousands of heating boilers or electrically 
+operated split cooling plants in a large city. 
+Additionally, the overall efficiency of large 
+“district systems” is normally higher due to 
+economics of scale and due to the fact that the 
+output needed from one large system is lower 
+than the sum of the outputs of a large number 
+of individual plants. This means that all DE 
+consumers will benefit from a low simultane-
+ous factor among consumers and a high plant 
+utilisation factor in the large system. It should 
+also be mentioned that unlike individual instal-
+lations, DE systems will be operated and main-
+tained by professional staff constantly looking 
+for possibilities for optimisation.
+COMBINED HEAT 
+AND POWER 
+GENERATION
+Combined generation of heat and power (CHP 
+plants) offers a vast potential for the rational 
+use of energy in towns and cities via existing or 
+new DH networks. Through combined genera-
+tion, a much higher total efficiency of the fuel 
+used can be achieved. 
+A conventional power plant typically has an 
+overall efficiency of about up to 45%, while 50% 
+of the energy is lost through cooling water and/
+or a cooling tower and 5% is lost through the 
+chimney. By utilising the cooling water from the 
+NEXT GENERATION OF DE-SYSTEMS
+Principle sketch of a combined heat and power plant, CHP
+5% Fluegas
+Turbine
+Generator
+Boiler
+Fuel
+Electric power
+Waste water
+ 5% Fluegas
+Turbine
+Generator
+Boiler
+Fuel
+Electric Power
+District Heating
+Principle sketch of a conventional power plant
+
+
+--- page 20 ---
+EFFICIENCY OF SCALE
+39
+38
+condenser at a (higher) temperature suitable 
+for a DH system, the efficiency of the power 
+generation may be reduced to around 35%; 
+however, the heat content of the cooling water 
+may now be used for heating purposes. In this 
+way, the maximum total efficiency of the CHP 
+plant may be as high as 95% (electricity 35%, 
+heat 60%).
+Obviously, this is simplified examples of 
+power plants, and also the figures shown are 
+approximate values to indicate the potential 
+for utilisation of heat from power plants. By 
+planning a conversion of an existing power 
+plant into a CHP plant or planning a new plant, 
+the lower power output from a CHP plant – in 
+this case 35 % vs. 45 % of fuel input - should of 
+course be addressed. Even though additional 
+electrical power may have to be provided from 
+another plant, CHP still results in much lower 
+total fuel consumption, as the heat from the 
+CHP-plant will replace the use of many small, 
+conventional and inefficient boilers.  
+Traditional and individual “small scale” heating 
+systems are typically based on fossil fuels such 
+as coal, oil, gas or even electric heating and 
+normally operate at a fairly low efficiency. A 
+DH system, on the other hand, is able to utilise 
+the heat generated in connection with power 
+generation. In this way, the cooling water from 
+conventional power generation, which would 
+otherwise and inevitably have been lost to the 
+environment, may be exploited. This concept 
+entails large reductions of the city’s fuel con-
+sumption and lower production costs. Theese 
+are benefits that may be shared by power and 
+DH customers. To further reduce the consump-
+tion of fossil fuels, CHP plants may be built or 
+retrofitted to use biomass or municipal waste.
+In recent decades, there have been several 
+55% of energy wasted as heat 
+to the environment
+5% of energy wasted as heat 
+to the environment
+Stardard power plant
+Combined heat/power plant 
+- District energy plant
+Fuel input 
+= 100%
+Fuel input 
+= 100%
+45% energy output 
+as electricity
+35% energy output 
+as electricity
+60% energy produced for 
+heating or cooling
+examples of power plants that were retrofit-
+ted into CHP plants being able to supply heat 
+to nearby cities that already had a DH system 
+based on heat-only boilers. In other cases, 
+new CHP plants were built, and existing or 
+completely new DH systems were built and 
+extended to cover large parts of the cities. In 
+some cases, even neighbouring cities were con-
+nected by means of heat transmission lines in 
+order to benefit from the economy of scale. 
+Many CHP plants are designed as such from the 
+beginning. However, experience also shows that 
+existing condensing power plants can be retro-
+fitted in order to produce both heat and power. 
+This can be done for example by extracting 
+steam after the intermediate pressure turbine 
+to be used for heating DH water. 
+
+
+--- page 21 ---
+CASE STORY
+41
+40
+Other available heat 
+sources 
+A DH system is able to utilise any kind of local 
+waste heat which may be available in the city 
+or its surroundings. This could be surplus heat 
+in the shape of hot flue gases from cement fur-
+naces, cooling water from a refinery or surplus 
+heat from any industrial process released to the 
+air through condensers or cooling towers. 
+Obviously there must be accordance between 
+the temperature needed in the DH system and 
+the surplus heat to be exploited. This match 
+is not always easy to achieve, but very often 
+solutions may be found through cooperation 
+between the provider and the DH company 
+interested in the surplus heat. One solution 
+may be that the heat provider is able to provide 
+stepwise heating through a number of heat 
+exchangers at different temperature levels of 
+the industrial plant; in other cases, a heat pump 
+to raise the temperature may be a feasible 
+solution. Also, the DH company may be able to 
+adjust its plant so that the contribution from 
+the industry is used at least for preheating the 
+DH water.
+ 
+CASE: A REGIONAL MULTI-CITY DH SCHEME 
+In the middle of Denmark, a multi-city district heating system serves 80.000 homes in the cities of 
+Vejle, Fredericia, Middelfart and Kolding where the consumers benefit from large amounts of surplus 
+heat generated in the area. For many years, eight local district heating companies were in operation 
+before the regional heat transmission company TVIS was founded; now, each of these companies are 
+connected to the regional heat transmission system via 25 large substations. 
+The heat transmission system with a total length of 140 km was built and is operated by TVIS which 
+was founded by the four municipalities in 1982. Altogether 55.000 consumers including one family 
+and multi-storey houses, public buildings, office buildings and businesses are connected to the 
+system. 
+The main suppliers of heat are the Shell Refinery in Fredericia, the Skærbæk Power Station – a large-
+scale CHP plant at Kolding fjord – and TAS, which is a waste-to-energy plant located in Kolding which 
+treats municipal waste from all the municipalities.
+Efficient use of energy
+The fact that all DH companies in the area are interconnected through one system enables efficient 
+use of the surplus heat which would otherwise have gone to waste. Local operation of directly 
+fired oil or gas boilers in the former district heating stations has ceased, thus almost eliminating 
+the direct consumption of fossil fuels for district heating. This is economical for the DH customers 
+and improves the environment for everyone living in the region. Obviously, this is beneficial for our 
+climate as it greatly reduces emissions of greenhouse gases.
+The lessons learned over the course of twenty five years of operation show that the suppliers of heat 
+and the transmission system have been very reliable. Annually, about 55% of the heat is supplied 
+from the CHP plant, 26% comes from the refinery, 11% comes from waste, and only 2% is provided by 
+heat-only boilers for very short periods on very cold days. 
+     26 %
+Surplus heat 
+from refinery
+55%
+ Combined heat 
+and power
+            11% 
+Waste incineration
+2%
+Heat only boilers
+Vejle
+Middelfart
+Kolding
+Fredericia
+The district heating system of TVIS. The red lines indicate the 
+superior transmission system and its substations. 
+The yellow lines are the networks owned by the local district 
+heating systems connected to TVIS.
+A break down of sources for the District Heating system
+
+
+--- page 22 ---
+43
+42
+Generation of cooling in 
+combination with heat and 
+power
+In DC plants, cold water for distribution to 
+customers needs to be generated, and like 
+for DH plants, combined generation involving 
+alternative or renewable energy sources and 
+different types of chillers (compressors, absorp-
+tion chillers and free cooling) is getting more 
+and more common. 
+When such systems are planned, local condi-
+tions and present and future needs must 
+always be taken into consideration. The 
+components to take into consideration and 
+involve would be local sources of free cooling 
+and possible sources of waste heat or biomass 
+for driving absorption chillers. Finally, mechani-
+cally/electrically driven cooling compressors 
+will normally also be involved, and they may be 
+installed as tri-generation plants being able to 
+produce both cooling, heating and electricity.
+The most obvious source to utilise is free cool-
+ing, and even if the source is limited in compari-
+son with the needs, the use of sea or lake water 
+may be an important share of the base load. 
+ENERGY STORAGE
+20
+10
+0
+30
+40
+50
+60
+70
+80
+90
+100
+Free cooling
+Compressor
+Absorption
+%
+20
+10
+0
+30
+40
+50
+60
+70
+80
+90
+100
+%
+Break down of annual cooling generation
+
+
+--- page 23 ---
+45
+44
+WATER TREATMENT
+It is very important for the successful operation 
+of DE systems that no corrosion occurs so that 
+the entire system remains tight and in good 
+shape for many years. Adequate water quality 
+is a decisive factor in this connection. This is 
+a comprehensive issue, and we will confine 
+ourselves to mentioning that strict demands 
+regarding the conductivity of the circulating 
+water, its pH value, residual hardness, appear-
+ance and oxygen and chlorine content must be 
+respected according to experience.
+THERMAL ENERGY 
+STORAGE SYSTEMS
+In order to lessen the interdependency between 
+the generation and needs of heat, power and 
+cooling, heat or cold storage facilities may be an 
+option. Such facilities have been in use for many 
+years, and storage may take place in tanks, pits 
+or underground aquifers. Such storage systems 
+will increase the flexibility of plant operation 
+and may even reduce fuel costs.
+The principle of a heat storage tank typically 
+found at many CHP plants. The tank is filled 
+with DH water and is sealed with nitrogen 
+or steam on the surface in order to allow for 
+expansion and prevent contact with the oxygen 
+of the atmosphere. Close to the bottom and 
+just below the surface, two circular diffusers 
+will allow the incoming or outgoing water to 
+flow slowly and smoothly in the radial direction 
+of the tank so that a minimum of disturbances 
+in the water occurs. This design will allow the 
+Principle of heat storage tank
+Steam
+Hot water in / outlet
+Cold water in / outlet
+Hot water
+Cold water
+Boundary 
+layer
+ENERGY STORAGE
+
+
+--- page 24 ---
+47
+46
+water to build up stratification so that the hot 
+water for the outgoing flow line will remain in 
+the upper part, and the cooler water from the 
+return line will rest at the bottom. 
+During loading, hot flow water from the 
+generation plant will enter the tank at the top 
+while the same flow of cold return water is 
+taken out from the bottom and led to the plant 
+for reheating. Slowly, the boundary layer where 
+the temperature gradient between hot and cold 
+water is high will move downwards. During 
+unloading, for example when the CHP plant 
+is stopped overnight, the process is reversed: 
+The hot water from the top is pumped out into 
+the DH network while the cold return water is 
+pumped into the bottom of the tank, whereby 
+the boundary layer will move upwards until the 
+tank is unloaded.  Such tanks may be installed 
+in order to allow a CHP plant to run with full 
+power output during peak loads in the morning 
+or late in the afternoon. In other cases, it may 
+be a matter of being able to shut down the 
+plant during nights or weekends and still be 
+able to provide heat.
+An increasing number of small and mid-sized 
+DH plants are installing medium sized solar 
+collector fields in order to use this renewable 
+heat source. The energy from the sun is mainly 
+available during the summer where the heat 
+demand is typically only about 25% of the 
+winter peak load. In order to increase the cover-
+age of solar energy, so-called pit heat storages 
+have been developed and are now in operation. 
+They increase the usage of solar heat to some 
+50% of the annual heat demand. 
+A pit storage is a large rectangular excavation 
+in the ground. The excess material is placed as 
+a wall around the pit, and the bottom and sides 
+are sealed with a water tight foil. The pit is filled 
+with water, and a floating and insulated lid is 
+placed on the top. Also in this case, the water 
+will stratify in a hot layer on top and a cold layer 
+at the bottom. Similar concepts may be used for 
+storage in DC systems. Also, snow or ice “har-
+vested” during winter could be an additional 
+source of free cooling. 
+Underground aquifers are another option for 
+storing warm or cold water from season to 
+season. Obviously, such systems demand that 
+underground aquifers are available close to a 
+possible DH and/or DC plant. Such a system has 
+been established by Grundfos and the Bjerring-
+bro DH company in 2013. 
+The Studstrup CHP-plant has a max electical output of 350 MW and a max. heat output of 455 MW.
+The 33.000 m3 tank of the plant is seen to the far right.
+ENERGY STORAGE
+
+
+--- page 25 ---
+49
+48
+CASE: Grundfos in close cooperation with the Bjerringbro district heating system
+Grundfos in close cooperation with the Bjerringbro district heating system
+In 2013, Grundfos and the Bjerringbro district heating company inaugurated a joint system to 
+exploit heat for district heating from the compressors’ cooling production machinery at the 
+factory. 
+Operating compressors is very energy demanding and expensive, and a lot of surplus heat has 
+to be cooled off to the air by means of cooling towers.
+The new plant is based on three elements: exploitation of surplus heat from the cooling 
+machines, indirect storage of heat in an underground aquifer, and use of a heat pump to raise 
+the temperature of the stored energy for use in district heating.
+During the summer, there is no need for heat from Grundfos, and therefore the entire con-
+denser heat from the cooling compressors is sent through a pipeline to the storage where the 
+heat is put “in stock” in the aquifer about 750 m away. In the autumn, when the DH system 
+requires heat from the storage, about 80 % of the heat stored during the summer is still avail-
+able. In order to raise the temperature to the level needed in the DH network, the Bjerringbro 
+district heating company will raise the temperature by means of a heat pump. In the winter, the 
+DH company gets the surplus heat from both the storage and directly from the compressors. 
+Grundfos will save up to 90 % of the power that has until now been used in the cooling towers, 
+and the DH company is able to reduce the gas consumption in its CHP plant. In total 4,7 mill. 
+euro have been invested by the two partners who have split the costs 50/50. About 0,4 mill. euro 
+will be saved in energy costs annually. This corresponds to a payback time of 12-13 years which is 
+fine for a DH company, but often too long for an industrial company. However, at the same time 
+3.700 tons of CO2 is saved, and seen in relation to Grundfos’ policy of energy conservation and 
+sustainability, the result is fully acceptable.  
+The Grundfos Energy Central established 2013 
+CASE STORY
+
+
+--- page 26 ---
+DE IMPACT ON SOCIETY
+51
+50
+THE DANISH 
+EXAMPLE
+Denmark has benefited from DH for almost a 
+century, and its extension has grown steadily 
+throughout this period. In 2010, approx. 64% 
+of all homes in Denmark were heated in this 
+way, and a large number of public and business 
+buildings in the cities are also connected. 
+In many danish cities, the coverage of DH is 
+around 95%. During the past decade, a large 
+district cooling system has also been installed 
+in the central parts of Copenhagen.
+While oil was the dominant fuel in DH systems 
+35 years ago, the share of coal and gas grew 
+for some years. However, the use of bio fuels, 
+surplus heat and renewable energy grew stead-
+ily during this period and now covers 52% of the 
+energy input to the 400 DH schemes serving 
+almost all towns and cities throughout the 
+country. In the near future, we will see much 
+more biomass being used, particularly at CHP 
+plants and large boiler stations.
+On the longer term, we will see more sustain-
+able energy being integrated in district heating. 
+The heat demand in buildings will gradually 
+be reduced due to new ways of construction 
+and increasing efforts in retrofitting existing 
+buildings.
+As a result of this change of energy sources, 
+over the past ten years CO2  emissions from the 
+Danish DH sector have been reduced to about 
+60% of 1990 levels, and this is the major reason 
+for the reduction of total Danish CO2 emissions 
+to a level of about 85% compared to 1990.
+District heating plays a substantial role in Denmark. 
+Some 450 plants – large and small – supply DH to 1,6 
+million homes. This corresponds to about 64% of all 
+homes and in addition a large number of institutions 
+and businesses are supplied. 
+Total impact on the climate from the danish district heating sector
+Source: Energistatistik 2012 and calculations by COWI A/S.
+Index
+120
+1990
+1995
+2000
+2005
+2010
+130
+140
+150
+160
+170
+60
+70
+40
+50
+80
+90
+100
+110
+Total DH production
+Gross energy consumption
+CO  emission from DH sector
+Total CO  emission
+²
+²
+
+
+--- page 27 ---
+DE IMPACT ON SOCIETY
+53
+52
+An important part of this status is the wide-
+spread use of CHP plants, which  by nature 
+utilise any fuel at a much higher total efficiency 
+than is the case for separate power and heat 
+generation. In Denmark, about 60% of all power 
+generation now takes place in combination 
+with DH, and 80% of all DH is derived from CHP 
+plants.
+Over the past 100 years, the dominant energy 
+sources in district heating have changed from 
+coal to lignite, oil, coal again, natural gas and 
+now renewable sources. Similarly, a change 
+from biomass, which will also become scarce, 
+will occur in the years to come. Technologies for 
+the utilisation of solar, wind and geothermal 
+energy and other future sources of energy will 
+be developed further. 
+During the past 25 years, 1 billion people in the 
+world have been lifted from poverty into the 
+middle class, which has increased the need for 
+energy. It is estimated, however, that over the 
+next 25 years, another 3 billion people will leave 
+poverty and join the growing middle class. This 
+will be a tremendous challenge to the energy 
+sources. An efficient use of fossil fuels will 
+become mandatory, and preferably a large part 
+of the necessary energy will in the future be 
+covered by renewables 
+Read more about district heating in Denmark at 
+www.dbdh.dk. 
+Index 2000 = 100
+60
+1995
+‘00
+‘05
+‘10
+‘15
+‘20
+‘25
+‘30
+80
+100
+120
+140
+160
+GDP: Gross Domestic Product
+Final energy consumption
+The principle of combined heat and power plant
+Fuel 
+distribution
+Distribution  
+generation
+Conversion
+losses
+Recovered heat:  
+-Domestic hot water
+-Space heating
+-Space cooling
+-Ventilation air
+-Humidity control
+Electricity
+GDP and total final energy consumption (climate-adjusted). 
+The data are historic and projections.
+Source: Danish Energy Agency
+
+
+--- page 28 ---
+CONCLUSION
+55
+54
+Smart cities for the future
+Smart cities is a concept which involves the 
+smart handling and integration of a number 
+of systems and services such as the supply of 
+electric power, district heating and cooling, 
+water and sewage and handling of waste. Local 
+public and individual transportation can also be 
+included, and the overall ambition is to increase 
+general energy efficiency. This is a vision for a 
+future with a smarter and more integrated city 
+infrastructure than the one we know today. 
+Based on current knowledge it seems obvious 
+that it is affordable and feasible to save much 
+more energy and to improve the environment 
+and in this way lead the way towards a smaller 
+impact on our climate. 
+Already today, DH systems exploit large 
+amounts of waste heat in many cities around 
+the world, cutting local fuel bills. District heat-
+ing systems have been called the waste man-
+agement systems for energy, as they are able to 
+recover waste heat from power plants, cooling 
+systems, industrial plants and waste incinera-
+tors. In addition, renewable energy such as 
+geothermal, solar and wind energy are sources 
+which are used more and more where possible. 
+Heat pumps may be a necessary link in order 
+to raise the temperature of a source of heat to 
+accommodate the demands of the DH system. 
+However, the trend in DH plants is to reduce the 
+temperature level in both flow and return pipes. 
+Similarly, the temperatures used in the opera-
+tion of contemporary cooling plants in buildings 
+and DC systems are higher than before. In 
+this way, the inevitable loss of energy from DE 
+networks will be reduced. 
+The use of lower temperatures for DH (or 
+higher temperatures in DC) also improves the 
+overall efficiency of the generation plants. It is a 
+fact that CHP plants are able to generate more 
+power on the same amount of fuel when the 
+temperature of the cooling water (which is DH 
+water in a CHP plant) is low. Also, the heat from 
+renewable sources can be utilised with higher 
+efficiency at lower temperatures, and the same 
+is the case for industrial surplus heat or sources 
+of waste heat.
+Low temperature DH also increases the possibil-
+ities to exploit even small and local sources of 
+energy. This might be excess heat from a server 
+room or from a transformer station anywhere 
+in a city. Even excess heat from hot showers or 
+kitchens might be future “hot spots” to exploit 
+in future DH systems
+CONCLUSION
+It is a fact that the world’s demand for energy, 
+particularly electric power used in industry, 
+electric appliances, office machines, air-
+conditioning, transportation etc., is constantly 
+rising. Therefore it makes sense to enforce 
+urban DE infrastructures  and combine the 
+necessary services in smart and energy efficient 
+systems. 
+District energy is one of those services and has 
+already demonstrated its value in several cities. 
+The possibilities for further integration and 
+improvements providing higher energy effi-
+ciency are numerous, and new applications and 
+smart solutions will appear in the future.
+
+
+--- page 29 ---
+GRUNDFOS Holding A/S
+Poul Due Jensens Vej 7
+DK-8850 Bjerringbro
+Tel: +45 87 50 14 00
+www.grundfos.com
+The name Grundfos, the Grundfos logo, and be think innovate are registered trademarks  
+owned by Grundfos Holding A/S or Grundfos A/S, Denmark. All rights reserved worldwide.
+98504984/1113
+VISIT US ONLINE 
+For more information on Grundfos 
+Commercial Building Services and 
+our services, please visit 
+www.thinkingbuildings.com
+Here, you can read all about our 
+products or use our online tools, 
+including the timesaving Quick 
+Pump Selection tool.

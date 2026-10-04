@@ -1,0 +1,153 @@
+SOURCE: Source Documentation\White Papers\Developing Community and Data Center Synergies With District Energy - CenTrio.pdf
+
+
+--- page 1 ---
+
+
+--- page 2 ---
+Developing Community and 
+Data Center Synergies with 
+District Energy
+Ahmad Shams, CenTrio
+Emily Kunkel, Thornton Tomasetti
+
+
+--- page 3 ---
+Data Center Developments Facing Increased 
+Community Resistance
+• Nationally Data Center developments are facing increased 
+community scrutiny due to concerns over
+• Rising utility costs
+• Water consumption
+• Responsible community stewardship
+• 25+ projects cancelled nationally due to community backlash
+• Rising resistance to AI as a technology
+
+
+--- page 4 ---
+How can Data Centers Benefit their 
+Communities
+• The discussion on the value of data center developments has 
+centered around potential financial benefits
+• Incremental Property Tax revenue
+• Monetization of non-productive land
+• Job creation
+• Communities are no longer accepting these as rationale for new 
+developments
+
+
+--- page 5 ---
+Metropolis Pointe
+• A new mixed-use development in 
+the Chicago Bronzeville 
+neighborhood
+• Data Center
+• Residential Tower
+• Retail Space
+• AI-preparedness Institute
+
+
+--- page 6 ---
+Challenges
+• Technical design scope is 
+constantly shifting
+• Cooling and heating requirements are 
+dependent on the off takers and the 
+technology available which is evolving 
+rapidly
+• Data center off-takers need to be 
+comfortable with non-traditional 
+cooling solutions
+• New financial structures and risk 
+structures being developed
+• Community education and 
+communication
+• Balancing new low-carbon drivers 
+with mature approaches
+
+
+--- page 7 ---
+Opportunities
+• The district plant provides cooling to the data center and captures the waste 
+heat from the data center for the rest of the development
+• The data center generates the revenue that makes the entire development 
+viable/investable
+• Several attempts at developing an adjacent site have failed
+• The community gains an asset and energy source and a driver for further 
+development
+• The data center gains community support and access to some of the most 
+important data center real estate in the country 
+• A potentially replicable model can be developed for similar mixed-use 
+developments across the country
+
+
+--- page 8 ---
+Integration Approach
+
+
+--- page 9 ---
+Integration Approach
+Maximize server exit 
+temperature without 
+compromising chip 
+performance
+
+
+--- page 10 ---
+Integration Approach
+Allow additional 
+temperature build in 
+compressor for higher 
+enthalpy heating
+
+
+--- page 11 ---
+Integration Approach
+Additional electric 
+load in heat pump for 
+concentrated heat 
+transfer
+DHW temperatures 
+need high 
+temperature heat, but 
+lower quantities
+
+
+--- page 12 ---
+Integration Approach
+Secondary heating uses 
+with lower temperature 
+threshold, but higher 
+quantities
+
+
+--- page 13 ---
+Integration Approach
+Aim for as low as 
+possible temperature 
+prior to cooling tower 
+or fin-fan cooling loop
+
+
+--- page 14 ---
+Integration Approach
+Investigate appropriate 
+deltaT for each potential 
+system to maximize cooling 
+efficiency and PUE
+Max system size is 
+contingent upon how much 
+heat is transferrable to 
+building
+
+
+--- page 15 ---
+Current Status
+• Active discussions with various prospective off-takers 
+• Several community meetings held 
+• Support from local Alderman and various community leaders
+• Active refinement of campus design
+
+
+--- page 16 ---
+Questions?

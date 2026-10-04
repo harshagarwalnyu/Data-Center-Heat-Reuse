@@ -1,0 +1,960 @@
+SOURCE: Source Documentation\NYU BAC Hackathon_HDR_Waste Heat Reuse_2026.1002.pdf
+
+
+--- page 1 ---
+HDR | North America
+Sustainability & Resiliency 
+Data Center Waste Heat Reuse
+Resource Presentation
+Updated 10/02/2026
+
+
+--- page 2 ---
+“Every time the engineer discovers a new application of science, thereby 
+creating a new industry, providing new jobs, adding to the standards of 
+living, they also disturb everything that is.” 
+– President Herbert Hoover, 1954, “Engineering as a Profession”, Engineers Week Magazine
+
+
+--- page 3 ---
+DATA CENTER 
+FUNDAMENTALS
+
+
+--- page 4 ---
+2026 Global Data Center 
+Breakdown by Country
+A black and grey logo
+Description automatically generated
+
+
+--- page 5 ---
+A black and grey logo
+Description automatically generated
+
+
+--- page 6 ---
+CBRE 2025 Global Data 
+Center Market Trends
+•
+Limited power availability remains the prime inhibitor of global data 
+center growth in certain core hub markets, leading to opportunities in new 
+hotspots like Richmond (North America), Santiago (Latin America) and 
+Mumbai (Asia-Pacific).
+•
+Demand continues to outpace new supply across both core and 
+emerging hubs. The global weighted average data center vacancy rate fell 
+by 2.1 percentage points year-over-year in Q1 2025 to 6.6%. Paris led the 
+tightening, with vacancy falling to 7.7% from 16.1%.
+•
+Power capacity constraints are forcing aggressive preleasing and 
+extending new construction timelines to 2027 and beyond. Across regions, 
+cloud providers and AI-related companies are racing to lock in space 
+early, leading to historically high net absorption.
+•
+Global data center pricing rose 3.3% on a weighted inventory basis 
+year-over-year in Q1 to $217.30 per kilowatt (kW) per month—a more 
+tempered increase than last year when volatile global currency markets 
+were a factor. Northern Virginia (+17.6%), Chicago (+17.2%) and 
+Amsterdam (+18%) had the biggest pricing increases, while smaller 
+markets like São Paulo (–20.8%) and Santiago (–13.7%) had the biggest 
+drops in pricing due to shifting supply dynamics.
+•
+AI-related training workloads and high-density compute deployments are 
+fueling multi-megawatt demand across Tokyo, Sydney and secondary 
+hubs like Bogotá and Mumbai. Operators are quickly adopting liquid 
+cooling, boosting rack density and investing in sovereign AI zones to 
+stay competitive.
+Data Center Inventory by Market
+Data Center Vacancy Rate by Market
+A black and grey logo
+Description automatically generated
+
+
+--- page 7 ---
+(GW) Under Construction, U.S. Market
+
+
+--- page 8 ---
+•
+Distributed computing environment and 
+architecture
+•
+Provisioning for scalability to allow 
+massive scaling 
+•
+Largest footprints for data processing 
+spaces (much larger than on-prem 
+services for enterprise data centers)
+•
+Data processing is largely 
+homogeneous and consistent for 
+standardized applications
+•
+Reliability is generally in the Tier III 
+range with network redundancy across 
+failure domains part of the strategy
+•
+3rd party owner and/or operator model for 
+data center development
+•
+Hosting or creating facilities for other 
+organizations to place or operate their IT 
+assets in their data centers in a leasing 
+environment
+•
+Developed based on Co-location 
+provider’s or tenant IT environmental 
+requirements
+•
+Typical Co-Location Models:
+•
+Retail
+•
+Wholesale
+•
+Warm Shell
+•
+Data center is owned/operated by the entity 
+whose IT assets are in the space.
+•
+Enterprise data centers comprise the largest 
+share of existing data center sites but are 
+also the lowest potential for future growth
+•
+Centralized processing in one or a limited 
+number of facilities
+•
+The smallest in overall size and IT power 
+density
+•
+Drivers for maintaining enterprise DC sites:
+•
+Regulatory/legal needs for maintaining IT 
+assets
+•
+Company policies for IT controlled 
+environments
+Hyperscale Cloud
+Co-Location
+Enterprise
+Data Center Topologies
+Typical 
+Companies
+Typical 
+Companies
+Typical 
+Companies
+
+
+--- page 9 ---
+Hyperscale
+Large facilities designed to support 
+cloud-scale computing.
+•
+Operated by large technology companies
+•
+Designed for extreme scale and efficiency
+•
+Often built as multi-building campuses
+EXAMPLES:
+“Big Tech” - Amazon, Microsoft, Google, Meta
+
+
+--- page 10 ---
+Co-Location 
+A provider owns the facility, but 
+multiple companies rent space 
+inside it.
+•
+Shared building infrastructure
+•
+Customers install and manage their servers
+•
+Organized into private cages or cabinets
+EXAMPLES:
+Equinix, QTS, Digital Realty, Telehouse
+
+
+--- page 11 ---
+Enterprise
+Built and operated by a single 
+organization for its own internal 
+use.
+•
+Owned and managed by the company using it
+•
+Supports internal business operations
+•
+Typically smaller and located on-site or near
+EXAMPLES:
+Walmart, CVS, Barclays, Bank of America
+
+
+--- page 12 ---
+The Role of the Data Center
+The Role of the Data Center
+Data centers are an integral part of the digital world, designed to support business applications and provide 
+services such as:
+•Data storage, management, backup and recovery
+•Productivity applications, such as email
+•Non-Productivity applications, such as social media
+•High-volume e-commerce transactions
+•Powering online gaming communities
+•Big data, machine learning and artificial intelligence
+Electricity
+Water
+Heat
+
+Carbon
+CO2e CO2e CO2e
+Data
+101100100110
+
+
+--- page 13 ---
+DATA CENTER 
+PERFORMANCE 
+METRICS
+
+
+--- page 14 ---
+Data Center Metrics | The Green Grid
+Vision
+The Green Grid is the voice of the industry for resource efficient Data 
+Centers.
+Mission
+The Green Grid works globally to create tools, provide technical expertise, 
+and advocate for the optimization of energy and resource efficiency of Data 
+Center ecosystems which enables a low carbon economy.
+
+
+--- page 15 ---
+Power & Water Efficiency Metrics | LEGACY
+PUE
+WUE
+Total Facility Power (kWh)
+Total IT Power (kWh)
+Annual Site Water Usage (Liters)
+Total IT Energy Usage (kWh)
+Site Water Usage Includes:
+Cooling
+Humidification
+On Site Electricity
+Annual Source* + Site Water (Liters)
+Total IT Energy Usage (kWh)
+*Need to know total energy use. EWIF based 
+on water used at utility to produce the energy
+1.1 < PUE < 1.4
+Hyperscale PUE Reporting in Uptime Study
+PUE < 1.5
+Colocation PUE Reporting in Uptime Study
+1.8 L/kWh
+Industry Average site-WUE
+SOURCE WUE
+Power Usage Effectiveness
+Water Usage Effectiveness
+
+
+--- page 16 ---
+PUE Trends
+Source: Uptime Institute Global Data Center Survey: 
+Uptime Institute Global Data Center Survey 2023/2025
+
+
+--- page 17 ---
+Carbon & Energy Reuse Metrics | LEGACY
+CUE
+ERE
+Total Facility Carbon (kg CO2e)
+Total IT Power (kWh)
+Total Facility Energy (kWh) – Reuse Energy (kWh)
+Total IT Energy Usage (kWh)
+Energy Reuse Effectiveness (ERE) is a sustainability metric used 
+primarily in data centers to measure how effectively the facility 
+repurposes waste heat. It accounts for the energy successfully 
+redirected for beneficial uses (like heating nearby buildings) and 
+subtracts it from the total facility energy used
+Ideal Values: An ERE will always be ≥ 1.0. An ERE of exactly 1.0 
+would mean the facility perfectly offsets its infrastructure energy 
+costs with energy reuse, though this is practically impossible 
+due to thermodynamics and baseline requirements.
+Versus PUE: Because ERE factors out reused energy, a facility's 
+ERE is always lower than or equal to its standard PUE
+Ideal Score: 0.0 kg/kWh, which means the data center 
+operates entirely on carbon-free, renewable energy.
+Interpretation: A lower CUE score means a lower 
+carbon footprint and a more environmentally friendly 
+facility.
+Carbon Usage Effectiveness
+Energy Reuse Effectiveness
+
+
+--- page 18 ---
+Carbon & Energy Reuse Metrics | LEGACY
+ERE EXAMPLE
+Consider a data center located in St. Louis:
+IT Equipment Energy: 1000 kWh
+Total Facility Energy: 1300 kWh (This means the standard PUE is 
+1.3)
+Reused Energy: By capturing the exhaust heat from the server 
+hot aisles in the winter, the facility redirects 200 kWh of thermal 
+energy to heat an adjacent office building.
+What this means: In traditional efficiency metrics, the facility had 
+a PUE of 1.3. However, because it actively recycled 200 kWh of 
+heat, its effective energy overhead was drastically reduced, 
+resulting in an ERE of 1.1.
+ERF
+Reuse Energy (kWh)
+Total IT Energy Usage (kWh)
+Energy Reuse Factor
+
+
+--- page 19 ---
+New Holistic Metrics
+DCRE
+Data Center Resource Effectiveness v1
+
+
+--- page 20 ---
+New Holistic Metrics | From Effectiveness to Impact
+WUI
+Water Usage Impact
+WS
+Water Stress
+
+
+--- page 21 ---
+New Holistic Metrics | From Effectiveness to Impact
+https://www.wri.org/applications/aqueduct/water-risk-atlas/
+
+
+--- page 22 ---
+ICC/ASHRAE Climate Zone Map
+
+
+--- page 23 ---
+Koppen-Geiger Climate Classification Map
+A | Tropical
+B | Arid/Dry
+C | Warm Temperate
+D | Snow
+E | Polar
+
+
+--- page 24 ---
+New Holistic Metrics | From Effectiveness to Impact
+EUI
+Energy Usage Impact v1
+CONCEPTUAL METRIC!
+
+
+--- page 25 ---
+New Holistic Metrics
+ITWC
+IT Work Capacity v1
+CONCEPTUAL METRIC!
+What does the “1” in 1.xx PUE do? 
+Total Facility Power (kWh)
+Total IT Power (kWh)
+1.00
+
+
+--- page 26 ---
+Rack Density
+
+
+--- page 27 ---
+Rack Density
+Source: Uptime Institute Global Data Center Survey: 
+Uptime Institute Global Data Center Survey 2025
+
+
+--- page 28 ---
+COOLING 
+FUNDAMENTALS
+
+
+--- page 29 ---
+Airside Economizer 
+CRAC (Computer Room Air 
+Conditioner)
+Air Cooled Chiller
+Cooling Tower
+Centrifugal Chiller
+Direct Cabinet Cooling
+Data Center Mechanical System Components 
+and Systems | Low Density
+
+
+--- page 30 ---
+Cooling Distribution Unit (CDU)
+Cold Plate
+Dry Cooler
+Adiabatic Cooler
+2-Phase Cooling
+Rear Door Heat Exchanger (RDHx)
+Data Center Mechanical System Components 
+and Systems | High Density
+
+
+--- page 31 ---
+Air Cooling | Traditional (Legacy) Cooling
+For decades, computer rooms and data centers utilized raised floor systems to deliver cold air to servers. Cold air from a computer 
+room air conditioner (CRAC) or computer room air handler (CRAH) pressurized the space below the raised floor. Perforated tiles 
+provided a means for the cold air to leave the plenum and enter the main space—ideally in front of server intakes. After passing 
+through the server, the heated air returned to the CRAC/CRAH to be cooled, usually after mixing with the cold air. Most commonly the 
+CRAC unit fans ran at a constant speed, and the CRAC had a humidifier within the unit that produced steam. The primary benefit of a 
+raised floor, from a cooling standpoint, is to deliver cold air where it is needed, with very little effort, by simply swapping a solid tile for 
+a perforated tile.
+
+
+--- page 32 ---
+Air Cooling | Hot Aisle Containment (HAC)
+This method encloses the hot aisles within the data center. The heat discharged from the racks enters the hot aisle and is returned 
+through ductworks or a plenum back to the cooling equipment. The cold air supply floods the rest of the data center through raised 
+floor perforated tiles or overhead via ductwork.
+Cold Aisle Containment (CAC)
+
+
+--- page 33 ---
+Air Cooling | Close-Coupled Cooling
+This moves the cooling unit closer to the IT equipment rack rather than relying on air plenums or ducting, reducing the fan power 
+required and increasing efficiency. This is done with in-row or rear-door coolers, which place the cooling units in the equipment rows 
+between the IT equipment racks.
+Rear-Door Cooling (example: RDHx)
+In rack-oriented cooling architectures, the CRAC units are dedicated to 
+one server rack and are directly mounted to (or within) the racks. 
+Compared with the room-oriented or row-oriented architecture, the rack-
+oriented airflow paths are even shorter and more precisely defined, so the 
+highest power density (up to 60 kW per rack) can be achieved. 
+In-Row Cooling
+With a row-oriented cooling architecture, each CRAC unit is dedicated to cooling 
+one row of server racks.  A row-oriented design also allows cooling capacity and 
+redundancy to be targeted to the actual needs of specific rows. For example, row-
+oriented architecture allows one row of racks to run high density applications such 
+as blade servers, while another row satisfies lower power density applications 
+such as communication enclosures.
+
+
+--- page 34 ---
+Liquid Cooling | Single-Phase Direct-to-Chip Cooling
+A direct-to-chip (D2C) cooling system replaces traditional air fans with a liquid-based closed loop. It extracts heat by circulating a 
+coolant through cold plates mounted directly to high-density processors (CPUs/GPUs). A Cooling Distribution Unit (CDU) is 
+introduced between the primary cooling plant and piping distribution in the server hall. The absorbed heat is then pumped out of the 
+CDU for facility-wide rejection.
+
+
+--- page 35 ---
+Liquid Cooling | Immersion Cooling
+Immersion cooling is an advanced thermal management technique where electronic equipment, such as data center servers, is 
+directly submerged in a thermally conductive, non-conductive (dielectric) liquid. By eliminating fans and heat sinks, it maximizes 
+energy efficiency, allows for higher component density, and reduces the water consumption often required in traditional air-cooled 
+facilities.
+Two-Phase
+Single-Phase
+Low boiling point liquids are chosen, so the heat generated by servers can easily cause 
+a phase change where the liquid surrounding the components boils and generates 
+vapor, which in turn goes through a phase change returning it to a liquid state while 
+removing the heat. After changing phases, as the bubbles rise up through the liquid the 
+vapor is condensed on the sealed tank's condenser coils, where it changes from a 
+gaseous phase back to a liquid phase and returns the fluid to the immersion bath. 
+Heat generated by servers is conducted through the direct contact between the 
+medium and components. Unlike two-phase liquid immersion cooling, this type 
+of system requires a pump in the coolant distribution unit (CDU) to suck the 
+medium into the cooling device for cooling and goes a step further by using an 
+additional heat rejection equipment to complete the heat exchange cycle.
+
+
+--- page 36 ---
+Liquid Cooling | Two-Phase Direct-to-Chip Cooling
+Two-phase direct-to-chip cooling is an advanced thermal management technique where a specialized dielectric fluid flows over a 
+chip, absorbs heat, and boils. The resulting vapor carries the heat away to a condenser, drastically reducing the required fluid volume 
+while efficiently cooling high-intensity hardware.
+Benefits:
+•
+Higher Efficiency: Requires 4 to 9 times less fluid flow rate compared to single-phase water solutions, reducing pumping power 
+requirements.
+•
+Superior Cooling Capacity: Capable of dissipating extreme heat fluxes (well over 2000 W per chip) without thermal throttling.
+•
+Safety & Uniformity: Boiling occurs at a constant saturation temperature, providing uniform cooling across the whole chip. 
+Because it uses dielectric liquids instead of water, the risk of short-circuiting equipment during a leak is vastly reduced.
+
+
+--- page 37 ---
+WASTE HEAT 
+REUSE 
+[aka: HEAT EXPORT]
+
+
+--- page 38 ---
+Typical = Heat Rejection – From Cooling Towers
+
+
+--- page 39 ---
+
+
+--- page 40 ---
+Note | Image generated by Gemini Enterprise, Nano Banana 2, 2026
+
+
+--- page 41 ---
+EQUINIX | DATA CENTER HEAT EXPORT
+With the right collaboration, data centers worldwide can become vital heat sources for local communities. Equinix is committed to 
+expanding the Heat Export program wherever the local conditions are appropriate, and we can find the right partners. Heat 
+network operators, energy utilities and local municipalities are just a few examples of organizations Equinix can partner with to 
+bring heat export projects to life.
+
+
+--- page 42 ---
+deg F
+deg F
+Heating Input
+220
+220
+215
+215
+210
+210
+205
+205
+200
+200
+195
+195
+190
+190
+185
+185
+180
+180
+175
+175
+170
+170
+165
+165
+160
+160
+155
+155
+150
+150
+145
+145
+140
+140
+135
+135
+130
+130
+125
+125
+120
+120
+115
+115
+110
+110
+105
+105
+100
+100
+95
+95
+90
+90
+85
+85
+80
+80
+78
+78
+76
+76
+74
+74
+72
+72
+70
+70
+68
+68
+66
+66
+64
+64
+62
+62
+60
+60
+58
+58
+56
+56
+54
+54
+52
+52
+50
+50
+48
+48
+46
+46
+44
+44
+42
+42
+40
+40
+38
+38
+36
+36
+Process Heat
+GeoExchange Heating Water 
+Supply
+GeoExchange Cooling Water 
+Supply
+Cooling Input
+Direct Aquifer Water Supply
+Water-Cooled Heat Pump HWS | 
+Empire Tech
+Water-Cooled Heat Pump 
+CHWS | Standard
+Direct-to-Chip Cooling Return 
+Water
+Immersion Cooling  Liquid 
+Return
+Cooling Tower Return Water 
+from Chiller/Absorber
+Air-Cooled Heat Pump CHWS | 
+Standard
+Non-Condensing Gas Boiler 
+HWS
+Condensing Gas Boiler HWS
+Immersion Cooling  Liquid 
+Supply
+Direct-to-Chip Cooling Supply 
+Water
+Chiller CHWS | Standard
+Chiller CHWS | Ice
+Air-Cooled Heat Pump HWS | 
+Standard
+Air-Cooled Heat Pump HWS | 
+Empire Tech
+CHW Coils for Active Chilled 
+Beams
+CHW Coils for UFAD / DV
+CHW Coils for Air Cooling | 
+Dehumidification
+Radiant Cooling CHWS
+Cooling Tower Supply Water 
+to Chiller/Absorber
+Radiant Heating HWS
+AHU Coil HWS
+HWS for Single Effect 
+Abrsorption Chiller
+Thermal Output
+Water-Cooled Heat Pump HWS | 
+Standard
+
+
+--- page 43 ---
+Note | Image generated by Gemini Enterprise, Nano Banana 2, 2026
+Note | Image generated by Gemini Enterprise, Nano Banana 2, 2026
+
+
+--- page 44 ---
+Note | Image generated by Gemini Enterprise, Nano Banana 2, 2026
+A symbiotic industrial network 
+(commonly known as industrial 
+symbiosis) is a system where 
+separate companies work together 
+to share resources. In this setup, 
+the waste, by-products, energy, 
+water, or surplus heat from one 
+facility become the raw materials 
+or fuel for another. It mimics how 
+natural ecosystems function, where 
+nothing goes to waste and every 
+output serves as an input for 
+another organism.
+
+
+--- page 45 ---
+Note | Image generated by Gemini Enterprise, Nano Banana 2, 2026
+
+
+--- page 46 ---
+
+
+--- page 47 ---
+HEAT EXPORT | THERMAL ENERGY NETWORK DESIGN
+To transfer thermal energy from a “source” to a “sink”, HDR has extensively researched the use of Thermal Energy 
+Networks (TENs) and how to optimize the network/loop design for thermal balance, land allocation, and energy 
+efficiency/decarbonization potential.  The INFOGRAPHIC below is an illustration of an optimized TEN that allows for 
+numerous buildings within a development/community to be both the “source” and the “sink” as needed.  In 
+addition to buildings of varying function types being inter-connected to the TEN, the network also includes thermal 
+balancing elements including a centralized Geothermal/GeoExchange borefield, Wastewater Energy Recovery, and 
+centralized heat pump chillers. 
+A Thermal Energy 
+Network offers a 
+solution to fossil fuel 
+demand by providing 
+a constant source of 
+thermal waste during 
+all hours.
+Whenever you can bring together an observed waste with a planned need, there is an opportunity for disruption and 
+a new market, whether in data centers, or research facilities, the integration of Thermal Energy Networks embodies 
+an approach to listen and observe, then brings a bold idea to solve the needs of the community .
+
+
+--- page 48 ---
+Note | Image Credit: AFP via Getty Images, 2026
+
+
+--- page 49 ---
+Note | Image created by HDR, 2025
+Note | Top Image & Bottom Left Image generated by Gemini Enterprise, Nano Banana 2, 2026
+
+
+--- page 50 ---
+
+
+--- page 51 ---
+Note | Image professionally created by Microsoft Paint, 2026
+Note | Image generated by Gemini Enterprise, Nano Banana 2, 2026
+
+
+--- page 52 ---
+ENERGY – WATER 
+NEXUS
+
+
+--- page 53 ---
+Water Use in Cooling & Power Generation
+0.4-0.6 Gallons/kWh
+Avg. high-process facility water use for traditional evaporative 
+cooling (0.4-0.6 L/kWh for standard commercial)
+Source: WaterCalculator.org [https://www.watercalculator.org/footprint/data-centers-water-use/]
+All large high process facilities use water, both directly and indirectly: 
+They withdraw water directly to cool the servers that get hot from 
+operational use, and they use water indirectly because they power 
+their servers and cooling systems with electricity generated at power 
+plants which rely on water for their own cooling needs.
+2 Gallons/kWh
+Avg. power generation CONSUMPTIVE water use in the United 
+States (Withdrawn ~12 Gallons/kWh)
+Thermoelectric 
+Evaporation
+Hydroelectric 
+Evaporation
+
+
+--- page 54 ---
+Energy Water Nexus | Vicious Circle 
+Water 
+Production 
+requires 
+Electricity
+Electricity 
+Production 
+requires 
+Water
+As of April 2022, the 
+Global Water 
+Intelligence 
+Organization has 
+traced 81 water and 
+wastewater utilities 
+across the globe 
+with net zero, 
+carbon, and climate 
+neutrality targets, 
+serving over 230 
+million people. 
+
+
+--- page 55 ---
+Water Use in Data Center Cooling Systems
+Water-Cooled Chiller
+Direct Evaporative, Open Loop 
+Condenser
+Indirect Evaporative, Closed 
+Loop Condenser
+Indirect Evaporative Coolers (aka, 
+Indirect Adiabatic Cooling) 
+Off-site Power Plant Indirect Water 
+Use
+StatePoint
+ Liquid Cooling 
+system (SPLC)
+Adiabatic Cooling added to 
+Fluid Cooler or DX 
+Condenser
+Direct Evaporative Cooler 
+(aka, DEC; aka, Swamp 
+Coolers; aka, Direct 
+Adiabatic Cooling)
+Adiabatic Cooling Towers
+Air-Side Economizer
+Kyoto Wheel
+ Energy 
+Recovery (aka, Rotary Heat 
+Exchanger)
+Indirect Dry Cooling
+Air-Cooled Chiller
+DX CRAC Condenser
+Closed-Loop Zero 
+Evaporation
+Data Center Heat Export
+High Water Use
+Low to Moderate 
+Water Use
+ZERO Water Use
+
+
+--- page 56 ---
+Cooling Tower Water Usage
+Evaporation [67%], Blowdown [32%] & Drift/Windage [<1%]
+Evaporative cooling towers dissipate unwanted heat through water evaporation.  
+TOTAL WATER USE - Liters
+399,152 
+247,488 
+260,000 
+2,221,174 
+Flush Demand
+Flow Demand
+Sector Specific
+Process Water
+Demand
+Cooling Tower
+Makeup Water
+Demand
+Irrigation Demand
+TOTAL WATER USE - Liters
+262,600 
+162,821 
+195,000 
+Flush Demand
+Flow Demand
+Sector Specific
+Process Water
+Demand
+Cooling Tower
+Makeup Water
+Demand
+Irrigation Demand
+Water Cycle Disaggregation | w/ CT
+Water Cycle Disaggregation | w/o CT
+1. Optimize evaporation and condensing 
+technology (evaporation savings)
+2. Maximize the cycles of concentration 
+(blowdown savings)
+3. Install drift eliminators (drift/windage savings)
+Air-Cooled Chiller Efficiency
+Cooling Tower Fill Scaling
+Drift Eliminators
+
+
+--- page 57 ---
+Carbonate Fuel Cells
+
+
+--- page 58 ---
+Carbonate Fuel Cells
+
+
+--- page 59 ---
+Carbonate Fuel Cells
+
+
+--- page 60 ---
+Carbonate Fuel Cells | Waste Heat Reuse 
+Data center cooling can be improved (and energy consumption reduced) by using on-site carbonate fuel cell combined heat and power 
+(CHP) to drive absorption chilling—converting fuel cell waste heat into chilled water so that less electricity is spent on cooling. FuelCell 
+Energy Block systems produce a single high-flow exhaust stream at 725 deg F that can generate hot water, steam, or chilled 
+water via an absorption chiller, turning thermal output into a data-center-scale cooling asset and freeing more electrical capacity for IT 
+load. By capturing and using this heat, overall system efficiency can exceed 80%, delivering significant energy savings and lower 
+emissions compared with conventional electric cooling.
+
+
+--- page 61 ---
+Form Revision Level: 07/14/2026  © HDR
+HDR FUEL CELL ANALYSIS TOOL | POWER, FUEL, WATER & THERMAL CYCLES
+Fuel Cell Power-to-Total Annual Power Ratio
+1.00
+SO Fuel Cell Powered Data Center (20kW/rack @ 75.0% load) [Seattle, Washington]
+09.23.2026
+System Efficiencies
+Fuel Cell Power Generation
+46.1%
+Absorption Cooling
+40.1%
+Low-Grade HW Recovery
+0.3%
+Total η
+86.5%
+Annual Natural Gas Consumption | 12,571,414 therms
+SolidOxide Fuel Cell System
+Incoming Utility Service
+Annual Fuel Cell Power Generation | 169,883,967 kWh
+169,883,967 kWh Electricity Load
+75,300 ft2 
+LargeDataCenter-
+DELIVERY
+Annual Total Power Delivery | 169,883,967 kWh
+0 kBTU/year Heating Load
+474,567,533 kBTU/year Cooling Load
+FuelCell USA Energy Block | 1250 kW rated | Quantity: 18
+Annual Utility Power Delivery | 0 kWh
+Annual Fuel Cell Water Consumption | 31,802,279 gal
+Exhaust Driven Absorption Chiller
+MAX Annual Chilled Water Generation Potential | 503,655,996 kBTU
+Annual Chilled Water Generation | 474,567,533 kBTU
+Low-Grade Heat Air-to-Water HW Recovery
+MAX Annual Heat Recovery Potential | 3,816,273 kBTU
+Annual Heat Recovery | 0 kBTU
+700 deg F
+250 deg F
+120 deg 
+
+
+--- page 62 ---
+EMBODIED 
+CARBON
+
+
+--- page 63 ---
+image sources: MEP2040, https://www.mep2040.org/
+
+
+--- page 64 ---
+https://www.mep2040.org/guide
+
+
+--- page 65 ---
+CRADLE TO GATE (A1-A3)
+
+
+--- page 66 ---
+BEYOND THE GATE (A4-C)
+
+
+--- page 67 ---
+HYPERSCALER 
+ENVIRONMENTAL 
+GOALS
+
+
+--- page 68 ---
+The Carbon Footprint of Computing
+
+
+--- page 69 ---
+Carbon negative | By 2030, Microsoft will cut its emission by more than half compared to 
+2020 and remove more carbon than it emits.  By 2050, we will remove the same amount of 
+carbon we have emitted operationally since our founding in 1975.

@@ -1,0 +1,80 @@
+SOURCE: Source Documentation\Grundfos Challenge\NYU_Hackathon_Data_Center_Heat_Reuse_Challenge_R1.docx
+
+
+
+THE CHALLENGE  
+Develop and defend a technically feasible, economically viable and community-centered system that captures, upgrades and delivers data-center heat to the community most suitable users. Teams that select our challenge will be expected to show how the solution provides reliable, measurable value while sharing costs, risks and responsibilities across stakeholders for two site scenarios involving an existing data center (commissioned) and a new data center (proposed).
+Link to Source Documentation
+
+
+TEAM DELIVERABLE 
+Provide concise, evidence-based system proposal that includes the network architecture, heat source and most suitable users, required infrastructure, operating approach, and environmental and community impact. Select one setting and justify why the proposed solution is appropriate for that local context. Demonstrate how heat supply and demand are matched by temperature, capacity, timing, seasonality and continuity; explain how cooling reliability and continuity of heat supply are protected; quantify measurable value for the data center, heat users and community; and show how costs, risks, ownership and responsibilities are shared across stakeholders.
+
+
+RESOURCES PROVIDED TO STUDENTS
+
+
+NYU HACKATHON CHALLENGE
+Data Center Heat Reuse: Turning Waste Heat into Community Value
+Regenerative Design Data Centers
+SITE 1  |  URBAN
+
+111 8th Avenue Data Center (Commissioned)
+
+Location: 111 8th Avenue, New York, NY 10011
+
+Operator: Multi-tenant carrier hotel and data center facility
+
+Scenario
+An urban, multi-tenant data center located near diverse potential heat users and existing building-energy infrastructure.
+
+Design question
+How can the data center become a reliable thermal energy hub for the most suitable local heat off takers?
+
+Consider
+• Identify and justify the most suitable heat off takers
+• Match supply and demand by temperature, capacity, timing, seasonality and continuity
+• Heat upgrading, distribution and building interfaces
+• Backup heat and continuity without compromising data-center cooling reliability
+• Costs, risks, ownership and responsibilities across stakeholders | SITE 2  |  SUBURBAN / RESIDENTIAL
+
+Lake Hawkeye Data Center (Proposed)
+
+Location: Former Cayuga Power Plant Site, Lansing, NY
+
+Developer/Operator: TeraWulf
+
+Scenario
+A proposed data center at a former power-plant site near residential and community uses with potential for local heat-reuse infrastructure.
+
+Design question
+How can recovered heat reliably serve the most suitable nearby residential and community heat users?
+
+Consider
+• Identify and justify the most suitable heat off takers
+• Match supply and demand by temperature, capacity, timing, seasonality and continuity
+• Domestic hot water, building heating and community facilities
+• Heat-pump needs, distribution and backup heat
+• Affordability, community acceptance and continuity of heat supply
+TECHNICAL
+• Capture point, temperature and capacity
+• Heat pumps / thermal upgrading
+• Reliability, timing and continuity | ECONOMIC + DELIVERY
+• Capital and operating costs
+• Revenue / connection models
+• Ownership, risks and responsibilities | ENVIRONMENTAL
+• Carbon reduction
+• Energy efficiency
+• Resource optimization | SOCIAL + REGENERATIVE
+• Measurable stakeholder value
+• Equity and public acceptance
+• Local-context fit
+• Grundfos & HDR data center heat-reuse presentation(s)
+• Get the application guide: District Energy | Grundfos
+• Community impacts and mitigation presentation
+• HDR regenerative design framework materials
+• Public data-source list, including available GIS resources
+• Open Compute Project whitepaper (Heat Re-use | • Selected site information and local context
+• District energy and heat-reuse reference materials
+• Data center cooling and temperature terminology
+• Mapping, land-use, utility, building-energy, and demographic datasets

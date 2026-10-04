@@ -1,0 +1,308 @@
+SOURCE: Source Documentation\Grundfos Challenge\2026 10 01 Hackathon NYU - Urban Site - 111 8th Ave.pdf
+
+
+--- page 1 ---
+Regenerative
+Design Site Data
+N Y U H a c k a t h o n
+
+
+--- page 2 ---
+Design that emulates natural 
+systems for the continuous 
+renewal of social and ecological 
+functions.
+PUT SIMPLY
+What is 
+Regenerative 
+Design? 
+
+
+--- page 3 ---
+REGENERATIVE DESIGN
+
+
+--- page 4 ---
+Community
+Ecology
+Health
+REGENERATIVE
+DEGENERATIVE
+NET POSITIVE BENEFITS
+NET HARMFUL IMPACTS
+
+
+--- page 5 ---
+HUMAN 
+HEALTH
+COMMUNITY
+AIR
+CARBON
+WATER
+BIODIVERSITY
+NUTRIENTS
+HOW DO DESIGN 
+PROJECTS:
+• ELIMINATE 
+GREENHOUSE GAS 
+EMISSIONS
+• SEQUESTER MORE 
+CARBON IN BUILDING 
+MATERIALS THAN ARE 
+EMITTED IN THE 
+REMAINDER OF 
+MATERIALS
+• BETTER SERVE 
+COMMUNITY
+• PROVIDE EQUITY OF 
+ACCESS TO THE 
+DESIGN PROCESS
+• RE-ESTABLISH ECO-
+SYSTEM BIODIVERSITY
+• CREATE CONDITIONS THAT 
+IMPROVE HUMAN HEALTH
+• PROVIDE BETTER 
+CONNECTIONS TO NATURE 
+IN BUILDINGS
+• PREVENT NEGATIVE IMPACT 
+TO OTHER SPECIES
+• CONSERVE COMMUNITY 
+WATER RESOURCES
+• MAINTAIN WATER QUALITY 
+FOR OCCUPANTS
+• MANAGE STORMWATER 
+WITHOUT IMPACT TO 
+OTHER SPECIES
+• AVOID SOIL 
+CONTAMINATION
+• IMPACTING SPECIES AT RISK
+
+
+--- page 6 ---
+REGENERATIVE DESIGN
+Resiliency Planning |
+Ecosystem Restoration |
+Net Zero Buildings |
+Urban Planning and Design |
+Campus Decarbonization |
+Renewables Generation |
+Waste Planning |
+Air Quality |
+Water Quality |
+Post-occupancy Evaluation & Measurement |
+Sustainable Value Assessment |
+Energy Efficiency Modeling |
+Categories and Key Performance Indicators
+
+
+--- page 7 ---
+01
+Place Profile Review
+
+
+--- page 8 ---
+"It is only in relationship to place that humans 
+experience a sense of intimacy with and responsibility 
+for the living world"
+ 
+ 
+ 
+ 
+ 
+-Regenesis
+
+
+--- page 9 ---
+REGENERATIVE DESIGN
+Project Context + Attributes | “Proximate Whole”
+111 8th Avenue, New York, NY
+
+
+--- page 10 ---
+REGENERATIVE DESIGN
+Ecological Baseline | “Pristine Site Selection”
+Rockefeller State Park Reserve
+Pleasantville, NY
+
+
+--- page 11 ---
+REGENERATIVE DESIGN
+Biodiversity | “Ecological Nested Systems”
+Biodiversity Risk Map – Cumulative is not much of a threat
+
+
+--- page 12 ---
+REGENERATIVE DESIGN
+Biodiversity | “Ecological Nested Systems”
+Biodiversity Risk Map – Urban Expansion is the greatest threat to Biodiversity
+
+
+--- page 13 ---
+REGENERATIVE DESIGN
+Biodiversity | “Ecological Nested Systems”
+Noise Map – 56 sustained decibels compared to 43.9 at the Ecological Baseline
+
+
+--- page 14 ---
+REGENERATIVE DESIGN
+Health | Mental Health
+Census – The site is average when it comes to mental health
+
+
+--- page 15 ---
+REGENERATIVE DESIGN
+Water Indicators | “Nested System”
+Water Risk – Baseline Water Stress is Low-Medium
+
+
+--- page 16 ---
+REGENERATIVE DESIGN
+Water Indicators | “Nested System”
+Water Risk – Drought Risk is Low-Medium
+
+
+--- page 17 ---
+REGENERATIVE DESIGN
+Water Indicators | “Nested System”
+Water Risk – Groundwater Table Decline is Medium
+
+
+--- page 18 ---
+REGENERATIVE DESIGN
+Water Indicators | “Nested System”
+EJ Screen – Direct Discharge to Water is in the 79th percentile in the country so runoff 
+from the site does make it’s way directly to the Hudson River
+
+
+--- page 19 ---
+REGENERATIVE DESIGN
+Water Indicators | “Nested System”
+EJ Screen – Impaired Waterways – The Hudson River is an impaired waterway with an 
+IR rating of 5 with traces of dioxins, mercury, pesticides and PCBs
+
+
+--- page 20 ---
+REGENERATIVE DESIGN
+Water Indicators | “Nested System”
+FEMA Flood Hazard Map – 500 year flood plain is one block away
+
+
+--- page 21 ---
+REGENERATIVE DESIGN
+Future Climate Conditions | “Adaptive Capacity”
+Precipitation – 5” increase within 5 years
+
+
+--- page 22 ---
+REGENERATIVE DESIGN
+Climate Risk and Vulnerability | Risk Index
+FEMA National Risk Index – Biggest Risk is Hurricane but the site has almost no risk 
+index and is in the 1st percentile in the nation for risk
+
+
+--- page 23 ---
+REGENERATIVE DESIGN
+Climate Risk and Vulnerability | “Adaptive Capacity”
+FEMA Social Vulnerability Index – The population in this area is not as able to avoid a disaster and 
+therefore the social vulnerability percentile is in the 79th percentile in the nation
+
+
+--- page 24 ---
+REGENERATIVE DESIGN
+Source Emissions | Carbon Intensity 
+Impact on Nearby Disadvantaged Communities – While the site will get a mix of energy from various point sources, the two closest to the site are 
+Cogen plants with emission intensities on the lower end (654 lb of CO2 / MWh) but one is right next to a disadvantaged community
+
+
+--- page 25 ---
+REGENERATIVE DESIGN
+Source Emissions | Carbon Lifecycle 
+
+
+--- page 26 ---
+REGENERATIVE DESIGN
+Future Climate Conditions | “Adaptive Capacity”
+Temperature change will be 3 degrees hotter by 2050 on average with up to 69 days 
+above 90 degrees compared with 19 days today
+
+
+--- page 27 ---
+REGENERATIVE DESIGN
+Future Climate Conditions | “Adaptive Capacity”
+Temperature change will be 12 degrees warmer by 2080 and feel like Ola, Arkansas
+
+
+--- page 28 ---
+REGENERATIVE DESIGN
+Air Quality | Daily Air Quality Index
+Nearby Monitoring Stations – 10 year average only had 5% of days that were worse than 
+“Good” Air Quality
+
+
+--- page 29 ---
+REGENERATIVE DESIGN
+Air Quality | Daily Air Quality Index
+Nearby Monitoring Stations - 5 year average had 10% of days that were worse than 
+“Good” Air Quality which means air quality is getting worse
+
+
+--- page 30 ---
+REGENERATIVE DESIGN
+Air Quality | Early Deaths and Health Cost
+Air Quality issues cause over 1900 deaths and cost New York $5.6B dollars
+
+
+--- page 31 ---
+REGENERATIVE DESIGN
+Air Quality | Ozone
+While the site is only in the 37th percentile for Ozone, the block just to the West is in the 83rd percentile so it appears as if something nearby (diesel 
+back up generators) may be causing an air quality issue
+
+
+--- page 32 ---
+REGENERATIVE DESIGN
+Air Quality | PM2.5
+While the site is only in the 52nd  percentile for Ozone, the block just to the West is in the 92nd  percentile so it appears as if something nearby 
+(combustion source) may be causing an air quality issue
+
+
+--- page 33 ---
+REGENERATIVE DESIGN
+Health | Asthma
+Census – The site has very low asthma rates
+
+
+--- page 34 ---
+REGENERATIVE DESIGN
+Health | Heart Disease
+Census – The site has very low instances of heart disease
+
+
+--- page 35 ---
+REGENERATIVE DESIGN
+Health | Stroke
+Census – The site has very low instances of stroke
+
+
+--- page 36 ---
+REGENERATIVE DESIGN
+Health | Cancer
+Census – The site has low instances of cancer
+
+
+--- page 37 ---
+REGENERATIVE DESIGN
+Community | Minority Population
+Census – The site is in the 49th percentile while the block to the West is in the 79th percentile
+
+
+--- page 38 ---
+REGENERATIVE DESIGN
+Community | Population Below Poverty
+Census – The site is in the 43rd  percentile while the block to the West is in the 83rd  percentile
+
+
+--- page 39 ---
+REGENERATIVE DESIGN
+Community | 65+
+Census – The site is the 42nd percentile in the nation

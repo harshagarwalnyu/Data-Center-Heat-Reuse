@@ -1,0 +1,1789 @@
+SOURCE: Source Documentation\White Papers\Danfoss White Paper Sample.pdf
+
+
+--- page 1 ---
+Danfoss Impact 
+Issue no. 3
+Roadmap for 
+decarbonizing 
+cities
+
+
+--- page 2 ---
+1  
+ 2 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+The battle 
+against climate 
+change will be 
+won – or lost – 
+in cities
+Foreword by Mika Kulju
+President, Danfoss Power Electronics & Drives
+“Our world needs climate action 
+on all fronts — everything, 
+everywhere, all at once.” 
+António Guterres, UN Secretary-General 
+ 2 
+showcase green technology and create attractive 
+places to live and work. In the coming chapters, 
+we take a deep dive into the carbon footprints of 
+all major aspects of our lives in cities: the heating 
+and cooling of the buildings we live in, the 
+construction sites that build our homes, roads, 
+and workplaces, the transport that gets us to 
+work, the infrastructure that supplies our goods 
+and handles waste, and the data centers that 
+constitute the digital backbone of the city. In the 
+next few years, the battle against climate change 
+will be won – or lost – in cities. The solutions are 
+there, but political leaders need to take action in 
+scaling them. Let’s get started.
+Skyscrapers, traﬀic jams, shopping malls, 
+and air conditioners. It is not hard to see why 
+cities account for two-thirds of global energy 
+consumption and more than 70% of annual 
+global carbon emissions.1 With more than half of 
+the world’s population living in cities today – a 
+number expected to increase to almost 70% in 
+20502 – we will not reach the goals of the Paris 
+Agreement without a deep decarbonization        
+of cities. 
+Many cities all over the world have committed to 
+ambitious climate targets and are taking steps 
+to reduce their emissions. However, as the most 
+recent IPCC report exposed, the 1.5°C target is 
+moving out of reach, and it’s likely that the world 
+will exceed 1.5°C of warming in the near term if 
+we “keep walking instead of sprinting.”3 Climate 
+change has already resulted in negative impacts 
+on human well-being and key infrastructure in 
+cities. For instance, heatwaves and air pollution 
+have intensified in cities.4 To prevent the worst 
+of the climate crisis, rapid, deep, and sustained 
+change is necessary. Or as UN Secretary-
+General António Guterres puts it: “Our world 
+needs climate action on all fronts — everything, 
+everywhere, all at once.”5 The ambition of this 
+whitepaper is to demonstrate how “everything, 
+everywhere, all at once” can be done in cities. 
+Cities oﬀer some of the best possibilities to 
+optimize urban planning and accelerate a green 
+transition, and there are already accessible, 
+cost-eﬀicient technologies out there capable 
+of cutting emissions suﬀiciently to meet global 
+climate goals.6 By oﬀering a roadmap for a green 
+urban transition, it shows how cities can act as 
+ambitious, inspirational front-runners that
+
+
+--- page 3 ---
+3  
+ 4 
+Danfoss Impact  
+Issue no. 3
+With evidence from credible sources, Danfoss Impact is written to show how 
+existing eﬀiciency technologies can lower the cost of decarbonization and 
+accelerate the electrification of our economies. 
+This special, longer issue of Danfoss Impact aims to provide a concrete 
+roadmap for mayors, local decision-makers, and urban planners on how 
+to eliminate all major drivers of the carbon footprint of cities. The paper 
+explores how available technologies can improve the livelihoods of citizens 
+while at the same time making our economies more resilient and creating 
+jobs. It oﬀers a holistic and concrete view of the major opportunities for 
+decarbonizing cities.
+However, the solutions presented are not exhaustive and the paper will 
+not explore the provision and build out of renewable sources of energy. 
+Crucial as this is, it is a theme well-researched and analyzed. In addition, 
+although they fall outside the scope of this paper, urban planning measures 
+such as creating walkable cities, parks and open spaces, wetlands, and 
+urban agriculture to reduce flood risk and heat-island eﬀects should also be 
+implemented.7
+In cities, the transport sector and the building sector are the largest 
+contributors to carbon emissions, and therefore the paper focuses on all 
+major levers for decarbonizing those two sectors – reducing energy waste 
+through eﬀiciency measures, electrifying, and integrating sectors to reuse 
+otherwise wasted energy.
+The paper was prepared by Case and Analytics in Group Communication 
+and Sustainability at Danfoss. Comments or questions can be addressed to     
+Head of Analytics, Sara Vad Sørensen at: sara.sorensen@danfoss.com.
+Sector integration is an enabler of energy eﬀiciency and 
+electrification and can together with the build-out of renewables 
+decarbonize the power supply to cities. In urban areas, the high 
+density of buildings, infrastructure, and services makes it possible 
+to connect urban energy-consumers with energy-producers 
+and convert and store energy. Supermarkets, data centers, 
+and wastewater facilities can all be turned from heavy energy 
+consumers into energy suppliers. 
+Implementation of existing technology for buildings, transport, 
+and sector integration can bridge half the gap in the urban GHG 
+emissions reductions needed for a 1.5°C pathway.10 
+Energy eﬀiciency. If all urban areas and cities in Europe, the US, 
+and China invested in energy-eﬀicient heating and cooling of 
+buildings, this would contribute 20% of the emissions reductions 
+needed in urban areas to reach the 1.5°C target of the Paris 
+Agreement.8 Reducing energy waste is possible across sectors and 
+the technologies to do this are already accessible. 
+Electrification of urban transport needs a drastic acceleration. 
+Similarly, an urgent political focus on the potential of electrifying 
+the whole transport sector – including both maritime transport and 
+heavy vehicles – is pivotal. If all urban areas and cities in Europe, 
+the US, and China electrified their private and public transport, 
+this would contribute 28% of the emissions reductions needed 
+in urban areas to reach the 1.5°C target of the Paris Agreement.9 
+As we will see, technology for the electrification of cars, buses, 
+and trucks, as well as marine equipment and transport such as city 
+boats, ferries, and cranes already exist.
+These are the key takeaways
+Only got 
+2 minutes?
+ 
+Danfoss Impact 
+Issue no. 3
+ 4 
+
+
+--- page 4 ---
+5  
+ 6 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+On the left is a roadmap for decarbonizing cities. 
+In the following three chapters, we will explore 
+concrete areas that come together to constitute 
+the main levers in decarbonizing cities. 
+In Chapter 1, we look at the emissions from the 
+heating and cooling of the buildings where we 
+live, work, and spend our free time. 
+In Chapter 2, we review the opportunities for 
+decarbonizing the transport sector – from 
+heavy-duty construction vehicles and the 
+cars and buses that get us from A to B, to the 
+infrastructure and traﬀic at the ports of the city.
+In Chapter 3, we look at some of the often-
+overlooked aspects of the carbon footprint of 
+cities, such as wastewater facilities handling 
+sanitation, supermarkets providing us with food 
+and household supplies, and data centers that 
+serve as the digital infrastructure of cities. What 
+is common for these three sites is that they all 
+showcase the potential of utilizing the world’s 
+largest untapped source of energy: excess heat.
+Chapter 4 sums up the three main levers of 
+decarbonizing cities, while Chapter 5 presents 
+concrete policy recommendations that can 
+accelerate the deployment of these technologies. 
+                
+The carbon 
+footprint 
+of cities –                   
+a roadmap
+Heating and cooling
+Transport
+Energy supply
+1
+3
+2
+Decarbonizing 
+cities
+
+
+--- page 5 ---
+7  
+ 8 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+Decarbonizing 
+heating and 
+cooling in      
+the city
+Our roadmap for decarbonizing cities starts in 
+the buildings where we live, work, and spend 
+most of our time. Our homes, oﬀices, hospitals, 
+schools, and factories all require energy for 
+power, heating, and cooling. Globally, buildings 
+are the second largest source of energy-related 
+carbon emissions. In total, 28% of global energy-
+related CO2 emissions come from day-to-day 
+energy consumption in buildings.11 And in urban 
+areas, buildings can often account for over 50% 
+of emissions.12
+As climate change progresses and temperatures 
+inevitably rise, demand for energy in buildings 
+to maintain ambient conditions is predicted to 
+increase further. High temperatures and heat 
+waves have already begun to drive demand for 
+air conditioning and will continue to do so.13 As 
+the world’s population continues to grow, so 
+will the expanse of buildings needed to house 
+and service growing communities. Reducing 
+emissions from buildings is therefore critical if we 
+are to meet the goals of the Paris Agreement.
+An eﬀective strategy for decarbonizing buildings 
+must address both the energy supply and 
+demand requirements. We must simultaneously 
+ensure that energy sources for heating and 
+cooling buildings are decarbonized, while also 
+making eﬀorts to reduce the overall demand for 
+energy from buildings. 
+According to the IEA, if we are to achieve 
+net-zero emissions by 2050, nearly 85% of 
+buildings must be zero-carbon-ready, meaning 
+highly energy eﬀicient and using decarbonized 
+energy.14 To achieve this goal, most existing 
+buildings would require retrofits by 2050 and 
+all new buildings must be built as zero-carbon-
+ready by 2030. But we are currently oﬀ track: 
+as of September 2022, retrofitting rates for 
+existing buildings were around 1% and need to 
+double, and only 5% of new buildings were zero-
+carbon-ready.15 However, solutions to reach the 
+necessary eﬀiciency in buildings already exist.  
+To reduce the energy intensity of buildings we 
+need to look at both passive and active measures 
+that span space heating and cooling, lighting, 
+ventilation, and water. 
+Passive measures, such as architectural design 
+or improvements to the building envelope, can 
+play an important role in reducing the demand 
+for heating, cooling, ventilation, lighting, and 
+other energy-intensive processes. In this paper, 
+however, we will focus on active measures.
+Active measures achieve energy savings by 
+measuring, monitoring, and controlling a 
+building’s energy usage. While installing energy-
+eﬀicient lighting or heating is essential to 
+reducing overall energy use, active measures 
+must also be implemented to ensure that the 
+lighting or heating is only switched on according 
+to demand. Whether we look at retrofitting 
+existing buildings or create new, active measures 
+can have an enormous, fast, and cost-attractive 
+energy-saving potential that is far from realized 
+today. In the following pages, several existing 
+technologies with large energy-saving potential 
+are presented. And while geographic location 
+often dictates which active measures make most 
+sense (e.g., heating vs. cooling), the following 
+examples are particularly relevant in the context 
+of heating buildings.
+Buildings
+Decarbonizing 
+heating and  
+cooling
+
+
+--- page 6 ---
+9  
+ 10 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+Thermostats
+Save 7% of final energy in a              
+multi-family building
+One of the simplest ways to save energy is to maintain a room’s temperature 
+level automatically by using a thermostat. Simple as they may be, thermostatic 
+radiator valves save up to 7% of final energy in a multi-family building with a 
+payback time of one year.16 However, many buildings still do not utilize this 
+simple measure. Across the EU, thermostatic radiator valves have the potential 
+to save 130 TWh of heating energy per year without aﬀecting the thermal 
+comfort of households.17 The energy savings can be increased even further with 
+an electronic thermostat which is regulated digitally and can be set according 
+to occupant behavior - for example, by lowering the room temperature when a 
+building is empty.
+Hydronic balancing
+Save 10% of final energy in a            
+multi-family building
+Many heating or cooling units utilize a hydronic system that transfers water 
+through pipes and radiators to heat or cool buildings. The flow resistance inside 
+the system is – unless controlled – fluctuating. This causes radiators closer 
+to the pump to become warmer than their intended temperature, meanwhile 
+radiators further from the pump are cooler. This ineﬀiciency means that water is 
+often overheated and larger pumps are installed to accommodate people living 
+far from the pump. Besides installing thermostats, the installation of automatic 
+balancing valves with diﬀerential pressure control leads to ideal indoor 
+temperatures, reduced operating costs, and higher eﬀiciency.
+In a multi-family building, a hydronic balancing system can save up to 10% on 
+final energy with a payback time of one year.18
+Danfoss impact  
+Issue no. 3
+9  
+Model predictive controls 
+Save up to 20% in a building’s        
+energy costs
+Model predictive controls are driven by artificial intelligence using building, 
+weather, and user data to predict heating and ventilation demand. By utilizing 
+such controls, buildings can pre-heat ahead of peak hours, or lower heating 
+when the sun is about to shine on the building facades, thus saving energy. 
+Observations on 100,000 flats equipped with this technology based mainly in 
+Finland show the energy consumption of heating and ventilation was reduced 
+on average by over 7% and 10% respectively. 
+Meanwhile, by shifting the consumption to the most economical period the 
+system ensures up to 20% savings in a building’s energy costs.19 In 2021, a 
+London Local Authority installed model predictive controls in eight residential 
+buildings. In the first 11 months of operation, the technology paid back its initial 
+cost and saved 600 MWh of heat – the equivalent of heating 50 homes in the UK 
+for a year. 
+Heat pumps 
+Save 2/3 of the electricity 
+used compared to traditional                  
+electric equipment
+Heat pumps upgrade the low temperature heat stored in the air, bedrock, 
+ground, or groundwater to a usable temperature level. Buildings are consuming 
+this by heating our living spaces, oﬀices, and water. Because they upgrade heat 
+instead of generating it, on average heat pumps can keep a building warm with 
+only a third of the electricity used by traditional electric equipment. 
+Heat pumps can also provide cooling, eliminating the need for a separate air 
+conditioner for the 2.6 billion people who will live in regions requiring both 
+heating and cooling by 2050. The IEA estimates that heat pumps have the 
+potential to reduce global CO2 emissions by at least 500 million tons in 2030 
+– equal to the annual CO2 emissions of all cars in Europe today.20 Although 
+heat pump adoption has increased in recent years, it still represented less than 
+10% of global heating equipment sales in 2021, while fossil fuel equipment 
+accounted for 45%.21 And this is despite lower energy costs for the average 
+household or business using a heat pump than for those using a gas boiler.22
+ 10 
+Danfoss impact 
+Issue no. 3
+
+
+--- page 7 ---
+11  
+ 12 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+Transport – whether driving the car to work, 
+transporting the goods we consume, or oﬀ-
+highway vehicles constructing the city – depends 
+on vast amounts of energy. Transportation 
+accounts for 37% of CO2 emissions from end-use 
+sectors and has the highest reliance on fossil 
+fuels.23 In major cities, 33% of all greenhouse 
+gas emissions are generated by transport.24 
+Urban transport also has a negative impact on 
+human health by emitting noise and air pollution 
+in cities, as well as generating around half of 
+the global nitrogen oxide (NOX) emissions.25              
+Each year, 7 million people die prematurely due 
+to air pollution.26 
+Decarbonizing 
+urban transport
+Heavy-duty               
+vehicles
+Marine 
+transport
+Passenger 
+vehicles
+In this section, we assess the challenges and 
+possibilities for curbing emissions from urban 
+transport. More specifically, we zoom in on three 
+major components of urban transport emissions: 
+passenger cars, heavy-duty vehicles,27 and the 
+transport in and on the ports of the city. 
+Electrifying passenger 
+vehicles
+Road transport accounts for 77% of transport 
+emissions.28 Most of this comes from passenger 
+vehicles,29 which contribute more than half of 
+global transport emissions.30 Fortunately, the 
+sales of electric cars have seen exponential 
+growth in the last few years. Electric cars are 
+becoming more aﬀordable with faster charging, 
+and they are expanding in performance. Global 
+electric car sales grew to 14% of total car sales in 
+2022, up from only 1% in 2017, and are on track 
+to make up 18% of sales in 2023.31 IEA expects 
+electric cars to make up around one in three 
+new cars by 2030, which would mean a cut in 
+annual emissions equivalent to Germany’s entire 
+economy. In China, Europe, and the US, the 
+average share of electric cars in total sales is set 
+to rise to around 60% by 2030.32
+Aﬀordable electric passenger vehicles and 
+accessible charging infrastructure are pivotal for 
+achieving sustainable transportation in cities. 
+Indeed, the transition to electric cars is already 
+being pushed by governments. For example, 
+the Norwegian government aims for all new 
+passenger cars to be electric, plug-in, or hybrid 
+cars by 2025,33 while the Californian government 
+aims for 2035.34
+Despite these encouraging recent developments, 
+some obstacles to the electric car transition 
+still lie ahead - in particular, the critical minerals 
+used in the batteries of electric vehicles. 
+Modern batteries are made of many minerals, 
+such as lithium, nickel, and cobalt. The limited 
+availability of these elements is expected to pose 
+a challenge to worldwide adoption of electric 
+vehicles.35 One analysis looking at electric vehicle 
+uptake in China – the world’s largest market 
+for electric vehicles – suggests that the high 
+prices of critical materials could hinder electric 
+vehicle uptake in China, driving a 28% increase 
+in carbon emissions from road transport over 
+2020-2060. Furthermore, a cost surge on lithium, 
+cobalt, nickel, and manganese would cause the 
+percentage of vehicles on China’s roads that are 
+electric to drop from 49% to 35% in 2030 and 
+67% to 51% in 2060.36
+However, as can be seen in the case on 
+electrification of cars, energy eﬀicient 
+technologies exist that can accelerate the market 
+uptake of electric vehicles and reduce the stress 
+on mineral resources.
+“Policy makers, industry executives, 
+and investors need to be highly vigilant 
+and resourceful in order to [...] ensure 
+sustainable supplies of critical minerals.”
+37 
+Fatih Birol, IEA Executive Director
+ 12 
+Danfoss impact 
+Issue no. 3
+Decarbonizing 
+transport
+
+
+--- page 8 ---
+ 14 
+Danfoss Impact 
+Issue no. 3
+13  
+Danfoss Impact  
+Issue no. 3
+Figure 1: Passenger vs. Heavy-duty vehicles
+The power electronics used in an electric car 
+can have a significant impact on the energy 
+eﬀiciency of the car. More specifically, 
+energy eﬀicient power modules can impact 
+the amount of power that is lost when power 
+is transferred from the battery to the motor.38 
+In an electric car, electricity is stored in a 
+battery and then passed through a drivetrain, 
+while the power module controls the flow of 
+power between the battery and the electric 
+motor. New generation modules made from 
+silicon carbide – the so-called SiC power 
+modules – reduce the power lost as heat 
+and oﬀer 60-80% less energy loss compared 
+to traditional ones. SiC modules can also 
+help reduce the weight and size of other 
+components such as the cooling system, 
+which can further reduce the overall weight 
+of the vehicle and thereby make it more 
+energy eﬀicient. 
+Energy eﬀicient power modules can 
+eﬀectively reduce the size of the batteries 
+by 5-10% depending on the technical 
+specifications and application of the car. 
+Alternatively, the lower power loss increases 
+the driving range by 4-10% without even 
+modifying battery sizes, further growing 
+the acceptance of electric mobility                       
+in society.39,40,41,42
+Case: Energy eﬀiciency can 
+accelerate the electrification 
+of cars
+5-10%
+reduction in battery 
+size possible through 
+energy eﬀiciency 
+measures
+Decarbonizing       
+heavy-duty vehicles
+While the sales of passenger cars have seen a 
+drastic acceleration, the same is not true for 
+heavy-duty vehicles. Trucks, city buses, and long-
+distance buses are responsible for over 6% of 
+total EU GHG emissions and more than 25% of 
+GHG emissions from road transport.43 The picture 
+is arguably the same across the rest of the 
+world. In China for instance, heavy-duty vehicles 
+emitted about half of GHG emissions across all 
+vehicle types.44 
+In 2022, nearly 66,000 electric buses were 
+sold worldwide, representing only about 4.5% 
+of all bus sales. Electrifying municipal bus 
+fleets presents a unique opportunity to reduce 
+emissions in the transportation sector while 
+improving air quality in cities.45 Moreover, if we 
+are to reach the goals of the Paris Agreement, 
+investment in e-buses will need to double during 
+the next two decades.46
+Looking at other heavy-duty vehicles such as 
+construction machinery, there is also far from 
+the same progress in electrification compared 
+to electric passenger vehicles (see Figure 1). 
+Immediate attention to the possibilities for 
+reducing carbon emissions from heavy vehicles is 
+necessary to reach global climate goals. Energy 
+eﬀiciency is the key to cut emissions immediately 
+and paves the way for electrification of heavy-
+duty transport. Let us take a look at construction 
+machinery, and more specifically the excavator, 
+to understand the challenges and opportunities.
+80%
+70%
+60%
+50%
+40%
+30%
+20%
+10%
+2015
+2020
+EV share of new vehicle sales 
+(Passenger vehicles)
+EV share of vehicles on the road 
+(Passenger vehicles)
+EV share of new vehicle sales 
+(Heavy-duty vehicles*)
+EV share of vehicles on the road 
+(Heavy-duty vehicles*)
+2025
+2030
+2035
+2040
+Source: BNEF. 2021
+*Heavy-duty vehicles are off road vehicles above 15 tonnes.
+
+
+--- page 9 ---
+ 16 
+Danfoss Impact 
+Issue no. 3
+15  
+Danfoss Impact  
+Issue no. 3
+Construction machines worldwide emit 400MT 
+of CO2 per year,47 as much as the emissions from 
+international aviation.48 50% of that comes from 
+excavators.49 At first glance, it may seem simple 
+to follow the same path as passenger cars: make 
+them battery-electric and charge them with 
+energy derived from renewable sources. But this 
+is easier said than done.
+First, compared to passenger cars, excavators 
+need to work much harder and for much 
+longer between charges, meaning that they 
+need extremely large batteries to match the 
+productivity of the diesel equivalent. As a 
+result, fully electric excavators consume a lot 
+of resources for the battery and are expensive 
+to buy, so the total cost of ownership over their 
+lifetime still exceeds the diesel machines by a 
+large margin. 
+Second, not all excavator work sites have enough 
+charging energy to support a fleet of electrically 
+powered excavators. Those sites that do have 
+lots of electrical power onsite are often very 
+big, like quarries, and require battery-swapping 
+in the field at the beginning and end of every 
+shift and charging those back in the depot. 
+Given that the batteries weigh tons, this poses             
+operational challenges. 
+Third, there is not unlimited green energy in the 
+grid and the amount of additional green energy 
+needed for electrifying the excavator fleet is not 
+trivial: a rough estimate says that if all the world’s 
+excavators were electric, they would consume 
+as much energy as is generated by all the world’s 
+oﬀshore wind turbines today.50 
+Despite these challenges, the industry is already 
+pushing on electrification. Today, very small 
+electric machines up to 3 tons exist and often 
+work in city-center locations. However, to make 
+a substantial impact on CO2 emissions in the 
+sector, solutions for larger machines over 10 
+tons are needed, as these machines account 
+for only 56% of units sold but contribute 92% of      
+CO2 emissions.51
+The key to decarbonizing these machines 
+are energy eﬀicient technologies that can 
+immediately reduce the diesel use in excavators 
+and at the same time address some of the 
+challenges for electrification. Improving 
+eﬀiciency reduces the size of batteries 
+required, reduces the amount of charging 
+power required, and reduces the amount of 
+renewable energy generation required to make       
+the same impact.
+In the case on construction sites, we take a look 
+at the excavator to understand which solutions 
+can be employed today to reduce energy waste 
+and diesel consumption in heavy vehicles, paving 
+the way for a full electrification of these vehicles, 
+as can be seen in Figure 2. Until recently, low-
+emission construction sites seemed unattainable, 
+but market innovations are gathering speed and 
+changing the construction industry. Many cities 
+around the world are now prioritizing diﬀerent 
+ways to reduce emissions and pollution from the 
+construction sector. However, the pace needs 
+to increase instantly if we are to reach global 
+climate goals.
+The scale of global construction activity is 
+set to increase significantly in the decades 
+to come, and decarbonizing heavy-duty 
+vehicles such as excavators is critical if cities 
+are to curb GHG emissions.
+Today’s excavator systems are only 30% 
+eﬀicient, meaning that 70% of the energy the 
+engine produces is wasted instead of helping 
+the excavator bucket move any earth. To 
+identify the energy losses in a heavy vehicle, 
+it is not enough to look at the engine of 
+the vehicle. In construction machines, a 
+hydraulic system consists of a pump that 
+pressurizes fluids (oil) to transmit the power 
+from the engine to perform work such as 
+lifting or digging. Whether the vehicle has 
+an electric motor or combustion engine, the 
+energy consumption of the vehicle can be 
+reduced significantly by introducing energy 
+eﬀiciency measures. For instance, energy 
+consumption can be reduced significantly 
+when the vehicle is not operating through 
+solutions such as variable displacement 
+pumps, digital displacement, variable speed 
+pumps, and decentralized drives. In addition, 
+the losses on the hydraulic system that 
+are essential to many oﬀ-highway vehicles 
+can be reduced significantly with existing 
+technologies, and energy recovery systems 
+can recycle energy in the system.
+Such energy eﬀiciency measures enable 
+excavators to deliver more work with a 
+smaller engine and less fuel and reduces 
+the capacity of the battery needed to 
+electrify them by up to 24.8%.52 
+The technology is developing fast and some 
+of these measures can deliver fuel savings 
+of 15-30% in excavators over 15 tons while at 
+the same time increasing the work capacity 
+of the machines. Soon it will be possible 
+to apply this technology on all sizes of 
+excavators and even reach fuel savings of up 
+to 50%.53 
+Case: Decarbonizing 
+construction sites
+15-30%
+fuel savings through 
+energy eﬀiciency
+
+
+--- page 10 ---
+17  
+ 18 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+In an electrified and 
+energy eﬀicient excavator  
+it requires an input of 1.9 
+units of energy to produce  
+1 unit of productive work.
+In an ineﬀicient  
+ICE excavator  
+it requires an input of 8.3 
+units of energy to produce  
+1 unit of productive work. 
+In an electrified excavator 
+with a conventional  
+hydraulics system it requires 
+an input of 3.7 units of 
+energy to produce 1 unit  
+of productive work.
+Digital 
+Displacement® 
+Electric drive
+1.7
+Electric drive
+Hydraulics 
+3.3
+Electric Input
+Productive work 
+1.9
+1
+Electric Input
+By combining electrification and energy eﬀicient solutions, only 
+25% of energy input is needed to shift the same amount of earth. 
+This example highlights the potential in energy eﬀiciency and 
+electrification in a 16-ton conventional excavator.
+Figure 2. The fully electric excavator
+Productive work 
+Energy loss
+3.7
+Energy loss
+1
+Hydraulics 
+Diesel engine
+Diesel Input
+Productive work 
+1
+3.3
+8.3
+Energy loss
+Energy loss
+Energy loss
+Energy loss
+Decarbonizing 
+marine transport and 
+equipment
+Ports act as vital hubs for the transportation of 
+goods and people in urban areas. Almost 80% 
+of global trade by volume and 70% by value is 
+carried out by international shipping and these 
+goods all pass through ports every day.54 The 
+shipping industry contributes around 2.9% of 
+global greenhouse gas emissions55 and domestic 
+shipping accounts for about one-fifth of this.56
+There is a large untapped potential for 
+decreasing the climate impact from the 
+maritime sector, and the opportunities are ripe 
+for the taking. Ships typically have a lifespan 
+of 25-30 years and are commonly powered 
+by diesel engines.57 This carbon lock-in can 
+be addressed by retrofitting the existing fleet, 
+immediately reducing fuel consumption and 
+thus the carbon footprint of the sector. In 
+addition, the solutions already exist to fully 
+electrify vessels as well as the operation at 
+ports, and green shore supply can reduce the 
+emissions from ships while they are at berth. 
+It is worth noting that while ports may not be 
+included in a city's carbon budget, emissions 
+from ports have significant negative impacts 
+on the local environment and public health, 
+and urban decision-makers often have a good 
+possibility for working with port authorities to 
+reduce emissions and pollution from ports.
+Looking at the operation at ports, both straddle 
+carriers and cranes operate at ports for many 
+hours a day. A straddle carrier is a ground-
+based vehicle used for loading and unloading 
+containers from ships and stacking and 
+transporting containers for short distances.   
+While both cranes and straddle carriers 
+traditionally have been powered by diesel 
+engines, it is entirely possible to increase the 
+eﬀiciency of these vehicles and fully electrify 
+them with current technology. 
+For instance, Shanghai Zhenhua Heavy Industries 
+Co. (ZPMC) is one of the largest port machinery 
+manufacturers in the world. The company oﬀers 
+many hybrid and fully electric port machinery 
+products. One such product is the electrified 
+straddle carrier, which is already in operation at 
+the Port of Barcelona in Spain and South Africa’s 
+Durban Port.
+Electrifying port equipment can lower emissions, 
+reduce noise levels, and lower operating costs 
+compared to diesel-powered equipment.
+Similarly, solutions for curbing emissions from 
+marine vessels already exist. Electrification of 
+vessels operating on short journeys close to 
+shores, such as ferries, tugboats, and boats 
+transporting food is possible already today. These 
+vessels can fully operate on battery power and 
+be charged while standing idle in ports using   
+energy sources.
+In Grovfjord, Norway, salmon farming is a major 
+driver of the local economy. In the fjord, one of 
+the world’s first fully electric work boats – Astrid 
+Helene - is now operating. The boat is packed 
+with heavy equipment, including a crane. 
+However, because the boat is fully electric, it 
+operates with no engine noise and no diesel 
+fumes. This can be copied in work boats in cities 
+all over the world.58 
+In many cities, ferries are vital for the transport 
+of passengers, goods, and vehicles over short 
+sea and inland routes. In 2019, an estimated 4.27 
+billion passengers and 373 million vehicles were 
+transported by ferries worldwide, most of which 
+are in Asia.59 Most ferries burn diesel, which 
+emits carbon and pollutes the air – a significant 
+problem as many ferries operate close to city 
+centers. Existing and cost-eﬀective solutions 
+make it possible to build new ferries that are fully 
+electric, as well as to retrofit existing ferries to 
+save emissions.
+Technological and battery improvements are 
+now enabling larger vessels to operate on longer 
+routes by using fully electric or hybrid-electric 
+power. Furthermore, there is a large potential in 
+reducing emissions from the ships while they 
+are at berth, as can be seen in the Scheveningen 
+Harbor case.
+
+
+--- page 11 ---
+19  
+ 20 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+Ellen, the world’s 
+longest ranging fully 
+electric ferry
+Between the islands of Ærø and Als in 
+Southern Denmark, passengers and 
+vehicles are transported by “Ellen” - a fully 
+electric, medium-sized ferry. In operation, 
+Ellen saves 80% of CO2 and 75-95% of 
+air pollution when compared to the best 
+technological alternative at the time of the 
+evaluation, and 87% CO2 and 86-99% of air 
+pollution when compared to an existing 
+older ferry.63 The operational costs of Ellen 
+are significantly lower than conventional 
+alternatives, which ensures a payback time 
+for the additional investment of 5-8 years  
+of operation.64  
+Retrofitting ferries in 
+Taiwanese ports
+The lifetime of vessels like ferries is between 
+25-30 years – and sometimes even more. 
+Therefore, retrofitting ferries through hybrid 
+solutions is crucial for reducing emissions 
+from sea transport. The Taiwanese port 
+city of Kaohsiung relies on marine ferries 
+to move goods through its busy port and 
+the emissions from these ferries contribute 
+significantly to local air pollution. 
+To improve air quality, the city government 
+mandated a Taiwanese shipping company 
+to reduce emissions from its ferry fleet. 
+That included the popular Cijian Island 
+passenger ferry route. As a result, the 100-
+ton, 23-meter-long ferry “Happiness,” which 
+carries around 15,000 commutes every 
+day, became Asia's first hybrid-electric ferry 
+in 2017.60 The ferry’s new system ensures 
+pure electric cruising for half the ferry’s 
+operation time. Because of the initiative, 
+Happiness has reduced its diesel fuel 
+consumption by more than 30 percent,61 
+and it is estimated that the fuel saving could 
+be cut by as much as a half compared to 
+the original diesel-powered ferry.62 Lowering 
+diesel consumption reduces both GHG 
+emissions and helps to improve air quality 
+in the region. Happiness now sources 
+energy from shore power charging, a 
+source that can be decarbonized. 
+Case: Green shore supply 
+in Scheveningen Harbor, 
+Netherlands
+Shore supply can charge the batteries 
+of fully electric and hybrid vessels using 
+electric power from the grid while in port. 
+Shore supply can also supply electricity from 
+local grids to vessels powered by fossil fuels, 
+instead of using the diesel generators on 
+board, to power everything from ship coﬀee 
+machines and communication equipment to 
+lighting and ventilation.65 Using shore supply 
+means no consumption of diesel while at 
+berth, which in turn means significantly less 
+local air and noise pollution. As ports are 
+often located close to urban environments, 
+this has a positive impact on local residents. 
+Scheveningen Harbor is centrally located 
+on the Dutch coast close to The Hague and 
+provides berths for more than 7,500 vessels 
+each year. It consists of three harbor areas. 
+While shore power in the Second Harbor 
+already exists for cutters, small fishing boats, 
+and pleasure vessels, a major new industrial-
+scale installation in the other two harbors 
+extends capacity to many more vessels 
+including large commercial vessels.
+Thanks to the new shore power installation, 
+ships can stop using noisy, pollutive diesel 
+generators while berthed in harbor. This 
+eliminates air pollution and reduces the 
+noise and vibrations when ship engines are 
+idle. On average, ships in Scheveningen 
+Harbor consume more than 100 MWh per 
+month via the new shore power supply.        
+At an average of one liter per three kWh, 
+this translates to a monthly savings of more 
+than 33,000 liters of high-quality marine 
+diesel.66 This results in dramatic reductions 
+of air pollution and about 60% CO2 
+equivalent savings with the current Dutch          
+electricity mix.67  
+33,000 
+liters
+of high-quality marine 
+diesel saved per month
+Danfoss impact 
+Issue no. 3
+ 20 
+
+
+--- page 12 ---
+"Energy efficiency 
+is about more than 
+reducing demand. 
+Without it, cities 
+will not be able 
+to accelerate 
+electrification."
+ 22 
+Danfoss Impact 
+Issue no. 3
+21  
+Danfoss Impact  
+Issue no. 3
+Kim Fausing, President & CEO Danfoss
+The future of 
+decarbonized transport
+The relevance of electrification spans far beyond electrifying passenger cars. 
+The technology for the electrification and decarbonization of buses, trucks, 
+and excavators, as well as marine equipment and vessels such as cranes, 
+straddle carriers, city boats, work boats, and ferries already exists.
+Improved eﬀiciency can accelerate the electrification of transport. Both in 
+passenger cars, heavy-duty vehicles, and in marine transport, eﬀiciency 
+measures can reduce the size of the batteries needed thus limiting the raw 
+material requirements. Increasing eﬀiciency can also bring down the demand 
+for charging infrastructure and increase the productivity and range of               
+the vehicle. 
+Electrification is not a question of “all or nothing.” For some vehicles that 
+cannot yet be fully electrified, such as construction machinery and larger ships, 
+it is possible to downsize the diesel engine and electrify critical components of 
+the machine, creating a significant benefit from the increased eﬀiciency of an 
+electric system.
+Vessels can be supplied with sustainable energy while at berth with 
+technologies readily available, significantly reducing emissions and pollution in 
+urban areas.
+
+
+--- page 13 ---
+23  
+ 24 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+Decarbonizing 
+energy supply 
+in cities
+On the last stop of the decarbonization roadmap, 
+we zoom in on the supply of energy to cities. We 
+will see how activities that play an integral part 
+of the life in cities – such as shopping and waste 
+management – can be decarbonized by looking 
+at the energy use in cities holistically.  
+The global energy crisis has triggered 
+unprecedented momentum behind the build out 
+of renewables. The world is now set to add as 
+much renewable power in the next five years as it 
+did in the past 20.68 
+Wastewater 
+facilities
+Supermarkets
+Data centers
+Decarbonizing 
+energy supply
+Needless to say, scaling renewables will play a 
+crucial role in decarbonizing cities, and even 
+more renewable energy infrastructure is needed. 
+However, if we are not eﬀicient in our use of 
+green energy, expanding the use of renewables 
+at the current pace will not be even near enough 
+to reach global climate goals. 
+Excess heat can provide for a substantial 
+proportion of the heating and cooling needs 
+in cities. In the EU alone, the amount of excess 
+heat almost corresponds to the EU’s total energy 
+demand for heat and hot water in residential 
+and service sector buildings,69 and the picture 
+is arguably the same globally. To utilize excess 
+heat, a holistic approach to energy use in cities 
+is crucial. You can read more on the potential of 
+excess heat in Danfoss Impact Issue no. 2. 
+What is excess heat? Every time a machine runs, 
+heat is generated. Just think of the warmth 
+behind your fridge. The same is true on a larger 
+scale with all the supermarkets, data centers, 
+factories, and wastewater facilities in the city. As 
+we will see, this heat can be reused. 
+Utilizing excess heat constitutes the third and 
+crucial lever in the roadmap for decarbonizing 
+cities. Below, we zoom in on three specific 
+sources of excess heat in cities and explore how 
+it can be used. 
+A holistic approach to 
+urban energy supply
+Historically, excess heat from the likes of steel 
+and power plants has been reused due to the 
+very high temperatures. But as technology has 
+evolved, many more sources that produce excess 
+heat at lower temperatures have become viable 
+to reuse, and this means that also cities without a 
+large industry have numerous sources of excess 
+heat that add up to a considerable amount of 
+energy. Excess heat from wastewater facilities, 
+data centers, supermarkets, and metro stations 
+are examples of excess heat sources present in 
+all cities. 
+There are multiple ways to use excess heat. The 
+simplest way to use excess heat is to reintegrate 
+the heat into the same processes. One measure 
+to use waste heat internally is by installing a 
+heat recovery unit. Heat recovery units make 
+waste heat usable for processes at a similar or 
+lower temperature level. As can be seen in the 
+supermarket case, the excess heat can be used 
+to heat up the store and produce domestic hot 
+water. However, the density of infrastructure in 
+cities makes it possible to use excess heat even 
+more systematically and in larger scale through 
+sector integration and district energy. 
+Sector integration, or sector coupling, refers to 
+the process of optimizing the combination of 
+at least two diﬀerent sectors of energy demand 
+and production (i.e., electricity, heating, cooling, 
+transport, and industrial processes). Sector 
+integration is about maximizing synergies 
+between sectors, as well as converting and 
+storing energy. This can happen on a small 
+and large scale through urban planning and 
+district energy networks. Urban planning can 
+leverage the potential of sector integration and 
+excess heat by connecting energy producers 
+with energy consumers through a smart grid. 
+Large synergies can occur when a producer 
+of excess heat, for instance a data center, is 
+located close to entities that can buy and use 
+large amounts of the excess heat (for example, 
+horticulture). Looking at possibilities for such 
+synergies between energy producers and users 
+in urban planning is called industrial cluster 
+planning and it contributes to decarbonizing our 
+energy system. Furthermore, the collaboration 
+between nearby companies has been shown to 
+provide economic benefits to both the buyer and   
+the seller.  
+The benefits of sector integration can be 
+increased even further through district energy. 
+
+
+--- page 14 ---
+ 26 
+Danfoss Impact 
+Issue no. 3
+25  
+Danfoss Impact  
+Issue no. 3
+District energy: 
+Decarbonizing urban 
+heating and cooling 
+District energy is a collective system that 
+supplies an entire area with heating or cooling. 
+A district heating network taps into heat from 
+a combination of sources, such as renewable 
+sources (e.g., solar, geothermal, and biomass) 
+and fossil sources (e.g., power plants) and 
+distributes it through pipelines to end users 
+in the form of heated water. A district cooling 
+system, on the other hand, chills water at a 
+central plant and then distributes it through 
+pipelines to end users. 
+The vast majority of global district energy 
+production today relies on fossil fuels. According 
+to the IEA, the world needs to double the share 
+of green sources in district heating by 2030 to 
+reach net zero.70 If we succeed, this will help 
+slash GHG emissions from heat generation by 
+more than one-third.  
+Today, district energy systems enable a 
+decarbonizable heat supply. One of the main 
+strengths of district energy systems is their 
+capacity to integrate diﬀerent heat sources 
+that can push fossil fuels out of the heating and 
+cooling mix. As the district energy technology 
+evolves, more and more green heat sources are 
+able to tap into the system. Today, the so-called 
+4th generation district energy system allows very 
+low-temperature sources of heat to be integrated 
+into the district energy system and provides 
+heating for new buildings that can operate at low 
+temperatures. The fact that more and more green 
+sources of energy can be used in district heating 
+and cooling puts district energy systems at the 
+center of the green transition. 
+Another crucial benefit of district energy is that 
+it supports balancing of the grid. One of the 
+key challenges in decarbonizing our grid and 
+increasing electrification is ensuring that supply 
+matches demand. By looking at the energy 
+system holistically and linking diﬀerent energy 
+sources, district energy allows for flexible use 
+of power. It enables discrepancies in supply and 
+demand to be evened out so we can exploit the 
+full capacity of the grid. Balancing the peaks will 
+be particularly important as we increase the use 
+of renewables and electrification takes place. 
+In a district cooling system, chilled water 
+is supplied from a central cooling utility 
+to commercial and residential buildings 
+through pipelines. The cold water for the 
+district cooling is supplied by free, natural 
+cold-water resources – sea, lakes, rivers, or 
+underground reservoirs – or is produced 
+from waste heat from power generation or 
+industries, or via central electric chillers. 
+The cold water in the district cooling system 
+can be produced at night and distributed 
+at peak hours during the day. This reduces 
+the need for chiller capacity during peak 
+demand hours and reduces operating 
+costs, as electricity is cheaper and ambient 
+temperatures are lower at night.
+Around 10% of the world’s electricity 
+demand comes from space cooling and 
+IEA estimates that by 2050, around two-
+thirds of the world’s households could 
+have an air conditioner.71 According to 
+international studies, the demand for 
+cooling of commercial and residential 
+buildings will grow exponentially in the 
+years to come, especially in high-income 
+countries and emerging economies in India, 
+China, and Indonesia.72 However, district 
+cooling systems use half as much energy 
+as air conditioners and will also reduce 
+the consumption of the environmentally 
+damaging F-gasses.73 
+Existing district cooling systems in cities 
+like Paris, Dubai, Helsinki, Copenhagen, and 
+Port Louis have proved that district cooling 
+can be more than twice as eﬀicient as 
+traditional, decentralized systems.74 In Dubai, 
+for instance, 70% of electricity is consumed 
+by air conditioners, and in order to meet 
+the cooling demand, the city has developed 
+one of the world’s largest district cooling 
+networks. By 2030, 40% of the city’s cooling 
+demand will be met by district cooling.75 
+Case: District cooling systems 
+use half as much energy as air 
+conditioners 
+
+
+--- page 15 ---
+ 28 
+Danfoss Impact 
+Issue no. 3
+27  
+Danfoss Impact  
+Issue no. 3
+Data centers: from 
+energy users to energy 
+producers
+There are thousands of data centers across 
+the world, many of which are in cities.76 Data 
+centers are simply buildings that provide space, 
+power, and cooling for network infrastructure 
+and are filled with varying amounts of servers. 
+As data has become the lifeblood of today’s 
+global digital economy, data centers have 
+become critical to the functioning of our day-
+to-day lives and activities. Data centers are also 
+heavy consumers of electricity. Powering and 
+cooling the thousands of servers requires a lot 
+of electricity. According to the IEA, data centers 
+consumed 220-320 TWh of electricity in 2021, 
+or around 1% of global final electricity demand77 
+– this is enough electricity to power about 20 to 
+30 million US households.78 To reduce the carbon 
+footprint, it is crucial to both optimize the energy 
+eﬀiciency of the cooling systems in the data 
+centers and to use the excess heat from the data 
+centers. There are multiple examples showing 
+how excess heat from data centers can be reused 
+to heat nearby buildings through a microgrid 
+or can be exported to the broader district       
+energy network. 
+In the city of Frankfurt am Main, there are several 
+projects in the pipeline working towards assisting 
+the city in taking excess heat from data centers 
+and using it towards its entire heat demand 
+of private households and oﬀices. It has been 
+estimated that the waste heat from the data 
+centers in Frankfurt could, by the year 2030, 
+cover the city’s entire heat demand stemming 
+from private households and oﬀice buildings.79   
+In Dublin, Amazon Web Services has built 
+Ireland’s first custom-built sustainable solution 
+to provide low-carbon heat to a growing Dublin 
+suburb. Initially, the recently completed data 
+center will provide heat for 47,000m2 of public 
+sector buildings. It will also provide heat for 
+3,000m2 of commercial space and 135 aﬀordable 
+rental apartments. This project will reduce the 
+CO2 emissions by 1,500 tons per year.80 
+Urban wastewater 
+facilities as energy 
+producers
+The provision of water and sanitation is an 
+indispensable yet often overlooked part of 
+the urban infrastructure. It takes tremendous 
+amounts of energy to provide citizens with 
+access to clean drinking water and sanitation. 
+Wastewater treatment plants are present in most 
+cities around the world. And since they’re often 
+operated by municipalities, they can eat up 20% 
+of municipal electricity bills.81
+There is significant potential for energy savings 
+in the water sector through a systematic use of 
+excess energy. Wastewater contains significant 
+amounts of embedded energy. Sludge can 
+be extracted from wastewater and pumped 
+into digesters. These produce biogas – mostly 
+methane – that can then be burned to make 
+heat and electricity. Before the cleaned water 
+is released, it can be cooled down with a heat 
+pump, which supplies heat to the local district 
+heating network. Consequently, wastewater 
+treatment plants have the potential to be turned 
+from energy consumers to energy producers. 
+Case: Producing energy from 
+wastewater
+In the city of Aarhus, Denmark, the 
+Marselisborg Wastewater Treatment Plant 
+(WWTP), which is operated by Aarhus Vand, 
+has managed to reduce energy consumption 
+while simultaneously increasing energy 
+production. In the period from 2016 and 
+2021, Marselisborg WWTP produced close to 
+100% more energy than needed for treating 
+wastewater. The energy produced matched 
+the needs for the entire water cycle of a 
+200,000-person city area, including both 
+distributing drinking water and recovering 
+wastewater from dwellings, thereby 
+essentially decoupling water from energy. 
+The return on this investment was 4.8 years. 
+Process optimization and digitalization is 
+estimated to have contributed to 70% of    
+the improvements.82  
+The United Nations Sustainable Development 
+Goal 6.3 advocates for a 50% reduction of 
+untreated wastewater by 2030.83 Equipping 
+existing and future wastewater treatment 
+plants with state-of-the-art technologies 
+could save 300 million tons of CO2 
+equivalent emissions per year. Furthermore, 
+it would save a yearly 350 TWh of energy,84 
+which is about one tenth of Germany’s 
+energy supply.85 Lastly, surplus heat from 
+eﬀluents can be pumped to district heating 
+networks, potentially providing 10 to 15% of 
+the global residential heat demand.86 
+300
+million tons
+of CO2-equivalent 
+emissions can be 
+saved per year
+
+
+--- page 16 ---
+28% emission reductions will come from transport, 20% from heating and cooling buildings, and 52% from other 
+sectors. Transport cannot reach zero emissions.91
+Mt CO2e
+0
+2,000
+4,000
+6,000
+8,000
+10,000
+12,000
+14,000
+2020 emissions 
+sector split
+Emissions from other sectors
+-20%           
+of total
+-28%           
+of total
+Emissions from buildings                 
+(Heating/cooling)
+Emissions from transport
+2050 1.5°C pathways               
+emissions sector split
+Save energy. 
+Electrify. 
+Integrate.
+Three steps to decarbonize cities
+Looking at the various examples and sectors 
+examined above, we can see three key trends 
+driving a successful a green transition in cities:   
+1) Save energy, 2) Electrify, and 3) Integrate.
+Based on International Energy Agency (IEA) 
+and IPCC scenarios, a Navigant analysis has 
+quantified technology uptake on a 1.5°C pathway 
+for a selection of cities in Europe, the US, and 
+China.90 Emissions from transport and from 
+heating and cooling of buildings account for 
+more than half of the urban emissions. For cities 
+to reach the 1.5°C goal in 2050, 28% of emissions 
+must be cut from transport, 20% from heating 
+and cooling buildings, and 52% from other 
+sectors, including electrification of heavy-duty 
+vehicles. The study by Navigant reveals that 
+energy eﬀicient buildings and electrification of 
+transport – both enabled by sector integration 
+– can bridge half the gap in greenhouse gas 
+emissions reductions needed for staying below 
+the 1.5°C target. And this is considering only 
+existing technologies. Adding to this, energy 
+eﬀicient measures in other sectors such as in 
+heavy vehicles can contribute further. Let’s take 
+a closer look at these three main drivers of urban 
+emission cuts.
+ 30 
+Danfoss Impact 
+Issue no. 3
+29  
+Danfoss Impact  
+Issue no. 3
+Figure 3: Towards 1.5°C goal in urban areas
+Supermarkets are an integral part of cities 
+around the world, providing convenient 
+access to food and household supplies. 
+However, they are also among the most 
+energy-intensive commercial buildings.87  
+In the UK, supermarkets consume 
+approximately 3% of the nation’s electricity 
+production.88 Keeping food fresh in cooling 
+displays and freezers accounts for most of 
+the energy consumption in a supermarket. 
+It might sound counterintuitive, but cooling 
+displays, freezers, and fridges produce a 
+significant amount of heat. Anyone who 
+has ever felt the warmth behind their fridge 
+can confirm that. These cooling systems 
+generate significant amounts of excess heat, 
+which is often released into the atmosphere. 
+But it does not need to be. Existing heat 
+recovery technology can reuse the excess 
+heat from the cooling displays to heat the 
+water used in the supermarket as well as the 
+building, and the excess heat not reused 
+in the supermarket can be supplied to the 
+district heating grid. In a small town in the 
+Southern Denmark, the local supermarket 
+SuperBrugsen has saved a considerable 
+amount of energy by monitoring the cooling 
+systems and by reusing and selling excess 
+heat from the cooling systems. Since 2019, 
+78% of SuperBrugsen’s heat consumption 
+has been covered by reused heat from 
+cooling processes. And the supermarket 
+has sold 134 MWh to other local buildings 
+through the district heating grid.89
+Case: Your grocery shopping 
+can heat your home
+78%
+of heat consumption 
+covered by reused 
+heat from cooling 
+processes
+
+
+--- page 17 ---
+31  
+ 32 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+Energy eﬀiciency measures can vastly reduce 
+the amount of energy we use in our cities, save 
+costs, and improve the health and well-being of 
+urban citizens. Even though eﬀiciency measures 
+are often associated with buildings, reducing 
+energy waste is possible across many aspects of 
+our lives in cities. As we saw at the construction 
+site, better system eﬀiciency in heavy vehicles 
+can reduce diesel consumption significantly and 
+paves the way for electrification by reducing the 
+size of the batteries needed in the more eﬀicient 
+excavator. The same is true with passenger cars, 
+where eﬀicient power modules can increase 
+the range of the car, eﬀectively increasing the 
+market uptake of electric vehicles. Furthermore, 
+everything from data centers to wastewater 
+facilities and supermarkets can reduce energy 
+consumption by monitoring and adjusting  
+energy use. 
+However, if we look at buildings alone, they 
+account for 28% of all global energy-related CO2 
+emissions92 and 40% of urban primary energy 
+use.93 Ineﬀicient heating and cooling of buildings 
+are thus major causes for emissions and                    
+air pollution globally.
+For cities to stay below 1.5°C in 2050, 20% of 
+the emissions reduction comes from buildings, 
+including a range of energy eﬀiciency measures 
+as can be seen in Chapter 1. This would equal 
+curbing 2,500 Mt of annual emissions in 2020 
+down to 0 Mt by 2050, which alone is 10% 
+of today’s annual emissions of urban areas 
+worldwide. This will require the steep uptake of 
+existing technology for energy eﬀicient heating 
+and cooling of buildings in cities. This means 
+that the renovation rate of buildings – which is 
+now often below 1% - will need to increase to 
+approximately 2-3% for cities to reach the 1.5°C 
+target.94 As such, several cities would need to 
+triple their current renovation activities. And even 
+then, the transformation of the existing building 
+stocks might take 30 years or more.
+Energy eﬀiciency is crucial for meeting our net-
+zero targets. In fact, at a global level, enhanced 
+energy eﬀiciency can provide one-third of 
+the emission reduction needed for net zero.95 
+Without a constant increase in energy eﬀiciency, 
+we simply cannot build out renewables fast 
+enough to meet the global climate goals. 
+Energy eﬀiciency measures reduce the pressure 
+on electricity grids and increase the share of 
+renewable energy in the energy mix of cities. 
+Furthermore, a stronger focus on energy waste 
+will become increasingly important in the 
+future battle against climate change due to 
+growing populations and increasing demand 
+for energy. For instance, cooling demands will 
+increase significantly in cities, where the urban 
+heat island eﬀect can increase temperatures 
+by 3-4°C relative to surrounding areas. Adding 
+to this, the benefits of energy eﬀiciency extend 
+beyond climate. Enhanced eﬀiciency and related 
+avoided energy demand could help contribute 
+to reducing global household energy bills by at 
+least USD 650 billion a year by 2030,96 while also 
+promoting health and well-being for the billions 
+of people who live in cities. 
+Electrification will play a pivotal role in the green 
+transition. Within urban transport specifically, 
+there must be a drastic acceleration. Similarly, 
+urgent attention is needed to accelerate the 
+electrification of heavy transport as well as the 
+marine industry. As we have seen, the required 
+technologies already exist for full electrification 
+of trucks, city boats, work boats, and ferries, as 
+well as equipment operating at ports such as 
+straddle carriers and cranes. 
+If all urban areas in Europe, the US, and China 
+electrified their private and public transport, 
+they would contribute 28% of the emission 
+reduction needed to reach the 1.5°C target 
+of the Paris Agreement.97 This is without 
+considering the potentials of electrifying heavy-
+duty vehicles. However, the contribution varies 
+Save energy
+Electrify
+by region and by city – 17% in Europe, 24% in the 
+US, and 37% in China.98
+As we progressively decarbonize our electricity 
+generation, we will also need to electrify the 
+industries and buildings in our cities that have 
+previously been powered by fossil fuels. For 
+example, replacing fossil fuel boilers with 
+more eﬀicient heat pumps shows how energy 
+eﬀiciency and electrification are in many cases 
+two sides of the same coin. Electrification can 
+lead to emissions reductions both by replacing 
+fossil fuel energy with renewable electricity 
+generation, and by saving energy due to the 
+higher eﬀiciency of electric technologies. For 
+instance, battery electric ships are almost twice 
+as eﬀicient as ships with an internal combustion 
+engine, and the higher eﬀiciency will oﬀset 
+the higher price of electric ships considering a 
+lifetime of 20-25 years.99 
+By electrifying transport, we can reduce 
+greenhouse gas emissions as well as air pollution, 
+which increasingly threatens the health of 
+citizens in cities. Electrification technologies 
+that are currently available have the potential 
+to reduce NOX emission by 90% per passenger 
+kilometer by 2050.100
+Sector integration is an enabler of energy 
+eﬀiciency and electrification. In urban areas, 
+the high density of buildings, infrastructure, 
+and services means that we can connect urban 
+energy consumers with energy producers and 
+benefit from by-products such as excess heat. 
+Sector integration is thus an eﬀective way to 
+save vast amounts of energy, thereby increasing 
+the share of renewable energy in the urban 
+energy mix and accelerating the transition 
+to an electrified energy system powered by   
+renewable energy. 
+Sector integration – and more specifically district 
+energy systems – are an eﬀective way to convert 
+and store energy and stabilize the grid, which 
+will only be more important in the future as the 
+fluctuating supply of renewable energy in the 
+energy system will increase significantly. One of 
+the key challenges in decarbonizing our grid and 
+increasing electrification is ensuring that supply 
+matches demand. By linking diﬀerent energy 
+sources, sector integration with thermal energy 
+storage allows for flexible use of energy and 
+enables discrepancies in supply and demand to 
+be evened out, so we can exploit the full capacity 
+of the grid. 
+As we saw in supermarkets, data centers, and 
+wastewater facilities, there are many untapped 
+sources of excess heat in our cities that can be 
+used elsewhere. In fact, according to a recent 
+estimate, excess heat from accessible sources 
+in urban areas can cover 10% of the European 
+Union’s total energy demand.101 By using excess 
+heat for heating and cooling we can save the 
+higher value (increasingly green) electricity for 
+the transport and industrial sectors.
+Integrate
+
+
+--- page 18 ---
+33  
+ 34 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+Policy
+Recommendations
+Systematic energy-saving strategies can save energy across sectors
+•	
+Reducing energy waste across sectors starts with mapping energy use to 
+identify areas for improvement. Mandate energy planning, set ambitious 
+and actionable short-, mid-, and long-term targets and plans, and a suitable 
+regulatory framework to incentivize investments.
+•	
+Seize the quick wins first, as this can leverage finance for deeper renovation 
+or sustainable new-build projects. Quick wins include optimizing the 
+heating, cooling, and ventilation systems in the public building stock (see 
+p. 10-11). These measures can be implemented immediately with very short 
+payback times, and without compromising long-term energy-saving eﬀorts.
+•	
+Design and implement mandatory building energy codes for new and 
+existing buildings to accelerate the transition towards zero-carbon-ready 
+buildings and to increase the renovation rate of the building stock.
+•	
+Set minimum energy performance standards to support the uptake of 
+energy eﬀicient equipment. Energy labels can further stimulate the market 
+and are most suitable for oﬀ-the-shelf products with end consumers as main 
+target groups.
+•	
+Set up long-term renovation strategies, including suitable regulation and 
+incentives to stimulate renovation, to use renewable energy, and to boost 
+renovation rates of existing buildings. Currently, renovation rates are often 
+less than 1% and must rise to at least 2-3% per year in most regions to meet 
+1.5°C by 2050.102 
+•	
+Incentivize the replacement of technical building systems running on fossil 
+fuels for space heating, domestic hot water, and cooling with those using 
+renewable energy, such as heat pumps or district energy networks.
+•	
+Ensure or facilitate access to funding for implementation. One way this 
+can be done is by using or asking for innovative financial business models       
+like ESCOs.  
+A deep decarbonization of cities requires a comprehensive and holistic approach that involves 
+multiple stakeholders, including local governments, businesses, and residents. In the following, 
+some of the crucial initiatives are presented, although the list is not exhaustive. 
+Electrify transport through investments, regulation, and incentives 
+•	
+Invest in the electrification of the city’s fleet now (vehicles, buses, city boats, 
+ferries). Remember that also partial electrification of heavy transport entails 
+significant cost and energy savings and can be done immediately. 
+•	
+Investing in electric charging infrastructure and incentivizing the installation 
+of charging points at (semi-) public locations like oﬀice buildings, parking 
+facilities, supermarkets, and tourist attractions. Introduce parking incentives 
+and other fiscal incentives for moving toward electrifying transport.
+•	
+If the national policy allows it, use local regulation and permitting options to 
+create low or zero-emissions construction sites and electrify last-mile inner-
+city freight and goods delivery traﬀic. 
+•	
+Use franchise agreements with public transport operators to enforce      
+zero-emission goals for buses, taxis, and more. 
+•	
+Incentivize the installation of shore supply in harbors and present a plan for 
+how to address that all vessels use electric shore supply when at berth.
+Holistic energy planning can leverage synergies between sectors 
+•	
+In general, mandatory heat and cooling planning will enable cities to assess 
+the potential and make the best use of locally available resources. The 
+planning must cover all urban energy system components – residential 
+and service buildings, heat and power, industry, transport, water, and           
+waste treatment.
+•	
+Depending on the existing energy system, energy planning can reveal both 
+small-scale potential (such as forming the right incentives for heat recovery) 
+and the potential of larger-scale opportunities, such as the rollout of district 
+heating. It is crucial that the scope of the heat planning is wide and detailed, 
+and also includes potential future sources of excess heat, such as Power-
+to-X facilities.
+•	
+Expand and decarbonize district heating and cooling where possible, 
+including combination with heat pumps, and lead the way by connecting 
+public buildings.
+
+
+--- page 19 ---
+35  
+ 36 
+Danfoss Impact 
+Issue no. 3
+Danfoss Impact  
+Issue no. 3
+References
+1. IEA (2021). Empowering Cities for a Net Zero Future, p. 3
+2. IEA (2021). Empowering Cities for a Net Zero Future, p. 3
+3. Bloomberg (2023). Warming Above 1.5C Likely in Near Term Unless World Acts Now, UN Says
+4. IPCC (2023). AR6 Synthesis Report: Climate Change, p. 16
+5. UN General Secretary (2023). Antoniou Guterres: Comments on Release latest IPCC report.
+6. IPCC (2023). AR6 Synthesis Report: Climate Change, p. 68
+7. IPCC (2023). AR6 Synthesis Report: Climate Change, p. 22
+8. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 6
+9. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 18
+10. Navigant (2020). How to reach the 1,5C target in urban areas, p. 3
+11. World Green Buildings (2019). Bringing embodied carbon upfront, p. 16
+12. C40 Cities (2018). 19 Global Cities Commit to Make New Buildings ”Net-Zero Carbon” by 2030 
+13. Harvard School of Engineering and Applied Sciences (2022). In a hotter world, air conditioning isn’t a luxury, it’s a lifesaver.
+14. IEA (2021). Net Zero by 2050: A Roadmap for the Global Energy Sector, p. 143 
+15. IEA (2022). Technology and Innovation: Pathways for Zero-carbon-ready Buildings by 2030 - Introduction
+16. Ecofys (2017). Optimizing the energy use of technical building systems – unleashing the power of the EPBD’s Article 8, p. 55-60
+17. Eu.bac (2017). White Paper on Room Temperature Controls, p. 4
+18. Optimising the energy use of technical building systems, Ecofys, p. 59 (apo-nid205381.pdf )
+19. Danfoss. Leanheat – for building owners  
+20. IEA (2022). Heat Pumps, p. 110
+21. IEA (2022). Heat Pumps
+22. IEA (2022). Heat Pumps, p. 15
+23. IEA (2022) Transport: Tracking progress
+24. OECD (2020). Decarbonising Urban Mobility with Land Use and Transport Policies, p. 4 
+25. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 17
+26. WHO (2021). New WHO Global Air Quality Guidelines aim to save millions of lives from air pollution. 
+27. European Commission (2014). Questions and Answers on the Commission strategy for reducing Heavy-Duty vehicles’ fuel consumption and CO2 emissions:  HDVs 
+comprise of busses, trucks and coaches (more than 3.5 tonnes or 8 seats)
+28. IEA (2022). Transport: Tracking progress
+29. Due to a variance in terminology across sources, we refer to both “passenger vehicles” and “cars” in this section. Generally, cars, light trucks, and light vans are cate-
+gorized as passenger vehicles, while heavy vans, city buses, long-distance buses, and semi-trucks (lorries) are categorized as “heavy duty vehicles” alongside construction 
+vehicles and other large machinery. 
+30. IEA (2022). Transport sector CO2 emissions by mode in the Sustainable Development Scenario, 2000-2030. 
+31. IEA (2023). Global EV Outlook 2023: Catching up with climate ambitions, p. 14
+32. IEA (2023). Global EV Outlook 2023: Catching up with climate ambitions, p. 15
+33. Regjeringen.no (2021). Norway is electric
+34. California Air Resources Board (2022). California moves to accelerate to 100% new zero-emission vehicle sales by 2035
+35. The Economist (2023). Cobalt, a crucial battery material, is suddenly superabundant
+36. Wang, H., Feng, K., Wang, P. et al. (2023). China’s electric vehicle and climate ambitions jeopardized by surging critical material prices. Nature Communications, 14 
+(1246).
+37. IEA (2022). Global electric car sales have continued their strong growth in 2022 after breaking records last year
+38. Businesswire (2022). Global and China Automotive IGBT and SiC Industry Report 2022
+39. IDTechEx (2023). Power Electronics for Electric Vehicles 2023-2033 (Sample pages) p. 6
+40. Power Electronics Europe (2018). Issue 3 p 22-25. SiC-Based Power Modules Cut Costs for Battery-Powered Vehicles 
+41. Power Electronic News (2022). The Role of SiC in E-Mobility
+42. Danfoss calculations.
+43. European Commission (2023). European Green Deal: Commission proposes 2030 zero-emissions target for new city buses and 90% emissions reductions for new 
+trucks by 2040.
+44. International Council on Clean Transportation (2022). The evolution of heavy-duty vehicles in China: A retrospective evaluation of CO2 and pollutant emissions from 
+2012 to 2021., p. 4
+45. GlobalNewsWire (2022). Global Electric Bus Markets Report 2022-2027 – Reduction in Battery Prices & Increasing Demand for Emission-Free and Energy-EfÏcient 
+Mass Transit Solutions
+46. World Resources Institute (2019). Barriers to Adopting Electric Buses, p. 5
+47. IDTechEx (2022). Electric Construction Machines Vital for Greener Construction.
+48. JRC (2022). CO2 emissions of all world countries.
+49. KOMATSU (2010). Introduction of Komatsu genuine hydraulic oil KOMHYDRO HE.
+50. Danfoss (2023). FPC2023 Danfoss, p. 12.
+51. Danfoss (2023). FPC2023 Danfoss, p. 9.
+52. Danfoss (2022). Danfoss Digital Displacement & Editron: An efÏcient electro-hydraulic system for mobile applications.
+53. Construction Europe (2023). Danfoss Q&A: Technology to reduce excavator energy consumption. 
+54. UNCTAD (2015). Review of Maritime Transport 
+55. European Commission (2023). Reducing emissions from the shipping sector
+56. IMO (2020). Fourth IMO Greenhouse Gas Study, p. 2, Table 1. The global shipping emissions are 1056 Mt CO2, the average emissions from vessel-based and voya-
+ge-based international shipping are 829.5 Mt, leaving 226.5 Mt as domestic shipping emissions – about one fifth of the global shipping emissions. 
+57. Safety4Sea (2020). Do you know what happens to a ship when it’s too old to sail anymore?
+58. Danfoss (2019). Goodbye to NOx gases: on board a fully electric workboat.
+59. Interferry (2021). Economic Impact of the global ferry industry, p. 4
+60. SOIC (2019). Youtube video: Ferry happiness  
+61. Happiness Is a Hybrid-Electric Ferry - IEEE Spectrum
+62. Ship Technology (2017). New hybrid electric ferry launched in Taiwan.
+63. Eferry (2020), E-ferry project - Evaluation of the E-ferry, p. 118-119. The CO¬2 and air pollution savings are derived from Table 52. E-ferry green electricity is consi-
+dered zero emission, so the table presents absolute emissions. The savings are expressed as percentage reduction from an LMG50.1 to an e-ferry running on electricity from 
+the Danish grid mix 2019. 
+64. Eferry (2020), E-ferry project - Evaluation of the E-ferry, p. 108-109
+65. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 22
+66. Danfoss (2018). Scheveningen harbor environmentally upgrades with clean shore power, p. 2
+67. Marine diesel: 3.10669 kg CO2e/Liter marine diesel (DEFRA conversion factors 2022) x 33,000 Litres saved marine diesel = 102,521 kg CO2e. Electricity: 0.402 kg 
+CO2e/kWh (European Environmental Agency's Netherland GHG emission intensity of electricity generation) x 100,000 kWh = 40,200 kg CO2e. The savings are 61% 
+from marine diesel emissions to electricity emissions. 
+68. IEA (2022). Renewable power’s growth is being turbocharged as countries seek to strengthen energy security
+69. Connolly, D., et al. (2013). Heat Roadmap Europe 2: Second Pre-Study for the EU27. Department of Development and Planning, Aalborg University, p. 54
+70. IEA (2022). District Heating
+71. IEA (2018). The Future of Cooling, p. 26 & 59
+72. IEA (2018). The Future of Cooling, p. 11
+73. Danfoss (2016). Making the case for district cooling, p. 3
+74. Danfoss (2016). Making the case for district cooling, p. 3
+75. MarkNtel (2023). UAE District Cooling Market Research Report: Forecast (2023-2028)
+76. Statista (2022). Data Centers – statistics & facts
+77. IEA (2022). Data Centres and Data Transmission Networks
+78. EIA (2022). How much electricity does an American home use?. A US household uses 10,632 kWh/year. Datacenters consume 220-320 TWh/year and 1 TWh = 1x109 
+kWh. 220x109 kWh / 10,632 kWh/household = 20x106 households and 320x109 kWh / 10,632 kWh/household = 30x106 household. Thus 20 to 30 million households can 
+be powered by 220 to 320 TWh.
+79. eco Association of the Internet Industry (2021). Data centres as Gamechangers for Urban Energy Supply: City of Frankfurt am Main Could Cover Most of its Heating 
+Needs by 2030 with Waste Heat.
+80. SDCC (2023). Tallaght District Heating Network and Energy Centre ofÏcially opened.
+81. Copeland & Carter (2017). Energy-Water Nexus: The Water Sector’s Energy Use, Congressional Research Service, p. 6
+82. Danfoss (2022). A path to an energy neutral water sector
+83. United Nations (2022). Goal 6 Ensure access to water and sanitation for all 
+84. DHI A/S (2022). Analysis of the potential contribution to energy and climate neutrality from Danish technology within the global wastewater sector, p. 4
+85. IEA (2022). Europe. Germany’s total energy supply in 2020 was 11,654,314 TJ, equivalent to 3237 TWh.  350 TWh / 3237 TWh = 0.11, or about one tenth. 
+86. DHI A/S (2022). Analysis of the potential contribution to energy and climate neutrality from Danish technology within the global wastewater sector, p. 4
+87. Government of Canada (2019). Energy benchmarking for supermarkets and food stores
+88. The Grocer (2022). How supermarkets can recycle energy to beat rising costs
+89. Danfoss (2022). The local supermarket, the power of excess heat, p. 4
+90. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 5: London (UK), Rotterdam (The Netherlands), New York (US), and Shanghai (China). 
+91. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 5
+92. World Green Buildings (2019). Bringing embodied carbon upfront, p. 16
+93. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 6
+94. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 7
+95. IEA (2022). The Value of urgent action on energy efÏciency, p. 7
+96. IEA (2022). The Value of urgent action on energy efÏciency, p. 3
+97. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 18
+98. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 18
+99. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 22
+100. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 17
+101. Lygnerud, K. & Langer S. (2022). Urban Sustainability: Recovering and Utilizing Urban Excess heat. Energies 15(24), 9466
+102. Navigant (2020). How to reach the 1,5 °C target in urban areas, p. 7
+
+
+--- page 20 ---
+whyee.com
+Learn more about how energy eﬀiciency solutions  
+can accelerate the green transition.
+© Danfoss 2023 

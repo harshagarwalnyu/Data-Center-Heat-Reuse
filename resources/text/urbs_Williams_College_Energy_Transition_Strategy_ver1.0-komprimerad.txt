@@ -1,0 +1,716 @@
+SOURCE: Source Documentation\New York State\urbs Williams College Energy Transition Strategy ver1.0-komprimerad.pdf
+
+
+--- page 1 ---
+X
+STRATEGY FOR ENERGY TRANSITION 
+WILLIAMS COLLEGE
+
+
+--- page 2 ---
+CONTENTS
+December 22, 2022
+Version 1.0
+Williams College: Post Fossil Campus Infrastructure
+
+Issued by: 
+Urban Systems urbs AB
+Heliosgatan 13
+120 78 Stockholm
+Sweden
+
+Copyright © 2022 Urban systems urbs AB®, Sweden
+
+All rights reserved. 
+
+This report, including all enclosures, appendices and attachments, may
+contain privileged, confidential, proprietary, private, copyrighted, or other
+legally protected information. The information is confidential and intended
+solely for the exclusive use and benefit of the person(s) or organization(s) to
+whom it is addressed. No part of this publication may be reproduced,
+distributed or communicated in any form or by any means, without prior
+written permission of the issuer. urbs accepts no liability for any
+communications not connected to the services it provides. 
+
+Please contact info@urbs.systems for any questions or issues. 
+PAGE 2 | STRATEGY FOR ENERGY TRANSITION
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+STRATEGY FOR ENERGY TRANSITION............................................................................................
+CURRENT SCENARIO............................................................................................................................
+MAPPING THE ANNUAL ENERGY USE.............................................................................................
+UNDERSTANDING THE PEAKS..........................................................................................................
+INEFFICIENCIES IN THE CURRENT SYSTEM..................................................................................
+OUR APPROACH: DECENTRALIZED SYSTEM...............................................................................
+WHERE TO START: NODE 1................................................................................................................
+WHAT CAN WE DO ...............................................................................................................................
+MEETING HEATING DEMAND NODE 1............................................................................................
+IMPACTS OF NODE 1 ON HEATING PRODUCTION & SUPPLY.................................................
+COMPOUNDED EFFICIENCIES IN A CENTRALIZED SYSTEM...................................................
+EXPERIENTIAL LEARNING: NODE AS A LIVING LAB....................................................................
+ELECTRIFICATION IS THE KEY TO ACHIEVING POST FOSSIL CAMPUS.................................
+THE FUTURE OF WILLIAMS COLLEGE............................................................................................
+
+
+--- page 3 ---
+STRATEGY FOR ENERGY TRANSITION
+Minimize and eventually eliminate Scope 1 emissions, &
+Minimize Scope 2 emissions, 
+This document is written to demonstrate a high-level strategy for
+Williams College to undertake an energy transition to;
+from the building-level infrastructure. 
+The call for net-zero emissions is no longer limited to states & nations
+and their commitments, it is very evident that businesses and large
+institutions need to establish targets and create pathways.
+Universities have a unique opportunity and a massive potential to
+champion knowledge and showcase action within their communities,
+both through sustainable physical infrastructure and encouraging
+academic exploration in these areas. 
+Each university has its set of challenges and to become truly net zero
+requires institutional and operational structures addressing all
+emissions. Within these challenges, energy efficiency, electrification,
+and fuel switching for the built environment are relatively simple, bring
+quantifiable and immediate emissions reductions. 
+The strategy prepared by urbs together with Consigli looks specifically
+to capture what we believe is the low-hanging fruit, in terms of
+technology, deployment, and costs. This strategy focuses on an
+enabling step based on proven and experiential knowledge from ‘the
+Nordic’ countries that have had decades of development and leading
+globally in fossil fuel-free heating infrastructures.
+Making an energy
+transition from
+fossil-based energy
+to a post-fossil
+campus
+infrastructure
+using energy
+efficiency,
+electrification, and
+fuel switching.
+PAGE 3 | STRATEGY FOR ENERGY TRANSITION
+
+
+--- page 4 ---
+151,789 MMBTU 
+NATURAL GAS
+107,552 MMBTU 
+ELECTRICITY
+155,988 MMBTU 
+HEATING
+51,249 MMBTU 
+COOLING
+52,104 MMBTU 
+OTHER END USES
+10,210 TCO2E
+1,669 TCO2E
+1,697 TCO2E
+CURRENT SCENARIO
+PAGE 6 | POST FOSSIL CAMPUS INFRASTRUCTURE
+PAGE 4 | STRATEGY FOR ENERGY TRANSITION
+PEAK BOILER USAGE VS.
+PEAK CHILLER USAGE
+TOTAL ENERGY CONSUMPTION &
+EQUIVALENT GHG EMISSIONS
+99,262 MBH HEATING PEAK
+38,390 MBH COOLING PEAK
+
+
+--- page 5 ---
+ 85%
+GHG EMISSIONS FROM HEATING & COOLING
+19%
+ENERGY USED FOR COOLING
+ 57%
+ENERGY USED FOR HEATING 
+MAPPING THE ANNUAL ENERGY USE
+PAGE 5 | STRATEGY FOR ENERGY TRANSITION
+
+
+--- page 6 ---
+PAGE 6 | STRATEGY FOR ENERGY TRANSITION
+When planning an energy transition via either a change of fuel use or
+increasing share of intermittent power from renewables, a key
+challenge is to have enough capacity to cover the peak demands.
+Understanding the peaks allows us to see how the energy can be
+balanced within different user categories and over time. Thus, leading
+to correctly plan for multiple energy sources under different scenarios
+to achieve higher efficiency.
+From our analysis, it is clear that a lot of energy is used in winter to fulfil
+the need for heating. 
+As an example, a much colder winter than normal could increase the
+peak load significantly and pose multiple challenges to the energy
+solution. Retaining some of the existing gas infrastructure would allow
+for the right sizing of the infrastructure that can run without fossil
+fuels under normal operations. 
+Plotting of the peaks on a map demonstrates the heat rejection from
+various locations, higher heating means more heat dissipating but less
+obvious is heat getting rejected from the cooling production.
+Cooling-related peaks during the summer are a thirrd of the winter's.
+This is attributed to milder climates along with the summer holiday
+season - reduced consumption of hot water and lighting energy.
+UNDERSTANDING THE PEAKS
+
+
+--- page 7 ---
+200,000 
+150,000 
+100,000 
+50,000 
+0 
+TOTAL HEAT ENERGY
+SUPPLIED TO
+INDIVIDUAL BUILDINGS
+INEFFICIENCIES IN THE CURRENT SYSTEM
+PAGE 7 | STRATEGY FOR ENERGY TRANSITION
+Heat exhausted from the chillers via cooling towers, &
+Heat exhausted from exhaust air.
+The main challenge in the current system is the combustion-based hot
+water production system, which is used to meet the heating and hot
+water demands. 
+Combustion-based heating solutions are inherently inefficient because
+of the large amounts of wasted heat due to the cumulative
+temperature differential between the combustion and ambient room
+temperature. In addition, there are distribution losses associated with
+an extensive supply network. Natural gas combustion also contributes
+to air pollution and reduces air quality in the area by emitting nitrogen
+oxides and sulfur dioxide. 
+The key towards decarbonization is to shift away from combustion-
+based systems. This would need capturing the energy, in the form of
+heat, which is currently wasted. It is clear that the total heat rejected
+during the course of the year is much more than the buildings actually
+need. Heat loss associated with each stage of energy production,
+supply, distribution, and at the end of use, makes the current system
+inefficient. 
+ 
+There are two key areas today where the heat that is being exhausted
+and can be captured to reduce the heating production and the peaks;
+50% LOSS IN ENERGY
+GAS > STEAM > HOT
+WATER AT CENTRAL
+HEATING PLANT
+196,875 
+eMMBTU
+TOTAL ENERGY IN
+98,473
+MMBTU
+
+155,988  
+MMBTU  HEAT
+PRODUCED
+98,437  
+MMBTU ACTUAL
+HEAT DISTRIBUTED
+66,624
+MMBTU
+CONDENSOR HEAT
+LOSS
+98,437
+MMBTU
+COMBUSTION &
+DISTRIBUTION LOSS
+19,687
+MMBTU EXHAUSTED
+HEAT FROM
+VENTILATION
+TOTAL ANNUAL
+HEAT REJECTION
+
+
+--- page 8 ---
+OUR APPROACH
+A DECENTRALIZED SYSTEM
+The current system and its challenges;
+Our experiential knowledge of creating 5th-generation district
+energy solutions; and 
+The current technologies available and our insight into upcoming
+technologies.
+The current infrastructure on campus relies on a centralized system
+where heating and cooling to the buildings are supplied from siloed and
+centralized plants. This creates inefficiencies as both systems work
+independently and against one another, requiring more energy and
+emitting more GHG emissions. Additionally, the reliance on fossil-fuel
+sources creates both an increase in emissions upstream and
+downstream. 
+Our approach is based on our understanding of:
+Since the campus is an extensive network with multiple types of
+buildings, that vary in size, quality, year of build, and a variety of energy
+distribution systems and types of use, a decentralized system should
+be established by creating various energy nodes. A decentralized
+solution would allow us to maximize energy capture and use it as close
+to the consumption as possible, it will also allow us to limit excess
+energy production. This will lead to a reduction in energy demand,
+distribution, and production.
+Our proposal is to create a decentralized system on campus that
+utilizes simultaneous heating and cooling and works towards balancing
+the system. 
+PAGE 8 |  STRATEGY FOR ENERGY TRANSITION
+Each 'energy node' would target a group of buildings and connect them
+via various appropriate alternatives namely: thermal loop, energy
+storage, smart controls, etc., using existing infrastructure as much as
+possible. By creating an energy node that can balance itself,
+infrastructure interjections can be focused on capturing waste as
+opposed to energy production. The opportunity lies in capturing all the
+waste heat, given the high amount of heat generation and consumption
+in the system. Recapturing heat at the point of exhaust and re-using it
+as close to the demand as possible is one of the most efficient
+solutions. 
+Each node could have multiple common solutions including, but not
+limited to short-term, long-term, and seasonal energy storage in form
+of geothermal boreholes to store the heat rejected from cooling to be
+used during the peak winter season, which would reduce the primary
+energy need for heating. Furthermore, each building within the node is
+retrofitted with heat recovery ventilation. By reviewing the campus
+energy profile, we have understood that the size of the new
+infrastructure should be limited to capture the waste energy. Thus, the
+size of the boreholes should be limited to meeting the cooling demand
+or capturing the heat rejected. 
+This will make the new infrastructure interjections spatially,
+economically, and technically efficient. We are not looking to create a
+1-to-1 energy production infrastructure. Using systems thinking and
+taking a holistic view of the whole infrastructure, we can create an
+efficient system that recovers, re-uses, and recycles energy inputting
+more energy into the system.
+
+
+--- page 9 ---
+WHERE TO START
+NODE 1
+Clark Hall
+Wachenheim Science Center
+Thompson Biology Lab
+ Node 1 buildings include:
+1.
+2.
+3.
+        Thompson Chemistry Lab
+        Thompson Physical Lab
+PAGE 9 | STRATEGY FOR ENERGY TRANSITION
+A building cluster of 8 buildings with the maximum heat rejection
+and potentially one of the most balanced clusters within the
+campus.
+It is  the most concentrated energy consumer on the campus,
+contributing to  23% of total GHG emissions and 25% of total
+energy consumption.
+It is also the most recent and thus the impact of the first energy
+node will be immediate and implementation would be efficient. 
+It offers the best possibility to showcase a full electric
+infrastructure.
+Through mapping the actual energy use and peaks, evaluation of the
+energy consumption, location, building conditions & strategic
+outcomes for an energy transition strategy, we have identified a clear
+constellation for the first energy node in the greater plan for the energy
+transition. 
+The opportunity for Node 1 is identified as follows:
+The starting point is Node 1, which becomes a microgrid that may be
+made more efficient by connecting it with other nodes via thermal
+connections. The technological evolution within thermal and electrical
+energy storage can create exponential efficiencies and cost
+reductions. From the learnings of Node 1 and the potential of near
+future technology advancements, we do not expect that connecting
+these nodes via thermal network would be needed.
+ 25%
+TOTAL CAMPUS
+ENERGY CONSUMPTION 
+ 23%
+TOTAL CAMPUS GHG
+EMISSIONS
+4. Morley Science Laboratories
+5. Hopper Science Center
+6. Jesup Hall
+7. Morgan Hall
+8. West College
+1
+2
+3
+4
+5
+6
+7
+8
+THERMAL
+NODE
+ELECTRIC
+NODE
+
+
+--- page 10 ---
+WHAT CAN WE DO
+PAGE 10 | STRATEGY FOR ENERGY TRANSITION
+NEW AHU
+WITH HEAT
+RECOVERY
+NEW WATER
+SOURCE HEAT
+PUMP
+EXISTING
+CHILLER 
+THERMAL
+STORAGE TANK
+POINT
+ELECTRIC
+HOT WATER FOR
+SPACE HEATING
+DRY
+COOLERS
+GROUND SOURCE
+HEAT STORAGE
+120-150 boreholes ca. 800 ft deep
+to capture the condenser heat
+rejection 
+during 
+the 
+summer
+months and used as seasonal
+storage to provide heating to the
+node when average temperatures
+drop below 32 deg F. 
+Dry coolers work with heat pump to
+supply heating to the node when
+average temperatures are above 32
+deg F. Drycoolers can also be used
+to load the boreholes with heat if
+summers have been cooler than
+usual and need to fill the seasonal
+storage. 
+Thermal storage tank to balance the system and
+also store energy for the peaks, size of thermal
+storage may very depending on the design
+parameters. Thermal storage that can cover 4-6
+hours of peak heating in the node is recommended.
+Point of use electric technologies
+available today can allow adding
+energy to only specific areas of a
+building at the peaks with extreme
+variability on the current use, this
+will allow to manage the peak
+connected load within the node.
+We believe Node 1 gives an
+opportunity to demonstrate sans
+fossil fuel operation. 
+Energy recovery from the exhaust air
+to temper the outside air will play a
+key role in reducing the energy and
+the peak, without using any energy in
+the process, this becomes one of
+the most important intervention
+within 
+Node 
+1's 
+recently 
+built
+buildings. 
+Existing chiller plant becomes
+the centre piece for energy
+production and is boosted by
+heat pump specifically used to
+lift the water temperatures
+required for heating and when
+only heating is required. This will
+reduce the need for deploying
+additional equipment. 
+
+
+--- page 11 ---
+MEETING HEATING DEMAND NODE 1
+PAGE 11 | STRATEGY FOR ENERGY TRANSITION
+19,436
+MMBTU WASTE HEAT
+FROM CONDENOR
+DEPLOYED FROM
+SEASONAL STORAGE VIA
+GEOTHERMAL
+BOREWELLS
+JUL AUG SEP OCT NOV DEC JAN FEB MAR APR MAY JUN
+0
+1000
+2000
+3000
+4000
+5000
+6000
+0
+HOURS
+8760
+HOURS
+HEATING PEAK DEMAND
+17,492
+MMBTU MET WITH
+GROUND SOURCE
+HEAT PUMPS
+8292
+MMBTU MET WITH
+AIR SOURCE HEAT
+PUMPS
+6,858
+MMBTU REDUCTION
+WITH VENTILATION
+RECOVERY
+1,646
+MMBTU MET AT
+POINT OF USE
+ELECTRICAL 
+
+
+--- page 12 ---
+IMPACTS OF NODE 1 
+ON HEATING PRODUCTION AND SUPPLY
+PAGE 12 | STRATEGY FOR ENERGY TRANSITION
+34,288
+MMBTU
+9,563
+MMBTU
+72%  
+REDUCTION IN
+PRIMARY ENERGY
+USAGE FOR HEATING
+CURRENT
+PROPOSED
+86%  
+REDUCTION IN
+ASSOCIATED GHG
+EMISSIONS FROM
+HEATING
+311
+TCO2E
+2,275 
+TCO2E
+CURRENT
+PROPOSED
+60%  
+REDUCTION IN
+PEAK ENERGY
+INPUT 
+17,001
+MBH
+6,800
+MBH
+CURRENT
+PROPOSED
+
+
+--- page 13 ---
+COMPOUNDED EFFICIENCIES 
+IN A DECENTRALIZED SYSTEM
+PAGE 13 | STRATEGY FOR ENERGY TRANSITION
+155,988
+MMBTU
+68%  
+REDUCTION IN
+PRIMARY ENERGY
+USAGE FOR
+HEATING
+CURRENT
+PROPOSED
+50,367
+MMBTU
+51,249
+MMBTU
+54%  
+REDUCTION IN
+PRIMARY ENERGY
+USAGE FOR
+COOLING
+23,447
+MMBTU
+10,210
+TCO2
+84%  
+REDUCTION IN
+GHG EMISSIONS
+FROM HEATING
+1,640
+TCO2
+1,669
+TCO2
+764
+TCO2
+54%  
+REDUCTION IN
+GHG EMISSIONS
+FROM COOLING
+CURRENT
+PROPOSED
+CURRENT
+PROPOSED
+CURRENT
+PROPOSED
+
+
+--- page 14 ---
+ Learning center; 
+ Test facility; and 
+ Showcase for sustainability solutions.
+This idea of a living  lab would become an active development where
+students, staff, and faculty can utilize the space as a:
+It would act as a space where experiential learning can occur to better
+understand the processes, technologies, and components that are
+effective and scalable to the energy transition of the campus.  
+Node 1 would be an experience center where students, staff, and
+faculty can learn more about their surroundings whilst having the power
+to adapt and influence the future of their campus. 
+This energy transition strategy equips Williams College with a
+framework for future innovation and experimentation. 
+Node 1 can soon become a hub of engagement, networking, and
+knowledge-sharing in an integrated ecosystem. As the new model for
+open exchange and collaboration, the college can form collaboratives
+to create scale through interdisciplinary engagement among leaders in
+the technology, financial, academic, government, public health, and
+environmental justice in communities throughout the State, the
+country, and beyond — all while using Node 1 as a living lab for these
+engagements to play out.
+Node 1 can represent a new model that 
+empowers open exchange and collaboration for
+sustainable solutions to climate change.
+EXPERIENTIAL LEARNING
+NODE 1 AS A LIVING LAB
+The strategy is a physical manifestation of the commitments of
+Williams College, the state of Massachusetts, Consigli, and urbs to
+identify, develop, and deploy climate change solutions that are
+informed by research, abreast with the latest technology, and
+encouraged by the open exchange of ideas. At its core, the physical
+plan is designed to reflect the legacy of the college, and demonstrate
+strategies to mitigate and adapt to the impacts of climate change.
+The goal of Node 1 would be to create and foster a scalable
+infrastructure model for the rest of the campus. This would be the first
+phase in achieving a decentralized, post-fossil, and net-zero campus. 
+Node 1 will act as both a testbed and showcase of the most innovative
+and effective sustainability solutions for Williams College and set the
+standard for the following nodes. It would represent a new model that
+empowers open exchange and collaboration for sustainable solutions
+to climate change for Massachusetts, the USA, and the world. 
+PAGE 14 | STRATEGY FOR ENERGY TRANSITION
+ ''
+ ''
+
+
+--- page 15 ---
+DOWNSTREAM AT
+WILLIAMS
+COLLEGE USING
+OUR PROPOSAL
+ENABLING
+REDUCTIONS AT
+PRIMARY SOURCE
+SUPPORTING THE
+ENERGY
+TRANSITION &
+GREEN ECONOMY
+DECREASE IN
+PRIMARY 
+ENERGY USE
+ DECREASE IN
+ENERGY
+CONSUMPTION
+As climate targets quickly approach, regional, national, and global
+policies and efforts are becoming more aggressive to meet these
+deadlines. In order to limit global temperatures to below 1.5°C of pre-
+industrial levels, electrification coupled with the energy transition will
+be necessary processes on all scales.  
+The energy transition shifts away from fossil-based sources to
+renewable and lower-carbon sources. By 2050, 90% of global
+electricity can come from renewable sources, exponentially reducing
+emissions from the electricity sector while simultaneously driving
+development and green jobs. Within Massachusetts, there are targets
+of decreasing emissions from electric power by 53% in 2025, and 70%
+by 2030.
+To ensure Williams College can take advantage of this energy
+transition, electrification will be the key to achieving a post-fossil
+campus. Electrification offers more efficient systems that require less
+primary energy, emit less GHG emissions, and decrease operational
+expenditures.
+ELECTRIFICATION IS THE KEY
+TO ACHIEVING A POST-FOSSIL CAMPUS
+PAGE 15 | STRATEGY FOR ENERGY TRANSITION
+53% 
+REDUCTION IN EMISSIONS
+FROM ELECTRIC POWER 
+BY 2025
+70%
+REDUCTION IN EMISSIONS
+FROM ELECTRIC POWER
+BY 2030
+80%
+REDUCE SCOPE 1
+EMISSIONS ON CAMPUS
+BY 2035
+30%
+STATE-WIDE GHG
+EMISSIONS FROM HEATING
+BUILDINGS
+Energy market instabilities, protecting Williams College from
+volatile energy market fluctuations;
+Technical system failures, due to a reliance on regional grids; and
+Physical security threats and extreme weather events, which are
+growing risks today.
+Through our strategy, the campus would be free from:
+The process of electrifying Williams College aligns the campus with the
+greening of Massachusetts' and Commonwealth's electricity grids,
+further reducing the campus' carbon footprint. This would allow
+Williams College to achieve its 2035 targets of reducing Scope 1
+emissions by 80%. 
+It would also support the Massachusetts Clean Energy and Climate
+Plan targets of reducing building emissions by 28% by 2025, and 47%
+by 2030, relative to 1990 levels. 
+
+
+--- page 16 ---
+Reduced carbon footprint; 
+Reduced operational expenditures, from utility bills
+Reduction in waste energy;
+Reduction in downstream consumption and upstream production of
+energy; and
+Flexible and scalable energy model across campus.
+The decentralized approach comes with its inherent advantages, which
+compound the benefits of a sustainable campus, including:
+This energy strategy can also be amplified through the colleges'
+knowledge dissemination sources to reflect the urgency, commitment,
+and leadership in decarbonization. Sharing these best practices
+through global communities will allow Williams College to be at the
+forefront of campus decarbonization, and well-positioned to engage
+with academics, policy-makers, and the private sector. 
+This energy strategy stands for not only a net-zero campus to fulfil its
+goals, but also acts as an inspiration to institutions around the world to
+prioritise sustainability, starting with their own assets.  
+THE FUTURE OF WILLIAMS COLLEGE
+PAGE 16 | STRATEGY FOR ENERGY TRANSITION
+Universities and colleges stand at the crossroads of students'
+academic and professional lives. They provide opportunities to drive
+behavioural change through partnerships with private and public actors.
+Net-zero initiatives, such as this one, open up opportunities for
+campuses to amplify their sustainability knowledge and expertise in
+technological, social, and policy-making spheres of the wider
+community.
+As a living sustainability lab, the college can test solutions at scale
+within the campus boundaries. The resulting innovations, learnings, and
+changes can then be deployed into the community to achieve greater
+scale. Simultaneously, education and training on climate change, driven
+by the college can strengthen the leaders of today and prepare leaders
+for tomorrow. The professors and students on campus can co-create
+net zero initiatives and ensure the positive and beneficial impacts of
+these initiatives. 
+The future of Williams College is one that exemplifies the sustainability
+principles which it stands for, through both intangible assets, in the
+form of academic curriculums and future leaders, and through their
+tangible assets such as campus infrastructure. 
+
+
+--- page 17 ---
+RE-INVENTING REQUIRES RETHINKING
+OUR SYSTEMS IN A CIRCULAR,
+TRANSPARENT AND HOLISTIC WAY,
+THEN TAKING ACTIONABLE STEPS
+TOWARDS DECARBONIZATION 
+– AND THAT’S HOW WE DO BUSINESS.
+X

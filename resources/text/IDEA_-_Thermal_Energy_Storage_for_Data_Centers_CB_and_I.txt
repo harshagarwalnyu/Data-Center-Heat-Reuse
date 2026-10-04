@@ -1,0 +1,300 @@
+SOURCE: Source Documentation\New York State\IDEA - Thermal Energy Storage for Data Centers_CB and I.pdf
+
+
+--- page 1 ---
+
+
+--- page 2 ---
+Thermal Energy Storage 
+(TES)
+for Data Centers
+Justin Kline, Principal Plate Structures Engineer
+Bryan Holmes, Regional Sales Manager
+
+
+--- page 3 ---
+Overview
+• Data Center Operations
+• Data Center Concerns and Opportunities
+• Energy Storage – Technology Options and Costs
+• Battery Storage vs. Thermal Energy Storage (TES)
+• Data Center TES Examples and Case Studies
+• Summary and Conclusions
+
+
+--- page 4 ---
+Data Center Operations
+• Equipment consumes power
+• Equipment requires cooling (consuming more power)
+• Generates HEAT
+All of these in LARGE amounts
+
+
+--- page 5 ---
+Data Center Concerns and Opportunities
+These are “Mission Critical Facilities”
+• Require redundancy, reliability, and resilience,
+• High capital and operating costs for cooling, and
+• Heat rejection may not match variable demand.
+Energy Storage can help address all those issues:
+• Cool TES provides emergency back-up.
+• Cool TES can also lower peak demand and cost.
+• Hot TES can balance heat rejection with demand.
+
+
+--- page 6 ---
+Wind Under-Performs at Peak Demand
+Typical ERCOT Data:
+• During peak grid demand, wind only
+produces ~20% of its nameplate
+capacity (and too much on some nights).
+Energy trading value varies enormously,
+due to high on-peak demand and excess night wind:
+• In Texas – as high as $9.00/kWh on peak days; but
+as low as negative $0.10/kWh on some nights
+• In Nebraska – as low as negative $0.20/kWh on some nights
+
+
+--- page 7 ---
+ERCOT’s Peak Demand Wind Issue
+• When hitting a peak demand of:
+~70,000 MW
+• Installed rated wind generation was:
+~23,000 MW
+• But actual wind output during that peak: <600 MW
+ - Wind output was only ~2.5% of its rated capacity!
+As a Result:
+1.
+All this expensive, subsidized wind generation did not reduce the need for 
+conventional generation.
+2.
+Only Energy Storage can make fuller use of variable renewable power 
+investments. 
+
+
+--- page 8 ---
+Energy Storage – Technology Options
+• Pumped Hydro-electric storage (PH)
+• Compressed Air Energy Storage (CAES)
+• Mechanical Flywheel Storage
+• Traditional Batteries (Lead-Acid and Sodium Sulfur)
+• Advanced Batteries (Lithium-Ion is most common)
+• Developing Batteries (various technologies)
+• Thermal Energy Storage (TES)
+• Hot TES (Hot Rocks, Sand, Molten Salt, Hot Oil, Hot Water)
+• Cool TES (Ice TES, Chilled Water, Low Temp Fluid)
+
+
+--- page 9 ---
+Reported Storage Project Installed Cost (US$)
+• Pumped Hydro
+$611/kWh
+• Compressed Air ES
+$244/kWh
+• Flywheels
+$11,520/kWh
+• Batteries –   Lead-Acid
+$549/kWh
+Sodium-Sulfur
+$907/kWh
+Lithium-Ion
+$500/kWh
+Lithium-Iron Phosphate
+$600/kWh
+Zinc-Alkaline
+$704/kWh
+Zinc-Bromine
+$595/kWh
+• Thermal Energy Storage
+$200 to $500/kWh
+(large capacity 
+CHW TES)
+
+
+--- page 10 ---
+Batteries vs. Thermal Energy Storage (TES)
+Characteristics will vary, depending on battery & TES types:
+Batteries
+CHW TES & HW TES
+• Technical readiness
+dev’l to mature
+fully mature
+• Round-trip energy effic’y
+ ~68-86%
+near-100%
+• Life expectancy
+3 to 15 years
+40 yrs or more
+• Safety concerns
+fire/explosions
+nil
+• End-of-life disposal
+toxic/hazardous
+nil
+• Material sourcing
+limited/insecure
+flexible/secure
+• Capital costs ($/kWh)
+high and rising
+low, in large sizes
+
+
+--- page 11 ---
+Thermal Energy Storage (TES)
+• Most is Cool TES, but there can also be Hot TES.
+• TES de-couples the generation of thermal capacity from the demand for 
+thermal capacity.
+• The TES medium is “charged” (cooled, frozen, or heated) during off-peak 
+periods of low demand and thus low cost or low value energy.
+• TES is “discharged” during on-peak periods of high demand and thus high cost 
+or high value energy.
+Unlike other Energy Storage options, TES also provides thermal capacity to meet 
+peak loads, often reducing net capital cost by reducing required chiller or boiler 
+capacity.
+
+
+--- page 12 ---
+TES Application for Data Centers
+• Small-volume, high-flow CHW TES for back-up cooling during an 
+emergency (chiller recovery following power loss)
+• Large-volume CHW TES or Low Temp Fluid TES for both emergency back-
+up and shifting electric energy use & demand from high cost on-peak to 
+lower cost off-peak periods (as well as right-sizing chiller plant capacity 
+for a potential net CapEx saving)
+• CHW TES for increased use of seasonal “free cooling” systems
+• Cool TES to balance & increase use of variable wind & solar power
+• Cool TES to enhance Turbine Inlet Cooling of on-site Gas Turbines
+• HW TES to balance heat rejection with demand for heat
+And always, enhancing redundancy, reliability, and resilience
+
+
+--- page 13 ---
+Case Study – Data Center CHW TES 
+State Farm Insurance – Bloomingtion, Illinois
+Corporate data processing campus CHW TES:
+•
+Phase 1 (1994) - 1st 44,800 Ton-hr tank (4 million gals)
+•
+Phase 2 (2000) - 2nd 44,800 Ton-hr tank (4 million gals)
+TES not just for back-up; it lowers elec demand/energy costs:
+•
+Added N+2 redundancy to meet peak load.
+•
+Reduced capital cost vs non-TES chiller capacity.
+•
+Shifts 13,000 Tons of peak cooling and ~10 MW peak load.
+Modeling showed TES had 3% reduction in annual kWh/Ton-hr.
+
+
+--- page 14 ---
+State Farm Insurance Data Centers 
+Repeat User of CHW TES
+Three more data processing campuses using CHW TES:
+Alpharetta, Georgia
+Dallas, Texas
+Phoenix, Arizona
+•
+Each with one 12,000 Ton-hr TES tank
+•
+Each with TES on-line in 1996 (30 years operating)
+State Farm is just one of many repeat owners of TES.
+
+
+--- page 15 ---
+     Data Centers with CHW TES
+• AOL (at 4 TES sites)
+~17,000 Ton-hrs
+• Bank of America (at 3)
+ 
+   7,500 Ton-hrs
+• Capital One (2)
+   
+ 1,200 Ton-hrs
+• DuPont Fabros (8)
+  28,225 Ton-hrs
+• Equinix (2)
+    2,900 Ton-hrs
+• Google (4)
+  37,667 Ton-hrs
+• MCI (2)
+    9,120 Ton-hrs
+• Microsoft (3)
+~13,500 Ton-hrs
+• Nationwide Insurance (2)
+    1,750 Ton-hrs
+• State Farm Insurance (5)
+125,600 Ton-hrs
+• Target (2)
+    7,600 Ton-hrs
+• United Health Group (2)
+    8,835 Ton-hrs
+Also: Apple, Ascent, AT&T, Cingular, Citibank, Covidien, eBay, and more.
+
+
+--- page 16 ---
+Case Study: 
+TES for Data Center and Other Uses
+Princeton University
+University campus with “Four Flavors” of TES:
+•
+1,000 Ton-hrs CHW TES for Data Center emergency cooling (2011)
+•
+40,000 Ton-hrs Low Temp Fluid TES for peak load mgmt (2005)
+•
+19,680 Ton-hrs CHW TES to optimize geo-exchange (2023)
+•
+421 million Btu HW TES to optimize geo-exchange (2023)
+Photos 1 & 3 – 
+Compliments of 
+Ted Borer,     Borer 
+Energy 
+Engineering
+
+
+--- page 17 ---
+Case Study (cont’d): 
+TES for Data Center and Other Uses
+Princeton University
+Some key results from the four TES:
+•
+30 minutes of uninterrupted Data Center cooling for emergencies
+•
+Enhanced campus Redundancy, Reliability, and Resilience
+•
+Reduced peak demand by 10,000 Tons and 7 MW, for 4 hrs/day
+•
+Increased Turbine Inlet Cooling power output by 4% (0.5 MW)
+•
+Enhanced District Cooling network capacity w/ Low Temp TES (31 °F) 
+•
+Balanced geo-generated heat & cool to match thermal demands
+•
+Reduced geo-bores from 3,100 to 2,100, saving $25M CapEx net!
+
+
+--- page 18 ---
+Summary and Conclusions
+• TES is often superior to batteries or other Energy Storage options.
+• CHW TES can often address specific Data Center challenges:
+• Back-up cooling during power emergencies
+• Reduce on-peak power demand and operating cooling costs,
+• Often meet peak cooling loads at reduced net capital cost,
+• Maximize use of intermittent wind & solar power,
+• Maximize on-site gas turbine output in hot weather,
+• HW TES  to balance heat rejection with demand for heat, and
+• All TES to enhance redundancy, reliability, and resilience.
+• Thermal Energy Storage, particularly CHW TES, has:
+• Numerous Data Center examples, with many repeat owners,
+• Low unit capital cost ($/ton-hr and $/kWh) in large sizes.
+Explore TES early in concept designs to maximize value.
+
+
+--- page 19 ---
+                    Questions / Discussion
+Justin Kline
+Tel: 815-439-6210
+Email: justin.kline@cbi.com
+             Bryan Holmes
+             Tel: 713-890-2583
+             Email: bryan.t.holmes@cbi.com
+Photos Compliments of TECO, CB&I and District Energy St. Paul

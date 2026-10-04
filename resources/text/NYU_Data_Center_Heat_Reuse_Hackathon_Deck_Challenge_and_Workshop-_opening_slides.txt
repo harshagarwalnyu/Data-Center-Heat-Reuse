@@ -1,0 +1,171 @@
+SOURCE: Source Documentation\Presentations\NYU_Data_Center_Heat_Reuse_Hackathon_Deck_Challenge and Workshop- opening slides.pptx
+
+
+--- slide 1 ---
+
+NYU HACKATHON CHALLENGE
+DATA CENTER
+HEAT REUSE
+Turning Waste Heat into Community Value
+
+SUPPORTED BY
+‹#›
+[notes] [Sources]- NYU_Hackathon_Data_Center_Heat_Reuse_Challenge_R1.docx.- Visual on this slide was generated with Microsoft Copilot.
+
+--- slide 2 ---
+
+‹#›
+
+Hackathon Support Team
+[notes] [Sources]- NYU_Hackathon_Data_Center_Heat_Reuse_Challenge_R1.docx.- Visual on this slide was generated with Microsoft Copilot.
+
+--- slide 3 ---
+
+
+One of the world’s leading pump and water solutions companies
+‹#›
+[notes] Revenue reinvestment
+
+--- slide 4 ---
+[notes] 
+
+--- slide 5 ---
+We all rely on data centers
+The services we use every day run on remote servers.
+Video and music streaming
+Messages and video calls
+Shopping and online payments
+Cloud files and AI tools
+More than 3×
+global mobile network traffic
+in five years
+MONTHLY GLOBAL MOBILE NETWORK TRAFFIC
+72
+>220
+Exabytes per month. Includes fixed wireless access.
+Mobile traffic is a proxy for digital demand, not all data center activity.
+Sources: Ericsson Mobility Report, Q2 2026; Ericsson statement to WIPO, Aug 2021.
+[notes] Global mobile network traffic: June/Q2 2021 = 72 EB/month; Q2 2026 >220 EB/month. More than 220/72 = 3.0556 times, so more than 3x in five years. The 2026 chart bar uses 220 as a lower bound and the visible label shows >220. Includes Fixed Wireless Access. Network traffic is not the same metric as data stored, all internet traffic, data center workload or electricity consumption. Everyday service examples are illustrative, not shares of traffic.
+[Sources]
+Ericsson WIPO statement, 19 Aug 2021, reports June 2021 traffic of 72 EB/month: https://www.wipo.int/documents/d/frontier-technologies/docs-en-pdf-interventions-corp_ericsson.pdf
+Ericsson Mobility Report Q2 2026 traffic update (>220 EB/month, includes FWA): https://www.ericsson.com/en/reports-and-papers/mobility-report/dataforecasts/mobile-traffic-update
+IBM cloud banking: https://www.ibm.com/think/topics/cloud-banking
+Ericsson service and video examples: https://www.ericsson.com/en/reports-and-papers/mobility-report/mobility-visualizer
+[/Sources]
+
+--- slide 6 ---
+
+Data center growth expands the heat-reuse opportunity
+GLOBAL CAPACITY AND DEVELOPMENT
+373 GW
+Active capacity plus construction and pipeline
+Active
+71 GW
+Under construction
+22 GW
+Development pipeline
+280 GW
+AI-DRIVEN INVESTMENT
+$3T+
+Global investment projected by 2030
+AI demand is accelerating
+infrastructure expansion.
+More computing means more heat to capture and put to use.
+Figures from slides 6–7. Pipeline is not operating capacity; investment is a projection.
+[notes] 
+
+--- slide 7 ---
+‹#›
+
+Data centers generate heat via server data computing and processing.
+It’s getting hot in here…
+Data center chips are inefficient, majority of electrical energy is lost as thermal energy
+As CPU/GPU activity increases, heat generation increases
+As much as 98% of the energy used by data centers converts to heat [Alfa Laval]
+
+[notes] Elizabeth
+Let’s set the stage a bit before we dive in heat recovery technology
+This isn’t unique to DCs, globally one third of energy consumption is attributable to the industrial sector, with up to fifty percent ultimately wasted as heat.
+
+
+https://ired.co.uk/wp-content/uploads/2020/10/data-centre-thermal-imaging-2.jpg 
+
+--- slide 8 ---
+Across the Globe, waste heat is an untapped energy resource
+
+~95–100% of energy supplied into a 
+Data Center becomes heat
+
+Up to 85% is recoverable!
+[notes] Speaker Notes:
+95–100% of energy → heat.
+Up to 85% recoverable.
+Strong statement: Data centres are already energy plants—just not utilised yet.
+
+
+--- slide 9 ---
+
+NY Leading in the right way: Heat Reuse
+
+[notes] Need to be in the game to lead… and data centers can be built sustainably
+
+--- slide 10 ---
+THE CHALLENGE
+Turn rejected heat into a reliable local value
+
+Develop and defend a technically feasible, economically viable and community-centered system that captures, upgrades and delivers data-center heat to the most suitable users.
+
+
+CAPTURE
+Define the heat source.
+
+
+UPGRADE + DELIVER
+Select equipment and interfaces.
+
+
+PROTECT RELIABILITY
+Maintain cooling and heat continuity.
+
+
+CREATE VALUE
+Quantify benefits and responsibilities.
+‹#›
+[notes] [Sources]- NYU_Hackathon_Data_Center_Heat_Reuse_Challenge_R1.docx, Challenge and Team Deliverable sections.
+
+--- slide 11 ---
+SITE COMPARISON
+Two sites, different heat-reuse challenges
+ | 111 8th Avenue | Lake Hawkeye
+Setting | Urban New York City | Lansing, New York
+Former Cayuga Power Plant site
+Project stage | Existing, commissioned
+multi-tenant data center | Proposed data center
+Potential heat users | Dense, diverse local demand | Nearby homes and
+community facilities
+Design focus | Match heat supply to users.
+Define upgrades and interfaces. | Plan heat pumps and a new network
+for hot water and space heating.
+Key tradeoff | Use local demand while protecting
+data-center cooling reliability. | Build a feasible network with
+affordability and community acceptance.
+Both sites need justified heat users, dependable delivery and backup heat.
+Overview of the scenarios on slides 14–15. Site status as described in this deck.
+[notes] 
+
+--- slide 12 ---
+Its only waste heat if we choose 
+to waste it. 
+
+REUSE IT! DON’T LOOSE IT!
+[notes] Speaker Notes:
+Emphasise key message:Heat is only waste if unused.
+Strong transition into energy systems integration.
+
+
+--- slide 13 ---
+Thank you!
+Got a hot idea?Join our Data Center Heat Reuse challenge!
+Bring your questions and dig in during the workshop.
+We look forward to working with you.
+[notes] 

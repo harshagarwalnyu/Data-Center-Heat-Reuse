@@ -1,0 +1,1673 @@
+SOURCE: Source Documentation\White Papers\Colocating-Data-Centers_Greenhouses-RII-Virginia.pdf
+
+
+--- page 1 ---
+COLOCATING
+DATA CENTERS &
+GREENHOUSES
+Feasibility Report 
+JUNE 2025
+Dr. Scott Lowman
+Institute for Advanced Learning and Research
+R. Bryan David
+GO Virginia Region 3
+PRESENTED TO
+Derek Smith and Rob Eddy
+Resource Innovation Institute
+PRESENTED BY
+
+
+--- page 2 ---
+The Commonwealth of Virginia is the top data center jurisdiction in the world, and,
+by multiple measures, leads recent US market development among US states for
+controlled environment agriculture (CEA).  Resource Innovation Institute (RII) was
+hired to evaluate if colocating data centers and high-tech production greenhouses is
+technically feasible and strategically valuable to the economic development
+interests of Southern Virginia, a rural part of the Commonwealth rich with farming
+heritage.  
+This project was funded by a grant from the GO Virginia Region 3 Council, managed
+by the Institute for Advanced Learning (IALR) in Danville (VA), and conducted
+between December 2024 and May 2025. GO Virginia is a state-funded economic
+development initiative that encourages regional collaboration to drive private-
+sector growth, create high-wage jobs, and diversify Virginia’s economy. 
+This project is highly relevant to current economic development considerations
+related to data centers, energy infrastructure, food systems, and community
+resilience.
+OVERVIEW 
+ COLOCATING DATA CENTERS & GREENHOUSES
+
+
+--- page 3 ---
+JUNE 2025 
+EXECUTIVE SUMMARY  
+Introduction 
+Against the backdrop of AI-driven growth, data centers are rejecting more waste heat - and 
+economic potential - to the atmosphere than ever before. As Southern  Virginia’s localities attract  
+data center growth from Northern Virginia, GO Virginia Region 3 is evaluating a potential 
+economic development strategy whereby data centers and greenhouses colocate to improve the 
+competitiveness of both sectors through waste heat and other resource exchanges.   
+Partnership Exploration 
+A number of market actors, many with economic interests in Virginia, provided expert input into 
+the potential for colocating data centers and greenhouses. Stakeholders are familiar with the 
+concept, agree on its potential, and are interested in collaborating to find public-private solutions. 
+Lessons Learned 
+While technically feasible, colocating a data center with one greenhouse is not functional due to a 
+significant mismatch of heatloads. However, colocating data centers with multiple, large-scale 
+greenhouses and other complementary industrial businesses would provide a number of economic 
+and quality of life benefits for Virginia communities. AgriportA7, a development in The 
+Netherlands, is the most applicable clustered agtech development model for the Commonwealth 
+to adapt. A detailed case study and other findings are featured in this report.   
+Optimal Design Conditions 
+While a simple connection of a data center to an individual greenhouse via a heat exchange-only 
+model is possible, it is economically limited. Therefore, optimal design conditions are achieved 
+with an integrated Farm Park model that utilizes a combined heat and power (CHP) microgrid to 
+provide cooling of the data center water loop while providing power, heating, cooling, and CO2 
+enrichment for the greenhouse and other colocated businesses in the Farm Park hub. The Farm 
+Park also holds the potential to generate energy to offset demand on Region 3’s grid resources. 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 3 
+
+
+--- page 4 ---
+JUNE 2025 
+Economic and Workforce Development Impacts 
+While data centers bring significant local and state  tax revenues but limited permanent jobs after 
+construction, greenhouses offer greater job creation potential for Virginia’s rural economies. Each 
+65-acre greenhouse siting would create 140-270 total jobs, ranging from grower to engineer. A 
+Farm Park featuring a set of  strategic business investments - such as a data center, multiple 
+greenhouses, biomass processing facilities, a distribution center, adjacent IT and agtech 
+operations, and additional interconnected businesses attracted to the lower cost structures 
+provided by the resource exchange infrastructure (e.g., a brewery benefiting from CO2 loops) 
+would generate local, regional and state economic multipliers, through job creation,  diversifying 
+the local and regional economies, and taking advantage of existing economic and workforce 
+development investment.  The IALR’s CEA Innovation Center is a ready partner for such an  
+undertaking.  
+Conclusion 
+The Commonwealth has a number of existing investments and active opportunities to initiate one 
+of the nation’s first Farm Parks. A logical next step would be for the CEA Innovation Center to 
+facilitate a feasibility study to identify, screen, and prioritize locations in Southern Virginia/GO 
+Virginia Region 3 that may be suitable to host a demonstration site that can be activated by 
+investors and developers of data centers and greenhouses. 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 4 
+
+
+--- page 5 ---
+JUNE 2025 
+TABLE OF CONTENTS  
+EXECUTIVE SUMMARY​
+3 
+Introduction​
+3 
+Partnership Exploration​
+3 
+Lessons Learned​
+3 
+Optimal Design Conditions​
+3 
+Economic and Workforce Development Impacts​
+4 
+Conclusion​
+4​
+ 
+TABLE OF CONTENTS​
+5 
+ 
+PARTNERSHIP EXPLORATION​
+6 
+ 
+LESSONS LEARNED​
+7 
+Key Findings from RII Interviews​
+7 
+Literature Review Summary​
+10 
+ 
+OPTIMAL DESIGN CONDITIONS​
+12 
+Waste Heat Exchange Model​
+12 
+Another Approach to Colocation:  ​
+Integrated “Farm Park” and CHP Model​
+13 
+Agriport A7 Case Study​
+21 
+ 
+ECONOMIC & WORKFORCE DEVELOPMENT IMPACTS​
+22 
+Job Creation and Workforce Diversification​
+22 
+Economic Multiplier Effects​
+23 
+Local Food Production and Resilience​
+24 
+Tax Base and Investment in Region 3​
+24 
+​
+CONCLUSION​
+28​
+ 
+APPENDICES​
+31 
+APPENDIX A: LITERATURE REVIEW​
+33 
+APPENDIX B: REFERENCES​
+43​
+APPENDIX C: AGRIPORT A7 CASE STUDY​
+46 
+APPENDIX D: ESTIMATED TAX REVENUE BY OPERATION TYPE​
+54 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 5 
+
+
+--- page 6 ---
+JUNE 2025 
+SCOPE ITEM 1 
+PARTNERSHIP EXPLORATION  
+The subject of colocation of data centers and greenhouses is emerging in today’s economy. Several 
+categories of market actors are exploring the idea, from greenhouse producers to energy 
+developers to data center operators. 
+ 
+However, actual colocation - and functional integration - of data centers and greenhouses has 
+been attempted a small number of times in a small number of places.  Therefore, the research 
+conducted for this project primarily relied on targeted interviews with qualified subject matter 
+experts (SMEs). SMEs were drawn from the networks of RII, GO Virginia Region 3 staff , and IALR’s 
+CEA Innovation Center leadership.   
+ 
+In total, 16 confidential interviews were conducted.  These interviews included:​
+ 
+●​ Eight (8) potential partners, including energy developers, data center market actors, and 
+greenhouse operators​
+ 
+●​ Four (4) public officials, including state, county, and local economic development officials 
+from the US and The Netherlands, and a data center efficiency expert from Lawrence 
+Berkeley National Laboratory​
+ 
+●​ Four (4) other relevant stakeholders, including real estate brokers, energy engineers, 
+broadband providers, and business park operators with experience in both sectors 
+ 
+Interview notes, transcript summaries, and links to full transcripts and recorded zoom meetings 
+are available in the Appendix A. 
+ 
+In addition to interviews, a number of dialogues with advisors to the US Dept. of Energy sponsored 
+CEA Market Accelerator informed the findings in this report.  Advisory body discussions leveraged 
+include the Stakeholder Engagement, Education, and Deployment (SEED) Team, the High-Tech 
+Greenhouse Knowledge Transfer Working Group, the Colocation Working Group, and the Site 
+Feasibility Committee. 
+ 
+ 
+ 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 6 
+
+
+--- page 7 ---
+JUNE 2025 
+Scope Item 2 
+LESSONS LEARNED 
+Key Findings from RII Interviews 
+1.​ Despite the differing operational priorities of data centers and commercial greenhouses, it appears 
+that existing technologies can be integrated for a successful colocation. One model that will be 
+described is a heat exchange-only model, involving just the data center and the greenhouse. The 
+second, and more optimal model, is a “farm park” of multiple agricultural industries, with 
+“districtized” utilities of energy, heating water, chilled water, and CO2.  
+2.​ For integration to succeed, specialized knowledge across sectors is required. This systems-thinking 
+approach requires expertise from both industries and beyond. Upon completion of the interviews, 
+it became apparent that all of the “pieces of the puzzle” had been put together before, nothing new 
+would have to be invented, and success would be determined by bringing together the right 
+partners. 
+3.​ Data centers primarily pursue colocation for "public image and community acceptance rather than 
+direct economic benefits," helping address growing resistance to their high power consumption and 
+limited job creation. One interviewee noted that data centers face increasing "pushback across the 
+US because they're taking all the power and they're not bringing labor," making greenhouse 
+partnerships attractive since these can bring a fair amount of jobs and a sustainability commitment. 
+This is particularly important for rural communities without much economic diversification, but 
+that have the necessary infrastructure and labor force to make such colocations viable. 
+4.​ The emergence of AI computing has dramatically increased heat generation in data centers, 
+creating higher-quality waste heat that makes integration with greenhouses more technically 
+viable. 
+5.​ A fundamental mismatch exists in both scale and operational priorities. Even medium-sized data 
+centers (30-50 MW) produce substantially more waste heat than large greenhouses can utilize. 
+One industry expert noted, "If you put a 10-hectare greenhouse next to it, then we need 10 megawatts. 
+They have 50, so from the 50, we only use 10." 
+6.​ Furthering the mismatch, the waste heat exchange-only model also needs to address diurnal and 
+seasonal variability in greenhouse energy needs compared to data centers' consistent demands. "A 
+data center is a very flat load profile versus a greenhouse has wild variability," explained an energy 
+expert, adding that "if you can do multiple industries or get some kind of energy storage system in place, 
+those types of things start synergizing very well." 
+7.​ "Data centers prioritize 'five nines' (99.999%) uptime and will reject any integration that might 
+compromise system reliability," requiring solutions that extract waste heat without affecting core 
+operations or construction timeline. 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 7 
+
+
+--- page 8 ---
+JUNE 2025 
+8.​ Physical security is paramount for data centers, requiring clear separation between facilities. The 
+industry's transition from air to liquid cooling systems creates more opportunities for secure waste 
+heat recovery, as the buildings won’t need to be joined.  
+9.​ The optimal infrastructure model involves a "district heating" approach rather than joining the 
+buildings or combining the heating/cooling liquids. As one interviewee explained, "We don't tap into 
+it directly. We always do an interface" with a substation containing heat exchangers and meters to 
+maintain clear operational boundaries. Another stated that "it's a potential to set up a smaller CHP 
+[Combined Heat and Power] that doesn't power the IT infrastructure of the data center, but powers part of 
+the cooling or all of the cooling," with the greenhouse connected to this shared heating/cooling loop. 
+10.​Given industry priorities, a phased implementation approach where data centers are built first with 
+"CEA-ready" intermediary infrastructure appears most practical. One interviewee advised against 
+coordinating simultaneous development, noting that data centers "don't want another thing that's 
+equally the size of them potentially impacting their construction timelines... stay out of my way."   
+11.​For viable colocation models, standardized specifications (similar to "solar-ready" building codes) 
+for "CEA-ready" data centers would facilitate broader adoption. Developing clear technical 
+standards and integration points that preserve operational independence for both facilities is 
+essential. 
+12.​Local governments must weigh various factors in approving colocation projects. As one county 
+administrator explained, "When you're a government official making decisions, you're looking on the cost 
+benefit... what's the return back for the community?" Another challenge is that "greenhouses don't 
+assess or appraise for much value in terms of tax assessments," creating potential economic 
+disincentives for localities unless broader benefits are considered. The key is making the "other" 
+economic impacts from a Farm Park known to the local governing body.  An economic impact study 
+would be logical for a farm park developer to prepare in support of a favorable local land use 
+outcome. 
+13.​Water management offers additional sustainability benefits. Some existing colocation sites 
+integrate only at the water management level – "collecting rainwater in underground reservoirs that 
+they're selling to the data centers at a premium and also selling to the greenhouses." 
+14.​Rural counties seeking economic development may find these pairings particularly attractive as 
+they combine high-tax revenue generators with a modernized evolution of their agricultural legacy. 
+"A facility like this would generate the job portion," potentially addressing energy and food security 
+concerns in underserved areas. 
+15.​Energy economics significantly impact colocation viability. Cogeneration of Heat and Power (CHP) 
+systems used in the optimum multi-industry “district heating” approach (details in later section) 
+require consistent utilization to achieve acceptable returns: "You need to be able to monetize the 
+electric and thermal to get a good ROI. If you're just a greenhouse operator and you look at CHP to lower 
+your utility bill, it's not going to work." 
+16.​Local jurisdictions play a crucial role through local land use decisions, economic and workforce 
+development incentives, expedited permitting, and potentially  economic and regulatory incentives 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 8 
+
+
+--- page 9 ---
+JUNE 2025 
+for waste heat utilization. As one official noted, "Virginia has the VDACS program (Virginia 
+Department of Agriculture and Consumer Services) ... they have funding for agricultural and agribusiness 
+projects" that could potentially support colocation initiatives. 
+17.​The optimal design starts with energy integration rather than retrofitting existing facilities. "When 
+you're designing the farm parks, if you want to integrate with other industries, including data centers, if 
+you're doing it from the get-go, there's a possibility to design something (optimally)." Another expert 
+reinforced this: "The greatest efficiencies emerge from projects designed for colocation from inception." 
+Locating in an industrial or commercial business park with requisite infrastructure, fiber 
+connectivity, and access to markets makes speed to market viable for the colocation of data centers 
+and greenhouses.  
+18.​Creation of durable corporate partnerships using multiple capital revenue streams is essential for 
+project viability. "Integrating with manufacturing is really important" to create sufficient jobs and 
+economic activity. One industry participant explained: "We are developing industrial projects that 
+integrate all of these different components" to optimize energy utilization and reduce operating costs. 
+19.​Land values significantly impact economic feasibility. In Northern Virginia, land for data centers can 
+cost "$1-2 million an acre," while rural sites might be "$45,000 an acre." 
+20.​Beyond energy and climate benefits, successful colocation projects offer workforce development 
+opportunities by creating diverse employment across technical and agricultural sectors. As one 
+interviewee put it: "Bringing all these things together, it just makes much more sense." Southern 
+Virginia and Region 3 have in existence a number of successful workforce development programs 
+from middle school to community college that can be used to support data center and greenhouse 
+operators.  
+21.​Clear contractual frameworks between parties are critical, with financial and operating 
+responsibilities and contingencies clearly delineated. Successful demonstration projects with 
+comprehensive performance metrics will be essential to overcome skepticism in both industries 
+and establish viable implementation models. 
+22.​Early and collaborative public sector involvement appears essential for widespread adoption. 
+Beyond financial incentives, local, regional, and state government agencies can provide long-term 
+planning coordination, standardization, regulatory flexibility, and project validation that private 
+entities struggle to achieve independently. As one participant noted, colocation represents "what 
+the future of CEA will be if we do it this way." 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 9 
+
+
+--- page 10 ---
+JUNE 2025 
+Literature Review Summary 
+The rapid expansion of data centers, driven by digitalization and AI growth, has created significant 
+untapped energy potential through waste heat generation. Modern data centers convert 33-42% 
+of consumed power into waste heat, typically ranging from 45-55°C, which is conventionally 
+rejected to the atmosphere despite representing a substantial energy resource. 
+Virginia, hosting the world's largest concentration of data centers at approximately 3.4 GW 
+capacity, presents a compelling case study. Regional analysis indicates that fully utilizing waste 
+heat from Virginia's existing data centers could support 6,000-8,500 acres of high-tech 
+greenhouse operations, potentially meeting 80-120% of the state's fresh tomato demand while 
+offsetting 370-495 million cubic meters of natural gas annually. 
+Data center waste heat characteristics vary significantly by system type. Legacy air-cooled 
+systems produce 30-40°C output unsuitable for thermal recovery, while modern water-cooled 
+systems generate 45-55°C waste heat appropriate for much of a greenhouse's heating season. The 
+shift toward liquid cooling systems—projected to reach 38.3% of enterprises by 2026—produces 
+higher-grade waste heat more suitable for agricultural applications. Emerging AI/HPC-optimized 
+systems produce even higher temperatures (55-70°C), and experimental two-phase refrigerant 
+systems used by companies such as NVIDIA reaching up to 90°C. These nascent technologies 
+could provide suitable greenhouse heating on even the most frigid winter days, which typically 
+requires  75°C. Furthermore, adsorption coolers could utilize 90°C water to generate chilled water 
+for greenhouse cooling and dehumidification. 
+TABLE 1. DATA CENTER WASTE HEAT BY TYPE 
+Data Center Type 
+Typical Outlet 
+Temperature 
+Cooling Method 
+Notes 
+Legacy Architecture  
+(Not Designed for Reuse) 
+30–40 °C 
+(86-104 °F) 
+Air-cooled or low-temp chilled 
+water loops 
+Dominant in older data centers; waste heat not 
+reused; not suitable for thermal recovery. 
+Standard Water-Cooled  
+(Non-AI Workloads) 
+45–55 °C 
+(113-131 °F) 
+Rear-door heat exchangers, 
+direct-to-chip liquid cooling 
+Used in many modern enterprise/cloud data centers; 
+suitable for low-grade heat reuse. Supplemental 
+heating systems required on coldest days. 
+AI/HPC-Optimized 
+(High-Density Workloads) 
+55–70 °C 
+(131-158 °F) 
+Direct liquid cooling, 
+immersion cooling 
+Emerging trend in AI data centers; high outlet temps 
+enable efficient heat recovery and reuse applications. 
+May not require supplemental heat. 
+AI/HPC with Two-Phase 
+Refrigerant Systems 
+Up to 90 °C 
+(Up to 194 °F) 
+Direct liquid cooling, 
+immersion cooling for 
+experimental or mobile 
+deployments 
+Liquid refrigerant that boils into vapor upon 
+absorbing heat; would not require supplemental heat.  
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 10 
+
+
+--- page 11 ---
+JUNE 2025 
+International examples demonstrate feasibility of colocation, with successful pilots in the 
+Netherlands, Denmark, Sweden, and Canada. European implementations often integrate with 
+district heating networks, while proposed U.S. systems would use intermediary heat exchange 
+substations located up to 0.6 miles from data centers to maintain security while transferring heat 
+through decoupled water loops. 
+However, significant challenges exist. The primary obstacle for a data center-greenhouse 
+colocation is supply-demand mismatch: data centers operate year-round while greenhouse 
+heating demand is seasonal and weather-dependent. This mismatch reduces system efficiency and 
+requires additional infrastructure like thermal storage or heat pumps to boost temperatures.​
+​
+See Appendix A for the full literature review and Appendix B for footnoted references. 
+ 
+​
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 11 
+
+
+--- page 12 ---
+JUNE 2025 
+Scope Item 3 
+OPTIMAL DESIGN CONDITIONS 
+Two models have emerged from our research, one that extracts heat from the data center cooling 
+loop to provide greenhouse heating while reducing the cost of chiller operation at the data center. 
+The second is an integrated Farm Park model that utilizes a CHP microgrid to provide cooling of 
+the data center water loop while providing power, heating, cooling, and CO2 enrichment for the 
+greenhouse and other colocated industries. The Farm Park also holds the potential to generate 
+excess energy to offset the high energy center demand on Region 3’s grid resources. 
+Waste Heat Exchange Model 
+As described in the ‘Lessons Learned’ section, colocating with an air-cooled data center does not 
+appear practical. An optimum configuration for integrating a water-cooled data center with a 
+greenhouse relies on direct thermal coupling through heat exchangers. Because greenhouse heat 
+demand and data center heat output won’t always align, the most optimal designs for this model 
+incorporate heat pumps, thermal storage or supplemental systems.  
+To better enable year-round waste heat utilization, the design may include a low-temperature 
+absorption or adsorption chiller to generate chilled water for greenhouse cooling. In addition to 
+controlling temperature within the greenhouse, a dual-loop of hot and chilled water would allow 
+the simultaneous use of hot and chilled water for humidity management. This configuration 
+reduces the need for additional mechanical systems, improves thermal reuse, and maintains 
+operational independence for both facilities.  
+Crucially, an unsolved challenge that greatly reduces the practicality of the heat exchange-only 
+model is supply–demand mismatch. Furthermore, because the data center emits no CO₂, this system 
+would not provide the CO₂ enrichment that gas boilers do. So even with perfect heat integration, 
+growers would still need a separate CO₂ source (often from combustion or biogas) to boost crop 
+productivity. 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 12 
+
+
+--- page 13 ---
+JUNE 2025 
+ 
+FIGURE 1. RENDERING OF A HEAT EXCHANGE MODEL WITH INTERMEDIARY HEAT PUMP SUBSTATION 
+BETWEEN GREENHOUSE AND DATA CENTER  
+Another Approach to Colocation:  ​
+Integrated “Farm Park” and CHP Model 
+A broader vision is the Farm Park concept: a campus combining a data center, greenhouses, and 
+other food/ag/energy industries, all integrated with a Central Resource Hub (CRH) of “districtized” 
+utilities, including supply/return loops of heating water, chilled water, compressed air, and CO2,  
+along with electrical and optical fiber communication grids. In this model, a central 
+combined-heat-and-power (CHP) plant, powered by gas or biogas, provides power and cooling to 
+the data center while providing the greenhouse with power, cooling, heating, and a stable supply of 
+CO2 to increase crop yields via increased photosynthesis.  
+Multiple greenhouse firms and indoor farms could locate in the Farm Park, drawn by reduced cost 
+of production and the advantage of colocated support infrastructure: product packagers, cold 
+storage, warehousing, and transportation. Other industry sectors would be incentivized by close 
+proximity to the greenhouse and data center anchor tenants, while also benefiting from reduced 
+cost of operation from centralized resources. For example, food retailers would establish 
+distribution and logistics centers on site. HVAC, equipment, and robotics providers would colocate 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 13 
+
+
+--- page 14 ---
+JUNE 2025 
+to win service contracts with the anchor tenants. IT companies requiring powerful computing with 
+low-latency would tap into the service fiber loop network leased by the data center. More 
+examples will be detailed in the next section. ​
+​
+This diverse set of Farm Park tenants would solve the supply-demand mismatch problem of the 
+waste heat exchange model by increasing the cooling supply (heat exchange) for the data center 
+and stabilizing the heating energy demand across day/night cycles, weather events and seasons. 
+More jobs encompassing assorted trades and disciplines would be created in service of this food 
+production hub, while the addition of more IT companies would provide additional tax revenue to 
+Region 3. 
+The Importance of a Central Resource Hub 
+Central Resource Hubs are common at hospitals, universities, and military bases, reducing the 
+costs and inefficiency of each building needing equipment and staff for providing heating, cooling, 
+logistical operations, water treatment and compressed air. Figure 2 depicts a Central Resource 
+Hub with resource inputs and physical infrastructure relevant to agriculture operations. 
+FIGURE 2: CENTRAL RESOURCE HUB AGRICULTURE EXAMPLE INCLUDING INPUTS AND INFRASTRUCTURE  
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 14 
+
+
+--- page 15 ---
+JUNE 2025 
+Figure 3 represents a Farm Park CRH, with input and output flows color-coded. ‘Information’ is 
+the activity of the optical fiber system leased by the data center, while ‘Products’ is the greenhouse 
+produce ready for market. The hub diagram in the center represents the core facility of utility 
+equipment, as well as the supply/return loop and grid infrastructure. 
+FIGURE 3: CENTRAL RESOURCE HUB WITH ASSOCIATED RESOURCE INPUTS AND OUTPUTS 
+ 
+ 
+The core concept of a Farm Park is the housing of the physical infrastructure to support the inputs 
+and outputs of the businesses it supports. Figure 4 represents the circularity of inflows and 
+outflows of the data center and greenhouse. The greenhouse demands multiple utilities, and 
+supplies plant products to the packaging and shipping support infrastructure.  
+In some cases, the greenhouse may also provide plant waste to a biowaste digester of the core 
+facility to generate power and CO2. The data center demands power and cooling, and supplies hot 
+water and information.  
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 15 
+
+
+--- page 16 ---
+JUNE 2025 
+FIGURE 4: RESOURCE EXCHANGE WITH CENTRAL HUB AND GREENHOUSE  
+ 
+Figure 5 shows the resource input and output flows from the Central Resource Hub to the data 
+center and greenhouse. In this case, shared resources are delivered from the Central Resource 
+Hub to both industries, while the outputs from the industries vary.  
+FIGURE 5: RESOURCE EXCHANGE WITH CENTRAL HUB TO DATA CENTER AND GREENHOUSE 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 16 
+
+
+--- page 17 ---
+JUNE 2025 
+Lastly, Figure 6 provides this circular analysis for colocated agricultural operations in the Farm 
+Park.  
+FIGURE 6: RESOURCE EXCHANGE IN FARM PARK 
+ 
+It must be stated that implementing this integrated system requires substantial investment and 
+regulatory support from the public sector to augment private investment. A CHP plant, hot-water 
+distribution network, and utility loops must be built. Institutional coordination is needed among 
+landowners, developers, utilities, and local government. CHP plants can generate excess power 
+and sell it back to the utility grid through Power Purchase Agreements, with this additional 
+revenue reducing the ROI to an acceptable period. One barrier is that CHP using conventional 
+natural gas may not qualify as “renewable” in most states (including Virginia, from our research), so 
+exporting excess power to the grid can be restricted by net-metering rules.  
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 17 
+
+
+--- page 18 ---
+JUNE 2025 
+Renewable Biogas and Regulatory Factors 
+In many jurisdictions, biogas (from anaerobic digestion of organic waste) instead of fossil gas can 
+be a key enabler. Biogas is a “renewable natural gas,” so CHP systems fueled by it are often 
+classified as zero-carbon or renewable under state incentives. The Farm Park could legally sell 
+excess electricity to the grid without violating non-renewable export bans. In Virginia (as 
+elsewhere), policies are evolving: some states now explicitly encourage “zero-carbon CHP” with 
+low-carbon fuels, offering incentives or favorable net-metering for systems running on biogas or 
+hydrogen. Thus, coupling a data center–greenhouse complex with a CHP plant that can burn 
+animal or agricultural waste (perhaps from the greenhouse) could satisfy regulatory requirements 
+and earn clean-energy credits. The anaerobic digester would consume green waste (food scraps, 
+plant residues, farm animal manure) to produce biogas, closing the nutrient loop and providing a 
+continuous fuel source. 
+In practice, a Farm Park would likely rely on natural and digester gas. The biogas portion makes the 
+system “renewable” enough to push policies in its favor, while natural gas supplements during peak 
+times. Such a system could meet nearly all the park’s heating, power, and CO₂ needs on-site. It 
+would require public-private investment for infrastructure (buildings, pipes, CHP, digester) but 
+promises large, long-term energy savings: substituting renewable fuel for the gas that would 
+otherwise heat thousands of greenhouses separately. 
+Farm Park Industry Mix Creates Uniform Demand for ​
+Data Center Waste Heat 
+Farm Parks are the optimum colocation because they provide benefits that a mere waste heat 
+exchange cannot, both technically and economically, and for their ability to unlock public funding 
+and utility incentives. Below are some potential industries for inclusion. 
+ 
+1.​ Packaging Facilities (Food Packaging & Materials Production) 
+Energy Demand Profile: Packaging manufacturing (e.g., making boxes, bottles, or plastic trays) 
+often runs continuously with high, steady energy use. Smaller on-site packing houses (sorting 
+and packing produce) have more moderate loads, peaking during harvest/processing shifts, but 
+are usually daily operations year-round, especially if tied to a steady greenhouse output. 
+ 
+Synergy with Greenhouse: Co-locating packaging reduces travel and time to pack produce, 
+preserving freshness. The greenhouse can send freshly harvested vegetables or fruits next 
+door for immediate cleaning, grading, and packing. The packing facility’s waste can be returned 
+for compost or bio-digestion to fuel the CHP.  
+ 
+2.​ Cold Storage & Refrigerated Warehousing 
+Energy Demand Profile: Refrigerated and frozen storage facilities have a fairly steady 24/7 
+electrical demand.  
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 18 
+
+
+--- page 19 ---
+JUNE 2025 
+ 
+Synergy with Greenhouse: Refrigerated storage on-site allows immediate cooling of harvested 
+produce, which is vital for shelf life. A countercyclical seasonal profile helps balance energy 
+use: the greenhouse needs more heat in winter (when the cold store needs a bit less cooling), 
+and in summer, the cold store’s load rises (just as greenhouse heating needs drop), smoothing 
+the overall park demand.  
+ 
+3.​ Food Processing & Preservation Facilities 
+Energy Demand Profile: Vegetable canneries, frozen food processors, dairy pasteurization, or 
+beverage bottling are energy-intensive with a mix of electricity and thermal needs. The 
+demand is relatively steady, though some facilities may run higher during certain product 
+cycles. Many large food plants run continuous processes or daily batch cycles, making their 
+load less weather-dependent than a greenhouse. This regular demand makes it ideal for them 
+to absorb energy when greenhouse usage dips. 
+ 
+Synergy with Greenhouse: An on-site processing plant can take the greenhouse produce and 
+add value. This closes the loop geographically – produce goes straight from vine to processing 
+line, improving freshness and reducing transport emissions. There is also potential circularity: 
+organic waste from processing can be composted or digested to generate biogas for the CHP.  
+ 
+4.​ Logistics & Distribution Centers 
+Energy Demand Profile: Warehouses, distribution centers, and fulfillment hubs typically have 
+moderate but continuous energy needs. While not as energy-intensive as manufacturing, large 
+distribution centers can still draw a few megawatts, especially if automated sorting systems or 
+all-electric fleets are used.  
+ 
+Synergy with Greenhouse: Co-locating a distribution center streamlines the farm-to-market 
+chain. The greenhouse’s produce can be palletized and shipped directly from the adjacent 
+logistics hub, reducing delays.  
+ 
+5.​ Aquaculture & Aquaponics Facilities 
+Energy Demand Profile: Recirculating aquaculture systems for fish or shrimp farming are 
+essentially “underwater factories” with substantial 24/7 energy use. They require continuous 
+water pumping and filtration, aeration, and often heating or cooling to maintain optimal water 
+temperatures for the species.  
+ 
+Synergy with Greenhouse: Both operations share concerns like biosecurity and water use, so 
+they can jointly invest in water treatment systems.  
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 19 
+
+
+--- page 20 ---
+JUNE 2025 
+Other Potential Colocated Industries 
+Beyond the above, several other industries could fit into a CEA industrial park to utilize energy and 
+provide circular benefits: 
+ 
+1.​ Breweries & Beverage Production: Breweries constantly need heat and cooling 
+(fermentation at controlled temperatures), and they generate CO₂ during fermentation. 
+Breweries could compost spent grains for greenhouse soil or feed them into an anaerobic 
+digester, fueling the CHP.  
+ 
+2.​ Biofuel or Biomass Processing: Facilities like ethanol plants, biogas digesters, or wood 
+pellet mills from Virginia’s forestry industry are energy-intensive and could pair well. An 
+ethanol plant produces tons of usable CO₂ and waste heat, as seen in Ontario, where an 
+ethanol refinery’s waste heat and CO₂ power an adjacent tomato greenhouse. The 
+greenhouse could supply an anaerobic digester with plant waste to make biogas, which in 
+turn fuels the CHP. 
+ 
+3.​ Additional CEA or Agri-Tech Facilities: The park could also host other farming systems 
+that use energy differently, complementing the greenhouse. For instance, vertical farms or 
+mushroom cultivation centers. A vertical farm (indoor plant factory) primarily uses 
+electricity for LED lighting and HVAC. It can be scheduled somewhat flexibly – lights could 
+be run at night when greenhouse lights are off, making a counter-cyclical electrical load. It 
+would also use CO₂ enrichment similar to a greenhouse. Mushrooms, on the other hand, 
+grow in the dark but in climate-controlled rooms. Mushroom farms generate a lot of CO₂ as 
+fungi respire and produce heat while composting substrate, so they could supply CO₂ to 
+the greenhouse and use the CHP’s chilled water to remove excess heat.  
+In summary, the mix of industries can be tailored to local strengths, particularly the available 
+skilled workforce, access to markets, and the cost of doing business. The guiding principle is to pair 
+the greenhouse’s variable, weather-dependent energy needs with industrial users that have 
+consistent or timing-opposite demands, and to maximize use of all CHP outputs: electricity, heat, 
+cooling, and CO₂. The result is an efficient ecosystem where one process’s byproduct becomes 
+another’s input. 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 20 
+
+
+--- page 21 ---
+JUNE 2025 
+Agriport A7 Case Study 
+The most functional example of a dedicated Farm Park type of campus is Agriport A7 in The 
+Netherlands. Much can be learned from the experience of the owners, tenants, and public sector 
+officials who have collaborated over the past 20 years to shape the colocation and interconnection 
+strategies among traditional agriculture, greenhouse production, data centers, and other 
+industrial businesses.  
+Perhaps the biggest takeaway is the careful attention to establishing both a shared long-term 
+vision for what the place could be, as well as a governance framework that addresses the use of 
+the shared infrastructure.   
+To read more about Agriport A7 and its comparison to the Virginia market, reference Appendix C.  
+ 
+FIGURE 7. AGRIPORT A7 DATA CENTER AND GREENHOUSE COMPLEX IN MIDDENMEER, NETHERLANDS 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 21 
+
+
+--- page 22 ---
+JUNE 2025 
+Scope Item 4 
+ECONOMIC & WORKFORCE 
+DEVELOPMENT IMPACTS  
+Colocating data centers with CEA greenhouses is not just an energy efficiency measure—it can 
+drive economic growth in rural communities. For  Region 3 and  Virginia state-wide, this model 
+offers both direct and indirect benefits that align with development goals. 
+Job Creation and Workforce Diversification 
+A single enterprise that combines a data center and a greenhouse yields a more diverse set of jobs 
+than either alone. Data centers are capital-intensive but not labor-intensive; a large data center 
+might employ tens of highly skilled technicians and engineers. Greenhouses, especially high-tech 
+CEA facilities, are more labor-intensive in terms of operations (crop handling, horticulturists, 
+quality control, packaging) and create ancillary jobs in distribution and agronomy. By colocating, a 
+region can attract both types of employment. For example, a new 20 MW data center might bring 
+~50 IT jobs, and an adjacent 10-acre greenhouse could bring 40+ agriculture jobs, including roles 
+for seasonal and part-time, semi-skilled workers, agricultural scientists, and managers.  
+From our research into USDA employment databases, we could predict the number of different 
+types of greenhouse jobs according to the size of the facility, ranging from 1 to 100 acres, as shown 
+in Table 2. Columns 3 and 4 compare our interpolated estimate of a 65-acre greenhouse against 
+the employment numbers of the soon-to-be-built, Virginia greenhouse of the same size. 
+Oasthouse Ventures Ltd. provided their estimates in a press release of 2/28/25. The comparison 
+indicates our estimates are very conservative. Alternatively, Oasthouse’s estimate may have 
+included staffing for the onsite daycare facility noted in their press release. 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 22 
+
+
+--- page 23 ---
+JUNE 2025 
+Table 2. Greenhouse Staffing by Facility Size, Estimated and Reported 
+Job Category 
+1 Acre 
+(estimated) 
+10 Acres 
+(estimated) 
+65 Acres 
+(estimated) 
+65 Acres 
+(reported) 
+100 Acres 
+(estimated) 
+Front Office & Admin 
+1 
+2.5 
+5 
+n/a 
+7.5 
+Skilled Growers & Technicians 
+1 
+4 
+8 
+n/a 
+12.5 
+FTE Total 
+2 
+6.5 
+13 
+43 
+20 
+Hourly Greenhouse Workers 
+2 
+25 
+100 
+n/a 
+175 
+Seasonal Labor  
+2 
+10 
+30 
+n/a 
+50 
+P-TE Total 
+4 
+35 
+130 
+228 
+225 
+All Jobs 
+6 
+41.5 
+143 
+271 
+245 
+​
+Our estimates in Table 2 span different skill levels, from Phd.-level plant scientists to unskilled 
+labor. This complements the workforce development objectives of Region 3, which seeks to create 
+opportunities for a range of workers, including those transitioning from lower-wage jobs into new 
+and emerging business sectors. An analysis from Luleå University (Sweden) noted that coupling 
+data centers with horticulture not only provides a circular resource use, but also “with the creation 
+of new and emerging work roles (e.g., urban farmers) and collaborations… comes the possibility to 
+strengthen employment throughout the region,” offering alternative livelihoods in areas needing 
+economic revitalization. In Southern Virginia, where traditional farming has declined and new 
+economy jobs are needed, CEA farms can absorb displaced workers with minimal retraining, and 
+data centers can employ graduates from local community colleges in IT – a symbiosis in the 
+workforce and energy. 
+Economic Multiplier Effects 
+Colocation projects can have strong multiplier effects in the local and regional economy. A 
+greenhouse that produces high-value crops year-round will purchase seeds, nutrients, packaging, 
+and services such as logistics and maintenance, often from local vendors. In the Farm Park 
+approach to colocation, other industries would want to take advantage of the districtized utilities, 
+or be near the greenhouse. Data centers similarly attract an IT ecosystem of information service 
+providers, security services, maintenance contractors, and often network infrastructure upgrades 
+that benefit the community.  
+Moreover, lowering the operating cost of greenhouses via free heat can make Virginia more 
+competitive in attracting agri-tech companies. Leavering the CEA Innovation Center at the 
+Institute for Advanced Learning and Research in Danville,  Region 3 could become known as a hub 
+for sustainable CEA, drawing companies that build greenhouse technology, HVAC systems, or 
+sensors, especially if anchored by a demonstration of successful heat reuse. Cluster development 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 23 
+
+
+--- page 24 ---
+JUNE 2025 
+is a hallmark of economic development success; in this case, the cluster would sit at the nexus of 
+the tech sector and advanced agriculture. By leading in this niche, Virginia could capture new 
+investments before other states.  
+Local Food Production and Resilience 
+A less direct but important economic benefit is enhanced food security and agricultural output. 
+Region 3 and much of Virginia currently import a significant portion of fresh produce, especially in 
+winter. Colocated greenhouses would boost local production of vegetables, greens, and possibly 
+fruits. This can reduce import dependency, keep food dollars in the state, and stabilize prices. It 
+also opens opportunities for branding Virginia-grown produce that is tech-enabled and 
+sustainable. For localities in Region 3, having a high-tech greenhouse can revitalize the agricultural 
+identity of the area in a modern way. Studies in subarctic Sweden found that a 10,000 m² 
+greenhouse heated by a data center could provide about 7.6–8% of the region’s vegetable 
+self-sufficiency, a notable increase in local food supply. While Virginia’s climate is far milder, 
+meaning the percentage impact would differ, the concept is that each colocation adds to the state’s 
+capacity for year-round agriculture. This contributes to economic resilience: local produce supply 
+is less subject to disruptions from severe weather, long-haul transport issues, or supply chain 
+breakdowns, and the revenue from produce farming stays in local circulation.​
+​
+The two models of colocation we have described vary greatly in their ability to create long-term 
+community resilience. In the unlikely event that data centers close down after 20 years of 
+operation, the greenhouse colocated with the data center by heat exchange would be dependent 
+on it and unable to stay in business. By contrast, the Farm Park, once established, would remain 
+operational without the data center. Of course, Region 3 would no longer have the tax revenue of 
+the data center, but the jobs and community benefits would remain.  
+Tax Base and Investment in Region 3 
+Data centers, as capital equipment-intensive projects, significantly increase the local tax base 
+(through property taxes, machine & tools tax, sales tax etc.), and increase the state revenues 
+through corporate, income and sales taxes. Virginia localities have seen data center taxes fund 
+schools and services in places like Loudoun County and Mecklenburg County. If data center 
+growth can be  recruited to Region 3 with the added incentive of colocation, those communities 
+could see a similar influx of tax revenue to fund locally delivered services such as public education 
+and public safety.  
+A key challenge to overcome in a colocation scenario is the lower property tax revenue potential 
+of greenhouses for localities. Greenhouses themselves are not as large taxpayers as data centers 
+(see Appendix D), though they do contribute through business taxes and by employing people who 
+pay income and sales taxes, and generate indirect economic benefits to the community. The 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 24 
+
+
+--- page 25 ---
+JUNE 2025 
+combination could improve overall long-term job creation and local tax revenues,  to offset the 
+cost of local investments made in infrastructure support and other related activities.  
+Recognizing this, a regional workgroup including the Southern Virginia Regional Alliance and 
+other regional economic development organizations are involved in planning for these 
+opportunities. Their involvement indicates the expectation of tangible economic gains if 
+colocation projects proceed. The state could also see macroeconomic benefits: if these projects 
+demonstrate cost savings and productivity gains, it can attract more companies, possibly turning 
+Virginia into a net exporter of CEA technologies or expertise. 
+Alignment with Policy and Funding Initiatives 
+The colocation concept aligns with various policy goals, including energy efficiency, agricultural 
+innovation, and rural development, which means it can tap into multiple funding streams. Federal 
+programs from the Department of Energy and the USDA could be leveraged to support pilot 
+projects. State-level initiatives around clean energy, such as the Virginia Clean Economy Act, and 
+agricultural development could also provide grants or low-interest loans. This layered support can 
+amplify the economic impact by reducing the capital burden on private players, effectively 
+de-risking innovative projects.  
+In terms of workforce, the Institute for Advanced Learning and Research (IALR) in Danville has 
+established a CEA Innovation Center already focused on training and research for high-tech 
+greenhouse operations and is best positioned for the leadership role in  workforce development 
+support for projects involving the colocation site. The IALR and its K-12 public school and 
+community college partners would provide a pipeline of qualified workers, a positive feedback 
+loop for economic and community development.  
+As Virginia considers the steps it may take to kickstart a Farm Park type investment, it should look 
+at how district energy (or district resource) projects are formed, governed, and funded.   Given the 
+range of resource exchange opportunities, the Commonwealth can evaluate public investment 
+models related not just to waste heat, but also CO2 and stormwater.   
+Community Benefits and Quality of Life 
+It’s worth noting the community development aspect: A greenhouse next to a data center  could 
+make the latter more  accepted by the adjoining property owners and the overall community. Data 
+centers  can face local opposition for being seen as noisy “server farms” that use lots of power 
+without much community interaction. A greenhouse, by contrast, is an accessible, tangible food 
+producer and typically welcomes school tours or public engagement. The colocation could thus 
+indirectly improve community relations, offer local educational opportunities, and create needed 
+jobs in an emerging business sector. Enhanced local produce availability can improve nutrition in 
+the area by colocated farms partnering with local schools or food banks to supply fresh greens. 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 25 
+
+
+--- page 26 ---
+JUNE 2025 
+These quality-of-life improvements, while hard to quantify, contribute to making a region 
+attractive for families and other businesses.  
+Air quality could be impacted by use of CHP, though perhaps less in a Farm Park than a single-sited 
+data center, given the increased system efficiencies and grid contributions of a shared and 
+managed Central Resource Hub.  Site-specific environmental impact analysis should be conducted 
+related to fuel type, combustion process, and local weather conditions.  
+When policymakers evaluate such projects, they should weigh these social benefits and impacts 
+alongside the raw economic metrics.  
+Economic Development Strategy 
+ Virginia and its localities should consider supporting  advancing the packaging power, fiber, water, 
+and labor accessibility within Farm Park developments to attract multiple symbiotic sectors.  
+Offering improved sites and  and other economic and tax incentives for Central Resource Hubs 
+would be priority considerations for elected and appointed officials. In Farm Park scenarios,data 
+centers should be viewed more broadly than single-site employers. With Farm Parks, data centers 
+should be  recognized as anchor tenants, with the Central Resource Hub the interconnection point 
+within an overall hub-and-spoke model.  
+The waste heat potential, along with the managed interconnection, should attract greenhouse 
+producers seeking lower and shared-cost infrastructure. It should be noted that community 
+acceptance with these large-scale developments should improve if the initial and on-going 
+communications emphasize the benefits of future Farm Parks, even while data center construction 
+takes place before greenhouse construction. 
+A development sequence such as the following should be considered: 
+1.​ Concept clarification - Align public and private expectations, roles, and resources via a 
+background document with site concept renderings and statistics featuring food 
+production and economic potential 
+2.​ Community engagement - Communicate the Farm Park vision rather than centering data 
+centers 
+3.​ Data center construction - Communicate as phase one of a Farm Park 
+4.​ Greenhouse construction - Invite the community to tour greenhouses under construction 
+5.​ Ongoing efficiency optimization - Fund technical assistance, education, and training 
+In summary, colocating data centers with CEA greenhouses can catalyze regional transformation. 
+It builds upon and advances the historic legacy of agriculture production by bringing high-tech and 
+agriculture together in a way that creates jobs across skill levels, increases the tax base, fosters 
+innovation, and produces  food for local consumption and export.  
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 26 
+
+
+--- page 27 ---
+JUNE 2025 
+Region 3 stands to gain significantly by being a first mover in this space in Virginia given its existing 
+economic and workforce development assets, and clear focus to promote business innovation. The 
+economic and workforce benefits align well with Virginia’s broader goals of balanced growth and 
+establishing the Commonwealth as a leader in both tech and agriculture. As one sustainability 
+study put it, industrial symbiosis like this leads to a circular model that “increases local economic 
+competitiveness” and strengthens self-sufficiency. Region 3 can harness that dynamic to boost not 
+only its economy but also the resilience and vibrancy of its communities. 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 27 
+
+
+--- page 28 ---
+JUNE 2025 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CONCLUSION  
+There is market demand and technical expertise to serve a market that specializes in colocation of 
+data centers and greenhouses, from engineering design to farm operations. However, what is 
+missing is a public sector backed funding model to advance economically advantageous Farm 
+Parks, along with a qualified set of site opportunities.  
+ 
+Farm Parks present unique opportunities to cultivate public outcomes, including local food 
+production, job creation, grid stability, and overall community resilience. They also require 
+coordinated public and private investment. Key initial considerations include siting analysis and 
+funding model development. A range of public entities may be part of a targeted stakeholder 
+engagement process on subjects including land hosting, funding coordination, policy and 
+regulatory support, and governance of the Central Resource Hub infrastructure. 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 28 
+
+
+--- page 29 ---
+JUNE 2025 
+Region 3 has the opportunity to advance its priority data center and CEA sectors by 
+demonstrating its commitment to evaluate the potential for launching the US’s first Farm Park. 
+Toward that objective, Region 3 has several key assets to be leveraged, including:​
+ 
+●​ Research and development at IALR 
+●​ The CEA Innovation Center 
+●​ Robust workforce development programs that can pivot to help with CEA skill building 
+●​ Mid-Atlantic Broadband Communities Corporation fiber network 
+●​ Ongoing data center market growth 
+●​ Potential funding partnerships, including  local and regional economic development 
+organization, public K-12 and community college partners, Virginia Dept. of Agriculture 
+and Consumer Services, and Virginia Tobacco Region Revitalization Commission 
+●​ There are existing publicly owned industrial and commercial business parks in Region 3 
+that should be assessed and prioritized as potential sites to host a Farm Park 
+demonstration project. 
+ 
+Stakeholder interviews for this project revealed interest among economic development agencies 
+beyond Region 3, with references to specific sites and potential private sector partners. Related 
+work conducted outside of this project has led to an understanding of a variety of models for 
+funding Farm Park type developments, including identification of potential sources of federal 
+military investment. Within those conversations, Fort Monroe and Camp Lejune have been 
+mentioned among other military assets in the Northeast.  
+ 
+The overall conclusion of this project is that, if  CEA Innovation Center, the Institute for Advanced 
+Learning and Research, GO Virginia Region 3, and other Southern Virginia stakeholders could 
+form a partnership with the Commonwealth  to evaluate a potential Farm Park strategy, it should 
+consider embarking on a feasibility study, including siting analysis, stakeholder engagement, and 
+funding model development.  
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 29 
+
+
+--- page 30 ---
+THANK YOU
+www.resourceinnovation.org
+Derek Smith
+Executive Director
+Rob Eddy 
+Horticulturist
+
+
+--- page 31 ---
+JUNE 2025 
+APPENDICES  
+ 
+Appendix A 
+Literature Review  
+33 
+Appendix B 
+References 
+43 
+Appendix C 
+Agriport A7 Case Study 
+46 
+Appendix D 
+Estimated Tax Revenue  
+54​
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 31 
+
+
+--- page 32 ---
+APPENDIX A
+Literature Review 
+JUNE 2025
+ COLOCATING DATA CENTERS & GREENHOUSES
+
+
+--- page 33 ---
+JUNE 2025 
+APPENDIX A​
+LITERATURE REVIEW 
+Data Center Growth, Energy Use, and Waste Heat 
+The global and regional data center industry has expanded rapidly in recent years, driven 
+especially by digitalization and the rise of AI. Analysts project that this steep growth will continue: 
+one study forecasts Northern Virginia would need over 11 GW by 2028 under conservative 
+assumptions, and potentially far more when accounting for the heavy power requirements of AI 
+workloads. Globally, data centers now consume roughly 1–1.5% of total world electricity.  
+Modern data centers convert 33-42% of consumed power into waste heat. This vast low-grade 
+heat stream – typically in the 45-55 °C range – is conventionally rejected to the atmosphere but 
+represents a large untapped energy source. Among industries that could potentially utilize this 
+waste stream is greenhouse food and flower production.  
+ 
+FIGURE 8. PROJECTED ELECTRICITY CONSUMPTION IN VIRGINIA DATA CENTERS 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 33 
+
+
+--- page 34 ---
+JUNE 2025 
+Potential Energy Savings and Fuel Offsets in Virginia 
+Analyses indicate substantial energy and fuel savings when data center waste heat displaces 
+conventional heating, particularly in Virginia, which has the largest concentration of data centers 
+in the world. As of 2023, Virginia hosts approximately 3.4 GW of data center capacity, primarily 
+clustered in Loudoun, Prince William, and Fairfax Counties. One analysis notes that one specific 
+326 MW center in Virginia could heat 673 acres of greenhouse, a ratio of about 2 acres/MW. 
+Based on regional modeling by Falk et al. (2025), if waste heat from all of Virginia’s existing data 
+centers were fully utilized, it could support approximately 6,000–8,500 acres of high-tech 
+greenhouse operations. This would represent a major fraction of U.S. controlled-environment 
+agriculture and could meet or exceed 80–120% of Virginia’s fresh tomato demand. 
+Regarding energy displacement, the estimated reuse of 3–4 GW of Virginia data center waste heat 
+could offset approximately 370–495 million m3 of natural gas annually (roughly 3.5–4.8 trillion 
+BTU) used to generate it.  
+Although detailed energy flows would vary by facility, coordinated heat exchange between data 
+centers and greenhouses offers mutual energy benefits: greenhouses sharply reduce fossil fuel 
+heating needs, while data centers cut cooling electricity and improve thermal efficiency. This 
+synergy aligns well with Virginia’s stated climate and energy policy goals, including greenhouse gas 
+reduction and grid reliability improvements. 
+Uses of Data Center Waste Heat Globally 
+The Netherlands, Denmark, Sweden, and Canada have piloted data center-greenhouse 
+colocations, but typically at a small scale. For example, TeleCity (now Equinix) successfully piped 
+waste heat to a Paris-area nursery as early as 2010, and multiple projects in Sweden/Finland heat 
+greenhouses with data center effluent. Notably, European sites often cluster data centers near 
+existing horticultural clusters (e.g., the Netherlands’ “Greenports”), while U.S. greenhouses are 
+scattered and not coordinated with data center hubs. 
+In Europe, data centers are especially tied to district energy networks or industrial plants. “District 
+heating” means a central plant (e.g., a boiler or chiller array) distributing hot water to many 
+buildings via insulated pipes. For instance, Stockholm’s Bahnhof data center supplies heat to the 
+city’s hot-water network, and Finnish firms (Telia, Ericsson Telecity, Yandex) feed their data center 
+waste heat into municipal district-heating grids. Data centers can act as such centralized plants; in 
+a Tallaght, Ireland pilot, a data center partnered with local utilities to use server waste heat as part 
+of a hybrid district heating scheme. District heating is also common in the U.S., though not typically 
+connected with data centers. According to a recent U.S. Energy Information Administration 
+report, more than 660 district energy systems are operating in the United States, with 
+installations in every state. 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 34 
+
+
+--- page 35 ---
+JUNE 2025 
+Other non-agricultural applications include using waste heat for local industry or residential 
+heating. In one pilot, Norwegian operator Green Mountain heated a trout aquaculture facility with 
+data center effluent heat. In Canada, projects are planned to run data center heat into vertical 
+farms and breweries. As one industry summary notes, routing server heat into greenhouses or 
+buildings creates a “win-win.” 
+ 
+FIGURE 9. DISTRICT HEATING OF A EUROPEAN INDUSTRIAL PARK 
+ 
+FIGURE 10. DISTRICT HEATING/COOLING SECTOR IN KANSAS CITY, MO 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 35 
+
+
+--- page 36 ---
+JUNE 2025 
+Greenhouse Environmental Requirements 
+Commercial greenhouses have specific energy, climate, and CO₂ needs. In temperate regions, they 
+require substantial heating through the night and winter to maintain optimal plant growth. Typical 
+setpoints might be ~18–24 °C during the day and no lower than ~12–15 °C at night (varies by 
+crop). Conversely, in summer or on hot days, they require cooling or ventilation to prevent 
+overheating. Humidity also must be managed: warm daytime air (e.g., 24°C) can hold a lot of 
+moisture, but when temperatures drop at night, condensation can form on plants, leading to fungal 
+and bacterial disease.  
+Greenhouses often enrich the CO₂ level inside because photosynthesis can be boosted above 
+ambient concentrations (~440 ppm). Without enrichment, plants may deplete CO₂ to ~150–200 
+ppm during the day, constraining growth. By contrast, supplementing CO₂ to roughly 700–1000 
+ppm typically boosts yields by 18–100% for most vegetables and flowers. High-tech, commercial 
+greenhouses routinely burn natural gas or use gas-fired boilers, producing both heat and CO₂ for 
+enrichment. They circulate the 60–80 °C boiler-heated water through hydronic systems 
+controlled by the greenhouse climate controller. Finally, greenhouse cooling for dehumidification 
+may use vents, exhaust fans, and evaporative pads. Because dehumidification of greenhouses is 
+typically insufficient in temperate climates during humid seasons, mechanical dehumidification 
+using refrigerant or chilled water systems is an emerging technology for operations that can afford 
+it.  
+Amount of Waste Heat is Dependent on Data Center 
+Age, Function and Cooling System 
+Data centers can be air-cooled or water-cooled, and the cooling type affects the characteristics of 
+waste heat. About 80% of existing data centers are air-cooled, exhausting large volumes of warm 
+air near ambient temperature. But that trend is shifting quickly. Surveys indicate that by 2026, 
+nearly 38.3% of enterprises plan to implement liquid cooling technologies in their data centers, up 
+from 20.1% in early 2024.  
+Liquid-cooled servers (e.g., water-cooled racks or immersion systems) concentrate heat into a 
+water loop. Where no colocation exists to use this wasted resource, a chiller removes heat from 
+the water (or coolant) that has absorbed heat from the servers. It does this by using a refrigeration 
+cycle to cool the water, then releases that heat into the ambient air through a condenser—often 
+located outside the building. In air-cooled chillers, fans blow outdoor air over coils filled with hot 
+refrigerant, which releases the heat to the atmosphere. 
+The more the servers need to be cooled, the more heat is transferred to the water loop. While 
+many legacy data centers (air-cooled) produced an outlet water temperature of 30–40 °C, a 
+typical data center built today produces 45–60 °C  waste water. This hotter water is suitable for 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 36 
+
+
+--- page 37 ---
+JUNE 2025 
+heating most greenhouses on all but the coldest days of the year. To reach full greenhouse heating 
+capacity, either a backup heating system (such as a boiler) would be in place, or the wastewater 
+temperature would be increased using a heat pump. According to one analysis, “For heating of the 
+greenhouse, the direct use of the data center surplus heat at 45-50 ˚C is feasible and will normally, 
+dependent on the piping system, cover 70 to 90% of the total power requirement.” 
+Extremely high-power systems used for High-Performance Computing (HPC) applications are 
+emerging. HPC refers to the use of supercomputers or large clusters of computers to perform 
+complex calculations at very high speeds—often for tasks like: 
+ 
+●​ Scientific simulations (e.g., climate models, physics, genomics) 
+●​ Financial modeling 
+●​ Engineering and design (e.g., crash simulations) 
+●​ AI training (especially large language models) 
+●​ Oil and gas exploration 
+HPC systems typically involve high-density racks, powerful CPUs/GPUs, and intensive cooling 
+needs, which is why they often use liquid cooling and produce higher-grade waste heat of 55-70°C. 
+Companies like Intel and NVIDIA may use two-phase refrigerant-cooled systems, which produce 
+waste heat of up to 90°C.  
+TABLE 3. DATA CENTER WASTE HEAT BY TYPE 
+Data Center Type 
+Typical Outlet 
+Temperature 
+Cooling Method 
+Notes 
+Legacy Architecture  
+(Not Designed for Reuse) 
+30–40 °C 
+(86-104 °F) 
+Air-cooled or low-temp chilled 
+water loops 
+Dominant in older data centers; waste heat not 
+reused; not suitable for thermal recovery. 
+Standard Water-Cooled  
+(Non-AI Workloads) 
+45–55 °C 
+(113-131 °F) 
+Rear-door heat exchangers, 
+direct-to-chip liquid cooling 
+Used in many modern enterprise/cloud data centers; 
+suitable for low-grade heat reuse. Supplemental 
+heating systems required on coldest days. 
+AI/HPC-Optimized 
+(High-Density Workloads) 
+55–70 °C 
+(131-158 °F) 
+Direct liquid cooling, 
+immersion cooling 
+Emerging trend in AI data centers; high outlet temps 
+enable efficient heat recovery and reuse applications. 
+May not require supplemental heat. 
+AI/HPC with Two-Phase 
+Refrigerant Systems 
+Up to 90 °C 
+(Up to 194 °F) 
+Direct liquid cooling, 
+immersion cooling for 
+experimental or mobile 
+deployments 
+Liquid refrigerant that boils into vapor upon 
+absorbing heat; would not require supplemental heat.  
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 37 
+
+
+--- page 38 ---
+JUNE 2025 
+Connectivity Using a Heat Exchange-Only Approach 
+Though direct-air heat exchange (pushing hot server exhaust air into a greenhouse) has been 
+successfully done in small-scale pilots, it is an impractical strategy due to operational and security 
+issues. The two facilities would need to be connected, and forced air heating over long distances is 
+non-uniform and challenging to hygienically maintain.   
+Conceptual studies suggest that using a water-cooled data center to transfer waste heat to a 
+greenhouse is feasible if adapted to U.S. conditions. Security for the data center can be maintained 
+by locating the high-tech greenhouse up to 0.6 miles away, with an intermediary substation 
+between them. Here’s how it would work:  
+●​ A substation housing a mechanical heat exchanger would be located between the 
+greenhouse and the data center. This substation would be 100 - 500 meters from the 
+data center and up to 500 meters from the greenhouse, providing a maximum 1,000 
+meters of separation, or 0.62 miles.  
+●​ The data center’s cooling loop and the greenhouse's hydronic (heating water) loop would 
+meet at this exchanger, allowing some of the heat from the data center loop to transfer to 
+the greenhouse hydronic loop while remaining decoupled (no fluid mixing).  
+●​ The data center’s cooling loop would supply 45-55 °C to a heat exchanger within the 
+substation. If the temperature is insufficient for greenhouse heating, a water-to-water 
+heat pump, also housed within the substation, would boost the heat to the ~60°C.  
+Multiple heat pumps may be needed to reach ~75°C required for the most frigid regions.  
+●​ In the event of any malfunction, the data center's cooling loop simply bypasses the 
+substation, and water is cooled using the backup chilling towers of other emergency 
+systems. No mechanical or data connections exist beyond the intermediary substation.    
+Within the data center, capturing and reusing waste heat reduces the need for mechanical chillers 
+and compressors, resulting in lower overall electricity usage. Emerging designs even envision the 
+greenhouse’s return cooling load supplementing the data center’s HVAC systems, creating “free 
+cooling” in certain seasonal conditions.  
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 38 
+
+
+--- page 39 ---
+JUNE 2025 
+ 
+FIGURE 11. RENDERING OF INTERMEDIARY HEAT PUMP SUBSTATION BETWEEN GREENHOUSE AND DATA CENTER  
+Potential Greenhouse Modifications To Improve Heat 
+Exchange Mismatch 
+To date, greenhouses have not been modified to accommodate lower heating water, so heat pumps 
+would typically be required. It has been suggested that by strategically placing more and larger 
+radiant heating pipes, the increased surface area for radiant heating would prove sufficient. One 
+study calculates that the number of hot water pipes must be 3 times higher using 45 °C water in 
+the greenhouse hydronic system compared to the standard 75 °C hydronic temperature. 
+In a fascinating development, recent industry trials have reported advanced greenhouses running 
+their heating pipes at only ~45 °C (113 °F) without productivity loss, aligning well with even the 
+lower end of the standard data center waste heat. In these trials, other environmental variables, 
+such as airflow and energy curtain systems, were used to manage the reduced heating capacity. 
+These studies will need to be repeated and their findings confirmed before they begin to be 
+adopted by the CEA industry. 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 39 
+
+
+--- page 40 ---
+JUNE 2025 
+The Mismatch of Heat Supply-Demand Greatly 
+Reduces Feasibility 
+An unsolved challenge that greatly reduces the practicality of a heat exchange-only model is 
+supply–demand mismatch. Data centers operate year-round (often at high load in summer due to air 
+conditioning loads). At the same time, greenhouse heat demand is seasonal (highest in winter, near 
+zero in summer) and weather-related. The diurnal cycle also causes variation in greenhouse 
+heating demand, with little or no heating required during sunny days, even in winter. This 
+mismatch means that without alternative sinks, much data center heat could go unused much of 
+the year. Large thermal energy storage (water tanks or underground) can buffer some, and 
+oversizing the greenhouse (or adding other heat-intensive co-users) can smooth the balance. But 
+fundamentally, data center waste heat alone may be excessive except in heating seasons. ​
+​
+Furthermore, the cost of using a heat pump to increase the temperature of the waste heat is high, 
+and the efficiency of the systems is low. 
+Insulated hot water tanks can store excess heat produced during low-demand periods and release 
+it during high-demand periods. Sizing depends on climate; in Virginia, diurnal storage (holding heat 
+for 8–12 hours) might suffice to cover nighttime greenhouse heating. In practice, day-night 
+greenhouse heating must be considered. During a winter day (especially sunny periods), 
+greenhouses often rely on ventilation or radiation and may even require cooling. So, data center 
+waste heat is less needed; surplus waste heat could be dumped or sent to heat storage (e.g., 
+aquifer tanks).  
+Creating Chilled Water from Data Center Waste Heat: 
+Improving the Match? 
+Given the mismatch described above, the capacity to both heat and cool the greenhouse would 
+smooth the demand by the greenhouse on the data center waste heat, allowing for more uniform 
+cooling of the data center loop temperature. Some have proposed absorption (thermally-driven) 
+chillers using data center heat to cool greenhouses or labs.  
+An absorption chiller is a heat-driven refrigeration machine. Instead of using electricity and a 
+compressor like standard chillers, it uses steam or hot water to drive a cooling cycle with a 
+refrigerant/absorbent pair (commonly water/LiBr or ammonia/water). In this case, the idea is to 
+use the data center’s waste heat as the input to such a chiller. The absorption chiller would then 
+produce chilled water to supply cooling and dehumidification coils in the greenhouse.  
+In principle, an absorption chiller can produce chilled water if fed hot water of typically 65–90 °C. 
+In practice, the relatively low output temperature of most data center cooling means conventional 
+absorption chillers struggle to run directly on it. Newer adsorption chillers using advanced 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 40 
+
+
+--- page 41 ---
+JUNE 2025 
+materials may operate on 50–60 °C heat, but they have limited capacity and coefficient of 
+performance (COP). They are even more niche but are sometimes used with solar or waste heat, 
+where temperatures are low. Adsorption chillers could, however, produce maybe ~15 °C chilled 
+water, which might suffice for greenhouse cooling (not as cold as the recommended 7 °C, but 
+maybe enough to dehumidify or cool moderately). Alternatively, the adsorption chiller could be 
+coupled with a conventional chiller to reach 7 °C. 
+Like the heat pumps, the cost of using an absorption/adsorption chiller to balance the waste 
+energy use is high, and the system's efficiency is low. 
+In summary, literature and case studies show that booming data center waste heat can be an asset 
+if creatively reused. Although few U.S. examples exist, the two referenced studies—the Virginia 
+JLARC review and the Falk et al. analysis—underscore a huge latent potential. Data centers are 
+growing rapidly and will produce ever more excess heat, yet current practice exhausts it to the 
+ambient environment rather than using it.  
+Missing from the literature was the more holistic model suggested by many of our industry experts 
+during their interviews. Integrating data centers more fully, beyond heat exchanges, with larger 
+and more diverse agricultural industries and manufacturing facilities could yield substantial 
+energy savings and lower greenhouse gas emissions.  With supportive policy and smart 
+engineering, colocating high-tech greenhouses and data centers – possibly within a CHP-powered 
+Farm Park (see ‘Optimal Design Conditions’ section) – the supply-demand mismatch can be solved, 
+energy utilization optimized, operating costs reduced, more jobs created, and a resilient local 
+economy launched. 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 41 
+
+
+--- page 42 ---
+APPENDIX B
+References
+JUNE 2025
+ COLOCATING DATA CENTERS & GREENHOUSES
+
+
+--- page 43 ---
+JUNE 2025 
+Appendix B​
+References 
+AmericanHort. (2022). Greenhouse & Nursery Labor Survey - preliminary findings on labor shortages and 
+employment practices. 
+Bakker, Y. (2023). *Achieving Flow Synergy in Data Centers with a Residential and Greenhouse Program*. Delft 
+University of Technology. 
+Blair, D. (2013, October 23). The Syracuse Green Data Center: Driving Energy Savings & System Reliability. Data 
+Center Knowledge. 
+Bureau of Labor Statistics. (2020-2023). Occupational Employment Statistics for crop/greenhouse laborers and 
+supervisors. 
+Cáceres, C. R., Törnroth, S., Vesterlund, M., Johansson, A., & Sandberg, M. (2022). Data-Center Farming: Exploring 
+the Potential of Industrial Symbiosis in a Subarctic Region. *Sustainability*, 14, 2774. 
+https://doi.org/10.3390/su14052774 
+Chen, X., Bai, J., Fu, L., Lei, Y., Zhang, D., Zhang, Z., Luo, Q., Gong, S., & Shen, B. (2024). Complementary waste heat 
+utilization from data center to ecological farm: A technical, economic and environmental perspective. *Journal of 
+Cleaner Production*, 435, 140495. https://doi.org/10.1016/j.jclepro.2023.140495 
+Du, Z., Li, Q., Yang, Y., & Zhang, L. (2024). Research on waste heat utilization potential of data centers for 
+agricultural greenhouse heating. *Journal of Physics: Conference Series*, 2835(1), 012076. 
+https://doi.org/10.1088/1742-6596/2835/1/012076 
+Eddy, R. (2024, December 13). Taming the greenhouse environment. *Produce Grower*. 
+https://www.producegrower.com/article/taming-the-greenhouse-environment/ 
+Elarga, H., Kauko, H., Birgen, C., & Sannan, S. (2023). Reuse of the surplus heat from data centers through different 
+end users. *SINTEF Report 2023:00503*. 
+Falk, S., Asgari, N., Pearce, J. M., & van Wynsberghe, A. (2025). The potential of data center waste heat recovery 
+for greenhouse food production in the U.S.: Ramifications for sustainable AI [Preprint]. *SSRN*. 
+https://dx.doi.org/10.2139/ssrn.5170348 
+Google DeepMind. (2016, July 20). DeepMind AI reduces Google data centre cooling bill by 40% [Blog post]. 
+https://deepmind.google/discover/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40/ 
+Hall, C., et al. (2023). H-2A Workers in Ornamental Horticulture. UF/IFAS Extension. 
+Industry trade publications. (Various dates). Greenhouse Grower, Greenhouse Management, Urban Ag News - 
+reporting on labor challenges, wage pressures, and workforce statistics. 
+International Energy Agency. (2023). *Data centres and data transmission networks* (Tracking Clean Energy 
+Progress 2023). IEA. https://www.iea.org/reports/data-centres-and-data-transmission-networks 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 43 
+
+
+--- page 44 ---
+JUNE 2025 
+Joint Legislative Audit and Review Commission. (2024). *Data centers in Virginia* (Report No. 598). 
+Commonwealth of Virginia, JLARC. https://jlarc.virginia.gov/pdfs/reports/Rpt598.pdf 
+Judge, P. (2022, October 11). EcoDataCenter to reuse heat in fish farms and greenhouses. *DataCenterDynamics*. 
+https://www.datacenterdynamics.com/en/news/ecodatacenter-to-reuse-heat-in-fish-farms-and-greenhouses/ 
+Ljungqvist, H. M., Mattsson, L., Risberg, M., & Vesterlund, M. (2021). Data center heated greenhouses, a matter for 
+enhanced food self-sufficiency in sub-arctic regions. *Energy*, 215, 119169. 
+https://doi.org/10.1016/j.energy.2020.119169 
+Lü, X., Lu, T., & Zhang, Q. (2024). Optimizing Data Center Waste Heat Reuse: Case Studies and Environmental 
+Implications. In P. Droege & L. Quint (Eds.), *Proceedings of the International Renewable Energy Storage and 
+Systems Conference, IRES 2023* (pp. 65-71). Atlantis Highlights in Engineering, No. 32. 
+https://doi.org/10.2991/978-94-6463-455-6_8 
+Oklahoma State University Extension. (n.d.). *Greenhouse carbon dioxide supplementation*. OSU Extension. 
+https://extension.okstate.edu/fact-sheets/greenhouse-carbon-dioxide-supplementation.html 
+Ott, B., & Radgen, P. (2024). *Technology overview for waste heat utilisation from data centres*. University of 
+Stuttgart, Stuttgart. 
+Sandberg, M., Risberg, M., Ljung, A.-L., Varagnolo, D., Xiong, S., & Nilsson, M. (2017). A Modelling Methodology for 
+Assessing Use of Datacenter Waste Heat in Greenhouses. Luleå University of Technology & Swedish University of 
+Agricultural Sciences. Retrieved from https://icoest2017.org/papers/greenhouse-waste-heat.pdf 
+Seaton, I. (2020, May 27). Data Center Heat Energy Re-Use Part 3a: Hot Water Cooling. *Upsite Technologies 
+Blog*. 
+Siddik, M. A. B., Shehabi, A., & Marston, L. (2021). The environmental footprint of data centers in the United 
+States. *Environmental Research Letters*, 16(6), 064017. 
+USDA Economic Research Service. (n.d.). Farm Labor statistics and analyses. 
+USDA NASS. (2019). Census of Horticultural Specialties - industry size and labor expense insights.U.S. 
+Environmental Protection Agency. (2024). CHP policies and incentives. *U.S. EPA Combined Heat and Power 
+(CHP) Partnership*. https://www.epa.gov/chp/chp-policies-and-incentives 
+Vogels, W. (2024, March). District heating: Using data centers to heat communities. *All Things Distributed 
+(Amazon Web Services)*. 
+https://www.allthingsdistributed.com/2024/03/district-heating-using-data-centers-to-heat-communities.html 
+Yuan, X., Liang, Y., Hu, X., Xu, Y., Chen, Y., & Kosonen, R. (2023). Waste heat recoveries in data centers: A review. 
+*Renewable and Sustainable Energy Reviews*, 188, 113777. https://doi.org/10.1016/j.rser.2023.113777 
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 44 
+
+
+--- page 45 ---
+APPENDIX C
+Agriport A7 Case Study
+JUNE 2025
+ COLOCATING DATA CENTERS & GREENHOUSES
+
+
+--- page 46 ---
+Agriport A7 is a leading example of how strategic infrastructure planning, public-private
+collaboration, and innovation in controlled environment agriculture (CEA) can transform
+regional economies. Located in the Netherlands, this 2,500-hectare agribusiness hub
+integrates state-of-the-art greenhouses, data centers, colocated energy assets, and advanced
+logistics infrastructure to support year-round food production and global export.
+By aligning growers, utilities, data centers, and logistics firms within a centralized
+development, Agriport A7 has created a replicable model for high-efficiency  agricultural
+clusters. Its success demonstrates how thoughtful colocation of energy, water, and waste
+systems can drive economic development, reduce environmental impact, and enhance food
+security.
+This case study explores the key features, partnerships, and planning strategies behind
+Agriport A7’s development—and offers insights for adapting its model to other regions
+seeking to scale resilient agricultural systems.
+case study
+Agriport A7
+A Scalable Model for High-Tech Agricultural Clusters
+
+
+--- page 47 ---
+Region 3, Southern Virginia
+Zone 4A (Mixed, Humid)
+Wieringermeer region of North Holland, NL
+Climate Zone 5A (Cool, Humid)
+Winter
+Mild
+Cold
+Summer
+Hot & Humid
+Warm & Humid
+Moisture
+High
+High
+HVAC Focus
+Balanced (Heat/Cool)
+Heating-focused
+Middenmeer, Netherlands
+OVERVIEW 
+Strategic Siting 
+Highway Access: Directly along the A7 
+Distance to Amsterdam: ~30 miles via the A7
+Nearest Airport: Amsterdam Schiphol Airport. ~40 miles via the A7 
+Nearby Ports: Port of Amsterdam. ~30 miles via the A7
+Climate Zone 
+Source: ANSI/ASHRAE Addendum a to ANSI/ASHRAE Standard 169-2020 Climatic Data for Building Design
+Standards
+AGRIPORT A7 CASE STUDY | 1
+
+
+--- page 48 ---
+CHP
+71%
+Geothermal
+17%
+Biomass
+8%
+Boiler
+4%
+SIZE & CAPACITY
+AGRIPORT A7 CASE STUDY | 2
+HEAT MIX
+1,557 Acres 
+(630 Hectares)
+Comprised of seven separate companies
+Average farm size is 146 acres (59 hectares)
+Farm size range from 32-343 acres (13-139 hectares)
+Energy Mix
+Electric mix 99% CHP  (40% in 2020 sold back to grid)
+Remaining 1% was geothermal 
+GREENHOUSE
+DATA CENTER
+BUSINESS PARK
+185 Acres 
+(75 Hectares)
+99 Acres 
+(40 Hectares)
+
+
+--- page 49 ---
+SIZE & CAPACITY
+AGRIPORT A7 CASE STUDY | 3
+Relevant Rules & Regulations  
+Environmental Regulation (OVNH2020, article 6.1.5a and 6.2.2.6a) 
+Nationwide: Ban on data centers larger than 10 hectares and 70 MVA in municipal zoning plans
+Province of Noord-Holland
+Spatial requirements for data centers:
+Gross floor area of 2,000 m^2 and electric connection capacity of more than 5 MVA in
+the three cluster municipalities.
+Requires data centers to conduct waste heat economic analysis, governs at the permit level.
+Publishes Guideline for Sustainable Establishment Requirements for Datacenters in Noord-
+Holland
+Provides technical assistance via funded position, Energy Transition Director / Expert
+Datacenter Heat
+Source: Guideline for Sustainable Establishment Requirements for Datacenters in Noord-Holland
+
+
+--- page 50 ---
+SUSTAINABILITY
+STRATEGIES
+AGRIPORT A7 CASE STUDY | 4
+Energy
+Geothermal
+Primary heat source year-round. Three plants on site. 
+CHP
+Over 50 CHP units with a capacity of over 200 MWe. 
+Solar
+A total of 4.5 MWe of solar (2 MWe on rooftops and 2.5 MWe on
+water)
+Biomass
+Biomass (woodchips, primarily sourced from pruning waste) is
+used to supplement during peak periods of cold temperatures
+and to produce electricity to power the geothermal pumps.
+Heat Storage
+High temperature storage both above and below ground to
+“save up” for winter. This is a new technology in partnership
+with the Dutch research institute, TNO. 
+Water
+Rainwater Capture
+Used for both GH and DC. Unclear whether drinking water is used during the
+drier months. Water is stored in the above and underground reservoirs.
+Recycling Water
+Irrigation systems within greenhouses recycle the water, reporting water
+productivity of 4 L/Kg of tomato.
+Data Center
+In summer months, stored water is used to cool Data Centers.
+CO2 Production
+& Utilization
+Purchased liquid CO2:
+ 
+Partnered with Renewi, a liquid
+CO2 producer located in
+Amsterdam, to supply the
+greenhouses with
+supplemental CO2. 
+The CO2 is produced at a
+large-scale fermentation plant.
+ 
+Produced CO2: 
+Utilizing CO2 produced from
+the CHP units
+Source: ECW Energy (2023)
+
+
+--- page 51 ---
+Recognized Energy Efficiency Measures List (EML)
+Energy saving measures with a payback period of 5 years or less. The EML
+consists of 3 parts: Buildings, Facilities, and Processes. The EML can be used to
+meet the energy-saving obligation. Measures apply to glasshouse horticulture and
+data centers.
+REGULATIONS & POLICIES 
+AGRIPORT A7 CASE STUDY | 5
+Energy, water, and sustainability requirements: Dynamic List of Establishment
+Requirements for Datacenters.
+Building and operating a data center involves a complex set of dynamic
+requirements related to energy, water, and overall sustainability. These
+requirements are driven by factors like increasing data demand, environmental
+regulations, and growing public concern about the environmental impact of data
+centers. 
+Guideline for Sustainable Establishment Requirements for Datacenters
+in Noord-Holland
+
+
+--- page 52 ---
+WORKFORCE
+AGRIPORT A7 CASE STUDY | 6
+GREENHOUSE
+DATA CENTER
+BUSINESS PARK
+2,400 full-time
+horticultural workers
+(as of 2020)
+1,500 – 2,000 estimated
+full-time employees as
+data centers reach
+capacity
+5,000-7,000 full-time
+employees within 35
+companies
+Estimated 10,000 employees 
+Onsite housing for migrant workers
+
+
+--- page 53 ---
+ COLOCATING DATA CENTERS & GREENHOUSES
+APPENDIX D
+Estimated Tax Revenue 
+JUNE 2025
+
+
+--- page 54 ---
+JUNE 2025 
+APPENDIX D 
+ESTIMATED TAX REVENUE BY OPERATION TYPE 
+County 
+FARMLAND 
+Estimated Tax 
+($/acre) 
+GREENHOUSE 
+Estimated Tax 
+($/acre) 
+DATA CENTER 
+Estimated Tax 
+($/acre) 
+Source 
+Amelia 
+$4.84 
+$8.79 
+$520 
+Amelia County 
+Assessment Info 
+Cumberland 
+$2.81 
+$2.81 
+$780 
+Cumberland 
+County Brochure 
+Henry 
+$1.65 
+$2.34 
+$605 
+Henry County Real 
+Estate 
+Nottoway 
+$6.04 
+$6.55 
+$765 
+Nottoway County 
+Brochure 
+Pittsylvania 
+$3.72 
+$3.72 
+$527 
+Pittsylvania 
+County Land Use 
+Prince Edward 
+$2.09 
+$2.40 
+$459 
+Prince Edward 
+County Brochure 
+Averages 
+$3.53/acre 
+$4.44/acre 
+$609/acre 
+ 
+ 
+​
+ 
+ 
+ RESOURCE INNOVATION INSTITUTE                        COLOCATING DATA CENTERS & GREENHOUSES | 54 

@@ -1,0 +1,1371 @@
+SOURCE: Source Documentation\White Papers\Danfoss Waste Heat.pdf
+
+
+--- page 1 ---
+Waste heat
+A competitive advantage for energy resilience,
+industrial growth, and decarbonization
+Danfoss Impact 
+Waste heat — the 
+world’s largest 
+untapped energy source
+PAGE 8
+Pathways  
+for waste  
+heat reuse
+PAGE 10
+Waste heat can cover 
+30% of German DH 
+demand
+PAGE 20
+Leveraging  
+waste heat 
+requires action
+PAGE 22
+
+
+--- page 2 ---
+Table of contents
+We cannot let waste heat become a wasted opportunity	
+4
+Only got 2 minutes?	
+7
+	
+Chapter 1: Waste heat — the world’s largest untapped energy source	
+8
+What is waste heat?	
+8
+How much waste heat is there?	
+8
+Why does it matter?	
+8
+How does it work?	
+9
+Chapter 2: Pathways for waste heat reuse	
+10
+Pathway #1: On-site reuse	
+10
+Pathway #2: Microgrids and industrial clusters	
+14
+Pathway #3: District heating integration	
+18
+Chapter 3: Leveraging waste heat requires action	
+22
+Appendix: German district heating analysis	
+24
+References	
+26
+Waste heat > Table of contents
+3/28
+Drawing on empirical evidence and data from a range of credible sources, 
+Danfoss Impact Issue No. 9 shows how the world’s supply of waste heat 
+provides an incredible opportunity to decarbonize heating, increase industrial 
+competitiveness, and boost energy system resilience. It highlights three pathways 
+for waste heat recovery and reuse — on-site, microgrid, and district heating — 
+presenting beneﬁts, challenges, and credible, real-world cases for each.
+This paper also highlights technologies with signiﬁcant energy- and emissions-
+reductions potential that remain underutilized today, despite being widely 
+accessible and oﬀering favorable payback times. In this paper, the terms 
+“microgrid” and “industrial cluster” are often used interchangeably, as waste 
+heat recovery and reuse technologies and processes are implemented similarly 
+across both environments. 
+This Impact Paper is written primarily for industry leaders, policymakers, and 
+energy system operators shaping how waste heat is produced and reused at 
+scale to improve eﬃciency, competitiveness, and decarbonization.
+The views expressed in this paper are those of Danfoss. Their completeness 
+and accuracy should not be attributed to any other entities.
+Comments or questions may be directed to Head of Analysis, Judith Neijzen, 
+at judith.neijzen@danfoss.com. 
+Brief
+
+
+--- page 3 ---
+Competitiveness, energy security, aﬀordability, and 
+decarbonization are not competing priorities. Increasingly, 
+they depend on the same solutions. Yet around the 
+world, governments and businesses continue to debate 
+diﬃcult choices based on the complex challenges the 
+world is facing today such as geopolitical tensions, energy 
+crises, climate change, and economic uncertainty. Should 
+concerns of competitiveness override progress on industrial 
+decarbonization? Should strategic investments in energy 
+independence come before immediate relief for household 
+energy bills? These are real economic and political debates 
+occurring in boardrooms and legislatures every day. 
+It would be a failure to not recognize our ability to 
+address these challenges simultaneously. They are deeply 
+interconnected, and fortunately, so are many of the 
+solutions. Today, proven technologies exist to strengthen 
+competitiveness, improve energy resilience, reduce 
+emissions, and lower costs at the same time. 
+This paper focuses on one of the largest and most 
+overlooked opportunities: waste heat.
+We’ve been engineering and implementing waste 
+heat reuse solutions for decades. Whether in industry, 
+wastewater treatment, or supermarkets, we’ve helped 
+customers reduce their energy consumption, emissions, 
+and operating costs with one of low hanging fruits 
+available: the energy they’ve already purchased and used.
+However, despite the progress we’ve seen, it’s diﬃcult 
+to look past one glaring truth: there’s more waste heat 
+in the world today than ever before. In fact, by 2030 up 
+to 55% of global energy will still be wasted as heat.1 
+While many industries, energy system operators, and 
+governments have realized the incredible economic and 
+decarbonization potential of waste heat, it remains the 
+world’s largest untapped energy source. 
+Why is that? On the supply side, the answer lies in the 
+rapid emergence and success of several energy-intensive 
+industries. For example, as the economic and societal 
+value of AI continues to increase, so does the demand 
+for the data centers needed to process the complex 
+algorithms they require. The question is no longer whether 
+we build more data centers. The question is how we 
+build them. Almost all of the electricity consumed by a 
+data center is converted into heat. Too often, that heat is 
+wasted. But through waste heat recovery and integration 
+with local energy systems, data centers can become 
+We cannot let waste heat  
+become a wasted opportunity
+Foreword
+valuable assets that strengthen competitiveness, energy 
+security, and resilience. 
+In other industries such as metals, chemicals, and 
+manufacturing, the picture is the same. If captured and 
+reused, this heat can become an incredible source of 
+security and growth. But if it continues to go to waste, it 
+will remain a burden to our energy systems, industries, and 
+livelihoods.
+There is also a demand-side issue. In some regions, 
+unfavorable electricity-to-gas price ratios are hampering 
+uptake. Waste heat reuse requires electric heating 
+technologies such as heat pumps, and without policies 
+that make electriﬁcation more attractive, the economic 
+and decarbonization potential of waste heat will never be 
+fully realized.
+Despite these barriers, waste heat reuse is still a 
+remarkably intuitive solution: rather than releasing 
+perfectly good heat into thin air, just capture it and 
+reuse it. That’s why in the political dialogue we’ve seen a 
+growing recognition of waste heat as a viable source of 
+clean energy for industries and households alike. The next 
+step is turning that recognition into action.
+Waste heat > Foreword
+4/28
+Waste heat > Foreword
+5/28
+”While many key players have realized the 
+incredible economic and decarbonization 
+potential of waste heat, it remains the world's 
+largest untapped energy source.” 
+The good news is that waste heat reuse always reduces 
+operating costs. By utilizing energy which has already 
+been paid for, waste heat producers can increase energy 
+eﬃciency while ensuring a rapid payback for heating 
+electriﬁcation and decarbonization.
+This paper provides clear pathways for industrial actors 
+across sectors to identify, recover, and reuse waste heat, 
+using proven and credible cases to demonstrate the 
+potential. It also acknowledges the barriers for energy 
+system operators and governments, proposing key actions 
+to accelerate waste heat uptake. 
+We cannot let the growing political recognition of waste 
+heat be overshadowed by perceived challenges that 
+are addressable through smart planning and existing 
+technology. Waste heat is one of our best opportunities 
+to address competitiveness, decarbonization, and energy 
+resilience. We must not let it go to waste. 
+Kristian Strand
+President, Danfoss Climate Solutions
+
+
+--- page 4 ---
+Only got 2 minutes?
+Waste heat is one of our 
+best opportunities to 
+address competitiveness, 
+decarbonization, and  
+energy resilience.
+Two-thirds of global energy was wasted in the form of heat in 20242 and up 
+to 55% of energy is still expected to be wasted by 2030.3 Capture and reuse 
+of this waste heat has the potential to replace fossil-based energy sources, 
+signiﬁcantly boosting economic and industrial resilience while decarbonizing 
+our energy systems. 
+Waste heat is the 
+world’s largest 
+untapped energy 
+source
+1
+By capturing waste heat from one process within a facility to heat water, 
+space, and other industrial processes in that same facility, companies can save 
+signiﬁcantly on energy bills while reducing emissions. Through on-site reuse, 
+one aluminum manufacturer in Denmark is projected to eliminate 205,600 m3 
+of gas usage per year, resulting in an annual CO2 emission reduction of 407 tons 
+(see on-site reuse case on p. 12).
+On-site reuse is the 
+quickest and most 
+competitive pathway 
+for many waste heat 
+producers 
+2
+Data centers are one sector with signiﬁcant waste heat supply but nearly zero 
+on-site demand. Typically operating 24/7/365, they can serve as a constant source 
+of waste heat to nearby oﬀ-takers through microgrids or district heating systems. 
+The move to high-performance computing data centers with liquid cooling — the 
+future of data center design — signiﬁcantly increases both the amount of heat 
+available and the quality of that heat, thereby increasing the economics for heat 
+reuse. In one Chinese industrial microgrid, waste heat provided by two data centers 
+is expected to reduce annual energy use by 1.1 million kWh while cutting CO2 
+emissions by an estimated 1,659 tons per year (see microgrid reuse case on p. 17).
+Data centers can 
+become reliable 
+contributors of waste 
+heat to energy systems
+3
+There is a clear untapped potential to decarbonize heating on a large scale in 
+many cities. In the EU, Germany alone accounts for more than 20% of the total 
+industrial waste heat recovery potential.4 New Danfoss analysis of the German 
+district heating networks shows that over 30% of its district heating demand 
+can be feasibly covered by existing industrial waste heat emitters (see district 
+heating case on p. 20).
+Waste heat can feasibly 
+cover over 30% of 
+Germany’s district 
+heating demand
+4
+Waste heat > Foreword
+Waste heat > Only got 2 minutes?
+6/28
+7/28
+
+
+--- page 5 ---
+Waste heat — the world’s  
+largest untapped energy source
+Chapter 1
+Waste heat > Waste heat — the world’s largest untapped energy source
+Waste heat > Waste heat — the world’s largest untapped energy source
+8/28
+9/28
+What is waste heat?
+Every day, all over the world, energy is consumed on an 
+industrial scale in facilities such as supermarkets, metro 
+systems, factories, and wastewater treatment plants. Much 
+of this energy is directly converted into work or useful 
+heat, powering our societies and providing essential 
+goods, services, and economic livelihoods. But much of it 
+is not. In fact, in 2024, nearly two-thirds of global energy 
+was wasted in the form of heat.5 This is because any energy 
+which is not directly converted into work or useful heat 
+is an ineﬃciency in the energy conversion or use process 
+and thereby lost as waste heat. Just think of the warmth 
+behind a fridge or the heat from a laptop, but on a global 
+scale and in much more energy-intensive processes.
+Today, most of this heat is simply released into the 
+atmosphere. This wasted energy yields lost energy and 
+environmental value and missed revenue potential. But 
+it doesn’t have to. In fact, the technology already exists 
+to recover and reuse this waste heat to heat homes, 
+businesses, and industrial processes. However, doing so 
+requires an understanding of where waste heat is produced, 
+how it can be reused, and what it can help societies achieve. 
+This paper provides insights into exactly those topics.
+How much waste heat is there?
+As stated, nearly two-thirds of all energy globally is 
+wasted as heat.6 What does this look like regionally? In the 
+European Union (EU), the current total waste heat sources 
+amount to approximately 1,200 TWh, a number which 
+is expected to grow to 1,517 TWh by 2050 — enough to 
+cover the EU’s future heat demand in buildings.7 To put 
+this into another perspective, Paris consumes 32 TWh 
+of electricity annually, meaning that the energy Europe 
+wastes as heat every year is comparable to the electricity 
+needed to power Paris for over 48 years.8 In 2021, China’s 
+waste heat amounted to 13,889 TWh, with about 60% of 
+these waste heat sources located within 10 km of urban 
+areas.9 In 2023, US waste heat amounted to 18,028 TWh,10 
+nearly three times the country’s heating demand of 6,389 
+TWh.11 In short, the picture looks similar across the globe: 
+enough heat is being wasted through existing energy 
+processes to cover heating demand.
+This begs the question of where the heat is coming from. 
+Nearly every sector is responsible for a certain degree 
+of waste heat production, but several industries stand 
+as outliers simply by virtue of their energy intensity and 
+critical role within the global economy. For example, heavy 
+industries such as chemicals, steel, and cement employ 
+many high-temperature processes, which generate 
+signiﬁcant amounts of waste heat as a by-product. We also 
+see major waste heat production in other forms of critical 
+infrastructure, such as data centers, wastewater treatment 
+plants, and urban transportation systems. While gains in 
+eﬃciency are critical in preventing this waste across all 
+these sectors, the speed is not yet at scale; by 2030, up 
+to 55% of global energy will still be wasted as heat.12 This 
+highlights that waste heat will remain one of the world’s 
+largest untapped energy sources well into the future.
+Why does it matter?
+Heating is one of the most widespread and energy-
+intensive processes in the global energy system. In Europe, 
+for example, heating and cooling accounts for roughly 
+half of total ﬁnal energy demand, with over 70% of that 
+energy being provided by burning fossil fuels.13, 14 Any 
+opportunity to meet this demand with already-existing 
+waste heat pushes us towards aﬀordable, sustainable, 
+and strategic energy eﬃciency with the opportunity for 
+massive economic savings. In 2023, at least 3,100 TWh of 
+waste heat globally went uncaptured, and recovery could 
+provide annual global savings of up to EUR 140 billion.15 
+However, it is not just about meeting heating demand. 
+Waste heat can also provide signiﬁcant progress on 
+key political, economic, and societal priorities — 
+namely, industrial competitiveness, decarbonization, 
+electriﬁcation, and energy resilience. 
+The case for competitive decarbonization is 
+straightforward: reusing waste heat means reducing fossil 
+fuel consumption, which would otherwise occur to meet 
+heat demand. When paired with heating electriﬁcation, this 
+elimination is total and the reuse becomes about improving 
+eﬃciency, competitiveness, aﬀordability, and resilience. This 
+translates not only into reduced emissions but also reduced 
+energy cost. Even after installing heat recovery and reuse 
+technologies, payback times are often less than three years 
+(see on-site and microgrid cases in Chapter 2). 
+Waste heat can also speed up progress on electriﬁcation 
+and renewables targets. Electric technologies such as 
+heat pumps are often needed to boost waste heat to a 
+usable temperature. In other words, by reusing waste 
+heat, we are electrifying heating processes. However, 
+this electriﬁcation push faces a structural challenge: in 
+many markets, electricity remains disproportionately 
+expensive relative to gas, undermining the economic case 
+for switching. To see more rapid progress, this must be 
+addressed through policies which are more favorable to 
+electriﬁcation, eliminating country-speciﬁc subsidies on gas 
+and taxes on electricity. On renewables, the enablement 
+of waste heat to contribute to national renewable energy 
+targets is becoming more common, as evidenced by the EU 
+considering waste heat a form of renewable energy when it 
+is unavoidable.16 When the heat recovery is part of a heating 
+electriﬁcation and the retroﬁt is paired with installation of 
+on-site renewables to oﬀset increased electricity use, the 
+impact on meeting renewable goals is ampliﬁed.
+Finally, energy security is a rising concern across the globe, 
+especially as geopolitical instability continues to expose 
+vulnerabilities in energy supply chains and regional 
+dependencies on fossil fuels. The EU serves as a prominent 
+example, having faced signiﬁcant disruption due to its 
+strong dependency on Russian gas imports. Despite recent 
+successful eﬀorts to reduce consumption of Russian gas, 
+the EU is still deeply dependent on gas imports. In 2025, 
+the EU obtained 12% of its total gas imports from Russia,17 
+a decrease from its 45% dependency in 2022.18 Still, the 
+US accounted for 58% of LNG imports to help bridge the 
+gap.19 This essentially means that the EU hasn’t reduced its 
+dependency on imports but simply shifted it to another 
+exporter. In 2025, 30% of EU households were heated 
+using gas, leaving the bloc exposed to the price volatility 
+and political risks that come with dependence on any 
+foreign supplier. Waste heat has the potential to not only 
+help EU break free from gas, but to signiﬁcantly boost 
+economic and industrial resilience. Of course, this is not 
+just an EU phenomenon: regardless of region, increasing 
+the share of waste heat in the heating mix shields 
+industries and households alike from price shocks that 
+occur in the wake of global energy crises. 
+As humanity navigates ongoing economic, energy, and 
+climate crises, the reuse of energy that has already been 
+produced and purchased is one of the simplest ways to 
+save money while providing more resilient and sustainable 
+energy systems. 
+How does it work?
+Historically, heating systems were designed independent 
+of cooling systems, generally with separate designers, 
+suppliers, and operators. This originated with the fuel for 
+heating systems coming from burning fossil sources. Now 
+with electric systems for heating, however, integrated 
+climate systems simply move heat from where it’s not 
+needed (i.e., cooling) to where it is needed (i.e., heating). 
+This demonstrates the simultaneous eﬃciency potential 
+of providing both with one electriﬁed system, utilizing the 
+waste heat recovered from cooling processes as a primary 
+heat source. All that is then left is to understand the 
+potential source and demand pathways.
+There are three main pathways for the recovery and reuse 
+of waste heat: on-site reuse, microgrid reuse, and district 
+heating integration. Each of these are viable methods but 
+are also often context- and sector-dependent. Chapter 2 
+explores each of these pathways in detail, describing when 
+and where they are relevant, presenting key beneﬁts and 
+challenges, as well as cases and analyses showcasing their 
+real-world impact and potential. 
+
+
+--- page 6 ---
+10/28
+11/28
+Pathways for waste heat reuse
+Chapter 2
+The simplest, quickest, and oftentimes cheapest pathway 
+for many waste heat producers is on-site reuse. This 
+involves recovering and reusing waste heat directly in the 
+same facilities from which they are emitted as process 
+heat and/or to provide space heating and hot water to 
+the facility. 
+When is it relevant?
+For waste heat to be reused on-site, there must be both 
+supply and demand for heating and/or cooling at that 
+location. Heat pumps are a good alternative to gas boilers 
+and chillers, as they are able to capture heat for reuse, 
+absorbing that heat from processes and/or facility cooling. 
+This is often observed in traditional factory or industrial 
+manufacturing settings where there is a mix of both 
+production and oﬃce facilities on-site. This is because 
+there is often a need for both space and water heating 
+as well as supplementary process heating. In particular, 
+heavy industries such as steel, glass, or cement are 
+prime examples of where a great deal of heat is not only 
+produced but also consumed.20 However, a large portion 
+of the heat produced by these sectors currently ends up as 
+waste. When planned strategically, such resources can be 
+captured and reused on-site to replace or supplement the 
+consumption of fossil fuels.
+Main beneﬁts and challenges
+On-site reuse provides several unique beneﬁts. First, 
+on-site reuse opportunity is signiﬁcantly driven by 
+two interrelated factors — eﬃciency and coincidental 
+operation. Eﬃciency is based on the ability to recover heat 
+from the highest temperature sources and supply them 
+to the lowest temperature heating demands, maximizing 
+recovery eﬃciency and minimizing operating cost. 
+Simultaneous operation and on-site reuse is especially 
+tied to industrial processes, where there are coincident 
+cooling and heating loads, recovering the heat from 
+the cooling system to electrify and replace fossil fuel 
+heating through a true symbiosis system, maximizing 
+the eﬃciency and minimizing the operating cost of both. 
+Moreover, the limited reliance on external stakeholders 
+reduces coordination requirements and implementation 
+complexity compared to oﬀsite heat utilization. Finally, 
+on-site reuse doesn’t require access to the expansive 
+district heating networks often found in Europe or major 
+metropolitan areas, meaning its application is more 
+universal and applicable on a global scale.
+Challenges also exist. For example, understanding the 
+supply-demand dynamic of a facility requires specialized 
+knowledge, resulting in the need to contract external 
+experts for guidance. Similarly, how much waste heat 
+can be eﬃciently recovered depends on the output 
+temperature — the cooler the heat stream, the less of 
+it can be put to work, which is why low-temperature 
+waste heat often needs a heat pump to be 'upgraded' 
+before reuse. A further challenge is related to operational 
+downtime. While this is not necessarily unique to on-site 
+reuse, the installation of new systems almost always results 
+in some period of decreased productivity. Fortunately, 
+smart planning and favorable payback times can help to 
+mitigate these concerns.
+Waste heat > Pathways for waste heat reuse
+Waste heat > Pathways for waste heat reuse
+Pathway #1: On-site reuse
+On-site
+ Microgrid
+District heating 
+
+
+--- page 7 ---
+Process cooling
+Heat pumps
+Facility heating and 
+process pre-heating
+12/28
+13/28
+Figure 1
+Industrial waste heat recovery for on-site reuse at Hydro Tønder.
+407
+tons of annual CO2 
+emissions reductions
+2.3
+years project 
+payback time
+205,600
+m3 of gas usage  
+eliminated annually
+Waste heat > Pathways for waste heat reuse
+Waste heat > Pathways for waste heat reuse
+On-site waste heat reuse boosts  
+Hydro’s competitive edge
+This heavy‑industry case focuses on Hydro’s aluminum 
+manufacturing facility in Tønder, Denmark, where the 
+company has been working to improve energy eﬃciency 
+to meet both their commercial and decarbonization needs. 
+Despite already previously electrifying all other operations, 
+the facility’s heating process still used gas, contributing to 
+the embodied carbon of their products (e.g., microchannel 
+tubes, electric car cables). As a result of emissions taxes, the 
+high embodied carbon of their products led to higher cost 
+compared to alternative suppliers.
+These metal products require a very high induction heating 
+process to heat materials from 20°C to 500°C, demanding 
+signiﬁcant amounts of electricity. The ﬁnal formed and 
+cut metal is sent to a cooling tank maintained at an 18°C 
+setpoint, where the waste heat is then rejected through a 
+cooling tower. After heat rejection, the cooled water is then 
+returned to the cooling tank at 16°C.
+Additionally, the facility has a high demand for factory 
+ﬂoor and oﬃce heating, especially during winter seasons. 
+Typically, this heat was supplied through air handlers 
+and oﬃce radiators powered by two 550 kW gas boilers 
+supplying 60°C hot water.
+To increase eﬃciency, Hydro linked these two independent 
+processes — process cooling and facility heating systems 
+— to leverage their synergy. The electriﬁcation of heating 
+with a heat pump became signiﬁcantly more eﬃcient 
+than a boiler because rather than producing new heat, it is 
+simply moving and boosting heat recovered from the point 
+of cooling to the point of heat reuse. 
+To do this, the heat pump boosts the heat from the 
+return process cooling temperature of 16°C to the 
+60°C that is needed to provide heat from the facility’s 
+radiators and air handlers. This project resulted in 
+an impressive eﬃciency of 4.9 COP, or ﬁve times 
+the eﬃciency of the boiler providing the same 
+temperature. This resulted in ﬁve times less electrical 
+vs. gas input to provide the same heating and 
+signiﬁcant comfort savings for Hydro.
+To further leverage on the opportunity, Hydro developed 
+a concept where a second booster heat pump was added 
+to the system to boost only the portion of the process 
+heat required from the 60°C comfort heating setpoint 
+to the 90°C production pre-heating setpoint. This heat 
+is supplied to a tank where metal production materials 
+are submerged and pre-heated from outdoor or room 
+temperature (~0-20°C) to approximately 90°C. Induction 
+heating then takes over to complete the remaining 
+process heating at 500°C. The booster heat pump 
+provides a COP of 3.8, or roughly four times the eﬃciency 
+of the induction heating for the portion of process pre-
+heating it covers. 
+Regarding the original project goal, which was 
+high embodied carbon in the product, the heating 
+electriﬁcation retroﬁt of Hydro’s system is projected to 
+eliminate 205,600 m3 of gas usage per year, resulting 
+in an annual CO2 emission reduction of 407 tons. Per 
+Hydro’s 2024 production, this means a reduction of 
+0.013 kg of CO2 emissions per kilogram of processed 
+aluminum. This impressive result indicates less 
+embodied carbon in the ﬁnal products sold, boosting 
+Hydro’s competitive advantage compared to alternative 
+suppliers. The project had a total payback time of 
+only 2.3 years, further underlining the economic 
+attractiveness of waste heat reuse.
+Case story
+
+
+--- page 8 ---
+14/28
+15/28
+Waste heat > Pathways for waste heat reuse
+Waste heat > Pathways for waste heat reuse
+Microgrids act as localized energy systems that can 
+operate independently from the main utility grid, 
+supplying reliable energy to a speciﬁc facility or campus. 
+This approach is particularly eﬀective in cases where 
+waste heat can serve multiple end users, such as when an 
+industrial facility or a data center provides heat to nearby 
+industrial processes or commercial buildings — also 
+known as an industrial cluster. In short, when companies 
+operate in proximity, they can lean on one another as both 
+heavy producers and consumers of waste heat. 
+When is it relevant?
+Both microgrids and district heating systems become 
+relevant when there is no demand on-site, or when supply 
+outpaces on-site demand. In the absence of accessible 
+district heating networks, which are highly eﬃcient 
+but still relatively rare on a global scale, microgrids and 
+industrial clusters are a viable alternative. 
+One sector with signiﬁcant waste heat supply and nearly 
+zero on-site demand is data centers. Nearly every unit of 
+energy consumed by a data center is converted into heat, 
+and with global power consumption for data centers set 
+to double to 3% by 2030,21 the waste heat potential from 
+data centers is signiﬁcant. In the United States, data center 
+power consumption is expected to quadruple between 
+2023 and 2030, making it the fastest‑growing global 
+market.22 At this level, data centers could generate enough 
+waste heat to supply 33% of the US combined residential 
+and commercial heating demand.23 In Europe, data centers 
+are facing mounting pressure to be as energy-eﬃcient 
+and sustainable as possible in line with the EU’s transition 
+towards climate neutrality.24 As data centers run 24/7/365 
+and are ‘critical facilities’ with backup power systems to 
+ensure they do not go down, they can provide a stable and 
+resilient source of heat for oﬀ-takers, and this heat can be 
+used at diﬀerent scales. In fact, data centers are not the 
+only form of digital infrastructure capable of providing 
+waste heat to communities. In Denmark, the University 
+of Southern Denmark’s advanced AI supercomputer has 
+been designed to provide high-quality waste heat to its 
+local district energy system, proving that the expansion of 
+digital infrastructure can serve as a critical energy asset if 
+planned wisely.25 
+Main beneﬁts and challenges
+The opportunity to tap into microgrids immediately seems 
+clear, and it can prove to be an important contributor to 
+the energy system. Waste heat producers can earn money 
+on a waste product, and nearby facilities or campuses can 
+tap into this source to phase out fossil fuels from their 
+energy mix. In some regions, the recovered waste heat 
+can even help meet renewable energy targets.26 Most 
+industrial microgrid projects deliver strong economic 
+performance, with payback periods ranging from 3-7 years 
+(see case on p. 17). Facilities that generate continuous, 
+high‑temperature waste heat such as manufacturing 
+plants and data centers, often have the shortest payback 
+periods due to the consistent availability of waste heat.
+One of the key challenges is that waste heat from data 
+centers can only be utilized if a suitable oﬀ-taker is available. 
+The location of data centers is primarily determined by 
+electricity grid access,27 whereas other factors, such as 
+access to renewable electricity and to waste heat oﬀ-
+takers, are less determinative. This is not because data 
+center operators are not interested in waste heat reuse, 
+but because doing so involves a complex landscape of 
+stakeholders and legislation. To the contrary, data center 
+operators are in fact interested in repurposing the waste 
+heat as it is a burden for them, expending signiﬁcant energy 
+and using signiﬁcant water volumes to reject it. It is in the 
+interest of all stakeholders, including oﬀ-takers, to make it 
+easier and more attractive to reuse the waste heat. 
+Pathways for waste heat reuse
+Chapter 2
+Pathway #2: Microgrids and industrial clusters
+On-site
+ Microgrid
+District heating 
+
+
+--- page 9 ---
+16/28
+17/28
+Waste heat > Pathways for waste heat reuse
+Waste heat > Pathways for waste heat reuse
+Without policies that 
+make electriﬁcation more 
+attractive, the economic and 
+decarbonization potential  
+of waste heat will never be  
+fully realized.
+Waste Heat Reuse at Wuqing Qingshu  
+Science Park, Tianjin, China
+Nearly every unit of energy consumed by a data center 
+is turned into heat. With the global power consumption 
+for data centers set to double by 2030,29 this means 
+there is signiﬁcant waste heat potential across the sector. 
+However, today, this heat is currently wasted by simply 
+being released into the atmosphere. Tapping into this 
+free source of energy provides a great opportunity for 
+providing aﬀordable, low-emission heating. 
+From a security perspective, data centers provide a 
+particularly attractive proposition as a heat supplier: 
+because they operate around the clock and are designed 
+to never go down, they provide a steady and predictable 
+source of heat. Furthermore, because the electricity 
+demand for data centers will be concentrated regionally, 
+they provide perfect opportunities for more targeted 
+integration into local energy systems. 
+One such example can be found in Wuqing, China. The 
+Qing Shu Science & Technology Park is a 103,450 m² 
+mixed-use industrial complex located around 400 meters 
+from a cluster of data center facilities. Since 2014, the site 
+has attracted more than 550 companies from Beijing and 
+Hebei. Among the companies that have their company 
+base in Wuqing are two data centers: the Guo Fu Rui Data 
+Center and the China Telecom Data Center. Both centers 
+beneﬁt from heat recovery to heat their oﬃces during 
+winter, and the surplus heat from the data centers will be 
+utilized for hot water all year. 
+The complex recovers heat from the data centers’ cooling 
+loops and uses it locally across the industrial park. In 
+winter, the recovered heat supplies space heating and 
+domestic hot water. In summer, the system switches mode 
+and provides cooling for the park using rooftop cooling 
+towers. Even during its ﬁrst winter of operation, when 
+the complex occupancy was below its full capacity, the 
+average heat cost fell by about 60% compared with local 
+commercial district-heating rates. 
+At the complex’s target occupancy level, the project is 
+expected to reduce annual energy use by 1.1 million kWh 
+for the adjacent data centers, while cutting emissions 
+by an estimated 1,659 tons of CO₂ per year. The overall 
+payback time is less than 3 years for additional initial 
+investment.
+Electric boiler
+electricity
+Heat 
+supply
+Heat pump
+electricity
+Data center 
+heat
+Case story
+Figure 2
+Data center waste heat recovery system. 28
+
+
+--- page 10 ---
+18/28
+19/28
+Waste heat > Pathways for waste heat reuse
+Waste heat > Pathways for waste heat reuse
+District heating oﬀers a large-scale solution for utilizing 
+waste heat, especially in densely populated cities. District 
+heating uses a network of interconnected pipes to supply 
+heat via water to buildings across a neighborhood or 
+city. Most often, these networks are served by centralized 
+heat production units, such as combined heat and power 
+plants, but they are also capable of including smaller, more 
+decentralized heat sources. Producers of waste heat can 
+thus play a key role in providing low-emissions heat to 
+local district energy systems.
+When is it relevant?
+Despite the increased global use of district heating 
+systems by 32% from 2010 to 2021,30 90% of district heat is 
+still produced with fossil fuels today, leaving an untapped 
+potential to decarbonize heating on a large scale.31 Waste 
+heat can play a major role in achieving this by replacing 
+fossil fuels in commercial and residential heating. For 
+example, the IEA estimates that recovered heat from data 
+centers could cover up to 10% of Europe’s space-heating 
+demand by 2030 — and at a much more attractive price 
+than natural gas.32 
+Cities are the global centers of economy and culture 
+where more than half of the world’s population resides 
+and are only predicted to increase in size and density. One 
+consequence of this population density is high energy 
+consumption. Presently, cities account for 75% of global 
+energy consumption and 70% of global greenhouse gas 
+emissions,33 and we know that energy supply must evolve 
+to meet growing demand. What is driving this urban 
+energy demand? Other than everyday consumption in 
+homes, several sectors represent an outsized demand. For 
+example, wastewater treatment plants use an estimated 
+1.8-5.4% of total global electricity consumption.34 Similarly, 
+in some countries, supermarkets consume approximately 
+3% of electricity production.35 Other high-demand sources 
+include facilities such as hospitals and public transportation 
+systems. These urban-based sectors therefore present 
+strong opportunities for waste heat reuse, as their essential 
+services require continuous operation. 
+Main beneﬁts and challenges
+One of the main strengths of district energy systems is 
+their capacity to integrate diﬀerent heat sources that can 
+push fossil fuels out of the heating and cooling mix. This 
+can serve as an environmental and economic beneﬁt both 
+to industrial producers of heat and to consumers who 
+get their heat via district heating networks. Compared 
+to individual heat pumps in speciﬁc areas in a city, 
+district heating is a more cost-eﬀective option by sharing 
+infrastructure and reducing equipment duplication.
+Integrating waste heat into district heating systems faces 
+several challenges. Temperature mismatch is common, as 
+waste heat is often available at relatively low temperatures 
+(30–60 °C), while district heating networks typically 
+operate at 70–100 °C. Rather than burning fossil fuels to 
+boost heat to suitable temperatures, heat pumps can serve 
+the same purpose, thereby electrifying urban heating 
+while also integrating waste heat. Contrasting two markets 
+on this aspect, Denmark has transitioned its district energy 
+networks over the last thirty years from ~100°C third-
+generation networks to ~70°C fourth-generation networks, 
+enabling eﬃcient heat recovery from sources such as data 
+centers and heat pumps. Germany, on the other hand, 
+has established the requirements to recover heat from 
+data centers, but their district energy networks have only 
+just begun to transition to lower temperature operation, 
+with most still operating near 100°C. This diﬀerence drives 
+a corresponding economic return diﬀerence, based on 
+heat pump eﬃciency, of ﬁve years or less in Denmark 
+versus ten-plus years in Germany. Lowering operating 
+temperatures is a critical systemic challenge to overcome. 
+On top of temperature mismatches, there can also be 
+seasonal mismatches, with high heating demand in winter 
+and much lower demand in summer. Finally, district 
+heating projects often require high upfront investment 
+and have long payback periods, which can make them 
+less attractive than conventional heating particularly 
+when electricity prices are high, as heat pumps depend 
+on electricity.36 As such, these projects often require 
+government support and long-term vision to implement.
+Pathways for waste heat reuse
+Chapter 2
+Pathway #3: District heating integration
+On-site
+ Microgrid
+District heating 
+
+
+--- page 11 ---
+Waste heat can feasibly cover over 30%  
+of German district heating demand
+Analysis
+Germany sits at the center of Europe’s industrial waste 
+heat story, accounting for more than 20% of the EU’s total 
+industrial waste heat recovery potential.37 Italy, France, and 
+the UK each contribute roughly 10%, placing Germany in 
+a category of its own.38 What Germany does with its waste 
+heat matters more for the global heating transition than 
+what any other European country does, and right now, 
+almost all of it is being wasted.39 
+To understand how much of this potential could be 
+realistically captured, Danfoss conducted an analysis of 
+Germany’s industrial waste heat emitters and district 
+heating networks (see Appendix 1 for analysis details). 
+Using Germany’s national waste heat register, created 
+under the Energy Eﬃciency Act, and a national map of 
+district heating networks from RWTH Aachen University, 
+20/28
+21/28
+Waste heat > Pathways for waste heat reuse
+Waste heat > Pathways for waste heat reuse
+178 of the largest networks in the country were identiﬁed.40 
+These networks are deﬁned as those serving more than 
+5,000 households. Qualifying emitters of waste heat were 
+then identiﬁed, classiﬁed as those with average waste heat 
+temperatures at or below 500°C, which is the practical 
+threshold for district heating integration.41 
+Around each network, a one kilometer catchment zone 
+was drawn, representing the distance within which a 
+pipeline connection to a nearby emitter is economically 
+plausible.42 
+The analysis found that across Germany, the waste heat 
+currently produced at industrial sites within one kilometer 
+of those 178 networks is enough to cover approximately 
+30.4% of annual German district heating demand.43 This 
+Figure 3: Supply
+Registered industrial waste heat emitters
+Industrial and commercial waste heat emitters registered under Germany's EnEfG with an average temperature of 500 C or below,  
+the technically recoverable range for district heating.
+Figure 4: Demand
+A map of the German district heating network system
+This dataset was used to identify the 178 German district heating networks that met Danfoss' waste heat integration standards  
+(see Appendix).
+ﬁgure goes beyond Germany’s own 2030 legal threshold, 
+which requires district heating networks to source 30% 
+of their heat from renewable sources or waste heat by 
+that date.44 In other words, the industrial waste heat 
+alone, without accounting for other renewable sources, is 
+suﬃcient to meet near-term national targets. 
+Critically, the waste heat register used in this analysis 
+excludes combined heat and power plants and does 
+not yet include data centers. Germany has more than 
+3,000 data centers, around 1,000 of which fall within 
+the reporting scope of the Energy Eﬃciency Act.45 Their 
+inclusion would push the coverage ﬁgure considerably 
+higher and will be essential as Germany works toward the 
+Heat Planning Act’s longer-term target of 80% renewables 
+or waste heat supply.46 
+At the individual network level, most sites had more waste 
+heat nearby than their demand requires, pointing to 
+speciﬁc locations across Germany where the investment 
+case for connection infrastructure is already strong. These 
+are the natural starting points for accelerating integration.
+The broader lesson extends well beyond Germany. Heating 
+accounts for nearly half of global energy consumption, and 
+the vast majority of it still comes from fossil fuels.47 Industrial 
+waste heat is a largely invisible resource sitting alongside 
+that demand in virtually every highly industrialized 
+economy. This analysis of the German potential of waste 
+heat demonstrates that with the right data, spatial tools, and 
+policy frameworks, the gap between wasted heat and unmet 
+demand can be quantiﬁed, mapped, and closed. That is a 
+model other countries can follow.
+
+
+--- page 12 ---
+Leveraging waste  
+heat requires action
+Chapter 3
+Waste heat > Leveraging waste heat requires action
+Waste heat > Leveraging waste heat requires action
+22/28
+23/28
+What can energy system operators do about it?
+What can governments do about it?
+Waste heat is an incredibly powerful means to provide a 
+competitive advantage for energy resilience, industrial 
+growth, and decarbonization across sectors and 
+geographies. Progressing on waste heat proliferation 
+requires several key actors to take action — namely 
+industry, energy system operators, and governments. In 
+this section, we have outlined key actions for each of these 
+groups to take.
+Evaluate the most suitable pathway(s) for 
+recovery and reuse based on on-site supply and 
+demand, operating load profiles, temperatures, 
+interconnection potential, potential nearby 
+industrial off-takers, and local energy system 
+context.
+Engage in cross-sector waste heat exchanges. 
+Industrial actors should proactively seek 
+partnerships with neighboring facilities, even across 
+different sectors, to identify complementary supply 
+and demand profiles.
+Integrate waste heat planning into capital 
+investment cycles. When upgrading or building 
+new facilities, industry should treat heat recovery 
+infrastructure and integrated system potential as a 
+standard design requirement and lock in efficiency 
+gains for asset lifetimes.
+Monitor and report waste heat continuously. Real-
+time metering of waste heat output allows industrial 
+actors to better understand their own supply 
+patterns and demonstrate reliability and recovery 
+potential to themselves and potential off-takers. 
+Advocate for favorable regulatory conditions. 
+Industry associations and individual companies 
+should actively engage with policymakers to shape 
+waste heat legislation, grid access rules, energy cost 
+legislation, and incentive schemes. 
+1
+2
+3
+4
+5
+What can industry do about it?
+Industrial actors are at the heart of waste heat production and include a broad range of sectors such as data centers, 
+manufacturing, food and beverage, steel mills, and cement factories, which despite being central to our economies, are 
+energy-intensive functions. Recovery and reuse of this waste heat requires that industrial actors:
+Unlocking waste heat requires matching industrial supply with demand in the energy system. Governmental actors at 
+national, regional, and municipal levels can enable this connection by creating regulatory and financial conditions that  
+make cooperation and investment possible. To do so, they should:
+Energy systems provide the connection of production to demand. These actors include grid and transmission system 
+operators, district heating network operators, and utility and energy companies. It is critical that these actors:
+Lower district energy operating temperatures 
+to enable efficient and economically attractive 
+recovery of waste heat.
+Map and publish waste heat potential data. 
+Energy system operators are uniquely positioned 
+to overlay heat demand data with industrial waste 
+heat sources, identifying where supply and demand 
+align geographically. Public availability accelerates 
+investment decisions and reduces planning 
+uncertainty for all stakeholders.
+Push for flexible grid tariffs that reward waste 
+heat integration. Pricing structures that incentivize 
+industrial actors to feed waste heat into district 
+networks make the economics more attractive for 
+both producers and off-takers. 
+Establish long-term heat purchase agreements 
+with waste heat producers. Predictable, contractual 
+off-take agreements reduce revenue uncertainty for 
+industrial suppliers, making it easier to justify upfront 
+investment in recovery infrastructure.
+Push to integrate waste heat recovery into grid 
+and district heating infrastructure strategies. 
+When possible, coordinate with spatial planners to 
+protect heat corridors and reserve underground 
+routing options for future heat pipelines during 
+urban development to prevent costly retrofits. 
+4
+5
+1
+2
+3
+Address the electricity-to-gas price ratio to create 
+a more attractive environment for investments in 
+heating electrification. Subsidies on gas and taxes on 
+electricity are the primary factors currently limiting 
+the potential of heat recovery, heating electrification, 
+and the corresponding decarbonization.
+Develop and implement heating and cooling 
+strategies that recognize waste heat as a strategic 
+resource. Waste heat should be seen as contributing 
+to decarbonization and energy independence while 
+also easing constraints on energy systems.
+Set dedicated waste heat recovery targets, or 
+at the very least indicators, at national level. This 
+should include requirements for and monitoring of 
+waste heat recovery in specific sectors where the 
+potential is particularly high, such as industrial sites, 
+supermarkets, and data centers.
+Support the development of local heating and 
+cooling plans and ensure opportunities are 
+effectively leveraged. To do so, provide financial and 
+technical support to municipalities, particularly smaller 
+ones, to enable the development of such plans.
+Reward heat recovery projects in industry. The 
+use of waste heat should be incentivized through 
+targeted financial support schemes.
+Improve data availability and transparency on 
+waste heat sources, as shown in Germany, where 
+waste heat reporting mandates have provided high-
+quality public data on waste heat availability and 
+characteristics.
+ 
+4
+5
+6
+1
+2
+3
+
+
+--- page 13 ---
+24/28
+25/28
+Waste heat > Appendix
+Waste heat > Appendix
+German district heating analysis
+Analysis Target
+The question this analysis set out to answer was a practical 
+one: how much waste heat exists in close enough proximity to 
+Germany's district heating networks to be realistically usable? 
+And does the potential, on paper, come anywhere close to 
+meeting the legally-binding targets the country has set for itself?
+What data we used
+Two datasets formed the basis of the analysis. The ﬁrst was a 
+spatial dataset of Germany's district heating networks produced 
+by RWTH Aachen University, showing the geographic footprint 
+of networks across the country along with data on the number 
+of households each one serves. We applied a threshold of 5,000 
+or more households, focusing the analysis on larger, more 
+signiﬁcant networks where demand is highest and the economics 
+of connecting new heat sources are most likely to be viable. After 
+applying that ﬁlter, 178 qualifying networks remained. 
+The second dataset was Germany's national waste heat register; 
+the reporting database created under the Energy Eﬃciency Act. 
+This requires that industrial and commercial operators above a 
+certain size register the waste heat they generate. There was a 
+variety of signiﬁcant industries and sectors in the dataset with 
+the largest contributors to overall waste heat being utilities, 
+chemicals and reﬁning, steel and metals, paper and pulp, food and 
+beverage, and waste and water treatment. The utilities category is 
+dominated by large power stations, principally lignite and gas-ﬁred 
+plants. These stations discharge heat via cooling towers and ﬂue 
+stacks where the heat goes unused. The utility category does not 
+include waste heat from combined heat and power plants already 
+supplying district heating networks, which would not represent 
+new available supply. Each operator had to report on where their 
+site is located, how much heat they produce annually, and at what 
+temperature. That temperature ﬁgure matters because district 
+heating systems can only accept heat below certain thresholds, 
+and at the same time are only economically or environmentally 
+viable above certain temperatures, as temperature boosting can 
+be required to match demand temperature. It is also important to 
+note that at the time this data set was published, it did not include 
+data centers. This is signiﬁcant as Germany has the highest number 
+of data centers in Europe (more than 3,000), 90 of which have 
+a capacity of more than 50 MW. Around 1,000 data centers are 
+covered by the EnEfG reporting scope. 
+With the register, we ﬁltered to include only emitters with an 
+average waste heat temperature of 500°C or below, broadly 
+reﬂecting the range that is technically recoverable and usable 
+for district heating purposes. Very high-temperature industrial 
+processes, such as certain steel or glass production stages, 
+were excluded on the grounds that the heat is not practically 
+transferable to a residential or commercial heating system.
+What we did with the data
+Both datasets were loaded into QGIS, a geographic information 
+system used for spatial analysis. The coordinate reference system 
+of the datasets was standardized so that distance measurements 
+would be accurate across the whole of Germany, which requires 
+using a projected coordinate system rather than standard 
+latitude and longitude.
+Around each of the 178 qualifying district heating networks, we 
+drew a one-kilometer buﬀer zone. This represents the catchment 
+area within which a waste heat emitter could plausibly be 
+connected to that network, on the assumption that pipeline 
+distances beyond one kilometer start to become economically 
+diﬃcult to justify without very large heat volumes. We then 
+identiﬁed every waste heat emitter from the ﬁltered register that 
+fell inside any of those buﬀer zones. 
+For each individual network, we summed the total annual waste 
+heat output of the emitters within its one-kilometer zone and 
+compared that to the network's own annual heat demand. This 
+produced a supply-to-demand ratio for each network. A ratio 
+above 1.0 means that the waste heat available nearby theoretically 
+exceeds what the network needs. A ratio below 1.0 means the 
+nearby supply falls short.
+For the national-level ﬁgure, we merged the overlapping buﬀer 
+zones together before summing supply, so that a single emitter 
+sitting between two networks was not counted twice in the 
+aggregate total. This produced a more conservative and more 
+honest headline ﬁgure for Germany as a whole.
+All technical assumptions are provided by Danfoss’ Sector 
+Coupling team, who specializes in waste heat recovery and 
+reuse.
+What the results showed
+At the national level, the total waste heat available from qualifying 
+emitters within one kilometer of qualifying district heating 
+networks covers approximately 30.4% of the combined annual heat 
+demand of those 178 networks. That ﬁgure exceeds Germany’s 
+2030 Heat Planning Act legal threshold that 30% of heat supply 
+must come from renewable energy or waste heat. It suggests that 
+at an aggregate level, the potential exists in principle to meet the 
+near-term target from proximate industrial waste heat sources 
+alone, without factoring in renewables or other heat sources such 
+as data centers, which will bring much higher waste heat values. 
+For future planning, the Heat Planning Act mandates 80% of heat 
+supply comes from renewables or waste heat, making eventual 
+data center integration critical. 
+The picture is more varied when you look at individual networks. 
+The majority had a supply ratio below 1.0, meaning that for most 
+networks, the waste heat available within one kilometer is not 
+suﬃcient on its own to meet demand. Many fell well below that 
+threshold, with ratios close to zero, often because they are in 
+areas with little heavy industry nearby.
+A smaller but signiﬁcant group of networks had ratios above 1.0. 
+These are the most interesting ﬁndings from a practical standpoint. 
+They represent speciﬁc places in Germany where industrial waste 
+heat is concentrated near district heating infrastructure, thus the 
+geographical case for integration is strong and investment in 
+connection infrastructure would have the clearest potential return. 
+Identifying and prioritizing these locations is one of the most 
+actionable outputs the analysis produces.
+Where the analysis has limitations
+There are important limitations that should be kept in mind when 
+interpreting these results. The one-kilometer buﬀer is a practical 
+simpliﬁcation, not a hard engineering rule. Whether a given 
+emitter can realistically supply a given network depends on factors 
+the spatial analysis cannot capture: the existing pipe network 
+layout, the speciﬁc routing a connection would need to take, local 
+planning constraints, and whether the temperature of the waste 
+heat is compatible with the network's operating requirements. 
+A site 800 meters away on the wrong side of a motorway or 
+industrial zone might be harder and more expensive to connect 
+than one 1.4km away with a clear routing option.
+The waste heat register reﬂects what companies have declared, 
+not what has been independently veriﬁed or assessed as 
+technically recoverable. Some entries may describe heat that 
+is diﬃcult to capture in practice, or heat that a company has 
+already taken steps to reduce. The register is also relatively new, 
+and coverage of some sectors, including data centers, may not 
+yet be complete. This means the analysis likely understates the 
+true potential in some areas, because not all relevant emitters will 
+yet be in the dataset.
+A small number of entries in the register, identiﬁed through a 
+review of company notes, describe waste heat that is already 
+contractually committed to supply a district heating network. 
+These entries represent a very minor share of the total supply 
+share (less than 1%) and do not aﬀect the 30.4% headline result. 
+They are, however, a reminder that the register captures declared 
+potential rather than heat that is in all cases freely available. 
+The analysis is also a static snapshot. It does not account for 
+seasonal variation in waste heat availability, the reliability of 
+supply, or whether the heat is available at the times of year and 
+times of day when demand is highest.
+Why the analysis is still useful
+Despite limitations, the analysis provides a defensible, evidence-
+based starting point for understanding Germany's waste heat 
+opportunity. Germany currently uses only a small fraction of its 
+industrial waste heat in district heating, estimated at roughly 7 
+to 8 TWh per year from non-CHP sources against a total district 
+heating supply of around 140 TWh nationally. The gap between 
+that baseline and the 2030 target is substantial, and there is 
+strategic uncertainty about its closure.
+This analysis helps to provide certainty. It demonstrates that the 
+raw geographic potential exists at scale, that the 30.4% coverage 
+ﬁgure is achievable in aggregate, and that there are speciﬁc 
+networks across the country that are particularly well-placed to 
+act. For planners, policymakers, investors, and network operators 
+trying to decide where to focus heat planning eﬀorts, the 
+information has real practical value.
+Appendix
+
+
+--- page 14 ---
+References
+1	 Firth, A., Zhang, B. and Yang, A. (2019). Quantiﬁcation of global 
+waste heat and its environmental eﬀects. Applied Energy, 235, 
+1314–1334.
+2	 Walter, D. et al (2024). The Incredible Ineﬃciency of the Fossil 
+Energy System. Rocky Mountain Institute. Published 4 June 
+2024. Accessed 14 May 2026.
+3	 Firth, A., Zhang, B. and Yang, A. (2019). Quantiﬁcation of global 
+waste heat and its environmental eﬀects. Applied Energy, 235, 
+1314–1334.
+4	 IEA (2024). Empowering Urban Energy Transitions. Published 2 
+May 2024. Accessed 12 June 2026. 
+5	 Walter, D. et al (2024). The Incredible Ineﬃciency of the Fossil 
+Energy System. Rocky Mountain Institute. Published 4 June 
+2024. Accessed 14 May 2026.
+6	 Walter, D. et al (2024). The Incredible Ineﬃciency of the Fossil 
+Energy System. Rocky Mountain Institute. Published 4 June 
+2024. Accessed 14 May 2026.
+7	 Mathiesen, B.V., Gonzalo, E.G., Georgati, M., Nielsen, S. 
+and Nikolic, J. (2026). Heat Roadmap Europe: Towards a 
+sustainable, resilient and competitive heating sector by 2050 – 
+Main report, p. 24. Aalborg University Research Portal. Aalborg 
+Universitet. Accessed 8 April 2026.
+8	 Ville de Paris (2024). Energies – Énergie totale consommée à 
+Paris. Direction des Espaces Verts et de l'Environnement. Paris 
+Data. Published 5 November 2024. Accessed May 20, 2026.
+9	 Liu, Z. et al. (2026). Assessment of waste heat in China: 
+Characteristics and national potential. Energy. 344(1).
+10	 Lawrence Livermore National Laboratory (2023). Estimated 
+U.S. Energy Consumption in 2023. Accessed 12 June 2026. 
+Data based on DOE/EIA SEDS (2024). 2023 energy ﬂow chart 
+shows total US rejected energy was 61.5 quadrillion BTUs 
+(quads) out of 93.6 quads of total primary energy consumed. 
+Of the 93.6 quads used, only 32.1 quads became useful energy 
+services; the remaining 61.5 quads was rejected, mainly as 
+waste heat. Converting: 61.5 quads × 1.05505 EJ/quad = ~64.9 
+EJ, or equivalently ~18,020 TWh.
+11	 Oh, H., Beckers, K.F. & McCabe, K. (2023). Geospatial 
+Characterization of Low-Temperature Heating and Cooling 
+Demand in the United States. Renewable and Sustainable 
+Energy Reviews. 206. Accessed 12 June 2026.
+12	 Firth, A., Zhang, B. and Yang, A. (2019). Quantiﬁcation of global 
+waste heat and its environmental eﬀects. Applied Energy, 235, 
+1314–1334.
+ 13	 Eurostat (2023). Heating and cooling from renewables gradually 
+increasing. Published 3 February 2023. Accessed 12 June 2026.
+ 14	 Eurostat (2023). Fossil fuels stabilised at 70% of energy use in 
+2021. Published 30 January 2023. Accessed 12 June 2026.
+15	 McKinsey Sustainability (2023). Unlocking the potential of 
+waste heat recovery. Published 30 November 2023. Accessed 12 
+June 2026.
+16	 European Union (2023). Directive 2023/2413. Renewable 
+Energy Directive (also known as “RED III”). Published 18 October 
+2023. Accessed 14 May 2026.
+17	 Bruegel (2022). European natural gas imports. Last updated 3 
+June 2026. Accessed 12 June 2026.
+18	 European Commission (2025). REPowerEU 3 years on: 
+Commission takes stock of progress to phase out Russian fossil 
+fuels. Published 16 May 2025. Accessed 29 May 2026. 
+19	 European Council (2026). Where does the EU's gas come from? 
+Last reviewed 13 April 2026. Accessed 12 June 2026.
+20	 Papapetrou, M. et al. (2018). Industrial Waste Heat: Estimation 
+of the Technically Available Resource in the EU Per Industrial 
+Sector, Temperature Level and Country. Applied Thermal 
+Engineering, 138, 207–216. 
+21	 IEA (2025). Energy & AI. Published April 2025. Accessed 11 June 
+2025.
+22	 Mark Spurr (2025). District energy systems are the key to 
+recovering data center waste heat. International District Energy 
+Association. Accessed 30 April 2026. 
+23	 Mark Spurr (2025). District energy systems are the key to 
+recovering data center waste heat. International District Energy 
+Association. Accessed 30 April 2026.
+24	 European Commission (2025). Energy Eﬃciency Directive. 
+Accessed 22 April 2026.
+25	 Danfoss (2026). How HPE and Danfoss collaborated to build 
+Denmark’s most advanced energy-eﬃcient AI supercomputer. 
+Published 13 May 2026. Accessed 20 May 2026. 
+26	 According to the revised Renewable Energy Directive, waste 
+heat can be accounted as a share of renewable energy if it is 
+unavoidable and stems from renewable energy. (European 
+Union (2023). Directive (EU) 2023/2413 of the European 
+Parliament and of the Council of 18 October 2023 amending 
+Directive (EU) 2018/2001, Regulation (EU) 2018/1999 and 
+Directive 98/70/EC as regards the promotion of energy from 
+renewable sources, and repealing Council Directive (EU) 
+2015/652. See: http://data.europa.eu/eli/dir/2023/2413/oj)
+27	 Ember (2025). Grids for data centres: ambitious grid planning 
+can win Europe’s AI race. Chapter 1: Grids for data centres. 
+Published 19 June 2025. Accessed 01 December 2025. 
+28	 Open Compute Project (2025). Reference Designs for Data 
+Center Heat Reuse. Revision 1.0. Last updated 03 March 2025. 
+p. 38.
+29	 IEA (2025). Energy & AI. Published April 2025. Accessed 11 
+June 2025.
+30	 IRENA (2023). Innovation landscape for smart electriﬁcation; 
+Decarbonising end-use sectors with renewable power. 
+Accessed 30 April, 2026. 
+31	 IEA (n.d.). District Heating. Accessed 31 January 2025.
+32	 IEA (2025). Energy & AI. Published April 2025. Accessed 11 
+June 2025.
+33	 IEA (2024). Empowering Urban Energy Transitions. Published 2 
+May 2024. Accessed 12 June 2026.
+34	 Magni, M. et al. (2025). Global energy consumption of water 
+treatment technologies. Water Research, 277(1), 1–12.
+35	 Shecco & Environmental Investigation Agency (2018). 
+Technical report on energy eﬃciency in HFC-free supermarket 
+refrigeration. Accessed 31 March 2026.
+36	 Alonso, C.R. (2025). Net zero cities: Waste heat recovery in 
+district heating networks. Accessed 30 April, 2026. 
+37	 Bianchi, G., et al (2019). Estimating the Waste Heat Recovery in 
+the European Union Industry. Energy, Ecology and Environment, 
+4(5), 211–221.
+38	 Bianchi, G., et al (2019). Estimating the Waste Heat Recovery in 
+the European Union Industry. Energy, Ecology and Environment, 
+4(5), 211–221.
+39	 Bianchi, G., et al (2019). Estimating the Waste Heat Recovery in 
+the European Union Industry. Energy, Ecology and Environment, 
+4(5), 211–221. Germany accounts for over 20% of the EU's 
+theoretical industrial waste heat recovery potential yet, as 
+documented across the literature reviewed therein, recovery 
+rates remain marginal relative to the available resource. See 
+also: Brückner, S. et al (2015). Industrial Waste Heat Recovery 
+Technologies: An Economic Analysis of Heat Transformation 
+Technologies for SMEs. Applied Energy, 15, 157–167. 
+40	 Two primary datasets were used: (1) Bundesamt für Wirtschaft 
+und Ausfuhrkontrolle (BAFA). Plattform für Abwärme, 
+established pursuant to § 17, Energieeﬃzienzgesetz (EnEfG) 
+of 13 November 2023, BGBl. 2023 I Nr. 309. (2) Droste, K.A., et 
+al. (2026). A methodological framework for identifying District 
+Heating Networks in Germany by utilizing the census data. 
+Smart Energy, 21. Dataset available at: https://github.com/
+RWTH-EBC/AixDHN. 
+41	 The 500°C upper threshold reﬂects the practical ceiling 
+for waste heat that can be meaningfully downgraded for 
+district heating integration, consistent with temperature 
+classiﬁcations in Bianchi, G. et al. (2019) and Papapetrou, M. et 
+al. (2018). See sources above. 
+42	 Bianchi, G., et al (2019). Estimating the Waste Heat Recovery in 
+the European Union Industry. Energy, Ecology and Environment, 
+4(5), 211–221.
+43	 Brückner, S. et al (2015). Industrial Waste Heat Recovery 
+Technologies: An Economic Analysis of Heat Transformation 
+Technologies for SMEs. Applied Energy, 15, 157–167. 
+44	 Bundesministerium der Justiz und für Verbraucherschutz. 
+Gesetz für die Wärmeplanung und zur Dekarbonisierung 
+der Wärmenetze (Wärmeplanungsgesetz – WPG). Issued 20 
+December 2023. In force 1 January 2024. 
+45	 Hintemann, R., and Hinterholzer, S. (2025). Rechenzentren 
+in Deutschland: Aktuelle Marktentwicklungen – Update 2025. 
+Borderstep Institut für Innovation und Nachhaltigkeit, 
+commissioned by Bitkom e.V., November 2025. https://www.
+bitkom.org/sites/main/ﬁles/2025-11/bitkom-praesentation-
+rechenzentren-2025.pdf. The reporting scope under EnEfG 
+covers data centres with a non-redundant rated power of 300 
+kW or above; see: Energieeﬃzienzgesetz (EnEfG), § 11–13, BGBl. 
+2023 I Nr. 309. https://www.bundeswirtschaftsministerium.
+de/Redaktion/EN/Pressemitteilungen/2023/09/20230921-
+bundestag-adopts-energy-eﬃciency-act-a-clear-legal-
+framework-for-energy-eﬃciency.html.
+46	 Bundesministerium der Justiz und für Verbraucherschutz. 
+Gesetz für die Wärmeplanung und zur Dekarbonisierung 
+der Wärmenetze (Wärmeplanungsgesetz – WPG). 
+Issued 20 December 2023. In force 1 January 2024. 
+Wärmeplanungsgesetz (WPG), § 29 Abs. 1, BGBl. 2023 I Nr. 394. 
+The 80% milestone applies from 1 January 2040. 
+47	 IEA (2022). Renewables 2022: Renewable Heat. "Heating is 
+the world's largest energy end use, accounting for almost half 
+of global ﬁnal energy consumption […] The heating sector 
+is largely dominated by fossil fuels, with renewable energy 
+sources meeting less than one-quarter of global heat demand 
+in 2021." Accessed 12 June 2026.
+Waste heat > References
+Waste heat > References
+26/28
+27/28
+
+
+--- page 15 ---
+Please ﬁnd a digital version 
+of this paper at danfoss.com/reports-and-analysis
+What is Danfoss Impact?
+Danfoss Impact is written to share our view on the potential of energy
+eﬃciency and electriﬁcation to transform our energy system. In the dialogue
+about the green transition, energy eﬃciency is often overlooked. One main
+reason for this is that experts and industrial leaders have inadequately
+explained its role in accelerating electriﬁcation to enable a future powered
+by renewables.
+Drawing on evidence from credible sources, Danfoss Impact presents cases
+from a broad range of industries, highlighting solutions with great potential
+to save energy and reduce emissions in a cost-eﬃcient and scalable manner.
+With this series, we also aim to demonstrate that the technologies we need for
+a rapid and sustainable green transition already exist today.
+The greenest energy is the energy we don’t use.

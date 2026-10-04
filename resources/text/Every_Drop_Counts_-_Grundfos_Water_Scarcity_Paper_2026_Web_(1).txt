@@ -1,0 +1,1304 @@
+SOURCE: Source Documentation\White Papers\Every Drop Counts - Grundfos Water Scarcity Paper_2026_Web (1).pdf
+
+
+--- page 1 ---
+Every Drop Counts: 
+How Efficiency Becomes Supply 
+Policy conditions to scale proven technologies
+and secure water across America 
+
+
+--- page 2 ---
+Table of contents
+Executive Summary	
+	
+	
+	
+  1
+The true value of water		
+	
+	
+  2
+Savings built into the home	 	
+	
+  4
+More food from less water	
+	
+	
+  6
+Water as an industrial asset	 	
+	
+  8
+The water utilities already own 	
+	
+ 12
+Who holds the lever 	
+	
+	
+	
+ 14
+The decision ahead	
+	
+	
+	
+ 18
+Technical Annex	 	
+	
+	
+	
+20
+References	 	
+	
+	
+	
+	
+22
+Water 
+has no 
+substitute.
+“
+It sits behind every factory, every harvest, every 
+community, and every digital service we rely on. 
+Yet we continue to underestimate its value until 
+it becomes scarce. Solving water scarcity requires 
+a different mindset, one that treats every drop as 
+a resource to be protected, reused and managed 
+intelligently. The technologies are available today. 
+Our opportunity is to make them the standard 
+rather than the exception.”
+Inge Delobelle
+CEO, Grundfos Industry division
+
+
+--- page 3 ---
+Executive Summary
+Faced with shortage, the instinct is to look for new supply 
+in reservoirs, pipelines, desalination, and deeper wells. 
+While each has a role, new sources are expensive and take 
+years to bring online. The faster response requires no new 
+source at all — doing more with the water we already have. 
+The supply already moving through the nation’s homes, 
+farms, factories, and pipes is not being used as efficiently as 
+it could be, with much of it lost along the way or only used 
+once when it could safely be used again and again. 
+And that supply is substantial. American households lose 
+nearly 900 billion gallons a year to leaks, plus the treated 
+water sent down the drain while a tap warms. On farms, 
+irrigation delivered on a fixed schedule rather than to 
+actual crop need draws more water than necessary from 
+stressed aquifers. In industry, most water is used once and 
+discharged, though much of it leaves a facility still clean 
+enough for another round. And utilities lose nearly one in 
+five gallons of treated drinking water before it reaches a 
+customer — close to 7 billion gallons a day, already drawn 
+from a stressed supply, already cleaned, already paid for. 
+Seen together, that is one of the largest untapped water 
+sources in the country. 
+Efficiency is how that source gets tapped, and the tools 
+to do so already exist. Smart recirculation builds water 
+and energy savings into homes for the life of the building. 
+Precision irrigation grows more crops from every gallon. 
+Industrial facilities that measure, reduce, reuse, and reclaim 
+can cut freshwater intake by 75 to 90 percent. Pressure 
+management recovers drinking water now leaking from 
+utility networks, before it is ever lost. And water reuse turns 
+a single supply into several. Every one of these is proven, 
+and every one is operating somewhere in America today.  
+The gap is not invention. It is deployment — the standards, 
+funding, incentives, and accountability that carry a working 
+approach from early adopters to common practice. That is 
+the work of policy, and each level of government holds a 
+lever the others do not. 
+The recommendations that follow are organized by who 
+holds those levers. For federal leaders: national water-
+loss reporting standards, infrastructure funding aimed 
+at recoverable water, and the bipartisan Advancing 
+Water Reuse Act. For states: transparent loss accounting, 
+clear frameworks for water reuse, and groundwater 
+management through the model that fits — paths that are 
+already proven in states as different as California, Georgia, 
+Arizona, and Kansas. For local governments and utilities: 
+pressure management that is funded ahead of new supply, 
+and development that is built to be reuse-ready from the 
+start. And for industry: water managed as a business asset, 
+with water and energy addressed as one system.  
+The choices over the next few years will decide whether 
+these solutions remain scattered examples or become 
+how the country manages water as a matter of course. The 
+technology is doing its part. What remains is the decision 
+to make proven practice the standard rather than the 
+exception. 
+Water is the one resource with no substitute, and the country has long planned, priced, 
+and governed it as though supply were endless. Roughly 60 percent of U.S. land and half 
+the population face medium-to-high water stress in a typical year, and demand keeps 
+climbing — from population growth across the Sun Belt and Mountain West, and from a 
+wave of new industrial load landing on the systems least able to absorb it. 
+1
+
+
+--- page 4 ---
+0
+The true value of water 
+Water is the one resource with no 
+substitute. It underpins every part of 
+our lives, our society, and our economy, 
+from the food we grow to the energy we 
+generate, the goods we manufacture, and 
+the communities we build. Without it, 
+none of the rest is possible. Yet we have 
+long treated water as an endless supply, 
+always on, effectively free, and rarely 
+counted until it runs short. By almost any 
+measure, it remains undervalued and 
+under-prioritized in how we plan, govern, 
+and invest. 
+ 
+That value is easy to miss because so much of it stays 
+hidden. It takes water to grow the coffee in a morning cup, 
+the cotton in a favorite t-shirt, and the grain, patty, and 
+toppings inside a hamburger. Every grocery receipt carries 
+that embedded cost, even when water isn’t listed as a line 
+item. Water keeps the lights on, because the power plants 
+generating our electricity need it to run. It keeps digital life 
+going, because the data centers behind online services rely 
+on water to stay cool. 
+ 
+Roughly 60 percent of U.S. land and half the population 
+face medium-to-high water stress in a typical year.1 The 
+Colorado River, which supports 40 million people and more 
+than $1.4 trillion in annual economic activity, is committed 
+to deliver more water than it reliably carries, and now 
+sits near a third of its total storage capacity.2,3 Beneath 
+the Great Plains, the Ogallala Aquifer supplies roughly 
+30 percent of the nation’s irrigation groundwater and is 
+being drawn down faster than rainfall can refill it.4 And 
+these already strained resources are further depleted when 
+they’re run through the aging pipes beneath American 
+cities, which lose billions of gallons of treated drinking 
+water every day, before it ever reaches a tap.5 
+ 
+And while supply is shrinking, demand keeps climbing, 
+pushed by growing populations, urbanization, and rising 
+consumption across the Sun Belt and Mountain West, 
+and by a wave of new industrial demand landing on the 
+water systems least able to absorb it. Climate change is 
+intensifying these challenges, compounding the stress 
+on resources and systems that were planned, priced, and 
+governed in an era when water seemed limitless. 
+Faced with shortage, the instinct is to look for new 
+supplies; construct and maintain reservoirs, expand and 
+extend pipelines, scale up desalination, and dig deeper 
+wells. While these options each have a role to play, new 
+sources can be large, expensive, and take years to bring 
+online. And in their own way they leave one of the biggest 
+opportunities untouched — doing more with the water we 
+already have. It’s one of the fastest responses to scarcity, 
+and it doesn’t rely on breakthroughs yet to come. The 
+technologies and practices that stretch existing supplies 
+are proven, not experimental, and where in use they deliver 
+measurable results. 
+The premise of our assessment is that water moving 
+through our homes, farms, factories and pipes can be 
+used far more efficiently than it is today, and the tools to 
+make it happen are at our fingertips. Among the most 
+powerful of those is one of the simplest ideas in water 
+management — using the same water more than once. 
+For more than a century, American water systems were 
+designed to be linear. Water is drawn, treated, used once, 
+and sent downstream. Rather than that being the end of 
+the story, much of this water can safely be used again. As 
+a solution, water reuse works at nearly every scale — on 
+farms, in factories, across cities, and towns. In fact, many 
+communities and industries already practice a version of it, 
+so planned reuse formalizes and improves on something 
+already happening around us. 
+ 
+So, the opportunity is to do more with the water we already 
+have in hand. The challenge is that, while the solutions to 
+do this exist, they have not yet been broadly adopted into 
+practice. The gap, and focus of this paper, is deployment 
+— and closing it comes down to priorities, financing, and 
+incentives. Creating the necessary conditions for these 
+solutions to scale at speed rests on setting the right 
+policies. 
+ 
+Every solution in the pages that follow is already working 
+somewhere in America, delivering more water, lower costs, 
+and stronger communities. Scarcity is a solvable problem. 
+2
+
+
+--- page 5 ---
+The Colorado River at a glance:
+3
+40
+$1.4
+1/3
+million people 
+rely on it for 
+water
+trillion in annual 
+economic activity 
+depends on it
+of total reservoir 
+capacity remains
+
+
+--- page 6 ---
+0
+4
+Savings built into the home
+The place to start is the most familiar one. In tens of millions of American homes, an 
+opportunity awaits to prevent water loss that most of us never think about. To get 
+hot water, a tap or shower often runs until the water warms, sending clean, treated, 
+pressurized drinking water down the drain before it is ever used. Research indicates that 
+roughly 30 percent of shower water is lost this way, along with up to 40 percent of the 
+energy used to heat it.6 And the warm-up wait is only the most visible of a home’s hidden 
+losses. Household leaks, through running toilets, dripping faucets, overwatered yards, 
+and hidden pipe failures, result in a loss of nearly 900 billion gallons nationally each 
+year.7 Together, it adds up to billions of gallons a year that never do any work at all.
+No one designed homes to do this, and individuals can’t 
+fix it by simply watching the faucet or hunting for drips. 
+The solution isn’t asking people to change their habits, it’s 
+building the savings into a home the same way the waste 
+was. Behavior-dependent conservation, like remembering 
+to take shorter showers, is hard to sustain and easy to 
+forget. Conservation embedded in the infrastructure 
+works whether anyone thinks about it or not. 
+Leak detection that catches silent losses, high-efficiency 
+fixtures, and smart irrigation that responds to a yard’s 
+actual needs all conserve water in the background, 
+without a homeowner having to do a thing.  
+Hot water recirculation is one such solution, and one 
+that holds great promise. A recirculation pump keeps hot 
+water moving gently through a home’s pipes so that it 
+is already there when someone opens a tap, eliminating 
+both the wait and the waste. Modern systems use sensors 
+and intelligent controls that follow a household’s real 
+patterns, so the home itself becomes a smart water 
+infrastructure, with the savings locked in for the life of the 
+building. 
+ 
+The technology is proven. Since 2017, roughly 60,000 
+new homes across Georgia have been built with smart 
+recirculation installed, saving an estimated 180 to 720 
+million gallons a year.10 And there is a larger opportunity 
+in homes that already exist, where roughly nine in ten still 
+have no system to eliminate the wait.8 Every renovation, 
+water heater replacement, and repipe that passes without 
+one is a missed chance to lock in decades of savings.8 
+The fastest path to millions of water-smart homes 
+runs through policymakers rather than homeowners. 
+Building codes and efficiency standards can make smart 
+recirculation and leak detection the default in new 
+construction. Utility and state rebate programs can reach 
+the retrofit market at exactly the right moment, as homes 
+come up for renovation and water heater replacement. 
+And federal efficiency incentives, built around energy, 
+can be extended to the technologies that save water 
+and energy together. Legislators and regulators who 
+pull these levers lock in savings that compound for the 
+life of every building they touch, without asking a single 
+person to change a habit. That is the opportunity in the 
+nation’s homes, conservation that lasts as long as the 
+buildings themselves, scaled not by persuading millions 
+of homeowners but by the standards and incentives that 
+make efficiency the default.
+in the home can make a meaningful 
+difference to how we use water.
+Hot water recirculation is one example. It 
+reduces the clean water lost while people 
+wait for hot water and can save up to 
+8,000 gallons of water per year in a single 
+household. If we are serious about water 
+resilience, solutions like this should be more 
+widely adopted.”
+Morten Bach Jensen
+CEO, Grundfos Domestic Building
+Services division
+Small, proven 
+technologies
+“
+
+
+--- page 7 ---
+5
+660,000 gallons per pool × 2.4 million pools ≈ 1.6 trillion gallons.
+2.4 million
+Olympic-sized swimming pools 
+of water are wasted every year 
+waiting for hot water. 
+That could supply
+50 million
+Americans for a year.
+Treating and delivering water that 
+never gets used consumes 745 million 
+to 2.76 billion kilowatt-hours every year, 
+enough to power up to 260,000 homes.8 
+The Natural Resources Defense Council 
+estimates that improved plumbing codes 
+alone could cut the waste of hot water, 
+and the energy that heats it, in new 
+homes by 15 to 30%.9
+The waste 
+shows up 
+twice:
+
+
+--- page 8 ---
+0
+6
+More food from less water 
+And it is getting harder. In late 2025, more than 65 percent 
+of the Western United States was in drought, with 14 
+percent classified as extreme.13 In California’s Central 
+Valley, groundwater has been drawn down so far that 
+the land itself has subsided in some areas, damaging 
+the wells farmers rely on.14 While in the Great Plains, the 
+Ogallala is being drawn down faster than it can be refilled, 
+and unlike California, there is little new supply to develop. 
+Rising temperatures compound the strain in both regions, 
+pulling more moisture from the soil so that the same 
+harvest demands more water than it once did. 
+ 
+Yet the outlook is far from set in stone, and solutions to 
+these significant challenges are already being deployed. 
+Water planners broadly agree that the Ogallala can 
+support the region’s farm economy for decades to come, 
+provided withdrawals keep declining. Our focus, therefore, 
+must be continuing to leverage technologies that reduce 
+waste, increase efficiency, and maximize reuse. American 
+farmers across both regions are already showing they 
+can grow more with less. In California, on-farm efficiency 
+investments have cut agricultural water use by more 
+than 14 percent since 1980 even as food production rose 
+38 percent.12 Across the Plains, growers are adopting 
+regenerative and soil-health practices that hold moisture 
+in the ground, and matching crop choices to the water 
+actually available.15 
+Precision irrigation is at the leading edge of these shifts. 
+Rather than watering on a fixed schedule, it delivers 
+water according to real-time readings of soil moisture, 
+crop need, and weather, so each field gets what it requires 
+and little more. The logic mirrors the recirculation loop 
+in a home, building the efficiency into the system itself. 
+Field trials consistently show 20 to 40 percent less water 
+used than conventional irrigation, and the lower-pressure 
+systems that deliver it also trim pumping costs by 15 to 
+20 percent, savings that matter where energy is one of 
+farming’s largest expenses.16 
+ 
+And precision irrigation is just one tool in a wider kit. 
+Pressure management and smart, variable-speed 
+pumping cut the water and energy lost in moving 
+it. Managed aquifer recharge takes excess water 
+that accumulated during a wet-year and reserves it 
+underground for use during dry years. Non-potable water 
+reuse takes treated water from nearby municipalities and 
+reroutes it to fields. And beyond the fields, groundwater 
+accounting, conveyance upgrades, and locally led 
+governance help conserve water at the scale of the basin, 
+turning scattered savings into water the whole region can 
+count on. 
+Conservation at home adds up across 
+millions of households, but the 
+largest share of the nation’s water 
+never reaches a home at all. It goes to 
+agriculture, the largest consumer of 
+water in the United States, and a pillar 
+of the food supply for the nation and 
+much of the world.11
+California alone produces close to half 
+of the country’s vegetables and more 
+than three-quarters of its fruits and 
+nuts, grown in a state where farms 
+account for roughly 80 percent of 
+human water use.12
+Across the Great Plains, the Ogallala 
+Aquifer sustains about a fifth of the 
+nation’s wheat, corn, cotton, and 
+cattle.4 What lands on dinner tables 
+from coast to coast depends on water 
+in exactly the regions where it is 
+getting harder to find. 
+
+
+--- page 9 ---
+7
+With agriculture using the majority of the nation’s water, 
+the efficiency of its fields is one of the largest levers for 
+easing pressure on every other user of the same strained 
+supply. And the payoff reaches well beyond the farm. 
+When growers can hold full yields through dry years on 
+less water, the food system stabilizes and the cost of 
+feeding a family stays within reach.  
+ 
+What stands between most growers and these tools 
+is often capital, and the policy conditions around it. A 
+precision system or a well retrofit is a major investment 
+for a farm operating on thin margins, and it pencils out 
+fastest where public programs share the cost, the way 
+A phased reuse program is on track 
+to irrigate cropland with treated 
+effluent water that once came from 
+aquifer pumping, while simultaneously 
+recharging groundwater at the nearby 
+Sandsage Bison Range.17 
+Precision irrigation 
+at a glance:
+Garden City, 
+Kansas: 
+federal and state conservation programs already do for 
+soil. Policymakers hold the key to other solutions too. 
+ 
+They fund and permit the recharge projects that bank 
+wet-year water, they connect towns and farms through 
+recycled water infrastructure, and they back the locally led 
+groundwater compacts, like those Kansas has pioneered, 
+that let farming communities set their own path to a 
+stable aquifer. None of this asks agriculture to grow less. 
+It equips the people who feed the country to keep doing it 
+on the water that remains. 
+20-40%
+less water used than 
+conventional irrigation
+15-20%
+lower pumping costs with 
+low-pressure systems
+
+
+--- page 10 ---
+0
+8
+Water as an industrial asset 
+Water as an economic issue 
+For industry, water is not just a sustainability issue, it’s 
+an economic one, and the actual water bill is the smallest 
+part of it. Water carries the cost of the energy that heats, 
+cools, and moves it, the chemicals that treat it, and the 
+risk that in a stressed region, supply is curtailed and 
+production stops. Where factories, power plants, and data 
+centers are converging in fast-growing, water-stressed 
+regions, efficiency is what keeps a facility running and 
+competitive. The companies that are leading the way 
+increasingly manage water the way they learned to 
+manage energy a generation ago, as a strategic resource 
+to be measured, valued, and optimized rather than simply 
+purchased. The scale of that shift shows in the spending. 
+Industrial water-management investment in the U.S. and 
+Canada is projected to grow from $48.4 billion in 2024 to 
+$62 billion by 2030.20 
+ 
+Measure, then manage 
+On the plant floor, efficient water management follows 
+a consistent sequence. Measure first, then reduce, then 
+reuse, then reclaim. Measurement leads because a 
+facility cannot manage what it has never counted. The 
+foundational tool is a water balance, a full accounting of 
+the water entering a site, where it flows through every 
+process, and where it leaves, losses included.21 Most 
+facilities that build one find water they did not know 
+they were using, and with a baseline in hand, every 
+improvement can be verified. 
+ 
+Reduction is where some of the fastest gains live, and few 
+industries demonstrate it better than food and beverage. 
+In a modern plant, cleaning and sanitation account for 
+50 to 70 percent of water use, and that is where the tools 
+have greatly improved.19 Intelligent dosing pumps now 
+meter cleaning chemicals to exactly what each cycle 
+needs, instead of flooding equipment with water and 
+chemicals to be safe. Variable-speed pumping delivers the 
+precise pressure and flow each cleaning cycle requires, 
+matching water movement to actual demand. Real-time 
+monitoring tracks consumption across a facility and finds 
+the losses a monthly bill hides. And the same toolkit 
+serves dairies, bottlers, breweries, meatpackers, and snack 
+producers alike.1 Some leading breweries have even cut 
+their water-to-product ratios from 10 to 1 down to 3 to 1 or 
+better, with no drop in output.22 
+ 
+Reuse rests on a simple principle — matching water 
+quality to the task. Not every job needs drinking-quality 
+water, and much of what a facility has already used is 
+still clean enough for another round. The final rinse of 
+one cleaning cycle becomes the first rinse of the next. 
+Condensate recovered from evaporators and steam 
+systems returns as boiler feed or cooling makeup. Cooling 
+loops recirculate instead of discharging. Sensors route 
+each stream wherever its quality allows, all of it caught 
+before it becomes wastewater. 
+ 
+Reclamation closes the loop, recovering the water set to 
+leave a facility. Through onsite treatment and membrane 
+filtration, wastewater that once departed as discharge can 
+be treated back to whatever quality its next use demands 
+and no further. This is called fit-for-purpose, and it’s the 
+discipline that keeps reclamation affordable. Run end to 
+end, the full measure, reduce, reuse, reclaim sequence can 
+lower a facility’s freshwater intake by 75 to 90 percent.1 
+ 
+Food may be the most visible of water’s products, but almost everything the economy 
+produces carries a hidden water cost. It is embedded in a microchip and a dose of 
+medicine, a cold drink and a prepared meal, even a single online search. In the power 
+sector alone, cooling the nation’s thermoelectric plants accounts for roughly 40 percent 
+of all U.S. water withdrawals.18 Factories and industrial facilities draw roughly another 
+five percent on their own, plus a sizable share of the water that city systems deliver.19 
+These industries, resources, services, and technologies power our lives and lead to 
+innovation, education, comfort, and a broader future for people in America and around 
+the world. To ensure that growing demand across so many sectors remains in balance 
+with the resources called upon, efficiency and reuse must remain front and center in the 
+water toolkit.  
+
+
+--- page 11 ---
+9
+Intel, Chandler, Arizona:
+Water reuse is what has allowed Intel to keep 
+growing in the desert Southwest, where scarcity is a 
+real barrier to development. 
+98%
+of the campus’s water is 
+recovered for reuse.
+9,000
+jobs have been created 
+across Intel’s Chandler-area 
+campuses.1
+5 billion
+5 billion gallons of water 
+have been saved since onsite 
+treatment began in the late 90s.
+
+
+--- page 12 ---
+0
+10
+Water as an industrial asset 
+Beyond the fence 
+The recycling loop does not have to stop at a property line. 
+In a growing number of cities, utilities treat municipal 
+wastewater to the quality a factory needs and pipe it 
+directly to the plant. These partnerships work in both 
+directions. Industry gains a supply that is drought-
+resistant and price-stable, and the community keeps its 
+drinking water for people while gaining a paying partner 
+for its treatment infrastructure. Projects like these, 
+underway from Virginia to Ohio to Washington State, 
+are among the fastest-spreading forms of reuse in the 
+country.23  
+Where water meets energy 
+Running through every one of these systems is water’s 
+partner, energy. It takes energy to pump, treat, and move 
+water, and water to generate most electricity, roughly 
+12,000 gallons per megawatt-hour through the nation’s 
+power plants.24 The two are so bound together that 
+efficiency in one directly impacts the other, and often 
+inversely — something known as the water-energy nexus. 
+For example, a cooling system that uses no water often 
+uses more energy, which shifts a facility’s water draw to 
+the power plant. The right choice must weigh both energy 
+and water use against local conditions, and managing the 
+two together as one system is where some of the largest 
+industrial water gains can be found. 
+ 
+Few industries illustrate the water-energy nexus better 
+than data centers. They are essential infrastructure for the 
+digital economy, and a significant portion of the water 
+they use goes to a single purpose — keeping densely 
+packed servers cool. Their direct draw is less than one 
+percent of the nation’s water, but the larger share of their 
+footprint arrives indirectly, through the electricity they 
+consume.25 The sector is growing fastest in some of the 
+driest parts of the country, turning water-smart design 
+from a virtue into a requirement. 
+Beyond the fence — Wichita, Kansas: 
+A public-private pipeline carries treated municipal wastewater directly to the Boeing 
+manufacturing campus, freeing drinking-quality water for the community.17
+
+
+--- page 13 ---
+11
+Across the sector, water is increasingly managed like the 
+strategic input it is, measured, minimized, and reused. In 
+data centers, closed-loop liquid cooling recirculates the 
+same water rather than evaporating it away, and many 
+of the largest campuses are now being specified this way 
+from the outset, with several expecting to use almost no 
+water once filled. Where evaporative cooling still suits the 
+climate, a growing share of facilities run their systems 
+on reclaimed water rather than drinking water, with 
+intelligent pumps matching flow to the actual heat load. 
+Many operators have gone even further, making water-
+positive commitments and investing nearly $800 million in 
+water project partnerships with utilities.27 
+ A factory, a refinery, or a server farm draws on the same 
+water and power as the community around it, which gives 
+policymakers a direct stake in how efficiently industry 
+Read more
+about data centers and water use in
+Building America’s Digital Economy
+Same size, very different footprint
+operates. The tools in this section spread fastest where 
+policy invites them, through permitting that rewards 
+water-smart design, reporting that makes use visible, and 
+utilities empowered to partner on reuse. As industrial 
+growth pushes into the driest parts of the country, water, 
+not land or labor, is increasingly what decides whether a 
+region can say yes to new investment. The leaders who 
+set these conditions now will shape which communities 
+capture the next generation of American industry, without 
+straining the supplies their residents depend on. 
+An evaporatively cooled facility can use
+18,000 to 550,000
+gallons a day, 
+A closed-loop facility of comparable scale 
+uses almost no water after its initial fill, 
+demonstrating the importance of cooling 
+system design.26
+the daily water use of roughly
+60 to 1,800
+U.S. households. 
+
+
+--- page 14 ---
+0
+12
+The water utilities already own 
+Behind every home, farm, and factory runs a network 
+most Americans never picture, more than 2.2 million miles 
+of pipes, pumps, and treatment plants moving finished 
+water from source to tap. When it works, it is invisible. 
+The challenge is that much of the country’s water pipes 
+date to the decades after World War II, and they are simply 
+wearing out. Utilities and operators work every day to 
+maintain, repair and upgrade their local systems, but 
+the challenge is enormous. The American Society of Civil 
+Engineers grades the nation’s drinking water infrastructure 
+a C-minus, with more than $625 billion in investment 
+needed over the next two decades to keep it running.28 
+Aging infrastructure is not only a maintenance problem, 
+it is a scarcity problem hiding in plain sight. Nearly one 
+in five gallons of treated drinking water is lost before it 
+ever reaches a customer, leaking out of cracked mains and 
+failing joints across the system.5 Utilities have a name for 
+it, non-revenue water, water produced and paid for but 
+never billed. It amounts to billions of gallons of water 
+already pulled from a stressed supply, already cleaned, 
+already pressurized, already paid for, and then lost before 
+anyone can use it. Seen from a different angle — the utility 
+network is one of the largest untapped sources of water in 
+the country. Every gallon recovered from a leak is a gallon 
+that needs no new reservoir, no new pipeline, and no 
+new well, available immediately and in exactly the places 
+already under strain. 
+7 billion
+gallons of treated drinking water leak 
+away every day before reaching a tap. 
+Across intelligent
+pressure management 
+projects delivered since 2014, utilities 
+have cut on average30:
+It is a resource that is already here, ready to use. 
+The tools to recover this water exist and are proven. Among 
+the most powerful is pressure management, adjusting 
+the pressure across a network in real time to match what 
+the system actually needs instead of holding it at a fixed 
+set point around the clock. Most systems hold that set 
+point higher than they need to, because too little pressure 
+brings complaints from customers, but too much pressure 
+shows up years later as a burst main. Smart controllers and 
+leakage by
+15%
+energy use by
+25%
+pipe bursts by
+35%
+remote sensors read conditions at critical points and ease 
+pressure wherever demand does not require it. The physics 
+work in the utility’s favor twice over. Water escapes existing 
+leaks faster under higher pressure, and excess pressure 
+drives the stress that cracks pipes, so easing it both slows 
+every current leak and prevents new ones. It’s what makes 
+pressure management one of the most effective tools a 
+utility has for reducing non-revenue water.29 
+Adoption of technologies like pressure management 
+remains uneven across nearly 48,000 community water 
+systems, and the gap begins with measurement. Many 
+utilities still lack validated data on their own losses, 
+which makes it hard to know where to invest or whether 
+a fix worked.5 Part of the reason is the lack of a national 
+standard for water-loss reporting, with some states 
+requiring audited loss reporting and many requiring 
+nothing at all. California offers one of the clearest models, 
+folding water-loss audits, pressure monitoring, and loss-
+reduction targets into its long-term reliability planning.32 
+That baseline of accountability is what makes progress 
+measurable, and building it nationwide is among the 
+highest-leverage steps available to policymakers. 
+Most people never think about the utility network until 
+it breaks. For the utilities and officials who run these 
+systems, recovering lost water is among the cheapest 
+supply they can find, water already paid for and treated, 
+captured before it leaks away. It also eases the steady 
+climb in water bills, up roughly 24 percent in five years, 
+that comes in part from charging customers for what is 
+lost before it reaches them.33 Fixing the network will not be 
+seen, but it will be felt, with its measure of success being a 
+system that goes back to being invisible.
+Rincon del Diablo Municipal Water 
+District, California:
+A pumping station serving Escondido had held a fixed 90 psi around the 
+clock. Adaptive controls now match pressure to real demand, bringing 
+critical points down from 65–70 psi to 50–56 psi, cutting the energy 
+needed to move each gallon by 60% and leakage by an estimated 10%. 
+The district has since extended the approach to a second zone.31
+
+
+--- page 15 ---
+13
+The next sources of supply 
+The solutions so far are proven 
+and ready today. But innovation 
+has not stopped, and newer 
+supplies and technologies are 
+steadily moving toward the 
+mainstream. 
+ 
+Rainwater harvesting lets a large commercial 
+building or campus capture runoff for irrigation and 
+cooling, easing demand on municipal supply and 
+on stormwater systems at the same time. Advanced 
+salinity management strips the dissolved salts that 
+have traditionally capped how many times recycled 
+water could cycle through a system.34 District heating 
+networks are beginning to recover the surplus heat 
+that moves through cooling loops and put it to work 
+elsewhere. Produced water, the fluid that surfaces 
+alongside oil, emerges in enormous volumes in the 
+same Western basins where freshwater is scarcest. 
+An estimated 2 to 4 billion barrels a year from the 
+Permian Basin alone could eventually be treated for 
+use beyond the oil field.35 
+ 
+These are just a few examples of many such 
+innovations in the pipeline, and each will be put 
+to work fastest where clear standards and science-
+based permitting already exist. And while we should 
+continue pushing what’s possible, the near-term 
+solutions don’t change — the fastest, cheapest supply 
+is the water already in hand, used more efficiently.
+
+
+--- page 16 ---
+0
+Who holds the lever 
+1 	 Establish minimum national standards for water 
+loss reporting. Congress should direct the EPA to 
+require annual water audits from community water 
+systems using the American Water Works Association’s 
+methodology, public reporting of non-revenue water, 
+and loss-control plans where losses exceed defined 
+thresholds. Utilities cannot fix what they have not 
+measured. 
+2	 Extend the Infrastructure Investment and Jobs Act and 
+aim it at recoverable water. The IIJA, set to expire in 
+September 2026, has been the most significant water 
+investment in a generation. Its successors, State Revolving 
+Funds and WaterSMART, should make non-revenue water 
+reduction explicitly eligible and prioritized, from pressure 
+management and district metering to leak detection and 
+validated audits. 
+3	 Advance the bipartisan Advancing Water Reuse Act and 
+fund the Water Reuse Action Plan 2.0. H.R. 2940 and 
+its Senate companion, S. 4506, would provide a 30% 
+investment tax credit for water reuse infrastructure.36 
+Paired with WRAP 2.0, which names industrial reuse, data 
+center cooling, and electricity generation as priorities, the 
+framework and the capital incentive would move reuse 
+from pilot to standard practice together.37 
+The technologies and practices that can solve America’s water challenges exist. What 
+is needed now are the conditions that allow them to scale at speed — the standards, 
+funding, incentives, and accountability that carry a proven approach from early adopters 
+to common practice. That is the work of policy. Each level of government holds levers the 
+others do not, and when they pull in the same direction, proven solutions spread. The 
+recommendations that follow span every sector covered in this paper, grouped by who 
+holds the lever. 
+4	 Make groundwater data and aquifer recharge federal 
+priorities. Expand USGS and Bureau of Reclamation 
+monitoring and basin mapping, and direct existing 
+infrastructure programs to support managed aquifer 
+recharge and groundwater banking. 
+5	 Extend home efficiency incentives to water-energy 
+savings. Water efficiency is energy efficiency. Federal 
+rebate programs should recognize technologies that 
+save both, including smart hot water recirculation and 
+leak detection. 
+6	 Support a next-generation water metric for data 
+centers. Water Usage Effectiveness (WUE) measures 
+only direct, on-site use, not the water embedded in 
+electricity or local watershed stress. Federal agencies 
+should convene industry to build on WUE with a 
+standardized, holistic metric, then tie data center 
+incentives to it. 
+Federal action 
+is the water we are already treating, pumping, and paying for, only to lose it before it reaches a customer. 
+As water stress grows, utilities that treat efficiency as a source of supply, through better measurement, 
+pressure management, and smarter operations, will be best positioned to meet future demand.”
+Hamed Heyhat
+CEO, Grundfos Water Utility division
+The most overlooked water 
+source in America
+“
+14
+
+
+--- page 17 ---
+15
+1 	 Make water loss transparent, and tie it to action. 
+The states leading on non-revenue water share one 
+principle, transparency, applied through different models. 
+California embeds enforceable loss standards in its long-
+term efficiency regulation. Georgia’s Water Stewardship 
+Act pairs annual audits, certified by qualified water-loss 
+auditors, with required loss-control programs and 
+demonstrated progress, a framework that has balanced 
+reporting with action for over a decade. States need not 
+copy either model, only the shared principle, that lost 
+water is measured, published, and managed. 
+2 	 Scale state water reuse regulations. Reuse today is 
+governed by a patchwork, with clear rules in some states 
+and silence in many, and fixing that is among the most 
+concrete steps available to states. States should adopt 
+health-based standards for onsite non-potable reuse 
+and permitting pathways for potable reuse, covering 
+treatment, monitoring, public engagement, and operator 
+certification. 
+3 	 Create rebates for built-in water efficiency. Fund rebates 
+for smart recirculation, leak detection, smart irrigation, 
+and efficient fixtures, prioritizing retrofits, and fold 
+demand-controlled recirculation into codes for new 
+homes. 
+4 	 Strengthen groundwater management through the 
+model that fits. Arizona’s Active Management Areas, 
+dating to 1980, California’s Sustainable Groundwater 
+Management Act (SGMA), and Kansas’s locally designed 
+Local Enhanced Management Areas are three workable 
+designs with one common thread, measurement, 
+reporting, and a sustainability obligation. States facing 
+depletion should adopt one, and all should streamline 
+permitting for aquifer recharge. 
+5 	 Bring data centers into state water planning. When Texas 
+agencies surveyed data centers on water and power use, 
+fewer than a third responded. Governor Abbott has since 
+called for legislation requiring water-efficient cooling and 
+usage reporting.39 States should follow that direction 
+regardless of party. 
+1 	 Manage water as continuity risk, not a compliance 
+exercise. The markers of leadership are consistent, 
+science-based targets covering water and energy 
+together, transparent reporting, and investment in the 
+measure-reduce-reuse-reclaim sequence. 
+2 	 Make ‘water-positive’ a standard practice in data 
+centers. The sector’s leaders have shown what is 
+achievable, through replenishment commitments, near-
+zero-water builds, and nearly $800 million invested in 
+utility partnerships. Rapid growth in stressed regions 
+creates an obligation to make these the norm. 
+1 	 Put recovered water first in capital planning. Intelligent 
+pressure management, district metering, and leak 
+detection should be the first tier of investment, before 
+more expensive supply-side projects, with validated 
+loss audits steering capital plans, rate cases, and bond 
+programs toward the highest-value recoverable water. 
+2 	 Make new development reuse-ready. Require major 
+developments, campuses, and data centers to submit 
+water budgets, condition approvals on non-potable 
+sourcing where available, and require water impact 
+assessments for new data centers. Communities that 
+set these expectations early shape growth instead of 
+absorbing it. 
+3 	 Bring rebates to the water-smart home. Utility rebate 
+programs for smart recirculation and leak detection, 
+offered where hot-water waste and losses are 
+documented, reach homeowners at the moment of 
+replacement and complement state incentives. 
+4 	 Plan groundwater locally, with the people who use 
+it. Maintain sustainability plans with monitoring and 
+public reporting, and partner directly with farmers to 
+expand recharge capabilities and irrigation efficiency. 
+State action 
+Local and 
+utility action
+Industry action 
+
+
+--- page 18 ---
+0
+16
+Potable reuse is not untested ground. 
+California has recycled water at scale for 
+three decades, and Arizona’s advanced 
+purification rules have Phoenix planning a 
+facility by 2029.
+In April 2026, Kansas joined them,
+enacting House Bill 2462 to establish 
+potable reuse regulations by mid-
+2028. The technology was ready, the 
+missing piece was a legal pathway, 
+and Kansas wrote one.38 
+The deployment gap, 
+closed in one bill:
+
+
+--- page 19 ---
+Federal
+State
+Local & utility
+Industry
+ Measure and 
+report
+National water-loss 
+reporting standards
+Certified audits 
+tied to loss-control 
+action
+Audits steer capital 
+plans and rates
+Transparent water + 
+energy reporting
+Fund and 
+incentivize
+Extend IIJA, pass 
+30% reuse tax 
+credit
+Efficiency rebates 
+and plumbing 
+codes
+Pressure 
+management first, 
+home rebates
+Invest in the 
+measure-to-reclaim 
+path
+Enable reuse
+Fund WRAP 2.0 
+programs
+Non-potable and 
+potable reuse 
+frameworks
+Reuse-ready 
+development rules
+Non-potable 
+sourcing, utility 
+partnerships
+Protect 
+groundwater
+Monitoring, 
+mapping, and 
+recharge funds
+Adopt AMA, SGMA, 
+or LEMA model
+Local plans, 
+farmer recharge 
+partnerships
+Water-positive 
+practices in stressed 
+basins
+17
+Who holds the lever 
+Every recommendation in this section already exists somewhere in America, as a working 
+statute, a funded program, or a proven project. The choices of the next few years will 
+decide whether they stay scattered examples or become how the country manages water 
+as a matter of course. The technology is doing its part. What remains is for policy to value 
+water accordingly, and to move at the speed the shortage demands. 
+
+
+--- page 20 ---
+0
+18
+The decision ahead
+The water America needs is not waiting to be discovered. 
+It is already moving through the country’s homes, fields, 
+factories, and pipes, and recovering it is the fastest new 
+water supply we have available to us. Though no two basins 
+will solve water scarcity the same way, there is one common 
+solution that can help us all stretch what we already have — 
+efficiency.  
+Using our existing supply more efficiently does not require 
+invention. The technologies work, many of the policy 
+models exist, and nearly all of them are already operating 
+somewhere in the country. What separates current practice 
+from proven practice is deployment, and deployment is 
+shared work. Federal, state, local, and industry leaders each 
+hold a lever the others do not, and getting proven practice to 
+scale at the speed the challenge demands will only happen if 
+those levers are pulled together. 
+Water stands behind the food on the table, the power in the 
+wires, and the digital life the country runs on — and there 
+is no substitute. What will save it is the decision to make 
+proven practice the standard rather than the exception. The 
+water is already here. What remains is to use it well. 
+America’s water 
+future will be secured 
+by valuing the water 
+we already have.
+“
+What matters is scaling existing 
+technologies, making every drop work 
+harder, while helping save precious 
+energy.
+Now we need the policy courage to 
+make efficiency the foundation for 
+smarter water management. With a 
+predictable regulatory framework, we 
+can solve this together.”
+Bent Jensen
+CEO, Grundfos Commercial Building 
+Services division
+
+
+--- page 21 ---
+A partner for the long run 
+Solving water scarcity will take partners that 
+understand water systems at every scale, 
+whose commercial interests run in the same 
+direction as the public interest, and that are 
+built to work on the timescale the challenges 
+demand.
+
+Grundfos is a global leader in advanced water 
+technology, with:
+• Solutions that deliver measurable results. 
+Grundfos solutions saved nearly 400 billion 
+gallons of water worldwide in 2024 alone, and 
+more than 2 trillion gallons since 2020. 
+• A manufacturing presence across America. 
+15 sites in 10 states, 1,600 U.S. employees, 
+and more than a million pumps produced 
+annually. 
+• Accountability to science. The first water 
+solutions company with a validated science-
+based net-zero target, committed across all 
+operations by 2050. 
+• Collective action on shared water. In 2026, 
+Grundfos became co-champion for the 
+Colorado River Basin within the Water 
+Resilience Coalition, a CEO-led group of more 
+than 40 companies committed to joint work 
+on water security.
+Learn more about Grundfos 
+and its efforts to build water resilience:
+grundfos.com/sustainability/water
+19
+
+
+--- page 22 ---
+0
+20
+Technical Annex
+In the home: smart hot water recirculation 
+Grundfos smart recirculation systems keep hot water moving gently through a home’s pipes so it is already at the tap when 
+needed, eliminating the warm-up wait that sends water down the drain. Built on high-efficiency electronically commutated 
+motor (ECM) technology with temperature sensors and adaptive controls, the systems circulate only when a household’s 
+actual patterns require it. 
+•	 ECM technology cuts the pump’s electricity use by up to 80% compared to the fixed-speed circulators it replaces. 
+•	 Compatible with both new construction and retrofits, including homes without a dedicated return line. 
+•	 Once installed, savings persist for the life of the home with no ongoing homeowner engagement. 
+On the farm: intelligent irrigation pumping 
+Grundfos CUE 100, CUE, RSI, and MGE/MLE  controllers can automatically adjust pumping speed to real-time irrigation 
+demand, delivering precise flow instead of running at fixed capacity. Pairing these variable frequency drives (VFDs) with 
+Grundfos’s highly efficient pumps provides world-class solutions. SPE borehole pumps, NB/NK above ground pumps and 
+CR/CM vertical multistage pumps all offer world-class efficiency when paired with CUE 100, CUE & RSI. For growers and 
+irrigators, that means drawing and using only the water a field actually needs, which lowers energy costs, reduces downtime 
+and reduces unnecessary extraction from stressed aquifers. 
+•	 Variable-speed operation delivers energy savings of up to 40% compared to older fixed-speed pumping. 
+•	 Precise, demand-matched flow prevents overwatering and supports precision irrigation systems. 
+•	 Remote monitoring and diagnostics catch developing inefficiencies before they become failures. 
+In industry: process efficiency, reuse, and treatment 
+Grundfos industrial solutions cover the full reduce-reuse-reclaim sequence and support efficient fluid management across a 
+range of industrial processes. Real-time monitoring that tracks consumption across a facility, variable-speed pump systems 
+matched to process demand, precision chemical dosing and disinfection, intelligent cooling, and advanced treatment from 
+Grundfos, that recovers usable water from wastewater streams. Treatment can be engineered fit-for-purpose, matching 
+water quality to each task rather than treating every gallon to the same standard. 
+•	 Early reduce-and-reuse measures typically cut a facility’s freshwater intake by 20 to 40%; adding on-site reclaim takes the 
+total to 75 to 90%. 
+•	 Reclamation at around 80% adds roughly 4% to site energy use, much of which intelligent pumps and temperature-driven 
+control could save. 
+•	 Grundfos intelligent e-pumps built on IE5 motors with integrated variable-speed controls cut cooling energy by up to 70% 
+compared with fixed-speed systems.
+The paper describes some of the solutions to water scarcity. This annex names the 
+Grundfos technologies behind them, with representative performance figures from 
+delivered projects and published research. 
+
+
+--- page 23 ---
+21
+In buildings and data centers: high-efficiency cooling 
+Grundfos intelligent e-pumps, built on IE5 motors with integrated variable-speed controls, match cooling flow precisely to 
+thermal load, from a single commercial building to a hyperscale data center plant. Grundfos pumping and control solutions 
+help district heating systems recover surplus heat from wastewater and cooling loops and put it to work. Packaged systems 
+such as Hydro MPC and DELTA HCU deliver factory-engineered reliability on compressed construction timelines. 
+•	 Distributed Pumping retrofits deliver demand-driven control across building zones; at Seattle’s Museum of Flight, the 
+approach cut pump energy roughly 74% across a full season and improved chiller Delta T by 15 to 20%. 
+•	 KPVS vertical split-case pumps in hyperscale chilled-water and condenser plants show roughly 4 to 5% efficiency gains over 
+competitive equipment, drawing 13 fewer horsepower on primary chilled water and 8 fewer on condenser duty. 
+•	 Integrated variable-speed and PID control lets pumps meet load with only the flow and head required, removing the 
+throttling losses of valve-based systems and simplifying commissioning. 
+Across the network: smart water distribution 
+Grundfos Connect Demand Distribution adjusts network pressure in real time to match actual demand rather than holding 
+fixed set points around the clock. Battery-powered remote sensors at critical points feed a cloud-based controller, enabling 
+adaptive pressure management without major system reconfiguration, while pressure ramping prevents the transients that 
+crack pipes and shorten asset life. Performance analytics turn the same telemetry into operating insight, tracking flow, head, 
+and power to surface energy intensity and burst risk across the network. 
+•	 Across projects delivered since 2014, utilities have averaged roughly 15% leakage reduction, 25% energy savings, and 35% 
+fewer pipe bursts. 
+•	 Replacing aging pumps at the same time the Demand Distribution system is installed can add energy savings of up to 50%. 
+•	 Lower operating pressure reduces active leakage control costs, defers pipe renewals, and extends the working life of pumps 
+and mains. 
+
+
+--- page 24 ---
+0
+1.  Grundfos, Black & Veatch, and WateReuse Association, 
+Accelerating Industrial Reuse, 2025, pp. 4, 9–13. 
+2.  Tim James et al., “The Economic Importance of the 
+Colorado River to the Basin Region,” L. William Seidman 
+Research Institute, Arizona State University. 
+3. Bureau of Reclamation, Colorado River Basin Conditions, 
+April 2026. usbr.gov. 
+4. U.S. Geological Survey, Ground Water Atlas of the 
+United States, HA 730, High Plains aquifer. pubs.usgs.
+gov/ha/ha730/ch_c/C-text5.html; National Integrated 
+Drought Information System, “Ogallala Aquifer Summit: 
+Collaboration on the High Plains,” December 11, 2024. 
+drought.gov 
+5.  Bluefield Research, “Water Losses Cost U.S. Utilities $6.4 
+Billion Annually,” April 2025. bluefieldresearch.com. 
+6. J. Lutz, “Water and Energy Wasted During Residential 
+Shower Events: Findings from a Pilot Field Study of 
+Hot Water Distribution Systems,” Lawrence Berkeley 
+National Laboratory, LBNL-5115E, 2011. 
+7.  U.S. Environmental Protection Agency, WaterSense, “Fix 
+a Leak Week.” epa.gov/watersense. 
+8.  David McMillan, “Ending the Wait: How Saving Hot 
+Water Can Power Households, the Economy and the 
+Environment,” Grundfos, 2025. 
+9.  Natural Resources Defense Council, “Major New 
+Proposal Seeks Change to Plumbing Codes that will Save 
+Americans Money on Energy and Water Bills,” January 6, 
+2014. nrdc.org. 
+10. David McMillan, internal Grundfos DBS impact analysis, 
+2025. 
+11. U.S. Department of Agriculture, Economic Research 
+Service, “Irrigation & Water Use.” ers.usda.gov. 
+12. Public Policy Institute of California, “Water Use in 
+California’s Agriculture,” July 2024. ppic.org; California 
+Department of Food and Agriculture, California 
+Agricultural Statistics Review. 
+13. Drought.gov, “The Western Drought Issue,” September 
+3, 2025. 
+14. U.S. Geological Survey, “Groundwater Sustainability and 
+Land Subsidence in California’s Central Valley,” April 
+2024. usgs.gov. 
+15. U.S. Department of Agriculture, Natural Resources 
+Conservation Service, “Soil Health Key Points.” nrcs.
+usda.gov. 
+16. Khalid et al., “A Review of Precision Irrigation Water-
+Saving Technology under Changing Climate for 
+Enhancing Water Use Efficiency, Crop Yield, and 
+Environmental Footprints,” 2023. 
+17. WateReuse Association, “Advancing Water Reuse in 
+Kansas: Projects, Policy and Opportunity,” webcast 
+presentation, 2026. 
+18. C.A. Dieter et al., Estimated Use of Water in the United 
+States in 2015, U.S. Geological Survey Circular 1441, 2018. 
+19. U.S. Environmental Protection Agency, Lean & Water 
+Toolkit, Chapter 2: Water Use and Water Costs. epa.gov/
+sustainability. 
+20. Bluefield Research, “Powered by High Tech and Energy 
+Growth in the U.S. and Canada, Industrial Water 
+Spend Set to Climb 28% by 2030,” November 2024. 
+bluefieldresearch.com. 
+21. U.S. Environmental Protection Agency, Lean & Water 
+Toolkit, Chapter 3: Finding Water Waste. epa.gov/
+sustainability. 
+22. Grundfos, “How much water is used for beer brewing?” 
+grundfos.com; Brewers Association sustainability 
+benchmarking data. 
+22
+References
+
+
+--- page 25 ---
+23. WateReuse Association, “Water Reuse for Artificial 
+Intelligence.” watereuse.org; WaterWorld, “Columbus 
+Explores Water Reuse to Support Data Center Growth,” 
+June 2026. 
+24. American Public Power Association, “How Much 
+Water Our Electricity Uses” (U.S. Energy Information 
+Administration data, 2020). publicpower.org. 
+25. Bluefield Research, The Water-Power Nexus: How Data 
+Centers are Reshaping the U.S. Water Landscape, February 
+2026. 
+26. Ceres, Drained by Data: The Cumulative Impact of Data 
+Centers on Regional Water Stress, September 2025. ceres.
+org. 
+27. Bluefield Research, U.S. Water Utility Strategies for the 
+Data Center Buildout: Opportunities, Trends and Outlook, 
+June 2026, p. 19. 
+28. American Society of Civil Engineers, 2025 Infrastructure 
+Report Card: Drinking Water. infrastructurereportcard.org. 
+29. American Water Works Association, M36 Manual of 
+Water Supply Practices: Water Audits and Loss Control 
+Programs, 4th ed. 
+30. Grundfos, “Save Water, Energy, and Costs Using Pressure 
+Management” (Demand Driven Distribution white 
+paper), 2024. grundfos.com. 
+31. Grundfos, “Optimizing the Water-Energy Nexus: Rincon 
+del Diablo Municipal Water District Deploys Grundfos 
+Connect Demand Distribution System,” case study, 2026. 
+grundfos.com. 
+32. Grundfos Water Utility internal analysis, 2025; 
+California State Water Resources Control Board, “Making 
+Conservation a California Way of Life.” 
+33. Bluefield Research, “U.S. Water and Sewer Bill Has 
+Increased 24% in Five Years, Raising Affordability 
+Concerns,” February 2025. 
+34. Moulton Niguel Water District, Advanced Water 
+Treatment Facility Salinity Management System Project, 
+2024. mnwd.com. 
+35. Texas Real Estate Research Center, “The Future of 
+Produced Water Recycling in Texas,” October 2025. trerc.
+tamu.edu. 
+36. Advancing Water Reuse Act, H.R. 2940 and S. 4506, 119th 
+Congress. congress.gov. 
+37. U.S. Environmental Protection Agency, “EPA Launches 
+Water Reuse Action Plan 2.0,” April 16, 2026. epa.gov. 
+38. Kansas House Bill 2462, 2026 Session (enacted April 
+9, 2026); City of Phoenix Water Services Department, 
+Advanced Water Purification program; Arizona 
+Department of Environmental Quality, Advanced Water 
+Purification rules. 
+39. Office of the Texas Governor, directive to the Public Utility 
+Commission and ERCOT on data center infrastructure, 
+June 10, 2026. gov.texas.gov. 
+23
+
+
+--- page 26 ---
+Grundfos — Possibility in every drop
+Grundfos is a global leader in advanced water technology, dedicated to addressing 
+the world’s water and climate challenges. Founded in Denmark in 1945, the 
+company develops innovative solutions that enable utilities, industries, businesses, 
+and communities to move, manage, and reuse water more efficiently.
+Grundfos operates with a long-term perspective, combining technological 
+innovation with a strong commitment to sustainability and societal responsibility. 
+By improving water efficiency and reducing the energy required to move water, 
+Grundfos helps customers strengthen resilience, improve resource management, 
+and contribute to a more sustainable future.
+Learn more at grundfos.com
+For more information or if you have questions, please contact:
+PublicAffairsUSA@grundfos.com
+grundfos.com
+Grundfos Americas
+Brookshire, Texas

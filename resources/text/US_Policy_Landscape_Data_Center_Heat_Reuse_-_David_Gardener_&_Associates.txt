@@ -1,0 +1,100 @@
+SOURCE: Source Documentation\White Papers\US Policy Landscape Data Center Heat Reuse - David Gardener & Associates.pdf
+
+
+--- page 1 ---
+U.S. Policy 
+Landscape Data 
+Center Heat 
+Reuse
+Emily Kent, Vice President for Clean Energy
+David Gardiner and Associates
+
+
+--- page 2 ---
+DGA’s Work on Data Center Heat Reuse
+•
+DGA provides our clients with policy research and analysis, strategic planning, and 
+alliance/relationship building
+•
+DGA has been working on data center heat reuse for 2+ years with a variety of 
+partners and organizations, including Intel, the Open Compute Project, and the U.S. 
+Energy Foundation
+•
+Our focus this year has been on U.S. state policy opportunities
+
+
+--- page 3 ---
+Policymakers’ Interest in Heat Reuse
+
+
+--- page 4 ---
+Policy Options
+Incentives
+Offer tax credits for the reuse of data center heat.
+Provide grants or low-interest loans for data center heat reuse.
+Prioritize permitting and/or interconnecting data centers that reuse their heat. 
+Enabling Policies
+Support projects that demonstrate the technical feasibility of data center heat reuse. 
+Establish matching platforms for data centers and heat end users.
+Leverage local and regional planning to co-locate data centers and heat offtakers.
+Develop district thermal energy networks to provide heating and cooling to neighborhoods and campuses 
+as an alternative to on-site thermal generation. 
+Standards
+Establish energy efficiency standards for data centers that allow data center heat reuse to meet the 
+requirements.
+Require plans for heat reuse in permitting of new data centers.
+Establish a fee for a data center’s greenhouse gas emissions from electricity consumption.
+
+
+--- page 5 ---
+States with Interested Policymakers
+
+
+--- page 6 ---
+2026 Opportunities & Wins
+•
+Virginia
+•
+Passed legislation directing the Department of Energy to conduct a study on the opportunity for data 
+center heat reuse in the state.
+•
+Illinois
+•
+Illinois POWER Act would set requirements for data centers; opportunity to include heat reuse in energy 
+and water provisions.
+•
+California
+•
+Legislation introduced that would allow utilities to operate thermal energy networks; received some 
+opposition.
+
+
+--- page 7 ---
+Projects in the U.S. and Europe
+•
+Syracuse University project 
+•
+Reusing heat from its on-campus data center for space 
+heating in an adjacent office building. 
+•
+Notre Dame University project
+•
+Reusing heat from its on-campus data center for a 
+proximate greenhouse.
+•
+Westbank project in San Jose, CA
+•
+Reusing data center heat in a district heating system for a 
+4,000-unit residential complex. 
+•
+Microsoft Greenhouse Warming Project in 
+Amsterdam
+•
+Reusing heat from a Microsoft data center at nearby 
+greenhouses.
+The Green Data Center at Syracuse University.
+
+
+--- page 8 ---
+DGA’s Resources on Data 
+Center Heat Reuse

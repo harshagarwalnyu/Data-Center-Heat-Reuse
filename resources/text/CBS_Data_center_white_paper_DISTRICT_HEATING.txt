@@ -1,0 +1,1133 @@
+SOURCE: Source Documentation\White Papers\CBS_Data_center_white_paper_DISTRICT HEATING.pdf
+
+
+--- page 1 ---
+Connecting data 
+centers and district 
+heating networks
+From waste heat to useable heat
+Grundfos commersial bulding services: Case
+Introduction
+Distributing, organising, and financing the reuse of waste heat 
+from data centers in heat networks will become more accessible 
+thanks to some convergent trends in both sectors, as they aim 
+to achieve higher sustainability and decarbonization levels. The 
+whitepaper was created in collaboration with Siemens.
+
+
+--- page 2 ---
+Introduction
+This document outlines the challenges and benefits of 
+upgrading waste heat from data centers to useable heat 
+distributed by district heating networks.
+Both data center and district heating sectors are expected to 
+grow significantly in the next two decades, and both are under 
+pressure to reduce their carbon footprint and improve their 
+sustainability. The whitepaper provides high-level figures on 
+the size of both sectors, the district heating market penetration 
+in Europe and the typical fuel types used in the district 
+heating market, highlighting the dominance of fossil fuels 
+in this market.
+The policy landscape for reusing waste heat is becoming more 
+favourable, supported by the European institutions such as 
+EuroHeat & Power (heat networks association) and the Climate 
+Neutral Data Center Pact.
+The second part of the whitepaper presents a technical 
+examination of the quantities of waste heat available from 
+data centers, their suitability for use in heat networks, and how 
+the supply can fit the demand curves.
+Another topic discussed is the range of temperatures in the 
+heat networks, how they impact efficiency and network 
+topologies, and how local needs can be optimised by the 
+integration of heating plants.
+The distance between data centers and the heat network 
+affects the feasibility of the heat reuse project. While the 
+impact of distance on the operations and overall efficiency is 
+limited and can be minimised by good-practise and design, 
+multi-kilometre connections can have a significant impact on 
+the total investment cost.
+Because of their expertise, understanding of regulations and 
+standards, and efficiencies of scale, heat network operators are 
+the preferred project leaders but ESCO’s come a close second 
+and may have an advantage in terms of agility and ability to 
+raise the finance necessary.
+The normal model involves the data center delivering waste 
+heat to a heating plant, owned and operated by a heat supplier 
+who works closely with a heat network operator, but the 
+model may vary depending on the location, stakeholders, and 
+their motivation.
+To test the viability of heat reuse from a data center, a business 
+case was considered based on a 10 MW IT load. Three heat reuse 
+connection types (classic, COP efficient, and boosted) were 
+defined to examine the projects viability in terms of efficiency, 
+useable heat price, and heat network temperatures.
+As a discussion point each connection type was compared with 
+a stand-alone heat pump and the results were as follows. The 
+“classic” connection type provided savings of approximately 
+€0.5M effectively reducing the marginal heat generation costs 
+from €30/MWh to €23/MWh. 
+However, the most efficient solutions may not always be 
+the most beneficial in terms of economic outcomes. In the 
+models examined the, the net cash flow for the least efficient 
+connection type (“booster”) is greatest, with the simple payback 
+period of approximately 9 years.
+The paper confirms that there is benefit to both industries by 
+linking data centres to heat networks. To increase the viability 
+of these projects we encourage data centers to engage early, 
+share information and actively collaborate with local authorities 
+and heat network operators to influence the planning and 
+development of sustainable infrastructure.
+2
+
+
+--- page 3 ---
+Table of contents
+Executive Summary. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 2 
+Sector Coupling Overview. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 4
+Data centers Energy Consumption. . . . . . . . . . . . . . . . . . . . . . . . . . 	 4
+Heat Networks Overview. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 5
+Heat Networks Trends. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 6
+Support for Heat Reuse. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 7 
+Technical Considerations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 9
+Heat Network Temperatures and
+Connection options. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	10
+Heat Network Demand Profiles and
+Exisitng Assets. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 12
+Distance from the Heat Network. . . . . . . . . . . . . . . . . . . . . . . . . . . 	 13
+Commercial Considerations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	14
+Project Stakeholders. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	14
+Operational Organisation. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 15
+Initial Assessment of Potential Projects. . . . . . . . . . . . . . . . . . . . . 	16
+Use Case. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 17
+Baseline Assumptions. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	 17
+Defining the Scenarios. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	18
+Results and Discussion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	19
+Conclusions. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	20
+References. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	23
+Abbreviations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	23
+3
+
+
+--- page 4 ---
+Sector Coupling Overview 
+Working towards net-zero and improved energy efficiency, the 
+two energy-intensive sectors, Data centers and district heating 
+are expected to grow significantly in the coming years. Coupling 
+data centers with heat networks may reduce society’s carbon 
+footprint significantly. Reusing heat from all European “data 
+centers” could save more than 10 million tons of CO2 annually.
+The data center sector is evolving rapidly, with flexibility and 
+agility being its main characteristics, and short technological 
+cycles forcing decisions with short payback times. District 
+heating networks operate in highly regulated environments, 
+with long-term planning and low, but certain rates of return on 
+investments. Both sectors face sustainability pressures: data 
+centers being scrutinised for their large electricity consumption 
+and the associated waste heat generation, and heat networks 
+for using fossil fuels. However, the environmental impact of 
+both sectors can be significantly lowered if the waste heat from 
+data centers was reused in district heating networks, effectively 
+helping to decarbonise the heat networks.
+Data centers energy consumption
+Data centers are the backbone of the internet and data 
+processing. Recent regulations requiring local data storage and 
+processing are driving a shift from the historic data center hubs 
+such as Frankfurt, London, Amsterdam, and Paris (FLAP), to a 
+more proportional geographical distribution of the market.
+Data center energy efficiency keeps improving with the average 
+PUE for global data centers falling from 2.0 to below 1.6 in the 
+years 2010-20201, with hyper-scale data centers achieving 
+values of around 1.2. However, the overall EU data center energy 
+consumption almost doubled between 2010 and 2020, from 54 
+to 104 TWh/a, due to the increase in data processing, and this is 
+expected to grow to 160 TWh/a by 20302 even with the above 
+improvement in energy efficiency.3
+4
+
+
+--- page 5 ---
+Figure 1 Heat delivered via DHN markets
+Heat networks overview 
+District heating networks provide multiple users with heat for 
+space heating and domestic hot water. Each network has a 
+pipeline with a higher temperature feed or flow pipeline, and a 
+lower temperature return pipeline, with water returned to the 
+heating plant for re-heating.
+ Moving the heat generation process from individual buildings 
+to centralised heating plants allows for efficiencies of scale 
+in terms of energy consumption, pollution control, and peak 
+shaving. On the downside, heat distribution is associated 
+with heat losses, requires additional capital investment and 
+ongoing maintenance.
+Europe is one of the largest district heating markets with 3,176 
+PJ (1,045 TWh) of heat delivered annually, following China and 
+Russia which account for more than 70% of the global footprint 
+(see Figure 1). The US is a relatively small market with 458 
+PJ (127 TWh). 
+Within Europe, the highest share of heating provided by heat 
+networks is Iceland (92% of total heat demand). Very high 
+shares, above 50%, can be found in the Nordics (excluding 
+Norway), the Baltic countries and Poland, while Greece and 
+Portugal have shares of less than 1% as per Figure 2.
+China,  
+5894 PJ
+Russia,  
+5300 PJ
+Europe,  
+3176 PJ
+Rest of  
+the 
+World 
+750 PJ
+USA,  
+458 PJ
+South Korea  
+256 PJ
+5
+
+
+--- page 6 ---
+Figure 2 Share of DHNs in total heating demand
+Heat network trends 
+Climate change and decarbonisation were not top of the 
+agenda for the promoters of traditional heat networks, and 
+most existing networks are fuelled by fossil fuels, making up 
+76% of the EU’s primary energy in heat networks. Biomass, 
+domestic and industrial waste are growing sources of fuel, with 
+shares of 19% and 5% respectively4. Many networks integrate 
+combined heat and power generation to increase efficiency and 
+improve air quality.
+The investment in the district heating networks is expected to 
+grow significantly for various reasons. 
+The increase in heat demand, the need to retrofit aging 
+assets, the introduction of energy efficiency initiatives, and 
+the drive towards decarbonisation, all contribute to this 
+investment demand.  
+According to Heat Roadmap Europe3, district heating capacity is 
+expected to double by 2050, adding 160 TWh/a of capacity per 
+decade. The growth in DHN’s capacity is in line with the forecast 
+growth in energy consumption by the EU’s data centers over 
+this period. The growth in both sectors presents  
+significant opportunities for the DHN’s to absorb the growth in 
+waste heat generated by the data center industry across the EU.
+92%
+DHN Share
+0%
+1%
+50%
+53%
+12%
+7%
+1%
+23%
+2%
+Heat networks can vary in scale. Some of these DHNs cover 
+entire urban areas, with hundreds of kilometres of pipelines. 
+Three of the largest systems are in Warsaw, Copenhagen and 
+Stockholm with total lengths close to 1,500 km, delivering 
+gigawatts of heat.
+Other schemes cover smaller districts, amounting to tens of 
+kilometres in length, from which the English term “District 
+heating” was derived, to local heat networks in villages, on 
+campuses (universities and airports) that can be just a few 
+kilometres long, and have total installed capacities below 
+ten megawatts.
+6
+
+
+--- page 7 ---
+Figure 3 - Fuel mixes for DHNs in EEA countries  
+0%
+20%
+40%
+60%
+80%
+100%
+Austria
+Bulgaria
+Croatia
+Czechia
+Denmark
+Estonia
+Finland
+France
+Germany
+Hungary
+Iceland
+Italy
+Latvia
+Lithuania
+Netherlands
+Norway
+Poland
+Romania
+Slovakia
+Slovenia
+Spain
+Sweden
+Switzerland
+Fossil fuels
+Biomass/RES waste
+Other RES
+Figure 4 - Heat networks fuel mix combined across EEA
+0%
+100%
+19%
+5%
+76%
+Heat networks decarbonisation is a complex task, and progress 
+has been slow due to uncertainty around CO2 emission costs 
+and fuel prices. Meanwhile operator’s investment budgets 
+have been stretched by projects aimed at meeting pollutant 
+emission limits.
+Renewable heat generation and efficiency targets combined 
+with fuel and electricity price trends are important drivers for 
+heat networks decarbonisation. However, until recently, they 
+were insufficient to promote substantial change in the industry.
+Fossil fuels are the predominant energy source for district 
+heating schemes, accounting for three quarters of the total 
+supply, with biomass and renewable waste accounting for 20%, 
+and other renewables and electricity making up the remaining 
+5%4, illustrated in Figures 3 and Figure 4.
+With the increasing integration of renewable energy sources 
+and the increased focus on sustainability and waste reduction 
+policies, it is plausible that 80-90% of the existing heat plants 
+and networks will require a deep retrofit.
+7
+
+
+--- page 8 ---
+Heat Network Operators need to keep the cost of heat supply 
+low and avail of the Emissions Trading Schemes, to enable 
+them to compete with individual heating systems that are 
+exempt from emissions trading. The improved energy efficiency 
+of buildings connected to heat networks reduces the revenue 
+from existing connections, often affecting the network’s 
+ability to raise the investment capital needed to expand and 
+decarbonize heat generation networks. However, the building 
+efficiency increase can also provide efficiency gains, where 
+supply and return temperatures can be lowered, thereby 
+resulting in reduced heat losses, that allows the HNO to expand 
+the heat network without additional production capacity. As 
+such, modern technological solutions where temperatures 
+are managed to meet the exact consumer demands, in a de-
+centralized way, could open more possibilities for renewable 
+production or the use of waste heat.
+These trends can be offset by the availability of preferential 
+finance from research or environmental agencies, but for most 
+heat networks, systemic changes will be needed to enable the 
+growth and decarbonisation require by the EU. One such policy, 
+the “Fit for 55” package will create a mechanism compelling the 
+building sector to pay for CO2 emissions, levelling the playing 
+field for heat networks.
+The objectives of this package is to combine waste heat reuse 
+together with renewable energy, setting a target 2.1 % annual 
+increase for renewable and waste-heat energy sources4, 
+resulting in electric heat pumps delivering most of the heat in 
+the EU by 2050.
+Funding and support will continue to be linked with the 
+“efficient district heating and cooling system”, yet to be 
+defined and replace co-generation with higher renewable and 
+waste heat usage5. Heat reuse from data centers is specifically 
+mentioned and will receive support in upcoming regulations.
+Similarly, the EU’s Green Finance Taxonomy lists all the related 
+topics as sustainable, including the production of usable heat 
+using waste heat, district heating distribution, installation, and 
+the operation of electric heat pumps.
+Support for heat reuse 
+Associations and bodies from both sectors voiced their 
+support of heat reuse from data centers in support of the 
+decarbonisation agenda. EuroHeat & power, a European 
+network of district heating organisations, that includes Siemens 
+and Grundfos amongst its members, published a policy 
+paper in May 2021 calling on the EU to recognise data center 
+heat recovery in EU frameworks, to boost skills training, and 
+integrate heat reuse in guidelines for the data center industry6.
+Some of the recommendations are already materialising in 
+the “Fit for 55” package and the 2021 Best Practice Guidelines7 
+published by the European Communities “JRC” and the “EU 
+Green Public Procurement Criteria” guidelines1. The Climate 
+Neutral Data Centre Pact is a pledge from 22 national trade 
+associations and 60 individual members, to achieve climate 
+neutrality in European data centers by 2030. One of its areas of 
+fucus is to promote regulations on data centre sustainability. 
+The pact pledges to explore the possibilities of exporting 
+data centre waste heat for reuse in heat networks and calls 
+policymakers to:
+Recognise recovered and 
+reused heat as an energy 
+source that reduces 
+emissions for real-estate 
+developers, building 
+owners and other 
+stakeholders.
+Enact a policy framework 
+that facilitates and 
+encourages any energy-
+intensive industry to 
+pursue heat recovery and 
+reuse projects, in 
+partnership with 
+communities or 
+businesses8.
+1
+2
+8
+
+
+--- page 9 ---
+Heat pump limitations 
+Heat pumps use refrigerants in a refrigeration cycle, where 
+electric power is used to compress the gas and elevate the 
+refrigerant fluid’s temperature. The principle is similar to 
+CRAC’s and chillers widely used in data center cooling.
+There are thermodynamic limits to the heat pumps efficiency, 
+associated with the temperature difference between the 
+evaporator (the cooling part) and the condenser (the heating 
+part). The bigger this delta T, the more electricity required 
+relative to the amount of heat generated. The efficiency of the 
+heat pumps is called Coefficient of Performance (COP) - useful 
+heat delivered divided by the power consumed.
+COP values depend upon the temperature difference between 
+the heat source and heat sink. The heat source in this case 
+being the data center, where higher temperatures are 
+preferred, and the latter is the heat network where lower 
+temperatures are preferred.
+In most cases of heat reuse, COP of the heat pump falls within 
+the range of 3.0 to 6.0. That means that from each kWh of 
+electric power used for heat upgrade, three to six kWhs of 
+useful heat is generated by the heat pump.
+Technical Considerations  
+Most of the power consumed by the IT equipment in data 
+centers is converted into heat, and that heat needs to be 
+removed to enable the equipment to function properly.
+A variety of cooling technologies are used to keep the electronic 
+components in the data center operating within acceptable 
+temperature and humidity ranges. Regardless of the type of 
+cooling systems, direct expansion CRAC units, chilled water fed 
+CRAH units, or evaporative cooling, significant amounts of low-
+grade waste heat needs to be dissipated.
+Most of the waste heat is in the 20-26°C temperature range9. 
+Waste heat in this temperature range has a limited number 
+of applications, such as heating of swimming pools or 
+aquaculture farms.
+These applications are relatively sparse and have a low total 
+heat demand compared to the amount of heat generated in 
+a modern data center. For most data centers the opportunity 
+to export their waste heat is limited due to the higher 
+temperature requirements of the potential users, resulting in 
+the need to upgrade this heat using heat pumps.
+Five key technical factors to be considered for the 
+heat reuse are:
+Heat pump Technology Limitations
+Heat Network Temperatures
+Connection Options
+Heat Network Demand Profiles and Existing Assets
+Distance from the Heat Network
+9
+
+
+--- page 10 ---
+Heat network temperatures 
+The maximum, the average and the return temperatures 
+in a heat network affect the efficiency of the heat upgrade 
+when using heat pumps. The operating temperatures of heat 
+networks vary considerably depending on the networks age, 
+client’s needs, and the technologies used. 
+The evolution of heat networks has resulted in the continuous 
+reduction of the networks operation temperatures. First 
+generation (1G) networks operated approximately 200°C, 
+second generation (2G) which are predominant in Central 
+Europe operate at 100-120 °C, whilst the third-generation 
+networks favoured in Nordic countries operate at 80-100°C.
+The modern (4G) networks have been specifically developed to 
+make use of renewable low-grade heat sources, such as solar 
+and geothermal, operating with flow temperatures well below 
+70°C, and these networks are suitable to utilise waste heat from 
+data centers.
+The latest (5G) networks are an emerging concept where water 
+at 10-25°C is used as the base load for efficient heat pump 
+operation, without the need for ground source heat pumps 
+and geothermal wells, but are out of scope for this document. 
+Larger existing grids can be divided into temperature zones 
+with different heat demands. When designing or renovating 
+grids, the zones should be optimized to deliver the temperature 
+required at the point of use, thus resulting in reduced heat 
+losses and the ability to utilise locally generated waste heat.
+Heat Network 
+Generation
+1st
+2nd
+3rd
+4th
+5th
+Flow temperature 
+120-200°C
+100-120°C
+80-100°C
+(50) 60-80°C
+10-25°C
+Return temperature
+100-140°C
+80-110°C
+60-90°C
+40-70°C
+3-15°C
+Typical heat sources
+Steam boilers
+CHPs, boilers
+CHPs, boilers, 
+geothermal
+Heat pumps, 
+geothermal, solar
+Waste heat, 
+goethermal, solar
+Table 1 Typical temperatures for generations of heat networks
+10
+
+
+--- page 11 ---
+Network connection options 
+Depending on the topology of the heat network, its operator might have preferences regarding the way the heat is supplied:
+Figure 5 Options for connecting heat upgrading plant to the 
+heat network
+Classic: Return to feed 
+a) The waste heat reuse plant is expected to be the main source 
+of heat for the scheme. It needs to operate in the “classic” 
+paradigm of heating up the water from the return to the 
+flow pipeline,
+COP efficient: Return to return 
+b) When connecting to larger systems, HN operators may 
+choose to maximise the efficiency of heat recovery and accept 
+the lower-grade heat into the return pipework
+Booster: Feed to feed 
+c) Boosting the temperature locally, at the far edge of the 
+network, might allow for lowering temperatures in the 
+remaining parts of the network leading to overall system 
+efficiency improvement.
+As the temperatures in networks often change seasonally, it is possible to deliver the “classic” mode in the summer and switch to “COP 
+efficient” mode in the winter, when flow temperatures increase. Each network may have slightly different expectations and boundary 
+conditions, which can be reflected in the heat prices. Heat supplied to the DHN is often bought using dynamic tariffs depending on 
+outdoor temperatures and connection parameters.
+(a) Classic: Return to feed
+(b) COP efficient: Return to return
+(c) Booster: Feed to feed
+ΔT: 60 TO 80°C
+ΔT: 60 TO 65°C
+ΔT: 77 TO 82°C
+HPs
+HPs
+HPs
+11
+
+
+--- page 12 ---
+Heat network demand profiles 
+Heat networks provide heating for multiple purposes: space 
+heating; sanitary hot water; and, sometimes, process heat for 
+industry. Besides the efficiency of the system, the other critical 
+factor for heat reuse, is the ability of the network to absorb the 
+usable heat and utilise it. Large data centers generate more 
+heat than many district heating networks could distribute.
+Heat networks are usually fed from multiple sources, such as 
+CHP plants, boilers, and heat pumps, with the base load 
+provided by the most efficient source throughout the year, and 
+the least efficient source topping up when heat demand is at its 
+peak. Ideally the base load source should operate for as long as 
+possible providing a steady supply, and in the case of a data 
+centre which operates constantly, it can meet the summer base 
+load for sanitary hot water with the network drawing in other 
+sources as the demand for heating increases.
+When examining heat demand profiles per million inhabitants, 
+the difference in demand is greater in colder climates than in 
+warmer climates. For example, in Helsinki the summer demand 
+is only 5% of the winter demand, compared to milder regions 
+such as London or Madrid where the summer demand is 20% of 
+the winter demand as seen in Figure 6.  Using examples from 
+Denmark where domestic hot water production by the DH is 
+more cost efficient than production by electricity, the summer 
+demand may be as high as 30% of the winter demand.
+Accurate data on heat demand in networks is difficult to obtain, 
+but research shows that typical heat networks have 30-60% 
+more capacity than their peak demand, to cover for safety of 
+supply and redundancy, and the demand profile follows the 
+local climate conditions.
+Figure 6 Heat demand profiles for chosen European cities10
+Figure 7 Exemplar load duration curve of a heat network
+5,000
+4,000
+3,000
+2,000
+1,000
+-
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+Madrid
+London
+Berlin
+Brussels
+Stockholm
+Helsinki
+100%
+80%
+60%
+40%
+20%
+0%
+1
+51
+101
+151
+201
+251
+GWh/month/1M
+351
+301
+12
+
+
+--- page 13 ---
+Distance from the Heat Network 
+Distance can have a big impact on the investment costs. The 
+ratio of the connection costs can increase from 3 to 50% of the 
+total CAPEX when the distance increases from 50 to 4,000 m.
+It is important to flag that while civil works, including 
+excavation and pipelines constitute more than half of the 
+typical pipeline costs, other factors such as securing pipeline 
+routes, road closures and locating auxiliary equipment could be 
+challenging, especially in densely populated areas with multiple 
+stakeholders, such as landowners, infrastructure operators and 
+local authorities. Conversely, densely populated areas are 
+beneficial for heat networks since a significant amount of 
+energy is distributed in a small geographical area, thereby 
+resulting in a low operating cost.
+The distance between the data center and the heat network 
+also impacts pump selections, running costs, energy 
+consumption, heat losses and maintenance. Apart from the 
+capital cost of the pipeline these other costs are acceptable.
+A well-insulated, correctly sized pipeline in a 70-80°C system 
+will have moderate friction losses, and the heat loss will be 0.5-
+1.5% per kilometre 11. The heat losses can be further reduced by 
+recirculating the waste heat and upgrading the heat closer to 
+the DHN. This can reduce the heat losses by a factor of 3 or 4 
+(Figure 8 Option B). In addition, this configuration allows for the 
+use of cheaper Polyethylene (PE) pipes due to the lower 
+operating temperatures. As such, the distance between the 
+waste heat source and the point of use should be evaluated for 
+the optimal placement for the heat upgrade asset. Two options 
+can be considered for connecting data centers to district heat 
+networks, as illustrated in Figure 8: 
+Figure 8 Connector options: on-site and at the substation
+Option A: heat upgrade at the data center site
+Option B: heat upgrade at the heat network substation site
+Integrated  
+chiller-heat- 
+pumps
+Integrated 
+chiller-heat- 
+pumps
+DHN
+DHN
+Where the distance between the DC & DCN relatively short.  
+Where the distance between the DC & DCN  is greater. 
+13
+
+
+--- page 14 ---
+Commercial Considerations
+Project Stakeholders 
+A heat reuse project is a complex undertaking. As access to heat 
+is considered a basic necessity, the market is regulated with 
+arduous reporting and monitoring requirements, operated on 
+thin margins, and reliant on subsidies.
+Data center operators are not accustomed to providing long-
+term services to the local, often tightly regulated DHN market, 
+and expanding their business in this direction may require a 
+significant change in their mindset.
+However, the heat network operators have the technical 
+expertise, a commercial incentive, and the infrastructure to help 
+achieve targets for renewable waste heat.
+There is an active and growing market of third-party specialists 
+providing energy-related services known as Energy Service 
+Companies (ESCOs), Energy Performance Companies (EPCs) and 
+Energy as a Service (EaaS) providers. 
+They offer expertise, funding and/or operation of energy-
+related assets.
+Other stakeholders include regulatory bodies, financial 
+institutions, environmental funds, infrastructure funds, green 
+transition and research agencies, local communities and 
+alternative heating or cooling consumers.
+Local authorities have a growing interest in promoting heat 
+reuse in their communities. The variety of stakeholders adds to 
+the complexity of the projects, with each stakeholder having a 
+potential impact on the project’s feasibility.
+Heat reuse project 
+Other stakeholders
+3rd party
+Operators
+Heat network 
+operators 
+Energy Service 
+Companies  
+(ESCO's)
+Energy as a  
+Service provider (Eaas)
+Regulatory 
+bodies
+Banks
+Financial  
+Institutions
+Local  
+neighbourhood
+Infrastructure
+Alternative heating 
+& cooling  
+off takers
+Green transition 
+and research  
+agencies
+Local authorities
+14
+
+
+--- page 15 ---
+Operational Organisation  
+The normal and most commercially viable model is where the 
+local heat network operator sets up the heat upgrade plant12, 
+providing cooling to the Data Center and heating to the district 
+network.
+However, for a greenfield project it might be more practical for 
+the data centre development team to coordinate the 
+modification of the heat upgrading plant and the connection 
+points in conjunction with their planning and land acquisition. 
+The alternative is for the DHN operator to manage the upgrade 
+and connection as a separate project. Both approaches merit 
+consideration.
+Stable waste heat streams are valuable to DHN’s, provided they 
+facilitate the generating high-grade heat at a lower cost than 
+the alternatives. Data center operators also benefit from 
+exporting their waste heat to the DHN’s and save on the 
+running cost of their traditional cooling plant.
+Heat has most value when the outside temperature is low, but 
+this is when many data centers avail of free cooling, creating a 
+conflict in the supply and demand for waste heat reuse.
+To overcome this conflict, it makes sense to encourage data 
+centers to exchange their waste heat for cooling services free of 
+charge instead of utilising free cooling. This is how Meta 
+manage their cooling in Odense13.
+A new heating plant based on heat pump technology is a multi-
+million-euro investment.
+Many heat networks operators may have trouble funding such 
+investments as their budgets may be committed to other 
+business-critical investments.
+This provides an opportunity for third party ESCO’s to invest in 
+heat reuse projects, increasing the prospect of these projects 
+happening. 
+Co-funding between the data center and heat network operator 
+is another option, for example the Open District heating project 
+in Stockholm, 201414 where a data center operator co-funded a 
+significant share of the heat upgrade plant.
+With ambitious targets for 2030 approaching (like the European 
+“Fit for 55” package), funding for decarbonisation projects 
+should become more accessible, but securing public funding is 
+often an arduous, time-consuming processes.
+15
+
+
+--- page 16 ---
+Assessment of Potential Projects 
+A heat reuse scheme is a significant undertaking with many 
+variables affecting the project’s success. For the initial 
+assessment of a location, a conditions assessment chart shown 
+as Figure 9 can be used. The parameters to be looked at while 
+undertaking the initial assessments are: 
+	•
+The overall energy transition investment climate, regulatory 
+challenges and incentives landscape
+	•
+The heat network parameters such as operating 
+temperatures (seasonality), distance between data center 
+and heat network substation, existing heat supplys 
+and the size of the heat network relative to the size of 
+the data center.
+	•
+The type and size of the data center. These are not critical 
+for the projects feasibility, but they still affect the costs and 
+efficiency, with larger data centers designs using chilled 
+water being the easiest to connect to heat networks.
+An overview of parameters to be considered in the initial 
+assessment is presented graphically in Figure 9, indicating 
+which conditions are favourable for sector coupling, and to 
+enable prioritisation of projects. The parameters have been 
+categorised as “great”, “good”, “fair” and “poor”. The more 
+parameters that fall into the “great” category the more suitable 
+the project is for connection to the District Heating Network.
+Figure 9 Overview of assessment criteria and scores
+Data Center
+Heat Network
+Region
+Regulatory 
+Environment
+Temperature
+Distance
+Generation 
+assets
+Demand size 
+and profile
+Size (power  
+capacity)
+Cooling type
+Targets 
+Transforma-
+tion 
+incentives
+<70°C
+<100m
+Fossil-based  
+& heat only
+>20x DC 
+capacity
+>5 MWe
+Chilled water
+70-90°C
+100-200m
+Fossil-based 
+CHP or mixed
+10-20x DC 
+capacity
+0.5-5 MWe
+DX systems
+Only long-term 
+targets, no  
+existing 
+incentives
+>90°C
+Great
+Good
+Fair
+Poor
+>2km
+Mostly 
+renewables
+<10x DC 
+capacity
+<0.5 MWe
+Evaporative /  
+air free-cooling
+16
+
+
+--- page 17 ---
+Use Case - 10MW Data Center  
+Baseline Assumptions  
+Large data centers continuously generate waste heat, 
+amounting to tens of GWh of heat per annum. Benefits from 
+the efficiencies of scale are important for infrastructural 
+investments but finding sufficient demand for heat during 
+summertime can be challenging.
+The analysis focuses on a 10 MW data center and a mid-size 
+heat network supplying 10,000-20,000 connected households, 
+with an installed heat capacity of 100-200 MW. The ratio of the 
+data centers waste heat and the heat networks requirements is 
+(1:10) allowing 100% of waste heat reuse in the network.
+The investment required for 10 MW heat pump installation will 
+depend on several factors, such as a greenfield or brownfield 
+site, available infrastructure, power grid connection and lengths 
+of pipework. In most European cases, CAPEX is estimated to be 
+somewhere between five and ten million euros.
+Some of this investment may be offset when public funding, 
+subsidies and preferential loans are accounted for. It is 
+estimated that up to 70% of the investment may attract such 
+funding. Data center operators can also benefit from savings on 
+their cooling infrastructure, which needs to adhere to their tier 
+level and redundancy requirements.
+17
+
+
+--- page 18 ---
+Baseline Assumptions  
+To illustrate the impact of the factors discussed earlier, three 
+integrated cooling and heating options have been examined 
+with cooling and heating provided separately. The three modes 
+are shown in Figure 5:
+	•
+Classic – heating the return water to the feed parameters
+	•
+COP efficient – heating the return water by 5°C
+	•
+Booster – heating the water slightly below the feed 
+parameters by 5°C
+Each model assumes that the low-grade heat is provided free of 
+charge to the project, and the high-grade heat is sold for the 
+price linked to the utility of the heat to the system: 
+	•
+lowest for pre-heating the return; 
+	•
+mid-level for the classic return to feed upgrade; 
+	•
+highest for high-temperature boosting; 
+The sale may be an external transaction if the project is 
+operated by a third-party, or an internal interdepartmental 
+transaction if it is operated by the DHN operator. In practice 
+heat prices are dynamic and depend on the connection type, 
+outside weather conditions and other factors. For simplicity, the 
+business cases shown here use averaged values.  
+Based on the assumed COP, and electricity costs of 0.1 €/kWh15, 
+the cost of heat generation is calculated. The resulting cash 
+flows and the marginal cost of heat generation are used to 
+compare the three models.
+Each model uses similar equipment with a cooling capacity of 
+10 MW and examines the three different connection options 
+presented in Figure 5, which impacts their efficiency (COP). 
+These options are compared to a standalone heat pump 
+solution using surface water from a river or a lake as its heat 
+source. The calculations are based on a full year (8760 hours) 
+with the same average load.
+18
+
+
+--- page 19 ---
+Results and discussions  
+The lowest marginal cost of heat generation, €19/MWh as 
+presented in Table 2, results from the “COP efficient” model and 
+is competitive with natural gas-based heat generation. The 
+“classic” and “booster” models result in heat generation costs of 
+€23 and €30/MWh respectively. 
+This compares with a heat generation cost of €39/MWh using 
+natural gas, with the gas costing €25/MWh, and a carbon cost 
+of €60/tCO2. This utilisation of waste heat saves 20-33% of the 
+cost of heat generation compared to using good quality 
+ambient heat, such as surface water.
+In the business case the difference in cash flow between the 
+“classic” model and a standalone heat pumps results in 
+approximately €0.5M savings per year.
+This amounts to 20% of the electrical cost of running the stand-
+alone heat pump, effectively reducing the heat generation costs 
+from €30/MWh to €23/MWh. Surprisingly, results show that 
+the most efficient solutions may not be the most beneficial in 
+terms of economic outcomes.
+When comparing the various models, the net cash flow for the 
+least efficient, booster, model is higher than that of the 
+“efficient” model, due to larger amounts and higher value of 
+heat, indicating projects should be looked at from multiple 
+perspectives. This shows the sensitivity of financial results from 
+heat sales prices and generation efficiency (COP)
+Table 2 Business case scenarios assumptions and results 
+*COP values for chillers only, rather than for the entire cooling systems
+Combining cooling and heating
+Reference
+Classic
+Efficient
+Booster
+Standalone 
+heat pumps
+Temperatures
+Cooling Heating
+(26-18°C)
+(60-80°C)
+(26-18°C)
+(60-65°C)
+(26-18°C)
+(77-82°C)
+ -
+(60-80°C)
+Heat Price
+€/MWh
+€35.0
+€28.0
+€40.0
+€35.0
+Electricity Price
+€/MWh
+€100
+€100
+€100
+€100
+Cooling Capacity
+MW
+10.0
+10.0
+10.0
+-
+COP*
+-
+4.5
+5.5
+3.5
+3.5
+Heating Capacity
+MW
+12.9
+12.2
+14.0
+14.0
+Power Rating
+MW
+2.9
+2.2
+4.0
+4.0
+Annual Heat  
+Generation
+MWh/a
+73,209 
+69,593 
+79,716 
+79,716 
+Heat Revenue
+€k/a
+€k 2,562
+€k 1,949
+€k 3,189
+€k 2,790
+Electricity Costs
+€k/a 
+€k 1,709
+€k 1,329
+€k 2,393
+€k 2,393
+At a cost of €6m for the heat pump system, and the availability 
+of an onsite DHN connection, a simple payback on the 
+investment is approximately 9 years, without availing of 
+any subsidies.
+This is in line with acceptable investment criteria for these 
+types of infrastructure projects. When we consider the potential 
+subsidies for heat decarbonising projects, the commercial 
+justification becomes more attractive.
+The alternative, using ambient heat as a source for heat pumps 
+of the same size, would result in a payback period of more 
+than 30 years. 
+The values presented are based on average European 
+conditions. There are significant variations across the markets 
+in energy, labour, and materials prices. Each project is different 
+and needs to be engineered to meet local requirements, such as 
+temperatures, heat demand management and the availability 
+of complementary supplies etc.
+19
+
+
+--- page 20 ---
+Conclusions  
+The expertise, economies of scale and familiarity with 
+regulations place heat network operators in the most 
+favourable position to become the principal project developers 
+for the generation of useable heat from data center waste 
+heat. Experienced third-party ESCOs come a close second 
+with the potential of being more agile and having stronger 
+financial resources.
+Data centre operators can promote new projects and offer 
+long-term waste heat supplies to heat network operators, or 
+other parties that may be interested in utilising waste heat, e.g., 
+hospital or university campuses, agriculture or aquiculture, or 
+other potential consumers who may be located a reasonable 
+distance from the data centre.
+Contractual terms are important to both the data center 
+operator and the DHN. Recent examples show a positive trend 
+where data centers and DHN’s have agreed ten year contracts, 
+subject to certain exit clauses which deliver predictable 
+economic and sustainable results for both parties
+Data center operators can benefit from:
+	•
+Savings in operational costs of cooling systems. For the 
+business case, a 10 MW data center, the savings can exceed 
+€1M annually, depending on the geographical location.
+	•
+Further savings in the CAPEX and OPEX of their traditional 
+cooling plants due to the heat network taking the base 
+cooling load and reducing their need for heat rejection plant.
+Heat networks operators can benefit from:
+	•
+Operational savings from the increased efficiency of heat 
+pumps. For the business case, a 10 MW data center, the 
+operational savings were approximately €0.5M per annum 
+compared to standalone heat pumps using ambient heat.
+	•
+A stable waste heat source which can contribute to their 
+renewable and waste heat reuse obligations.
+Reusing heat from data centers is profitable even without 
+subsidies and will always provide a better result than heat 
+pumps using ambient heat. Planned data centers should be, 
+and often are, designed with waste heat export capabilities to 
+enable easy deployment of future connections.
+Heat reuse projects can help decarbonise heat networks, but 
+the DHN operators might not be unaware of the data center 
+potential in their area and prioritise other projects. 
+Therefore, for the projects to materialise, we encourage 
+data centers operators to engage early, share information 
+and actively collaborate with local authorities and heat 
+network operators to influence planning and development of 
+sustainable infrastructure.
+20
+
+
+--- page 21 ---
+References 
+1. JRC Development of the EU Green Public Procurement (GPP) Criteria for data centers, Server Rooms and Cloud Services [Link]
+2. IEA District heating Portal [Link]
+3. Series of studies into heating market across Europe [Link]
+4. European Green Deal Draft Renewable Energy Directive [Link]
+5. European Green Deal Draft Energy Efficiency Directive [Link]
+6. Euroheat&Power 2021, Recommendation Paper: Boosting waste heat recovery to support decarbonization [Link]
+7. JRC 2021, 2021 Best Practice Guidelines for the EU Code of Conduct on data center Energy Efficiency [Link]
+8. Climate Neutral data center Pact, Policy Paper 2021, [Link]
+9. Google data center Efficiency [Link]
+10. Hot Maps Project - CM Heat Load Profile [Link]
+11. District heating and Cooling Networks in the European Union [Link]
+12. Celsius City – Waste Heat from data centers [Link]
+13. Facebook Tech Case Study [Link]
+14. Open District heating, [Link]
+15. Marginal cost being the cost of generating an additional unit of heat above a baseline – it focuses on variable costs of operation.
+CAPEX
+Capital Expenditure 
+CHP
+Combined Heat and Power
+COP
+Coefficient of Performance 
+CRAC
+Computer Room Air Conditioning
+CRAH
+Computer Room Air Handling
+DC
+Data Center
+DH
+District Heating
+DHN
+District Heating Network
+EaaS
+Energy as a Service
+EPCs
+Energy Performance Contractors
+ESCOs
+Energy Service Companies
+EU
+European Union
+JRC
+Joint Research Center
+OPEX
+Operational Expenditure
+PE
+Polyethylene 
+PUE
+Power Usage Effectiveness
+Table of abbreviations and acronyms
+21
+
+
+--- page 22 ---
+GRUNDFOS Holding A/S
+Poul Due Jensens Vej 7
+DK-8850 Bjerringbro
+Tel: +45 87 50 14 00
+www.grundfos.com
+© Grundfos Holding A/S 05.2023
+0523/CBS/4013956-Brandbox

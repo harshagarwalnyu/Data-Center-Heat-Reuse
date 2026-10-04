@@ -1,0 +1,432 @@
+SOURCE: Source Documentation\20230623 Data Centers HeatReuse 101 3.2.docx.pdf
+
+
+--- page 1 ---
+DATA CENTERS HEAT REUSE 101
+Authors:
+[Cosimo Pecchioli, Alfa Laval] [Jaime Comella, Cloud&Heat]
+[David Sickinger, NREL] [Otto VanGeet, NREL]
+Scan to access the file
+
+
+--- page 2 ---
+PAGE 2
+Executive Summary
+Heat reuse will be a key component of sustainability for data center companies. After a couple of use cases in
+some concrete geographical regions and applications, we are seeing that this topic is getting momentum in the
+industry due to recent legislative initiatives and corporate policies seeking ambitious sustainability goals,
+propitiated partially by the latest geopolitical circumstances. The never-ending digitalization path will require
+more infrastructures and more power consumption which will need to be as carbon neutral as possible, as
+society demands. Heat reuse arises as a chance to increase the energy efficiency in the data center business
+while improving the conditions of the heat host, triggering intersectoral symbioses. A project of this kind means
+no small challenges to be addressed since its conception as well as the involvement of a wide list of potential
+stakeholders, and its results will not only be financially positive but result in societal positive impacts. Further
+resources will be helpful to support this movement, such as checklists, maps, techno-economic calculations,
+where the OCP Heat Reuse subproject is and will remain active.
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 3 ---
+PAGE 3
+Table of Contents
+Introduction.................................................................................................................................................................... 4
+Why heat reuse and why now.........................................................................................................................................4
+What makes data center heat reuse possible and sustainable.................................................................................7
+Is it beneficial for a heat host to receive the heat from a data center?.....................................................................7
+Is it beneficial for a data center to provide the heat to a heat host?.........................................................................7
+Candidates for a heat host..........................................................................................................................................8
+Who gets the CO2 emissions reduction?..................................................................................................................10
+What is the impact on water usage?.........................................................................................................................10
+How to collaborate for such a project?.................................................................................................................... 10
+Techno-Economic Analysis.......................................................................................................................................10
+What are the next steps?...........................................................................................................................................11
+Conclusion.................................................................................................................................................................... 11
+References.....................................................................................................................................................................12
+License...........................................................................................................................................................................12
+About Open Compute Foundation...............................................................................................................................13
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 4 ---
+PAGE 4
+Introduction
+This is the first of a series of resources that the Open Compute Project Foundation Heat Reuse group will publish.
+In this article we will describe why now is the time for heat reuse and what is needed for wide-scale adoption to
+turn heat from a liability into an asset that potentially can be a source of income and assist in meeting
+sustainability goals.
+The Open Compute Project Foundation is an open forum, so please join our bi-weekly conversations about heat
+reuse and share your thoughts, insights and experiences with the community, start with the following link:
+https://www.opencompute.org/projects/heat-reuse
+Why heat reuse and why now
+Almost 100% of the energy used by servers in a data center is turned into heat. Heat reuse is defined as the
+beneficial use of any recovered heat from the data center. In theory, 100% of the energy employed in a data
+center can be captured and reused (see Figure 1). The excess heat is not only originated at the IT equipment but
+also from the losses of the power facility and the thermodynamic processes of cooling machines.
+Figure 1- Exemplary energy balance in a data center
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 5 ---
+PAGE 5
+Data center heat reuse has been around for over 10 years and there are already many cases worldwide. We have
+started researching these use cases around the world and ended up putting a map together with the locations of
+the data centers where there is any heat reuse concept in place. See snapshot of this map (from November 2022)
+in Figure 2.
+Figure 2 - November 2022 snapshot of the Heat reuse projects map
+https://www.google.com/maps/d/viewer?mid=1bTp4Ugy7FGwfPadNlmfZpYwGY5Z5B7o&ll=34.49331722074101%2C-59.2473
+8150576559&z=-1
+Even though there are extremely important early examples of a large-scale application of heat reuse, they have
+not been followed by a significant number of projects, even in a very energy sensitive and environmentally
+conscious area like the European Nordic Countries. Some reasons why heat reuse has seen limited adoption to
+date:
+1.
+The local conditions are hard to replicate: infrastructure connecting data centers to heat hosts are not
+always located in close proximity. New infrastructure cost can be significant.
+2.
+Some climate conditions favor an extended period of time when heat is needed for human comfort
+3.
+Local and central legislation is not always facilitating these projects
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 6 ---
+PAGE 6
+4.
+There are no generalized subsidies from the authorities to financially support this kind of projects1
+5.
+Collaboration between data center and heat host is hard to establish
+6.
+Is it easy to understand that even if the energy balance is positive the amount of energy that the system
+requires is significant, as is the investment, underground pipes, pumping stations, heat pumps, controls
+and such.
+All the previous mentioned points are partially the reason why those projects have not been followed by many
+others, even though the availability of heat from data centers exploded in the last 10 years, essentially in all the
+corners of the developed world.
+What has recently changed to encourage heat reuse now?
+1.
+Governments have committed to sustainability goals including decarbonization and are putting in place
+new legislations and subsidies.2
+2.
+Large companies have committed to ambitious sustainability goals, particularly IT companies, which
+tend to be more involved in Data Centers, either as operators or users.3
+3.
+The price of fossil fuel has increased dramatically which improves the economics of data center heat
+reuse.4
+4.
+Greater adoption of direct liquid cooling in data centers to support increasing processor power, which
+enables potentially higher return temperatures (45-65 °C vs 27-28 °C, as shown in Figure 3) meaning
+higher heat quality to work with.
+Let’s have a look at the temperatures we find in the most common liquid cooling solutions:
+Air Cooling
+Rear Door
+HX
+Cold Plate & Immersion
+15C
+28C
+40C
+65C
+Figure 3 – Typical Equipment operating temperature range and cooling technology
+4 https://ourworldindata.org/grapher/fossil-fuel-price-index?time=1997..latest
+3
+https://www.theguardian.com/environment/2020/sep/15/facebook-and-google-announce-plans-become-carbo
+n-neutral
+2 https://digital-strategy.ec.europa.eu/en/policies/green-cloud
+https://www.mckinsey.com/capabilities/sustainability/our-insights/how-the-european-union-could-achieve-net-
+zero-emissions-at-net-zero-cost
+1 One USA example: Industrial symbiosis grant program Washington State:
+https://app.leg.wa.gov/rcw/default.aspx?cite=43.31.635
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 7 ---
+PAGE 7
+What makes data center heat reuse possible and sustainable?
+To make a data center heat reuse project possible we need a combination of:
+1.
+A heat host (or heat consumer) nearby the data center area, possibly adjacent to it. If this is not the case,
+the collaboration of a utility will be needed as medium (or as heat host itself).
+2.
+A temperature level that is interesting for the heat host: optimally the heat will be directly used without
+transformations.
+3.
+Ideally the heat host and the data center have the same ownership structure (see Figure 4, the example
+of a campus); if not, then different entities must be willing to collaborate
+4.
+Finally, a legislative structure that encourages collaboration.
+Edge computing facilities are envisioned to be widely distributed enabling placement near a heat host. With
+Increasing rack power densities, containerized/modular data centers can surpass 0.5 MW which is a significant
+amount of heat for many applications and simplifies the piping required. It matches with a distributed heat
+generation, which is by far the most common way households are heated5.
+Is it beneficial for a heat host to receive the heat from a data center?
+Data centers are one of the most reliable heat sources currently available in the market. For a data center to be
+completely down, a major event must happen. Data center uptime is over 99,8% yearly, meaning that, in the
+worst case, there would be maximum 20 h of downtime per year. The heat host will receive the heat, considered
+a subproduct, which implies zero carbon footprint. The costs associated with the extraction of heat from the data
+center should be split by data center and heat host but the costs associated with the transformation of the heat
+(storage, increase of temperature, heat-to-cooling, etc.) should be invested by the heat host. In the best case a
+heat host can receive the excess heat for free, if not, it must be cheaper than the alternative considered for
+heating (gas, electricity, heat pump using the ambient air, etc.).
+Is it beneficial for a data center to provide the heat to a heat host?
+Data centers require a reliable heat host that will receive its excess heat. In any case, data centers will almost
+always have a redundant cooling system able to remove the heat if something were to happen to the heat host.
+From the data center point of view, a heat reuse project will rarely reduce the investment costs but the
+operational costs, making the usage of chillers or dry-coolers less needed. The costs associated with the
+5 IEA (2022), District Heating, IEA, Paris https://www.iea.org/reports/district-heating, License: CC BY 4.0
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 8 ---
+PAGE 8
+extraction of the heat from the data center should be split by both parties, but the costs associated with the
+transformation of the heat (storage, increase of temperature, heat-to-cooling, etc.) should be invested by the
+heat host.
+Figure 4 - Exemplary energy recovery concept for a data center integrated in a campus
+Candidates for a heat host
+The ideal heat host has a very high, consistent, and defined heat need 24/7 such as6:
+a)
+Water pre-heat
+b)
+Industrial laundries
+c)
+Bio-ethanol production plants
+d)
+Food and beverage
+e)
+Breweries
+f)
+Large hospital campuses
+g)
+Distillation of water (desalination and wastewater treatment)
+h)
+Other chemical/textile/metal industries
+i)
+Pharmaceutical
+6 Classifications taken from “Potential Applications and Policy Opportunities for Reusing Data Center Waste
+Heat in the U.S.”, David Gardiner, August 9, 2022
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 9 ---
+PAGE 9
+There are other interesting opportunities, but the heat they need tends to be influenced by the season with big
+variation between summer and winter:
+a)
+Districts heating networks (of any size)
+b)
+Biomass drying
+c)
+Greenhouses
+d)
+Fish farming
+As an example, let’s see in Table 1 a possible list of heat reuse opportunities (not meant to be comprehensive)
+Based on the World Bank classification7:
+Table 1 - Heat reuse opportunities in different scenarios for different sectors
+Heat Reuse Opportunities
+High Density Urban
+District Energy
+Private District
+Energy
+Building HVAC
+reheat
+Swimming
+Pools
+Hospitals/
+Hotels
+Wastewater
+Treatment
+Intermediate
+Density Urban
+District Energy
+Private District
+Energy
+Building HVAC
+reheat
+Industrial
+Laundries
+Swimming
+Pools
+Hospitals/
+Hotels
+Wastewater
+Treatment
+Low Density
+populated Areas
+Swimming Pools
+Hospitals/Hotels
+Wastewater
+Treatment
+Agriculture
+Biomass Drying
+Green Houses
+Heat Storage in
+aquifer
+Ethanol
+Production
+Coastal (Sea)
+Desalination
+Fish Farming
+Coastal (lake and
+rivers)
+Fish Farming
+Industrial
+Industrial
+Laundries
+Decarbonization
+Pre-Heating
+Wastewater
+Treatment
+Who gets the CO2 emissions reduction?
+The heat host is the one using the excess heat from the data center as an alternative to another heat source. The
+CO2 emissions avoided are the ones generated by that alternative and can only be accounted for by the heat
+7 https://blogs.worldbank.org/sustainablecities/how-do-we-define-cities-towns-and-rural-areas
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 10 ---
+PAGE 10
+host. Nevertheless, the data center could get to an agreement to be compensated for this. The data center will
+only directly profit from the CO2avoidance subject to the energy savings of their infrastructure.
+What is the impact on water usage?
+Deploying heat reuse allows to reduce the use of chillers and in some cases of cooling towers evaporating tons of
+water. Heat reuse itself can be done employing a close circuit and heat exchanging mechanisms transferring the
+heat from the producer (the data center) to the user (the heat host) with the smallest heat losses. The avoided
+water usage linked to the recovery of excess heat taken by a heat generator must be as well considered as a
+positive impact on the water footprint associated to the heat generation.
+How to collaborate for such a project?
+For the plan to exist and be implemented we need a legislative environment that is open and supportive of this
+effort. We are talking about bringing together, around a table, data center owners and heat users, with possibly
+a utility company as a liaison between the other two parties.
+The stakeholders are those that are directly involved in a heat reuse cycle, the environment which benefits from
+it, and society since a new and less expensive form of energy is now available.
+Techno-Economic Analysis
+Heat reuse projects are specific. The heat reuse project will depend on:
+1.
+Quantify the amount of heat and the temperatures we have available (do we have 1 MW at 40°C or 100
+MW at 60°C?),
+2.
+Availability of existing thermal piping network, or distance between data center and heat host to
+determine extra installation costs,
+3.
+Geographical location and type of environment (dense urban environment or a vastly open desert)
+4.
+Benefits of CO2reduction and water savings
+Techno-economics on a life-cycle basis will determine if the project is viable or not.
+What are the next steps?
+The Open Compute Project Foundation (OCP) is an open organization and a natural partner to establish a
+matchmaking platform, where data center operators discover potential heat users and start a conversation. A
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 11 ---
+PAGE 11
+great number of the large IT companies are already OCP members, the nonprofit nature of the organization and
+its credibility seem to be the ideal starting point to make this happen. What is needed next is a program to
+promote such a platform within the heat hosts such as the district heating organizations, hospitals, industries
+requiring low grade heating, real estate companies, etc. Once we have proved that the concept makes sense,
+these organizations need to lobby to improve the legislative structure. That is particularly true in some regions,
+like the US.
+Based on best practices, and following the openness of the OCP Foundation, define guidelines on how the “OCP
+way” of doing heat reuse in data centers can be, allowing to stay agnostic regarding different heat hosts, sharing
+basic general concept designs and Total Cost of Ownership analysis. Resources such as a checklist to assess the
+feasibility and desirability of a heat reuse project seems very helpful to initiate new projects.
+Conclusion
+The data center journey to sustainability started around 2006 when IT companies started to use energy from
+renewable sources. Heat reuse is just another step toward that goal.
+In this article we have seen why heat reuse is becoming more relevant these days and how this is related to a mix
+between current geopolitical conditions and ambitious public and corporate policies. We have seen why and
+how it can be beneficial for a data center to plan a heat recovery project and what the challenges and
+opportunities are. We have stated one of the biggest challenges as the lack of a structured system to facilitate
+intersectoral fluent communication and collaboration.
+The OCP heat reuse subproject is able and willing to pave the way with its work on a detailed guideline, a
+comprehensive list of use cases, a map format and a checklist for the pre-evaluation of heat reuse projects. The
+matchmaking platform between heat producers and heat consumers would be a logical next step.
+References
+1.
+Web resources:
+a.
+Industrial symbiosis grant program Washington State:
+https://app.leg.wa.gov/rcw/default.aspx?cite=43.31.635
+b.
+https://digital-strategy.ec.europa.eu/en/policies/green-cloud
+https://www.mckinsey.com/capabilities/sustainability/our-insights/how-the-european-union-co
+uld-achieve-net-zero-emissions-at-net-zero-cost
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 12 ---
+PAGE 12
+c.
+https://www.theguardian.com/environment/2020/sep/15/facebook-and-google-announce-pla
+ns-become-carbon-neutral
+d.
+https://ourworldindata.org/grapher/fossil-fuel-price-index?time=1997..latest
+e.
+IEA (2022), District Heating, IEA, Paris https://www.iea.org/reports/district-heating, License:
+CC BY 4.0
+f.
+“Potential Applications and Policy Opportunities for Reusing Data Center Waste Heat in the
+U.S.”, David Gardiner, August 9, 2022.
+https://drive.google.com/drive/folders/1Q9-sQDY--aVF3EIScOgDoioIddqIC1ja
+g.
+https://blogs.worldbank.org/sustainablecities/how-do-we-define-cities-towns-and-rural-areas
+License
+License: Creative Commons.
+OCP encourages participants to share their proposals, specifications, and designs with the community.
+This is to promote openness and encourage continuous and open feedback. It is important to remember
+that by providing feedback for any such documents, whether in written or verbal form, that the
+contributor or the contributor's organization grants OCP and its members irrevocable right to use this
+feedback for any purpose without any further obligation.
+It is acknowledged that any such documentation and any ancillary materials that are provided to OCP in
+connection with this document, including without limitation any white papers, articles, photographs,
+studies, diagrams, contact information (together, “Materials”) are made available under the Creative
+Commons Attribution-ShareAlike 4.0 International License found here:
+https://creativecommons.org/licenses/by-sa/4.0/, or any later version, and without limiting the
+foregoing, OCP may make the Materials available under such terms.
+As a contributor to this document, all members represent that they have the authority to grant the
+rights and licenses herein. They further represent and warrant that the Materials do not and will not
+violate the copyrights or misappropriate the trade secret rights of any third party, including without
+limitation rights in intellectual property. The contributor(s) also represent that, to the extent the
+Materials include materials protected by copyright or trade secret rights that are owned or created by
+any third-party, they have obtained permission for its use consistent with the foregoing. They will
+provide OCP evidence of such permission upon OCP’s request. This document and any "Materials" are
+published on the respective project's wiki page and are open to the public in accordance with OCP's
+Bylaws and IP Policy. This can be found at http://www.opencompute.org/participate/legal-documents/.
+If you have any questions, please contact OCP.
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 13 ---
+PAGE 13
+About Open Compute Foundation
+At the core of the Open Compute Project (OCP) is its Community of hyperscale data center operators, joined
+by telecom and colocation providers and enterprise IT users, working with vendors to develop open
+innovations that, when embedded in product are deployed from the cloud to the edge. The OCP
+Foundation is responsible for fostering and serving the OCP Community to meet the market and shape the
+future, taking hyperscale led innovations to everyone. Meeting the market is accomplished through open
+designs and best practices, and with data center facility and IT equipment embedding OCP
+Community-developed innovations for efficiency, at-scale operations, and sustainability. Shaping the
+future includes investing in strategic initiatives that prepare the IT ecosystem for major changes, such as AI
+& ML, optics, advanced cooling techniques, and composable silicon. Learn more at
+www.opencompute.org.
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+
+--- page 14 ---
+PAGE 14
+List of Figures and Tables
+Figure 1
+Exemplary energy balance in a data center
+Page 4
+Figure 2
+November 2022 snapshot of the Heat reuse projects map
+Page 5
+Figure 3
+Temperature range per cooling technology
+Page 6
+Figure 4
+Exemplary energy recovery concept for a data center integrated in a campus
+Page 8
+Table 1
+Heat reuse opportunities in different scenarios for different sectors
+Page 9
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.

@@ -1,0 +1,706 @@
+SOURCE: Source Documentation\New York State\June 10th FPCJ Meeting Summary Compiled.pdf
+
+
+--- page 1 ---
+MEETING SUMMARY
+TURNING WASTE HEAT INTO VALUE
+JUNE 10TH SITE VISIT AND WORKSHOP
+
+
+--- page 2 ---
+OVERVIEW
+Date: Wednesday, June 10, 2026 
+Time: 3:00 – 4:30 PM 
+Convened by: First Presbyterian Church in Jamaica & Metro IAF Clean Energy Initiative 
+Summary prepared by: Will Sibia & Ellinor Granström 
+Summary approved by: Joe Morris 
+2
+First Presbyterian Church in Jamaica (FPCJ): Rev. Patrick O'Connor; Raffique Ali; and 
+Elders Dora Sawh, Roxanne Tillman, Patrician Brooks Beach, and Roberta Galley 
+Metro IAF Clean Energy Initiative: Joe Morris 
+Verizon: John Barstow; Gregory Lipay
+NYSERDA: Michael Reed; Michel Beguin; Lauren DeLaFuente 
+NYC Economic Development Corporation (EDC): Miguel Maldonado; Jesse Weiss 
+Danfoss: Bruce Parsons 
+Alfa Laval: Emma Bolus 
+Swedish Consulate General: Nicole Tsarouhas 
+Endurant: Tony Amis; Jason Hertz; John Smithie 
+Urban Systems (urbs): Ellinor Granström; Will Sibia 
+Apologies: 
+Max Cap Construction: Eric Chan 
+Alfa Laval: Brad Carter 
+ATTENDEES
+
+
+--- page 3 ---
+BACKGROUND & PURPOSE
+The campus of First Presbyterian Church in Jamaica, Queens is adjacent to a large Verizon 
+switchgear and data facility that continuously releases waste heat. With support from 
+NYSERDA, urbs  has evaluated the technical feasibility of capturing this heat and reusing it to 
+provide space heating for the church’s community center – the 100-year-old Magill Building. 
+This workshop brought church leaders together with representatives from Verizon,  
+equipment manufacturers, engineering firms, and public agencies to review the feasibility 
+findings, discuss technical and institutional pathways, and identify next steps for both the 
+FPCJ demonstration project and broader scaling opportunities.
+3:00 PM – Welcome, Introductions & Site Tour
+Participants gathered in the Magill Building at the FPCJ campus.
+Rev. Patrick O’Connor welcomed the attendees and framed the significance of the project 
+for the congregation and the surrounding community.
+Joe Morris presented the agenda, followed by a short round of introductions around the 
+table.
+FPCJ Property Manager Raffique Ali led everyone for a short site tour to show the dry coolers 
+currently in use by Verizon to reject heat from the rear of their facility, just beyond FPCJ’s 
+property line.
+3
+PROCEEDINGS
+
+
+--- page 4 ---
+3:15 PM – Background & Goals
+Joe Morris (Metro IAF) outlined two key energy-related challenges facing FPCJ: high energy 
+costs and chronic performance problems with the current VRF system, including refrigerant 
+leaks. Joe highlighted the pioneering leadership of the church in deciding to install a heat-
+pump system and to disconnect from gas.
+Michael Reed (NYSERDA) described NYSERDA’s support for FPCJ’s heat pump project, and 
+the agency’s commitment to continue to work with FPCJ to achieve positive 
+outcomes. Michael noted that the opportunity to capture and reuse waste heat at FPCJ is 
+aligned with NYSERDA’s goals and a growing interest in heat recovery across the state.
+3:30 PM – Heat Recovery Feasibility at FPCJ
+urbs. Feasibility Findings
+Will Sibia and Ellinor Granström (urbs.) presented findings from the heat recovery feasibility 
+study and conceptual design, including an assessment of available waste heat from the 
+adjacent Verizon facility, the proposed system configuration, and preliminary energy 
+projections.
+Key finding: A small fraction of the heat currently rejected from the Verizon facility could be 
+captured, with proven technology, and used to provide most of the heating needs of the 
+Magill Building – significantly reducing FPCJ’s heating costs and grid demands with no 
+additional operating costs to Verizon.
+4
+
+
+--- page 5 ---
+3:30 PM – Heat Recovery Feasibility at FPCJ
+Technology & Case Studies – Danfoss & Alfa Laval
+Emma Bolus (Alfa Laval) and Bruce Parsons (Danfoss) provided technical commentary on 
+heat pump and heat exchanger systems suitable for this project. Both companies noted that 
+waste heat recovery is increasingly recognized as one of the world’s largest untapped energy 
+resources, and that existing and new data centers can employ these approaches to share 
+excess heat with neighboring buildings and communities. Key takeaways: Proven technical 
+solutions are already widely used, and EU regulators have started mandating that data 
+centers share the energy they reject with neighboring buildings or thermal networks.
+Execution and Deployment in New York – Endurant
+Tony Amis expressed Endurant’s keen interest in supporting the design and execution of 
+projects like this one, and offered that he saw no technical barriers to implementing this 
+concept at FPCJ.
+Verizon’s Response
+Rev. O’Connor asked for Verizon’s perspective. Verizon’s John Barstow noted the 
+company’s interest in executing model heat recovery projects like this one, but shared some 
+of the challenges this project would face. He stressed that the Verizon facility is not a 
+traditional data center, but rather a switchgear facility housing multi-generational 
+equipment in multiple rooms that are being cooled individually and reject heat via individual 
+dry coolers rather than a central energy rejection loop. He noted that the long-term plan for 
+the facility and its equipment is not fully understood at this moment, and suggested that 
+redundancy measures would be critical to ensure the proposed heating system at FPCJ 
+would not solely rely on Verizon’s waste heat in case things changed. This recommendation 
+is in line with urbs’s recommendations to the church.
+5
+
+
+--- page 6 ---
+4:00 PM - Q&A and Discussion
+Open discussion followed, covering regulatory considerations, financing, and various 
+system configurations. NYC EDC expressed a willingness to work with the parties to navigate 
+regulatory issues involved in transferring heat from one property to another. NYSERDA also 
+expressed an interest in learning more about potential barriers to the project and working 
+with the parties to overcome those barriers.
+4:10 PM – Scaling Heat Recovery
+The group discussed the larger significance of this project – i.e., how lessons from the FPCJ 
+project could inform broader implementation at data centers across New York State and 
+beyond. Danfoss and Alfa Laval agreed to serve as technical resources for the fact-finding 
+needed to advance this project as well as a broader national discussion on how data centers 
+can be responsible neighbors and energy consumers.
+6
+As a for-profit enterprise, Verizon would also have to understand the cost-benefit 
+implications of the project. Despite the obstacles, he expressed Verizon’s commitment to 
+explore this further.
+
+
+--- page 7 ---
+4:15 PM - Next Steps: Three Tracks
+First Presbyterian Church in Jamaica – Hydronic System
+•
+Advance the conceptual design for a heat recovery-ready, low-temperature hydronic 
+distribution system to replace the current refrigerant system:
+o Design development
+o Pricing and procurement
+Continue to Explore Heat Recovery at FPCJ
+•
+Gather additional data on available heat from the Verizon facility.
+•
+Develop a schematic design.
+•
+Identify and work to remove barriers:
+o Cost and financing structures
+o Institutional barriers
+Scaling Heat Recovery – Broader Fact-Finding
+•
+Conduct fact-finding in three areas:
+o Technical solutions
+o Institutional solutions
+o Regulations and standards
+7
+
+
+--- page 8 ---
+4.20 PM – Conclusion and Note of Thanks
+Rev. O’Connor reiterated how the church and Magill Building have served Jamaica over many 
+generations, and how this plan would allow the church to again demonstrate a solution for 
+wider community benefits across various boundaries. He shared how the church became a 
+pilot site Covid testing early in the pandemic, becoming a model for widespread adoption 
+elsewhere. FPCJ’s heat recovery story can be similarly impactful! Rev. O’Connor concluded 
+with a note of thanks for everyone’s time and active participation.
+Appendices
+Waste Energy Capture and Sharing Potential
+Heat Recovery Workshop Flyer
+8
+
+
+--- page 9 ---
+THE CLIMATE CRISIS NEEDS MANY INNOVATIVE THINKERS 
+AND EVEN MORE BOLD ACTORS. 
+WE CREATE OPPORTUNITIES FOR COLLABORATIVE 
+ACTION TOWARDS CLIMATE CHANGE. 
+
+
+--- page 10 ---
+FIRST 
+PRESBYTERIAN 
+CHURCH, JAMAICA 
+DESIGN CHARETTE
+
+
+--- page 11 ---
+HEAT RECOVERY | PAGE 1 
+APPROACH
+
+
+--- page 12 ---
+HEAT RECOVERY | PAGE 2 
+ASSESSMENT 
+SCOPE & AIM
+REDUCE PURCHASED ENERGY
+Offset a portion of the church’s electric 
+heating demand through recovered 
+thermal energy and improved system 
+efficiency.
+ESTABLISH A SCALABLE MODEL
+Evaluate the feasibility of a shared 
+thermal energy system that can support 
+future thermal network expansion and 
+urban heat recovery strategies.
+AIM
+Explore the opportunity to recover rejected heat from the neighboring Verizon 
+telecommunications facility and reuse it to support heating demand at the First Presbyterian 
+Church Jamaica campus through a shared thermal energy system.
+QUANTIFY HEAT RECOVERY POTENTIAL 
+Assess the quantity, quality, and 
+availability of heat currently rejected 
+through Verizon’s dry cooler 
+infrastructure and evaluate opportunities 
+for recovery and reuse.
+
+
+--- page 13 ---
+HEAT RECOVERY | PAGE 3 
+THERMAL RECOVERY 
+METHODOLOGY
+SITE & INFRASTRUCTURE REVIEW
+•
+Site visit and review of Verizon 
+facility and FPCJ campus 
+infrastructure
+•
+Identification of potential for 
+thermal energy recovery
+THERMAL REJECTION ESTIMATION
+•
+Estimation of heat rejection from 
+Verizon dry cooler units
+•
+Conservative assumptions for 
+operating hours and conditions
+•
+Calculation of recoverable thermal 
+energy
+HEATING DEMAND ANALYSIS
+•
+Review of historical utility data 
+and building characteristics
+•
+Energy model simulation of annual 
+heating demand
+•
+Comparison of demand with 
+estimated recoverable heat
+CONCEPTUAL SYSTEM MATCHING
+•
+Evaluation of thermal energy 
+recovery and transfer options
+•
+High-level assessment of system 
+integration feasibility
+•
+Identification of potential heating 
+offset and benefits
+
+
+--- page 14 ---
+HEAT RECOVERY | PAGE 4 
+FANS
+SPACE HEATING
+SPACE COOLING
+MISC.
+LIGHTING
+21 MMBtu
+19.7 MMBtu
+9.9 MMBtu
+9.3 MMBtu
+22.8 MMBtu
+21.4 MMBtu
+15.2 MMBtu
+14.2 MMBtu
+2.3 MMBtu
+2.2 MMBtu
+BILLS VS. ENERGY MODEL
+ENERGY MODEL = 778 MMBtu
+UTILITY BILLS = 829 MMBtu
+•
+Historical utility consumption was reviewed to understand the 
+church campus baseline heating and electrical demand.
+•
+High-level thermal estimates were developed to evaluate the 
+quantity of recoverable heat available from the neighboring 
+Verizon dry cooler infrastructure.
+•
+Conservative operating assumptions were used to estimate 
+annual heat rejection and potential thermal recovery capacity.
+•
+Baseline heating demand was compared against estimated 
+recoverable energy to evaluate the feasibility of a shared 
+thermal energy system.
+BASELINE CONSUMPTION 
+& CALIBRATION
+6%
+DEVIATION
+BILLS VS. 
+MODEL
+778
+MMBTU
+MODEL 
+CONSUMPTION
+829
+MMBTU
+BILLS
+CONSUMPTION
+
+
+--- page 15 ---
+HEAT RECOVERY | PAGE 5
+FINDINGS
+
+
+--- page 16 ---
+DISCLAIMER: Graphic is representative of the building system and does not reflect actual equipment locations or layout.
+HEAT RECOVERY | PAGE 6
+•
+The church campus recently transitioned to an electrified 
+heating and cooling system.
+•
+Heating and cooling are primarily served through a VRF-based 
+system consisting of approximately 9 rooftop units connected to 
+indoor terminal units across the campus.
+•
+Indoor units include a combination of ceiling cassette, 
+wall-mounted, and floor-standing systems serving various 
+spaces.
+•
+The current infrastructure results in a significant annual 
+electrical heating costs across the facility.
+EXISTING INFRASTRUCTURE
+BUILDING NAME
+BUILDING USE TYPE
+YEAR BUILT
+STORIES
+GROSS SQFT
+BUILDING OVERVIEW
+Magill Memorial Building
+Institutional Building
+1925
+3
+26,000
+CEILING CASSETTE
+FUJITSU AIRSTAGE 
+OUTDOOR UNITS
+FLOOR STANDING
+WALL MOUNTED
+
+
+--- page 17 ---
+HEAT RECOVERY | PAGE 7
+•
+Historical utility consumption was reviewed to establish the church campus baseline heating, 
+cooling, and electrical demand.
+•
+Space heating represents the largest portion of annual energy use, highlighting the building’s 
+significant electrical heating demand across occupied spaces.
+•
+The existing energy profile indicates strong potential to offset purchased heating energy 
+through recovered thermal energy from the neighboring Verizon facility.
+HISTORICAL ENERGY USE
+ENERGY DELIVERED
+778 MMBTU
+ELECTRICITY
+778 MMBTU
+SPACE
+ HEATING
+ 249 MMBTU
+F
+A
+N
+S 
+26
+ M
+MBT
+U
+LI
+G
+HT
+IN
+G 2
+29 MM
+BTU
+SP
+AC
+E C
+OOL
+ING 166 MMBTU
+OTHE
+R 109 M
+MBTU
+26
+KBTU/FT2
+EUI
+66
+TCO2E/YR
+EMISSIONS
+˚75,296
+ANNUAL ENERGY
+COST
+END USE BREAKDOWN
+SPACE HEATING
+32%
+SPACE COOLING
+21%
+MISC.
+14%
+LIGHTING
+29%
+FANS
+3%
+
+
+--- page 18 ---
+HEAT RECOVERY | PAGE 8
+•
+Five neighboring dry cooler units were analyzed, each 
+estimated at approximately 60 tons of cooling capacity.
+•
+Conservative operating assumptions estimate 
+approximately 16,070 MMBtu/year of rejected thermal 
+energy from the analyzed units.
+•
+Magill’s annual heating demand is estimated at 
+approximately 441 MMBtu/year. Through heat pump 
+integration, only approximately 343 MMBtu/year of 
+recovered heat would be required to meet demand, 
+representing roughly 2% of the total rejected heat 
+available from the analyzed units.
+•
+The analyzed units represent only a portion of the 
+estimated 25–35 dry coolers located across the 
+Verizon facility.
+HEAT RECOVERY POTENTIAL
+16,070
+MMBTU/YR
+TOTAL HEAT REJECTION 
+FROM 5 DRY COOLERS
+343
+MMBTU/YR
+HEAT RECOVERED 
+TO MEET DEMAND
+2%
+OF TOTAL 
+ESTIMATED HEAT 
+REJECTED
+441
+MMBTU/YR
+MAGILL HEATING 
+DEMAND
+
+
+--- page 19 ---
+HEAT RECOVERY | PAGE 9
+RECOMMENDATIONS
+
+
+--- page 20 ---
+DISCLAIMER: Graphic is representative of the building system and does not reflect actual equipment locations or layout.
+HEAT RECOVERY | PAGE 10
+HEAT RECOVERY 
+APPROACH
+˚300,000- 
+˚400,000
+EST. ENERGY TRANSFER 
+STATION COST
+˚300,000- 
+˚400,000
+EST. HEAT PUMP COST
+1. CAPTURE 
+2. TRANSFER
+3. HEAT PUMP 
+4. SUPPLY 
+Rejected heat is captured from 
+Verizon’s cooling infrastructure 
+through a shared glycol-based 
+thermal loop connecting multiple 
+dry cooler systems.
+Recovered thermal energy is 
+transferred through an 
+intermediary energy transfer 
+station to separate building 
+systems while enabling 
+controlled thermal exchange 
+between facilities.
+Heat pumps upgrade the 
+recovered low-temperature 
+thermal energy to usable 
+heating temperatures for the 
+church campus.
+The recovered energy supports the 
+building’s heating systems through 
+a low-temperature hydronic 
+distribution network, while existing 
+VRF infrastructure may continue to 
+support cooling operations.
+The proposed approach captures thermal energy from Verizon’s 
+dry cooler glycol loops and transfers it through an intermediary 
+energy transfer station to a heat pump system serving the 
+church campus. The system returns cooler glycol back to 
+Verizon’s infrastructure while repurposing heat that would 
+otherwise be rejected into the atmosphere. The current concept 
+envisions retaining existing VRF systems for cooling while heat 
+pumps provide low-temperature heating through an ambient 
+loop distribution system.
+
+
+--- page 21 ---
+HEAT RECOVERY | PAGE 11
+•
+60–100% of annual heating demand can potentially be supplied through recovered heat from 
+Verizon's cooling infrastructure.
+•
+33% reduction in HVAC energy consumption through heat recovery and heat pump integration.
+•
+18% reduction in total building energy use while retaining much of the existing building 
+infrastructure.
+IMPACT OVERVIEW
+21
+KBTU/FT2
+EUI
+54
+TCO2E/YR
+EMISSIONS
+˚61,418
+ANNUAL ENERGY
+COST
+33%
+REDUCTION
+297 MMBTU
+HVAC ENERGY 
+PROPOSED
+441 MMBTU
+HVAC ENERGY 
+TODAY
+HVAC ENERGY 
+CONSUMPTION
+33%
+REDUCTION
+25 TCO2E
+ PROPOSED
+37 TCO2E
+TODAY
+HVAC GHG EMISSIONS
+18%
+REDUCTION
+˚61,418
+ELECTRICITY COST 
+PROPOSED
+˚75,296
+ELECTRICITY COST 
+TODAY
+BUILDING ANNUAL COST
+
+
+--- page 22 ---
+HEAT RECOVERY | PAGE 12
+•
+FULL HEATING DEMAND CAN BE MET
+Preliminary analysis indicates that the church's entire annual 
+heating demand can be supplied through recovered thermal 
+energy and heat pump integration, subject to final coordination 
+with Verizon and the extent of dry cooler integration.
+•
+ONLY A SMALL PORTION OF AVAILABLE HEAT IS REQUIRED
+Meeting the building's annual heating demand requires only 
+approximately 343 MMBtu/year of recovered heat, representing 
+roughly 2% of the total rejected thermal energy estimated from 
+the five analyzed dry coolers.
+•
+SIGNIFICANT ADDITIONAL CAPACITY EXISTS
+The analyzed units represent only a portion of Verizon's cooling 
+infrastructure, which is estimated to consist of approximately 
+25–35 dry coolers across the site, indicating substantial 
+additional thermal recovery potential.
+•
+FOUNDATION FOR FUTURE EXPANSION
+The proposed approach demonstrates how underutilized heat 
+from critical infrastructure can be repurposed to support 
+neighboring buildings while reducing energy waste and improving 
+overall system efficiency.
+KEY FINDINGS & PROJECT IMPACT
+ELECTRICITY
+635 MMBTU
+HEAT RECOVERED FROM VERIZON
+343.3 MMBTU
+HEATING DELIVERED
+441 MMBTU
+H
+E
+A
+T
+ 
+P
+U
+M
+P 
+EL
+ECTRICITY
+ 9
+8 
+M
+M
+B
+T
+U
+FA
+NS 
+26 MM
+BTU
+PU
+MP
+S 7 M
+MBTU
+LIG
+HTIN
+G 229 M
+MBTU
+SPACE 
+COOLING 156 MMBTU
+PLUG 
+LOADS 109 MMBTU
+
+
+--- page 23 ---
+Illustrative map of cooling towers across New York City, highlighting future opportunities for thermal energy sharing between neighboring buildings.
+HEAT RECOVERY | PAGE 13
+•
+ALIGN WITH VERIZON OPERATIONS
+Confirm operational requirements, cooling system 
+constraints, and opportunities for thermal 
+integration across the Verizon facility.
+•
+PLANNING FOR SYSTEM DESIGN
+Use sensor deployment and operational data to 
+better understand heating, cooling, ventilation, and 
+indoor air quality needs, informing the optimal 
+system design and long-term energy strategy for 
+the church campus.
+•
+EXPAND THERMAL SHARING OPPORTUNITIES
+The project demonstrates a scalable model for 
+recovering heat from data centers and other 
+heat-intensive facilities, creating future 
+opportunities for thermal energy sharing 
+across New York City.
+NEXT STEPS
+
+
+--- page 24 ---
+TURNING WASTE 
+HEAT INTO VALUE
+SITE VISIT OVERVIEW
+WHY THIS MATTERS
+THE JAMAICA, QUEENS OPPORTUNITY
+WASTE HEAT RECOVERY WORKS!
+DATE:
+Wednesday June 10, 2026
+TIME:
+3:00 - 4:30 PM
+TENTATIVE AGENDA:
+•	
+Existing site and 
+infrastructure 
+walkthrough
+•	
+Waste heat recovery 
+demonstration overview
+•	
+Technical perspectives 
+from project partners
+•	
+Policy pathways for 
+urban waste heat reuse
+•	
+Opportunities for 
+broader implementation 
+and replication
+FROM DEMONSTRATION TO POLICY
+FROM DATA CENTER COOLING 
+TO COMMUNITY HEATING
+LOCATION:
+First Presbyterian Church in 
+Jamaica
+89-60 164th St, Jamaica, NY 
+11432, United States
+AI and data centers are among the fastest-growing sources of 
+electricity demand in New York State. Most of that energy is 
+consumed by cooling systems operating continuously, even during 
+winter. All electricity entering a data center ultimately becomes heat—
+typically wasted despite being a stable and reusable energy resource. 
+The campus of First Presbyterian Church in Jamaica is adjacent to a 
+Verizon switchgear and data facility releasing continuous waste heat. 
+With support from NYSERDA, Urban Systems (URBS), Danfoss, and 
+Alfa Laval are advancing a conceptual design to capture this heat and 
+reuse it to provide space heating for the church’s community center.
+Waste heat recovery is increasingly recognized as one of the world’s 
+largest untapped energy resources, with industry leaders such as 
+Danfoss and Alfa Laval helping advance systems that improve 
+efficiency and reduce grid strain, operating costs, and emissions. 
+Existing as well as new data centers can employ these approaches to 
+share excess heat with neighboring buildings and communities.
+This visit initiates dialogue around public policy that supports waste 
+heat capture and establishes performance expectations for large, 
+cooling-dominant facilities like data centers—reducing system-wide 
+energy waste and emissions.  This is one of many initiatives that will 
+be needed to ensure that AI and data centers can responsibly co-exist 
+with the rest of us.

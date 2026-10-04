@@ -1,0 +1,877 @@
+SOURCE: Source Documentation\Topic 5 - Heat reuse, Connecting DC to DE systems_v5.pptx
+
+
+--- slide 1 ---
+
+HEAT REUSE
+
+Connecting Data Centers with District Energy System
+[notes] Speaker Notes:
+Welcome everyone and introduce the topic: Heat Reuse – Connecting Data Centers with District Energy Systems.
+Set the context: rapid urbanisation, rising cooling demand, and sustainability pressures.
+Explain that traditional cooling is becoming inefficient and carbon intensive.
+Introduce district energy as a scalable, future-ready solution.
+Position today’s focus: turning waste heat from data centres into a usable energy resource.
+
+
+--- slide 2 ---
+
+
+Agenda
+
+Sl. No. | Topic | Time (min)
+1 | AI acceleration | 10
+2 | Data Center heat reuse | 10
+3 | Energy Transition | 5
+4 | Role of heat pump | 10
+5 | Heat reuse configuration | 10
+6 | Case study | 10
+7 | Q&A, Feedback | 5
+[notes] Speaker Notes:
+Walk through the agenda briefly: 
+AI-driven growth
+Heat reuse fundamentals
+Energy transition context
+Heat pump role
+Configurations and case studies
+Highlight this is a holistic journey: from problem → solution → real applications.
+Encourage participants to think about applicability in their own projects.
+
+
+--- slide 3 ---
+Explain the role of data centres as a reliable source of recoverable waste heat
+Evaluate how district heating networks can integrate recovered heat sources
+Understand the function and application of heat pumps in upgrading low-grade waste heat
+Learn about the real-world case studies of heat reuse in district energy systems
+Learning
+Objectives
+[notes] Speaker Notes:
+By the end of this session, participants should: 
+Understand data centres as heat sources
+Evaluate integration into district systems
+Understand heat pump role
+Learn from real case studies
+Reinforce CPD outcome: practical understanding, not just theory.
+
+
+--- slide 4 ---
+
+AI ACCELERATION
+[notes] Speaker Notes:
+Introduce AI as the primary driver behind data centre growth.
+Emphasise that this is not incremental—it’s exponential.
+
+
+--- slide 5 ---
+The AI Acceleration Moment
+AI demand is driving more infrastructure build in 3 years than the past 30.
+Global investment of $3 Trillion+ is projected by 2030
+Capacity growth is real, capitalized and already underway
+This is a structural shift in computing
+[notes] Speaker Notes:
+AI infrastructure growth = last 30 years compressed into 3 years.
+Highlight $3T investment outlook.
+Stress: this is a structural shift in computing and energy demand.
+Transition: More computing → more heat → bigger opportunity.
+
+
+--- slide 6 ---
+
+There are a total of 11,800 Data Centers currently in the world
+Data Center Capacity Explosion
+Global capacity 373 GW
+Active - 71 GW
+Under construction - 22 GW
+Development pipeline - 280 GW
+Current capacity in the USA is 228 GW, with expansion accelerating globally.
+Current capacity in China is 30 GW with 400 GW of spare grid capacity by 2030.
+Power race: “Bring your own power” model is surging
+[notes] Speaker Notes:
+Explain global scale: 11,800 data centres.
+Walk through capacity numbers (active, pipeline).
+Highlight “Bring your own power” trend → grid stress.
+Key message: Heat generation at scale is inevitable.
+
+
+--- slide 7 ---
+Balancing Growth with Economic & Social Stability
+
+
+
+
+
+
+
+
+
+
+POWER
+PUSHBACK
+PEOPLE
+PLANET
+POLICY
+Time to power is a fundamental constraint; the industry is now a primary driver of new energy generation
+Communities are increasingly organized; $150B in projects blocked or delayed in 2025 due to local opposition
+Critical shortage of skilled trades; 80,000+ electrician openings annually in the U.S. alone
+Balancing decarbonization goals with the immediate need for fossil-fuel-based "behind-the-meter" power to meet schedules
+The overarching regulator of data protection, grid access, and workforce readiness
+[notes] Speaker Notes:
+Introduce 5 key constraints: 
+Power
+Public pushback
+Workforce
+Decarbonisation pressure
+Policy
+Insight: Growth is no longer purely technical—it’s social and regulatory.
+
+
+--- slide 8 ---
+Trends to Watch
+
+
+
+
+
+
+
+
+
+
+Power Density
+Challenge
+Direct-to-Chip 
+Cooling
+Sustainable 
+Stewardship
+Community 
+Trust
+Mea 
+Culpa
+AI racks are exceeding the limits of traditional air and evaporative cooling 10kW to 150kW to 250kW to 600kW to > 1,500kW
+Adoption of closed-loop liquid systems that route coolant directly over processors
+Shift toward non-potable water sources and 
+"Zero Water" closed-loop systems
+Increasing transparency on actual water usage vs. "worst-case" permit estimates to mitigate public concern
+Designs of the past used more water. Going forward the 3x industry growth is mostly closed loop achieving water-neutrality for business, community and the planet.
+[notes] Speaker Notes:
+Explain shift from air to liquid and direct-to-chip cooling.
+Highlight rising rack densities (>1 MW).
+Emphasise water sustainability and closed-loop systems.
+Key link: Higher density = more recoverable heat.
+
+
+--- slide 9 ---
+KEY
+TAKEAWAY
+2
+3
+4
+5
+1
+
+
+
+
+
+DEMAND
+AI driving more infrastructure build in 3 years than the past 30
+CAPACITY
+373 GW global, 71 active, 22 under construction, 280 development pipeline
+PLANET 
+Balancing decarbonization commitments, Water stewardship, Sustainability
+POWER DENSITY CHALLENGE
+AI racks are exceeding the limits of traditional air and evaporative cooling 10kW to 150kW to 250kW to 600kW to > 1,500kW
+PUSHBACK
+Communities are increasingly organized; $150B in projects blocked or delayed in 2025 due to local opposition
+[notes] Speaker Notes:
+Summarise: 
+Demand surge
+Capacity expansion
+Sustainability pressure
+Cooling challenge
+Community pushback
+Transition: This leads directly to heat reuse opportunity.
+
+
+--- slide 10 ---
+
+DATACENTER HEAT REUSE
+[notes] Speaker Notes:
+Introduce second section: From problem to opportunity.
+
+
+--- slide 11 ---
+Across the Globe, waste heat is an untapped energy resource
+
+~95–100% of energy supplied into a 
+Data Center becomes heat
+
+Up to 85% is recoverable!
+[notes] Speaker Notes:
+95–100% of energy → heat.
+Up to 85% recoverable.
+Strong statement: Data centres are already energy plants—just not utilised yet.
+
+
+--- slide 12 ---
+From Energy Load to Energy Asset?
+
+
+Growth:
+Streaming, cloud and AI are permanent.
+Digital demand will continue to grow.
+Energy assets:
+Data centers are no longer just power sinks — they can become urban energy assets.
+Source: Multidisciplinary Digital Publishing Institute (MDPI) https://www.mdpi.com/2078-1547/6/1/117 
+[notes] Speaker Notes:
+Digital demand is permanent.
+Shift perception: 
+From power sink → energy asset
+Introduce idea of urban energy integration.
+
+
+--- slide 13 ---
+From Energy Load to Energy Asset?
+
+
+
+The Pressure:
+Grid constraints & connection delays.
+Rising energy costs and sustainability scrutiny
+Local community and planning pressure increasing
+High-efficiency, grid-resilient Data Center!
+The Opportunity:
+Energy consumption, grid impact & Carbon footprint
+Enabling new value streams (industrial, agriculture, aquaculture, campus, cooling reuse)
+The Demand:
+AI, cloud, and digital infrastructure driving DC growth across the Globe
+Increased power consumption + cooling demand is accelerating in major hubs
+[notes] Speaker Notes:
+Demand: AI, power, coolingPressure: cost, grid, community.
+Opportunity: value creation, decarbonisation.
+Key message: Efficiency + resilience = future-proof data centres.
+
+
+--- slide 14 ---
+
+Reality
+Cooling architectures and temperature levels:
+Air cooling: low-grade heat (~25–35°C)
+Liquid cooling: higher-grade (~35–60°C)
+Immersion cooling: potentially even higher and more stable (>60°C)
+
+Pain points: 
+Temperature mismatch 
+Distance to heat demand 
+Commercial alignment (who pays, who benefits?) 
+Reliability concerns 
+Joined up thinking: legislation, planning, specification
+[notes] Speaker Notes:
+Explain temperature levels: 
+Air cooling: low-grade
+Liquid/immersion: higher-grade
+Key challenges: 
+Temperature mismatch
+Distance
+Business model
+Insight: Heat exists—but integration is complex.
+
+
+--- slide 15 ---
+Advantages
+
+
+1
+Improved Overall Energy Efficiency (Lower PUE → Optimised WUE → Higher ERF)
+
+
+7
+Supports Urban & Edge Growth 
+
+
+2
+Alignment with Corporate ESG Goals (Hyperscaler/Collocation net-zero strategies)
+
+
+8
+Resilience to Grid Constraints & Energy Risk(Reduces cooling load & peak energy demand)
+
+
+3
+Cooling & Heat Synergy (Absorption cooling, reuse loops)
+
+
+9
+Heat reuse requires upfront CAPEX but delivers: Reduced operating costs & potential revenue from heat reuse
+
+
+4
+Industrial & Campus Value (Manufacturing, universities, healthcare)
+
+
+10
+ROI is site specific and depends on the use case. It is typically in the range of 1.5 years – 4.0 years.
+
+
+5
+Reduced Energy Costs & Infrastructure Optimization 
+
+
+11
+Heat reuse enables>Faster approvals> Improved ESG scores>Stronger community positioning
+
+
+6
+Competitive Differentiation
+
+
+12
+Each MWₜₕ of recovered heat avoids:~1,770 tonnes CO₂ annually
+[notes] Speaker Notes:
+Heat reuse offers several advantages: 
+Improves overall system efficiency, reflected in metrics like PUE and ERF
+Supports ESG and net-zero commitments
+Reduces operational costs and creates potential revenue streams
+Enhances grid resilience by reducing peak demand
+From a carbon perspective, every MW of recovered heat can avoid around 1,700+ tonnes of CO₂ annually.
+ROI is often attractive, typically between 1.5 to 4 years, depending on the project.
+
+
+--- slide 16 ---
+Its only waste heat if we choose 
+to waste it. 
+
+REUSE IT! DON’T LOOSE IT!
+[notes] Speaker Notes:
+Emphasise key message:Heat is only waste if unused.
+Strong transition into energy systems integration.
+
+
+--- slide 17 ---
+
+ENERGY TRANSITION
+[notes] Speaker Notes:
+Introduce system-level thinking.
+
+
+--- slide 18 ---
+To successfully transition to sustainable heating, grid optimization and integration of renewable and surplus energy sources within district heating networks is crucial.
+Source: International Energy Association
+Currently 90% of the heat supplied to district heating is produced through fossil fuels.
+[notes] The Statistic: As noted by the International Energy Agency (IEA), currently 90% of heat in district heating is still produced via fossil fuels.
+The Goal: The primary objective of the transition is grid optimization. We must integrate renewable and surplus energy sources to move away from this dependency.
+Transition: This isn't just a technological ambition; it is being driven by strict EU directives.
+
+
+--- slide 19 ---
+
+
+The district heating transition
+The industry is continually transitioning from first-generation oil-fired district heating to today’s fourth-generation intelligent systems. Throughout this journey, we have played a significant role in deploying some of the most advanced and efficient networks globally.
+
+This acts to reduce reliance on fossil fuels and integrates renewable and waste surplus heat by lowering grid temperatures.
+
+Ultimately, the ambition is to deliver systems that consistently meet demand while minimizing wasted heat and energy—supplying exactly what is required with the lowest possible environmental impact.
+District Heating 1st Gen – 4th Gen
+[notes] The 4 Generations of District Heating
+Introduction "To understand where we are going, we must understand where we’ve come from. The history of district heating is defined by a continuous drive towards lower temperatures and higher efficiency. We categorize this evolution into four distinct generations.“
+
+1st Generation (1880–1930): The Steam Age
+The System: This was the era of steam. Systems used steam pipes in concrete ducts to transport heat at very high temperatures—often up to 200°C.
+The Logic: Steam was chosen because early systems primarily served industry and large complexes like hospitals that required high heat content with low mass flows.
+The Drawback: While effective for its time, it was inefficient due to high heat losses and dangerous due to the high pressures involved.
+
+2nd Generation (1930–1980): The Pressurized Water Age
+The Shift: The major leap forward here was the transition from steam to pressurized superheated water, delivering heat at temperatures above 100°C.
+The Driver: This generation was driven by the need for operational safety and better efficiency. It unlocked the potential of Combined Heat and Power (CHP) plants.
+The Impact: By utilizing waste heat from power plants (rather than just burning coal/oil for heat alone), this generation reduced fossil fuel consumption by roughly 50% compared to separate production.
+
+3rd Generation (1980–2020): The Prefabricated Age
+Current Standard: This is what many of us see in the ground today. It introduced "lean" components—pre-insulated pipes and compact substations manufactured off-site.
+The Temperature: We moved generally below 100°C for the first time. Lower temperatures meant significantly reduced heat losses and lower investment costs.
+The Mix: This era began the shift away from pure fossil fuels, integrating biomass and some industrial surplus heat into the grid.
+
+4th Generation (2020–2050): The Smart Energy Age
+The Future: We are now transitioning to 4th Generation District Heating (4GDH). The defining characteristic is the ultra-low flow temperature of 50–60°C.
+Why Low Temp? Lower grid temperatures are essential for integrating fluctuating renewable energy sources like wind, solar, and low-grade waste heat from data centers.
+The System: It is no longer just a one-way delivery system; it is a smart, two-way grid where buildings can interact with the network (e.g., as prosumers). It focuses on minimizing heat loss and integrating the heating sector with the electricity grid for total energy system efficiency.Supermarket – Occupants consume heat, food storage refrigerators take away heat to the networkBiomass – Forward direction is to produce heat from biomass, reverse direction is to produce heat from rejected heat using heat pump
+Conclusion "In summary, the journey from 1st to 4th generation is a journey from high-temperature steam to low-temperature intelligent water systems. Each step has allowed us to reduce waste, integrate greener energy sources, and lower the environmental impact of heating our cities."
+
+
+--- slide 20 ---
+5th Generation District Heating (Ambient Loop System)
+Seasonal Storage
+Long term load balancing
+Industry
+Waste heat
+Solar
+Renewable heat
+Data Centre
+Cooling demand
+Aquifer or river
+Heat source and sink
+Residential buildings
+With Solar, HP and TES
+Heating or cooling dominated depending on the season
+Short term storage
+Decentralised renewable
+Commercial buildings
+With Solar, HP and TES
+Simultaneous heating and cooling
+Diverse load profile
+Short term storage
+Decentralised renewables
+Warm temperature source
+Cold temperature source
+[notes] Speaker Notes:
+Introduce ambient loop concept.
+Explain bidirectional energy flows.
+Highlight role of: 
+Storage
+Buildings
+Data centres
+Key idea: network becomes energy-sharing platform.
+
+
+--- slide 21 ---
+Heat Source and Sink
+SOURCE
+SINK
+[notes] Speaker Notes:
+Show diversity of sources: 
+Data centres, wastewater, geothermal
+Show sinks: 
+District heating, agriculture, industry
+Message: matching supply and demand is key.
+
+
+--- slide 22 ---
+Heat Source and Sink
+
+Wastewater
+
+Geothermal
+
+Supermarket
+
+Powerplant
+
+Other
+
+Vertical Farming
+
+Aquaculture
+
+Pharmaceutical
+
+F&B Processing
+
+Other
+SOURCE
+SINK
+[notes] Speaker Notes:
+Focus on the data center as a heat source and district heating as a heat sink
+
+
+--- slide 23 ---
+
+ROLE OF HEAT PUMP
+[notes] Speaker Notes:
+Introduce enabling technology.
+
+
+--- slide 24 ---
+
+What is a heat pump?
+A heat pump is a device that moves heat from one place to another using electricity. It does not create heat like a boiler, it only transfers heat.
+It takes heat from a colder place (like air, water, or ground) and delivers it to a warmer place (like a building) 
+Types of heat pump:
+Air to air (home, offices)
+Air to water (buildings with radiators, domestic hot water)
+Water to water (large scale district heating)
+[notes] Speaker Notes:
+Simple definition: moves heat, doesn’t create it.
+Explain types with examples.
+Position as bridge between low-grade heat and usable heat.
+
+
+--- slide 25 ---
+
+How does a heat pump work?
+Heat pump components:
+A heat pump uses electricity to drive a compressor and move heat from a colder source (air, ground, water, wastewater, data center cooling water) to a warmer sink (heating system / district heating).
+Evaporator: absorbs low‑temperature heat from the source. (a-b)
+Compressor: raises the pressure and temperature of the refrigerant (b-c)
+Condenser: releases heat at a useful temperature into the district network (c-d)
+Expansion: process where the refrigerant pressure and temperature drop (d-a)
+Why can it deliver more heat than the electricity it consumes?
+Because most of the delivered heat comes from the source, not from the electricity itself.
+[notes] Speaker Notes:
+Explain cycle: evaporator → compressor → condenser → expansion.
+Key insight: majority of heat comes from source, not electricity.
+
+
+--- slide 26 ---
+
+How does a heat pump work?
+[notes] Speaker Notes:
+Introduce COP (2–5 typical).
+Mention importance of temperature lift.
+
+
+--- slide 27 ---
+
+Advantages of a heat pump
+
+
+1
+Flexibility of heat source
+
+
+2
+Thermal diversification
+
+
+3
+Dual functionality (heating and cooling)
+
+
+4
+High energy efficiency
+
+
+5
+Reduced energy costs & infrastructure optimization 
+
+
+6
+Supports decarbonisation
+[notes] Speaker Notes:
+Flexibility: multiple heat sources
+Dual function: heating + cooling
+High efficiency
+Key enabler of sector coupling.
+
+
+--- slide 28 ---
+
+Heat pumps role in District Heating
+
+
+1
+Enable waste heat recovery at scale
+
+
+2
+Upgrade low-grade heat to usable heat
+
+
+3
+Drive decarbonisation of District Heating
+
+
+4
+Improve overall system efficiency (COP 2-5)
+
+
+5
+Provide flexible and future ready energy system
+
+
+6
+Reduce peak load and improve grid interaction
+[notes] Speaker Notes:
+Enable large-scale heat reuse
+Upgrade temperature
+Improve efficiency and grid interaction
+Key message: no heat reuse project without heat pumps.
+
+
+--- slide 29 ---
+
+HEAT REUSE 
+CONFIGURATION
+[notes] Speaker Notes:
+Introduce system design section.
+
+
+--- slide 30 ---
+How is the waste heat reused?
+Source: Equinix
+[notes] Speaker Notes:
+This slide shows a typical heat recovery pathway from a data centre.
+Waste heat from servers is first captured via the cooling system—often liquid cooling loops.
+This heat is then transferred through heat exchangers into a secondary circuit.
+A heat pump is typically used to upgrade the temperature to usable levels.
+The upgraded heat is then distributed to: 
+District heating networks
+Buildings
+Industrial processes
+The key concept here is closed-loop reuse, where heat is not rejected but reintegrated into the energy system.
+
+
+--- slide 31 ---
+
+[notes] Video showcasing the integration of Data Centers & District Energy, example from Germany.
+
+--- slide 32 ---
+
+Heat Reuse Configurations
+Ambient: Waste heat is transferred to a low‑temperature ambient loop shared between buildings.
+Centralised: Waste heat is sent to a central plant where heat pumps upgrade it for district heating supply.
+Hybrid ambient / centralized: Waste heat is partly shared via an ambient loop and partly boosted centrally to higher temperatures.
+Chip heating: Heat is recovered directly at server/chip level for very efficient low‑temperature reuse.
+Indirect: Waste heat is transferred via an intermediate loop or heat exchanger before being reused.
+Source: The Trade Council of Denmark, International District Energy Association and New York State of Opportunity
+[notes] Speaker Notes:
+There are several ways to integrate data centre heat into district systems:
+Ambient systems
+Operate at low temperatures
+Distribute heat across a shared loop
+Centralised systems
+Heat is sent to a central plant
+Upgraded using large heat pumps
+Hybrid systems
+Combine ambient sharing with central boosting
+Chip-level recovery
+Heat captured very close to the processor
+Highly efficient but more complex
+Indirect systems
+Use intermediate loops or heat exchangers
+Common where separation is required
+
+
+--- slide 33 ---
+
+Ambient
+Source: The Trade Council of Denmark, International District Energy Association and New York State of Opportunity
+[notes] Speaker Notes:
+In an ambient system, heat is shared via a low-temperature loop, typically 20–40°C.
+Buildings connected to the loop use local heat pumps to extract or reject heat.
+This allows: 
+Simultaneous heating and cooling
+High flexibility
+Data centres act as continuous heat sources within the loop.
+This configuration is ideal for 5th generation district energy systems.
+
+
+--- slide 34 ---
+
+Centralised
+Source: The Trade Council of Denmark, International District Energy Association and New York State of Opportunity
+[notes] Speaker Notes:
+In a centralised system, heat from the data centre is transported to a central energy plant.
+Large heat pumps are used to upgrade the temperature to district heating supply levels.
+Advantages: 
+Easier operation and control
+Economies of scale
+Suitable for existing district heating networks where higher temperatures are required.
+
+
+--- slide 35 ---
+
+Hybrid Ambient / Centralised
+Source: The Trade Council of Denmark, International District Energy Association and New York State of Opportunity
+[notes] Speaker Notes:
+A hybrid system combines both ambient and centralised approaches.
+Part of the heat is shared directly via a low-temperature loop.
+The remaining heat is upgraded centrally.
+This provides: 
+Greater flexibility
+Improved efficiency
+Better optimisation of load profiles
+Increasingly, this is seen as the most adaptable solution.
+
+
+--- slide 36 ---
+
+Chip Heating
+Source: The Trade Council of Denmark, International District Energy Association and New York State of Opportunity
+[notes] Speaker Notes:
+This approach captures heat directly at the server or chip level.
+Because the heat is captured closer to the source: 
+Higher temperatures are achievable
+Losses are minimized
+This improves reuse potential significantly.
+However, it requires: 
+Advanced cooling systems
+Higher integration complexity
+This is particularly relevant for AI and high-density computing systems.
+
+
+--- slide 37 ---
+
+Indirect
+Source: The Trade Council of Denmark, International District Energy Association and New York State of Opportunity
+[notes] Speaker Notes:
+In an indirect system, heat is transferred via an intermediate loop.
+This typically involves heat exchangers separating the data centre and district systems.
+Advantages: 
+Improved safety and reliability
+Easier retrofitting
+Common in cases where systems must remain hydraulically or operationally isolated.
+
+
+--- slide 38 ---
+Sustainable and Social Impact
+
+
+
+
+
+
+
+
+Environment
+95–100% of data center electricity becomes heat of which up to 85% recoverable energy 
+Heat reuse can avoid >10 million tons CO₂/year in Europe alone 
+Replacing fossil heat is critical as ~90% of district heating still uses fossil fuels
+Community
+Converts data centers from power consumers to local heat providers for buildings & homes 
+Supports resilient cities by reducing grid pressure and stabilizing local energy supply
+Affordable heating for residents using waste heat 
+District Heating
+Provides stable, baseload low‑carbon heat from data centers 
+Unlocks large-scale decarbonisation by integrating waste heat + heat pumps 
+Potential to supply ~10% of total heat demand from waste heat sources
+Data Center
+Turns waste heat into revenue and reduced cooling costs (up to €1M/year in cases) 
+Improves ESG metrics (PUE, ERF) and enables better compliance with regulations 
+Future-proofing: regulations already targeting 10–20% heat reuse requirements by 2026–2028
+[notes] Speaker Notes:
+Heat reuse creates value across multiple dimensions:
+Environmental:
+Up to 85% of heat can be recovered
+Significant CO₂ reduction potential
+Reduces dependence on fossil fuels
+Community:
+Provides affordable and stable heating
+Reduces strain on electrical grids
+Improves urban resilience
+District heating systems:
+Enables integration of low-carbon heat sources
+Provides stable baseload heat
+Data centres:
+Reduces cooling costs
+Creates new revenue streams
+Improves ESG metrics
+Overall, it is a multi-stakeholder win-win solution.
+
+
+--- slide 39 ---
+
+CASE STORY
+[notes] Speaker Notes:
+Now let’s move from theory to practice.
+The following case studies demonstrate how these concepts are implemented in real-world projects.
+Focus on: 
+System design
+Temperature levels
+Integration challenges
+Performance outcomes
+
+
+--- slide 40 ---
+
+Unlocking data center waste heat for low-carbon campus heating in the UK
+
+A campus-wide transition to low-carbon heating integrating data center heat recovery and high-efficiency heat pump systems to support an existing district heating network at a University in the UK.
+
+The challenge
+Peak load of ~11,000 kW across campus 
+Integrating new heat pumps into an existing network 
+Recovering waste heat from data center loads 
+Ensuring stable and reliable operation
+
+The solution
+Replacement of conventional plant (CHP, chillers, boilers) with heat pump-based solutions
+Use of shunt pump arrangements to ensure stable operation and temperature control
+Booster pump system enabling controlled injection of heat into the district heating circuit at target temperature
+The outcome
+Integration of waste heat into district heating supply at up to 75 °C
+Operating temperature levels: Evaporator: 25-16 °C and Condenser: 60-75 °C
+Reduced dependency on gas-based CHP and boilers 
+Improved system stability through storage and controlled pump operation 
+Scalable architecture enabling phased expansion across campus buildings
+86%
+Pump efficiency achieved
+300 kW
+Heat pump output capacity integrated
+2.95
+COP
+achieved
+[notes] Speaker Notes:
+This project focuses on a university campus decarbonisation strategy.
+Challenge:
+Integrating heat pumps into an existing network
+Recovering heat from data centre operations
+Maintaining reliability across campus
+Solution:
+Replacement of traditional CHP and boilers
+Integration of heat pumps
+Use of shunt and booster pump systems for stable control
+Outcome:
+Achieved up to 75°C supply temperatures
+COP around 2.95
+Significant reduction in fossil fuel dependency
+Key takeaway: hydraulic design and control strategies are critical.
+
+
+--- slide 41 ---
+
+Powering 6,000 homes by reusing waste heat from a data center in Denmark
+
+A large-scale heat reuse initiative in Høje Taastrup integrates a Hyperscaler data center’s waste heat into the district heating network, supporting decarbonization goals while improving energy utilization efficiency across the system.
+
+The challenge
+Large-scale integration of data center waste heat into district heating
+Managing low-grade heat (approx. 30/15°C) requiring temperature lift
+Balancing heat supply vs. seasonal demand fluctuations
+Ensuring reliable heat delivery to a wide residential base
+
+The solution
+Deployment of waste heat recovery system at the data center interface
+Installation of heat exchangers & heat pump to upgrade temperature
+Integration with existing district heating and cooling energy station
+Use of centralized thermal storage (pit pond storage) to balance supply and demand
+The outcome
+33,000 MWh large-scale pit thermal storage for heat buffering
+Approximate data center temperature levels: 30°C supply / 15°C return
+Heat upgraded using large heat pump systems before grid injection
+System connected to an existing combined district heating/cooling plant
+6000
+Homes supplied with DC heat
+310 GWh
+Network demand supported annually
+25%
+of heat demand supplied from DC
+[notes] Speaker Notes:
+This is a large-scale district heating integration in Denmark.
+Challenge:
+Low-grade heat (~30°C)
+Seasonal variations in demand
+Solution:
+Heat pump integration to upgrade temperature
+Large-scale pit thermal storage for balancing supply and demand
+Outcome:
+6000 homes heated
+~25% contribution to district heating demand
+High system efficiency and reliability
+Key learning: storage + heat pumps enable large-scale deployment.
+
+
+--- slide 42 ---
+
+Questions
+?
+[notes] Call to Action: We will now answer the questions from the chat and Q&A tab. 
+
+--- slide 43 ---
+
+Feedback
+[notes] Call to Action: Please provide feedback on today's session to help us improve future content.
+
+--- slide 44 ---
+
+Thank you!
+[notes] This slide formally closes the session. Participants are thanked for their time and attention. The importance of efficient and future‑ready cooling is reinforced. Attendees are encouraged to reflect on key learnings. The session concludes professionally and positively.
