@@ -120,6 +120,11 @@ export function buildSteps(data: AppData): Step[] {
               </li>
             ))}
           </ul>
+          <ol aria-label="Phasing and decision gates (working targets, docs/proposal/12-implementation-timeline.md)" className="hidden [@media(min-height:850px)]:flex flex-wrap items-center gap-x-1.5 gap-y-1.5 list-none p-0 m-0 text-[1rem]">
+            {["Town decision · target 31 Mar 2027", "Lawful approval · target 31 Mar 2028", "Ring 1 first heat · H2 2029", "Ring 2 on signed homes", "Ring 3 only if it passes the cost test"].map((t, k) => (
+              <li key={t} className="flex items-center gap-1.5">{k > 0 && <span aria-hidden className="text-ember">&rarr;</span>}<span className="chip !py-0.5 !px-2.5 !text-[1rem] whitespace-nowrap">{t}</span></li>
+            ))}
+          </ol>
         </div>
       ),
     },
