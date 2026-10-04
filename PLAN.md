@@ -49,6 +49,8 @@ Lanes now: in-session subagents (model, web app, organizer digest), Windows Clau
 | No designated disadvantaged communities nearby (HDR site pack) | resources/text site pack | Equity = rural energy burden + older residents, not EJ status. |
 | Deep Green 24 MW heat-reuse DC + BWL is in **Lansing, Michigan** | search results | Precedent only; never conflate with Lansing NY. |
 
+**Organizer guidance applied (research/digest-organizer.md):** no rubric exists; score against the 4 lenses + the 5-axis match (temperature, capacity, timing, seasonality, continuity) + HDR's 7 domains. Hot loop base 55-65 °C (organizer 4G target; 70 °C is a sensitivity). COP bounded 2-6. Heat recovery fraction reported as a range (0.4-0.85). Greenhouse benchmark ~1 MWth/ha, ~2 acres per DC MW (RII). Distance >2 km rated "poor" (CBS), which backs the conditional town ring. DCs rarely contract past 10 yr, so the HSA uses a 10-yr term + renewals + step-in. The land for the on-site ring is unverified (HDR frames ~46 acres; 434-acre site, 183 leased); being checked.
+
 **Revised concept (three rings):**
 1. **On-site ring (Phase 1):** greenhouse + aquaculture + food processing + community rec center/pool on the unleased acreage. Year-round sink, local jobs, and a nutrients story for HDR (phosphorus-impaired Cayuga Lake: closed-loop aquaponics captures nutrients instead of runoff).
 2. **Corridor ring (Phase 2):** homes and farms along the route to the town center on an ambient loop, gated by sign-up density.
