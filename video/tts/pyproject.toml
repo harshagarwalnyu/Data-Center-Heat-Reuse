@@ -1,0 +1,10 @@
+[project]
+name = "tts"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "kokoro-onnx>=0.6.1",
+    "numpy>=2.4.6",
+    "scipy>=1.17.1",
+    "soundfile>=0.14.0",
+]

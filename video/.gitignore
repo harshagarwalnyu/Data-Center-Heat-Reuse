@@ -1,0 +1,7 @@
+node_modules
+out
+tts/models
+tts/.venv
+__pycache__
+out-build.log
+public/music.wav
