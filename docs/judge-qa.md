@@ -1,6 +1,6 @@
 # Judge Q&A — Thermal Commons (Site 2, Lake Hawkeye)
 
-Live judging is a 5-minute presentation plus a demo. HDR and Grundfos engineers will press the machinery. Twenty-five answers below. Each number is a key in `outputs/site2.json` (generated 2026-10-04) unless the source line names a doc section or a `research/verification.md` row. Claims we could not verify are marked `[unverified]`. Design choices are marked **PROPOSAL** or **ASSUMPTION**.
+Live judging is a 5-minute presentation plus a demo. HDR and Grundfos engineers will press the machinery. Twenty-nine answers below. Each number is a key in `outputs/site2.json` (generated 2026-10-04) unless the source line names a doc section or a `research/verification.md` row. Claims we could not verify are marked `[unverified]`. Design choices are marked **PROPOSAL** or **ASSUMPTION**.
 
 Team: Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev). The community heat co-op is the Thermal Commons co-op. Site 2 is Lake Hawkeye / TeraWulf at the former Cayuga plant, Lansing, New York. Site 1 (111 Eighth Avenue) is the comparison. Deep Green with Board of Water & Light is Lansing, Michigan, and it was withdrawn (verification.md row 12).
 
@@ -164,6 +164,30 @@ Defend as model outputs, not as signed contracts. `impact` reports **126** jobs,
 
 **Source:** `impact`, `extras.greenhouse_check`, `hdr_scorecard`, `rings[onsite].lcoh_usd_mwh_7pct`, `rings[town]`. Lease acres: `research/verification.md` row 3c versus row 3d. No offtaker LOI: `docs/proposal/03-users.md` § Lane status.
 
+### 26. What is the embodied carbon of the build, and when does it pay back?
+
+It is a screening estimate, not an LCA. We take 21.4 km of pipe (`rings[onsite].pipe_km` plus `rings[corridor].pipe_km`), 500 heat pumps, one plate exchanger skid and a 5,558 m3 tank (`totals.storage_m3`), and apply generic per-unit factors that we label as assumptions with low and high values. The result is about 1,700 to 6,300 t CO2e. Against `impact.co2_avoided_t_yr` of **11,408 t/yr** (already net of heat pump and pumping electricity), payback is about **0.15 to 0.56 years**. The soft spot is not the embodied side. It is that the 11,408 counts phases 1 and 2 fully built. Refrigerant leakage, building works and end-of-life are not modeled.
+
+**Source:** `docs/council-gaps.md` section 1 (factors and arithmetic). `impact.co2_avoided_t_yr`, `totals.storage_m3`, `rings[].pipe_km`.
+
+### 27. Does heat reuse improve your water use effectiveness (WUE)?
+
+No change is claimed. WUE is water used on site per unit of IT energy. The published design is a sealed closed-loop glycol system with air-cooled dry coolers and no lake draw (verification.md row 4a, a developer claim), so there is no evaporative water for heat reuse to save. `impact.water.note` says no lake-water savings are claimed, so we claim **0 gallons**. The measured benefit is **970 MWh/yr** of fan energy (`impact.water.fan_energy_saved_MWh`). We do not say "no consumptive water", because make-up and domestic water are not addressed. The aquaponics loop is a design intent to keep nutrients in the building. It has no numbers.
+
+**Source:** `impact.water`, `docs/council-gaps.md` section 2. Permit: `research/verification.md` rows 4a, 5a, 5c.
+
+### 28. Who is liable if it breaks?
+
+The cooling-priority clause keeps the data center safe: TeraWulf may curtail heat at any time without penalty, a hard-wired bypass fails safe to the dry coolers, and no heat-side event is a data-center default or claim. On the heat side the co-op carries the risk for the network it owns, covers shortfalls with storage then backup boilers sized to 100% of peak (`totals.backup_share_annual_pct` **0.73%**; `totals.unmet_hours` is 0 only by construction), and holds liability and property insurance. We have no premium or limit. If TeraWulf leaves, a funded reserve applies, with `finance.dc_exit.stranded_musd` **$5.71M** as the starting reference. The Town is a counterparty and one board seat, not the operator or guarantor.
+
+**Source:** `docs/term-sheet.md` 2.3, 2.4, 2.6; `docs/council-gaps.md` section 5. The Town's authority to attach these conditions is not verified (G0.5).
+
+### 29. How do you keep pumping energy and delta-T under control?
+
+`outputs/hydraulics.json` computes variable-speed pumping for phases 1 and 2 at **374.59 MWh/yr**, an implied share of **0.74%** against the flat 1.5% in the base model (`phases_1_2.implied_pump_share`). That hides a corridor under-count: the 5 K ambient loop computes at **1.40 times** its flat share (`rings.corridor.computed_vs_flat_ratio`), and constant-speed pumping would be 27.3% of corridor heat. The fix is variable speed and a delta-T drift clause: monthly delta-T reporting, and a corrective-action trigger if return temperature rises past a margin (the margin is a blank until we have measured data). Losing 1 K of the corridor's 5 K is a 25% flow increase. Screening hydraulics only, not design.
+
+**Source:** `outputs/hydraulics.json` (`phases_1_2`, `rings.<id>.annual`), `docs/hydraulics.md`, `docs/council-gaps.md` section 7.
+
 ## Rubric
 
 This sheet serves Presentation (the value and the workings in the same answer) and Technology (COP clip, hourly backup shares, LCOH versus realised revenue). It does not change the app, so it does not put Execution at risk. Theme is the covenant: waste heat as the condition for community value, with the water and equity claims kept inside what the file and the site pack support.
@@ -172,7 +196,7 @@ This sheet serves Presentation (the value and the workings in the same answer) a
 
 ### Done
 
-- `docs/judge-qa.md` holds 25 questions with 2–3 sentence answers.
+- `docs/judge-qa.md` holds 29 questions with 2–3 sentence answers.
 - Engineering: COP and the 6.0 clip, 30 °C versus 50 °C, the three supply temperatures, curtailment and backup shares, the unmet-hours caveat, year-10 exit, glycol disagreement, legionella gap, town pipe loss.
 - Economics: corridor LCOH $285.8, ASHP at $96.9 versus tariff $108.9, LCOH versus realised revenue, ITC excluded with the upside case labeled as upside, pipe-versus-heat-pump breakeven, $26.01 million gap.
 - Delivery: co-op statute rows 11a–11d, HSA/CBA signatories, Town Board draft ban without the 36/38 count.

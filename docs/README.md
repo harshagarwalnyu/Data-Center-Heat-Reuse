@@ -31,6 +31,7 @@ Start with the root [README](../README.md). This index is a selected list of doc
 | [ownership-deal.md](ownership-deal.md) | Ownership models, recommendation, and term sheets for the Heat Supply Agreement and Community Benefit Agreement. |
 | [term-sheet.md](term-sheet.md) | Plain-language draft term sheet (not legal advice): Heat Supply Agreement, Community Benefit Agreement, permit conditions, tariffs, governance, gates and open items for counsel. |
 | [risk-matrix.md](risk-matrix.md) | Scored risk register, heat-continuity cascade and cooling independence statement. |
+| [council-gaps.md](council-gaps.md) | Expert-panel gaps closed: embodied carbon (screening estimate), WUE framing, governance charter box, lake and noise conditions, liability stack, legal-authority gate G0.5, pump and delta-T monitoring. |
 | [stakeholders.md](stakeholders.md) | Power and interest map and profiles of the people and institutions involved. |
 
 ## docs/proposal/, presentation and live judging
@@ -44,7 +45,7 @@ Start with the root [README](../README.md). This index is a selected list of doc
 | [video-script.md](video-script.md) | Script for the video presentation. |
 | [presentation-script.md](presentation-script.md) | Five-minute live presentation script: nine slides, speaker handoffs and clicker cues, then a 60-second demo. |
 | [demo-runbook.md](demo-runbook.md) | Judging-room demo runbook: setup commands, offline build and the demo path, using the same `outputs/site2.json` numbers as the slides. |
-| [judge-qa.md](judge-qa.md) | Twenty-five anticipated judge questions with answers, each tied to a key in `outputs/site2.json` or a verification row. |
+| [judge-qa.md](judge-qa.md) | Twenty-nine anticipated judge questions with answers, each tied to a key in `outputs/site2.json` or a verification row. |
 
 ## docs/audit/ : independent reviews
 
