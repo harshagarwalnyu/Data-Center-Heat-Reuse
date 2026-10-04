@@ -261,13 +261,13 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
         className="w-full h-full block select-none" style={{ background: "var(--surface2)", touchAction: "pan-y", cursor: dragging ? "grabbing" : view.k > 1 ? "grab" : "default" }}
         onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}>
         <g transform={`translate(${view.x} ${view.y}) scale(${view.k})`}>
-          <path d={lake} fill="var(--teal)" opacity="0.22" />
-          <text x={60} y={H * 0.45} fontSize="34" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
+          <path d={lake} fill="var(--lake)" opacity="0.55" />
+          <text x={60} y={H * 0.45} fontSize="34" fill="var(--lake-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
 
           <g {...ringHit("onsite", 0)}>
             <motion.g {...pop(0)}>
-              <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="var(--ember)" opacity={on("onsite") ? 0.42 : 0.28} />
-              <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="none" stroke="var(--ember)" strokeWidth={on("onsite") ? 6 : 3} />
+              <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="var(--teal)" opacity={on("onsite") ? 0.42 : 0.28} />
+              <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="none" stroke="var(--teal)" strokeWidth={on("onsite") ? 6 : 3} />
               {selected === "onsite" && <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm + 12} fill="none" stroke="var(--ink)" strokeWidth="4" strokeDasharray="14 9" />}
             </motion.g>
             <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="transparent" />
@@ -276,8 +276,8 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
 
           <g {...ringHit("corridor", 1)}>
             {selected === "corridor" && <path d={line(corridorPts)} stroke="var(--ink)" strokeWidth={bandW + 18} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.2" />}
-            <path d={line(corridorPts)} stroke="var(--teal)" strokeWidth={bandW} strokeLinecap="round" strokeLinejoin="round" fill="none" style={{ opacity: shown(1) ? (on("corridor") ? 0.42 : 0.28) : 0, transition: still ? "none" : `opacity .6s ease-out ${delay(1) + 0.4}s` }} />
-            <path d={line(corridorPts)} pathLength={1} stroke="var(--teal)" strokeWidth={on("corridor") ? 7 : 4} strokeLinecap="round" strokeLinejoin="round" fill="none" style={draw(shown(1), 1)} />
+            <path d={line(corridorPts)} stroke="var(--ember)" strokeWidth={bandW} strokeLinecap="round" strokeLinejoin="round" fill="none" style={{ opacity: shown(1) ? (on("corridor") ? 0.42 : 0.28) : 0, transition: still ? "none" : `opacity .6s ease-out ${delay(1) + 0.4}s` }} />
+            <path d={line(corridorPts)} pathLength={1} stroke="var(--ember)" strokeWidth={on("corridor") ? 7 : 4} strokeLinecap="round" strokeLinejoin="round" fill="none" style={draw(shown(1), 1)} />
             <path d={line(corridorPts)} stroke="transparent" strokeWidth={bandW} strokeLinecap="round" strokeLinejoin="round" fill="none" pointerEvents={shown(1) ? "stroke" : "none"} />
           </g>
           {dots("corridor", 1)}

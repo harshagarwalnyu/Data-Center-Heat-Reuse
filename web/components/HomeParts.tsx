@@ -73,7 +73,7 @@ export function Odometer({ value }: { value: string }) {
       <span className="sr-only">{value}</span>
       {value.split("").map((c, i) => /\d/.test(c)
         ? <Column key={i} digit={Number(c)} go={go} still={reduce} i={i} />
-        : <span key={i} aria-hidden className={COL}><span className="block h-[1.1em] leading-[1.1]">{c}</span></span>)}
+        : <span key={i} aria-hidden className="inline-block h-[1.1em] overflow-hidden align-bottom"><span className="block h-[1.1em] leading-[1.1]">{c}</span></span>)}
     </span>
   );
 }

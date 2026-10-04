@@ -28,12 +28,12 @@ export function RingMapSvg({ offtakers, townPipeKm }: { offtakers: Offtaker[]; t
   const [tx, ty] = project(TOWN);
   return (
     <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east in a straight line${pipeText}.`} className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
-      <path d={path(LAKE)} fill="var(--teal)" opacity="0.22" />
-      <text x={60} y={H * 0.45} fontSize="34" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
-      <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth={ONSITE_R_KM * pxPerKm * 0.9} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.28" />
-      <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth="3.5" strokeDasharray="2 9" strokeLinecap="round" fill="none" />
-      <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="var(--ember)" opacity="0.28" />
-      <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="none" stroke="var(--ember)" strokeWidth="3" />
+      <path d={path(LAKE)} fill="var(--lake)" opacity="0.55" />
+      <text x={60} y={H * 0.45} fontSize="34" fill="var(--lake-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
+      <path d={line(ROUTE)} stroke="var(--ember)" strokeWidth={ONSITE_R_KM * pxPerKm * 0.9} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.28" />
+      <path d={line(ROUTE)} stroke="var(--ember)" strokeWidth="3.5" strokeDasharray="2 9" strokeLinecap="round" fill="none" />
+      <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="var(--teal)" opacity="0.28" />
+      <circle cx={px} cy={py} r={ONSITE_R_KM * pxPerKm} fill="none" stroke="var(--teal)" strokeWidth="3" />
       <circle cx={tx} cy={ty} r={TOWN_R_KM * pxPerKm} fill="var(--violet)" opacity="0.25" />
       <circle cx={tx} cy={ty} r={TOWN_R_KM * pxPerKm} fill="none" stroke="var(--violet)" strokeWidth="3" strokeDasharray="10 7" />
       {offtakers.map((o) => {
@@ -94,18 +94,18 @@ export function RingMap({ offtakers: all, townPipeKm }: { offtakers: Offtaker[];
             layers: [
               { id: "bg", type: "background", paint: { "background-color": cssVar("--surface2", "#f4ede1") } },
               { id: "osm", type: "raster", source: "osm", layout: { visibility: "none" }, paint: { "raster-opacity": 0.75 } },
-              { id: "lake", type: "fill", source: "lake", paint: { "fill-color": cssVar("--teal", "#0b8ca6"), "fill-opacity": 0.25 } },
-              { id: "route-w", type: "line", source: "route", paint: { "line-color": cssVar("--teal", "#0b8ca6"), "line-width": 26, "line-opacity": 0.25 } },
-              { id: "route", type: "line", source: "route", paint: { "line-color": cssVar("--teal", "#0b8ca6"), "line-width": 3, "line-dasharray": [1, 3] } },
-              { id: "onsite", type: "fill", source: "onsite", paint: { "fill-color": cssVar("--ember", "#c2410c"), "fill-opacity": 0.3 } },
-              { id: "onsite-l", type: "line", source: "onsite", paint: { "line-color": cssVar("--ember", "#c2410c"), "line-width": 3 } },
+              { id: "lake", type: "fill", source: "lake", paint: { "fill-color": cssVar("--lake", "#a9c6d3"), "fill-opacity": 0.55 } },
+              { id: "route-w", type: "line", source: "route", paint: { "line-color": cssVar("--ember", "#c4572a"), "line-width": 26, "line-opacity": 0.25 } },
+              { id: "route", type: "line", source: "route", paint: { "line-color": cssVar("--ember", "#c4572a"), "line-width": 3, "line-dasharray": [1, 3] } },
+              { id: "onsite", type: "fill", source: "onsite", paint: { "fill-color": cssVar("--teal", "#2a8a84"), "fill-opacity": 0.3 } },
+              { id: "onsite-l", type: "line", source: "onsite", paint: { "line-color": cssVar("--teal", "#2a8a84"), "line-width": 3 } },
               { id: "town", type: "fill", source: "town", paint: { "fill-color": cssVar("--violet", "#7c4dcc"), "fill-opacity": 0.28 } },
               { id: "town-l", type: "line", source: "town", paint: { "line-color": cssVar("--violet", "#7c4dcc"), "line-width": 3, "line-dasharray": [3, 2] } },
               {
                 id: "pts", type: "circle", source: "pts",
                 paint: {
                   "circle-radius": 7, "circle-color": cssVar("--bg", "#fbf7f0"), "circle-stroke-width": 4,
-                  "circle-stroke-color": ["match", ["get", "ring"], "onsite", cssVar("--ember", "#c2410c"), "corridor", cssVar("--teal", "#0b8ca6"), "town", cssVar("--violet", "#7c4dcc"), cssVar("--ink2", "#3a4856")],
+                  "circle-stroke-color": ["match", ["get", "ring"], "onsite", cssVar("--teal", "#2a8a84"), "corridor", cssVar("--ember", "#c4572a"), "town", cssVar("--violet", "#7c4dcc"), cssVar("--ink2", "#3a4856")],
                 },
               },
             ],

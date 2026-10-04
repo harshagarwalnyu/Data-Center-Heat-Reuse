@@ -23,7 +23,7 @@ function Slider({ id, label, value, min, max, step, unit, onChange, fmt }: { id:
 function Kpi({ label, num, fmt, instant, unit, delta, good, before, badge, tip }: { label: string; num: number; fmt: (n: number) => string; instant: boolean; unit: string; delta?: string; good?: boolean | null; before?: string; badge?: string; tip?: ReactNode }) {
   return (
     <div className="card p-4" style={badge ? { borderColor: "var(--ember)", borderWidth: 2 } : undefined}>
-      <div className="text-caption text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1"><span>{label}{tip && <>&nbsp;<Info tip={tip} /></>}</span>{badge && <span className="chip !py-1 !px-2 !text-caption" style={{ background: "var(--ember)", borderColor: "var(--ember)", color: "#fff" }}>{badge}</span>}</div>
+      <div className="text-caption text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1"><span>{label}{tip && <>&nbsp;<Info tip={tip} /></>}</span>{badge && <span className="chip !py-1 !px-2 !text-caption" style={{ background: "var(--ember-text)", borderColor: "var(--ember-text)", color: "#fff" }}>{badge}</span>}</div>
       <div className="t-stat num mt-1 flex flex-wrap items-baseline gap-x-3">
         {before && <s className="text-ink2 font-semibold" style={{ fontSize: "0.6em", textDecorationThickness: "3px", textDecorationColor: "var(--ember)" }} aria-label={`was ${before}`}>{before}</s>}
         <span style={badge ? { color: "var(--ember-text)" } : undefined}><Tween value={num} format={fmt} instant={instant} /><span className="unit">{unit}</span></span>
@@ -113,7 +113,7 @@ export function Explore({ data }: { data: AppData }) {
               <div className="card p-4">
                 <h2 className="m-0 mb-2 text-h3">By ring</h2>
                 <table className="w-full text-caption">
-                  <thead><tr className="text-left text-ink2"><th className="pb-1 font-semibold">Ring</th><th className="pb-1 font-semibold num text-right">GWh/yr</th><th className="pb-1 font-semibold text-right">Share of heat</th></tr></thead>
+                  <thead><tr className="text-left text-ink2"><th className="pb-1 font-semibold">Ring</th><th className="pb-1 font-semibold num text-right">GWh/yr</th><th className="pb-1 pl-4 font-semibold text-right">Share of heat</th></tr></thead>
                   <tbody>
                     {s.byRing.map((r) => (
                       <tr key={r.id} className="border-t border-line"><td className="py-2 font-semibold" style={{ color: ringText(r.id) }}>{ringShort(r.id)}</td><td className="num text-right">{dec(r.demandMWh / 1000, 1)}</td><td className="num text-right">{r.demandMWh > 0 ? `${dec((r.demandMWh / Math.max(1, s.byRing.reduce((a, x) => a + x.demandMWh, 0))) * 100, 0)}%` : "off"}</td></tr>

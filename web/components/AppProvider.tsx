@@ -26,8 +26,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     try {
-      const t = localStorage.getItem("theme");
-      if (t === "dark" || t === "light") setTheme(t);
+      // The paper-and-paint look is light-only and has no toggle; clear any older saved "dark".
+      localStorage.removeItem("theme");
     } catch {}
   }, []);
   useEffect(() => {
