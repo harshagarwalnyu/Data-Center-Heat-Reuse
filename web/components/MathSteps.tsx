@@ -5,6 +5,8 @@ import { BASE_PATH, PUBLIC_URL } from "@/lib/config";
 import { dec, int } from "@/lib/format";
 import { APPROACH_K, COP_MAX, COP_MIN, ETA, cop, crf } from "@/lib/model";
 import { Term } from "./Tooltip";
+import { CarsRow, GapWaterfall, HeatChain, LcohBars, PriceBars, RangeBar, ThermoPair, Waffle } from "./HowFigures";
+import { Rise } from "./HomeParts";
 
 // Values that live only in config files (not in site2.json). Each is cited to its file on the step that uses it.
 const AVAILABILITY = 0.99; // config/engineering.yaml supply.capture_availability
@@ -50,7 +52,7 @@ function Row({ label, value, src }: { label: ReactNode; value: ReactNode; src?: 
   );
 }
 
-function Step({ n, title, stat, unit, formula, children, check, tone }: { n: number; title: string; stat: string; unit: string; formula: ReactNode; children: ReactNode; check: ReactNode; tone: string }) {
+function Step({ n, title, stat, unit, formula, children, check, tone, fig }: { fig?: ReactNode; n: number; title: string; stat: string; unit: string; formula: ReactNode; children: ReactNode; check: ReactNode; tone: string }) {
   return (
     <li className="grid grid-cols-[auto_1fr] gap-x-3 sm:gap-x-5">
       <div className="flex flex-col items-center" aria-hidden>
@@ -64,6 +66,7 @@ function Step({ n, title, stat, unit, formula, children, check, tone }: { n: num
           <span className="text-ink2">{unit}</span>
         </div>
         <p className="num m-0 mt-3">{formula}</p>
+        {fig && <Rise className="mt-4 rounded-2xl p-2 sm:p-3 border border-line" ><div style={{ background: "var(--cream)" }} className="rounded-xl p-2 sm:p-3">{fig}</div></Rise>}
         <div className="card mt-4 px-4 sm:px-5 py-2">{children}</div>
         <p className="m-0 mt-3 rounded-2xl px-4 py-3 text-ink" style={{ background: tone }}>
           <b>Checks out:</b> <span className="num">{check}</span>
@@ -134,7 +137,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
   const tone = "var(--sage)";
   return (
     <ol className="list-none m-0 p-0" aria-label="How every number checks out">
-      <Step n={1} title="How much heat the data center gives off" stat={int(S.heat_available_GWh)} unit="GWh of heat per year" tone={tone}
+      <Step n={1} fig={<HeatChain factors={[`${int(S.it_load_MW)} MW`, `×${S.load_factor}`, `×${S.capture_fraction}`, `×${AVAILABILITY}`, `×${int(HOURS)} h`]} result={`about ${dec(prod, 0)} GWh (model: ${dec(S.heat_available_GWh, 0)})`} />} title="How much heat the data center gives off" stat={int(S.heat_available_GWh)} unit="GWh of heat per year" tone={tone}
         formula="IT load × load factor × share captured × uptime × hours in a year"
         check={<>{int(S.it_load_MW)} × {S.load_factor} × {S.capture_fraction} × {AVAILABILITY} × {int(HOURS)} h = {dec(prod, 0)} GWh. The model runs hour by hour, so its {dec(S.heat_available_GWh, 1)} GWh is "about" this.</>}>
         <Row label="IT load" value={`${int(S.it_load_MW)} MW`} src={[source("ver_proj", "project facts"), cfg("config/engineering.yaml")]} />
@@ -143,7 +146,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="Uptime of the capture loop" value={String(AVAILABILITY)} src={[cfg("config/engineering.yaml")]} />
       </Step>
 
-      <Step n={2} title="How much of that heat we actually use" stat={`${dec(share, 1)}%`} unit="of the available heat" tone={tone}
+      <Step n={2} fig={<Waffle pct={share} />} title="How much of that heat we actually use" stat={`${dec(share, 1)}%`} unit="of the available heat" tone={tone}
         formula="heat delivered ÷ heat available"
         check={<>{int(on?.annual_MWh ?? 0)} + {int(co?.annual_MWh ?? 0)} = {int(used)} MWh. {int(used)} ÷ {int(S.heat_available_GWh * 1000)} MWh = {dec(share, 1)}%.</>}>
         <Row label="On-site campus (greenhouse, fish, rec center)" value={`${int(on?.annual_MWh ?? 0)} MWh`} src={[source("rii", "RII benchmark"), source("notes", "model notes")]} />
@@ -159,7 +162,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="Furnace efficiency" value={`${PROPANE.eff * 100}%`} src={[cfg("config/finance.yaml")]} />
       </Step>
 
-      <Step n={4} title="Our price and what a home saves" stat={usd(f.household.savings_vs_propane_usd, 0)} unit="saved per home per year" tone={tone}
+      <Step n={4} fig={<PriceBars propane={f.incumbent_usd_mwh.propane} ours={tariff} saving={f.household.savings_vs_propane_usd} />} title="Our price and what a home saves" stat={usd(f.household.savings_vs_propane_usd, 0)} unit="saved per home per year" tone={tone}
         formula="our price = 0.8 × propane price. saving = home use × (propane price − our price)"
         check={<>{TARIFF_SHARE} × {dec(f.incumbent_usd_mwh.propane, 1)} = {usd(tariff)}. {hh} MWh × ({dec(f.incumbent_usd_mwh.propane, 1)} − {dec(tariff, 1)}) = {usd(hh * (f.incumbent_usd_mwh.propane - tariff), 0)}; the file keeps unrounded prices and says {usd(f.household.savings_vs_propane_usd, 0)}.</>}>
         <Row label="Propane price (step 3)" value={`${usd(f.incumbent_usd_mwh.propane)} per MWh`} />
@@ -167,7 +170,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="Typical home heat use" value={`${hh} MWh per year`} src={[source("f2", "fact base"), source("tmy", "TMYx weather")]} />
       </Step>
 
-      <Step n={5} title="How well the heat pump works" stat={dec(T.avg_cop, 2)} unit="average COP (heat out per unit of power in)" tone={tone}
+      <Step n={5} fig={<ThermoPair src={src} sink={sink} cop={c} />} title="How well the heat pump works" stat={dec(T.avg_cop, 2)} unit="average COP (heat out per unit of power in)" tone={tone}
         formula={<>COP = {ETA} × T<sub>sink</sub> ÷ (T<sub>sink</sub> − T<sub>source</sub> + 2 × {APPROACH_K} K), kept between {COP_MIN} and {COP_MAX}</>}
         check={<>At {sink} °C delivery from a {src} °C source the formula gives {dec(c, 2)}{Math.abs(raw - c) > 0.005 && <> (unclipped {dec(raw, 2)})</>}. The yearly average across the heat pumps is {dec(T.avg_cop, 2)}.</>}>
         <Row label={<>Half of the ideal (<Term tip="The best any heat pump could do between two temperatures. Real ones reach about half.">Carnot</Term>) limit</>} value={String(ETA)} src={[source("dig", "organizer digest"), source("t5", "Topic 5 deck")]} />
@@ -185,7 +188,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         </div>
       </Step>
 
-      <Step n={6} title="What it costs to make a MWh of heat" stat={usd(f.lcoh_usd_mwh.utility_7pct)} unit="per MWh at 7% (LCOH)" tone={tone}
+      <Step n={6} fig={<LcohBars farm={lcOn} homes={lcCo} blend={blend} propane={f.incumbent_usd_mwh.propane} />} title="What it costs to make a MWh of heat" stat={usd(f.lcoh_usd_mwh.utility_7pct)} unit="per MWh at 7% (LCOH)" tone={tone}
         formula={<><Term tip="Levelized cost of heat: the cost of one delivered MWh, with the build cost spread over the equipment's life.">LCOH</Term> = (capex × <Term tip="Capital recovery factor: the share of the up-front cost charged each year over the equipment life, at a given cost of money.">CRF</Term> + yearly operating cost) ÷ MWh delivered</>}
         check={<>Pipe and tank last {LIFE.pipe} years, equipment {LIFE.equip}. Rebuilt from the capex lines: {usd(lcoh(0.04))} / {usd(lcoh(0.07))} / {usd(lcoh(0.1))} at 4 / 7 / 10%, file says {usd(f.lcoh_usd_mwh.coop_4pct)} / {usd(f.lcoh_usd_mwh.utility_7pct)} / {usd(f.lcoh_usd_mwh.private_10pct)}. If everything lasted 30 years it would be {usd(lcohSimple7)} (too low).</>}>
         <Row label="Capex (build cost)" value={`$${dec(f.capex_musd.total, 2)}M`} src={[cfg("config/finance.yaml"), source("mit", "MIT OCW")]} />
@@ -198,7 +201,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="Blended (weighted by heat)" value={`${usd(blend)} per MWh`} />
       </Step>
 
-      <Step n={7} title="The funding gap" stat={`$${dec(gap, 2)}M`} unit="gap in today's money, whole project" tone={tone}
+      <Step n={7} fig={<GapWaterfall corridor={corr} surplus={corr - gap} gap={gap} />} title="The funding gap" stat={`$${dec(gap, 2)}M`} unit="gap in today's money, whole project" tone={tone}
         formula="corridor gap − on-site surplus = whole-project gap. share of a data center build = gap ÷ build cost"
         check={<>−${dec(corr, 2)}M + ${dec(corr - gap, 1)}M = −${dec(gap, 2)}M. Spread over 30 years at 7% that is ${dec(ann, 3)}M a year. ${dec(gap, 2)}M ÷ ${int(build)}M = {dec((gap / build) * 100, 2)}% of the build.</>}>
         <Row label="Corridor on its own" value={`−$${dec(corr, 2)}M`} />
@@ -206,7 +209,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="Data center build cost (our assumption)" value={`$${int(build)}M`} src={[source("tt", "Turner & Townsend"), cfg("config/finance.yaml")]} />
       </Step>
 
-      <Step n={8} title="Carbon we avoid" stat={int(im.co2_avoided_t_yr)} unit="tonnes of CO₂ per year" tone={tone}
+      <Step n={8} fig={<CarsRow cars={cars} tonnes={im.co2_avoided_t_yr} />} title="Carbon we avoid" stat={int(im.co2_avoided_t_yr)} unit="tonnes of CO₂ per year" tone={tone}
         formula="CO₂ from the fuel we replace − CO₂ from the power and backup fuel we add. Cars = tonnes ÷ tonnes per car"
         check={<>{int(im.co2_avoided_t_yr)} ÷ {KG_CAR} t per car = {int(cars)} cars (file says {int(im.co2_cars_equiv)}).</>}>
         <Row label="Fossil heat displaced" value={`${int(im.fossil_displaced_MWh)} MWh`} src={[source("epa_ef", "EPA factors"), source("ver_ef", "price check")]} />
@@ -214,7 +217,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="CO₂ per car per year" value={`${KG_CAR} t`} src={[cfg("config/impact.yaml")]} />
       </Step>
 
-      <Step n={9} title="How sure are we" stat={mc ? usd(mc.stats.lcoh_blended_7pct.P50) : "..."} unit="per MWh, middle of 500 runs" tone={tone}
+      <Step n={9} fig={mc ? <RangeBar p10={mc.stats.lcoh_blended_7pct.P10} p50={mc.stats.lcoh_blended_7pct.P50} p90={mc.stats.lcoh_blended_7pct.P90} propane={f.incumbent_usd_mwh.propane} /> : null} title="How sure are we" stat={mc ? usd(mc.stats.lcoh_blended_7pct.P50) : "..."} unit="per MWh, middle of 500 runs" tone={tone}
         formula="re-run the whole model with random inputs, then read the 10th, 50th and 90th percentile of the cost of heat"
         check={mc ? <>{int(mc.n_draws)} full runs: P10 {usd(mc.stats.lcoh_blended_7pct.P10)}, P50 {usd(mc.stats.lcoh_blended_7pct.P50)}, P90 {usd(mc.stats.lcoh_blended_7pct.P90)} per MWh. Propane is {usd(f.incumbent_usd_mwh.propane)}.</> : detailFailed ? <>The Monte Carlo file could not be loaded; see outputs/analysis_detail.json in the repo.</> : <>Loading the Monte Carlo file...</>}>
         <Row label="Inputs varied" value="capture share, pipe cost, uptake, heat pump cost, power price, propane price, discount rate" src={[cfg("outputs/analysis_detail.json")]} />
