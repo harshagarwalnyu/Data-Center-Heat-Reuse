@@ -1,21 +1,21 @@
 ef_kg_kwh:                      # facts-site2.md sec 7 (EPA GHG Hub; eGRID2023 NYUP 242.8 lb/MWh)
   grid: 0.1101
-  grid_marginal: 0.315          # NYISO Zone C marginal 0.28-0.35, midpoint
+  grid_marginal: 0.315          # midpoint of 0.28-0.35 kg/kWh; source: research/facts-site2.md line 142 (NYISO Zone C marginal gas-peaker range, https://www.nyiso.com, verified 2026-10-03). Range is a secondary estimate, midpoint is [A].
   propane: 0.2145              # corrected: liquid propane 62.87 kg/MMBtu (research/verification.md 10d), not 61.46 (gaseous)
   oil: 0.2520
   gas: 0.1810
 # Census ACS 2023 B25040 (https://data.census.gov/table/ACSDT5Y2023.B25040), town non-gas household shares propane 26 / oil 8 / electric 24 / other 4 (sum 62),
 # renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].
 mix_corridor: {propane: 0.419355, oil: 0.129032, electric: 0.387097, other: 0.064516}
-mix_onsite: {propane: 1.0}      # [A] no piped gas near plant (facts-site2.md)
-mix_town: {propane: 0.4, oil: 0.3, gas: 0.3}   # [A]
+mix_onsite: {propane: 1.0}      # ASSUMPTION: [A] no piped gas near plant (facts-site2.md)
+mix_town: {propane: 0.4, oil: 0.3, gas: 0.3}   # ASSUMPTION: [A]
 kg_co2_per_car_yr: 4290         # EPA GHG Equivalencies Calculator 4.29 t CO2e/vehicle-yr (FHWA 2022 22.8 mpg, 10,917 mi; https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references, verified 2026-10-04)
-fan_kwh_per_kwh_rejected: 0.02  # [A] dry-cooler fan electricity per kWh heat rejected
-jobs:                           # CG Table 2 (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130)
+fan_kwh_per_kwh_rejected: 0.02  # ASSUMPTION: [A] dry-cooler fan electricity per kWh heat rejected
+jobs:                           # Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint
   gh_fte_10ac: 6.5
   gh_pte_10ac: 35
   gh_fte_65ac: 13
   gh_pte_65ac: 130
-  aqua_t_per_job: 40            # [A]
-  rec_jobs: 12                  # [A]
-  network_ops_jobs: 8           # [A]
+  aqua_t_per_job: 40            # ASSUMPTION: [A]
+  rec_jobs: 12                  # ASSUMPTION: [A]
+  network_ops_jobs: 8           # ASSUMPTION: [A]

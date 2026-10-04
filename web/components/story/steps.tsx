@@ -109,7 +109,7 @@ export function buildSteps(data: AppData): Step[] {
       notes: "Three rings. Ring 1, Phase 1 (proposed): on-site greenhouse, aquaculture and a community rec center with pool on adjacent land. The 183-acre site is on an 80-year lease to TeraWulf's Lake Hawkeye LLC and the landlord is an affiliate, so the campus is framed as proposed. It is a year-round sink with no public trenching. Ring 2: homes and farms along the road on an ambient loop, gated by sign-up density. Ring 3: school campus and town buildings, 5-7 miles away, built only if its cost of heat beats propane and oil.",
       visual: (
         <div className="flex flex-col gap-4 h-full min-h-0">
-          <div className="h-[min(44dvh,420px)] lg:h-auto lg:flex-1 min-h-[260px]"><RingMap offtakers={data.offtakers} /></div>
+          <div className="h-[min(44dvh,420px)] lg:h-auto lg:flex-1 min-h-[260px]"><RingMap offtakers={data.offtakers} townPipeKm={d.rings.find((r) => r.id === "town")?.pipe_km} /></div>
           <ul className="grid gap-2 list-none p-0 m-0 sm:grid-cols-3">
             {d.rings.map((r) => (
               <li key={r.id} className="card p-3">
@@ -253,8 +253,8 @@ export function buildSteps(data: AppData): Step[] {
           <div className="grid gap-3 grid-cols-2 lg:grid-cols-4">
             <Tile tone="teal" big={int(d.impact.co2_avoided_t_yr)} unit="t CO₂/yr" label={<>about {int(cleanCarbonCars)} cars off the road</>} />
             <Tile big={int(d.impact.homes_served)} unit="homes" label="on recovered heat" />
-            <Tile tone="violet" big={int(d.impact.jobs)} unit="jobs" label="on the on-site campus" />
-            <Tile big={int(d.impact.local_food_t_yr)} unit="t food/yr" label="grown with heat, in winter too" />
+            <Tile tone="violet" big={int(d.impact.jobs)} unit="jobs" label="on the on-site campus (scenario assumption)" />
+            <Tile big={int(d.impact.local_food_t_yr)} unit="t food/yr" label="grown with heat, in winter too (scenario assumption)" />
           </div>
           <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
             {d.hdr_scorecard.map((s) => (

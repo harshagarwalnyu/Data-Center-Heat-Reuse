@@ -26,7 +26,7 @@ next 16.3, react 19.3, tailwindcss 4.3, framer-motion 14, recharts 3.10, maplibr
 ## Data handling
 - Reads `site2.json`, `site1.json`, `offtakers.json` (array or `{offtakers: []}`). "Illustrative data" badge shows only when a file has `"placeholder": true`.
 - Optional fields used when present: `extras.*` (top-level `extras` in site2.json: ring LCOH, funding, cba, with_town, greenhouse_check), `rings[].lcoh_usd_mwh_7pct`, `finance.dc_exit.*`, `impact.ere`, `assumptions.*`.
-- Every number in the UI comes from these files. Hardcoded constants are only model physics and UI choices in `lib/model.ts`: eta 0.5, approach 3 K, 30-yr life, COP cap 8, capture temperatures air 30 / liquid 50 C, home-size multipliers (0.7 / 1 / 1.5), default sink temperatures per ring (45 / 55 / 65 C) used only when a ring has no `sink_temp_C`, fuel mix for blended emission factor.
+- Every number in the UI comes from these files. Hardcoded constants are only model physics and UI choices in `lib/model.ts`: eta 0.5, approach 3 K, 30-yr life, COP clipped to [2, 6] (COP_MIN/COP_MAX in `lib/model.ts`), capture temperatures air 30 / liquid 50 C, home-size multipliers (0.7 / 1 / 1.5), default sink temperatures per ring (45 / 55 / 65 C) used only when a ring has no `sink_temp_C`, fuel mix for blended emission factor.
 - Explore mode computes a first-principles scenario and scales the data file's headline numbers by scenario/base, so base sliders reproduce the model exactly. Base case = Phases 1-2 (town ring off), matching how the model scopes `totals`.
 
 ## Story copy decisions (from coordinator + verification)

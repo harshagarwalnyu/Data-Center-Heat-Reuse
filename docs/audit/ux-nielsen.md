@@ -164,7 +164,7 @@ Overall: **6 / 10** for a projector pitch to this audience. Strong frame, unsafe
 - **Heuristics:** H2, H6
 - **Screenshots:** `story-03-1920.png`, `story-03-1366.png`, and the same map on `print-1920.png` / `print-1366.png`
 - **What the room sees:** Cayuga Lake, data center, a dashed line, “Corridor homes,” a purple “Town center,” a **5 km** scale bar, and several open circles with no names. Phase cards are readable: Phase 1 on-site 37.1 GWh/yr · 16 MW peak; Phase 2 corridor 13.5 GWh/yr · 7 MW peak; Phase 3 town center “(if it pays)” 3.6 GWh/yr · 3 MW peak. The lede says start next to the data center and reach town only if the numbers pass. It does not say miles. Headline says **10-hectare**. At 1366 the phase titles wrap inside the cards; the numbers still show.
-- **Fix:** Scale bar in miles. One caption: “Town center is several miles of pipe — Phase 3 only if it beats propane.” Speaker notes already say 5–7 miles (`steps.tsx` plan notes); the picture should say it. Delete dots that have no label, or label the two that matter. Say “about 25 acres” beside 10 hectares, or drop hectares.
+- **Fix:** Scale bar in miles. One caption: “Town center is several miles of pipe — Phase 3 only if it beats propane.” Speaker notes already say 5–7 miles (`steps.tsx` plan notes); the picture should say it. Delete dots that have no label, or label the two that matter. Drop the hectare figure from the headline unless the site acreage is verified with a source (the 10 ha is a model assumption, not a confirmed footprint).
 
 ### F12 — Story 6 asks the room to read five cards and two charts
 

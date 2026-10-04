@@ -277,7 +277,7 @@ Hero tiles: one color (`--ink`) for all four numbers. Color belongs on the petal
 .cmp-bar { height: 4px; border-radius: 999px; background: var(--teal); margin-top: 4px; margin-left: auto; }
 ```
 
-Left card: one sentence in `.lede`, then three chips (`50 °C`, `upstate grid`, `gas moratorium`), not a paragraph stack.
+Left card: one sentence in `.lede`, then three chips (`50 °C`, `upstate grid`, `gas moratorium since 2015` with the 2026 status stated as unverified), not a paragraph stack.
 
 - **Effort:** Medium.
 

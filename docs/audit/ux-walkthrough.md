@@ -32,7 +32,7 @@ Cold open is `/` with no hash. `short` starts `true` (`Story.tsx`). Two of eleve
 |---|---|---|---|
 | 0 | Step 1 of 9 | 1 · Lansing today | The ban, the gas moratorium, $136/MWh propane |
 | 1 | Step 2 of 9 | 2 · The insight | 15× / 6.5% supply versus use |
-| 2 | Step 3 of 9 | 3 · The plan | 10 ha, 500 homes, three rings |
+| 2 | Step 3 of 9 | 3 · The plan | 10 ha (model assumption), 500 homes, three rings |
 | 3 | Step 4 of 9 | 4 · How heat flows | Side-stream Sankey |
 | 4 | Step 5 of 9 | **6** · Matching through the year | Five match tests and two charts |
 | 5 | Step 6 of 9 | **8** · Who pays, who owns | Co-op, ring costs, $26M gap |
@@ -74,7 +74,7 @@ Where they get lost: the headline and the chart disagree by 0.4× because the he
 
 ### Step 3 of 9 — The plan
 
-Seen in `story-03-1920.png`. Headline: a 10-hectare year-round farm campus and 500 homes. Lede: bring users to the heat; town center only if the numbers pass. Map labels Data center, Cayuga Lake, Corridor homes, Town center, a 5 km scale. Cards: Phase 1 on-site 37.1 GWh/yr · 16 MW peak; Phase 2 corridor 13.5 GWh/yr · 7 MW peak; Phase 3 town center (if it pays) 3.6 GWh/yr · 3 MW peak. Those match `site2.json` rings (37,076 MWh, 16.36 MW; 13,500 MWh, 6.84 MW; 3,577 MWh, 2.96 MW) after rounding.
+Seen in `story-03-1920.png`. Headline: a 10-hectare (model assumption, not a confirmed project footprint) year-round farm campus and 500 homes. Lede: bring users to the heat; town center only if the numbers pass. Map labels Data center, Cayuga Lake, Corridor homes, Town center, a 5 km scale. Cards: Phase 1 on-site 37.1 GWh/yr · 16 MW peak; Phase 2 corridor 13.5 GWh/yr · 7 MW peak; Phase 3 town center (if it pays) 3.6 GWh/yr · 3 MW peak. Those match `site2.json` rings (37,076 MWh, 16.36 MW; 13,500 MWh, 6.84 MW; 3,577 MWh, 2.96 MW) after rounding.
 
 What they understand: three phases, town is conditional, users are supposed to come to the plant. The "if it pays" label is plain.
 
@@ -134,7 +134,7 @@ Seen in `story-10-1920.png`. Headline: 11,456 t CO₂, 126 jobs, 5,500 t local f
 
 What they understand: this is the HDR page. Water is stated as a non-claim, which is the correct reading of the closed loop. The disadvantaged-community sentence does not overreach. Jobs and food give the covenant something other than carbon.
 
-Where they get lost: the first petal chip and the petal title are the same word, so the card reads "Community Community." Carbon says "HP" with no expansion. ERF and ERE are unexplained on a slide whose reader is a pump executive, not an energy-reuse specialist. `hdr_scorecard[].metric` is in the JSON ($735/yr, 10 ha, 0 gal/yr, 11,455 t) and is not rendered; the card shows `claim` only (`steps.tsx`). Biodiversity is a sentence with no figure, even though the metric in the file is "10 ha greenhouse on former coal site." The seven domains are present. The metrics that would make them believable are one field away and not on screen.
+Where they get lost: the first petal chip and the petal title are the same word, so the card reads "Community Community." Carbon says "HP" with no expansion. ERF and ERE are unexplained on a slide whose reader is a pump executive, not an energy-reuse specialist. `hdr_scorecard[].metric` is in the JSON ($735/yr, 10 ha [model assumption], 0 gal/yr, 11,455 t) and is not rendered; the card shows `claim` only (`steps.tsx`). Biodiversity is a sentence with no figure, even though the metric in the file is "10 ha greenhouse on former coal site." The seven domains are present. The metrics that would make them believable are one field away and not on screen.
 
 ### Step 9 of 9 — The ask (kicker 11)
 
@@ -162,7 +162,7 @@ Where they get lost: the headline says Lansing wins and the carbon row, the HDR 
 
 This is the page that would make this reader trust the file. It is a nav item with no pointer from the story, and it was not in the screenshot set. The test counts ("15 Python tests", "20 web tests") are sentences on the page. This walk did not run them.
 
-**One-pager** (`print-1920.png`). A letter sheet on screen, with **Print this page**. Headline matches the plan slide (10 ha, 500 homes). Four numbers: 778 GWh/yr, **15.4×**, **$735** saved per propane home, 11,456 t CO₂. Map, three phases, and a cost chart: community-owned **$90**, propane $136, oil $156. Safeguard line: dry coolers, 0 unmet hours. The ask repeats 2.0% and the GitHub URL. The town-center label on the map is cut off at the bottom of the map frame.
+**One-pager** (`print-1920.png`). A letter sheet on screen, with **Print this page**. Headline matches the plan slide (10 ha, a model assumption rather than a confirmed footprint; 500 homes). Four numbers: 778 GWh/yr, **15.4×**, **$735** saved per propane home, 11,456 t CO₂. Map, three phases, and a cost chart: community-owned **$90**, propane $136, oil $156. Safeguard line: dry coolers, 0 unmet hours. The ask repeats 2.0% and the GitHub URL. The town-center label on the map is cut off at the bottom of the map frame.
 
 Phase energy on this sheet uses `int()`, which rounds: corridor 13.5 GWh prints as **14**, town 3.6 GWh prints as **4**. The story cards say 13.5 and 3.6. The multiple is 15.4× here and 15× on the story headline.
 

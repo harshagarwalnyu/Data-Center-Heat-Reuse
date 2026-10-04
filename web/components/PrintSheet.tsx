@@ -48,7 +48,7 @@ export function PrintSheet({ data }: { data: AppData }) {
           <section className="grid grid-cols-[1.25fr_1fr] gap-3 min-h-0 flex-1">
             <div className="flex flex-col min-h-0">
               <h2 className="serif m-0 mb-1" style={{ fontSize: "13pt" }}>Three rings, built in phases</h2>
-              <div className="flex-1 min-h-0 rounded-lg overflow-hidden border border-line"><RingMapSvg offtakers={data.offtakers} /></div>
+              <div className="flex-1 min-h-0 rounded-lg overflow-hidden border border-line"><RingMapSvg offtakers={data.offtakers} townPipeKm={d.rings.find((r) => r.id === "town")?.pipe_km} /></div>
             </div>
             <div className="flex flex-col gap-2">
               <h2 className="serif m-0" style={{ fontSize: "13pt" }}>The rings</h2>

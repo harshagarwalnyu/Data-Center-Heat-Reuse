@@ -36,7 +36,7 @@ Base case for Site 2, Lake Hawkeye, Lansing NY: phases 1 and 2 (on-site campus p
 | Fossil fuel displaced | 52,016 | MWh/yr | `impact.fossil_displaced_MWh` |
 | Energy reuse factor, ERF | 0.0462 | ratio | `impact.erf` |
 | Energy reuse effectiveness, ERE | 1.154 | ratio (PUE 1.2) | `impact.ere` |
-| Jobs / local food | 126 / 5,500 | FTE-equivalent / t per year | `impact.jobs`, `impact.local_food_t_yr` |
+| Jobs / local food | 126 / 5,500 | modeled jobs (positions, not FTE-equivalent) / t per year | `impact.jobs`, `impact.local_food_t_yr` |
 
 Blended LCOH is a MWh-weighted average dominated by the cheap on-site ring. Quote the ring figures below alongside it.
 
@@ -90,7 +90,7 @@ The binding cost is the roughly 16,000 USD in-home heat pump, not the trench. Pa
 | Annuitized | 2.096 million USD/yr | `extras.cba` |
 | Straight-line, undiscounted | 0.867 million USD/yr | Understates the true annual cost; do not quote alone |
 | As share of data-center capex benchmark | 1.73 percent | 1,500 million USD = 10 million USD/MW x 150 MW (Turner & Townsend 2025, midpoint assumed) |
-| With 30 percent ITC, if it qualified | 13.28 million USD | Incentive scenario only; not assumed in the base, eligibility unverified |
+| With 30 percent ITC (hypothetical incentive sensitivity) | 13.28 million USD | Hypothetical only; not assumed in the base. A waste-heat network does not qualify as geothermal heat pump property under IRC 48 (research/verification.md 9d-i); other credit categories remain unverified |
 
 The gap is what a funding stack must cover so that tariffs stay below incumbent fuels. Candidate sources, none of them committed: a Community Benefit Agreement contribution from the data center, state programs (NYSERDA clean-heat funding, a utility non-pipes alternative), and low-cost municipal capital. The 4 percent co-op LCOH of 89.5 USD/MWh against 124.6 USD/MWh at 10 percent shows how much the cost of capital alone is worth. The owner we propose is a community thermal co-op; the structure, the municipal-utility alternative and the term sheets are in [ownership-deal.md](ownership-deal.md). We present the gap as the price of a license to operate, about 1.7 percent of the data-center's own capital, not as a business that pays for itself.
 
@@ -151,7 +151,7 @@ Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`
 - **Simplified hydraulics.** No pipe network hydraulics, ground-temperature loop model, tank stratification or seasonal storage; pipe losses are constant W/m.
 - **COP at the cap.** The central heat pump for the town ring runs at the 6.0 cap in the base, which is optimistic. The ring fails regardless.
 - **Unmet hours are zero by construction** because backup is sized at 100 percent of peak. Use the peak-share and backup-share metrics to judge resilience.
-- **Legal and regulatory.** Whether New York law supports a community thermal co-op for heat (formation statute, PSC jurisdiction, patronage and tax treatment) or a town-owned utility, the status of the Town Board's data-center ban draft, and eligibility of a waste-heat network for federal credits are unverified or open. See [risk-matrix.md](risk-matrix.md).
+- **Legal and regulatory.** Whether New York law supports a community thermal co-op for heat (formation statute, PSC jurisdiction, patronage and tax treatment) or a town-owned utility, the status of the Town Board's data-center ban draft, and eligibility of other credit categories are unverified or open. A waste-heat network is verified as ineligible for the geothermal heat pump credit (research/verification.md 9d-i). See [risk-matrix.md](risk-matrix.md).
 - **Site 1 is indicative only.**
 
 ## What we would do next

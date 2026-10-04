@@ -33,7 +33,7 @@ In exchange, the modeled scenario provides 11,408 t CO2/yr of avoided greenhouse
 ## 2. Site and Problem
 
 ### 2.1 The Host Facility: Lake Hawkeye Data Center
-The project is sited at the former Cayuga Generating Station (228 Cayuga Drive, Lansing, Tompkins County, NY; Census Tract 36109002300). The 183-acre industrial lakefront property is subject to an 80-year ground lease executed between Cayuga Operating Company LLC (landlord) and Lake Hawkeye LLC, a wholly owned subsidiary of TeraWulf Inc. Originally a 310 MW pulverized coal-fired power plant retired in 2019, the site is undergoing conversion into a high-performance computing (HPC) and artificial intelligence data center campus.
+The project is sited at the former Cayuga Generating Station (228 Cayuga Drive, Lansing, Tompkins County, NY; Census Tract 36109002300). The 183-acre leased parcel (total site acreage is unresolved; see `docs/ownership-deal.md`) is part of the industrial lakefront property subject to an 80-year ground lease executed between Cayuga Operating Company LLC (landlord) and Lake Hawkeye LLC, a wholly owned subsidiary of TeraWulf Inc. Originally a 310 MW pulverized coal-fired power plant retired in 2019, the site is undergoing conversion into a high-performance computing (HPC) and artificial intelligence data center campus.
 
 According to TeraWulf's Q2 2026 filings with the Securities and Exchange Commission, the facility is designed for approximately 400 MW of gross electrical capacity and 320 MW of critical IT load, with commercial operations targeted for approximately 2029. The project website describes a phase 1 of about 150 MW across three buildings (developer's plan, basis unstated; the filing states no phase split), and we use 150 MW as our modeled base-case assumption, not a confirmed facility fact. At an expected 80% baseload capacity factor, the facility consumes 1,051,200 MWh of electricity annually.
 
@@ -156,8 +156,8 @@ System performance is evaluated using an hourly energy balance simulation implem
 
 Hourly thermal loads are synthesized using verified building archetypes:
 1. Greenhouse Conduction and Ventilation: Modeled using dynamic heat transfer formulations:
-   $$Q_{greenhouse}(t) = U_{eff} \cdot A_{floor} \cdot (T_{inside} - T_{ambient}(t)) - \alpha_{solar} \cdot I_{solar}(t)$$
-   where $U_{eff}$ is 3.5 W/m2K, $A_{floor}$ is 100,000 m2 (10 ha), $T_{inside}$ is maintained at 18.5 °C, and peak winter conduction reaches 14.88 MW at -18.9 °C ambient. Annual intensity equals 310.8 kWh/m2/yr.
+   $$Q_{greenhouse}(t) = U_{eff} \cdot A_{floor} \cdot \max(0,\, T_{inside} - T_{ambient}(t))$$
+   where $U_{eff}$ is 3.5 W/m2K, $A_{floor}$ is 100,000 m2 (10 ha, a model assumption), and $T_{inside}$ is maintained at 18.5 °C. The model has no solar or ventilation term. The 14.88 MW peak is 3.5 x 100,000 x (18.5 - (-24.0)) / 10^6 at the coldest hour of the TMYx weather file (-24.0 °C), not at the -18.9 °C design temperature (which would give 13.09 MW). Annual intensity equals 310.8 kWh/m2/yr.
 2. Residential Building Profiles: ResStock single-family detached archetypes calibrated to Tompkins County housing stock (weighted 65% pre-1980 uninsulated construction, 35% modern code). Peak household design load is 13.68 kW thermal; annual household consumption is 27.0 MWh/yr.
 3. Aquaculture and Pool Baseload: Modeled as continuous process loads with minor seasonal modulation for ventilation and makeup water tempering.
 
@@ -422,7 +422,7 @@ Phase 3:                                                   [Monitoring & Tech Tr
 - Civil trenching and horizontal directional drilling for 20.9 km of uninsulated HDPE ambient loop piping along Route 34B.
 - Installation of 500 residential service laterals, ultrasonic BTU submeters, and centralized dual-fuel backup boilers.
 - Turnkey installation of 500 high-efficiency water-to-water heat pumps in participating corridor homes.
-- Commissioning of the 5G ambient loop (18 °C to 20 °C), delivering 13,500.0 MWh/yr and abating 11,408 t CO2/yr.
+- Commissioning of the 5G ambient loop (18 °C to 20 °C), delivering 13,500.0 MWh/yr; the 11,408 t CO2/yr abatement is the combined Phases 1-2 whole-project total, not Phase 2 alone.
 
 ### Phase 3: Long-Term Monitoring and Technology Transition (Months 43 to 60)
 - Launch of the public IoT transparency dashboard and real-time community monitoring portal.

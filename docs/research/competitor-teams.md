@@ -92,7 +92,7 @@ Source: MODEL, `web/public/data/site2.json`, generated 2026-10-04. CBS Figure 9 
 
 ### 3. We publish the fraction of heat that is actually used
 
-Base supply is 150 MW IT × 0.8 × 0.75 capture = 90 MW average thermal, 777.6 GWh/yr available, 50 °C capture (MODEL, `site2.json` `supply`). Delivered heat in phases 1–2 is 50,576 MWh, 6.5% of available. ERF is 0.046. The tornado on IT load is flat: 75 MW and 320 MW both leave blended LCOH at $106.1/MWh, because demand is the constraint (MODEL, `site2.json` `finance.tornado`). A 400 MW headline does not change the customer bill. Saying so is the differentiation. Hiding the 6.5% is how we would look like everyone else.
+Base supply is 150 MW IT × 0.8 × 0.75 capture = 90 MW thermal output before the availability mask; the 8,760-hour model reports 88.8 MW average and 777.6 GWh/yr available, 50 °C capture (MODEL, `site2.json` `supply`). Delivered heat in phases 1–2 is 50,576 MWh, 6.5% of available. ERF is 0.046. The tornado on IT load is flat: 75 MW and 320 MW both leave blended LCOH at $106.1/MWh, because demand is the constraint (MODEL, `site2.json` `finance.tornado`). A 400 MW headline does not change the customer bill. Saying so is the differentiation. Hiding the 6.5% is how we would look like everyone else.
 
 Company program, kept separate from the base case: ~400 MW gross / ~320 MW critical IT, operations ~2029 (SEC release above, verified 2026-10-03). The 150 MW phase-1 figure is the website number with unstated basis (`research/verification.md` row 3a).
 
@@ -203,7 +203,7 @@ The gas moratorium is confirmed in 2015 and still described as a low-pressure pr
 
 Say this, and stop:
 
-Thermal Commons is the condition Lansing would write into an approval: a community-owned heat co-op, a side-stream off a closed glycol loop that never becomes the data center's cooling, an on-site food and recreation campus that is the only ring cheap enough to build first, and a town pipe we priced and will not build unless it beats propane. We do not claim the lake water, we do not claim an environmental-justice community the site pack says is not there, and we do not claim the campus heat is used. About 6.5% of it is.
+Thermal Commons is the condition Lansing would write into an approval: a community-owned heat co-op, a side-stream off a closed glycol loop that never becomes the data center's cooling, an on-site food and recreation campus that is the only ring cheap enough to build first, and a town pipe we priced and will not build unless it beats propane. We do not claim the lake water, we do not claim an environmental-justice community the site pack says is not there, and we do not claim the campus uses all of its available heat. Phases 1–2 deliver about 6.5% of it.
 
 ## Sources checked
 
