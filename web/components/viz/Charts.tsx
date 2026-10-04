@@ -40,9 +40,9 @@ export function MonthlyChart({ d }: { d: Site2Data }) {
             <XAxis dataKey="name" tick={axisTick} axisLine={axisLine} tickLine={false} />
             <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" GWh" />
             <Tooltip {...tip} formatter={(v) => `${dec(Number(v), 1)} GWh`} />
-            <Area type="monotone" dataKey="supply" name="Heat the data center produces" stroke="var(--amber)" strokeWidth={3} fill="var(--amber)" fillOpacity={0.22} />
-            <Bar dataKey="delivered" stackId="a" name="Heat the network delivers" fill="var(--ember)" radius={[0, 0, 0, 0]} maxBarSize={34} />
-            <Bar dataKey="backup" stackId="a" name="Backup fuel" fill="var(--ink2)" radius={[4, 4, 0, 0]} maxBarSize={34} />
+            <Area isAnimationActive={false} type="monotone" dataKey="supply" name="Heat the data center produces" stroke="var(--amber)" strokeWidth={3} fill="var(--amber)" fillOpacity={0.22} />
+            <Bar isAnimationActive={false} dataKey="delivered" stackId="a" name="Heat the network delivers" fill="var(--ember)" radius={[0, 0, 0, 0]} maxBarSize={34} />
+            <Bar isAnimationActive={false} dataKey="backup" stackId="a" name="Backup fuel" fill="var(--ink2)" radius={[4, 4, 0, 0]} maxBarSize={34} />
           </ComposedChart>
         </ResponsiveContainer>
       </div>
@@ -71,8 +71,8 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
             <XAxis dataKey="h" type="number" domain={[0, 167]} ticks={[0, 24, 48, 72, 96, 120, 144]} tickFormatter={DAY} tick={axisTick} axisLine={axisLine} tickLine={false} />
             <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" MW" />
             <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} MW`} />
-            <Area type="monotone" dataKey="delivered_MW" stackId="1" name="Heat delivered" stroke="var(--ember)" strokeWidth={2} fill="var(--ember)" fillOpacity={0.75} />
-            <Area type="monotone" dataKey="backup_MW" stackId="1" name="Backup" stroke="var(--ink2)" strokeWidth={2} fill="var(--ink2)" fillOpacity={0.85} />
+            <Area isAnimationActive={false} type="monotone" dataKey="delivered_MW" stackId="1" name="Heat delivered" stroke="var(--ember)" strokeWidth={2} fill="var(--ember)" fillOpacity={0.75} />
+            <Area isAnimationActive={false} type="monotone" dataKey="backup_MW" stackId="1" name="Backup" stroke="var(--ink2)" strokeWidth={2} fill="var(--ink2)" fillOpacity={0.85} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
@@ -83,7 +83,7 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
             <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" °C" domain={[Math.floor(Math.min(...rows.map((r) => r.outdoor_C))) - 2, Math.ceil(Math.max(...rows.map((r) => r.outdoor_C))) + 2]} tickCount={3} />
             <ReferenceLine y={0} stroke="var(--line)" />
             <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} °C`} />
-            <Area type="monotone" dataKey="outdoor_C" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />
+            <Area isAnimationActive={false} type="monotone" dataKey="outdoor_C" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
@@ -117,7 +117,7 @@ export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: num
             <XAxis type="number" tick={axisTick} axisLine={axisLine} tickLine={false} unit="" domain={[0, "dataMax + 20"]} tickFormatter={(v) => `$${v}`} />
             <YAxis type="category" dataKey="name" width={236} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
             <Tooltip {...tip} formatter={(v) => `$${int(Number(v))} per MWh of heat`} />
-            <Bar dataKey="v" radius={[0, 6, 6, 0]} barSize={26}>
+            <Bar isAnimationActive={false} dataKey="v" radius={[0, 6, 6, 0]} barSize={26}>
               {rows.map((r) => <Cell key={r.name} fill={color(r.kind)} />)}
               <LabelList dataKey="v" position="right" formatter={(v) => `$${int(Number(v))}`} fill="var(--ink)" fontSize={17} fontWeight={700} />
             </Bar>
@@ -142,8 +142,8 @@ export function Tornado({ d }: { d: Site2Data }) {
           <YAxis type="category" dataKey="name" width={220} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
           <ReferenceLine x={0} stroke="var(--ink)" />
           <Tooltip {...tip} formatter={(v) => `${Number(v) > 0 ? "+" : ""}$${dec(Number(v), 0)} per MWh vs base`} />
-          <Bar dataKey="low" stackId="s" fill="var(--teal)" name="Low case" />
-          <Bar dataKey="high" stackId="s" fill="var(--ember)" name="High case" />
+          <Bar isAnimationActive={false} dataKey="low" stackId="s" fill="var(--teal)" name="Low case" />
+          <Bar isAnimationActive={false} dataKey="high" stackId="s" fill="var(--ember)" name="High case" />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -171,7 +171,7 @@ export function RingLcoh({ d, ringL }: { d: Site2Data; ringL: Partial<Record<str
             <YAxis type="category" dataKey="name" width={210} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
             <Tooltip {...tip} formatter={(v) => `$${int(Number(v))} per MWh`} />
             <ReferenceLine x={propane} stroke="var(--ember)" strokeWidth={2.5} strokeDasharray="6 4" label={{ value: `Propane today $${int(propane)}`, position: "top", fill: "var(--ember-text)", fontSize: 15, fontWeight: 700 }} />
-            <Bar dataKey="v" barSize={34} radius={[0, 6, 6, 0]}>
+            <Bar isAnimationActive={false} dataKey="v" barSize={34} radius={[0, 6, 6, 0]}>
               {rows.map((r) => <Cell key={r.id} fill={RING_COLOR[r.id]} />)}
               <LabelList dataKey="v" position="right" content={(p) => {
                 const i = Number(p.index ?? 0);

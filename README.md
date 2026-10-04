@@ -1,6 +1,17 @@
-# Lansing Heat Reuse
+# Thermal Commons: Heat for Lansing
 
-Business Analytics Club Hackathon 2026. Community heat reuse proposal for the TeraWulf data center campus at the former Cayuga coal plant site, Lansing, NY.
+NYU Hackathon 2026, HDR x Grundfos "Data Center Heat Reuse" challenge. Community heat reuse proposal for TeraWulf's Lake Hawkeye data center at the former Cayuga coal plant site, Lansing, NY.
+
+**Team Thermal Commons:** Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev.
+
+## Run it
+
+```bash
+uv run python -m heatreuse.run       # model -> outputs/*.json
+uv run python scripts/export_web_data.py
+uv run pytest
+cd web && bun install && bun run build   # static site in web/out
+```
 
 ## Approach
 

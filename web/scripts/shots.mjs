@@ -13,12 +13,12 @@ for (const [w, h] of sizes) {
   for (let i = 1; i <= 11; i++) {
     await p.goto(`${base}/#${i}`);
     await p.reload();
-    await p.waitForTimeout(1800);
+    await p.waitForSelector("h1", { timeout: 15000 }); await p.waitForTimeout(2200);
     await p.screenshot({ path: `screenshots/story-${String(i).padStart(2, "0")}-${w}.png` });
   }
   for (const r of ["explore", "compare", "print"]) {
     await p.goto(`${base}/${r}/`);
-    await p.waitForTimeout(1500);
+    await p.waitForTimeout(2500);
     await p.screenshot({ path: `screenshots/${r}-${w}.png`, fullPage: r !== "print" });
   }
   console.log(w, "errors:", [...new Set(errs)].slice(0, 8));

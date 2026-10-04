@@ -4,7 +4,7 @@ import { dec, int, usd } from "@/lib/format";
 import { NavBar, ringColor, ringShort } from "./ui";
 import { RingMapSvg } from "./viz/RingMap";
 import { QrCode } from "./viz/Misc";
-import { PUBLIC_URL, PROJECT_TITLE } from "@/lib/config";
+import { CREDITS, PUBLIC_URL, PROJECT_TAGLINE, PROJECT_TITLE } from "@/lib/config";
 
 export function PrintSheet({ data }: { data: AppData }) {
   const d = data.site2, f = d.finance;
@@ -29,7 +29,7 @@ export function PrintSheet({ data }: { data: AppData }) {
         <article className="letter sheet-light shadow-xl p-[0.5in] flex flex-col gap-3 overflow-hidden shrink-0" style={{ fontSize: "11pt", lineHeight: 1.35 }}>
           <header>
             <div className="flex items-center justify-between">
-              <div className="serif font-bold tracking-widest uppercase text-ember-text" style={{ fontSize: "10pt" }}>{PROJECT_TITLE} · Lansing, NY</div>
+              <div className="serif font-bold tracking-widest uppercase text-ember-text" style={{ fontSize: "10pt" }}>{PROJECT_TITLE} · {PROJECT_TAGLINE}, Lansing NY</div>
               {data.placeholder && <span className="chip" style={{ fontSize: "9pt" }}>Illustrative data</span>}
             </div>
             <h1 className="serif font-bold m-0 mt-1" style={{ fontSize: "25pt", lineHeight: 1.08 }}>One data center could heat {int(homes)} homes and a year-round farm</h1>
@@ -73,6 +73,7 @@ export function PrintSheet({ data }: { data: AppData }) {
               <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement a condition of any approval. {int(d.impact.jobs)} jobs · {int(d.impact.local_food_t_yr)} t local food/yr · scan for the live model.</div>
             </div>
           </footer>
+          <div className="text-ink2" style={{ fontSize: "8.5pt" }}>{CREDITS}</div>
         </article>
       </div>
     </div>
