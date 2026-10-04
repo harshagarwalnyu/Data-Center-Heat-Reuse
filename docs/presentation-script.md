@@ -37,7 +37,7 @@ Pace: about 130 words a minute. If you are long at 3:50, Philip drops slide 8 to
 | Fifty-point-six gigawatt-hours; six and a half percent | `totals.heat_delivered_MWh` = 50,576 | That this is most of the waste heat. |
 | Eleven thousand four hundred eight tonnes | `impact.co2_avoided_t_yr` = 11,408 | A lake-water credit. The file claims 0 gallons. |
 | Four-point-six percent energy reuse factor | `impact.erf` = 0.0462 | That it is supply-limited. It is demand-limited. |
-| About one-point-seven percent of the build | Gap 26.01 million dollars PV; annuitized 2.096 million dollars/yr; 1.73% of an **ASSUMPTION** 1,500 million dollar campus | "TeraWulf's budget." Ten dollars per watt is a midpoint assumption. |
+| About one-point-seven percent of the build | Gap 26.01 million dollars PV = 1.73% of an **ASSUMPTION** 1,500 million dollar campus; paid as 2.096 million dollars/yr (0.14% of the build a year) | "TeraWulf's budget." Ten dollars per watt is a midpoint assumption. |
 | Jobs and food | 126 jobs, 5,500 t food, 1,500 t fish | Anything but "scenario estimate". |
 
 ## Script

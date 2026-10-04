@@ -260,7 +260,7 @@ Total capital expenditure for Phases 1 and 2 is $38.76M. Itemized capital lines 
 | Circulation Pumping & Central Plant | $0.93M | 20 yr | Variable frequency drive circulation pumps and plant |
 | Backup Boiler Plant (23.2 MW) | $2.80M | 20 yr | Dual-fuel commercial boilers (100% peak coverage) |
 | Engineering, Permitting & Soft Costs | $4.31M | 20 yr | Environmental review, civil design, legal, owner's rep |
-| Contingency Allowance | $5.74M | 20 yr | 17.5% construction contingency on physical assets |
+| Contingency Allowance | $5.74M | 20 yr | 20% construction contingency on physical assets |
 | **Total Phase 1 and 2 Capital Cost** | **$38.76M** | **Blended** | **Complete turnkey utility deployment** |
 
 ### 5.4 Levelized Cost of Heat Comparison
