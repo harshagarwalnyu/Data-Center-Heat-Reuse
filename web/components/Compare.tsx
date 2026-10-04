@@ -28,7 +28,7 @@ export function Compare({ data }: { data: AppData }) {
       <NavBar active="/compare/" />
       <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1500px] w-full mx-auto">
         <p className="kicker m-0 mb-2">Why this site</p>
-        <h1 className="headline m-0 !text-[clamp(2rem,3.2vw,3.25rem)] max-w-[28ch]">Lansing wins: hotter heat, a cleaner grid, and a community that needs an answer</h1>
+        <h1 className="t-h1 m-0 max-w-[28ch]">Lansing wins: hotter heat, a cleaner grid, and a community that needs an answer</h1>
         <div role="radiogroup" aria-label="Choose a site" className="flex gap-2 mt-5 flex-wrap">
           <button role="radio" aria-checked={site === 2} className="btn" onClick={() => setSite(2)}>Site 2 · Lansing, NY (our proposal)</button>
           <button role="radio" aria-checked={site === 1} className="btn" onClick={() => setSite(1)}>Site 1 · 111 8th Ave, New York</button>

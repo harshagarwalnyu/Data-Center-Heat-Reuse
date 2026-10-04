@@ -190,12 +190,36 @@ function rate(s: number, b: number): number {
   return b > 0 && Number.isFinite(s) ? s / b : 1;
 }
 
+/** Discount rates (%) at which the Python model publishes exact LCOH values. */
+export const LCOH_ANCHOR_PCT = [4, 7, 10] as const;
+
+/**
+ * Python-model LCOH at discount rate `pct`, all other inputs at base. Exact at 4/7/10 %, linear between
+ * the published anchors. Uses the with-town anchors when the town ring is included and the file has them.
+ * Returns null outside [4, 10] or when anchors are missing.
+ */
+export function anchoredLcoh(d: Site2Data, pct: number, town = false): number | null {
+  const src = town ? d.extras?.with_town?.lcoh_usd_mwh : d.finance.lcoh_usd_mwh;
+  const v = [src?.coop_4pct, src?.utility_7pct, src?.private_10pct];
+  if (v.some((x) => typeof x !== "number")) return null;
+  const [r0, r1, r2] = LCOH_ANCHOR_PCT;
+  if (pct < r0 || pct > r2) return null;
+  const [a, b, c] = v as number[];
+  return pct <= r1 ? a + ((pct - r0) / (r1 - r0)) * (b - a) : b + ((pct - r1) / (r2 - r1)) * (c - b);
+}
+
 export function scenario(d: Site2Data, p: Params): Scenario {
   const b = raw(d, baseParams(d));
   const s = raw(d, p, b.hpElecMWh);
+  // LCOH: anchor to the Python model's published 4/7/10 % values (interpolated between them), then apply the
+  // client model's relative change for the other sliders against a reference at the same discount rate.
+  const town = p.includeTown && anchoredLcoh(d, 4, true) !== null;
+  const refPct = Math.min(LCOH_ANCHOR_PCT[2], Math.max(LCOH_ANCHOR_PCT[0], p.discountPct));
+  const anchor = anchoredLcoh(d, refPct, town);
+  const ref = raw(d, { ...baseParams(d), discountPct: refPct, includeTown: town }, b.hpElecMWh);
+  const lcohV = anchor !== null ? anchor * rate(s.lcoh, ref.lcoh) : d.finance.lcoh_usd_mwh.coop_4pct * rate(s.lcoh, b.lcoh);
   const deliveredMWh = d.totals.heat_delivered_MWh * rate(s.deliveredMWh, b.deliveredMWh);
   const availGWh = d.supply.heat_available_GWh * rate(s.availMWh, b.availMWh);
-  const lcohV = d.finance.lcoh_usd_mwh.coop_4pct * rate(s.lcoh, b.lcoh);
   const tariff = d.finance.tariff_usd_mwh; // policy-set (0.8x propane), does not move with cost
   const hh = d.finance.household.typical_MWh_yr;
   const corridor = d.rings.find((r) => r.id === "corridor");
@@ -208,8 +232,9 @@ export function scenario(d: Site2Data, p: Params): Scenario {
     avgCop: d.totals.avg_cop * rate(s.avgCop, b.avgCop),
     lcohUsdMWh: lcohV,
     tariffUsdMWh: tariff,
-    householdSavingsPropane: householdSavings(hh, d.finance.incumbent_usd_mwh.propane, tariff),
-    householdSavingsOil: householdSavings(hh, d.finance.incumbent_usd_mwh.heating_oil, tariff),
+    // The tariff is policy-fixed, so the saving does not move with the sliders: use the model's published figure.
+    householdSavingsPropane: d.finance.household.savings_vs_propane_usd ?? householdSavings(hh, d.finance.incumbent_usd_mwh.propane, tariff),
+    householdSavingsOil: d.finance.household.savings_vs_oil_usd ?? householdSavings(hh, d.finance.incumbent_usd_mwh.heating_oil, tariff),
     marginUsdMWh: tariff - lcohV,
     co2TYr: d.impact.co2_avoided_t_yr * rate(s.co2, b.co2),
     supplyLimited: s.supplyLimited,

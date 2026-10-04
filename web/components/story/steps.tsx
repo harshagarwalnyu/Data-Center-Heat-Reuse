@@ -17,8 +17,8 @@ export interface Step {
   layout: "split" | "wide";
   visualWide?: boolean;
   visual?: ReactNode;
-  /** Replaces the whole screen (own headline). */
-  full?: ReactNode;
+  /** Replaces the whole screen (own headline). Receives the numbered kicker for the active path. */
+  full?: (kicker: string) => ReactNode;
   notes: string;
   /** Deep-dive steps are skipped on the 5-minute path. */
   deepDive?: boolean;
@@ -27,8 +27,8 @@ export interface Step {
 function Tile({ big, unit, label, tone }: { big: string; unit?: string; label: ReactNode; tone?: "ember" | "teal" | "violet" }) {
   const c = tone === "teal" ? "var(--teal-text)" : tone === "violet" ? "var(--violet-text)" : "var(--ember-text)";
   return (
-    <div className="card p-4">
-      <div className="serif num font-bold leading-none whitespace-nowrap" style={{ color: c, fontSize: "clamp(2rem,3.2vw,3.25rem)" }}>{big}{unit && <span className="unit">{unit}</span>}</div>
+    <div className="card p-[clamp(0.75rem,1.7dvh,1rem)]">
+      <div className="serif num font-bold leading-none whitespace-nowrap" style={{ color: c, fontSize: "clamp(2rem,min(3.2vw,5.2dvh),3.25rem)" }}>{big}{unit && <span className="unit">{unit}</span>}</div>
       <div className="mt-1.5 text-[1.0625rem] text-ink leading-snug">{label}</div>
     </div>
   );
@@ -36,7 +36,7 @@ function Tile({ big, unit, label, tone }: { big: string; unit?: string; label: R
 
 function Pill({ n, title, children, tone }: { n?: string; title: string; children: ReactNode; tone?: string }) {
   return (
-    <div className="card p-4 h-full">
+    <div className="card p-[clamp(0.75rem,1.7dvh,1rem)] h-full">
       <div className="font-bold text-[1.125rem]" style={{ color: tone ?? "var(--ink)" }}>{n && <span className="num mr-1">{n}</span>}{title}</div>
       <div className="text-[1.0625rem] text-ink2 leading-snug mt-1">{children}</div>
     </div>
@@ -80,13 +80,13 @@ export function buildSteps(data: AppData): Step[] {
   return [
     {
       id: "fight",
-      kicker: "1 · Lansing today",
+      kicker: "Lansing today",
       headline: "Lansing's Town Board has told its attorney to draft a data-center ban, and most of its heat still comes from delivered fuel",
       lede: "Free heat was not enough in Lansing, Michigan: a data center that offered free heat withdrew its application on April 6, 2026. Lansing, New York needs ownership, guarantees and proof.",
       layout: "split",
       notes: "Open with the fight, not the technology. Precedent: Deep Green's $120M downtown Lansing, Michigan data center offered free heat to the city utility, withdrew its application on April 6, 2026. Free heat is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG has had a moratorium on new gas connections here since February 2015 (2026 status unverified), so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
       visual: (
-        <div className="grid gap-4">
+        <div className="grid gap-[clamp(0.5rem,1.6dvh,1rem)]">
           <Tile big="Sept 29" label="2026: the Town Board directed its attorney to draft a data-center ban, and set aside $500,000 in next year's proposed budget for legal costs" />
           <Tile tone="teal" big="2015" label="year the NYSEG moratorium on new gas connections began (2026 status unverified)" />
           <Tile big={`$${int(f.incumbent_usd_mwh.propane)}`} unit="per MWh" label={<>what a propane home pays for each MWh of heat (propane ran $2.74 to $3.46 per gallon last season, NYSERDA Central NY). Heating oil: <b className="num">${int(f.incumbent_usd_mwh.heating_oil)}</b>.</>} />
@@ -95,7 +95,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "insight",
-      kicker: "2 · The insight",
+      kicker: "The insight",
       headline: <>The data center makes <span className="text-ember-text num">{dec(ratio, 0)}&times;</span> more heat than we use: only <span className="text-ember-text num">{dec(sharePct, 1)}%</span> is needed</>,
       lede: <>Our base case is a {int(d.supply.it_load_MW)} MW first phase; about {int(d.supply.capture_fraction * 100)}% of its power can be captured as {d.supply.capture_temp_C} °C heat. Supply is not the constraint. Matching it to users is.</>,
       layout: "split",
@@ -104,7 +104,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "plan",
-      kicker: "3 · The plan",
+      kicker: "The plan",
       headline: `A data center's heat could warm a ${ha ? `${int(ha)}-hectare ` : ""}year-round farm campus and ${int(homes)} homes`,
       lede: <>Bring the users to the heat. Start next to the data center (a proposed campus on adjacent land), then follow the road toward town, and reach the town center only if the numbers pass.{townNo && <> They do not pass today: Ring 3 would cost <b className="num">${int(townLcoh)}</b> per MWh against <b className="num">${int(f.incumbent_usd_mwh.propane)}</b> for propane, so we leave it out.</>}</>,
       layout: "split",
@@ -120,13 +120,18 @@ export function buildSteps(data: AppData): Step[] {
               </li>
             ))}
           </ul>
+          <ol aria-label="Phasing and decision gates (working targets, docs/proposal/12-implementation-timeline.md)" className="hidden [@media(min-height:850px)]:flex flex-wrap items-center gap-x-1.5 gap-y-1.5 list-none p-0 m-0 text-[1rem]">
+            {["Town decision · target 31 Mar 2027", "Lawful approval · target 31 Mar 2028", "Ring 1 first heat · H2 2029", "Ring 2 on signed homes", "Ring 3 only if it passes the cost test"].map((t, k) => (
+              <li key={t} className="flex items-center gap-1.5">{k > 0 && <span aria-hidden className="text-ember">&rarr;</span>}<span className="chip !py-0.5 !px-2.5 !text-[1rem] whitespace-nowrap">{t}</span></li>
+            ))}
+          </ol>
         </div>
       ),
     },
     {
       id: "flow",
       visualWide: true,
-      kicker: "4 · How heat flows",
+      kicker: "How heat flows",
       headline: "Heat export is a side-stream: the data center never depends on us to stay cool",
       lede: <>A heat exchanger takes heat from the sealed cooling loop; heat pumps lift it where needed. The dry coolers keep working exactly as designed.</>,
       layout: "split",
@@ -136,7 +141,7 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "ladder",
       visualWide: true,
-      kicker: "5 · Temperature ladder",
+      kicker: "Temperature ladder",
       headline: `Liquid cooling hands over ${d.supply.capture_temp_C} °C heat: greenhouses take it directly, buildings get a small boost`,
       lede: <>Average heat-pump COP across the network is <b className="num">{dec(T.avg_cop, 1)}</b>: one unit of electricity moves about {dec(T.avg_cop, 1)} units of heat.</>,
       layout: "split",
@@ -144,7 +149,7 @@ export function buildSteps(data: AppData): Step[] {
       notes: "Temperature match. Air-cooled data centers hand over about 30 °C heat, which needs a big lift. Direct liquid cooling returns about 50 °C, so the greenhouse and aquaculture sit at or below source temperature and need no heat pump. Homes need the loop plus a building heat pump; town buildings need a 55-65 °C hot loop. Show the COP comparison between air and liquid.",
       visual: (
         <div className="grid gap-3 h-full min-h-0">
-          <div className="min-h-[360px]"><TempLadder data={data} /></div>
+          <div className="min-h-[320px]"><TempLadder data={data} /></div>
           <ul className="flex flex-wrap gap-x-6 gap-y-1 list-none p-0 m-0 text-[1.0625rem]">
             {d.cop_compare.map((c) => (<li key={c.source}><b>{c.source}</b>: heat pump COP <b className="num text-teal-text">{dec(c.cop, 1)}</b></li>))}
           </ul>
@@ -153,7 +158,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "match",
-      kicker: "6 · Matching through the year",
+      kicker: "Matching through the year",
       headline: `Even in the leanest month, the data center makes ${dec(minMonthRatio, 1)}× the heat the network needs`,
       layout: "wide",
       notes: "Five axes of the match, left to right. Temperature: direct or lifted. Capacity: supply is many times demand. Timing: the winter week chart shows daily peaks smoothed by storage. Seasonality: monthly bars show demand falling in summer while the on-site greenhouse, aquaculture and pool keep a year-round base. Continuity: backup covers the remainder, zero unmet hours.",
@@ -167,25 +172,25 @@ export function buildSteps(data: AppData): Step[] {
             <li><Pill n="5" title="Continuity" tone="var(--ember-text)">{int(T.unmet_hours)} unmet hours; backup supplies {dec(backupPct, 1)}% of heat.</Pill></li>
           </ul>
           <div className="grid gap-5 lg:grid-cols-2 min-h-0">
-            <div className="min-h-[280px]"><MonthlyChart d={d} /></div>
-            <div className="min-h-[280px]"><WeekChart d={d} /></div>
+            <div className="min-h-[200px]"><MonthlyChart d={d} /></div>
+            <div className="min-h-[200px]"><WeekChart d={d} /></div>
           </div>
         </div>
       ),
     },
     {
       id: "household",
-      kicker: "7 · Your household",
+      kicker: "Your household",
       headline: "",
       layout: "wide",
       deepDive: true,
       notes: "Let someone in the room pick their own fuel. Propane and oil homes save the most; natural gas homes would not save, which is why this is aimed at the homes gas never reached. The tariff is set about 20% below propane; there is a low-income tier. Be honest about gas.",
-      full: <HouseholdCalc d={d} />,
+      full: (kicker) => <HouseholdCalc d={d} kicker={kicker} />,
     },
     {
       id: "own",
       visualWide: false,
-      kicker: "8 · Who pays, who owns",
+      kicker: "Who pays, who owns",
       headline: ringL.onsite !== undefined ? "The right tool at every density: the farm first, a loop where homes cluster, rebates for the rest" : allBeatOil ? "Heat from the data center beats propane and oil under every ownership model; community ownership is cheapest" : `Community ownership cuts the cost of heat from $${int(f.lcoh_usd_mwh.private_10pct)} to $${int(f.lcoh_usd_mwh.coop_4pct)} per MWh`,
       layout: "wide",
       notes: "A community thermal utility, the Thermal Commons co-op, owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but new gas hookups have been restricted in Lansing since 2015 (2026 status unverified). Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
@@ -221,7 +226,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "exit",
-      kicker: "9 · What if the data center leaves?",
+      kicker: "What if the data center leaves?",
       headline: `If the data center leaves in year ${f.dc_exit.year}, the heat keeps flowing and the town is not left holding the bill`,
       layout: "wide",
       notes: "Data centers rarely sign beyond about 10 years, so we answer this before the Q&A does. Three layers: thermal storage rides through the first hours; backup boilers sized to 100% of peak cover days; step-in rights let the utility keep the loop. The stranded-asset exposure is covered by a decommissioning reserve funded from the Heat Supply Agreement, so the risk sits with the party that controls it.",
@@ -246,12 +251,13 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "impact",
-      kicker: "10 · Impact",
+      kicker: "Impact",
+      lede: <><b className="text-ink">Lansing context:</b> no designated disadvantaged community, so equity here means older residents and propane and oil households. Up to 69 days above 90 °F by 2050 (19 today).</>,
       headline: `Every year: ${int(d.impact.co2_avoided_t_yr)} tonnes of CO₂ avoided, ${int(d.impact.jobs)} local jobs, ${int(d.impact.local_food_t_yr)} tonnes of local food`,
       layout: "wide",
       notes: "Map it to the four judging lenses and HDR's seven regenerative domains. Technical and economic were covered in steps 4 to 8. Environmental: CO2 avoided is displaced fuel minus heat-pump electricity at the upstate grid factor. Social and regenerative: Lansing has no designated disadvantaged community, so equity here means older residents and propane and oil households. Lake: closed-loop aquaponics keeps phosphorus out of an already phosphorus-impaired Cayuga Lake.",
       visual: (
-        <div className="grid gap-4 min-h-0">
+        <div className="grid gap-3 min-h-0">
           <div className="grid gap-3 grid-cols-2 lg:grid-cols-4">
             <Tile tone="teal" big={int(d.impact.co2_avoided_t_yr)} unit="t CO₂/yr" label={<>about {int(cleanCarbonCars)} cars off the road</>} />
             <Tile big={int(d.impact.homes_served)} unit="homes" label="on recovered heat" />
@@ -262,15 +268,19 @@ export function buildSteps(data: AppData): Step[] {
             {d.hdr_scorecard.map((s) => (
               <div key={s.petal} className="card p-2.5">
                 <div className="flex items-center gap-2 font-bold text-[1.0625rem]">
-                  <span className="chip !py-0.5 !px-2.5 !text-[0.9375rem]" style={{ borderColor: s.lens === "Community" ? "var(--violet)" : s.lens === "Health" ? "var(--ember)" : "var(--teal)" }}>{s.lens}</span>
+                  <span className="chip !py-0.5 !px-2.5 !text-[1rem]" style={{ borderColor: s.lens === "Community" ? "var(--violet)" : s.lens === "Health" ? "var(--ember)" : "var(--teal)" }}>{s.lens}</span>
                   {s.petal}
                 </div>
                 <div className="text-[1.0625rem] text-ink2 leading-snug mt-1">{s.claim}</div>
+                {s.metric && <div className="num font-bold text-[1.0625rem] text-teal-text leading-snug mt-0.5">{s.metric.replace(/\d{4,}/g, (m) => int(Number(m)))}</div>}
               </div>
             ))}
-            <div className="card p-3" style={{ background: "var(--surface2)" }}>
-              <div className="font-bold text-[1.0625rem]">Lansing context</div>
-              <div className="text-[1rem] text-ink2 leading-snug mt-1">No designated disadvantaged community: equity here means older residents and propane and oil households. Energy reuse factor (ERF) <span className="num">{dec(d.impact.erf, 3)}</span>{d.impact.ere !== undefined && <>, ERE <span className="num">{dec(d.impact.ere, 2)}</span></>}. Up to 69 days above 90 °F by 2050 (19 today).</div>
+            <div className="card p-2.5 grid grid-cols-2 gap-x-3 content-start" style={{ background: "var(--surface2)" }}>
+              <div className="serif num font-bold leading-none text-[2rem] text-teal-text">{dec(d.impact.erf * 100, 1)}%</div>
+              {d.impact.ere !== undefined ? <div className="serif num font-bold leading-none text-[2rem] text-teal-text">{dec(d.impact.ere, 2)}</div> : <div />}
+              <div className="text-[1rem] font-bold mt-1">ERF</div>
+              {d.impact.ere !== undefined ? <div className="text-[1rem] font-bold mt-1">ERE</div> : <div />}
+              <div className="col-span-2 text-[1rem] text-ink2 leading-snug">Limited by demand, not supply ({dec(sharePct, 1)}% of available heat is used)</div>
             </div>
           </div>
         </div>
@@ -278,27 +288,27 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "ask",
-      kicker: "11 · The ask",
+      kicker: "The ask",
+      lede: <span className="block text-[1rem] leading-snug">{CREDITS}</span>,
       headline: cbaPct !== undefined ? `Say yes with conditions: a Community Benefit Agreement worth ${dec(cbaPct, 1)}% of the build` : "Say yes with conditions: write heat reuse into a binding Community Benefit and Heat Supply Agreement",
       layout: "split",
       notes: "Close on three asks. Town: make heat reuse a condition of any approval. TeraWulf: sign the Heat Supply Agreement, keep cooling independent, keep the 1 MGD lake permit unused for cooling. Funders: NYSERDA FlexTech and large-scale thermal programs to pay for the feasibility work. Point to the QR code for the live model.",
       visual: (
-        <div className="grid gap-4">
+        <div className="grid gap-[clamp(0.5rem,1.6dvh,1rem)]">
           {[
             { who: "Town of Lansing", what: cbaPct !== undefined ? `Make a binding Community Benefit Agreement (about ${dec(cbaPct, 1)}% of the data center build, funding the home program) and a Heat Supply Agreement a condition of approval, instead of a flat ban.` : "Make a Heat Supply Agreement a condition of any approval, instead of a flat ban." },
             { who: "The data center", what: "Sign it: sell heat, keep cooling independent, keep the lake permit unused for cooling, fund the exit reserve." },
             { who: "Funders and state", what: "Co-fund the feasibility study and the Phase 1 on-site campus (NYSERDA programs; federal tax credits may apply if structured to qualify)." },
           ].map((a, i) => (
-            <div key={a.who} className="card p-4 flex gap-4 items-start">
+            <div key={a.who} className="card p-[clamp(0.75rem,1.7dvh,1rem)] flex gap-4 items-start">
               <div className="serif num font-bold text-[2.5rem] leading-none text-ember-text">{i + 1}</div>
               <div><div className="font-bold text-[1.25rem]">{a.who}</div><div className="text-ink2 text-[1.125rem] leading-snug">{a.what}</div></div>
             </div>
           ))}
-          <div className="flex items-center gap-5 card p-4">
-            <QrCode url={PUBLIC_URL} size={110} hideCaption />
+          <div className="flex items-center gap-5 card p-[clamp(0.75rem,1.7dvh,1rem)]">
+            <QrCode url={PUBLIC_URL} size={96} hideCaption />
             <div className="text-[1.125rem]"><b>Try the model yourself.</b><div className="text-ink2">Move the sliders in Explore mode and watch the cost of heat change.</div><div className="text-[1rem] text-ink2 break-all mt-1">{PUBLIC_URL}</div></div>
           </div>
-          <p className="m-0 text-[0.9375rem] text-ink2 leading-snug">{CREDITS}</p>
         </div>
       ),
     },

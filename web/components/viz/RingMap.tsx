@@ -140,8 +140,8 @@ export function RingMap({ offtakers: all, townPipeKm }: { offtakers: Offtaker[];
 
   return (
     <div className="relative w-full h-full min-h-[260px]">
-      <div className="absolute inset-0"><RingMapSvg offtakers={offtakers} townPipeKm={townPipeKm} /></div>
-      <div ref={el} className="absolute inset-0 rounded-2xl overflow-hidden" style={{ opacity: ready ? 1 : 0, pointerEvents: ready ? "auto" : "none" }} role="img" aria-label="Interactive map of the three heat rings around the Lansing data center." />
+      <div className="absolute inset-0" aria-hidden={ready || undefined}><RingMapSvg offtakers={offtakers} townPipeKm={townPipeKm} /></div>
+      <div ref={el} className="absolute inset-0 rounded-2xl overflow-hidden" style={{ opacity: ready ? 1 : 0, pointerEvents: ready ? "auto" : "none" }} role="region" aria-label="Interactive map of the three heat rings around the Lansing data center." />
       {ready && <button className="btn absolute bottom-3 left-3 z-10 !min-h-[44px] text-[1rem]" aria-pressed={streets} onClick={() => setStreets((s) => !s)}>
         Streets (needs internet)
       </button>}

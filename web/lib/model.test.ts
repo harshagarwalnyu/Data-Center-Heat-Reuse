@@ -70,6 +70,33 @@ describe("scenario (calibrated to the data file)", () => {
     expect(low.heatDeliveredMWh).toBeLessThan(s0.heatDeliveredMWh);
     expect(low.lcohUsdMWh).toBeGreaterThan(s0.lcohUsdMWh);
   });
+  it("discount slider on 4/7/10 % at base shows the Python model's exact LCOH", () => {
+    expect(scenario(d, { ...base, discountPct: 4 }).lcohUsdMWh).toBeCloseTo(d.finance.lcoh_usd_mwh.coop_4pct, 6);
+    expect(scenario(d, { ...base, discountPct: 7 }).lcohUsdMWh).toBeCloseTo(106.1, 6);
+    expect(scenario(d, { ...base, discountPct: 7 }).lcohUsdMWh).toBeCloseTo(d.finance.lcoh_usd_mwh.utility_7pct, 6);
+    expect(scenario(d, { ...base, discountPct: 10 }).lcohUsdMWh).toBeCloseTo(d.finance.lcoh_usd_mwh.private_10pct, 6);
+  });
+  it("between anchors the LCOH interpolates the published values", () => {
+    const f = d.finance.lcoh_usd_mwh;
+    expect(scenario(d, { ...base, discountPct: 5.5 }).lcohUsdMWh).toBeCloseTo((f.coop_4pct + f.utility_7pct) / 2, 6);
+    const v = scenario(d, { ...base, discountPct: 8.5 }).lcohUsdMWh;
+    expect(v).toBeGreaterThan(f.utility_7pct);
+    expect(v).toBeLessThan(f.private_10pct);
+  });
+  it("town ring at base shows the with-town LCOH from the file", () => {
+    const wt = d.extras?.with_town?.lcoh_usd_mwh;
+    if (!wt?.coop_4pct) return;
+    expect(scenario(d, { ...base, includeTown: true }).lcohUsdMWh).toBeCloseTo(wt.coop_4pct, 6);
+    expect(scenario(d, { ...base, includeTown: true, discountPct: 7 }).lcohUsdMWh).toBeCloseTo(wt.utility_7pct as number, 6);
+  });
+  it("discount rates outside 4-10 % still move monotonically", () => {
+    expect(scenario(d, { ...base, discountPct: 2 }).lcohUsdMWh).toBeLessThan(s0.lcohUsdMWh);
+    expect(scenario(d, { ...base, discountPct: 12 }).lcohUsdMWh).toBeGreaterThan(d.finance.lcoh_usd_mwh.private_10pct);
+  });
+  it("propane-home saving is the published figure and does not move with the sliders", () => {
+    expect(s0.householdSavingsPropane).toBe(d.finance.household.savings_vs_propane_usd);
+    expect(scenario(d, { ...base, discountPct: 10, elecPrice: 200, includeTown: true }).householdSavingsPropane).toBe(d.finance.household.savings_vs_propane_usd);
+  });
   it("higher discount rate raises LCOH", () => {
     expect(scenario(d, { ...base, discountPct: 10 }).lcohUsdMWh).toBeGreaterThan(s0.lcohUsdMWh);
   });

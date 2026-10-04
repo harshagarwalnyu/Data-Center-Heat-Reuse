@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import type { AppData } from "@/lib/types";
-import { baseParams, scenario, type Cooling, type Params } from "@/lib/model";
+import { baseParams, LCOH_ANCHOR_PCT, scenario, type Cooling, type Params } from "@/lib/model";
 import { dec, int, usd } from "@/lib/format";
 import { NavBar, ringText, ringShort } from "./ui";
 import { LcohBars } from "./viz/Charts";
@@ -18,11 +18,14 @@ function Slider({ id, label, value, min, max, step, unit, onChange, fmt }: { id:
   );
 }
 
-function Kpi({ label, value, unit, delta, good }: { label: string; value: string; unit: string; delta?: string; good?: boolean | null }) {
+function Kpi({ label, value, unit, delta, good, before, badge }: { label: string; value: string; unit: string; delta?: string; good?: boolean | null; before?: string; badge?: string }) {
   return (
-    <div className="card p-4">
-      <div className="text-[1.0625rem] text-ink2">{label}</div>
-      <div className="serif num font-bold leading-none mt-1" style={{ fontSize: "clamp(2rem,3.2vw,3rem)" }}>{value}<span className="unit">{unit}</span></div>
+    <div className="card p-4" style={badge ? { borderColor: "var(--ember)", borderWidth: 2 } : undefined}>
+      <div className="text-[1.0625rem] text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1">{label}{badge && <span className="chip !py-0.5 !px-2.5 !text-[1rem]" style={{ background: "var(--ember)", borderColor: "var(--ember)", color: "#fff" }}>{badge}</span>}</div>
+      <div className="t-stat num mt-1 flex flex-wrap items-baseline gap-x-3">
+        {before && <s className="text-ink2 font-semibold" style={{ fontSize: "0.6em", textDecorationThickness: "3px", textDecorationColor: "var(--ember)" }} aria-label={`was ${before}`}>{before}</s>}
+        <span style={badge ? { color: "var(--ember-text)" } : undefined}>{value}<span className="unit">{unit}</span></span>
+      </div>
       {delta && <div className="num text-[1rem] mt-1 font-semibold" style={{ color: good === null || good === undefined ? "var(--ink2)" : good ? "var(--good)" : "var(--ember-text)" }}>{delta}</div>}
     </div>
   );
@@ -30,7 +33,8 @@ function Kpi({ label, value, unit, delta, good }: { label: string; value: string
 
 export function Explore({ data }: { data: AppData }) {
   const d = data.site2;
-  const base = useMemo(() => baseParams(d), [d]);
+  // Explore opens at 7% cost of money (utility finance), matching the model's published 7% LCOH exactly.
+  const base = useMemo(() => ({ ...baseParams(d), discountPct: LCOH_ANCHOR_PCT[1] }), [d]);
   const [p, setP] = useState<Params>(base);
   const s = scenario(d, p);
   const b = scenario(d, base);
@@ -42,6 +46,8 @@ export function Explore({ data }: { data: AppData }) {
   };
   const cmp = (c: Cooling) => (c === "air" ? "Air-cooled (30 °C)" : "Liquid-cooled (50 °C)");
   const lc = dl(s.lcohUsdMWh, b.lcohUsdMWh, 0, "$/MWh", true);
+  // Town ring on: show the jump against the same settings without it (both come from the model's with_town anchors).
+  const noTown = p.includeTown ? scenario(d, { ...p, includeTown: false }) : null;
   const hh = dl(s.householdSavingsPropane, b.householdSavingsPropane, 0, "$", false);
   const co = dl(s.co2TYr, b.co2TYr, 0, "t", false);
   const cp = dl(s.avgCop, b.avgCop, 1, "", false);
@@ -50,7 +56,7 @@ export function Explore({ data }: { data: AppData }) {
       <NavBar active="/explore/" />
       <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1600px] w-full mx-auto">
         <p className="kicker m-0 mb-2">Explore mode</p>
-        <h1 className="headline m-0 !text-[clamp(2rem,3vw,3rem)] max-w-[30ch]">Change the assumptions and watch the answer move</h1>
+        <h1 className="t-h1 m-0 max-w-[30ch]">Change the assumptions and watch the answer move</h1>
         <div className="grid gap-6 mt-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
           <section className="card p-5 grid gap-5 content-start" aria-label="Assumptions">
             <Slider id="price" label="Electricity price for heat pumps" value={p.elecPrice} min={60} max={300} step={5} unit="$/MWh" onChange={(v) => set("elecPrice", v)} />
@@ -76,8 +82,8 @@ export function Explore({ data }: { data: AppData }) {
               <Kpi label="Heat the data center produces" value={int(s.heatAvailableGWh)} unit="GWh/yr" delta={`${dec(s.surplusGWh, 0)} GWh/yr left over`} />
               <Kpi label="Heat delivered to Lansing" value={int(s.heatDeliveredMWh / 1000)} unit="GWh/yr" delta={`${dec(s.sharePct, 1)}% of what is produced`} />
               <Kpi label="Average heat pump COP" value={dec(s.avgCop, 1)} unit="" delta={cp.t} good={cp.g} />
-              <Kpi label="Cost to make heat" value={`$${int(s.lcohUsdMWh)}`} unit="per MWh" delta={lc.t} good={lc.g} />
-              <Kpi label="Saving for a propane home" value={usd(s.householdSavingsPropane)} unit="per year" delta={hh.t} good={hh.g} />
+              <Kpi label="Cost to make heat" value={`$${int(s.lcohUsdMWh)}`} unit="per MWh" delta={noTown ? `+$${Math.round(s.lcohUsdMWh) - Math.round(noTown.lcohUsdMWh)} per MWh from adding the town ring` : lc.t} good={noTown ? false : lc.g} before={noTown ? `$${int(noTown.lcohUsdMWh)}` : undefined} badge={noTown ? `town ring alone: $${int(d.extras?.with_town?.town_ring_lcoh_usd_mwh ?? s.lcohUsdMWh)} per MWh` : undefined} />
+              <Kpi label="Saving for a propane home" value={usd(s.householdSavingsPropane)} unit="per year" delta={hh.g === null ? `unchanged: tariff fixed at ${int((s.tariffUsdMWh / d.finance.incumbent_usd_mwh.propane) * 100)}% of propane` : hh.t} good={hh.g} />
               <Kpi label="CO₂ avoided" value={int(s.co2TYr)} unit="t/yr" delta={co.t} good={co.g} />
             </div>
             <div className="grid gap-4 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
