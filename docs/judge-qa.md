@@ -172,7 +172,7 @@ It is a screening estimate, not an LCA. We take 21.4 km of pipe (`rings[onsite].
 
 ### 27. Does heat reuse improve your water use effectiveness (WUE)?
 
-No change is claimed. WUE is water used on site per unit of IT energy. The published design is a sealed closed-loop glycol system with air-cooled dry coolers and no lake draw (verification.md row 4a, a developer claim), so there is no evaporative water for heat reuse to save. `impact.water.note` says no lake-water savings are claimed, so we claim **0 gallons**. The measured benefit is **970 MWh/yr** of fan energy (`impact.water.fan_energy_saved_MWh`). We do not say "no consumptive water", because make-up and domestic water are not addressed. The aquaponics loop is a design intent to keep nutrients in the building. It has no numbers.
+No change is claimed. WUE is water used on site per unit of IT energy. The published design is a sealed closed-loop glycol system with air-cooled dry coolers and no lake draw (verification.md row 4a, a developer claim), so there is no evaporative water for heat reuse to save. `impact.water.note` says no lake-water savings are claimed, so we claim **0 gallons**. The modeled benefit is an estimated **970 MWh/yr** of fan energy (`impact.water.fan_energy_saved_MWh`). We do not say "no consumptive water", because make-up and domestic water are not addressed. The aquaponics loop is a design intent to keep nutrients in the building. It has no numbers.
 
 **Source:** `impact.water`, `docs/council-gaps.md` section 2. Permit: `research/verification.md` rows 4a, 5a, 5c.
 

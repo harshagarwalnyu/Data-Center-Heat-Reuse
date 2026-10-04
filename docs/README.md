@@ -45,7 +45,7 @@ Start with the root [README](../README.md). This index is a selected list of doc
 | [video-script.md](video-script.md) | Script for the video presentation. |
 | [presentation-script.md](presentation-script.md) | Five-minute live presentation script: nine slides, speaker handoffs and clicker cues, then a 60-second demo. |
 | [demo-runbook.md](demo-runbook.md) | Judging-room demo runbook: setup commands, offline build and the demo path, using the same `outputs/site2.json` numbers as the slides. |
-| [judge-qa.md](judge-qa.md) | Twenty-nine anticipated judge questions with answers, each tied to a key in `outputs/site2.json` or a verification row. |
+| [judge-qa.md](judge-qa.md) | Twenty-nine anticipated judge questions with answers, each tied to a key in `outputs/site2.json`, `outputs/hydraulics.json` or a verification row. |
 
 ## docs/audit/ : independent reviews
 
