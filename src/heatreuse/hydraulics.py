@@ -22,20 +22,17 @@ OUT = ROOT / "outputs"
 DOC = ROOT / "docs" / "hydraulics.md"
 G = 9.81
 
-# ---------------------------------------------------------------- assumptions (all ASSUMPTION / design intent)
-DELTA_T = {  # supply/return design intent, K
-    "onsite": dict(supply_c=45.0, return_c=25.0, basis="ASSUMPTION design intent 45/25 C low-temperature campus loop"),
-    "corridor": dict(supply_c=20.0, return_c=15.0, basis="ASSUMPTION design intent 20/15 C ambient loop (building HP evaporators)"),
-    "town": dict(supply_c=65.0, return_c=35.0, basis="ASSUMPTION design intent 65/35 C hot loop"),
-}
-PUMP_ETA = 0.70          # ASSUMPTION pump hydraulic efficiency at duty point (shaft power = rho g Q H / eta)
-MOTOR_DRIVE_ETA = 0.93   # ASSUMPTION motor + variable-speed drive efficiency (electrical = shaft / this)
-FITTINGS = 0.30          # ASSUMPTION +30% on straight-pipe friction for bends, valves, tees
-END_HEAD_M = 10.0        # ASSUMPTION plant heat exchanger + critical-customer substation / evaporator allowance (~1 bar)
-MIN_FLOW = 0.20          # ASSUMPTION variable-speed minimum-flow floor (share of design flow)
-V_MAX_SMALL, V_MAX_LARGE, SMALL_DN = 1.5, 2.0, 150   # m/s; "small" = DN <= 150
-R_MAX_PA_M = 100.0       # ASSUMPTION max specific friction loss, typical district-heating sizing guide
-ROUGHNESS_MM = {"steel": 0.05, "hdpe": 0.007}  # ASSUMPTION absolute roughness
+# ---------------------------------------------------------------- assumptions: config/engineering.yaml `hydraulics:` (all [A])
+_HY = C.load("site2")["eng"]["hydraulics"]
+DELTA_T = {k: dict(supply_c=v["supply_c"], return_c=v["return_c"], basis=v["basis"]) for k, v in _HY["delta_t"].items()}
+PUMP_ETA = _HY["pump_eta"]              # shaft power = rho g Q H / eta
+MOTOR_DRIVE_ETA = _HY["motor_drive_eta"]  # electrical = shaft / this
+FITTINGS = _HY["fittings"]              # allowance on straight-pipe friction
+END_HEAD_M = _HY["end_head_m"]          # plant HX + critical-customer allowance
+MIN_FLOW = _HY["min_flow"]              # variable-speed minimum-flow floor (share of design flow)
+V_MAX_SMALL, V_MAX_LARGE, SMALL_DN = _HY["v_max_small_m_s"], _HY["v_max_large_m_s"], _HY["small_dn"]  # m/s; "small" = DN <= SMALL_DN
+R_MAX_PA_M = _HY["r_max_pa_m"]          # max specific friction loss
+ROUGHNESS_MM = dict(_HY["roughness_mm"])  # absolute roughness
 PIPE_MATERIAL = {"onsite": "steel", "corridor": "hdpe", "town": "steel"}
 # DN -> inner diameter (m), EN 253 pre-insulated steel service pipe (EN 10220 standard wall). Used for HDPE too (screening).
 DN_ID = {50: 0.0545, 65: 0.0703, 80: 0.0825, 100: 0.1071, 125: 0.1325, 150: 0.1603, 200: 0.2101, 250: 0.2630,
@@ -127,7 +124,10 @@ def ring_hydraulics(cfg: dict, ring: dict, profile: np.ndarray) -> dict[str, Any
     rid = ring["id"]
     dt = DELTA_T[rid]
     dT = dt["supply_c"] - dt["return_c"]
-    rho, cp, nu = water((dt["supply_c"] + dt["return_c"]) / 2)
+    t_mean = (dt["supply_c"] + dt["return_c"]) / 2
+    if not WATER[0][0] <= t_mean <= WATER[-1][0]:
+        raise ValueError(f"{rid}: mean water temperature {t_mean} C outside property table {WATER[0][0]}-{WATER[-1][0]} C")
+    rho, cp, nu = water(t_mean)
     q = design_flow_m3s(ring["peak_MW"], dT, rho, cp)
     eps = ROUGHNESS_MM[PIPE_MATERIAL[rid]] / 1000
     segs, friction_pa = [], 0.0

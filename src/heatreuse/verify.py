@@ -26,6 +26,7 @@ CONFIG_FILES = ("engineering.yaml", "finance.yaml", "impact.yaml", "offtakers.ya
 
 # Unit by key suffix / name (first match wins).
 UNITS = [
+    ("_usd_gal_range", "$/gal"), ("_m_s", "m/s"), ("_pa_m", "Pa/m"), ("_mm", "mm"), ("_head_m", "m"), ("_dn", "DN"),
     ("_usd_kwh", "$/kWh"), ("_usd_mwh", "$/MWh"), ("_usd_gal", "$/gal"), ("_usd_therm", "$/therm"),
     ("_usd_kw", "$/kW"), ("_usd_m3", "$/m3"), ("_usd_m", "$/m"), ("_usd_home", "$/home"), ("_usd_yr", "$/yr"),
     ("usd_per_mw_it", "$/MW IT"), ("_usd", "$"), ("_mw", "MW"), ("_c", "C"), ("_k", "K"), ("_km", "km"),
@@ -42,7 +43,7 @@ UNVERIFIED = re.compile(r"unverified|unverifiable|not checked", re.I)
 
 
 def unit_for(path: str) -> str:
-    leaf = path.rsplit(".", 1)[-1].lower()
+    leaf = re.sub(r"\[\d+\]$", "", path.rsplit(".", 1)[-1].lower())
     for frag, unit in UNITS:
         if leaf.endswith(frag) or leaf == frag:
             return unit

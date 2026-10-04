@@ -497,6 +497,125 @@
     "confidence": "sourced"
   },
   {
+    "input": "engineering.hydraulics.delta_t.onsite.supply_c",
+    "value": 45.0,
+    "unit": "C",
+    "source": "[A] design intent 45/25 C low-temperature campus loop",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.delta_t.onsite.return_c",
+    "value": 25.0,
+    "unit": "C",
+    "source": "[A] design intent 45/25 C low-temperature campus loop",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.delta_t.corridor.supply_c",
+    "value": 20.0,
+    "unit": "C",
+    "source": "[A] design intent 20/15 C ambient loop (building HP evaporators)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.delta_t.corridor.return_c",
+    "value": 15.0,
+    "unit": "C",
+    "source": "[A] design intent 20/15 C ambient loop (building HP evaporators)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.delta_t.town.supply_c",
+    "value": 65.0,
+    "unit": "C",
+    "source": "[A] design intent 65/35 C hot loop",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.delta_t.town.return_c",
+    "value": 35.0,
+    "unit": "C",
+    "source": "[A] design intent 65/35 C hot loop",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.pump_eta",
+    "value": 0.7,
+    "unit": "fraction",
+    "source": "[A] pump hydraulic efficiency at duty point (shaft power = rho g Q H / eta)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.motor_drive_eta",
+    "value": 0.93,
+    "unit": "fraction",
+    "source": "[A] motor + variable-speed drive efficiency (electrical = shaft / this)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.fittings",
+    "value": 0.3,
+    "unit": "-",
+    "source": "[A] +30% on straight-pipe friction for bends, valves, tees",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.end_head_m",
+    "value": 10.0,
+    "unit": "m",
+    "source": "[A] plant heat exchanger + critical-customer substation / evaporator allowance (~1 bar)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.min_flow",
+    "value": 0.2,
+    "unit": "-",
+    "source": "[A] variable-speed minimum-flow floor (share of design flow)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.v_max_small_m_s",
+    "value": 1.5,
+    "unit": "m/s",
+    "source": "[A] velocity limit for small pipes (DN <= small_dn), common district-heating practice",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.v_max_large_m_s",
+    "value": 2.0,
+    "unit": "m/s",
+    "source": "[A] velocity limit for larger pipes, common district-heating practice",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.small_dn",
+    "value": 150,
+    "unit": "DN",
+    "source": "[A] DN boundary between the small- and large-pipe velocity limits",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.r_max_pa_m",
+    "value": 100.0,
+    "unit": "Pa/m",
+    "source": "[A] max specific friction loss, typical district-heating sizing guide",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.roughness_mm.steel",
+    "value": 0.05,
+    "unit": "-",
+    "source": "[A] commercial steel",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hydraulics.roughness_mm.hdpe",
+    "value": 0.007,
+    "unit": "-",
+    "source": "[A] smooth plastic (HDPE)",
+    "confidence": "assumption"
+  },
+  {
     "input": "finance.years",
     "value": 30,
     "unit": "years",
@@ -565,6 +684,20 @@
     "unit": "$/gal",
     "source": "coordinator/verification.md: NYSERDA Central NY 2025-26 season range 2.74-3.46; base 3.10; low sensitivity 2.85 (facts-site2 had 2.849)",
     "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.propane_usd_gal_range[0]",
+    "value": 2.74,
+    "unit": "$/gal",
+    "source": "NYSERDA Central NY 2025-26 heating-season range as recorded in research/model-notes.md (headline inputs); NYSERDA dashboard page not re-read, no direct URL in repo [unverified]; Monte Carlo bounds only (heatreuse.analysis), base stays 3.10",
+    "confidence": "unverified"
+  },
+  {
+    "input": "finance.prices.propane_usd_gal_range[1]",
+    "value": 3.46,
+    "unit": "$/gal",
+    "source": "NYSERDA Central NY 2025-26 heating-season range as recorded in research/model-notes.md (headline inputs); NYSERDA dashboard page not re-read, no direct URL in repo [unverified]; Monte Carlo bounds only (heatreuse.analysis), base stays 3.10",
+    "confidence": "unverified"
   },
   {
     "input": "finance.prices.oil_usd_gal",
@@ -821,28 +954,28 @@
   {
     "input": "finance.tornado.eta[0]",
     "value": 0.4,
-    "unit": "-",
+    "unit": "fraction",
     "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
     "confidence": "assumption"
   },
   {
     "input": "finance.tornado.eta[1]",
     "value": 0.6,
-    "unit": "-",
+    "unit": "fraction",
     "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
     "confidence": "assumption"
   },
   {
     "input": "finance.tornado.uptake[0]",
     "value": 0.45,
-    "unit": "-",
+    "unit": "fraction",
     "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
     "confidence": "assumption"
   },
   {
     "input": "finance.tornado.uptake[1]",
     "value": 0.9,
-    "unit": "-",
+    "unit": "fraction",
     "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
     "confidence": "assumption"
   },
@@ -863,14 +996,14 @@
   {
     "input": "finance.tornado.dc_it_mw[0]",
     "value": 75,
-    "unit": "-",
+    "unit": "MW",
     "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
     "confidence": "assumption"
   },
   {
     "input": "finance.tornado.dc_it_mw[1]",
     "value": 320,
-    "unit": "-",
+    "unit": "MW",
     "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
     "confidence": "assumption"
   },
