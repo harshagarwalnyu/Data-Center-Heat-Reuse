@@ -9,7 +9,7 @@
   --line: #d8ccba;
   --ember: #c2410c;
   --ember-text: #9a3412;
-  --amber: #e39b1b;
+  --amber: #a8690a; /* 3.9:1 on bg (was #e39b1b, 2.2:1); same hue family, distinct from ember */
   --teal: #0b8ca6;
   --teal-text: #0a5a6b;
   --violet: #7c4dcc;
@@ -83,12 +83,12 @@ button, [role="button"], a { cursor: pointer; }
   font-family: var(--font-serif);
   font-weight: 700;
   line-height: 1.08;
-  font-size: clamp(2.25rem, 3.7vw + 0.4rem, 4rem); /* 36px - 64px */
+  font-size: clamp(2.25rem, min(3.7vw, 5.2dvh) + 0.4rem, 4rem); /* 36px - 64px; height-aware so 1280x720 slides fit */
   color: var(--ink);
   text-wrap: balance;
 }
 .kicker {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -104,7 +104,7 @@ button, [role="button"], a { cursor: pointer; }
 .chip {
   display: inline-flex; align-items: center; gap: .4rem;
   border: 1px solid var(--line); background: var(--surface2); color: var(--ink);
-  border-radius: 999px; padding: .35rem .9rem; font-size: 1rem; font-weight: 600;
+  border-radius: 999px; padding: .35rem .9rem; font-size: 1.0625rem; font-weight: 600;
 }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
@@ -136,12 +136,12 @@ input[type="range"] { width: 100%; height: 44px; accent-color: var(--teal); back
 .maplibregl-ctrl-attrib { font-size: 12px; }
 
 /* recharts text */
-.recharts-text { fill: var(--ink2); font-size: 15px; }
+.recharts-text { fill: var(--ink2); font-size: 17px; }
 .recharts-cartesian-grid line { stroke: var(--line); }
 
 .sheet-light {
   --bg: #ffffff; --surface: #ffffff; --surface2: #f4ede1; --ink: #13202b; --ink2: #3a4856; --line: #cfc3b0;
-  --ember: #c2410c; --ember-text: #9a3412; --amber: #e39b1b; --teal: #0b8ca6; --teal-text: #0a5a6b;
+  --ember: #c2410c; --ember-text: #9a3412; --amber: #a8690a; --teal: #0b8ca6; --teal-text: #0a5a6b;
   --violet: #7c4dcc; --violet-text: #5b34a8; --navy: #0f2a3f; --shadow: none;
   background: #fff; color: var(--ink);
 }

@@ -5,8 +5,8 @@ import type { Site2Data } from "@/lib/types";
 import { MONTHS, dec, int } from "@/lib/format";
 import { FUEL_LABEL } from "@/lib/model";
 
-const tip = { contentStyle: { background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 10, fontSize: 16, color: "var(--ink)" }, labelStyle: { color: "var(--ink)", fontWeight: 700 }, itemStyle: { color: "var(--ink)" } };
-const axisTick = { fill: "var(--ink2)", fontSize: 15 };
+const tip = { contentStyle: { background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 10, fontSize: 17, color: "var(--ink)" }, labelStyle: { color: "var(--ink)", fontWeight: 700 }, itemStyle: { color: "var(--ink)" } };
+const axisTick = { fill: "var(--ink2)", fontSize: 17 };
 const axisLine = { stroke: "var(--line)" };
 
 export function Legend({ items }: { items: { color: string; label: string; dashed?: boolean }[] }) {
@@ -33,15 +33,22 @@ export function MonthlyChart({ d }: { d: Site2Data }) {
   return (
     <div className="flex flex-col h-full min-h-0">
       <Legend items={[{ color: "var(--amber)", label: "Heat the data center produces" }, { color: "var(--ember)", label: "Heat the network delivers" }, { color: "var(--ink2)", label: "Backup fuel" }]} />
-      <div className="flex-1 min-h-[220px]">
+      <div className="flex-1 min-h-[160px]">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={rows} margin={{ top: 14, right: 12, left: 6, bottom: 4 }}>
             <CartesianGrid vertical={false} strokeDasharray="3 4" />
             <XAxis dataKey="name" tick={axisTick} axisLine={axisLine} tickLine={false} />
-            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" GWh" />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={80} unit=" GWh" />
             <Tooltip {...tip} formatter={(v) => `${dec(Number(v), 1)} GWh`} />
             <Area isAnimationActive={false} type="monotone" dataKey="supply" name="Heat the data center produces" stroke="var(--amber)" strokeWidth={3} fill="var(--amber)" fillOpacity={0.22} />
-            <Bar isAnimationActive={false} dataKey="delivered" stackId="a" name="Heat the network delivers" fill="var(--ember)" radius={[0, 0, 0, 0]} maxBarSize={34} />
+            <Bar isAnimationActive={false} dataKey="delivered" stackId="a" name="Heat the network delivers" fill="var(--ember)" radius={[0, 0, 0, 0]} maxBarSize={34}>
+              <LabelList dataKey="delivered" content={(p) => {
+                const v = Number(p.value ?? 0);
+                const x = Number(p.x ?? 0) + Number(p.width ?? 0) / 2;
+                const y = Number(p.y ?? 0) - 8;
+                return <text x={x} y={y} textAnchor="middle" fontSize={15} fontWeight={700} fill="var(--ember-text)" stroke="var(--bg)" strokeWidth={4} paintOrder="stroke" className="num">{dec(v, 1)}</text>;
+              }} />
+            </Bar>
             <Bar isAnimationActive={false} dataKey="backup" stackId="a" name="Backup fuel" fill="var(--ink2)" radius={[4, 4, 0, 0]} maxBarSize={34} />
           </ComposedChart>
         </ResponsiveContainer>
@@ -55,6 +62,8 @@ const DAY = (h: number) => `Day ${Math.floor(h / 24) + 1}`;
 export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "winter" | "summer" }) {
   const [wk, setWk] = useState<"winter" | "summer">(initial);
   const rows = d.weeks[wk];
+  const peak = rows.reduce((m, r) => (r.backup_MW > m.backup_MW ? r : m), rows[0]);
+  const showPeak = peak && peak.backup_MW >= 0.05;
   return (
     <div className="flex flex-col h-full min-h-0">
       <div className="flex items-center gap-3 flex-wrap">
@@ -62,32 +71,32 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
           <button className="btn" aria-pressed={wk === "winter"} onClick={() => setWk("winter")}>Cold winter week</button>
           <button className="btn" aria-pressed={wk === "summer"} onClick={() => setWk("summer")}>Summer week</button>
         </div>
-        <Legend items={[{ color: "var(--ember)", label: "Heat delivered" }, { color: "var(--ink2)", label: "Backup" }]} />
+        <Legend items={[{ color: "var(--ember)", label: "Heat delivered" }, { color: "var(--ink2)", label: showPeak ? `Backup (peak ${dec(peak.backup_MW, 1)} MW)` : "Backup" }]} />
       </div>
-      <div className="flex-1 min-h-[170px]">
+      <div className="flex-1 min-h-[120px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={rows} margin={{ top: 14, right: 12, left: 6, bottom: 0 }}>
             <CartesianGrid vertical={false} strokeDasharray="3 4" />
             <XAxis dataKey="h" type="number" domain={[0, 167]} ticks={[0, 24, 48, 72, 96, 120, 144]} tickFormatter={DAY} tick={axisTick} axisLine={axisLine} tickLine={false} />
-            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" MW" />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={80} unit=" MW" />
             <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} MW`} />
             <Area isAnimationActive={false} type="monotone" dataKey="delivered_MW" stackId="1" name="Heat delivered" stroke="var(--ember)" strokeWidth={2} fill="var(--ember)" fillOpacity={0.75} />
             <Area isAnimationActive={false} type="monotone" dataKey="backup_MW" stackId="1" name="Backup" stroke="var(--ink2)" strokeWidth={2} fill="var(--ink2)" fillOpacity={0.85} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
-      <div className="h-[84px]">
+      <div className="h-[60px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={rows} margin={{ top: 4, right: 12, left: 6, bottom: 0 }}>
             <XAxis dataKey="h" type="number" domain={[0, 167]} hide />
-            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={64} unit=" °C" domain={[Math.floor(Math.min(...rows.map((r) => r.outdoor_C))) - 2, Math.ceil(Math.max(...rows.map((r) => r.outdoor_C))) + 2]} tickCount={3} />
+            <YAxis tick={axisTick} axisLine={false} tickLine={false} width={80} unit=" °C" domain={[Math.floor(Math.min(...rows.map((r) => r.outdoor_C))) - 2, Math.ceil(Math.max(...rows.map((r) => r.outdoor_C))) + 2]} tickCount={3} />
             <ReferenceLine y={0} stroke="var(--line)" />
             <Tooltip {...tip} labelFormatter={(h) => `${DAY(Number(h))}, hour ${Number(h) % 24}`} formatter={(v) => `${dec(Number(v), 1)} °C`} />
             <Area isAnimationActive={false} type="monotone" dataKey="outdoor_C" name="Outdoor" stroke="var(--teal)" strokeWidth={2.5} fill="var(--teal)" fillOpacity={0.15} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-[1rem] text-ink2 m-0">Outdoor temperature (°C) for the same week.</p>
+      <p className="text-[1.0625rem] text-ink2 m-0">Outdoor temperature (°C) for the same week.</p>
     </div>
   );
 }
@@ -124,7 +133,7 @@ export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: num
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-[1rem] text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).</p>
+      <p className="text-[1.0625rem] text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).</p>
     </div>
   );
 }
