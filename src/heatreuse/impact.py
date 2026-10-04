@@ -2,7 +2,8 @@
 from __future__ import annotations
 
 
-def evaluate(cfg, sim, fin_res) -> dict:
+def evaluate(cfg: dict, sim: dict, fin_res: dict) -> dict:
+    """Net CO2 avoided (average and marginal grid), ERF/ERE, jobs, local food and fan energy saved."""
     im, e = cfg["imp"], cfg["eng"]
     ef = im["ef_kg_kwh"]
     eff = cfg["fin"]["prices"]["eff"]

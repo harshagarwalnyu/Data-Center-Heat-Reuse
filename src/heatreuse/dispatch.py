@@ -6,6 +6,7 @@ KWH_PER_M3_K = 1.163  # water, kWh per m3 per K
 
 
 def dispatch(cfg: dict, A: np.ndarray, rings: dict, active: list[str]) -> dict:
+    """Hour-by-hour tank dispatch: direct supply, discharge, charge, served fraction f, backup and unmet heat."""
     st, bk = cfg["eng"]["storage"], cfg["eng"]["backup"]
     n = len(A)
     S = sum(rings[r]["S"] for r in active)

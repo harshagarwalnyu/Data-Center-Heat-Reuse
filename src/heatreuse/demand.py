@@ -5,11 +5,13 @@ from . import heatpump as hp
 from .weather import months
 
 
-def hd(t, tb):
+def hd(t: np.ndarray, tb: float) -> np.ndarray:
+    """Hourly heating degrees below base temperature tb (K, floored at 0)."""
     return np.maximum(0.0, tb - np.asarray(t))
 
 
-def norm(raw, annual_mwh):
+def norm(raw: np.ndarray, annual_mwh: float) -> np.ndarray:
+    """Scale an hourly shape so it sums to ``annual_mwh`` (zeros if the shape is empty)."""
     s = raw.sum()
     return raw / s * annual_mwh if s > 0 else np.zeros_like(raw)
 
@@ -19,7 +21,8 @@ def _calendar(n=8760):
     return h % 24, (h // 24) % 7, months()
 
 
-def onsite(cfg, T):
+def onsite(cfg: dict, T: np.ndarray) -> dict:
+    """On-site ring: greenhouse, aquaculture and rec/pool demand served by direct exchange."""
     e = cfg["eng"]["onsite"]
     n = len(T)
     comp = {}
@@ -41,7 +44,8 @@ def onsite(cfg, T):
                 cop=np.full(n, np.inf), supply_temp_c=e["supply_temp_c"], units=None)
 
 
-def corridor(cfg, T):
+def corridor(cfg: dict, T: np.ndarray) -> dict:
+    """Corridor ring: ambient loop with building heat pumps (space heat + DHW)."""
     c = cfg["eng"]["corridor"]
     h = cfg["eng"]["hp"]
     n = len(T)
@@ -66,7 +70,8 @@ def corridor(cfg, T):
                 cop=cop_eff, supply_temp_c=c["supply_temp_c"], units=homes, potential=potential)
 
 
-def town(cfg, T):
+def town(cfg: dict, T: np.ndarray) -> dict:
+    """Town ring: transmission main and central heat pump (or direct HX when hot enough)."""
     t = cfg["eng"]["town"]
     h = cfg["eng"]["hp"]
     n = len(T)
@@ -93,5 +98,6 @@ def town(cfg, T):
                 supply_temp_c=t["supply_temp_c"], units=None, annual_design=total)
 
 
-def build(cfg, T):
+def build(cfg: dict, T: np.ndarray) -> dict:
+    """Build all three rings for the weather year T."""
     return {"onsite": onsite(cfg, T), "corridor": corridor(cfg, T), "town": town(cfg, T)}
