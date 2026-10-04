@@ -23,7 +23,7 @@ function Slider({ id, label, value, min, max, step, unit, onChange, fmt }: { id:
 function Kpi({ label, num, fmt, instant, unit, delta, good, before, badge, tip }: { label: string; num: number; fmt: (n: number) => string; instant: boolean; unit: string; delta?: string; good?: boolean | null; before?: string; badge?: string; tip?: ReactNode }) {
   return (
     <div className="card p-4" style={badge ? { borderColor: "var(--ember)", borderWidth: 2 } : undefined}>
-      <div className="text-caption text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1">{label}{tip && <Info tip={tip} />}{badge && <span className="chip !py-1 !px-2 !text-caption" style={{ background: "var(--ember)", borderColor: "var(--ember)", color: "#fff" }}>{badge}</span>}</div>
+      <div className="text-caption text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1"><span>{label}{tip && <>&nbsp;<Info tip={tip} /></>}</span>{badge && <span className="chip !py-1 !px-2 !text-caption" style={{ background: "var(--ember)", borderColor: "var(--ember)", color: "#fff" }}>{badge}</span>}</div>
       <div className="t-stat num mt-1 flex flex-wrap items-baseline gap-x-3">
         {before && <s className="text-ink2 font-semibold" style={{ fontSize: "0.6em", textDecorationThickness: "3px", textDecorationColor: "var(--ember)" }} aria-label={`was ${before}`}>{before}</s>}
         <span style={badge ? { color: "var(--ember-text)" } : undefined}><Tween value={num} format={fmt} instant={instant} /><span className="unit">{unit}</span></span>

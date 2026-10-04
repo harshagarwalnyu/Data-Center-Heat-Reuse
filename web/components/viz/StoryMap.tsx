@@ -113,6 +113,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
   // viewBox point to container pixels, under the current view
   const toLocal = (pt: [number, number]): Box => ({ x: ((pt[0] * view.k + view.x) / W) * size.w, y: ((pt[1] * view.k + view.y) / H) * size.h, w: 0, h: 0 });
   const eventBox = (e: RPointerEvent) => { const r = box.current!.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top, w: 0, h: 0 }; };
+  const bandW = ONSITE_R_KM * pxPerKm * 0.9;
   const unitPx = (size.w / W) * view.k; // screen pixels per viewBox unit
   const hitR = (r: number) => Math.max(r, 13 / unitPx); // every target is at least ~26px across
 
@@ -128,11 +129,13 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
       </>
     );
   };
-  const ringAt: Record<RingId, [number, number]> = {
-    onsite: [px, py - ONSITE_R_KM * pxPerKm],
-    corridor: project(ROUTE[2]),
-    town: [tx, ty - TOWN_R_KM * pxPerKm],
+  // Where a pinned or focused ring's tooltip hangs: the ring's top edge and its height, so a flipped tip clears the whole ring.
+  const ringAt: Record<RingId, { x: number; y: number; h: number }> = {
+    onsite: { x: px, y: py - ONSITE_R_KM * pxPerKm, h: 2 * ONSITE_R_KM * pxPerKm },
+    corridor: { x: project(ROUTE[2])[0], y: project(ROUTE[2])[1] - bandW / 2, h: bandW },
+    town: { x: tx, y: ty - TOWN_R_KM * pxPerKm, h: 2 * TOWN_R_KM * pxPerKm },
   };
+  const ringBox = (id: RingId): Box => { const a = ringAt[id]; const t = toLocal([a.x, a.y]); return { ...t, h: (a.h / H) * view.k * size.h }; };
   const ringAria = (id: RingId) => {
     const r = rings.find((x) => x.id === id);
     return r ? `${r.name}: ${r.gwh} GWh a year${r.lcoh ? `, ${r.lcoh} per MWh at 7%` : ""}, ${r.verdict}, ${r.pipeKm} km of pipe` : id;
@@ -151,7 +154,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
     style: { cursor: "pointer", outline: "none" },
     onPointerEnter: (e: RPointerEvent) => { if (e.pointerType === "mouse" && !dragging) show(id, eventBox(e), ringNode(id)); },
     onPointerLeave: () => hide(id),
-    onFocus: () => { if (!stopTouch.current) show(id, toLocal(ringAt[id]), ringNode(id)); },
+    onFocus: () => { if (!stopTouch.current) show(id, ringBox(id), ringNode(id)); },
     onBlur: () => hide(id),
     onPointerDown: (e: RPointerEvent) => { stopTouch.current = e.pointerType !== "mouse"; },
     onClick: () => { if (moved.current) return; setHover(null); onSelect?.(selected === id ? null : id); },
@@ -244,9 +247,8 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
     e.preventDefault();
   };
 
-  const shownTip = hover ?? (selected ? { key: selected, anchor: toLocal(ringAt[selected]), node: ringNode(selected) } : null);
+  const shownTip = hover ?? (selected ? { key: selected, anchor: ringBox(selected), node: ringNode(selected) } : null);
   const atHome = view.k === 1 && view.x === 0 && view.y === 0;
-  const bandW = ONSITE_R_KM * pxPerKm * 0.9;
 
   return (
     <div ref={box} className="relative w-full h-full overflow-hidden" tabIndex={0} role="group" aria-label="Interactive ring map. Arrow keys pan, plus and minus zoom, Escape clears the pinned ring." onKeyDown={key}>

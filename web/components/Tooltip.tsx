@@ -7,15 +7,15 @@ import { placeTip, type Box } from "@/lib/interact";
  * The card itself. Measures its own size, then sits next to `anchor` inside `bounds` (see placeTip).
  * `fixed` positions against the viewport (portal use); otherwise against the nearest positioned parent.
  */
-export function TipCard({ id, anchor, bounds, fixed = false, children }: { id: string; anchor: Box; bounds: { w: number; h: number }; fixed?: boolean; children: ReactNode }) {
+export function TipCard({ id, anchor, bounds, fixed = false, prefer = "above", children }: { id: string; anchor: Box; bounds: { w: number; h: number }; fixed?: boolean; prefer?: "above" | "below"; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const p = placeTip(anchor, { w: el.offsetWidth, h: el.offsetHeight }, bounds);
+    const p = placeTip(anchor, { w: el.offsetWidth, h: el.offsetHeight }, bounds, 10, 8, prefer);
     setPos({ left: p.left, top: p.top });
-  }, [anchor, bounds]);
+  }, [anchor, bounds, prefer]);
   return (
     <div ref={ref} id={id} role="tooltip" className="tip" style={{ position: fixed ? "fixed" : "absolute", left: pos?.left ?? 0, top: pos?.top ?? 0, visibility: pos ? "visible" : "hidden" }}>
       {children}
@@ -27,7 +27,7 @@ export function TipCard({ id, anchor, bounds, fixed = false, children }: { id: s
  * Wrap one focusable element. Shows on hover and keyboard focus, toggles on tap (touch), Esc dismisses.
  * The child gets aria-describedby while the tip is open.
  */
-export function Tooltip({ content, children }: { content: ReactNode; children: ReactElement<{ "aria-describedby"?: string }> }) {
+export function Tooltip({ content, below = false, children }: { content: ReactNode; below?: boolean; children: ReactElement<{ "aria-describedby"?: string }> }) {
   const id = useId();
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<{ anchor: Box; bounds: { w: number; h: number } } | null>(null);
@@ -71,7 +71,7 @@ export function Tooltip({ content, children }: { content: ReactNode; children: R
       onClick={() => { if (touch.current) (open ? hide() : show()); }}
     >
       {cloneElement(children, open ? { "aria-describedby": id } : {})}
-      {open && view && createPortal(<TipCard id={id} fixed anchor={view.anchor} bounds={view.bounds}>{content}</TipCard>, document.body)}
+      {open && view && createPortal(<TipCard id={id} fixed prefer={below ? "below" : "above"} anchor={view.anchor} bounds={view.bounds}>{content}</TipCard>, document.body)}
     </span>
   );
 }
@@ -79,7 +79,7 @@ export function Tooltip({ content, children }: { content: ReactNode; children: R
 /** Small "how we got this" affordance: a 24px focusable i. */
 export function Info({ tip, label = "How we got this" }: { tip: ReactNode; label?: string }) {
   return (
-    <Tooltip content={tip}>
+    <Tooltip content={tip} below>
       <button type="button" className="info-btn" aria-label={label}>i</button>
     </Tooltip>
   );

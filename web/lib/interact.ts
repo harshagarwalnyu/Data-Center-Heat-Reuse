@@ -32,11 +32,13 @@ export interface Box { x: number; y: number; w: number; h: number }
 
 /**
  * Place a tooltip of `size` next to `anchor`, inside `bounds` (0,0 to bw,bh), with a margin to the edge.
- * Prefers above the anchor, flips below when there is no room, and slides sideways to stay inside.
+ * Prefers `prefer` (above by default), flips to the other side when there is no room, and slides sideways to stay inside.
  */
-export function placeTip(anchor: Box, size: { w: number; h: number }, bounds: { w: number; h: number }, gap = 10, margin = 8): { left: number; top: number; side: "above" | "below" } {
-  const above = anchor.y - gap - size.h >= margin;
-  const top = above ? anchor.y - gap - size.h : Math.min(anchor.y + anchor.h + gap, Math.max(margin, bounds.h - size.h - margin));
+export function placeTip(anchor: Box, size: { w: number; h: number }, bounds: { w: number; h: number }, gap = 10, margin = 8, prefer: "above" | "below" = "above"): { left: number; top: number; side: "above" | "below" } {
+  const fitsAbove = anchor.y - gap - size.h >= margin;
+  const fitsBelow = anchor.y + anchor.h + gap + size.h <= bounds.h - margin;
+  const above = prefer === "above" ? fitsAbove || !fitsBelow : !fitsBelow && fitsAbove;
+  const top = above ? Math.max(margin, anchor.y - gap - size.h) : Math.min(anchor.y + anchor.h + gap, Math.max(margin, bounds.h - size.h - margin));
   const left = clamp(anchor.x + anchor.w / 2 - size.w / 2, margin, Math.max(margin, bounds.w - size.w - margin));
   return { left, top, side: above ? "above" : "below" };
 }

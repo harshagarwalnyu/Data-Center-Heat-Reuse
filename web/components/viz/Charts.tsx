@@ -122,7 +122,7 @@ function PickTip({ p }: { p: { active?: boolean; payload?: readonly { value?: un
   if (!p.active || !row?.payload) return null;
   const { name, pct } = row.payload;
   return (
-    <div style={{ ...tip.contentStyle, padding: "8px 12px" }}>
+    <div style={{ ...tip.contentStyle, padding: "8px 12px", maxWidth: 230, whiteSpace: "normal" }}>
       <div style={tip.labelStyle}>{name}</div>
       <div>{`$${int(Number(row.value))} per MWh of heat`}</div>
       {pct !== undefined && <div style={{ color: "var(--teal-text)", fontWeight: 600 }}>Click to set the slider to {pct}%</div>}
@@ -147,6 +147,9 @@ export function LcohBars({ d, lcohOverride, onPickRate, activePct }: { d: Site2D
   }));
   const rows: { name: string; v: number; kind: string; pct?: number }[] = [...ours, ...inc];
   const hid = useId().replace(/:/g, "");
+  // On a phone the label column would swallow the whole chart, leaving no room for bars.
+  const [cw, setCw] = useState(600);
+  const narrow = cw < 480;
   // Hatched fill for what Lansing pays today, so the two groups differ by pattern as well as colour.
   const color = (k: string) => (k === "live" ? "var(--ink)" : k === "ours" ? "var(--teal)" : k === "gas" ? `url(#${hid}-gas)` : `url(#${hid}-inc)`);
   const stroke = (k: string) => (k === "gas" ? "var(--ink2)" : k === "inc" ? "var(--ember)" : "none");
@@ -154,8 +157,8 @@ export function LcohBars({ d, lcohOverride, onPickRate, activePct }: { d: Site2D
     <div className="flex flex-col h-full min-h-0">
       <Legend items={[{ color: "var(--teal)", label: "Recovered heat, cost to produce" }, { color: "var(--ember)", label: "What Lansing pays today", hatch: true }]} />
       <div className="flex-1 min-h-[300px]">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={rows} layout="vertical" margin={{ top: 10, right: 70, left: 6, bottom: 4 }}>
+        <ResponsiveContainer width="100%" height="100%" onResize={(w) => setCw(w)}>
+          <BarChart data={rows} layout="vertical" margin={{ top: 10, right: narrow ? 52 : 70, left: 6, bottom: 4 }}>
             <defs>
               {([["inc", "var(--ember)"], ["gas", "var(--ink2)"]] as const).map(([k, c]) => (
                 <pattern key={k} id={`${hid}-${k}`} width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -166,7 +169,7 @@ export function LcohBars({ d, lcohOverride, onPickRate, activePct }: { d: Site2D
             </defs>
             <CartesianGrid horizontal={false} strokeDasharray="3 4" />
             <XAxis type="number" tick={axisTick} axisLine={axisLine} tickLine={false} unit="" domain={[0, "dataMax + 20"]} tickFormatter={(v) => `$${v}`} />
-            <YAxis type="category" dataKey="name" width={236} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
+            <YAxis type="category" dataKey="name" width={narrow ? 124 : 236} tickFormatter={(n: string) => (narrow ? n.replace(" finance", "").replace(" (no new hookups)", "") : n)} tick={{ fill: "var(--ink)", fontSize: narrow ? 14 : 16 }} axisLine={false} tickLine={false} />
             <Tooltip {...tip} content={onPickRate ? (p) => <PickTip p={p} /> : undefined} formatter={(v) => `$${int(Number(v))} per MWh of heat`} />
             <Bar isAnimationActive={false} dataKey="v" radius={[0, 6, 6, 0]} barSize={26}>
               {rows.map((r) => {

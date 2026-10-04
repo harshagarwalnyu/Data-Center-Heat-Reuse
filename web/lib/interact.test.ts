@@ -69,6 +69,10 @@ describe("placeTip", () => {
     expect(p.side).toBe("below");
     expect(p.top).toBe(70);
   });
+  it("prefers below when asked, and flips above at the bottom edge", () => {
+    expect(placeTip({ x: 500, y: 300, w: 24, h: 24 }, size, bounds, 10, 8, "below")).toMatchObject({ side: "below", top: 334 });
+    expect(placeTip({ x: 500, y: 650, w: 24, h: 24 }, size, bounds, 10, 8, "below").side).toBe("above");
+  });
   it("stays inside the box at both sides", () => {
     expect(placeTip({ x: 2, y: 300, w: 0, h: 0 }, size, bounds).left).toBe(8);
     expect(placeTip({ x: 999, y: 300, w: 0, h: 0 }, size, bounds).left).toBe(1000 - 280 - 8);
