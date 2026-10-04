@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useStill } from "@/lib/motion";
 import type { AppData } from "@/lib/types";
 import { dec, int, usd } from "@/lib/format";
@@ -10,7 +10,10 @@ import { LCOH_ANCHOR_PCT } from "@/lib/model";
 import { NavBar, ringColor, ringText } from "./ui";
 import { StoryMap, STORY_ASPECT, type DcTip, type RingId, type RingTip } from "./viz/StoryMap";
 import { Info, TipKey } from "./Tooltip";
-import { Fish, House, NoFlame, Odometer, Pop, Rise, ScrollReveal, Tomato } from "./HomeParts";
+import { Fish, House, NoFlame, Odometer, Pop, Rise, Tomato } from "./HomeParts";
+import { HeroScene } from "./look/HeroScene";
+import { Faq, TornEdge, TownHallCollage, type QA } from "./look/Paper";
+import { Bento } from "./look/Bento";
 
 const DECK_PDF = `${PUBLIC_URL}/blob/main/docs/deck/Thermal-Commons-Heat-for-Lansing.pdf`;
 const SECTION = "py-[clamp(4rem,14dvh,9rem)]";
@@ -68,8 +71,15 @@ function RingsStory({ data, steps, townBuilt, ringTips, dc }: { data: AppData; s
         {steps.map((s, i) => <Caption key={s.id} step={s} index={i} on={active === i} picked={picked === s.id} setActive={setActive} />)}
       </div>
       <div className="order-first lg:order-last lg:sticky lg:self-start" style={{ top: "calc((100dvh - min(72dvh, 620px)) / 2)" }}>
-        <div ref={mapRef} className="card overflow-hidden w-full lg:w-auto lg:h-[min(72dvh,620px)] lg:ml-auto" style={{ aspectRatio: STORY_ASPECT }}>
-          <StoryMap offtakers={data.offtakers} n={n} still={reduce} stagger={stacked} townBuilt={townBuilt} rings={ringTips} dc={dc} selected={picked} onSelect={pick} />
+        <div className="relative w-full lg:w-auto lg:h-[min(72dvh,620px)] lg:ml-auto" style={{ aspectRatio: STORY_ASPECT }}>
+          <svg aria-hidden focusable="false" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute -inset-3 sm:-inset-4 w-[calc(100%+1.5rem)] sm:w-[calc(100%+2rem)] h-[calc(100%+1.5rem)] sm:h-[calc(100%+2rem)] drop-shadow-[0_14px_24px_rgba(59,42,30,0.18)]">
+            <path fill="#fffdf8" d="M1 2 L12 0.6 L25 1.8 L40 0.4 L55 1.6 L70 0.5 L86 1.7 L99 0.8 L99.4 14 L98.6 30 L99.6 46 L98.8 62 L99.5 78 L98.7 99 L84 99.6 L68 98.6 L52 99.5 L36 98.7 L20 99.6 L1.2 98.8 L0.5 82 L1.4 66 L0.4 50 L1.3 34 L0.5 18 Z" />
+          </svg>
+          <span aria-hidden className="absolute -top-5 left-8 w-24 h-7 rotate-[-6deg] bg-[#efe2c4]/90 shadow-sm z-10" />
+          <span aria-hidden className="absolute -bottom-5 right-10 w-24 h-7 rotate-[5deg] bg-[#efe2c4]/90 shadow-sm z-10" />
+          <div ref={mapRef} className="relative overflow-hidden rounded-[14px] w-full h-full">
+            <StoryMap offtakers={data.offtakers} n={n} still={reduce} stagger={stacked} townBuilt={townBuilt} rings={ringTips} dc={dc} selected={picked} onSelect={pick} />
+          </div>
         </div>
       </div>
     </div>
@@ -122,69 +132,147 @@ export function Home({ data }: { data: AppData }) {
       tip: <>The whole-project funding gap (phases 1 and 2, present value at {int(LCOH_ANCHOR_PCT[1])}%), as a share of the data center&apos;s capex{ex?.cba?.dc_capex_musd !== undefined ? <>, assumed at ${int(ex.cba.dc_capex_musd)}M</> : null}.<TipKey k={ex?.cba?.headline_as_pct_of_dc_capex !== undefined ? "extras.cba.headline_as_pct_of_dc_capex" : "extras.cba.as_pct_of_dc_capex"} /></> }] : []),
   ];
 
+  const heroStats = stats.slice(0, 3);
+  const cbaStat = stats[3];
+  const backupPct = (d.totals.backup_MWh / d.totals.heat_delivered_MWh) * 100;
+  const ex10 = f.dc_exit;
+  const corridorL = ringL("corridor");
+  const gap = ex?.cba?.headline_gap_musd ?? ex?.cba?.whole_project_gap_musd;
+  const faq: QA[] = [
+    { q: "Is Lansing banning data centers?",
+      a: <>Not yet. On 29 September 2026 the Town Board directed its attorney to draft a local law prohibiting data centers. There has been no vote on the ban itself. Our answer is a set of terms the town can sign instead.</> },
+    { q: "Does taking the heat put the servers at risk?",
+      a: <>No. Under our proposed heat supply agreement, cooling always wins: the data center keeps its own dry coolers, our heat exchanger is a sidestream, and a fault on our side falls back to those fans. Backup boilers carry <span className="num">{int(d.totals.backup_MWh)}</span> MWh a year, about <span className="num">{dec(backupPct, 1)}%</span> of the heat we deliver.</> },
+    { q: "What if the data center leaves?",
+      a: <>We modelled an exit in year <span className="num">{int(ex10.year)}</span>: <span className="num">${dec(ex10.stranded_musd, 1)}</span> million of capital stranded{ex10.replacement_source_musd !== undefined ? <> and <span className="num">${dec(ex10.replacement_source_musd, 1)}</span> million for a replacement heat source</> : null}. The pipes and the building heat pumps stay; only the central source changes.</> },
+    { q: "Why would a home connect?",
+      a: <>The tariff is fixed at <span className="num">{dec(f.tariff_usd_mwh / propane, 1)}</span> times propane&apos;s price per MWh. A typical home using <span className="num">{int(f.household.typical_MWh_yr)}</span> MWh a year saves <span className="num">{usd(saving)}</span> against propane and <span className="num">{usd(f.household.savings_vs_oil_usd)}</span> against heating oil. A household that can install its own air-source heat pump can pay less, and we say so.</> },
+    { q: "Why does the corridor need benefit-agreement money?",
+      a: <>Homes are spread out, so the corridor ring costs {corridorL !== undefined ? <><span className="num">${int(corridorL)}</span> per MWh at 7% on its own</> : "more"}, against <span className="num">${int(propane)}</span> for propane. The on-site farm campus makes a surplus; the remaining whole-project gap{gap !== undefined ? <> of <span className="num">${dec(gap, 2)}</span> million</> : null} is what the community benefit agreement would fund.</> },
+    { q: "How much of the waste heat do you actually use?",
+      a: <>About <span className="num">{dec(d.totals.share_of_available_pct, 1)}%</span> of the <span className="num">{int(d.supply.heat_available_GWh)}</span> GWh available, or <span className="num">{dec(d.totals.heat_delivered_MWh / 1000, 1)}</span> GWh a year. We only build rings that pass the cost test, so the rest still goes to the air.</> },
+  ];
+
   return (
-    <div className="min-h-dvh flex flex-col">
-      <NavBar active="/" />
-      <main className="flex-1 w-full max-w-[1400px] mx-auto px-[clamp(1rem,3vw,3rem)]">
-        <section aria-labelledby="home-h" className="min-h-[calc(100dvh-6.5rem)] flex flex-col justify-center relative pb-16">
-          <Rise>
-            <p className="kicker m-0 mb-5">Data-center heat for Lansing, NY</p>
-            <h1 id="home-h" className="serif font-bold m-0 text-ink leading-[1.05] max-w-[18ch]" style={BIG}>
-              <span className="num text-ember-text">{int(d.supply.heat_available_GWh)} GWh</span> of heat a year goes into the air.
-            </h1>
-          </Rise>
-          <motion.svg aria-hidden width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--ink2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute bottom-6 left-0"
-            animate={reduce ? undefined : { y: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}>
-            <path d="M6 9l6 6 6-6" />
-          </motion.svg>
+    <div className="min-h-dvh flex flex-col bg-bg">
+      <main className="flex-1 w-full">
+        {/* 1. Hero: painted golden-hour lake */}
+        <section aria-labelledby="home-h" className="relative overflow-hidden min-h-[max(100dvh,640px)] flex flex-col">
+          <HeroScene />
+          <NavBar active="/" overlay />
+          <div className="relative z-10 flex-1 flex flex-col items-center text-center px-5 pt-[clamp(6.5rem,16dvh,10rem)] pb-10">
+            <div aria-hidden className="hero-glow absolute left-1/2 -translate-x-1/2 top-[8%] w-[min(980px,120vw)] h-[62%] -z-10" />
+            <Rise>
+              <p className="kicker m-0 mb-4 !text-[#4a3527]">Heat for Lansing, NY</p>
+              <h1 id="home-h" className="m-0 text-ink leading-[1.04] max-w-[16ch] mx-auto" style={{ fontSize: "clamp(2.6rem, 1.3rem + 3.6vw, 4.4rem)", textWrap: "balance" }}>
+                <span className="num">{int(d.supply.heat_available_GWh)} GWh</span> of heat a year goes into the air.
+              </h1>
+              <p className="m-0 mt-5 text-ink mx-auto max-w-[34ch]" style={{ fontSize: "clamp(1.2rem, 1rem + 0.5vw, 1.45rem)" }}>We found the terms that let Lansing say yes.</p>
+              <Link prefetch={false} href="/explore/" className="btn btn-primary no-underline mt-7 !px-7 !min-h-[52px]">Try the model</Link>
+            </Rise>
+            <ul className="list-none m-0 p-4 sm:px-8 mt-auto pt-10 grid gap-x-8 gap-y-5 sm:grid-cols-3 items-end w-full max-w-[980px]">
+              {heroStats.map((s, i) => (
+                <li key={i} className={`stat-glass rounded-2xl px-4 py-3 ${i === 1 ? "sm:-translate-y-2" : ""}`}>
+                  <div className="relative flex items-center justify-center gap-2">
+                    {i === 1 && <Laurel />}
+                    <div className="serif text-ink leading-none" style={{ fontSize: "clamp(1.9rem, 1.2rem + 1.6vw, 2.6rem)" }}>{s.value}</div>
+                    {i === 1 && <Laurel flip />}
+                  </div>
+                  <p className="m-0 mt-2 text-ink text-caption leading-snug">{s.caption}{s.tip && <> <Info tip={s.tip} /></>}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
-        <section className={SECTION} aria-label="Why this matters">
-          <ScrollReveal text="The town board is drafting a ban. We found the terms that let it say yes." />
+        {/* 2. The problem, on chocolate brown */}
+        <TornEdge fill="#3b2a1e" seed={5} className="-mt-[20px] sm:-mt-[28px] relative z-10" />
+        <section aria-labelledby="problem-h" className="brown-section">
+          <div className="max-w-[1200px] mx-auto px-[clamp(1.25rem,4vw,3rem)] py-[clamp(4rem,12dvh,8rem)] grid gap-10 lg:grid-cols-2 items-center">
+            <Rise className="order-2 lg:order-1"><TownHallCollage className="w-full max-w-[520px] mx-auto block" /></Rise>
+            <Rise className="order-1 lg:order-2">
+              <p className="kicker m-0 mb-4">The problem</p>
+              <h2 id="problem-h" className="m-0 leading-[1.08] text-[#fdf6ea]" style={{ fontSize: "clamp(2.1rem, 1.2rem + 2.6vw, 3.4rem)", textWrap: "balance" }}>Lansing directed its attorney to draft a data-center ban.</h2>
+              <p className="m-0 mt-6 text-[#efe2cf] max-w-[46ch]" style={{ fontSize: "var(--text-lead)" }}>Free heat alone did not win towns over. Terms do: who owns the pipe, who pays for the gap, and what happens if the data center leaves.</p>
+              {cbaStat && (
+                <p className="m-0 mt-6 text-[#efe2cf] text-body">
+                  <span className="serif text-[#fdf6ea]" style={{ fontSize: "1.6rem" }}>{cbaStat.value}</span> {cbaStat.caption}
+                </p>
+              )}
+              <Link prefetch={false} href="/how/" className="inline-flex items-center gap-2 mt-8 font-bold text-[#fdf6ea] no-underline hover:underline min-h-[44px]">See how the terms work <span aria-hidden>&rarr;</span></Link>
+            </Rise>
+          </div>
         </section>
+        <TornEdge fill="#3b2a1e" seed={11} flip className="relative z-10" />
 
-        <section className={`${SECTION} !pt-0`} aria-label="The numbers">
-          <ul className="list-none m-0 p-0 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 border-t-2 border-line pt-10">
-            {stats.map((s, i) => (
-              <li key={i} className="relative">
-                <div className="serif font-bold text-ink leading-none" style={{ fontSize: "clamp(2.25rem, 1.2rem + 2.6vw, 3.5rem)" }}>{s.value}</div>
-                <p className="t-caption mt-3 mb-0">{s.caption}{s.tip && <> <Info tip={s.tip} /></>}</p>
-                {s.icon && <span className="absolute top-0 right-0">{s.icon}</span>}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section aria-labelledby="rings-h" className={`${SECTION} !pb-0`}>
-          <Rise>
+        {/* 3. The rings */}
+        <section aria-labelledby="rings-h" className="max-w-[1400px] mx-auto px-[clamp(1rem,3vw,3rem)] pt-[clamp(4rem,12dvh,8rem)]">
+          <Rise className="text-center">
             <p className="kicker m-0 mb-4">Three rings</p>
-            <h2 id="rings-h" className="serif font-bold m-0 text-ink leading-[1.1] max-w-[20ch]" style={BIG}>Built only where the numbers pass.</h2>
+            <h2 id="rings-h" className="m-0 text-ink leading-[1.08] mx-auto max-w-[20ch]" style={{ fontSize: "clamp(2.1rem, 1.2rem + 2.6vw, 3.4rem)", textWrap: "balance" }}>Built only where the numbers pass.</h2>
           </Rise>
           <div className="mt-10 lg:mt-4"><RingsStory data={data} steps={steps} townBuilt={townLcoh !== undefined && townLcoh <= propane} ringTips={ringTips} dc={dc} /></div>
         </section>
 
-        <section className={`${SECTION} text-center`} aria-labelledby="close-h">
-          <Rise>
-            <h2 id="close-h" className="serif font-bold m-0 text-ink leading-[1.1]" style={BIG}>Don&apos;t ban it. Set the terms.</h2>
-            <div className="flex flex-wrap gap-3 justify-center mt-10">
-              <Link prefetch={false} href="/explore/" className="btn btn-primary no-underline">Try the model &rarr;</Link>
-              <Link prefetch={false} href="/compare/" className="btn no-underline">Compare the sites</Link>
-            </div>
+        {/* 4. Bento */}
+        <section aria-labelledby="bento-h" className="max-w-[1240px] mx-auto px-[clamp(1rem,3vw,3rem)] py-[clamp(4rem,12dvh,8rem)]">
+          <Rise className="text-center mb-12">
+            <p className="kicker m-0 mb-4">Features</p>
+            <h2 id="bento-h" className="m-0 text-ink leading-[1.08]" style={{ fontSize: "clamp(2.1rem, 1.2rem + 2.6vw, 3.4rem)" }}>What you can do here</h2>
+            <p className="lede m-0 mt-4 mx-auto max-w-[44ch]">Every number on this site is read from the model&apos;s output file. Try it, check it, take it apart.</p>
           </Rise>
+          <Bento data={data} />
         </section>
 
-        <section aria-labelledby="know-h" className="pb-10">
-          <h2 id="know-h" className="kicker m-0 mb-3">How we know</h2>
-          <ul className="list-none m-0 p-0 flex flex-wrap gap-x-8 gap-y-2 text-body font-semibold">
-            <li><Link prefetch={false} href="/how/" className="text-ink">How it works</Link></li>
-            <li><Link prefetch={false} href="/sources/" className="text-ink">Sources</Link></li>
-            <li><a href={PUBLIC_URL} target="_blank" rel="noreferrer" className="text-ink">Code on GitHub &#8599;</a></li>
-            <li><a href={DECK_PDF} target="_blank" rel="noreferrer" className="text-ink">Slide deck (PDF) &#8599;</a></li>
-          </ul>
+        {/* 5. FAQ on graph paper */}
+        <TornEdge fill="#f4f6f7" seed={21} />
+        <section aria-labelledby="faq-h" className="graph-paper">
+          <div className="max-w-[860px] mx-auto px-[clamp(1.25rem,4vw,3rem)] py-[clamp(4rem,12dvh,7rem)]">
+            <Rise className="text-center mb-10">
+              <h2 id="faq-h" className="m-0 text-ink" style={{ fontSize: "clamp(2.1rem, 1.2rem + 2.6vw, 3.4rem)" }}>FAQ</h2>
+              <p className="lede m-0 mt-3">A few things a town board asks first.</p>
+            </Rise>
+            <Faq items={faq} />
+            <div className="card mt-14 p-[clamp(1.25rem,3vw,2rem)] flex flex-col sm:flex-row gap-5 sm:items-center justify-between !border-transparent">
+              <div>
+                <h2 id="close-h" className="m-0 text-ink" style={{ fontSize: "clamp(1.6rem, 1.2rem + 1vw, 2.1rem)" }}>Don&apos;t ban it. Set the terms.</h2>
+                <p className="m-0 mt-2 text-ink2">Still have questions? Run the numbers yourself, or read every source we used.</p>
+              </div>
+              <Link prefetch={false} href="/explore/" className="btn btn-primary no-underline shrink-0">Try the model</Link>
+            </div>
+          </div>
         </section>
-
-        <footer className="t-caption border-t border-line pt-4 pb-6">{CREDITS}</footer>
       </main>
+
+      {/* 6. Footer */}
+      <footer className="bg-bg border-t border-line/70">
+        <div className="max-w-[1240px] mx-auto px-[clamp(1.25rem,4vw,3rem)] py-10 grid gap-8 md:grid-cols-[1.4fr_1fr]">
+          <div>
+            <p className="serif m-0 text-ink" style={{ fontSize: "1.8rem" }}>Thermal Commons</p>
+            <p className="m-0 mt-2 text-ink2 max-w-[48ch]">A community heat utility for Lansing, NY, built from a data center&apos;s waste heat.</p>
+          </div>
+          <nav aria-label="Footer">
+            <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-6 gap-y-2 font-semibold">
+              <li><Link prefetch={false} href="/how/" className="text-ink">How it works</Link></li>
+              <li><Link prefetch={false} href="/sources/" className="text-ink">Sources</Link></li>
+              <li><a href={PUBLIC_URL} target="_blank" rel="noreferrer" className="text-ink">Code on GitHub &#8599;</a></li>
+              <li><a href={DECK_PDF} target="_blank" rel="noreferrer" className="text-ink">Slide deck (PDF) &#8599;</a></li>
+            </ul>
+          </nav>
+          <p className="t-caption m-0 md:col-span-2 border-t border-line/70 pt-4">{CREDITS}</p>
+        </div>
+      </footer>
     </div>
+  );
+}
+
+/** Laurel sprig that flanks the middle hero stat. Decorative. */
+function Laurel({ flip = false }: { flip?: boolean }) {
+  return (
+    <svg aria-hidden focusable="false" width="22" height="46" viewBox="0 0 22 46" style={flip ? { transform: "scaleX(-1)" } : undefined}>
+      <path d="M17 44 C6 36 4 20 12 4" stroke="#3b2a1e" strokeWidth="2" fill="none" strokeLinecap="round" />
+      {[8, 16, 24, 32].map((y, i) => <ellipse key={y} cx={i < 2 ? 8 + i : 6} cy={y} rx="5" ry="2.6" fill="#3b2a1e" transform={`rotate(${-40 + i * 8} ${i < 2 ? 8 + i : 6} ${y})`} />)}
+      {[12, 20, 28].map((y) => <ellipse key={`r${y}`} cx="15" cy={y} rx="4.5" ry="2.2" fill="#3b2a1e" transform={`rotate(40 15 ${y})`} />)}
+    </svg>
   );
 }

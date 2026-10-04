@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { Fraunces, Mulish } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/components/AppProvider";
+
+const serif = Fraunces({ subsets: ["latin"], axes: ["SOFT", "opsz"], variable: "--font-fraunces", display: "swap" });
+const sans = Mulish({ subsets: ["latin"], variable: "--font-mulish", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Thermal Commons: Heat for Lansing",
@@ -13,7 +17,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="light" suppressHydrationWarning>
+    <html lang="en" data-theme="light" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
       <body>
         <AppProvider>{children}</AppProvider>
       </body>
