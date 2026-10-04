@@ -187,7 +187,7 @@ export function LcohBars({ d, lcohOverride, onPickRate, activePct }: { d: Site2D
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-caption text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).</p>
+      <p className="text-caption text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).{onPickRate && " Click a teal bar to set the cost of money; from the keyboard, use the cost of money slider."}</p>
     </div>
   );
 }

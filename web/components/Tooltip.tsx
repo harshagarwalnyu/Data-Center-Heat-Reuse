@@ -48,12 +48,15 @@ export function Tooltip({ content, below = false, children }: { content: ReactNo
     const away = (e: PointerEvent) => { if (!wrap.current?.contains(e.target as Node)) hide(); };
     document.addEventListener("keydown", key);
     document.addEventListener("pointerdown", away);
-    window.addEventListener("scroll", hide, { passive: true });
+    // Tabbing to an off-screen trigger scrolls it into view; only a real scroll after the tip settles closes it.
+    const y0 = window.scrollY, x0 = window.scrollX, t0 = performance.now();
+    const scroll = () => { if (performance.now() - t0 < 150 || Math.hypot(window.scrollX - x0, window.scrollY - y0) < 8) return; hide(); };
+    window.addEventListener("scroll", scroll, { passive: true });
     window.addEventListener("resize", hide);
     return () => {
       document.removeEventListener("keydown", key);
       document.removeEventListener("pointerdown", away);
-      window.removeEventListener("scroll", hide);
+      window.removeEventListener("scroll", scroll);
       window.removeEventListener("resize", hide);
     };
   }, [open]);
@@ -64,10 +67,10 @@ export function Tooltip({ content, below = false, children }: { content: ReactNo
       className="inline-flex"
       onPointerDown={(e) => { touch.current = e.pointerType !== "mouse"; }}
       onKeyDown={() => { touch.current = false; }}
-      onPointerEnter={(e) => { if (e.pointerType === "mouse") show(); }}
+      onPointerEnter={(e) => { if (e.pointerType === "mouse") { touch.current = false; show(); } }}
       onPointerLeave={(e) => { if (e.pointerType === "mouse") hide(); }}
       onFocus={() => { if (!touch.current) show(); }}
-      onBlur={hide}
+      onBlur={() => { touch.current = false; hide(); }}
       onClick={() => { if (touch.current) (open ? hide() : show()); }}
     >
       {cloneElement(children, open ? { "aria-describedby": id } : {})}

@@ -6,7 +6,7 @@ import { BOUNDS, LAKE, ONSITE_R_KM, PLANT, ROUTE, TOWN, TOWN_R_KM, makeProjector
 import { HOME_VIEW, MAX_ZOOM, MIN_ZOOM, clampView, panBy, wheelFactor, zoomAt, type Box, type View } from "@/lib/interact";
 import { dec, int } from "@/lib/format";
 import { ringColor } from "../ui";
-import { TipCard, Tooltip } from "../Tooltip";
+import { TipCard } from "../Tooltip";
 
 export const STORY_ASPECT = (() => { const { width, height } = makeProjector(900); return width / height; })();
 const W = 900;
@@ -87,10 +87,13 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
     // Ctrl/Cmd + wheel (and trackpad pinch) zooms the map; a plain wheel still scrolls the page.
     const wheel = (e: WheelEvent) => {
       if (!(e.ctrlKey || e.metaKey)) return;
-      e.preventDefault();
       const r = el.getBoundingClientRect();
       const v = viewRef.current;
-      apply(zoomAt(v, v.k * wheelFactor(e.deltaY), ((e.clientX - r.left) / r.width) * W, ((e.clientY - r.top) / r.height) * H, W, H));
+      const next = clampView(zoomAt(v, v.k * wheelFactor(e.deltaY), ((e.clientX - r.left) / r.width) * W, ((e.clientY - r.top) / r.height) * H, W, H), W, H);
+      // At min or max zoom the gesture is left to the browser (page zoom).
+      if (next.k === v.k && next.x === v.x && next.y === v.y) return;
+      e.preventDefault();
+      apply(next);
     };
     // Two fingers belong to the map (pinch / pan); one finger keeps scrolling the page.
     const touch = (e: TouchEvent) => { if (e.touches.length >= 2) e.preventDefault(); };
@@ -151,7 +154,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
     "aria-pressed": selected === id,
     "aria-describedby": hover?.key === id || (!hover && selected === id) ? TIP_ID : undefined,
     pointerEvents: shown(i) ? ("auto" as const) : ("none" as const),
-    style: { cursor: "pointer", outline: "none" },
+    style: { cursor: "pointer" },
     onPointerEnter: (e: RPointerEvent) => { if (e.pointerType === "mouse" && !dragging) show(id, eventBox(e), ringNode(id)); },
     onPointerLeave: () => hide(id),
     onFocus: () => { if (!stopTouch.current) show(id, ringBox(id), ringNode(id)); },
@@ -168,8 +171,8 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
       const [x, y] = project([o.lon, o.lat]);
       const live = hover?.key === o.id;
       return (
-        <g key={o.id} role="img" tabIndex={shown(i) ? 0 : -1} aria-label={`${o.name}, ${typeLabel(o.type)}, ${demand(o.annual_MWh)} of heat a year`} aria-describedby={live ? TIP_ID : undefined}
-          pointerEvents={shown(i) ? "auto" : "none"} style={{ outline: "none", cursor: "default" }}
+        <g key={o.id} role="img" tabIndex={-1} aria-label={`${o.name}, ${typeLabel(o.type)}, ${demand(o.annual_MWh)} of heat a year`} aria-describedby={live ? TIP_ID : undefined}
+          pointerEvents={shown(i) ? "auto" : "none"} style={{ cursor: "default" }}
           onPointerEnter={(e) => { if (e.pointerType === "mouse" && !dragging) show(o.id, toLocal([x, y - 12]), dotNodes(o)); }} onPointerLeave={() => hide(o.id)}
           onFocus={() => show(o.id, toLocal([x, y - 12]), dotNodes(o))} onBlur={() => hide(o.id)}>
           <circle cx={x} cy={y} r={hitR(10)} fill="transparent" />
@@ -191,6 +194,8 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
   const move = (e: RPointerEvent<SVGSVGElement>) => {
     const prev = pointers.current.get(e.pointerId);
     if (!prev) return;
+    // A mouse released outside the map never fired pointerup here; drop the stale press.
+    if (e.pointerType === "mouse" && e.buttons === 0) { pointers.current.delete(e.pointerId); if (drag.current?.id === e.pointerId) drag.current = null; return; }
     const cur = { x: e.clientX, y: e.clientY };
     const r = box.current!.getBoundingClientRect();
     const ux = W / r.width;
@@ -273,7 +278,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
             {selected === "corridor" && <path d={line(corridorPts)} stroke="var(--ink)" strokeWidth={bandW + 18} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.2" />}
             <path d={line(corridorPts)} stroke="var(--teal)" strokeWidth={bandW} strokeLinecap="round" strokeLinejoin="round" fill="none" style={{ opacity: shown(1) ? (on("corridor") ? 0.42 : 0.28) : 0, transition: still ? "none" : `opacity .6s ease-out ${delay(1) + 0.4}s` }} />
             <path d={line(corridorPts)} pathLength={1} stroke="var(--teal)" strokeWidth={on("corridor") ? 7 : 4} strokeLinecap="round" strokeLinejoin="round" fill="none" style={draw(shown(1), 1)} />
-            <path d={line(corridorPts)} stroke="transparent" strokeWidth={bandW} strokeLinecap="round" strokeLinejoin="round" fill="none" pointerEvents="stroke" />
+            <path d={line(corridorPts)} stroke="transparent" strokeWidth={bandW} strokeLinecap="round" strokeLinejoin="round" fill="none" pointerEvents={shown(1) ? "stroke" : "none"} />
           </g>
           {dots("corridor", 1)}
 
@@ -288,7 +293,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
           </g>
           {dots("town", 2)}
 
-          <g role="img" tabIndex={0} aria-label={dc ? `Data center: ${dc.itLoadMW} MW IT load, ${dc.heatGWh} GWh of heat available a year` : "Data center"} aria-describedby={hover?.key === "dc" ? TIP_ID : undefined} style={{ outline: "none" }}
+          <g role="img" tabIndex={0} aria-label={dc ? `Data center: ${dc.itLoadMW} MW IT load, ${dc.heatGWh} GWh of heat available a year` : "Data center"} aria-describedby={hover?.key === "dc" ? TIP_ID : undefined}
             onPointerEnter={(e) => { if (dc && e.pointerType === "mouse" && !dragging) show("dc", toLocal([px, py - 14]), dcNode(dc)); }} onPointerLeave={() => hide("dc")}
             onFocus={() => dc && show("dc", toLocal([px, py - 14]), dcNode(dc))} onBlur={() => hide("dc")}>
             <circle cx={px} cy={py} r={hitR(18)} fill="transparent" />
@@ -319,7 +324,7 @@ export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false,
       </svg>
 
       <div className="absolute right-2 bottom-2 flex gap-1.5">
-        <Tooltip content="Zoom in. Ctrl or Cmd + scroll works too, and so does dragging."><button type="button" className="map-btn" aria-label="Zoom in" disabled={view.k >= MAX_ZOOM} onClick={() => zoomBy(1.5)}>+</button></Tooltip>
+        <button type="button" className="map-btn" aria-label="Zoom in" title="Zoom in. Ctrl or Cmd + scroll, or pinch, also zooms; drag to pan." disabled={view.k >= MAX_ZOOM} onClick={() => zoomBy(1.5)}>+</button>
         <button type="button" className="map-btn" aria-label="Zoom out" disabled={view.k <= MIN_ZOOM} onClick={() => zoomBy(1 / 1.5)}>&minus;</button>
         <button type="button" className="map-btn !w-auto px-2.5 !text-[.9rem]" aria-label="Reset the map view" disabled={atHome} onClick={() => apply(HOME_VIEW)}>Reset</button>
       </div>
