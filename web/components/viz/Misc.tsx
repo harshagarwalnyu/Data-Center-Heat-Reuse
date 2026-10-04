@@ -157,7 +157,7 @@ export function HouseholdCalc({ d, kicker = "Your household" }: { d: Site2Data; 
             </div>
           ))}
         </div>
-        <p className="m-0 text-[1rem] text-ink2 num">Home uses {dec(r.heatMWh, 1)} MWh of heat per year. Community heat is priced at ${int(d.finance.tariff_usd_mwh)} per MWh; low-income tariff ${int(d.finance.low_income_tariff_usd_mwh)} per MWh.</p>
+        <p className="m-0 text-[1rem] text-ink2 num">Home uses {dec(r.heatMWh, 1)} MWh of heat per year. Community heat is priced at ${int(d.finance.tariff_usd_mwh)} per MWh; low-income price ${int(d.finance.low_income_tariff_usd_mwh)} per MWh.</p>
       </div>
     </div>
   );

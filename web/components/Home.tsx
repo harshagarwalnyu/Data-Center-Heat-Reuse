@@ -123,7 +123,7 @@ export function Home({ data }: { data: AppData }) {
 
   const stats: { value: ReactNode; caption: string; icon?: ReactNode; tip?: ReactNode }[] = [
     { value: <Odometer value={usd(saving)} />, caption: "a year saved by a propane home", icon: <Pop><NoFlame /></Pop>,
-      tip: <>Our tariff is fixed at {dec(f.tariff_usd_mwh / propane, 1)} times propane&apos;s price per MWh, applied to a typical home&apos;s {int(f.household.typical_MWh_yr)} MWh of heat a year.<TipKey k="finance.household.savings_vs_propane_usd" /></> },
+      tip: <>Our heat price is fixed at {dec(f.tariff_usd_mwh / propane, 1)} times propane&apos;s price per MWh, applied to a typical home&apos;s {int(f.household.typical_MWh_yr)} MWh of heat a year.<TipKey k="finance.household.savings_vs_propane_usd" /></> },
     { value: <><Odometer value={usd(lcoh7)} /> <span className="text-ink2 text-[max(18px,0.5em)] font-normal">vs</span> <Odometer value={usd(propane)} /></>, caption: "per MWh, our heat against propane",
       tip: <>Our cost is capex times the capital recovery factor, plus operating cost, divided by the heat delivered, at {int(LCOH_ANCHOR_PCT[1])}% utility finance. Propane is what heat costs today.<TipKey k="finance.lcoh_usd_mwh.utility_7pct vs finance.incumbent_usd_mwh.propane" /></> },
     { value: <Odometer value={int(d.impact.co2_avoided_t_yr)} />, caption: "tonnes of CO2 avoided a year",
@@ -146,7 +146,7 @@ export function Home({ data }: { data: AppData }) {
     { q: "What if the data center leaves?",
       a: <>We modelled an exit in year <span className="num">{int(ex10.year)}</span>: <span className="num">${dec(ex10.stranded_musd, 1)}</span> million of capital stranded{ex10.replacement_source_musd !== undefined ? <> and <span className="num">${dec(ex10.replacement_source_musd, 1)}</span> million for a replacement heat source</> : null}. The pipes and the building heat pumps stay; only the central source changes.</> },
     { q: "Why would a home connect?",
-      a: <>The tariff is fixed at <span className="num">{dec(f.tariff_usd_mwh / propane, 1)}</span> times propane&apos;s price per MWh. A typical home using <span className="num">{int(f.household.typical_MWh_yr)}</span> MWh a year saves <span className="num">{usd(saving)}</span> against propane and <span className="num">{usd(f.household.savings_vs_oil_usd)}</span> against heating oil. A household that can install its own air-source heat pump can pay less, and we say so.</> },
+      a: <>The heat price is fixed at <span className="num">{dec(f.tariff_usd_mwh / propane, 1)}</span> times propane&apos;s price per MWh. A typical home using <span className="num">{int(f.household.typical_MWh_yr)}</span> MWh a year saves <span className="num">{usd(saving)}</span> against propane and <span className="num">{usd(f.household.savings_vs_oil_usd)}</span> against heating oil. A household that can install its own air-source heat pump can pay less, and we say so.</> },
     { q: "Why does the corridor need benefit-agreement money?",
       a: <>Homes are spread out, so the corridor ring costs {corridorL !== undefined ? <><span className="num">${int(corridorL)}</span> per MWh at 7% on its own</> : "more"}, against <span className="num">${int(propane)}</span> for propane. The on-site farm campus makes a surplus; the remaining whole-project gap{gap !== undefined ? <> of <span className="num">${dec(gap, 2)}</span> million</> : null} is what the community benefit agreement would fund.</> },
     { q: "How much of the waste heat do you actually use?",
