@@ -1,0 +1,11 @@
+{
+  "heat_MWh": 38297,
+  "hp_elec_MWh": 0,
+  "backup_MWh": 317,
+  "peak_MW": 14.3,
+  "tank_m3": 2470,
+  "unmet_hours": 0,
+  "built_rings": [
+    "onsite"
+  ]
+}

@@ -64,3 +64,18 @@ Same shape, fewer fields (supply, totals, finance.lcoh, impact headline, and `wh
 - `lcoh = (capex * crf(r, 30) + opex_fixed + elec_price * hp_elec) / heat_delivered`, `crf = r(1+r)^n / ((1+r)^n - 1)`
 - `household_savings = MWh_yr * (incumbent_usd_mwh - tariff_usd_mwh)`
 - `co2 = fossil_MWh * EF_fuel / eff - hp_elec * EF_grid`
+
+## Model v1 additions (2026-10-04)
+
+The model (`uv run python -m heatreuse`) writes `outputs/site2.json` in the shape above, plus these fields the app may use:
+
+- `meta.weather`: weather source (synthetic NOAA-normal year until a TMY lands in `data/raw/tmy_ithaca.csv`). `meta.built_rings`: rings that pass their gate. **Totals, finance and impact cover built rings only.**
+- `supply.outages`: DC heat interruptions the dispatch must ride through.
+- `rings[]`: `built`, `network_loss_MWh`, `storage_m3`, `avg_cop`, `capex_musd`, and `gate` = `{lcoh_usd_mwh, benchmark_usd_mwh, benchmark, passes, linear_density_MWh_per_m, density_gate_MWh_per_m, breakeven_capex_grant_frac}`. `breakeven_capex_grant_frac` is null when no grant closes the gap.
+- `weeks.*[]`: adds `dc_available_MW` (0 during an outage).
+- `cop_compare[]`: adds `sink_C` and `cop_unclipped` (the reported `cop` is clipped to the organizer bound of 2-6).
+- `finance.tornado[]`: adds `base`, `scope` (rings included) and `range` (multipliers or values tested).
+- `finance.dc_exit`: adds `fallback_lcoh_usd_mwh`.
+- `impact`: adds `co2_avoided_existing_loads_t_yr` and `co2_avoided_new_loads_t_yr`. The on-site campus is a new load, so its CO2 is counted against a propane-heated greenhouse, not against existing emissions.
+
+Also written: `outputs/annual_summary.json` and `outputs/headline_numbers.json` (PLAN s6 interfaces), and `outputs/hourly_site2.csv` (gitignored, regenerate locally).

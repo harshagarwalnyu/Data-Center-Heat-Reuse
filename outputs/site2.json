@@ -1,0 +1,3568 @@
+{
+  "meta": {
+    "site": "Lake Hawkeye, Lansing NY",
+    "generated": "2026-10-04",
+    "scenario": "base",
+    "weather": "synthetic year calibrated to NOAA 1991-2020 Ithaca normals",
+    "built_rings": [
+      "onsite"
+    ],
+    "notes": "Totals, finance and impact cover built rings only. Gated rings report their gate result."
+  },
+  "supply": {
+    "it_load_MW": 150,
+    "load_factor": 0.8,
+    "capture_fraction": 0.75,
+    "capture_temp_C": 50,
+    "heat_available_GWh": 780.8,
+    "heat_available_MW_avg": 89.1,
+    "outages": [
+      {
+        "name": "Winter trip (worst case, during cold snap)",
+        "start_doy": 24,
+        "start_hour": 6,
+        "hours": 36
+      },
+      {
+        "name": "Summer planned maintenance",
+        "start_doy": 200,
+        "start_hour": 8,
+        "hours": 48
+      }
+    ]
+  },
+  "rings": [
+    {
+      "id": "onsite",
+      "name": "On-site agri & community campus",
+      "phase": 1,
+      "users": [
+        "greenhouse",
+        "aquaculture (RAS)",
+        "rec center + pool"
+      ],
+      "annual_MWh": 38612,
+      "peak_MW": 14.3,
+      "supply_temp_C": 45,
+      "pipe_km": 1.5,
+      "conditional": false,
+      "built": true,
+      "network_loss_MWh": 328,
+      "storage_m3": 2470,
+      "avg_cop": null,
+      "capex_musd": 7.46,
+      "gate": {
+        "lcoh_usd_mwh": 17.9,
+        "benchmark_usd_mwh": 93.8,
+        "benchmark": "heat tariff",
+        "passes": true,
+        "linear_density_MWh_per_m": null,
+        "density_gate_MWh_per_m": null,
+        "breakeven_capex_grant_frac": 0.0
+      }
+    },
+    {
+      "id": "corridor",
+      "name": "Corridor homes & farms (ambient loop)",
+      "phase": 2,
+      "users": [
+        "homes"
+      ],
+      "annual_MWh": 9600,
+      "peak_MW": 4.05,
+      "supply_temp_C": 20,
+      "pipe_km": 10.0,
+      "conditional": true,
+      "built": false,
+      "network_loss_MWh": 0,
+      "storage_m3": 0,
+      "avg_cop": 5.88,
+      "capex_musd": 18.21,
+      "gate": {
+        "lcoh_usd_mwh": 193.6,
+        "benchmark_usd_mwh": 93.8,
+        "benchmark": "heat tariff",
+        "passes": false,
+        "linear_density_MWh_per_m": 0.96,
+        "density_gate_MWh_per_m": 1.5,
+        "breakeven_capex_grant_frac": 0.91
+      },
+      "homes": 400
+    },
+    {
+      "id": "town",
+      "name": "Town center: school campus + town buildings",
+      "phase": 3,
+      "users": [
+        "school campus",
+        "Woodsedge senior apartments",
+        "town hall",
+        "library + community center"
+      ],
+      "annual_MWh": 4160,
+      "peak_MW": 1.75,
+      "supply_temp_C": 65,
+      "pipe_km": 14.0,
+      "conditional": true,
+      "built": false,
+      "network_loss_MWh": 3679,
+      "storage_m3": 560,
+      "avg_cop": 6.0,
+      "capex_musd": 31.04,
+      "gate": {
+        "lcoh_usd_mwh": 623.1,
+        "benchmark_usd_mwh": 64.0,
+        "benchmark": "natural gas today",
+        "passes": false,
+        "linear_density_MWh_per_m": 0.3,
+        "density_gate_MWh_per_m": null,
+        "breakeven_capex_grant_frac": null
+      }
+    }
+  ],
+  "totals": {
+    "heat_delivered_MWh": 38297,
+    "share_of_available_pct": 4.97,
+    "hp_elec_MWh": 0,
+    "backup_MWh": 317,
+    "unmet_hours": 0,
+    "avg_cop": null,
+    "storage_m3": 2470
+  },
+  "monthly": [
+    {
+      "month": 1,
+      "supply_MWh": 63720,
+      "demand_MWh": 5815,
+      "delivered_MWh": 5564,
+      "backup_MWh": 252
+    },
+    {
+      "month": 2,
+      "supply_MWh": 60480,
+      "demand_MWh": 4720,
+      "delivered_MWh": 4720,
+      "backup_MWh": 0
+    },
+    {
+      "month": 3,
+      "supply_MWh": 66960,
+      "demand_MWh": 4164,
+      "delivered_MWh": 4164,
+      "backup_MWh": 0
+    },
+    {
+      "month": 4,
+      "supply_MWh": 64800,
+      "demand_MWh": 2803,
+      "delivered_MWh": 2803,
+      "backup_MWh": 0
+    },
+    {
+      "month": 5,
+      "supply_MWh": 66960,
+      "demand_MWh": 2154,
+      "delivered_MWh": 2154,
+      "backup_MWh": 0
+    },
+    {
+      "month": 6,
+      "supply_MWh": 64800,
+      "demand_MWh": 1821,
+      "delivered_MWh": 1821,
+      "backup_MWh": 0
+    },
+    {
+      "month": 7,
+      "supply_MWh": 62640,
+      "demand_MWh": 1862,
+      "delivered_MWh": 1799,
+      "backup_MWh": 64
+    },
+    {
+      "month": 8,
+      "supply_MWh": 66960,
+      "demand_MWh": 1866,
+      "delivered_MWh": 1866,
+      "backup_MWh": 0
+    },
+    {
+      "month": 9,
+      "supply_MWh": 64800,
+      "demand_MWh": 1929,
+      "delivered_MWh": 1929,
+      "backup_MWh": 0
+    },
+    {
+      "month": 10,
+      "supply_MWh": 66960,
+      "demand_MWh": 2681,
+      "delivered_MWh": 2681,
+      "backup_MWh": 0
+    },
+    {
+      "month": 11,
+      "supply_MWh": 64800,
+      "demand_MWh": 3711,
+      "delivered_MWh": 3711,
+      "backup_MWh": 0
+    },
+    {
+      "month": 12,
+      "supply_MWh": 66960,
+      "demand_MWh": 5086,
+      "delivered_MWh": 5086,
+      "backup_MWh": 0
+    }
+  ],
+  "weeks": {
+    "winter": [
+      {
+        "h": 0,
+        "demand_MW": 13.32,
+        "delivered_MW": 13.32,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.4
+      },
+      {
+        "h": 1,
+        "demand_MW": 13.66,
+        "delivered_MW": 13.66,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.3
+      },
+      {
+        "h": 2,
+        "demand_MW": 13.89,
+        "delivered_MW": 13.89,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.9
+      },
+      {
+        "h": 3,
+        "demand_MW": 14.0,
+        "delivered_MW": 14.0,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -18.2
+      },
+      {
+        "h": 4,
+        "demand_MW": 13.98,
+        "delivered_MW": 13.98,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -18.2
+      },
+      {
+        "h": 5,
+        "demand_MW": 13.84,
+        "delivered_MW": 13.84,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.8
+      },
+      {
+        "h": 6,
+        "demand_MW": 14.27,
+        "delivered_MW": 14.27,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.1
+      },
+      {
+        "h": 7,
+        "demand_MW": 13.24,
+        "delivered_MW": 13.24,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.2
+      },
+      {
+        "h": 8,
+        "demand_MW": 9.42,
+        "delivered_MW": 9.42,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.1
+      },
+      {
+        "h": 9,
+        "demand_MW": 6.19,
+        "delivered_MW": 6.19,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -13.9
+      },
+      {
+        "h": 10,
+        "demand_MW": 3.78,
+        "delivered_MW": 3.78,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.7
+      },
+      {
+        "h": 11,
+        "demand_MW": 3.48,
+        "delivered_MW": 3.48,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.7
+      },
+      {
+        "h": 12,
+        "demand_MW": 3.45,
+        "delivered_MW": 3.45,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.7
+      },
+      {
+        "h": 13,
+        "demand_MW": 3.42,
+        "delivered_MW": 3.42,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.8
+      },
+      {
+        "h": 14,
+        "demand_MW": 4.4,
+        "delivered_MW": 4.4,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.2
+      },
+      {
+        "h": 15,
+        "demand_MW": 7.07,
+        "delivered_MW": 7.07,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.9
+      },
+      {
+        "h": 16,
+        "demand_MW": 10.49,
+        "delivered_MW": 10.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.9
+      },
+      {
+        "h": 17,
+        "demand_MW": 11.31,
+        "delivered_MW": 11.31,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.3
+      },
+      {
+        "h": 18,
+        "demand_MW": 10.88,
+        "delivered_MW": 10.88,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.9
+      },
+      {
+        "h": 19,
+        "demand_MW": 11.22,
+        "delivered_MW": 11.22,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.8
+      },
+      {
+        "h": 20,
+        "demand_MW": 11.62,
+        "delivered_MW": 11.62,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.9
+      },
+      {
+        "h": 21,
+        "demand_MW": 12.06,
+        "delivered_MW": 12.06,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -13.1
+      },
+      {
+        "h": 22,
+        "demand_MW": 12.5,
+        "delivered_MW": 12.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.2
+      },
+      {
+        "h": 23,
+        "demand_MW": 12.91,
+        "delivered_MW": 12.91,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.3
+      },
+      {
+        "h": 24,
+        "demand_MW": 13.25,
+        "delivered_MW": 13.25,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.2
+      },
+      {
+        "h": 25,
+        "demand_MW": 13.5,
+        "delivered_MW": 13.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.9
+      },
+      {
+        "h": 26,
+        "demand_MW": 13.64,
+        "delivered_MW": 13.64,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.2
+      },
+      {
+        "h": 27,
+        "demand_MW": 13.65,
+        "delivered_MW": 13.65,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.3
+      },
+      {
+        "h": 28,
+        "demand_MW": 13.54,
+        "delivered_MW": 13.54,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.0
+      },
+      {
+        "h": 29,
+        "demand_MW": 13.3,
+        "delivered_MW": 13.3,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.4
+      },
+      {
+        "h": 30,
+        "demand_MW": 13.64,
+        "delivered_MW": 13.64,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.4
+      },
+      {
+        "h": 31,
+        "demand_MW": 12.45,
+        "delivered_MW": 12.45,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.3
+      },
+      {
+        "h": 32,
+        "demand_MW": 8.53,
+        "delivered_MW": 8.53,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.9
+      },
+      {
+        "h": 33,
+        "demand_MW": 5.2,
+        "delivered_MW": 5.2,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.5
+      },
+      {
+        "h": 34,
+        "demand_MW": 3.43,
+        "delivered_MW": 3.43,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.1
+      },
+      {
+        "h": 35,
+        "demand_MW": 3.38,
+        "delivered_MW": 3.38,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.7
+      },
+      {
+        "h": 36,
+        "demand_MW": 3.34,
+        "delivered_MW": 3.34,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.6
+      },
+      {
+        "h": 37,
+        "demand_MW": 3.31,
+        "delivered_MW": 3.31,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -6.8
+      },
+      {
+        "h": 38,
+        "demand_MW": 3.3,
+        "delivered_MW": 3.3,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -6.4
+      },
+      {
+        "h": 39,
+        "demand_MW": 6.0,
+        "delivered_MW": 6.0,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -6.2
+      },
+      {
+        "h": 40,
+        "demand_MW": 9.5,
+        "delivered_MW": 9.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -6.4
+      },
+      {
+        "h": 41,
+        "demand_MW": 10.45,
+        "delivered_MW": 10.45,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.0
+      },
+      {
+        "h": 42,
+        "demand_MW": 10.08,
+        "delivered_MW": 10.08,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.8
+      },
+      {
+        "h": 43,
+        "demand_MW": 10.49,
+        "delivered_MW": 10.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.9
+      },
+      {
+        "h": 44,
+        "demand_MW": 10.96,
+        "delivered_MW": 10.96,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.2
+      },
+      {
+        "h": 45,
+        "demand_MW": 11.47,
+        "delivered_MW": 11.47,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.5
+      },
+      {
+        "h": 46,
+        "demand_MW": 11.97,
+        "delivered_MW": 11.97,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.8
+      },
+      {
+        "h": 47,
+        "demand_MW": 12.45,
+        "delivered_MW": 12.45,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.1
+      },
+      {
+        "h": 48,
+        "demand_MW": 12.86,
+        "delivered_MW": 12.86,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.2
+      },
+      {
+        "h": 49,
+        "demand_MW": 13.17,
+        "delivered_MW": 13.17,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.0
+      },
+      {
+        "h": 50,
+        "demand_MW": 13.38,
+        "delivered_MW": 13.38,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.6
+      },
+      {
+        "h": 51,
+        "demand_MW": 13.46,
+        "delivered_MW": 13.46,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.8
+      },
+      {
+        "h": 52,
+        "demand_MW": 13.41,
+        "delivered_MW": 13.41,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.7
+      },
+      {
+        "h": 53,
+        "demand_MW": 13.24,
+        "delivered_MW": 13.24,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.2
+      },
+      {
+        "h": 54,
+        "demand_MW": 13.64,
+        "delivered_MW": 13.64,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.4
+      },
+      {
+        "h": 55,
+        "demand_MW": 12.47,
+        "delivered_MW": 12.47,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.5
+      },
+      {
+        "h": 56,
+        "demand_MW": 8.61,
+        "delivered_MW": 8.61,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -13.3
+      },
+      {
+        "h": 57,
+        "demand_MW": 5.35,
+        "delivered_MW": 5.35,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.1
+      },
+      {
+        "h": 58,
+        "demand_MW": 3.45,
+        "delivered_MW": 3.45,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.8
+      },
+      {
+        "h": 59,
+        "demand_MW": 3.41,
+        "delivered_MW": 3.41,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.6
+      },
+      {
+        "h": 60,
+        "demand_MW": 3.38,
+        "delivered_MW": 3.38,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.7
+      },
+      {
+        "h": 61,
+        "demand_MW": 3.34,
+        "delivered_MW": 3.34,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.7
+      },
+      {
+        "h": 62,
+        "demand_MW": 3.44,
+        "delivered_MW": 3.44,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.0
+      },
+      {
+        "h": 63,
+        "demand_MW": 6.1,
+        "delivered_MW": 6.1,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -6.7
+      },
+      {
+        "h": 64,
+        "demand_MW": 9.52,
+        "delivered_MW": 9.52,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -6.7
+      },
+      {
+        "h": 65,
+        "demand_MW": 10.45,
+        "delivered_MW": 10.45,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.0
+      },
+      {
+        "h": 66,
+        "demand_MW": 9.99,
+        "delivered_MW": 9.99,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.6
+      },
+      {
+        "h": 67,
+        "demand_MW": 10.32,
+        "delivered_MW": 10.32,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.5
+      },
+      {
+        "h": 68,
+        "demand_MW": 10.71,
+        "delivered_MW": 10.71,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.5
+      },
+      {
+        "h": 69,
+        "demand_MW": 11.13,
+        "delivered_MW": 11.13,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.6
+      },
+      {
+        "h": 70,
+        "demand_MW": 11.56,
+        "delivered_MW": 11.56,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.7
+      },
+      {
+        "h": 71,
+        "demand_MW": 11.95,
+        "delivered_MW": 11.95,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.8
+      },
+      {
+        "h": 72,
+        "demand_MW": 12.27,
+        "delivered_MW": 12.27,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -13.6
+      },
+      {
+        "h": 73,
+        "demand_MW": 12.51,
+        "delivered_MW": 12.51,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.3
+      },
+      {
+        "h": 74,
+        "demand_MW": 12.64,
+        "delivered_MW": 12.64,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.6
+      },
+      {
+        "h": 75,
+        "demand_MW": 12.66,
+        "delivered_MW": 12.66,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.7
+      },
+      {
+        "h": 76,
+        "demand_MW": 12.56,
+        "delivered_MW": 12.56,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.4
+      },
+      {
+        "h": 77,
+        "demand_MW": 12.33,
+        "delivered_MW": 12.33,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -13.8
+      },
+      {
+        "h": 78,
+        "demand_MW": 12.69,
+        "delivered_MW": 12.69,
+        "storage_MWh": 44.6,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -12.9
+      },
+      {
+        "h": 79,
+        "demand_MW": 11.42,
+        "delivered_MW": 11.42,
+        "storage_MWh": 33.13,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -11.8
+      },
+      {
+        "h": 80,
+        "demand_MW": 7.53,
+        "delivered_MW": 7.53,
+        "storage_MWh": 25.56,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -10.6
+      },
+      {
+        "h": 81,
+        "demand_MW": 4.24,
+        "delivered_MW": 4.24,
+        "storage_MWh": 21.27,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -9.3
+      },
+      {
+        "h": 82,
+        "demand_MW": 3.35,
+        "delivered_MW": 3.35,
+        "storage_MWh": 17.87,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -8.0
+      },
+      {
+        "h": 83,
+        "demand_MW": 3.31,
+        "delivered_MW": 3.31,
+        "storage_MWh": 14.51,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -6.8
+      },
+      {
+        "h": 84,
+        "demand_MW": 3.28,
+        "delivered_MW": 3.28,
+        "storage_MWh": 11.19,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -5.8
+      },
+      {
+        "h": 85,
+        "demand_MW": 3.25,
+        "delivered_MW": 3.25,
+        "storage_MWh": 7.9,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -5.1
+      },
+      {
+        "h": 86,
+        "demand_MW": 3.24,
+        "delivered_MW": 3.24,
+        "storage_MWh": 4.62,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -4.7
+      },
+      {
+        "h": 87,
+        "demand_MW": 5.3,
+        "delivered_MW": 4.58,
+        "storage_MWh": 0.0,
+        "backup_MW": 0.72,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -4.7
+      },
+      {
+        "h": 88,
+        "demand_MW": 8.84,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 8.87,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -5.0
+      },
+      {
+        "h": 89,
+        "demand_MW": 9.95,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 9.99,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -5.7
+      },
+      {
+        "h": 90,
+        "demand_MW": 9.63,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 9.66,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -6.6
+      },
+      {
+        "h": 91,
+        "demand_MW": 10.08,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 10.12,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -7.8
+      },
+      {
+        "h": 92,
+        "demand_MW": 10.61,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 10.64,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -9.2
+      },
+      {
+        "h": 93,
+        "demand_MW": 11.16,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 11.2,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -10.7
+      },
+      {
+        "h": 94,
+        "demand_MW": 11.72,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 11.76,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -12.2
+      },
+      {
+        "h": 95,
+        "demand_MW": 12.25,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 12.29,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -13.6
+      },
+      {
+        "h": 96,
+        "demand_MW": 12.71,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 12.75,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -14.8
+      },
+      {
+        "h": 97,
+        "demand_MW": 13.08,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 13.12,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -15.8
+      },
+      {
+        "h": 98,
+        "demand_MW": 13.34,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 13.38,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -16.5
+      },
+      {
+        "h": 99,
+        "demand_MW": 13.48,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 13.52,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -16.8
+      },
+      {
+        "h": 100,
+        "demand_MW": 13.48,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 13.52,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -16.8
+      },
+      {
+        "h": 101,
+        "demand_MW": 13.36,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 13.4,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -16.5
+      },
+      {
+        "h": 102,
+        "demand_MW": 13.81,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 13.85,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -15.9
+      },
+      {
+        "h": 103,
+        "demand_MW": 12.55,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 12.59,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -15.0
+      },
+      {
+        "h": 104,
+        "demand_MW": 8.73,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 8.77,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -14.0
+      },
+      {
+        "h": 105,
+        "demand_MW": 5.5,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 5.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -12.8
+      },
+      {
+        "h": 106,
+        "demand_MW": 3.48,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 3.52,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -11.7
+      },
+      {
+        "h": 107,
+        "demand_MW": 3.45,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 3.48,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -10.6
+      },
+      {
+        "h": 108,
+        "demand_MW": 3.41,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 3.45,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -9.7
+      },
+      {
+        "h": 109,
+        "demand_MW": 3.39,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 3.43,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -9.0
+      },
+      {
+        "h": 110,
+        "demand_MW": 3.94,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 3.97,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -8.7
+      },
+      {
+        "h": 111,
+        "demand_MW": 6.73,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 6.76,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -8.7
+      },
+      {
+        "h": 112,
+        "demand_MW": 10.27,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 10.3,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -9.0
+      },
+      {
+        "h": 113,
+        "demand_MW": 11.43,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 11.46,
+        "dc_available_MW": 0.0,
+        "outdoor_C": -9.6
+      },
+      {
+        "h": 114,
+        "demand_MW": 11.08,
+        "delivered_MW": 11.08,
+        "storage_MWh": 3.23,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.5
+      },
+      {
+        "h": 115,
+        "demand_MW": 11.5,
+        "delivered_MW": 11.5,
+        "storage_MWh": 6.03,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.6
+      },
+      {
+        "h": 116,
+        "demand_MW": 11.97,
+        "delivered_MW": 11.97,
+        "storage_MWh": 8.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.8
+      },
+      {
+        "h": 117,
+        "demand_MW": 12.48,
+        "delivered_MW": 12.48,
+        "storage_MWh": 10.18,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.2
+      },
+      {
+        "h": 118,
+        "demand_MW": 12.97,
+        "delivered_MW": 12.97,
+        "storage_MWh": 11.51,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.5
+      },
+      {
+        "h": 119,
+        "demand_MW": 13.43,
+        "delivered_MW": 13.43,
+        "storage_MWh": 12.38,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.7
+      },
+      {
+        "h": 120,
+        "demand_MW": 13.81,
+        "delivered_MW": 13.81,
+        "storage_MWh": 12.86,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.7
+      },
+      {
+        "h": 121,
+        "demand_MW": 14.1,
+        "delivered_MW": 14.1,
+        "storage_MWh": 13.06,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -18.5
+      },
+      {
+        "h": 122,
+        "demand_MW": 14.26,
+        "delivered_MW": 14.26,
+        "storage_MWh": 13.09,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -18.9
+      },
+      {
+        "h": 123,
+        "demand_MW": 14.3,
+        "delivered_MW": 14.3,
+        "storage_MWh": 13.09,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -19.0
+      },
+      {
+        "h": 124,
+        "demand_MW": 14.2,
+        "delivered_MW": 14.2,
+        "storage_MWh": 13.19,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -18.7
+      },
+      {
+        "h": 125,
+        "demand_MW": 13.97,
+        "delivered_MW": 13.97,
+        "storage_MWh": 13.52,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -18.1
+      },
+      {
+        "h": 126,
+        "demand_MW": 14.3,
+        "delivered_MW": 14.3,
+        "storage_MWh": 13.51,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.2
+      },
+      {
+        "h": 127,
+        "demand_MW": 12.86,
+        "delivered_MW": 12.86,
+        "storage_MWh": 14.95,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.0
+      },
+      {
+        "h": 128,
+        "demand_MW": 8.91,
+        "delivered_MW": 8.91,
+        "storage_MWh": 20.34,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.6
+      },
+      {
+        "h": 129,
+        "demand_MW": 5.55,
+        "delivered_MW": 5.55,
+        "storage_MWh": 29.08,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -13.1
+      },
+      {
+        "h": 130,
+        "demand_MW": 3.48,
+        "delivered_MW": 3.48,
+        "storage_MWh": 39.89,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.7
+      },
+      {
+        "h": 131,
+        "demand_MW": 3.43,
+        "delivered_MW": 3.43,
+        "storage_MWh": 50.74,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.2
+      },
+      {
+        "h": 132,
+        "demand_MW": 3.39,
+        "delivered_MW": 3.39,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.0
+      },
+      {
+        "h": 133,
+        "demand_MW": 3.36,
+        "delivered_MW": 3.36,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.2
+      },
+      {
+        "h": 134,
+        "demand_MW": 3.53,
+        "delivered_MW": 3.53,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.8
+      },
+      {
+        "h": 135,
+        "demand_MW": 6.28,
+        "delivered_MW": 6.28,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.7
+      },
+      {
+        "h": 136,
+        "demand_MW": 9.8,
+        "delivered_MW": 9.8,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.9
+      },
+      {
+        "h": 137,
+        "demand_MW": 10.99,
+        "delivered_MW": 10.99,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.4
+      },
+      {
+        "h": 138,
+        "demand_MW": 10.61,
+        "delivered_MW": 10.61,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.2
+      },
+      {
+        "h": 139,
+        "demand_MW": 11.01,
+        "delivered_MW": 11.01,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.3
+      },
+      {
+        "h": 140,
+        "demand_MW": 11.47,
+        "delivered_MW": 11.47,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.5
+      },
+      {
+        "h": 141,
+        "demand_MW": 11.96,
+        "delivered_MW": 11.96,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.8
+      },
+      {
+        "h": 142,
+        "demand_MW": 12.44,
+        "delivered_MW": 12.44,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.1
+      },
+      {
+        "h": 143,
+        "demand_MW": 12.9,
+        "delivered_MW": 12.9,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.3
+      },
+      {
+        "h": 144,
+        "demand_MW": 13.29,
+        "delivered_MW": 13.29,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.3
+      },
+      {
+        "h": 145,
+        "demand_MW": 13.59,
+        "delivered_MW": 13.59,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.1
+      },
+      {
+        "h": 146,
+        "demand_MW": 13.77,
+        "delivered_MW": 13.77,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.6
+      },
+      {
+        "h": 147,
+        "demand_MW": 13.84,
+        "delivered_MW": 13.84,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.8
+      },
+      {
+        "h": 148,
+        "demand_MW": 13.77,
+        "delivered_MW": 13.77,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.6
+      },
+      {
+        "h": 149,
+        "demand_MW": 13.59,
+        "delivered_MW": 13.59,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -17.1
+      },
+      {
+        "h": 150,
+        "demand_MW": 13.98,
+        "delivered_MW": 13.98,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -16.3
+      },
+      {
+        "h": 151,
+        "demand_MW": 12.53,
+        "delivered_MW": 12.53,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -15.3
+      },
+      {
+        "h": 152,
+        "demand_MW": 8.65,
+        "delivered_MW": 8.65,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -14.1
+      },
+      {
+        "h": 153,
+        "demand_MW": 5.37,
+        "delivered_MW": 5.37,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.9
+      },
+      {
+        "h": 154,
+        "demand_MW": 3.48,
+        "delivered_MW": 3.48,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.6
+      },
+      {
+        "h": 155,
+        "demand_MW": 3.44,
+        "delivered_MW": 3.44,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.5
+      },
+      {
+        "h": 156,
+        "demand_MW": 3.41,
+        "delivered_MW": 3.41,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.5
+      },
+      {
+        "h": 157,
+        "demand_MW": 3.37,
+        "delivered_MW": 3.37,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.5
+      },
+      {
+        "h": 158,
+        "demand_MW": 3.42,
+        "delivered_MW": 3.42,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.7
+      },
+      {
+        "h": 159,
+        "demand_MW": 6.08,
+        "delivered_MW": 6.08,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.3
+      },
+      {
+        "h": 160,
+        "demand_MW": 9.49,
+        "delivered_MW": 9.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.3
+      },
+      {
+        "h": 161,
+        "demand_MW": 10.67,
+        "delivered_MW": 10.67,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -7.6
+      },
+      {
+        "h": 162,
+        "demand_MW": 10.21,
+        "delivered_MW": 10.21,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -8.2
+      },
+      {
+        "h": 163,
+        "demand_MW": 10.54,
+        "delivered_MW": 10.54,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -9.1
+      },
+      {
+        "h": 164,
+        "demand_MW": 10.94,
+        "delivered_MW": 10.94,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -10.1
+      },
+      {
+        "h": 165,
+        "demand_MW": 11.38,
+        "delivered_MW": 11.38,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -11.3
+      },
+      {
+        "h": 166,
+        "demand_MW": 11.83,
+        "delivered_MW": 11.83,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -12.5
+      },
+      {
+        "h": 167,
+        "demand_MW": 12.25,
+        "delivered_MW": 12.25,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": -13.6
+      }
+    ],
+    "summer": [
+      {
+        "h": 0,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.1
+      },
+      {
+        "h": 1,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.3
+      },
+      {
+        "h": 2,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.8
+      },
+      {
+        "h": 3,
+        "demand_MW": 2.5,
+        "delivered_MW": 2.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.7
+      },
+      {
+        "h": 4,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.9
+      },
+      {
+        "h": 5,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.4
+      },
+      {
+        "h": 6,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.2
+      },
+      {
+        "h": 7,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.3
+      },
+      {
+        "h": 8,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.5
+      },
+      {
+        "h": 9,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.9
+      },
+      {
+        "h": 10,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.2
+      },
+      {
+        "h": 11,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.4
+      },
+      {
+        "h": 12,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.5
+      },
+      {
+        "h": 13,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.3
+      },
+      {
+        "h": 14,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.8
+      },
+      {
+        "h": 15,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 28.0
+      },
+      {
+        "h": 16,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.9
+      },
+      {
+        "h": 17,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.4
+      },
+      {
+        "h": 18,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.7
+      },
+      {
+        "h": 19,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.7
+      },
+      {
+        "h": 20,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.5
+      },
+      {
+        "h": 21,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 23.2
+      },
+      {
+        "h": 22,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.0
+      },
+      {
+        "h": 23,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.8
+      },
+      {
+        "h": 24,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.8
+      },
+      {
+        "h": 25,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.0
+      },
+      {
+        "h": 26,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.5
+      },
+      {
+        "h": 27,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.4
+      },
+      {
+        "h": 28,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.6
+      },
+      {
+        "h": 29,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.1
+      },
+      {
+        "h": 30,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.9
+      },
+      {
+        "h": 31,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.0
+      },
+      {
+        "h": 32,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.2
+      },
+      {
+        "h": 33,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 23.6
+      },
+      {
+        "h": 34,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.9
+      },
+      {
+        "h": 35,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.1
+      },
+      {
+        "h": 36,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.2
+      },
+      {
+        "h": 37,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.9
+      },
+      {
+        "h": 38,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 28.3
+      },
+      {
+        "h": 39,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 28.4
+      },
+      {
+        "h": 40,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 28.1
+      },
+      {
+        "h": 41,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.6
+      },
+      {
+        "h": 42,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.7
+      },
+      {
+        "h": 43,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.6
+      },
+      {
+        "h": 44,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.3
+      },
+      {
+        "h": 45,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.9
+      },
+      {
+        "h": 46,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.5
+      },
+      {
+        "h": 47,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.2
+      },
+      {
+        "h": 48,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.1
+      },
+      {
+        "h": 49,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.2
+      },
+      {
+        "h": 50,
+        "demand_MW": 2.5,
+        "delivered_MW": 2.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.7
+      },
+      {
+        "h": 51,
+        "demand_MW": 2.5,
+        "delivered_MW": 2.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.4
+      },
+      {
+        "h": 52,
+        "demand_MW": 2.5,
+        "delivered_MW": 2.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.5
+      },
+      {
+        "h": 53,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.9
+      },
+      {
+        "h": 54,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.6
+      },
+      {
+        "h": 55,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.6
+      },
+      {
+        "h": 56,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.7
+      },
+      {
+        "h": 57,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.9
+      },
+      {
+        "h": 58,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 23.1
+      },
+      {
+        "h": 59,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.2
+      },
+      {
+        "h": 60,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.2
+      },
+      {
+        "h": 61,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.1
+      },
+      {
+        "h": 62,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.7
+      },
+      {
+        "h": 63,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.9
+      },
+      {
+        "h": 64,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.8
+      },
+      {
+        "h": 65,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.4
+      },
+      {
+        "h": 66,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.7
+      },
+      {
+        "h": 67,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.8
+      },
+      {
+        "h": 68,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 23.7
+      },
+      {
+        "h": 69,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.5
+      },
+      {
+        "h": 70,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.3
+      },
+      {
+        "h": 71,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.1
+      },
+      {
+        "h": 72,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.2
+      },
+      {
+        "h": 73,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.5
+      },
+      {
+        "h": 74,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.1
+      },
+      {
+        "h": 75,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.0
+      },
+      {
+        "h": 76,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.3
+      },
+      {
+        "h": 77,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.8
+      },
+      {
+        "h": 78,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.7
+      },
+      {
+        "h": 79,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.9
+      },
+      {
+        "h": 80,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 54.81,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 22.1
+      },
+      {
+        "h": 81,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 52.26,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 23.5
+      },
+      {
+        "h": 82,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 49.71,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 24.9
+      },
+      {
+        "h": 83,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 47.16,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 26.2
+      },
+      {
+        "h": 84,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 44.62,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 27.3
+      },
+      {
+        "h": 85,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 42.07,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 28.0
+      },
+      {
+        "h": 86,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 39.53,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 28.3
+      },
+      {
+        "h": 87,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 36.98,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 28.4
+      },
+      {
+        "h": 88,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 34.44,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 28.1
+      },
+      {
+        "h": 89,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 31.9,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 27.4
+      },
+      {
+        "h": 90,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 29.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 26.5
+      },
+      {
+        "h": 91,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 26.82,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 25.3
+      },
+      {
+        "h": 92,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 24.28,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 23.9
+      },
+      {
+        "h": 93,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 21.74,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 22.5
+      },
+      {
+        "h": 94,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 19.21,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 21.1
+      },
+      {
+        "h": 95,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 16.67,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 19.7
+      },
+      {
+        "h": 96,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 14.14,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 18.5
+      },
+      {
+        "h": 97,
+        "demand_MW": 2.5,
+        "delivered_MW": 2.5,
+        "storage_MWh": 11.6,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 17.6
+      },
+      {
+        "h": 98,
+        "demand_MW": 2.51,
+        "delivered_MW": 2.51,
+        "storage_MWh": 9.05,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 17.0
+      },
+      {
+        "h": 99,
+        "demand_MW": 2.52,
+        "delivered_MW": 2.52,
+        "storage_MWh": 6.49,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 16.7
+      },
+      {
+        "h": 100,
+        "demand_MW": 2.52,
+        "delivered_MW": 2.52,
+        "storage_MWh": 3.93,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 16.7
+      },
+      {
+        "h": 101,
+        "demand_MW": 2.51,
+        "delivered_MW": 2.51,
+        "storage_MWh": 1.38,
+        "backup_MW": 0.0,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 17.0
+      },
+      {
+        "h": 102,
+        "demand_MW": 2.5,
+        "delivered_MW": 1.34,
+        "storage_MWh": 0.0,
+        "backup_MW": 1.15,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 17.7
+      },
+      {
+        "h": 103,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 18.6
+      },
+      {
+        "h": 104,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 19.6
+      },
+      {
+        "h": 105,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 20.8
+      },
+      {
+        "h": 106,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 21.9
+      },
+      {
+        "h": 107,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 23.0
+      },
+      {
+        "h": 108,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 23.9
+      },
+      {
+        "h": 109,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 24.8
+      },
+      {
+        "h": 110,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 25.3
+      },
+      {
+        "h": 111,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 25.5
+      },
+      {
+        "h": 112,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 25.4
+      },
+      {
+        "h": 113,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 25.0
+      },
+      {
+        "h": 114,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 24.2
+      },
+      {
+        "h": 115,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 23.3
+      },
+      {
+        "h": 116,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 22.1
+      },
+      {
+        "h": 117,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 20.9
+      },
+      {
+        "h": 118,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 19.6
+      },
+      {
+        "h": 119,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 18.5
+      },
+      {
+        "h": 120,
+        "demand_MW": 2.5,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.54,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 17.5
+      },
+      {
+        "h": 121,
+        "demand_MW": 2.51,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.55,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 16.8
+      },
+      {
+        "h": 122,
+        "demand_MW": 2.52,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.56,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 16.3
+      },
+      {
+        "h": 123,
+        "demand_MW": 2.53,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.56,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 16.2
+      },
+      {
+        "h": 124,
+        "demand_MW": 2.52,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.56,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 16.4
+      },
+      {
+        "h": 125,
+        "demand_MW": 2.51,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.55,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 17.0
+      },
+      {
+        "h": 126,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 17.9
+      },
+      {
+        "h": 127,
+        "demand_MW": 2.49,
+        "delivered_MW": 0.0,
+        "storage_MWh": 0.0,
+        "backup_MW": 2.53,
+        "dc_available_MW": 0.0,
+        "outdoor_C": 18.9
+      },
+      {
+        "h": 128,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 11.81,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.2
+      },
+      {
+        "h": 129,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 23.62,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.6
+      },
+      {
+        "h": 130,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 35.42,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.9
+      },
+      {
+        "h": 131,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 47.22,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.2
+      },
+      {
+        "h": 132,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.3
+      },
+      {
+        "h": 133,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.1
+      },
+      {
+        "h": 134,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.6
+      },
+      {
+        "h": 135,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.8
+      },
+      {
+        "h": 136,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.6
+      },
+      {
+        "h": 137,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.1
+      },
+      {
+        "h": 138,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.3
+      },
+      {
+        "h": 139,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.3
+      },
+      {
+        "h": 140,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 23.1
+      },
+      {
+        "h": 141,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.8
+      },
+      {
+        "h": 142,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.6
+      },
+      {
+        "h": 143,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.4
+      },
+      {
+        "h": 144,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.3
+      },
+      {
+        "h": 145,
+        "demand_MW": 2.5,
+        "delivered_MW": 2.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.6
+      },
+      {
+        "h": 146,
+        "demand_MW": 2.51,
+        "delivered_MW": 2.51,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.1
+      },
+      {
+        "h": 147,
+        "demand_MW": 2.51,
+        "delivered_MW": 2.51,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 16.9
+      },
+      {
+        "h": 148,
+        "demand_MW": 2.51,
+        "delivered_MW": 2.51,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.1
+      },
+      {
+        "h": 149,
+        "demand_MW": 2.5,
+        "delivered_MW": 2.5,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 17.6
+      },
+      {
+        "h": 150,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 18.4
+      },
+      {
+        "h": 151,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.5
+      },
+      {
+        "h": 152,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 20.7
+      },
+      {
+        "h": 153,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.0
+      },
+      {
+        "h": 154,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 23.3
+      },
+      {
+        "h": 155,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.5
+      },
+      {
+        "h": 156,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.6
+      },
+      {
+        "h": 157,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.4
+      },
+      {
+        "h": 158,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.9
+      },
+      {
+        "h": 159,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.1
+      },
+      {
+        "h": 160,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 27.0
+      },
+      {
+        "h": 161,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 26.5
+      },
+      {
+        "h": 162,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 25.8
+      },
+      {
+        "h": 163,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 24.8
+      },
+      {
+        "h": 164,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 23.6
+      },
+      {
+        "h": 165,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 22.4
+      },
+      {
+        "h": 166,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 21.1
+      },
+      {
+        "h": 167,
+        "demand_MW": 2.49,
+        "delivered_MW": 2.49,
+        "storage_MWh": 57.36,
+        "backup_MW": 0.0,
+        "dc_available_MW": 90.0,
+        "outdoor_C": 19.9
+      }
+    ]
+  },
+  "cop_compare": [
+    {
+      "source": "Air-cooled (30 \u00b0C)",
+      "sink_C": 65,
+      "cop": 4.12,
+      "cop_unclipped": 4.12
+    },
+    {
+      "source": "Liquid-cooled (50 \u00b0C)",
+      "sink_C": 65,
+      "cop": 6.0,
+      "cop_unclipped": 8.05
+    }
+  ],
+  "finance": {
+    "capex_musd": {
+      "total": 7.46,
+      "lines": [
+        {
+          "item": "Sidestream plate HX + pumps at DC (onsite)",
+          "musd": 0.86,
+          "source": "assumption"
+        },
+        {
+          "item": "Campus pre-insulated pipe (onsite)",
+          "musd": 2.25,
+          "source": "assumption"
+        },
+        {
+          "item": "Backup boiler (new campus) (onsite)",
+          "musd": 1.43,
+          "source": "assumption"
+        },
+        {
+          "item": "Thermal storage tank (onsite)",
+          "musd": 0.86,
+          "source": "assumption"
+        },
+        {
+          "item": "Soft costs + contingency",
+          "musd": 2.06,
+          "source": "assumption"
+        }
+      ]
+    },
+    "opex_musd_yr": 0.26,
+    "lcoh_usd_mwh": {
+      "coop_4pct": 17.9,
+      "utility_7pct": 22.3,
+      "private_10pct": 27.2
+    },
+    "incumbent_usd_mwh": {
+      "propane": 125,
+      "heating_oil": 156,
+      "natural_gas": 64,
+      "electric_resistance": 245,
+      "air_source_hp": 98
+    },
+    "tariff_usd_mwh": 93.8,
+    "low_income_tariff_usd_mwh": 75.0,
+    "household": {
+      "typical_MWh_yr": 24,
+      "savings_vs_propane_usd": 750,
+      "savings_vs_oil_usd": 1494
+    },
+    "tornado": [
+      {
+        "driver": "homes_uptake",
+        "base": 52.9,
+        "low": 37.3,
+        "high": 65.6,
+        "scope": [
+          "onsite",
+          "corridor"
+        ],
+        "range": [
+          0.5,
+          1.5
+        ]
+      },
+      {
+        "driver": "discount_rate",
+        "base": 52.9,
+        "low": 49.3,
+        "high": 65.0,
+        "scope": [
+          "onsite",
+          "corridor"
+        ],
+        "range": [
+          0.03,
+          0.07
+        ]
+      },
+      {
+        "driver": "pipe_cost",
+        "base": 52.9,
+        "low": 48.0,
+        "high": 57.7,
+        "scope": [
+          "onsite",
+          "corridor"
+        ],
+        "range": [
+          0.7,
+          1.3
+        ]
+      },
+      {
+        "driver": "elec_price",
+        "base": 52.9,
+        "low": 49.9,
+        "high": 55.9,
+        "scope": [
+          "onsite",
+          "corridor"
+        ],
+        "range": [
+          0.7,
+          1.3
+        ]
+      },
+      {
+        "driver": "hp_efficiency",
+        "base": 52.9,
+        "low": 52.7,
+        "high": 53.5,
+        "scope": [
+          "onsite",
+          "corridor"
+        ],
+        "range": [
+          0.45,
+          0.55
+        ]
+      },
+      {
+        "driver": "dc_load_factor",
+        "base": 52.9,
+        "low": 52.9,
+        "high": 52.9,
+        "scope": [
+          "onsite",
+          "corridor"
+        ],
+        "range": [
+          0.6,
+          0.9
+        ]
+      }
+    ],
+    "dc_exit": {
+      "year": 10,
+      "stranded_musd": 0.79,
+      "fallback_lcoh_usd_mwh": 85.47,
+      "fallback": "Pipes, tanks, building heat pumps and backup boilers keep working. The sidestream HX is the only DC-specific asset; an air-source central heat pump on the same pad replaces the DC heat, and the HSA decommissioning reserve pays for it."
+    }
+  },
+  "impact": {
+    "co2_avoided_t_yr": 9397.1,
+    "co2_avoided_existing_loads_t_yr": 0,
+    "co2_avoided_new_loads_t_yr": 9397.1,
+    "co2_cars_equiv": 2042.9,
+    "homes_served": 0,
+    "fossil_displaced_MWh": 38297.4,
+    "jobs": 71,
+    "local_food_t_yr": 5200,
+    "erf": 0.0308,
+    "water": {
+      "note": "TeraWulf's sealed glycol loop with dry coolers uses no lake water for cooling, so heat reuse does not cut lake withdrawals. It cuts dry-cooler fan energy, and the HSA covenant keeps the 1.008 MGD permit unused for cooling.",
+      "fan_energy_saved_MWh": 776
+    }
+  },
+  "value_by_stakeholder": [
+    {
+      "who": "Residents",
+      "value": "A heat price below propane for a town under a gas moratorium",
+      "metric": "Ambient-loop heat at $94/MWh vs $125 propane: $750/yr per typical home. Corridor LCOH $194/MWh needs a 91% capex grant first."
+    },
+    {
+      "who": "Town of Lansing",
+      "value": "Binding heat covenant and a community-owned utility",
+      "metric": "71 on-site jobs; 5,200 t/yr local food"
+    },
+    {
+      "who": "TeraWulf",
+      "value": "Social license with no cooling risk: heat is a sidestream, dry coolers stay at 100%",
+      "metric": "ERF 3.1%; DC-specific stranded asset $0.8M if it exits in year 10"
+    },
+    {
+      "who": "Greenhouse / aquaculture operators",
+      "value": "Near-free low-temperature heat year round",
+      "metric": "On-site LCOH $18/MWh vs $125 propane"
+    },
+    {
+      "who": "Cayuga Lake",
+      "value": "No lake water for cooling; closed-loop aquaponics captures nutrients",
+      "metric": "9,397 t CO2/yr avoided"
+    }
+  ],
+  "hdr_scorecard": [
+    {
+      "lens": "Community",
+      "petal": "Equity",
+      "claim": "Heat tariff pegged below propane, low-income tier",
+      "metric": "tariff = 75% of propane; low-income 60%"
+    },
+    {
+      "lens": "Community",
+      "petal": "Place",
+      "claim": "Brownfield coal site becomes an agri-food campus",
+      "metric": "71 jobs, 5,200 t/yr food"
+    },
+    {
+      "lens": "Ecology",
+      "petal": "Energy",
+      "claim": "Recovered DC heat replaces propane boilers",
+      "metric": "9,397 t CO2/yr; ERF 3.1%"
+    },
+    {
+      "lens": "Ecology",
+      "petal": "Water",
+      "claim": "No lake water for cooling; heat reuse cuts dry-cooler fan energy",
+      "metric": "776 MWh/yr fan energy"
+    },
+    {
+      "lens": "Health",
+      "petal": "Air",
+      "claim": "Less propane and oil burned locally",
+      "metric": "38,297 MWh/yr fossil heat displaced"
+    },
+    {
+      "lens": "Ecology",
+      "petal": "Resilience",
+      "claim": "Year-round sink: July demand vs annual average",
+      "metric": "July = 58% of average month"
+    }
+  ],
+  "sources": [
+    {
+      "id": "gem_plant",
+      "label": "Global Energy Monitor: Cayuga power station",
+      "url": "https://www.gem.wiki/Cayuga_power_station_(New_York)"
+    },
+    {
+      "id": "terawulf_phase1",
+      "label": "TeraWulf Lake Hawkeye phase 1 (~150 MW)",
+      "url": "https://www.terawulf.com"
+    },
+    {
+      "id": "data_contract",
+      "label": "docs/data-contract.md formulas",
+      "url": "docs/data-contract.md"
+    },
+    {
+      "id": "organizer_digest",
+      "label": "Organizer source digest (COP bounds, 4G temps)",
+      "url": "research/digest-organizer.md"
+    },
+    {
+      "id": "rii",
+      "label": "RII: Colocating Data Centers and Greenhouses (Virginia)",
+      "url": "resources/text/Colocating-Data-Centers_Greenhouses-RII-Virginia.txt"
+    },
+    {
+      "id": "cbs",
+      "label": "CBS data center district heating white paper",
+      "url": "resources/text/CBS_Data_center_white_paper_DISTRICT_HEATING.txt"
+    },
+    {
+      "id": "nyseg_moratorium",
+      "label": "NYSEG non-pipe alternatives, Lansing gas moratorium",
+      "url": "https://www.nyseg.com/non-pipe-alternatives"
+    },
+    {
+      "id": "acs_b25040",
+      "label": "ACS 2023 5-yr B25040 house heating fuel",
+      "url": "https://data.census.gov/table/ACSDT5Y2023.B25040"
+    },
+    {
+      "id": "osm_offtakers",
+      "label": "OSM Nominatim geocodes (research/offtakers.md)",
+      "url": "research/offtakers.md"
+    },
+    {
+      "id": "town_capital_plan",
+      "label": "Town of Lansing capital plan 2026-2030",
+      "url": "https://mccmeetingspublic.blob.core.usgovcloudapi.net/lansingny-meet-bea10836c3b84b16965c2d23450ae349/ITEM-Attachment-001-18802fdf921e47179751d6bc4d6039dc.pdf"
+    },
+    {
+      "id": "nyserda_fuels",
+      "label": "NYSERDA heating fuel prices, Central NY",
+      "url": "https://www.nyserda.ny.gov/Researchers-and-Policymakers/Energy-Prices/Heating-Fuels"
+    },
+    {
+      "id": "nyseg_elec",
+      "label": "NYSEG residential electricity, Tompkins County",
+      "url": "https://www.energysage.com/local-data/electricity-cost/ny/tompkins-county/ithaca/"
+    },
+    {
+      "id": "ownership_deal",
+      "label": "docs/ownership-deal.md tariff and HSA",
+      "url": "docs/ownership-deal.md"
+    },
+    {
+      "id": "epa_ef",
+      "label": "EPA GHG Emission Factors Hub",
+      "url": "https://www.epa.gov/climateleadership/ghg-emission-factors-hub"
+    },
+    {
+      "id": "egrid",
+      "label": "EPA eGRID2023 NYUP",
+      "url": "https://www.epa.gov/egrid"
+    },
+    {
+      "id": "model",
+      "label": "Lansing heat reuse model (this repo)",
+      "url": "src/heatreuse"
+    }
+  ]
+}

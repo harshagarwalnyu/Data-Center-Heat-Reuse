@@ -12,3 +12,5 @@ data/raw/
 *.zip
 resources/raw/
 research/transcripts/
+
+outputs/hourly_*.csv

@@ -19,3 +19,13 @@ Design from the demand side: who needs heat, when, at what temperature, and what
 | Data / GIS | Offtaker scoring, maps, ResStock/ComStock loads |
 | Finance | Capex/opex, levelized cost of heat, deal structure |
 | Story / community | Stakeholders, risk matrix, carbon and water impact, slides |
+
+## Run the model
+
+```bash
+uv sync
+uv run python -m heatreuse      # writes outputs/site2.json, annual_summary.json, headline_numbers.json
+uv run pytest                   # energy balance, COP bounds, storage, LCOH hand-check, contract shape
+```
+
+Every input lives in `assumptions.yaml`, tagged `[fact:<id>]`, `[assumption]` or `[unverified]`. Drop an 8,760-row `data/raw/tmy_ithaca.csv` with a `temp_C` column to replace the synthetic weather year.

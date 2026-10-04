@@ -1,0 +1,201 @@
+# Single source for every model input. Each value carries its source tag in a comment:
+#   [fact:<id>]  verified figure; <id> resolves in the `sources` list at the bottom
+#   [assumption] our engineering or financial judgement, to be stress-tested in the tornado
+#   [unverified] placeholder that needs a citation before any slide uses it
+# Units are in the key name (C, K, MW, MWh, usd, m, ha, frac).
+
+meta:
+  site: "Lake Hawkeye, Lansing NY"
+  scenario: base
+  year_hours: 8760
+
+weather:
+  # Optional real TMY: an 8,760-row CSV with a `temp_C` column. Used if present, else synthetic year.
+  tmy_csv: data/raw/tmy_ithaca.csv
+  lat_deg: 42.6025                     # [fact:gem_plant]
+  seed: 7
+  # NOAA 1991-2020 monthly mean dry-bulb, Ithaca Cornell Univ (USC00304174), converted from F. [unverified]
+  monthly_mean_C: [-5.0, -3.9, 0.4, 7.4, 13.8, 18.5, 20.9, 20.0, 16.2, 9.7, 3.7, -1.8]
+  design_C: -19.0                      # ASHRAE 99.6% heating design, Ithaca airport, approx. [unverified]
+  diurnal_half_range_C: 5.0            # [assumption]
+  daily_anomaly_sd_C: {winter: 4.5, summer: 2.5}   # [assumption] AR(1) day-to-day swings
+  daily_anomaly_ar1: 0.7               # [assumption]
+  cold_snap: {center_doy: 25, days: 4} # depth solved so the year hits design_C [assumption]
+  # Monthly clearness index for the greenhouse solar-gain proxy. [assumption]
+  clearness: [0.38, 0.42, 0.46, 0.48, 0.50, 0.53, 0.54, 0.53, 0.50, 0.45, 0.36, 0.34]
+
+supply:
+  it_load_MW: 150                      # phase 1 base case [fact:terawulf_phase1]
+  load_factor: 0.8                     # [assumption] PLAN s1.4 range 0.7-0.9
+  capture_fraction: 0.75               # DLC share of IT heat to liquid loop [assumption] organizer range 0.4-0.85
+  capture_temp_C: 50                   # DLC facility-water return [assumption] organizer 45-60 C
+  pue: 1.2                             # for ERF denominator [assumption]
+  # Hours the DC delivers no heat. Cooling is unaffected; this tests heat continuity.
+  outages:
+    - {name: "Winter trip (worst case, during cold snap)", start_doy: 24, start_hour: 6, hours: 36}
+    - {name: "Summer planned maintenance", start_doy: 200, start_hour: 8, hours: 48}
+
+heat_pump:
+  eta_carnot: 0.5                      # [fact:data_contract] PLAN s4.1.4 range 0.45-0.55
+  approach_K: 3.0                      # per HX [fact:data_contract]
+  cop_min: 2.0                         # organizer bound [fact:organizer_digest]
+  cop_max: 6.0                         # organizer bound [fact:organizer_digest]
+  pump_elec_frac: 0.015                # pumping kWh_e per kWh_th moved [assumption]
+
+storage:
+  water_dT_K: 20                       # tank charge/discharge temperature swing [assumption]
+  loss_frac_per_h: 0.0004              # ~1%/day standing loss [assumption]
+
+rings:
+  onsite:
+    name: "On-site agri & community campus"
+    phase: 1
+    conditional: false
+    kind: direct                       # DLC heat through a plate HX, no lift
+    supply_temp_C: 45
+    pipe_km: 1.5                       # HX substation 100-500 m from DC, campus loop [fact:rii] s38 [assumption length]
+    pipe_loss_W_per_m: 25              # pre-insulated pair at 45 C [assumption]
+    plant_size_frac_of_peak: 1.0
+    storage_hours_of_peak: 4
+    backup_size_frac_of_peak: 1.0
+    backup_fuel: propane               # no new gas hookups under the moratorium [fact:nyseg_moratorium]
+    counterfactual_fuel: propane       # what a conventional greenhouse here would burn
+    users:
+      greenhouse:
+        area_ha: 12                    # ~30 acres; facts-site2 frames 30-50 acres [unverified] land availability
+        peak_W_per_m2: 100             # ~1 MWth/ha [fact:rii]
+        set_day_C: 18                  # [assumption]
+        set_night_C: 16                # [assumption]
+        base_W_per_m2: 12              # minimum-pipe heat for humidity control, all year [assumption]
+        solar_gain_frac: 0.35          # share of GHI that offsets heating [assumption]
+        jobs_per_ha: 4.1               # 41.5 jobs per 10 acres [fact:rii]
+        yield_kg_per_m2: 40            # mixed tomato/greens, lit [assumption]
+      aquaculture:                     # recirculating aquaculture (RAS)
+        base_MW: 0.8                   # [assumption]
+        per_K_MW: 0.02                 # extra per K below balance [assumption]
+        balance_C: 18
+        output_t_yr: 400               # [assumption]
+        jobs: 12                       # [assumption]
+      rec_center_pool:
+        base_MW: 0.25                  # pool water + DHW [assumption]
+        per_K_MW: 0.015                # [assumption]
+        balance_C: 15
+        jobs: 10                       # [assumption]
+
+  corridor:
+    name: "Corridor homes & farms (ambient loop)"
+    phase: 2
+    conditional: true
+    kind: building_hp                  # 5th-gen ambient loop, heat pump in each building
+    loop_temp_C: 20
+    sink_max_C: 45                     # building hydronic supply at design [assumption]
+    sink_min_C: 35                     # at mild weather [assumption]
+    homes: 400                         # sign-up clusters near the site [assumption] ~9% of 4,450 households
+    trench_m_per_home: 25              # clustered hamlets, not strung-out road frontage [assumption]
+    pipe_loss_W_per_m: 0               # ambient loop sits near ground temperature [assumption]
+    home_annual_MWh: 24                # space heat + DHW, delivered [assumption] ~82 MMBtu
+    home_dhw_MWh: 3                    # [assumption]
+    balance_C: 15.5                    # [assumption]
+    thermal_lag_h: 6                   # [assumption]
+    plant_size_frac_of_peak: 1.0
+    storage_hours_of_peak: 0
+    backup_size_frac_of_peak: 1.0
+    backup_fuel: electric_resistance   # HP backup element [assumption]
+    # Rural fuel mix (gas share removed: no mains near the site). Shares of B25040 [fact:acs_b25040]
+    counterfactual_mix: {propane: 0.45, electric_resistance: 0.40, heating_oil: 0.15}
+    density_gate_MWh_per_m: 1.5        # PLAN s1.2 screen
+
+  town:
+    name: "Town center: school campus + town buildings"
+    phase: 3
+    conditional: true
+    kind: central_hp
+    sink_max_C: 65                     # organizer 4G band 55-65 C [fact:organizer_digest]
+    sink_min_C: 55
+    transmission_km: 12.0              # school 10.4-10.6 km straight-line, road +15% [fact:osm_offtakers]
+    local_km: 2.0                      # [assumption]
+    pipe_loss_W_per_m: 30              # route metre, pre-insulated pair DN150 at 60 C [assumption]
+    plant_size_frac_of_peak: 0.8
+    storage_hours_of_peak: 6
+    backup_size_frac_of_peak: 1.0
+    backup_fuel: natural_gas           # existing boilers stay [fact:town_capital_plan]
+    counterfactual_fuel: natural_gas
+    balance_C: 15.5
+    thermal_lag_h: 12
+    buildings:
+      school_campus:  {annual_MWh: 3300}   # ~30,000 m2 x 110 kWh/m2 [unverified]
+      woodsedge_apts: {annual_MWh: 600}    # senior housing [unverified]
+      town_hall:      {annual_MWh: 110}    # 8,200 sq ft x 150 kWh/m2 [fact:town_capital_plan] [assumption intensity]
+      library_center: {annual_MWh: 150}    # [unverified]
+
+finance:
+  years: 30
+  discount_rates: {coop_4pct: 0.04, utility_7pct: 0.07, private_10pct: 0.10}
+  gate_rate: coop_4pct
+  soft_cost_frac: 0.15                 # [assumption]
+  contingency_frac: 0.20               # [assumption]
+  om_frac_of_capex: 0.02               # per year [assumption]
+  heat_purchase_usd_per_MWh: 0         # HSA: heat at no charge [fact:ownership_deal]
+  elec_commercial_usd_per_kWh: 0.12    # central plant, NYSEG commercial [unverified]
+  elec_residential_usd_per_kWh: 0.245  # [fact:nyseg_elec]
+  unit_costs:
+    sidestream_hx_usd_per_kW: 60       # plate HX + pumps + controls at DC [assumption]
+    central_hp_usd_per_kW: 700         # EUR 6M per 10 MW plant [fact:cbs]
+    building_hp_usd_per_home: 12000    # water-to-water HP installed [assumption]
+    service_usd_per_home: 8000         # service line + ETS [assumption]
+    pipe_insulated_usd_per_m: 1500     # pre-insulated pair, rural trench [assumption] research cites $200-400/ft
+    pipe_ambient_usd_per_m: 500        # uninsulated HDPE pair [assumption]
+    tank_usd_per_m3: 350               # [assumption]
+    backup_boiler_usd_per_kW: 100      # new boiler where none exists [assumption]
+  # Delivered prices (fuel price / appliance efficiency), $/MWh_th [fact:nyserda_fuels] [fact:nyseg_elec]
+  incumbent_usd_per_MWh:
+    propane: 125
+    heating_oil: 156
+    natural_gas: 64
+    electric_resistance: 245
+    air_source_hp: 98                  # $0.245 / seasonal COP 2.5 [assumption]
+  tariff_k_of_propane: 0.75            # [fact:ownership_deal] k = 0.75
+  low_income_k_of_propane: 0.60        # [assumption]
+  gate_margin: 0.0                     # ring is built only if LCOH <= tariff (or incumbent for town) * (1 - margin)
+  household_MWh_yr: 24
+  dc_exit:
+    year: 10
+    fallback_cop: 2.5                  # air-source central HP replaces DC heat [assumption]
+    fallback_hp_usd_per_kW: 900        # [assumption]
+
+impact:
+  # kg CO2 per MWh fuel input [fact:epa_ef]; efficiencies [fact:nyserda_fuels]
+  ef_kg_per_MWh_fuel: {propane: 210, heating_oil: 252, natural_gas: 181}
+  appliance_eff: {propane: 0.85, heating_oil: 0.82, natural_gas: 0.85, electric_resistance: 1.0}
+  grid_kg_per_MWh: 110.1               # eGRID NYUP [fact:egrid]
+  car_t_per_yr: 4.6                    # EPA typical passenger vehicle [unverified]
+  dry_cooler_fan_kWe_per_kWth: 0.02    # fan power avoided per kW heat not rejected [assumption]
+
+tornado:
+  # LCOH sensitivity for the Phase 1+2 proposal, whether or not the corridor gate passes today.
+  rings: [onsite, corridor]
+  drivers:                             # paths scaled by `mult`, or set to `value`, low then high
+    pipe_cost:      {paths: [finance.unit_costs.pipe_insulated_usd_per_m, finance.unit_costs.pipe_ambient_usd_per_m], mult: [0.7, 1.3]}
+    elec_price:     {paths: [finance.elec_commercial_usd_per_kWh, finance.elec_residential_usd_per_kWh], mult: [0.7, 1.3]}
+    hp_efficiency:  {paths: [heat_pump.eta_carnot], value: [0.45, 0.55]}
+    homes_uptake:   {paths: [rings.corridor.homes], mult: [0.5, 1.5]}
+    discount_rate:  {paths: [finance.discount_rates.coop_4pct], value: [0.03, 0.07]}
+    dc_load_factor: {paths: [supply.load_factor], value: [0.6, 0.9]}
+
+sources:
+  - {id: gem_plant, label: "Global Energy Monitor: Cayuga power station", url: "https://www.gem.wiki/Cayuga_power_station_(New_York)"}
+  - {id: terawulf_phase1, label: "TeraWulf Lake Hawkeye phase 1 (~150 MW)", url: "https://www.terawulf.com"}
+  - {id: data_contract, label: "docs/data-contract.md formulas", url: "docs/data-contract.md"}
+  - {id: organizer_digest, label: "Organizer source digest (COP bounds, 4G temps)", url: "research/digest-organizer.md"}
+  - {id: rii, label: "RII: Colocating Data Centers and Greenhouses (Virginia)", url: "resources/text/Colocating-Data-Centers_Greenhouses-RII-Virginia.txt"}
+  - {id: cbs, label: "CBS data center district heating white paper", url: "resources/text/CBS_Data_center_white_paper_DISTRICT_HEATING.txt"}
+  - {id: nyseg_moratorium, label: "NYSEG non-pipe alternatives, Lansing gas moratorium", url: "https://www.nyseg.com/non-pipe-alternatives"}
+  - {id: acs_b25040, label: "ACS 2023 5-yr B25040 house heating fuel", url: "https://data.census.gov/table/ACSDT5Y2023.B25040"}
+  - {id: osm_offtakers, label: "OSM Nominatim geocodes (research/offtakers.md)", url: "research/offtakers.md"}
+  - {id: town_capital_plan, label: "Town of Lansing capital plan 2026-2030", url: "https://mccmeetingspublic.blob.core.usgovcloudapi.net/lansingny-meet-bea10836c3b84b16965c2d23450ae349/ITEM-Attachment-001-18802fdf921e47179751d6bc4d6039dc.pdf"}
+  - {id: nyserda_fuels, label: "NYSERDA heating fuel prices, Central NY", url: "https://www.nyserda.ny.gov/Researchers-and-Policymakers/Energy-Prices/Heating-Fuels"}
+  - {id: nyseg_elec, label: "NYSEG residential electricity, Tompkins County", url: "https://www.energysage.com/local-data/electricity-cost/ny/tompkins-county/ithaca/"}
+  - {id: ownership_deal, label: "docs/ownership-deal.md tariff and HSA", url: "docs/ownership-deal.md"}
+  - {id: epa_ef, label: "EPA GHG Emission Factors Hub", url: "https://www.epa.gov/climateleadership/ghg-emission-factors-hub"}
+  - {id: egrid, label: "EPA eGRID2023 NYUP", url: "https://www.epa.gov/egrid"}
+  - {id: model, label: "Lansing heat reuse model (this repo)", url: "src/heatreuse"}
