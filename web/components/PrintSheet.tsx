@@ -2,6 +2,7 @@
 import type { AppData } from "@/lib/types";
 import { dec, int, usd } from "@/lib/format";
 import { NavBar, ringColor, ringShort } from "./ui";
+import { LCOH_ANCHOR_PCT } from "@/lib/model";
 import { RingMapSvg } from "./viz/RingMap";
 import { QrCode } from "./viz/Misc";
 import { BASE_PATH, CREDITS, PUBLIC_URL, PROJECT_TAGLINE, PROJECT_TITLE } from "@/lib/config";
@@ -13,8 +14,8 @@ export function PrintSheet({ data }: { data: AppData }) {
   const ha = d.extras?.greenhouse_check?.area_ha;
   const cbaPct = d.extras?.cba?.headline_as_pct_of_dc_capex ?? d.extras?.cba?.as_pct_of_dc_capex;
   const bars = [
-    { n: "Our cost of heat (7% financing)", v: f.lcoh_usd_mwh.utility_7pct, c: "var(--teal)" },
-    { n: "Our price to homes (0.8 × propane)", v: f.tariff_usd_mwh, c: "var(--teal)" },
+    { n: `Our cost of heat (${LCOH_ANCHOR_PCT[1]}% financing)`, v: f.lcoh_usd_mwh.utility_7pct, c: "var(--teal)" },
+    { n: `Our price to homes (${dec(f.tariff_usd_mwh / f.incumbent_usd_mwh.propane, 1)} × propane)`, v: f.tariff_usd_mwh, c: "var(--teal)" },
     { n: "Propane", v: f.incumbent_usd_mwh.propane, c: "var(--ember)" },
     { n: "Heating oil", v: f.incumbent_usd_mwh.heating_oil, c: "var(--ember)" },
   ];
