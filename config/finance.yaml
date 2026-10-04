@@ -6,6 +6,7 @@ elec_price_usd_kwh: 0.245       # facts-site2.md sec 4 (NYSEG residential, Energ
 elec_price_central_usd_kwh: 0.108   # central HP + pumping behind DC utility service: NY industrial average 10.81 c/kWh, EIA Electric Power Monthly Table 5.6.A, July 2026 (https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a). NYSEG SC-7 tariff not checked; a 100+ MW campus may get less
 prices:                         # facts-site2.md sec 4, NYSERDA Central NY + EIA
   propane_usd_gal: 3.10         # coordinator/verification.md: NYSERDA Central NY 2025-26 season range 2.74-3.46; base 3.10; low sensitivity 2.85 (facts-site2 had 2.849)
+  propane_usd_gal_range: [2.74, 3.46]   # NYSERDA Central NY 2025-26 heating-season range (coordinator/verification.md); Monte Carlo bounds only (heatreuse.analysis), base stays 3.10
   oil_usd_gal: 5.186
   gas_usd_therm: 1.60
   propane_kwh_gal: 26.8         # 91,452 BTU/gal

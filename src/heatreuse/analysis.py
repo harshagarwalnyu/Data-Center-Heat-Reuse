@@ -41,6 +41,7 @@ def input_specs(cfg: dict) -> list[dict[str, Any]]:
     f, e = cfg["fin"], cfg["eng"]
     t = f["tornado"]
     pipe_lo, pipe_hi = t["pipe_cost"]
+    p_lo, p_hi = f["prices"]["propane_usd_gal_range"]  # finance.yaml, NYSERDA season range
     return [
         dict(key="capture_fraction", dist="triangular", low=0.40, mode=e["supply"]["capture_fraction"], high=0.85,
              unit="share", basis="engineering.yaml supply.capture_fraction [A]: base 0.75, scenarios 0.40 and 0.85"),
@@ -55,8 +56,8 @@ def input_specs(cfg: dict) -> list[dict[str, Any]]:
              basis="engineering.yaml corridor.uptake [A] x tornado.uptake; homes = potential x uptake, pipe held at potential (as the tornado)"),
         dict(key="discount_rate", dist="uniform", low=t["discount_rate"][0], high=t["discount_rate"][1], unit="rate",
              basis="finance.yaml tornado.discount_rate (4% co-op to 10% private)"),
-        dict(key="propane_usd_gal", dist="triangular", low=2.74, mode=f["prices"]["propane_usd_gal"], high=3.46, unit="$/gal",
-             basis="finance.yaml prices.propane_usd_gal: NYSERDA Central NY 2025-26 season range 2.74-3.46, base 3.10"),
+        dict(key="propane_usd_gal", dist="triangular", low=p_lo, mode=f["prices"]["propane_usd_gal"], high=p_hi, unit="$/gal",
+             basis="finance.yaml prices.propane_usd_gal: NYSERDA Central NY 2025-26 season range %g-%g, base %.2f" % (p_lo, p_hi, f["prices"]["propane_usd_gal"])),
     ]
 
 
@@ -287,7 +288,7 @@ def render_md(a: dict) -> str:
          "Nothing here changes the headline numbers in `site2.json`.", "",
          "## 1. Monte Carlo uncertainty (`monte_carlo`)", "",
          f"**Method.** {mc['n_draws']} draws, seed {mc['seed']} (`monte_carlo.seed`). {mc['method_note']} "
-         "No surrogate or held-fixed dispatch was needed: a draw (full hourly run plus a finance re-run) takes about 25 ms, so all 500 draws are exact model runs (~13 s total).", "",
+         f"No surrogate or held-fixed dispatch was needed: all {mc['n_draws']} draws are exact full-model runs.", "",
          "| Input | Distribution | Low | Mode | High | Basis |", "|---|---|---|---|---|---|"]
     for s in mc["inputs"]:
         L.append(f"| `{s['key']}` ({s['unit']}) | {s['dist']} | {s['low']:g} | {s.get('mode', '-') if s['dist'] == 'uniform' else format(s['mode'], 'g')} | {s['high']:g} | {s['basis']} |")
