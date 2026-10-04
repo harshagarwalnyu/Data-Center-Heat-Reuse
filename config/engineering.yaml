@@ -16,12 +16,12 @@ supply:
   diurnal_amp: 0.03       # [A] +/-3% IT load swing
   capture_availability: 0.99   # [A] sidestream trips / maintenance, ~88 h/yr
   outage_mean_h: 22       # [A]
-  outage_seed: 7
+  outage_seed: 7   # [A] RNG seed for the outage schedule, reproducibility only
   pue: 1.2                # [A] liquid-cooled new build; used only for ERF
 hp:
   eta: 0.5                # task spec (0.5 x Carnot); [T5] COP 2-5 typical, COP 2.95 at 75 C supply realized
   approach_k: 3           # per heat exchanger, task spec / PLAN section 1.3
-  cop_min: 2.0
+  cop_min: 2.0   # organizer COP range 2-6 (research/digest-organizer.md sec 2.3)
   cop_max: 6.0           # organizer COP ranges 2-6 (research/digest-organizer.md sec 2.3; T5 s26 COP 2-5 typical)
 onsite:
   supply_temp_c: 45       # data-contract
@@ -35,14 +35,14 @@ onsite:
   aquaculture:
     fish_t_yr: 1500       # [A]
     kwh_per_kg: 3.0       # [A] RAS heating incl. makeup water and building loss
-    const_share: 0.7
-    t_base_c: 15
+    const_share: 0.7   # [A]
+    t_base_c: 15   # [A] base temperature for aquaculture heat demand
   rec:
     pool_mwh: 600         # [A] 25 m + leisure pool; Deep Green precedent: 222 MWh/yr UK 25 m + children's pool (research/case-studies.md)
     building_m2: 4000     # [A]
     kwh_m2: 140           # [A] cold-climate rec building space heat
-    dhw_share: 0.15
-    t_base_c: 15
+    dhw_share: 0.15   # [A]
+    t_base_c: 15   # [A] base temperature for rec building heat demand
 corridor:
   homes: 500              # task brief
   uptake: 0.70            # [A] signed share of homes along route; pipe sized to all potential homes
@@ -53,9 +53,9 @@ corridor:
   frontage_m_per_home: 25 # [A] 1/4 acre lots, hamlet/lakeshore density
   loop_temp_c: 18         # task: building HP source ~15-20 C
   loop_loss_w_per_m: 6    # [A] uninsulated HDPE, ~8 K over ground
-  dhw_temp_c: 55
+  dhw_temp_c: 55   # [A] domestic hot water setpoint (legionella-safe)
   space_sink: {t_min: 35, t_max: 55, slope: 0.6, t_ref: 15}   # [A] weather-compensated heating curve
-  supply_temp_c: 20
+  supply_temp_c: 20   # data-contract: ambient loop ~20 C
   label_unit: "homes"
 town:
   include_in_base: false
@@ -69,7 +69,7 @@ town:
     - {name: "Town Hall + Highway", mwh: 140}
     - {name: "Community Library + Center", mwh: 180}
     - {name: "Woodsedge senior apartments", mwh: 1200}
-  dhw_share: 0.10
+  dhw_share: 0.10   # [A]
 storage:
   hours_of_peak: 6        # task brief
   delta_t_k: 20           # [A] 50/30 C source-side store
