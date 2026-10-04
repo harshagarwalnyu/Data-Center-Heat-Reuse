@@ -124,7 +124,7 @@ export function Home({ data }: { data: AppData }) {
   const stats: { value: ReactNode; caption: string; icon?: ReactNode; tip?: ReactNode }[] = [
     { value: <Odometer value={usd(saving)} />, caption: "a year saved by a propane home", icon: <Pop><NoFlame /></Pop>,
       tip: <>Our tariff is fixed at {dec(f.tariff_usd_mwh / propane, 1)} times propane&apos;s price per MWh, applied to a typical home&apos;s {int(f.household.typical_MWh_yr)} MWh of heat a year.<TipKey k="finance.household.savings_vs_propane_usd" /></> },
-    { value: <><Odometer value={usd(lcoh7)} /> <span className="text-ink2 text-[0.5em] font-normal">vs</span> <Odometer value={usd(propane)} /></>, caption: "per MWh, our heat against propane",
+    { value: <><Odometer value={usd(lcoh7)} /> <span className="text-ink2 text-[max(18px,0.5em)] font-normal">vs</span> <Odometer value={usd(propane)} /></>, caption: "per MWh, our heat against propane",
       tip: <>Our cost is capex times the capital recovery factor, plus operating cost, divided by the heat delivered, at {int(LCOH_ANCHOR_PCT[1])}% utility finance. Propane is what heat costs today.<TipKey k="finance.lcoh_usd_mwh.utility_7pct vs finance.incumbent_usd_mwh.propane" /></> },
     { value: <Odometer value={int(d.impact.co2_avoided_t_yr)} />, caption: "tonnes of CO2 avoided a year",
       tip: <>The emissions of the fossil fuel our heat displaces, minus the emissions of the electricity and backup fuel the system itself uses.<TipKey k="impact.co2_avoided_t_yr" /></> },
