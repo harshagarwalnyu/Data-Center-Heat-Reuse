@@ -32,11 +32,11 @@ Base case for Site 2, Lake Hawkeye, Lansing NY: phases 1 and 2 (on-site campus p
 | Same, annuitized | 2.096 | million USD/yr | `extras.cba.headline_annuitized_7pct_musd_per_yr` |
 | Gap as share of data-center capex benchmark | 1.73 | percent of 1,500 million USD | `extras.cba.headline_as_pct_of_dc_capex` |
 | Household savings vs propane / oil (27 MWh/yr home) | 735 / 1,266 | USD/yr | `finance.household` |
-| CO2 avoided | 11,456 | t CO2/yr (10,718 with marginal grid) | `impact.co2_avoided_t_yr` |
-| Fossil fuel displaced | 52,842 | MWh/yr | `impact.fossil_displaced_MWh` |
+| CO2 avoided | 11,408 | t CO2/yr (10,670 with marginal grid) | `impact.co2_avoided_t_yr` |
+| Fossil fuel displaced | 52,016 | MWh/yr | `impact.fossil_displaced_MWh` |
 | Energy reuse factor, ERF | 0.0462 | ratio | `impact.erf` |
 | Energy reuse effectiveness, ERE | 1.154 | ratio (PUE 1.2) | `impact.ere` |
-| Jobs / local food | 126 / 5,500 | FTE-equivalent / t per year | `impact.jobs`, `impact.local_food_t_yr` |
+| Jobs / local food | 126 / 5,500 | modeled jobs (positions, not FTE-equivalent) / t per year | `impact.jobs`, `impact.local_food_t_yr` |
 
 Blended LCOH is a MWh-weighted average dominated by the cheap on-site ring. Quote the ring figures below alongside it.
 
@@ -57,7 +57,7 @@ Source: `rings` and `extras.ring_lcoh_usd_mwh` in `outputs/site2.json`.
 
 | Heat source | USD/MWh, delivered at appliance efficiency | Note |
 |---|---|---|
-| Natural gas | 64.2 | Not available in rural Lansing: NYSEG moratorium since 2015 |
+| Natural gas | 64.2 | Moratorium on new connections began February 2015; its 2026 status and current availability in rural Lansing are unverified |
 | Air-source heat pump, seasonal COP 2.53 | 96.9 | Each home pays for its own equipment |
 | Propane | 136.1 | 3.10 USD/gal |
 | Heating oil | 155.8 | 5.186 USD/gal |
@@ -72,12 +72,12 @@ On pure cost the corridor loses to a home air-source heat pump. The case for it 
 
 Break-even scan (`extras.cba.breakeven_homes_if_cba_pays_pipe`, corridor LCOH versus the 104.8 USD/MWh blended tariff, 50 to 2,000 homes):
 
-| Who pays what | Corridor LCOH at 2,000 homes (USD/MWh) | Break-even homes |
+| Who pays what | Corridor LCOH at 2,000 homes unless noted (USD/MWh) | Break-even homes |
 |---|---|---|
 | Co-op pays everything (base) | 285.8 at 500 homes (ring LCOH) | not scanned |
 | Community Benefit pays loop pipe and laterals | 179.6 | none up to 2,000 |
 | Pays pipe, laterals and half of building heat pumps | 135.8 | none up to 2,000 |
-| Pays pipe, laterals and all building heat pumps | 103.3 (at the break-even point) | 50 homes |
+| Pays pipe, laterals and all building heat pumps | 103.3 (at 50 homes, the break-even point, not 2,000) | 50 homes |
 
 The binding cost is the roughly 16,000 USD in-home heat pump, not the trench. Paying for pipe alone, however large the network grows, does not close the gap. Tariff level is not the lever either: moving the tariff from 0.85 to 0.75 times propane changes the whole-project NPV only from -25.1 to -26.9 million USD (`extras.tariff_scenarios`), because the corridor shortfall is set by cost, not by price.
 
@@ -90,7 +90,7 @@ The binding cost is the roughly 16,000 USD in-home heat pump, not the trench. Pa
 | Annuitized | 2.096 million USD/yr | `extras.cba` |
 | Straight-line, undiscounted | 0.867 million USD/yr | Understates the true annual cost; do not quote alone |
 | As share of data-center capex benchmark | 1.73 percent | 1,500 million USD = 10 million USD/MW x 150 MW (Turner & Townsend 2025, midpoint assumed) |
-| With 30 percent ITC, if it qualified | 13.28 million USD | Incentive scenario only; not assumed in the base, eligibility unverified |
+| With 30 percent ITC (hypothetical incentive sensitivity) | 13.28 million USD | Hypothetical only; not assumed in the base. A waste-heat network does not qualify as geothermal heat pump property under IRC 48 (research/verification.md 9d-i); other credit categories remain unverified |
 
 The gap is what a funding stack must cover so that tariffs stay below incumbent fuels. Candidate sources, none of them committed: a Community Benefit Agreement contribution from the data center, state programs (NYSERDA clean-heat funding, a utility non-pipes alternative), and low-cost municipal capital. The 4 percent co-op LCOH of 89.5 USD/MWh against 124.6 USD/MWh at 10 percent shows how much the cost of capital alone is worth. The owner we propose is a community thermal co-op; the structure, the municipal-utility alternative and the term sheets are in [ownership-deal.md](ownership-deal.md). We present the gap as the price of a license to operate, about 1.7 percent of the data-center's own capital, not as a business that pays for itself.
 
@@ -114,7 +114,7 @@ Reading it:
 - Uptake raises blended LCOH at higher sign-up because the metric is a weighted average and more corridor customers shift the mix toward the dearer ring. The ring-level corridor LCOH and the break-even scan are the better lens for density.
 - The tornado covers six drivers. It does not cover building heat-pump cost, loop cost per metre, or frontage per home; those are the real uncertainties and are listed in [assumptions.md](assumptions.md).
 
-Other scenarios (`extras.scenarios`): central heat pump and pumping at the residential rate gives 108.1 USD/MWh; propane at 2.85 USD/gal gives a propane-equivalent of 125.1 USD/MWh and still leaves households 675.6 USD/yr better off at the 0.8 tariff.
+Other scenarios (`extras.scenarios`): central heat pump and pumping at the residential rate gives 108.1 USD/MWh; propane at 2.85 USD/gal (a scenario assumption, not a Central NY market price) gives a propane-equivalent of 125.1 USD/MWh and still leaves households 675.6 USD/yr better off at the 0.8 tariff.
 
 ## What if the data center leaves (year 10)
 
@@ -137,10 +137,10 @@ Site 1 is 111 8th Ave, Manhattan, a legacy carrier hotel (outputs/site1.json, co
 | LCOH at 7 percent | 106.1 | 304.9 | USD/MWh |
 | Incumbent reference | propane 136.1 | Con Ed steam 118.7 | USD/MWh |
 | LCOH relative to incumbent | 0.78 x | 2.6 x | |
-| CO2 avoided | 11,456 | 11,502 | t CO2/yr |
+| CO2 avoided | 11,408 | 11,888 | t CO2/yr |
 | ERF | 0.046 | 0.134 | |
 
-Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`): Manhattan LCOH is 2.6 times the steam incumbent; Site 1 avoids slightly more CO2 per MWh delivered (0.353 versus 0.227 t/MWh) because steam is a fossil incumbent, so carbon does not decide it; legacy air-side cooling limits capture to about 32 deg C; Con Edison's pilot at 85 10th Ave already targets the same NYCHA buildings; and Lansing is a new build where liquid cooling can be specified from day one and where a heat agreement can change a live local decision. Site 1 has the higher ERF and the denser load, and it wins on density. It loses on cost and on the leverage to act.
+Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`): Manhattan LCOH is 2.6 times the steam incumbent; Site 1 avoids slightly more CO2 per MWh delivered (0.365 versus 0.226 t/MWh) because steam is a fossil incumbent, so carbon does not decide it; legacy air-side cooling limits capture to about 32 deg C; Con Edison's pilot at 85 10th Ave already targets the same NYCHA buildings; and Lansing is a new build where liquid cooling can be specified from day one and where a heat agreement can change a live local decision. Site 1 has the higher ERF and the denser load, and it wins on density. It loses on cost and on the leverage to act.
 
 ## Limitations
 
@@ -151,7 +151,7 @@ Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`
 - **Simplified hydraulics.** No pipe network hydraulics, ground-temperature loop model, tank stratification or seasonal storage; pipe losses are constant W/m.
 - **COP at the cap.** The central heat pump for the town ring runs at the 6.0 cap in the base, which is optimistic. The ring fails regardless.
 - **Unmet hours are zero by construction** because backup is sized at 100 percent of peak. Use the peak-share and backup-share metrics to judge resilience.
-- **Legal and regulatory.** Whether New York law supports a community thermal co-op for heat (formation statute, PSC jurisdiction, patronage and tax treatment) or a town-owned utility, the status of the Town Board's data-center ban draft, and eligibility of a waste-heat network for federal credits are unverified or open. See [risk-matrix.md](risk-matrix.md).
+- **Legal and regulatory.** Whether New York law supports a community thermal co-op for heat (formation statute, PSC jurisdiction, patronage and tax treatment) or a town-owned utility, the status of the Town Board's data-center ban draft, and eligibility of other credit categories are unverified or open. A waste-heat network is verified as ineligible for the geothermal heat pump credit (research/verification.md 9d-i). See [risk-matrix.md](risk-matrix.md).
 - **Site 1 is indicative only.**
 
 ## What we would do next

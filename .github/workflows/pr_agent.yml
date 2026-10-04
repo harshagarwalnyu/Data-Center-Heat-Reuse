@@ -5,6 +5,10 @@ on:
   pull_request:
     types: [opened, reopened, ready_for_review, synchronize]
   issue_comment:
+    types: [created]
+concurrency:
+  group: pr-agent-${{ github.event_name == 'issue_comment' && format('comment-{0}', github.event.comment.id) || github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   pr_agent_job:
     # Public repo: only the team may trigger runs that use our API key.

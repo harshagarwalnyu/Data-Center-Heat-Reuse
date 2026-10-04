@@ -4,6 +4,8 @@ Lane C44. Scope: CO2 t/yr, cars equivalent, ERF, jobs, food, water note.
 Compared with EPA combustion factors (propane 5.72 kg/gal, oil 10.21 kg/gal), eGRID NYUP, and `research/digest-organizer.md` (RII jobs).
 Organizer text in `resources/text/` outranks web sources. `research/verification.md` overrides older files. A fresh in-memory run of the current model (2026-10-04, no files written) reproduces the JSON before rounding.
 
+Audit status: **applied in v3.1** (mix renormalised, backup credit, 4.29 t/vehicle, %d truncation).
+
 Status: **OK** = published figure matches the cited source and the model’s own inputs, within rounding. **WRONG** = it contradicts a verified source, its own cited mix, or a complete counterfactual. **GAP** = cannot verify.
 
 ## Verdicts

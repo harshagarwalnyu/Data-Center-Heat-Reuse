@@ -18,7 +18,8 @@ function cssVar(name: string, fallback: string) {
 }
 
 /** Pure-SVG map. Works fully offline and with no WebGL; also the fallback for the MapLibre view. */
-export function RingMapSvg({ offtakers }: { offtakers: Offtaker[] }) {
+export function RingMapSvg({ offtakers, townPipeKm }: { offtakers: Offtaker[]; townPipeKm?: number }) {
+  const pipeText = townPipeKm !== undefined ? ` (${Math.round(townPipeKm)} kilometres by pipe route)` : "";
   const W = 900;
   const { project, height: H, pxPerKm } = makeProjector(W);
   const path = (pts: LonLat[]) => pts.map((p, i) => `${i ? "L" : "M"}${project(p)[0].toFixed(1)},${project(p)[1].toFixed(1)}`).join(" ") + " Z";
@@ -26,7 +27,7 @@ export function RingMapSvg({ offtakers }: { offtakers: Offtaker[] }) {
   const [px, py] = project(PLANT);
   const [tx, ty] = project(TOWN);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east." className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
+    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Schematic map: data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring about nine kilometres south-east in a straight line${pipeText}.`} className="w-full h-full block rounded-2xl" style={{ background: "var(--surface2)" }}>
       <path d={path(LAKE)} fill="var(--teal)" opacity="0.22" />
       <text x={60} y={H * 0.45} fontSize="34" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
       <path d={line(ROUTE)} stroke="var(--teal)" strokeWidth={ONSITE_R_KM * pxPerKm * 0.9} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.28" />
@@ -59,7 +60,7 @@ export function RingMapSvg({ offtakers }: { offtakers: Offtaker[] }) {
 }
 
 /** MapLibre view with an offline-safe, tile-free vector style. Falls back to SVG if WebGL/MapLibre fails. */
-export function RingMap({ offtakers: all }: { offtakers: Offtaker[] }) {
+export function RingMap({ offtakers: all, townPipeKm }: { offtakers: Offtaker[]; townPipeKm?: number }) {
   const offtakers = all.filter((o) => o.lon >= BOUNDS[0][0] && o.lon <= BOUNDS[1][0] && o.lat >= BOUNDS[0][1] && o.lat <= BOUNDS[1][1]);
   const el = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
@@ -139,7 +140,7 @@ export function RingMap({ offtakers: all }: { offtakers: Offtaker[] }) {
 
   return (
     <div className="relative w-full h-full min-h-[260px]">
-      <div className="absolute inset-0"><RingMapSvg offtakers={offtakers} /></div>
+      <div className="absolute inset-0"><RingMapSvg offtakers={offtakers} townPipeKm={townPipeKm} /></div>
       <div ref={el} className="absolute inset-0 rounded-2xl overflow-hidden" style={{ opacity: ready ? 1 : 0, pointerEvents: ready ? "auto" : "none" }} role="img" aria-label="Interactive map of the three heat rings around the Lansing data center." />
       {ready && <button className="btn absolute bottom-3 left-3 z-10 !min-h-[44px] text-[1rem]" aria-pressed={streets} onClick={() => setStreets((s) => !s)}>
         Streets (needs internet)

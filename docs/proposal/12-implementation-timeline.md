@@ -188,7 +188,7 @@ Phase 2 pipe does not break ground in 2029.
 | --- | --- | --- |
 | Community | 2026–27 covenant; 2029 campus; homes only after G6 | Binding CBA/HSA, co-op the town can see, public meter. Not a green add-on after a ban fight. |
 | Human health | 2029 recreation/pool on site; household combustion only if a cluster connects | Do not count 500 homes of cleaner indoor air in 2029. Those homes are still a gate. |
-| Air and carbon | Same split | Model headline **11,456 t CO₂/yr** avoided (`site2.json` `impact`) is Phases 1–2 fully built, including corridor fossil displacement of about **52,842 MWh/yr**. Until G6 passes, cite Phase 1 only, and Phase 1’s share of that tonne figure is **not broken out** in the JSON (**gap**). |
+| Air and carbon | Same split | Model headline **11,408 t CO₂/yr** avoided (`site2.json` `impact`) is Phases 1–2 fully built, including corridor fossil displacement of about **52,016 MWh/yr**. Until G6 passes, cite Phase 1 only, and Phase 1’s share of that tonne figure is **not broken out** in the JSON (**gap**). |
 | Water | Covenant at signing; audit January 2031 | Grundfos question is scarcity and withdrawals. Answer on this site: dry coolers stay; the renewal stays limited to maintenance, sump pumping, and dust control; **no gallons claimed as saved by heat reuse.** |
 | Biodiversity | Phase 1 pad location | Stay on already industrial ground inside the 183-acre lease. The site pack’s biodiversity sheet names agriculture as the greatest threat in the wider landscape (page 12 of the Lake Hawkeye extract). A greenhouse here is a heat user on a former plant, not a claim that the project restores the lake shore. |
 | Nutrients | Only if aquaculture is closed-loop and built | Site pack: Cayuga Lake is impaired for phosphorus, and some site runoff reaches the lake (pages 18–19 of the same extract). The schedule does not promise a nutrient credit. It refuses a once-through discharge as the way to “use” heat. |
@@ -220,7 +220,7 @@ Phase 2 and Phase 3 are options with failed or unproven economics. They are draw
 - The Town Board’s vote date on a ban, and whether “next year’s” $500,000 legal line is actually appropriated.
 - A surveyed pad for the greenhouse / aquaculture / pool inside the 183-acre lease. Broader “unleased acreage” is unverified.
 - Food-processing load (named in the concept, absent from `site2.json` and `offtakers.json`).
-- Phase 1-only CO₂, separate from the 11,456 t/yr figure that includes the corridor.
+- Phase 1-only CO₂, separate from the 11,408 t/yr figure that includes the corridor.
 - A counsel memo resolving co-op versus town ownership (G2). This file schedules the memo; it does not replace it.
 - 2026 status of the NYSEG gas moratorium (confirmed in the record through the 14 July 2025 filing only).
 - Article 78 or other litigation status. Not used here, because it is not confirmed in `research/verification.md`.

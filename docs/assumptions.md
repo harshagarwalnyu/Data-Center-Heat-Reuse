@@ -71,7 +71,7 @@ Every key model input, with value, unit, source and our confidence in it. Values
 | Industrial electricity (central equipment, pumping) | 0.108 | USD per kWh | EIA Electric Power Monthly Table 5.6.A, NY industrial, July 2026, https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a. NYSEG SC-7 tariff not checked | Medium |
 | Propane price | 3.10 (season range 2.74-3.46) | USD per gal | NYSERDA Central NY, https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Average-Home-Heating-Oil-Prices; `research/verification.md` | High |
 | Heating oil price | 5.186 | USD per gal | NYSERDA Central NY monthly average | High |
-| Natural gas | 1.60 | USD per therm | `research/facts-site2.md` section 4 (not used by rural customers: no gas, moratorium since 2015) | Medium |
+| Natural gas | 1.60 | USD per therm | `research/facts-site2.md` section 4 (rural areas near the plant have no piped natural gas, per `research/facts-site2.md` section 2; separately, NYSEG has had a moratorium on new gas connections in the Town of Lansing since February 2015, 2026 status unverified. Existing gas customers in town are not excluded) | Medium |
 | Fuel energy content | propane 26.8, oil 40.6 | kWh per gal | 91,452 and 138,500 BTU per gal | High |
 | Appliance efficiency | propane 0.85, oil 0.82, gas 0.85 | ratio | **ASSUMPTION** | Medium |
 | DC interface * | 120 | USD per kW peak | **ASSUMPTION**; OCP p7-8 cost split | Low |

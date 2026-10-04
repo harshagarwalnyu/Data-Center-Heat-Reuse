@@ -158,7 +158,7 @@ Use the same ratio string in the headline and the giant number (`dec(ratio, 1)`)
 ```tsx
 /* stop slicing; give the name column width */
 const x0 = 460; /* was 360 */
-<text fontSize="16" /* 18px was colliding */ >
+<text fontSize="18" /* keep 18px; wrap or shorten the label to avoid collisions */ >
   {/* full o.name; if still long, tspans of 22 chars, two lines, rowH 48 */}
 </text>
 /* dot fill stays ring color; add a 8px swatch in the name column */
@@ -168,7 +168,7 @@ const x0 = 460; /* was 360 */
 
 ```css
 /* axis labels */
-.temp-axis { font-size: 15px; fill: var(--ink2); font-variant-numeric: tabular-nums; }
+.temp-axis { font-size: 18px; fill: var(--ink2); font-variant-numeric: tabular-nums; }
 ```
 
 - **Effort:** Medium (SVG layout). High value on the technical slide.
@@ -181,7 +181,7 @@ const x0 = 460; /* was 360 */
 
 ```tsx
 <Bar dataKey="delivered" fill="var(--ember)" maxBarSize={28} radius={[4, 4, 0, 0]} />
-<LabelList dataKey="delivered" position="top" formatter={(v) => `${dec(Number(v), 0)}`} fill="var(--ink)" fontSize={14} />
+<LabelList dataKey="delivered" position="top" formatter={(v) => `${dec(Number(v), 0)}`} fill="var(--ink)" fontSize={18} />
 /* caption under the plot, 1.125rem */
 /* "January demand is the tallest bar. Supply that month is still 7.3× this bar." */
 ```
@@ -199,13 +199,13 @@ If both series must stay, put supply on a right axis and do not fill it at 22% o
 ```tsx
 <div className="h-32"> {/* was h-[84px] */}
 /* ReferenceLine or a custom label at the backup hour: */
-<Label value="Backup covers this notch" position="top" fill="var(--ink)" fontSize={16} fontWeight={700} />
+<Label value="Backup covers this notch" position="top" fill="var(--ink)" fontSize={18} fontWeight={700} />
 </div>
 <p className="text-[1.125rem] text-ink m-0 mt-1">Outdoor temperature, same week, degrees Celsius.</p>
 ```
 
 ```css
-.recharts-text { fill: var(--ink2); font-size: 16px; } /* was 15px in globals.css */
+.recharts-text { fill: var(--ink2); font-size: 18px; } /* was 15px in globals.css; 18px is the projector minimum */
 ```
 
 - **Effort:** Low.
@@ -229,7 +229,7 @@ If both series must stay, put supply on a right axis and do not fill it at 22% o
 /* context card — same title size as the petals, not a footnote */
 <div className="card p-3 border-l-4 border-ink" style={{ background: "var(--surface2)" }}>
   <div className="font-bold text-[1.125rem]">Lansing context</div>
-  <p className="text-[1.0625rem] leading-snug text-ink m-0 mt-1">No designated disadvantaged community. Equity here means older residents and propane and oil households.</p>
+  <p className="text-[1.125rem] leading-snug text-ink m-0 mt-1">No designated disadvantaged community. Equity here means older residents and propane and oil households.</p>
 </div>
 ```
 
@@ -277,7 +277,7 @@ Hero tiles: one color (`--ink`) for all four numbers. Color belongs on the petal
 .cmp-bar { height: 4px; border-radius: 999px; background: var(--teal); margin-top: 4px; margin-left: auto; }
 ```
 
-Left card: one sentence in `.lede`, then three chips (`50 °C`, `upstate grid`, `gas moratorium`), not a paragraph stack.
+Left card: one sentence in `.lede`, then three chips (`50 °C`, `upstate grid`, `gas moratorium since 2015` with the 2026 status stated as unverified), not a paragraph stack.
 
 - **Effort:** Medium.
 
@@ -363,7 +363,7 @@ Do not frame step 1's three fact cards twice; they are already `.card`. Frame on
 
 ```tsx
 /* ui.tsx Link */
-className="min-h-11 inline-flex items-center px-2.5 xl:px-3 rounded-lg font-semibold text-[1rem] xl:text-[1.0625rem]"
+className="min-h-11 inline-flex items-center px-2.5 xl:px-3 rounded-lg font-semibold text-[1.125rem]"
 /* Story.tsx progress */
 <div className="h-2 bg-line">
   <div className="h-full bg-ember" style={{ width: `${((pos + 1) / path.length) * 100}%` }} />

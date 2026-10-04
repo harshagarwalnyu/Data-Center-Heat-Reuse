@@ -7,7 +7,7 @@ Site 2: Lake Hawkeye (TeraWulf) at the former Cayuga coal plant, Lansing, NY. Si
 
 ## The idea
 
-Lansing's Town Board has directed its attorney to draft a data-center ban, and the town has lived under a NYSEG gas moratorium since 2015. We do not pitch heat reuse as a sustainability add-on. We pitch it as **the conditions under which Lansing could say yes**: a binding Community Benefit Agreement and Heat Supply Agreement that put data-center heat to work for the town through a **community thermal co-op** (member-owned, cost-based pricing, a Town seat on the board), with public metering and a cooling-always-wins clause so heat reuse can never put the data center at risk.
+Lansing's Town Board has directed its attorney to draft a data-center ban, and the town has had a NYSEG moratorium on new gas connections since 2015 (2026 status unverified). We do not pitch heat reuse as a sustainability add-on. We pitch it as **the conditions under which Lansing could say yes**: a binding Community Benefit Agreement and Heat Supply Agreement that put data-center heat to work for the town through a **community thermal co-op** (member-owned, cost-based pricing, a Town seat on the board), with public metering and a cooling-always-wins clause so heat reuse can never put the data center at risk.
 
 The engineering follows from the demand side. Heat is oversupplied by about 15 times, so the question is not how much heat but where it can reach cheaply. That gives **the right tool at every density**: direct heat exchange for a farm campus at the fence, an ambient loop with building heat pumps where homes cluster, heat-pump rebates where they do not, and a town-center main only if a much larger anchor load appears. We also say plainly what the model shows: the on-site campus pays for itself, the corridor does not, and the honest answer for the corridor is a funding answer, quantified below.
 
@@ -30,7 +30,7 @@ Base case, Site 2, phases 1-2 (on-site campus plus 500 corridor homes). Values a
 | Capex | 38.76 | million USD | [methodology: capex](docs/methodology.md#capex-financepycapex_lines) |
 | Whole-project funding gap (7%, 30 yr, PV) | 26.0 | million USD, about 2.1 million USD/yr annuitized | [results: funding answer](docs/results.md#the-funding-answer) |
 | Gap as share of data-center capex benchmark | 1.73 | % of 1.5 billion USD | [results: funding answer](docs/results.md#the-funding-answer) |
-| CO2 avoided | 11,456 | t CO2/yr | [methodology: impact](docs/methodology.md#7-impact) |
+| CO2 avoided | 11,408 | t CO2/yr | [methodology: impact](docs/methodology.md#7-impact) |
 | Energy reuse factor (ERF) | 0.046 | ratio | [methodology: impact](docs/methodology.md#7-impact) |
 | Average heat-pump COP | 4.71 | dimensionless, clipped to [2, 6] | [methodology: COP](docs/methodology.md#4-heat-pump-cop) |
 | Unmet hours | 0 | h/yr (backup sized at 100% of peak) | [methodology: dispatch](docs/methodology.md#5-storage-and-dispatch) |
@@ -51,7 +51,7 @@ Why the corridor needs funding, and what closes it: [docs/results.md](docs/resul
 |---|---|
 | ![Explore](web/screenshots/explore-1920.png) | ![Compare](web/screenshots/compare-1920.png) |
 
-Screenshots were captured during development and may show figures from an earlier model run. The running app and `outputs/` are authoritative. Routes: `/` story (11 steps, presenter notes, 5-minute path), `/explore/`, `/compare/`, `/how/` (methods and sources), `/print/` (one-pager with QR). Full-resolution 1366 and 1920 captures of every screen are in [web/screenshots/](web/screenshots/).
+Screenshots were regenerated with the v3.1 model numbers; the running app and `outputs/` remain authoritative. Routes: `/` story (11 steps, presenter notes, 5-minute path), `/explore/`, `/compare/`, `/how/` (methods and sources), `/print/` (one-pager with QR). Full-resolution 1366 and 1920 captures of every screen are in [web/screenshots/](web/screenshots/).
 
 ## Quickstart
 
@@ -87,7 +87,7 @@ The model reads cached Ithaca and Central Park TMYx weather from `data/processed
 
 1. Weather (TMYx, 8,760 h) drives heating demand for three rings: on-site campus, corridor homes, town center.
 2. Supply is IT load x capture fraction x availability from a sidestream heat exchanger; dry coolers stay the primary rejection path.
-3. An hourly dispatch uses direct exchange, then a source-side hot-water tank, then backup boilers; heat pumps use COP = 0.5 x Carnot, clipped to [2, 6].
+3. An hourly dispatch uses direct exchange, then a source-side hot-water tank, then backup boilers; heat pumps use COP = clip(0.5 x T_sink_K / (T_sink_K - T_source_K + 2 x 3 K approach), 2, 6), i.e. 0.5 x Carnot with a 3 K approach per exchanger.
 4. Finance annualizes capex by asset life with the capital recovery factor, reports LCOH at 4, 7 and 10 percent, applies a 0.8 x propane tariff rule, and computes the funding gap; impact reports CO2 and ERF/ERE.
 
 Full pipeline with formulas and code references: [docs/methodology.md](docs/methodology.md).

@@ -3014,10 +3014,10 @@
     }
   },
   "impact": {
-    "co2_avoided_t_yr": 11456.0,
-    "co2_cars_equiv": 2490.0,
+    "co2_avoided_t_yr": 11408.0,
+    "co2_cars_equiv": 2659.0,
     "homes_served": 500,
-    "fossil_displaced_MWh": 52842.0,
+    "fossil_displaced_MWh": 52016.0,
     "erf": 0.0462,
     "water": {
       "note": "Closed-loop dry cooling is the water win and is TeraWulf's own design; heat reuse does not save lake water 1:1. Reuse shaves fan electricity and winter rejection load, and a covenant can keep the 1.008 MGD permit unused for cooling. No lake-water savings are claimed.",
@@ -3059,7 +3059,7 @@
     {
       "who": "Climate",
       "value": "CO2 avoided on a clean grid",
-      "metric": "11455 t/yr (10717 with marginal grid)"
+      "metric": "11408 t/yr (10670 with marginal grid)"
     }
   ],
   "hdr_scorecard": [
@@ -3073,13 +3073,13 @@
       "lens": "Community",
       "petal": "Human Health",
       "claim": "Replaces propane/oil combustion in homes",
-      "metric": "52841 MWh/yr fossil fuel displaced"
+      "metric": "52016 MWh/yr fossil fuel displaced"
     },
     {
       "lens": "Ecology",
       "petal": "Carbon",
       "claim": "Clean upstate grid lifts HP carbon benefit",
-      "metric": "11455 t CO2/yr avoided"
+      "metric": "11408 t CO2/yr avoided"
     },
     {
       "lens": "Ecology",
@@ -3387,7 +3387,7 @@
       "area_ha": 10,
       "rii_benchmark": "~1 MWth per ha (10 ha ~ 10 MW), ~2 acres/MW of DC load (RII p7, p34)"
     },
-    "co2_avoided_marginal_grid_t_yr": 10718.0,
+    "co2_avoided_marginal_grid_t_yr": 10670.0,
     "cost_split_rule": "OCP p7-8: DC and host share extraction costs; host pays upgrading/storage/heat pumps.",
     "offtakers_top": [
       "On-site greenhouse campus (10 ha)",

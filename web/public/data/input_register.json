@@ -948,8 +948,8 @@
     "input": "impact.ef_kg_kwh.grid_marginal",
     "value": 0.315,
     "unit": "-",
-    "source": "NYISO Zone C marginal 0.28-0.35, midpoint",
-    "confidence": "sourced"
+    "source": "midpoint of 0.28-0.35 kg/kWh; source: research/facts-site2.md line 142 (NYISO Zone C marginal gas-peaker range, https://www.nyiso.com, verified 2026-10-03). Range is a secondary estimate, midpoint is [A].",
+    "confidence": "assumption"
   },
   {
     "input": "impact.ef_kg_kwh.propane",
@@ -974,121 +974,121 @@
   },
   {
     "input": "impact.mix_corridor.propane",
-    "value": 0.45,
+    "value": 0.419355,
     "unit": "-",
-    "source": "[A] from Census B25040 non-gas shares (26/8/24/4)",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
     "confidence": "assumption"
   },
   {
     "input": "impact.mix_corridor.oil",
-    "value": 0.15,
+    "value": 0.129032,
     "unit": "-",
-    "source": "[A] from Census B25040 non-gas shares (26/8/24/4)",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
     "confidence": "assumption"
   },
   {
     "input": "impact.mix_corridor.electric",
-    "value": 0.35,
+    "value": 0.387097,
     "unit": "-",
-    "source": "[A] from Census B25040 non-gas shares (26/8/24/4)",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
     "confidence": "assumption"
   },
   {
     "input": "impact.mix_corridor.other",
-    "value": 0.05,
+    "value": 0.064516,
     "unit": "-",
-    "source": "[A] from Census B25040 non-gas shares (26/8/24/4)",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
     "confidence": "assumption"
   },
   {
     "input": "impact.mix_onsite.propane",
     "value": 1.0,
     "unit": "-",
-    "source": "[A] no piped gas near plant (facts-site2.md)",
+    "source": "ASSUMPTION: [A] no piped gas near plant (facts-site2.md)",
     "confidence": "assumption"
   },
   {
     "input": "impact.mix_town.propane",
     "value": 0.4,
     "unit": "-",
-    "source": "[A]",
+    "source": "ASSUMPTION: [A]",
     "confidence": "assumption"
   },
   {
     "input": "impact.mix_town.oil",
     "value": 0.3,
     "unit": "-",
-    "source": "[A]",
+    "source": "ASSUMPTION: [A]",
     "confidence": "assumption"
   },
   {
     "input": "impact.mix_town.gas",
     "value": 0.3,
     "unit": "-",
-    "source": "[A]",
+    "source": "ASSUMPTION: [A]",
     "confidence": "assumption"
   },
   {
     "input": "impact.kg_co2_per_car_yr",
-    "value": 4600,
+    "value": 4290,
     "unit": "-",
-    "source": "EPA 4.6 t/yr passenger vehicle",
+    "source": "EPA GHG Equivalencies Calculator 4.29 t CO2e/vehicle-yr (FHWA 2022 22.8 mpg, 10,917 mi; https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references, verified 2026-10-04)",
     "confidence": "sourced"
   },
   {
     "input": "impact.fan_kwh_per_kwh_rejected",
     "value": 0.02,
     "unit": "-",
-    "source": "[A] dry-cooler fan electricity per kWh heat rejected",
+    "source": "ASSUMPTION: [A] dry-cooler fan electricity per kWh heat rejected",
     "confidence": "assumption"
   },
   {
     "input": "impact.jobs.gh_fte_10ac",
     "value": 6.5,
     "unit": "-",
-    "source": "CG Table 2 (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130)",
-    "confidence": "sourced"
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
   },
   {
     "input": "impact.jobs.gh_pte_10ac",
     "value": 35,
     "unit": "-",
-    "source": "CG Table 2 (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130)",
-    "confidence": "sourced"
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
   },
   {
     "input": "impact.jobs.gh_fte_65ac",
     "value": 13,
     "unit": "-",
-    "source": "CG Table 2 (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130)",
-    "confidence": "sourced"
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
   },
   {
     "input": "impact.jobs.gh_pte_65ac",
     "value": 130,
     "unit": "-",
-    "source": "CG Table 2 (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130)",
-    "confidence": "sourced"
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
   },
   {
     "input": "impact.jobs.aqua_t_per_job",
     "value": 40,
     "unit": "-",
-    "source": "[A]",
+    "source": "ASSUMPTION: [A]",
     "confidence": "assumption"
   },
   {
     "input": "impact.jobs.rec_jobs",
     "value": 12,
     "unit": "-",
-    "source": "[A]",
+    "source": "ASSUMPTION: [A]",
     "confidence": "assumption"
   },
   {
     "input": "impact.jobs.network_ops_jobs",
     "value": 8,
     "unit": "-",
-    "source": "[A]",
+    "source": "ASSUMPTION: [A]",
     "confidence": "assumption"
   },
   {
