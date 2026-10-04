@@ -90,7 +90,7 @@ export function Explore({ data }: { data: AppData }) {
   return (
     <div className="min-h-dvh flex flex-col">
       <NavBar active="/explore/" />
-      <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1600px] w-full mx-auto">
+      <main className="relative z-40 flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1600px] w-full mx-auto">
         <div className="relative isolate">
           <Swash color="var(--sky)" className="-z-10 left-[-6%] top-[-30%] w-[min(560px,90%)] opacity-70" />
           <p className="kicker m-0 mb-2">Explore mode</p>
