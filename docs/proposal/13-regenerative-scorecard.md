@@ -1,6 +1,6 @@
 # Regenerative scorecard — Thermal Commons (Site 2, Lake Hawkeye)
 
-Team: Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev.
+Team: Harsh Agarwal, Linson Lee, Philip Matchev.
 Proposal: Thermal Commons co-op. Site: Lake Hawkeye / TeraWulf, former Cayuga coal plant, Lansing, NY. Comparison site in the app: 111 8th Ave, New York City (Site 1).
 
 This is the audit table for HDR’s seven regenerative domains, the four judging lenses, and the five supply–demand matching axes. Each row is one claim: metric, value, source, and where a judge can see it in the app.

@@ -2,7 +2,7 @@
 
 Lesson: Deep Green’s 24 MW project in Lansing, Michigan, above $120 million, was to feed Board of Water & Light hot water and save about $1.1 million a year in gas. Announced 5 November 2025, it was withdrawn 6 April 2026 [1].
 
-Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev) proposes a co-op for Lansing, New York. The co-op owns the pipes and heat pumps. TeraWulf sells a sidestream. Users come to the former Cayuga plant. Compare 111 Eighth Avenue.
+Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev) proposes a co-op for Lansing, New York. The co-op owns the pipes and heat pumps. TeraWulf sells a sidestream. Users come to the former Cayuga plant. Compare 111 Eighth Avenue.
 
 On 29 September 2026 the Board directed counsel to draft a data-center ban and has not voted. Next year’s proposed budget sets aside $500,000 for legal costs [2]. One outlet reported 36 of 38 speakers opposed [3]. No designated disadvantaged communities are nearby [4]. About 26% of occupied town homes use propane and about 8% use oil [5]. The NYSEG moratorium dates from 2015 and was still a low-pressure case in July 2025; 2026 status is [unverified] [6]. Town hall and the library are 5.7 miles out; the school campus is 7.0 miles [7].
 

@@ -1,6 +1,6 @@
 # Thermal Commons: 5-minute live presentation script
 
-**Speakers:** Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev.
+**Speakers:** Harsh Agarwal, Linson Lee, Philip Matchev.
 **Deck:** 9 slides (`docs/deck/Thermal-Commons-Heat-for-Lansing.pdf`), then a 40-second live demo. Spoken deck target: about 520 words, so the whole thing fits in 5 minutes with room to breathe.
 **Clicker:** Harsh holds it and advances on each "click" cue and handoff word. Nobody else touches the remote.
 **Screen for the demo:** Harsh runs `/explore/` on this laptop the moment Philip says "Harsh, the model." Story mode stays closed.
@@ -18,8 +18,8 @@ Numbers in the spoken lines are the v3 model in `outputs/site2.json` (generated 
 | 0:55-1:25 | Harsh Agarwal | 3 Our answer | Don't ban it. Set the terms. |
 | 1:25-2:05 | Linson Lee | 4 Rings | Right tool at every density |
 | 2:05-2:40 | Linson Lee | 5 How it works | The schematic: bypass, three loops |
-| 2:40-3:15 | Aryaman Bhaskar | 6 Results | $735 a year, then the supporting numbers |
-| 3:15-3:50 | Aryaman Bhaskar | 7 Honest funding | The gap, and what covers it |
+| 2:40-3:15 | Harsh Agarwal | 6 Results | $735 a year, then the supporting numbers |
+| 3:15-3:50 | Harsh Agarwal | 7 Honest funding | The gap, and what covers it |
 | 3:50-4:25 | Philip Matchev | 8 What Lansing gets | Homes, ERF, scenario estimates |
 | 4:25-5:00 | Philip Matchev | 9 The ask | Three beats, then "Harsh, the model." |
 | 5:00-5:40 | Harsh Agarwal | Demo | Town ring tick, then the 7% to 4% slider |
@@ -48,7 +48,7 @@ Spoken words are the paragraphs. Bracketed lines are stage directions.
 
 [Slide up: "778 GWh a year goes into the air." Harsh says the first line before anything else.]
 
-Lansing's Town Board just told its attorney to draft a ban on this data center. Meanwhile, 778 gigawatt-hours of heat a year goes into the air. We are Thermal Commons: Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev. We found the conditions under which Lansing should say yes.
+Lansing's Town Board just told its attorney to draft a ban on this data center. Meanwhile, 778 gigawatt-hours of heat a year goes into the air. We are Thermal Commons: Harsh Agarwal, Linson Lee, Philip Matchev. We found the conditions under which Lansing should say yes.
 
 [Click to slide 2.]
 
@@ -78,9 +78,9 @@ Density picks the tool. Ring one, on site: a greenhouse, a fish farm and a pool,
 
 A side-stream plate exchanger sits on their sealed glycol loop. If cooling ever needs it, a bypass sends everything to the dry coolers: cooling always wins. Forty-five-degree heat goes straight to the farm. A twenty-degree ambient loop reaches five hundred homes, each with its own heat pump. A storage tank on the source side rides through cold snaps. The dashed hot main to the town center is modeled, and it fails. Variable-speed pumps move every loop, and our pump screening checks the energy they use. We run every one of the 8,760 hours of an Ithaca year.
 
-[Linson: "Aryaman." Click to slide 6.]
+[Linson: "Harsh." Click to slide 6.]
 
-### 2:40, Slide 6, Results: Aryaman Bhaskar
+### 2:40, Slide 6, Results: Harsh Agarwal
 
 [Hand on the big number.]
 
@@ -88,11 +88,11 @@ Here is the number that matters. A typical propane home saves seven hundred thir
 
 [Click to slide 7.]
 
-### 3:15, Slide 7, The honest funding part: Aryaman Bhaskar
+### 3:15, Slide 7, The honest funding part: Harsh Agarwal
 
 The honest part. Selling below propane leaves a twenty-six-million-dollar gap. The Community Benefit Agreement covers it with about one-point-seven percent of the build. That is an estimate on an assumed one-and-a-half-billion-dollar campus, not a disclosed budget. Federal tax credits are not in the base case. No signature, no trench.
 
-[Aryaman: "Philip." Click to slide 8.]
+[Harsh: "Philip." Click to slide 8.]
 
 ### 3:50, Slide 8, What Lansing gets: Philip Matchev
 

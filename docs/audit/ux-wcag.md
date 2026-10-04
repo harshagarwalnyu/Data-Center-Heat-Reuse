@@ -1,6 +1,6 @@
 # WCAG 2.2 AA review — Thermal Commons web
 
-Review date: 2026-10-04. Product: Thermal Commons co-op (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev). Working site in the UI: Lake Hawkeye / Lansing, NY. Comparison site: 111 8th Ave, NYC.
+Review date: 2026-10-04. Product: Thermal Commons co-op (Harsh Agarwal, Linson Lee, Philip Matchev). Working site in the UI: Lake Hawkeye / Lansing, NY. Comparison site: 111 8th Ave, NYC.
 
 This is a static review of `web/app/globals.css`, the Tailwind v4 setup, the components that paint those screens, and all 28 PNGs in `web/screenshots/`. It is not a browser pass. No keyboard walkthrough, screen reader, axe run, 320px reflow check, or 200% zoom check was executed. Contrast ratios are computed from the authored hex colors, not eyedropped from the PNGs.
 

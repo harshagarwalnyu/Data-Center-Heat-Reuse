@@ -2,7 +2,7 @@
 
 Audit of factual claims in user-facing copy under `web/app`, `web/components`, `web/lib`, and `web/content` against `research/verification.md` (overrides older files). Model numbers cross-checked to `web/public/data/*.json` where the claim is a modeled output. Organizer text in `resources/text/` outranks web sources.
 
-Scope: Cursor task C46. Owner file only. Read-only on `web/`. Team: Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev).
+Scope: Cursor task C46. Owner file only. Read-only on `web/`. Team: Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev).
 
 `web/content/` does not exist. No `.json` files live under `web/app`, `web/components`, or `web/lib`. Strings in `web/public/data/*.json` are included only when a component renders them (speaker notes count: `Story.tsx` shows them with the Notes button).
 

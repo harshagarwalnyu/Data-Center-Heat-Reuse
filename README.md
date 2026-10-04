@@ -5,7 +5,7 @@
 HDR x Grundfos "Data Center Heat Reuse" challenge, BAC x iMasons hackathon 2026. Track: Waste Heat Reusage.
 Site 2: Lake Hawkeye (TeraWulf) at the former Cayuga coal plant, Lansing, NY. Site 1 (111 8th Ave, New York City) is a comparison toggle in the app.
 
-**Team Thermal Commons:** Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev.
+**Team Thermal Commons:** Harsh Agarwal, Linson Lee, Philip Matchev.
 
 ## The idea
 

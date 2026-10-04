@@ -4,7 +4,7 @@ Fifteen slide lines, each under 15 words, taken from auto-captions in `research/
 
 These lines were read from the caption files on 2026-10-04. They were not re-watched. `research/videos.md` says the auto-captions are noisy and figures are indicative. Spoken audio is **[unverified]** until someone plays the timestamp. Do not smooth a line on a slide unless the gloss below is labeled as a caption repair.
 
-Team: Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev). The community heat co-op is the Thermal Commons co-op. Site: Lake Hawkeye / TeraWulf, Lansing, NY. None of these videos are about that site.
+Team: Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev). The community heat co-op is the Thermal Commons co-op. Site: Lake Hawkeye / TeraWulf, Lansing, NY. None of these videos are about that site.
 
 ## How to cite
 

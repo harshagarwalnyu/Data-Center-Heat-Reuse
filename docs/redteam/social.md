@@ -1,6 +1,6 @@
 # Social red team — opposed Lansing resident and Town Board
 
-Red-team of Thermal Commons (Harsh Agarwal, Linson Lee, Aryaman Bhaskar, Philip Matchev) heard as (1) an opposed resident of Lansing, New York, and (2) a Town Board member whose attorney has been told to draft a data-center prohibition. Site: Lake Hawkeye / former Cayuga plant. Comparison site: 111 8th Avenue, New York City. Question: why a heat-reuse offer does not change their mind, and what would.
+Red-team of Thermal Commons (Harsh Agarwal, Linson Lee, Philip Matchev) heard as (1) an opposed resident of Lansing, New York, and (2) a Town Board member whose attorney has been told to draft a data-center prohibition. Site: Lake Hawkeye / former Cayuga plant. Comparison site: 111 8th Avenue, New York City. Question: why a heat-reuse offer does not change their mind, and what would.
 
 Severity: **Critical** (this sentence loses the room or HDR’s community lens), **High** (a board member can keep the ban draft moving), **Medium** (fix the sentence before the pitch).
 
