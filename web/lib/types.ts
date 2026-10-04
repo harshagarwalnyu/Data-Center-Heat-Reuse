@@ -142,3 +142,12 @@ export interface AppData {
   offtakers: Offtaker[];
   placeholder: boolean;
 }
+
+/** One row of outputs/input_register.json, written by `python -m heatreuse.verify`. */
+export interface InputRow {
+  input: string;
+  value: number;
+  unit: string;
+  source: string;
+  confidence: "sourced" | "assumption" | "unverified";
+}
