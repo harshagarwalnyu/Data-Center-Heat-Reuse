@@ -3,7 +3,7 @@ import { useId, useState } from "react";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { Site2Data } from "@/lib/types";
 import { MONTHS, dec, int } from "@/lib/format";
-import { FUEL_LABEL } from "@/lib/model";
+import { FUEL_LABEL, LCOH_ANCHOR_PCT } from "@/lib/model";
 
 const tip = { contentStyle: { background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 10, fontSize: 17, color: "var(--ink)" }, labelStyle: { color: "var(--ink)", fontWeight: 700 }, itemStyle: { color: "var(--ink)" } };
 const axisTick = { fill: "var(--ink2)", fontSize: 17 };
@@ -121,23 +121,40 @@ export function lcohTitle(d: Site2Data, live?: number): string {
   return "Recovered heat can undercut propane, oil and electric heat";
 }
 
+/** Tooltip for the cost chart in Explore: the usual line, plus a click hint on the three ownership bars. */
+function PickTip({ p }: { p: { active?: boolean; payload?: readonly { value?: unknown; payload?: { name: string; pct?: number } }[] } }) {
+  const row = p.payload?.[0];
+  if (!p.active || !row?.payload) return null;
+  const { name, pct } = row.payload;
+  return (
+    <div style={{ ...tip.contentStyle, padding: "8px 12px", maxWidth: 230, whiteSpace: "normal" }}>
+      <div style={tip.labelStyle}>{name}</div>
+      <div>{`$${int(Number(row.value))} per MWh of heat`}</div>
+      {pct !== undefined && <div style={{ color: "var(--teal-text)", fontWeight: 600 }}>Click to set the slider to {pct}%</div>}
+    </div>
+  );
+}
+
 /** Horizontal bars of cost per MWh of delivered heat: ours (3 ownership models) vs what Lansing pays today. */
-export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: number }) {
+export function LcohBars({ d, lcohOverride, onPickRate, activePct }: { d: Site2Data; lcohOverride?: number; onPickRate?: (pct: number) => void; activePct?: number }) {
   const f = d.finance;
   // The three ownership bars stay fixed at the model's published values; Explore's live result is its own bar.
   const ours = [
     ...(lcohOverride !== undefined ? [{ name: "Your settings", v: lcohOverride, kind: "live" }] : []),
-    { name: "Community co-op (4% finance)", v: f.lcoh_usd_mwh.coop_4pct, kind: "ours" },
-    { name: "Utility (7%)", v: f.lcoh_usd_mwh.utility_7pct, kind: "ours" },
-    { name: "Private (10%)", v: f.lcoh_usd_mwh.private_10pct, kind: "ours" },
+    { name: "Community co-op (4% finance)", v: f.lcoh_usd_mwh.coop_4pct, kind: "ours", pct: LCOH_ANCHOR_PCT[0] },
+    { name: "Utility (7%)", v: f.lcoh_usd_mwh.utility_7pct, kind: "ours", pct: LCOH_ANCHOR_PCT[1] },
+    { name: "Private (10%)", v: f.lcoh_usd_mwh.private_10pct, kind: "ours", pct: LCOH_ANCHOR_PCT[2] },
   ];
   const inc = (["natural_gas", "propane", "heating_oil", "electric_resistance"] as const).map((k) => ({
     name: FUEL_LABEL[k] + (k === "natural_gas" ? " (no new hookups)" : ""),
     v: f.incumbent_usd_mwh[k],
     kind: k === "natural_gas" ? "gas" : "inc",
   }));
-  const rows = [...ours, ...inc];
+  const rows: { name: string; v: number; kind: string; pct?: number }[] = [...ours, ...inc];
   const hid = useId().replace(/:/g, "");
+  // On a phone the label column would swallow the whole chart, leaving no room for bars.
+  const [cw, setCw] = useState(600);
+  const narrow = cw < 480;
   // Hatched fill for what Lansing pays today, so the two groups differ by pattern as well as colour.
   const color = (k: string) => (k === "live" ? "var(--ink)" : k === "ours" ? "var(--teal)" : k === "gas" ? `url(#${hid}-gas)` : `url(#${hid}-inc)`);
   const stroke = (k: string) => (k === "gas" ? "var(--ink2)" : k === "inc" ? "var(--ember)" : "none");
@@ -145,8 +162,8 @@ export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: num
     <div className="flex flex-col h-full min-h-0">
       <Legend items={[{ color: "var(--teal)", label: "Recovered heat, cost to produce" }, { color: "var(--ember)", label: "What Lansing pays today", hatch: true }]} />
       <div className="flex-1 min-h-[300px]">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={rows} layout="vertical" margin={{ top: 10, right: 70, left: 6, bottom: 4 }}>
+        <ResponsiveContainer width="100%" height="100%" onResize={(w) => setCw(w)}>
+          <BarChart data={rows} layout="vertical" margin={{ top: 10, right: narrow ? 52 : 70, left: 6, bottom: 4 }}>
             <defs>
               {([["inc", "var(--ember)"], ["gas", "var(--ink2)"]] as const).map(([k, c]) => (
                 <pattern key={k} id={`${hid}-${k}`} width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -157,16 +174,20 @@ export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: num
             </defs>
             <CartesianGrid horizontal={false} strokeDasharray="3 4" />
             <XAxis type="number" tick={axisTick} axisLine={axisLine} tickLine={false} unit="" domain={[0, "dataMax + 20"]} tickFormatter={(v) => `$${v}`} />
-            <YAxis type="category" dataKey="name" width={236} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
-            <Tooltip {...tip} formatter={(v) => `$${int(Number(v))} per MWh of heat`} />
+            <YAxis type="category" dataKey="name" width={narrow ? 132 : 236} tickFormatter={(n: string) => (narrow ? n.replace(" finance", "").replace(" (no new hookups)", "") : n)} tick={{ fill: "var(--ink)", fontSize: 16 }} axisLine={false} tickLine={false} />
+            <Tooltip {...tip} content={onPickRate ? (p) => <PickTip p={p} /> : undefined} formatter={(v) => `$${int(Number(v))} per MWh of heat`} />
             <Bar isAnimationActive={false} dataKey="v" radius={[0, 6, 6, 0]} barSize={26}>
-              {rows.map((r) => <Cell key={r.name} fill={color(r.kind)} stroke={stroke(r.kind)} strokeWidth={1.5} />)}
+              {rows.map((r) => {
+                const pick = onPickRate && r.pct !== undefined ? () => onPickRate(r.pct as number) : undefined;
+                const on = r.pct !== undefined && r.pct === activePct;
+                return <Cell key={r.name} className={pick ? "lcoh-pick" : undefined} fill={color(r.kind)} stroke={on ? "var(--ink)" : stroke(r.kind)} strokeWidth={on ? 3 : 1.5} onClick={pick} />;
+              })}
               <LabelList dataKey="v" position="right" formatter={(v) => `$${int(Number(v))}`} fill="var(--ink)" fontSize={17} fontWeight={700} className="num" />
             </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-caption text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).</p>
+      <p className="text-caption text-ink2 m-0">US dollars per MWh of heat delivered to the building (1 MWh = 1,000 kWh).{onPickRate && " Click a teal bar to set the cost of money; from the keyboard, use the cost of money slider."}</p>
     </div>
   );
 }

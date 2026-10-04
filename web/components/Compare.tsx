@@ -1,19 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import type { AppData } from "@/lib/types";
 import { dec, int } from "@/lib/format";
 import { NavBar } from "./ui";
+import { Term } from "./Tooltip";
 
 export function Compare({ data }: { data: AppData }) {
   const [site, setSite] = useState<1 | 2>(2);
   const a = data.site2, b = data.site1;
   const copA = a.cop_compare[a.cop_compare.length - 1]?.cop ?? a.totals.avg_cop;
   const copB = b.cop_compare?.[0]?.cop ?? b.totals.avg_cop;
-  const rows: { k: string; unit: string; v2: string; v1: string; better: "2" | "1" | "-" }[] = [
+  const rows: { k: ReactNode; unit: string; v2: string; v1: string; better: "2" | "1" | "-" }[] = [
     { k: "Data center IT load", unit: "MW", v2: int(a.supply.it_load_MW), v1: int(b.supply.it_load_MW), better: "-" },
     { k: "Heat capture temperature", unit: "°C", v2: int(a.supply.capture_temp_C), v1: int(b.supply.capture_temp_C), better: a.supply.capture_temp_C >= b.supply.capture_temp_C ? "2" : "1" },
     { k: "Heat available", unit: "GWh/yr", v2: int(a.supply.heat_available_GWh), v1: int(b.supply.heat_available_GWh), better: a.supply.heat_available_GWh >= b.supply.heat_available_GWh ? "2" : "1" },
-    { k: "Heat pump COP at capture temperature (capped at 6)", unit: "", v2: dec(copA, 1), v1: dec(copB, 1), better: copA >= copB ? "2" : "1" },
+    { k: <>Heat pump <Term tip="Coefficient of performance: units of heat a heat pump delivers for each unit of electricity it uses. Higher is better.">COP</Term> at capture temperature (capped at 6)</>, unit: "", v2: dec(copA, 1), v1: dec(copB, 1), better: copA >= copB ? "2" : "1" },
     { k: "Cost of heat (community finance)", unit: "$/MWh", v2: int(a.finance.lcoh_usd_mwh.coop_4pct), v1: int(b.finance.lcoh_usd_mwh.coop_4pct), better: a.finance.lcoh_usd_mwh.coop_4pct <= b.finance.lcoh_usd_mwh.coop_4pct ? "2" : "1" },
     { k: "CO₂ avoided", unit: "t/yr", v2: int(a.impact.co2_avoided_t_yr), v1: int(b.impact.co2_avoided_t_yr), better: a.impact.co2_avoided_t_yr >= b.impact.co2_avoided_t_yr ? "2" : "1" },
   ];
@@ -53,8 +54,8 @@ export function Compare({ data }: { data: AppData }) {
             <table className="w-full text-body">
               <thead><tr className="text-left text-ink2"><th className="pb-2">Measure</th><th className="pb-2 text-right">Site 2 Lansing</th><th className="pb-2 text-right">Site 1 NYC</th></tr></thead>
               <tbody>
-                {rows.map((r) => (
-                  <tr key={r.k} className="border-t border-line">
+                {rows.map((r, i) => (
+                  <tr key={i} className="border-t border-line">
                     <td className="py-2 pr-3">{r.k} <span className="text-ink2 text-caption">{r.unit}</span></td>
                     <td className="num text-right font-bold" style={r.better === "2" ? { color: "var(--teal-text)" } : undefined}>{r.v2}{r.better === "2" && <span aria-label="better"> ✓</span>}</td>
                     <td className="num text-right font-bold" style={r.better === "1" ? { color: "var(--teal-text)" } : undefined}>{r.v1}{r.better === "1" && <span aria-label="better"> ✓</span>}</td>
