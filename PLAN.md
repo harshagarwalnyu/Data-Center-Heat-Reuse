@@ -24,6 +24,19 @@ Sites: **Site 1** 111 8th Ave, NYC (commissioned, urban, multi-tenant carrier ho
 - **Timeline:** more than a week. **Team:** solo + agents.
 - No organizer files on hand; use public versions.
 
+## 12-hour sprint (deadline ~2026-10-04 11:00 ET)
+
+| By | Done |
+|---|---|
+| +2h (01:00) | Model v1 → outputs/site2.json; organizer digest; deal/risk/stakeholder docs; greenhouse + cooling docs |
+| +4h (03:00) | Web app v1 on real model data; story copy pass |
+| +6h (05:00) | Red-team pass on numbers; fix contradictions; design-audit (wcag, visual, walkthrough) |
+| +8h (07:00) | Polish; /print one-pager; proposal PDF |
+| +9h (08:00) | **Freeze.** User deploys to Vercel (needs their login), records 2-3 min video |
+| +10-12h | Rehearse, buffer, submit |
+
+Lanes now: in-session subagents (model, web app, organizer digest), Windows Claude CLI (deal/risk/stakeholders, scoped permissions), Cursor ×2 (greenhouse, cooling). agy Windows out of credits; agy WSL Opus out, Gemini left.
+
 ## Reality check and reframe (verified 2026-10-03)
 
 | Fact | Source | Consequence |
