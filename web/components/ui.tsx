@@ -38,7 +38,7 @@ export function NavBar({ active, extra }: { active: string; extra?: ReactNode })
       <Link prefetch={false} href="/" className="serif font-bold text-h3 mr-3 whitespace-nowrap text-ink no-underline">
         <span className="text-ember">&#9650;</span> {PROJECT_TITLE}<span className="hidden lg:inline font-sans font-semibold text-caption text-ink2 ml-2">{PROJECT_TAGLINE}</span>
       </Link>
-      <nav aria-label="Primary" className="order-last w-full md:order-none md:w-auto flex gap-1 overflow-x-auto -mx-1 px-1">
+      <nav aria-label="Primary" className="order-last w-full md:order-none md:w-auto flex gap-1 overflow-x-auto -mx-1 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-md:[mask-image:linear-gradient(to_right,#000_calc(100%-1.75rem),transparent)]">
         {NAV.map((n) => (
           <Link prefetch={false}
             key={n.href}

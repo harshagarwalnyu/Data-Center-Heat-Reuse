@@ -46,7 +46,7 @@ export function MonthlyChart({ d }: { d: Site2Data }) {
                 const v = Number(p.value ?? 0);
                 const x = Number(p.x ?? 0) + Number(p.width ?? 0) / 2;
                 const y = Number(p.y ?? 0) - 8;
-                return <text x={x} y={y} textAnchor="middle" fontSize={15} fontWeight={700} fill="var(--ember-text)" stroke="var(--bg)" strokeWidth={4} paintOrder="stroke" className="num">{dec(v, 1)}</text>;
+                return <text x={x} y={y} textAnchor="middle" fontSize={17} fontWeight={700} fill="var(--ember-text)" stroke="var(--bg)" strokeWidth={4} paintOrder="stroke" className="num">{dec(v, 1)}</text>;
               }} />
             </Bar>
             <Bar isAnimationActive={false} dataKey="backup" stackId="a" name="Backup fuel" fill="var(--ink2)" radius={[4, 4, 0, 0]} maxBarSize={34} />
@@ -61,16 +61,20 @@ const DAY = (h: number) => `Day ${Math.floor(h / 24) + 1}`;
 
 export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "winter" | "summer" }) {
   const [wk, setWk] = useState<"winter" | "summer">(initial);
-  const rows = d.weeks[wk];
+  const rows = d.weeks?.[wk];
+  const buttons = (
+    <div role="group" aria-label="Choose week" className="flex gap-2">
+      <button className="btn" aria-pressed={wk === "winter"} onClick={() => setWk("winter")}>Cold winter week</button>
+      <button className="btn" aria-pressed={wk === "summer"} onClick={() => setWk("summer")}>Summer week</button>
+    </div>
+  );
+  if (!rows?.length) return <div className="flex flex-col gap-3">{buttons}<p className="text-caption text-ink2 m-0">No hourly data for this week in the current data file.</p></div>;
   const peak = rows.reduce((m, r) => (r.backup_MW > m.backup_MW ? r : m), rows[0]);
   const showPeak = peak && peak.backup_MW >= 0.05;
   return (
     <div className="flex flex-col h-full min-h-0">
       <div className="flex items-center gap-3 flex-wrap">
-        <div role="group" aria-label="Choose week" className="flex gap-2">
-          <button className="btn" aria-pressed={wk === "winter"} onClick={() => setWk("winter")}>Cold winter week</button>
-          <button className="btn" aria-pressed={wk === "summer"} onClick={() => setWk("summer")}>Summer week</button>
-        </div>
+        {buttons}
         <Legend items={[{ color: "var(--ember)", label: "Heat delivered" }, { color: "var(--ink2)", label: showPeak ? `Backup (peak ${dec(peak.backup_MW, 1)} MW)` : "Backup" }]} />
       </div>
       <div className="flex-1 min-h-[120px]">

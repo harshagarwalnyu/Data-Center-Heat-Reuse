@@ -19,7 +19,7 @@ Method: rendered pages checked in Chrome Beta (Playwright) at 1920x1080, 1280x72
 | Nielsen H1/H4 | Kicker number used the 11-step index while the counter used the 9-step path ("9 ·" vs "Step 7 of 9") | `Story.tsx`, `steps.tsx` | High | Fixed: kicker numbered from the active path |
 | Norman signifier | Deep-dive toggle rendered navy (pressed) while deep dive was off | `Story.tsx` footer | Medium | Fixed: plain button, label carries state |
 | Norman feedback | Ticking the town ring changed the cost by a small grey delta only | `components/Explore.tsx` cost card | High | Fixed: struck-through before value, ember after value, red badge |
-| Nielsen H4 (consistency with deck) | Explore showed $108 at 7% and $734/yr saving; deck says $106.1 and $735 | `lib/model.ts` `scenario` | High | Fixed: LCOH anchored to 4/7/10% published values; saving uses published figure; Explore opens at 7% |
+| Nielsen H4 (consistency with deck) | Explore showed $108 at 7% and $734/yr saving; deck says $106.1 and $735 | `lib/model.ts` `scenario` | High | Fixed: LCOH anchored to 4/7/10% published values; saving uses published figure; Explore opens at 7% (LCOH and savings figures read from `outputs/site2.json`) |
 | UI review: type scale | Each page set its own headline clamp; KPI numbers up to 3rem in small cards | Explore, Compare, How, Sources | Medium | Fixed: shared `t-h1/t-h2/t-h3/t-stat/t-caption` in `globals.css`; stats capped at 2.5rem |
 | UI review: sections | No section headers or dividers on the entry page | Home | Medium | Fixed: `t-h2` headers with a rule, cards per item |
 | WCAG 1.4.11 | Light amber data marks 2.19:1 | `globals.css --amber` | High | Fixed: #a8690a, 3.85:1 on surface2, 4.19:1 on bg |
