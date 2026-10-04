@@ -34,6 +34,34 @@ def breakeven_grant(f: finance.RingFinance, cfg: dict) -> float | None:
     return max(g, 0.0)
 
 
+def corridor_gate_path(cfg: dict) -> list[dict]:
+    """LCOH of the corridor ring at each step toward passing its gate (docs: Phase 2 has to earn its way in)."""
+    fin = cfg["finance"]
+    rate = fin["discount_rates"][fin["gate_rate"]]
+    tariff = finance.tariff_usd_mwh(cfg)
+    rows = []
+    for step in cfg["rings"]["corridor"]["gate_path"]:
+        c = model.with_overrides(cfg, step["overrides"])
+        f = finance.ring_finance(model.run(c), "corridor")
+        annuity = f.capex * finance.crf(rate, fin["years"])
+        lcoh = (annuity * (1 - step["grant_frac"]) + f.opex_fixed + f.energy_cost) / f.heat_MWh
+        rows.append({"label": step["label"], "grant_frac": step["grant_frac"],
+                     "capex_per_home_usd": round(f.capex / c["rings"]["corridor"]["homes"]),
+                     "lcoh_usd_mwh": _r(lcoh), "passes": bool(lcoh <= tariff)})
+    return rows
+
+
+def first_in(cfg: dict, path: list[dict]) -> list[dict]:
+    """Which households the corridor already beats, step by step: their current fuel vs ring LCOH."""
+    inc = cfg["finance"]["incumbent_usd_per_MWh"]
+    mix = cfg["rings"]["corridor"]["counterfactual_mix"]
+    out = []
+    for fuel in sorted(mix, key=lambda k: -inc[k]):
+        beat_at = next((p["label"] for p in path if p["lcoh_usd_mwh"] <= inc[fuel]), None)
+        out.append({"fuel": fuel, "share_of_homes": mix[fuel], "incumbent_usd_mwh": inc[fuel], "beaten_at_step": beat_at})
+    return out
+
+
 def _week_start(temp: np.ndarray, coldest: bool) -> int:
     daily = temp.reshape(365, 24).mean(axis=1)
     weekly = np.convolve(daily, np.ones(7) / 7, mode="valid")
@@ -152,6 +180,8 @@ def build(cfg: dict | None = None, with_tornado: bool = True) -> tuple[dict, Res
         }
         if rid == "corridor":
             entry["homes"] = rc["homes"]
+            entry["gate"]["path"] = corridor_gate_path(cfg)
+            entry["gate"]["first_in"] = first_in(cfg, entry["gate"]["path"])
         rings_out.append(entry)
 
     delivered = sum(float(res.rings[b].recovered.sum()) for b in built)

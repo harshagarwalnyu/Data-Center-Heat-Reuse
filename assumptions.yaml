@@ -104,6 +104,16 @@ rings:
     # Rural fuel mix (gas share removed: no mains near the site). Shares of B25040 [fact:acs_b25040]
     counterfactual_mix: {propane: 0.45, electric_resistance: 0.40, heating_oil: 0.15}
     density_gate_MWh_per_m: 1.5        # PLAN s1.2 screen
+    # Phase 2 gate: the path from today's cost to a passing ring. Each step adds to the one before.
+    # Grants: federal ITC 30% (eligibility [unverified]) + NYSEG Non-Pipe Alternatives [unverified amount].
+    gate_path:
+      - {label: "Base case", overrides: {}, grant_frac: 0.0}
+      - {label: "+ 30% federal ITC", overrides: {}, grant_frac: 0.30}
+      - {label: "+ 25% NYSEG Non-Pipe Alternatives", overrides: {}, grant_frac: 0.55}
+      - {label: "+ cheaper build ($8k HP, $5k service, 15 m trench/home)", grant_frac: 0.55,
+         overrides: {finance.unit_costs.building_hp_usd_per_home: 8000, finance.unit_costs.service_usd_per_home: 5000, rings.corridor.trench_m_per_home: 15}}
+      - {label: "+ O&M at 1% of capex", grant_frac: 0.55,
+         overrides: {finance.unit_costs.building_hp_usd_per_home: 8000, finance.unit_costs.service_usd_per_home: 5000, rings.corridor.trench_m_per_home: 15, finance.om_frac_of_capex: 0.01}}
 
   town:
     name: "Town center: school campus + town buildings"

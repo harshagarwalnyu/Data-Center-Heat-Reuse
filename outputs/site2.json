@@ -85,7 +85,64 @@
         "passes": false,
         "linear_density_MWh_per_m": 0.96,
         "density_gate_MWh_per_m": 1.5,
-        "breakeven_capex_grant_frac": 0.91
+        "breakeven_capex_grant_frac": 0.91,
+        "path": [
+          {
+            "label": "Base case",
+            "grant_frac": 0.0,
+            "capex_per_home_usd": 45527,
+            "lcoh_usd_mwh": 193.6,
+            "passes": false
+          },
+          {
+            "label": "+ 30% federal ITC",
+            "grant_frac": 0.3,
+            "capex_per_home_usd": 45527,
+            "lcoh_usd_mwh": 160.7,
+            "passes": false
+          },
+          {
+            "label": "+ 25% NYSEG Non-Pipe Alternatives",
+            "grant_frac": 0.55,
+            "capex_per_home_usd": 45527,
+            "lcoh_usd_mwh": 133.3,
+            "passes": false
+          },
+          {
+            "label": "+ cheaper build ($8k HP, $5k service, 15 m trench/home)",
+            "grant_frac": 0.55,
+            "capex_per_home_usd": 28967,
+            "lcoh_usd_mwh": 101.6,
+            "passes": false
+          },
+          {
+            "label": "+ O&M at 1% of capex",
+            "grant_frac": 0.55,
+            "capex_per_home_usd": 28967,
+            "lcoh_usd_mwh": 89.5,
+            "passes": true
+          }
+        ],
+        "first_in": [
+          {
+            "fuel": "electric_resistance",
+            "share_of_homes": 0.4,
+            "incumbent_usd_mwh": 245,
+            "beaten_at_step": "Base case"
+          },
+          {
+            "fuel": "heating_oil",
+            "share_of_homes": 0.15,
+            "incumbent_usd_mwh": 156,
+            "beaten_at_step": "+ 25% NYSEG Non-Pipe Alternatives"
+          },
+          {
+            "fuel": "propane",
+            "share_of_homes": 0.45,
+            "incumbent_usd_mwh": 125,
+            "beaten_at_step": "+ cheaper build ($8k HP, $5k service, 15 m trench/home)"
+          }
+        ]
       },
       "homes": 400
     },
