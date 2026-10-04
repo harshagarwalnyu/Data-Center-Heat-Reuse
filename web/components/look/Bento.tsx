@@ -91,12 +91,12 @@ export function Bento({ data }: { data: AppData }) {
             <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#c4572a" /></marker></defs>
             <rect x="8" y="58" width="78" height="56" rx="12" fill="#fffefb" stroke="#3b2a1e" strokeWidth="2" />
             <text x="47" y="92" textAnchor="middle" fontSize="15" fontWeight="700" fill="#2b1d14">Servers</text>
-            <circle cx="170" cy="86" r="30" fill="#fffefb" stroke="#3b2a1e" strokeWidth="2" />
-            <text x="170" y="91" textAnchor="middle" fontSize="14" fontWeight="700" fill="#2b1d14">Heat pump</text>
-            <path d="M88 76 C110 60 124 66 138 76" stroke="#c4572a" strokeWidth="4" fill="none" markerEnd="url(#arr)" strokeLinecap="round" />
-            <path d="M138 98 C122 110 106 108 90 98" stroke="#2a8a84" strokeWidth="4" fill="none" strokeLinecap="round" strokeDasharray="2 7" />
-            <path d="M202 74 C230 40 250 36 270 40" stroke="#c4572a" strokeWidth="4" fill="none" markerEnd="url(#arr)" strokeLinecap="round" />
-            <path d="M202 98 C232 132 250 136 270 132" stroke="#c4572a" strokeWidth="4" fill="none" markerEnd="url(#arr)" strokeLinecap="round" />
+            <circle cx="170" cy="86" r="38" fill="#fffefb" stroke="#3b2a1e" strokeWidth="2" />
+            <text x="170" y="82" textAnchor="middle" fontSize="14" fontWeight="700" fill="#2b1d14">Heat</text><text x="170" y="98" textAnchor="middle" fontSize="14" fontWeight="700" fill="#2b1d14">pump</text>
+            <path d="M88 74 C106 60 118 62 130 72" stroke="#c4572a" strokeWidth="4" fill="none" markerEnd="url(#arr)" strokeLinecap="round" />
+            <path d="M132 100 C118 110 104 108 90 98" stroke="#2a8a84" strokeWidth="4" fill="none" strokeLinecap="round" strokeDasharray="2 7" />
+            <path d="M206 70 C230 40 250 36 270 40" stroke="#c4572a" strokeWidth="4" fill="none" markerEnd="url(#arr)" strokeLinecap="round" />
+            <path d="M206 102 C232 132 250 136 270 132" stroke="#c4572a" strokeWidth="4" fill="none" markerEnd="url(#arr)" strokeLinecap="round" />
             <path d="M276 52 L276 30 Q300 12 324 30 L324 52 Z" fill="#e8f2ee" stroke="#3b2a1e" strokeWidth="2" />
             <text x="300" y="70" textAnchor="middle" fontSize="13" fontWeight="700" fill="#2b1d14">Greenhouse</text>
             <path d="M278 146 L278 126 L300 108 L322 126 L322 146 Z" fill="#fbe1d6" stroke="#3b2a1e" strokeWidth="2" />

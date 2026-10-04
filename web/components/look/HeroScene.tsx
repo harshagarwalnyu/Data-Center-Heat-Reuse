@@ -111,7 +111,7 @@ export function HeroScene() {
           <feGaussianBlur stdDeviation="5" />
         </filter>
         <filter id="soft"><feGaussianBlur stdDeviation="14" /></filter>
-        <filter id="shimmer" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5" /></filter>
+        <filter id="shimmer" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7" /></filter>
         <filter id="grain" x="0" y="0" width="100%" height="100%">
           <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" />
           <feColorMatrix values="0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0.55 0" />
@@ -148,6 +148,7 @@ export function HeroScene() {
         </g>
       </Layer>
 
+      <g transform="translate(0 70)">
       {/* far hills across the lake */}
       <Layer p={p} depth={40} still={still}>
         <path filter="url(#brushBig)" fill="url(#farHill)" opacity="0.9"
@@ -202,9 +203,9 @@ export function HeroScene() {
       {/* heat shimmer rising from the roof and curling toward greenhouse and homes */}
       <Layer p={p} depth={10} still={still}>
         <g fill="none" stroke="url(#heat)" strokeLinecap="round" filter="url(#shimmer)">
-          <path className="heat-flow" strokeWidth="10" opacity="0.7" d="M960 682 C950 610 900 600 860 640 C820 680 790 700 760 720" />
-          <path className="heat-flow" strokeWidth="8" opacity="0.6" style={{ animationDelay: "-3s" }} d="M1030 680 C1030 590 940 560 830 600 C700 646 600 700 520 760" />
-          <path className="heat-flow" strokeWidth="7" opacity="0.5" style={{ animationDelay: "-6s" }} d="M1100 682 C1120 600 1040 540 900 560 C720 586 520 680 420 790" />
+          <path className="heat-flow" strokeWidth="18" opacity="0.55" d="M960 682 C950 610 900 600 860 640 C820 680 790 700 760 720" />
+          <path className="heat-flow" strokeWidth="16" opacity="0.45" style={{ animationDelay: "-3s" }} d="M1030 680 C1030 590 940 560 830 600 C700 646 600 700 520 760" />
+          <path className="heat-flow" strokeWidth="14" opacity="0.4" style={{ animationDelay: "-6s" }} d="M1100 682 C1120 600 1040 540 900 560 C720 586 520 680 420 790" />
         </g>
       </Layer>
 
@@ -228,6 +229,7 @@ export function HeroScene() {
         </g>
       </Layer>
 
+      </g>
       <rect width={W} height={H} fill="url(#fade)" />
       <rect width={W} height={H} filter="url(#grain)" opacity="0.22" style={{ mixBlendMode: "multiply" }} />
     </svg>

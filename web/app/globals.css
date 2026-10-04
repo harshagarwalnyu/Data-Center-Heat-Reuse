@@ -244,7 +244,7 @@ g[tabindex]:focus-visible { outline: 3px solid var(--ember); outline-offset: 2px
 .bento:focus-visible { outline-offset: 4px; border-radius: 36px; }
 .mock { background: #fffefb; border-radius: 18px; box-shadow: 0 2px 4px rgba(59,42,30,.06), 0 14px 34px rgba(59,42,30,.12); color: #2b1d14; }
 .pill-outline {
-  display: inline-flex; align-items: center; min-height: 44px; padding: .4rem 1.1rem; border-radius: 12px;
+  align-items: center; min-height: 44px; padding: .4rem 1.1rem; border-radius: 12px;
   border: 1.5px solid currentColor; font-weight: 700; text-decoration: none; white-space: nowrap;
 }
 .brown-section { background: #3b2a1e; color: #f6ecdc; }
@@ -252,7 +252,7 @@ g[tabindex]:focus-visible { outline: 3px solid var(--ember); outline-offset: 2px
 .hero-glow { background: radial-gradient(closest-side, rgba(253, 248, 236, 0.82), rgba(253, 248, 236, 0.55) 55%, rgba(253, 248, 236, 0)); }
 .stat-glass { background: rgba(253, 250, 243, 0.8); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.7); box-shadow: 0 10px 30px rgba(59,42,30,.12); }
 @keyframes rise-heat { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -220; } }
-.heat-flow { stroke-dasharray: 60 50; animation: rise-heat 9s linear infinite; }
+.heat-flow { stroke-dasharray: 160 60; animation: rise-heat 12s linear infinite; }
 @keyframes drift { 0%,100% { transform: translateX(0); } 50% { transform: translateX(24px); } }
 .drift { animation: drift 28s ease-in-out infinite; }
 .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-align: left; padding: 1rem .25rem; min-height: 56px; font-size: var(--text-body); font-weight: 600; color: var(--ink); background: transparent; border: 0; }

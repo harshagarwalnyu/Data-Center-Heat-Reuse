@@ -2,6 +2,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { useApp } from "./AppProvider";
+import { Swash } from "./look/Paper";
 import type { AppData } from "@/lib/types";
 import { PROJECT_TAGLINE, PROJECT_TITLE } from "@/lib/config";
 
@@ -54,7 +55,13 @@ export function NavBar({ active, extra, overlay = false }: { active: string; ext
       <div className="flex items-center gap-3">
         {extra}
         <PlaceholderBadge />
-        <Link prefetch={false} href="/explore/" className="pill-outline text-caption text-ink hover:bg-ink hover:text-bg transition-colors">Try the model</Link>
+        {!overlay && (
+          <div aria-hidden className="pointer-events-none absolute right-0 top-14 w-[min(560px,70vw)] h-[260px] -z-10 overflow-hidden">
+            <Swash color="var(--sage)" className="right-[-40px] top-0 w-[480px]" seed={5} />
+            <Swash color="var(--peach)" className="right-[120px] top-[90px] w-[300px] opacity-80" seed={8} />
+          </div>
+        )}
+        <Link prefetch={false} href="/explore/" className="pill-outline hidden sm:inline-flex text-caption text-ink hover:bg-ink hover:text-bg transition-colors">Try the model</Link>
       </div>
     </header>
   );

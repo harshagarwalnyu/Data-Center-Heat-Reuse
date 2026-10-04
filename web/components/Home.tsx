@@ -160,22 +160,22 @@ export function Home({ data }: { data: AppData }) {
         <section aria-labelledby="home-h" className="relative overflow-hidden min-h-[max(100dvh,640px)] flex flex-col">
           <HeroScene />
           <NavBar active="/" overlay />
-          <div className="relative z-10 flex-1 flex flex-col items-center text-center px-5 pt-[clamp(6.5rem,16dvh,10rem)] pb-10">
+          <div className="relative z-10 flex-1 flex flex-col items-center text-center px-5 pt-[9.5rem] md:pt-[clamp(6rem,13dvh,8.5rem)] pb-10">
             <div aria-hidden className="hero-glow absolute left-1/2 -translate-x-1/2 top-[8%] w-[min(980px,120vw)] h-[62%] -z-10" />
             <Rise>
               <p className="kicker m-0 mb-4 !text-[#4a3527]">Heat for Lansing, NY</p>
               <h1 id="home-h" className="m-0 text-ink leading-[1.04] max-w-[16ch] mx-auto" style={{ fontSize: "clamp(2.6rem, 1.3rem + 3.6vw, 4.4rem)", textWrap: "balance" }}>
                 <span className="num">{int(d.supply.heat_available_GWh)} GWh</span> of heat a year goes into the air.
               </h1>
-              <p className="m-0 mt-5 text-ink mx-auto max-w-[34ch]" style={{ fontSize: "clamp(1.2rem, 1rem + 0.5vw, 1.45rem)" }}>We found the terms that let Lansing say yes.</p>
+              <p className="m-0 mt-5 text-ink mx-auto max-w-[40ch]" style={{ fontSize: "clamp(1.2rem, 1rem + 0.5vw, 1.45rem)" }}>We found the terms that let Lansing say yes.</p>
               <Link prefetch={false} href="/explore/" className="btn btn-primary no-underline mt-7 !px-7 !min-h-[52px]">Try the model</Link>
             </Rise>
-            <ul className="list-none m-0 p-4 sm:px-8 mt-auto pt-10 grid gap-x-8 gap-y-5 sm:grid-cols-3 items-end w-full max-w-[980px]">
+            <ul className="list-none m-0 p-0 mt-10 md:mt-12 grid gap-x-6 gap-y-3 sm:grid-cols-3 items-end w-full max-w-[940px]">
               {heroStats.map((s, i) => (
-                <li key={i} className={`stat-glass rounded-2xl px-4 py-3 ${i === 1 ? "sm:-translate-y-2" : ""}`}>
+                <li key={i} className="stat-glass rounded-2xl px-4 py-2.5 sm:py-3">
                   <div className="relative flex items-center justify-center gap-2">
                     {i === 1 && <Laurel />}
-                    <div className="serif text-ink leading-none" style={{ fontSize: "clamp(1.9rem, 1.2rem + 1.6vw, 2.6rem)" }}>{s.value}</div>
+                    <div className="serif text-ink leading-none whitespace-nowrap" style={{ fontSize: "clamp(1.8rem, 1.1rem + 1.4vw, 2.4rem)" }}>{s.value}</div>
                     {i === 1 && <Laurel flip />}
                   </div>
                   <p className="m-0 mt-2 text-ink text-caption leading-snug">{s.caption}{s.tip && <> <Info tip={s.tip} /></>}</p>
