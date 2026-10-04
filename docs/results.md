@@ -116,6 +116,10 @@ Reading it:
 
 Other scenarios (`extras.scenarios`): central heat pump and pumping at the residential rate gives 108.1 USD/MWh; propane at 2.85 USD/gal (a scenario assumption, not a Central NY market price) gives a propane-equivalent of 125.1 USD/MWh and still leaves households 675.6 USD/yr better off at the 0.8 tariff.
 
+## Uncertainty
+
+The tornado moves one input at a time. A seeded Monte Carlo (500 draws, seed 20261004, full 8,760-hour model per draw) moves seven uncertain inputs together: capture fraction, electricity price, building heat-pump cost, loop pipe cost, uptake, discount rate and propane price (triangular around the config base, uniform for the 4-10% discount rate). At 7 percent, blended LCOH is 98.1 / 106.8 / 114.7 USD/MWh (P10 / P50 / P90) against the 106.1 headline, the corridor ring is 264 / 290 / 327, the whole-project funding gap is 21.3 / 26.4 / 31.7 USD M and CO2 avoided is 10,938 / 11,396 / 11,775 t/yr. Blended LCOH stays below the propane-equivalent price in 100 percent of draws at 7 percent and 98.6 percent with the discount rate also uncertain. The discount rate drives most of the spread. Method, input ranges, monthly and seasonal detail, per-ring breakdown and load-duration statistics: [analysis-detail.md](analysis-detail.md) (`outputs/analysis_detail.json`). A bottom-up pumping check against the flat 1.5 percent pump share is in [hydraulics.md](hydraulics.md).
+
 ## What if the data center leaves (year 10)
 
 `finance.dc_exit`: 5.71 million USD of data-center-specific capex stranded (straight-line), 10.35 million USD to replace the heat source for the corridor, and a corridor cost increase of 93.2 USD/MWh. The loop pipe and building heat pumps remain usable with an air-source or borehole plant, and backup boilers cover the transition. The Heat Supply Agreement asks for step-in rights, 24 months notice and a decommissioning bond (see [ownership-deal.md](ownership-deal.md) and [risk-matrix.md](risk-matrix.md), R04 and R08). On-site users revert to propane-equivalent or electric.
