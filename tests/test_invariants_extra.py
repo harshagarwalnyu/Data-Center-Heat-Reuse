@@ -29,9 +29,11 @@ def test_ring_lcoh_order(j):
 def test_co2_avoided_positive_and_matches_rings(j):
     total = j["impact"]["co2_avoided_t_yr"]
     assert total > 0
-    per_ring = [v for x in j["rings"] if x.get("phase") in (1, 2) for k, v in x.items() if k.startswith("co2")]
-    if per_ring:
-        assert sum(per_ring) == pytest.approx(total, rel=0.01)
+    # site2.json rings carry no per-ring CO2; the per-ring split lives in analysis_detail.json (heatreuse.analysis)
+    detail = json.loads((OUT / "analysis_detail.json").read_text(encoding="utf-8"))
+    per_ring = [r["co2_avoided_t_yr"] for r in detail["ring_breakdown"]["rings"].values()]
+    assert per_ring, "no per-ring CO2 values found"
+    assert sum(per_ring) == pytest.approx(total, rel=0.01)
 
 
 def test_heat_delivered_not_above_available(j):

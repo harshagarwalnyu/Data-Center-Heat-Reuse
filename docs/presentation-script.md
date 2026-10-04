@@ -22,7 +22,7 @@ Numbers in the spoken lines are the v3 model in `outputs/site2.json` (generated 
 | 3:15-3:50 | Aryaman Bhaskar | 7 Honest funding | The gap, and what covers it |
 | 3:50-4:25 | Philip Matchev | 8 What Lansing gets | Homes, ERF, scenario estimates |
 | 4:25-5:00 | Philip Matchev | 9 The ask | Three beats, then "Harsh, the model." |
-| 5:00-5:40 | Harsh Agarwal | Demo | Town ring tick, then the 4% to 7% slider |
+| 5:00-5:40 | Harsh Agarwal | Demo | Town ring tick, then the 7% to 4% slider |
 
 Pace: about 130 words a minute. If you are long at 3:50, Philip drops slide 8 to its last sentence and goes straight to the ask.
 
@@ -32,7 +32,7 @@ Pace: about 130 words a minute. If you are long at 3:50, Philip drops slide 8 to
 | --- | --- | --- |
 | Seven hundred thirty-five dollars a year | `finance.household.savings_vs_propane_usd` = 735, on 27 MWh | That this is profit. The tariff is policy: 0.8 x propane. |
 | Seven hundred seventy-eight gigawatt-hours | Captured heat 777.6 GWh | That we use it all. Share used is 6.5%. |
-| One hundred six dollars per megawatt-hour at seven percent | `finance.lcoh_usd_mwh.utility_7pct` = 106.1 | Ninety dollars. That is the four-percent co-op case (89.5), and it is what Explore shows before you move the slider. |
+| One hundred six dollars per megawatt-hour at seven percent | `finance.lcoh_usd_mwh.utility_7pct` = 106.1 | Ninety dollars. That is the four-percent co-op case (89.5), and it is what Explore shows after you slide cost of money from 7% to 4%. |
 | Forty-one / two hundred eighty-six / seven hundred thirty-four | Ring LCOH at 7%: 40.6 / 285.8 / 734.2 | That the town ring is in the blend. `passes_gate` is false. |
 | Fifty-point-six gigawatt-hours; six and a half percent | `totals.heat_delivered_MWh` = 50,576 | That this is most of the waste heat. |
 | Eleven thousand four hundred eight tonnes | `impact.co2_avoided_t_yr` = 11,408 | A lake-water credit. The file claims 0 gallons. |
@@ -199,7 +199,7 @@ No designated disadvantaged community nearby. Organizer site pack, page 24: `res
 
 Federal credits excluded from the base case: `outputs/site2.json` `extras.funding.note`, pointing at `research/verification.md` section 9d-i.
 
-Explore slider label "Cost of money (discount rate)", base 4 percent, KPI labels, and town-ring checkbox: `web/components/Explore.tsx` and `web/lib/model.ts`.
+Explore slider label "Cost of money (discount rate)", base 7 percent (`LCOH_ANCHOR_PCT[1]`), KPI labels, and town-ring checkbox: `web/components/Explore.tsx` and `web/lib/model.ts`.
 
 ## Word count
 
@@ -207,18 +207,18 @@ Spoken deck paragraphs only (stage directions excluded; hyphenated numbers count
 
 | Slide | Words |
 | --- | ---: |
-| 0 | 48 |
-| 0 | 60 |
-| 0 | 61 |
-| 1 | 59 |
-| 2 | 76 |
-| 2 | 72 |
-| 3 | 49 |
-| 3 | 37 |
-| 4 | 43 |
-| **Deck total** | **505** |
+| 1 | 48 |
+| 2 | 60 |
+| 3 | 61 |
+| 4 | 59 |
+| 5 | 97 |
+| 6 | 72 |
+| 7 | 49 |
+| 8 | 37 |
+| 9 | 43 |
+| **Deck total** | **526** |
 
-At about 130 words a minute that is about 3.9 minutes of speech inside the 5:00 slot.
+At about 130 words a minute that is about 4.0 minutes of speech inside the 5:00 slot, matching the "about 520 words" target above.
 
 ## Lane status
 
