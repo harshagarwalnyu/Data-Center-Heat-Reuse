@@ -31,10 +31,12 @@ export function useTween(target: number, instant: boolean, ms = 250): number {
 /** A live figure: tweens on committed changes, announces only its final text to screen readers. */
 export function Tween({ value, format, instant }: { value: number; format: (n: number) => string; instant: boolean }) {
   const v = useTween(value, instant);
+  const [said, setSaid] = useState(value);
+  useEffect(() => { if (!instant) setSaid(value); }, [value, instant]);
   return (
     <>
       <span aria-hidden className="num">{format(v)}</span>
-      <span className="sr-only">{format(value)}</span>
+      <span className="sr-only">{format(said)}</span>
     </>
   );
 }
