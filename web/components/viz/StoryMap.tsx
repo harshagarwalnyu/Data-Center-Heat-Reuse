@@ -13,7 +13,7 @@ const spring = { type: "spring", stiffness: 260, damping: 15 } as const;
  * `n` = how many rings are shown (0 to 3). With `still` (reduced motion) everything renders at its final state with no motion.
  * `stagger` spaces the three rings out when the section is stacked on a phone and nothing pins.
  */
-export function StoryMap({ offtakers: all, n, still, stagger }: { offtakers: Offtaker[]; n: number; still: boolean; stagger: boolean }) {
+export function StoryMap({ offtakers: all, n, still, stagger, townBuilt = false }: { offtakers: Offtaker[]; n: number; still: boolean; stagger: boolean; townBuilt?: boolean }) {
   const offtakers = all.filter((o) => o.lon >= BOUNDS[0][0] && o.lon <= BOUNDS[1][0] && o.lat >= BOUNDS[0][1] && o.lat <= BOUNDS[1][1]);
   const { project, height: H, pxPerKm } = makeProjector(W);
   const line = (pts: LonLat[]) => pts.map((p, i) => `${i ? "L" : "M"}${project(p)[0].toFixed(1)},${project(p)[1].toFixed(1)}`).join(" ");
@@ -57,7 +57,7 @@ export function StoryMap({ offtakers: all, n, still, stagger }: { offtakers: Off
     });
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Schematic map: the data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring to the south-east, which is not built." className="w-full h-full block" style={{ background: "var(--surface2)" }}>
+    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Schematic map: the data center on Cayuga Lake's east shore, an on-site campus ring, a corridor of homes along the road, and the town center ring to the south-east${townBuilt ? "." : ", which is not built."}`} className="w-full h-full block" style={{ background: "var(--surface2)" }}>
       <path d={lake} fill="var(--teal)" opacity="0.22" />
       <text x={60} y={H * 0.45} fontSize="34" fill="var(--teal-text)" fontStyle="italic" fontWeight="600">Cayuga Lake</text>
 
@@ -83,7 +83,7 @@ export function StoryMap({ offtakers: all, n, still, stagger }: { offtakers: Off
       {label("Corridor homes", [-76.59, 42.592], -40, -34, 1)}
       {label("Town center", TOWN, -110, 100, 2)}
 
-      <motion.g
+      {!townBuilt && <motion.g
         initial={still ? false : { scale: 2.2, rotate: -26, opacity: 0 }}
         animate={shown(2) ? { scale: 1, rotate: -9, opacity: 1 } : { scale: 2.2, rotate: -26, opacity: 0 }}
         transition={still ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 11, delay: delay(2) + 0.6 }}
@@ -93,7 +93,7 @@ export function StoryMap({ offtakers: all, n, still, stagger }: { offtakers: Off
           <rect x={-128} y={-34} width={256} height={68} rx={10} fill="var(--bg)" stroke="var(--ember-text)" strokeWidth="6" />
           <text textAnchor="middle" y={13} fontSize="40" fontWeight="800" letterSpacing="5" fill="var(--ember-text)">NOT BUILT</text>
         </g>
-      </motion.g>
+      </motion.g>}
 
       <g transform={`translate(40,${H - 30})`}>
         <line x1="0" x2={5 * pxPerKm} y1="0" y2="0" stroke="var(--ink)" strokeWidth="3" />

@@ -34,7 +34,7 @@ function Caption({ step, index, on, setActive }: { step: Step; index: number; on
 }
 
 /** Apple-style sticky scene: the map stays pinned while three captions scroll past and each ring pops in. Stacked, unpinned on small screens. */
-function RingsStory({ data, steps }: { data: AppData; steps: Step[] }) {
+function RingsStory({ data, steps, townBuilt }: { data: AppData; steps: Step[]; townBuilt: boolean }) {
   const reduce = !!useReducedMotion();
   const [active, setActive] = useState(0);
   const [reached, setReached] = useState(0);
@@ -57,7 +57,7 @@ function RingsStory({ data, steps }: { data: AppData; steps: Step[] }) {
       </div>
       <div className="order-first lg:order-last lg:sticky lg:self-start" style={{ top: "calc((100dvh - min(72dvh, 620px)) / 2)" }}>
         <div ref={mapRef} className="card overflow-hidden w-full lg:w-auto lg:h-[min(72dvh,620px)] lg:ml-auto" style={{ aspectRatio: STORY_ASPECT }}>
-          <StoryMap offtakers={data.offtakers} n={n} still={reduce} stagger={stacked} />
+          <StoryMap offtakers={data.offtakers} n={n} still={reduce} stagger={stacked} townBuilt={townBuilt} />
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@ export function Home({ data }: { data: AppData }) {
             <p className="kicker m-0 mb-4">Three rings</p>
             <h2 id="rings-h" className="serif font-bold m-0 text-ink leading-[1.1] max-w-[20ch]" style={BIG}>Built only where the numbers pass.</h2>
           </Rise>
-          <div className="mt-10 lg:mt-4"><RingsStory data={data} steps={steps} /></div>
+          <div className="mt-10 lg:mt-4"><RingsStory data={data} steps={steps} townBuilt={townLcoh !== undefined && townLcoh <= propane} /></div>
         </section>
 
         <section className={`${SECTION} text-center`} aria-labelledby="close-h">
