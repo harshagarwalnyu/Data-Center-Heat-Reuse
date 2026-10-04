@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://coderabbit.ai/schema.json
+language: en-US
+
+reviews:
+  profile: assertive
+  request_changes_workflow: false
+  high_level_summary: true
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+  path_filters:
+    # Generated, binary or bulky files: skip so the free-plan file budget goes to real code
+    - "!**/*.png"
+    - "!**/*.lock"
+    - "!uv.lock"
+    - "!web/bun.lock"
+    - "!outputs/**"
+    - "!web/public/data/**"
+    - "!web/screenshots/**"
+    - "!resources/**"
+    - "!research/transcripts/**"
+    - "!data/raw/**"
+  path_instructions:
+    - path: "src/heatreuse/**/*.py"
+      instructions: >-
+        Hourly (8,760) data-center heat reuse model. Check physics and units rigorously:
+        energy balance closes every hour, kW vs MW vs MWh conversions, heat pump COP =
+        eta * T_sink / (T_sink - T_source + approach) in kelvin and clipped to [2, 6],
+        storage state of charge never negative, capital recovery factor and LCOH
+        denominators, emission factor units (kg CO2 per kWh of fuel vs per kWh of heat,
+        divided by appliance efficiency). Flag any hardcoded number that should come from
+        config/*.yaml.
+    - path: "config/**/*.yaml"
+      instructions: >-
+        Every input must carry a source (URL or document + page) or an "ASSUMPTION:" note.
+        Flag values that conflict with research/verification.md (it overrides older files).
+    - path: "tests/**/*.py"
+      instructions: >-
+        Tests must assert real invariants (energy balance, bounds, contract keys), not just
+        that code runs. Flag tests that can never fail.
+    - path: "web/**/*.{ts,tsx}"
+      instructions: >-
+        Next.js static-export presentation app for senior reviewers on a projector. Flag:
+        numbers hardcoded in components instead of read from web/public/data/*.json;
+        client-side formulas in web/lib that disagree with the Python model; crashes when
+        a JSON field is missing; text under 18px; contrast below WCAG AA; information only
+        available on hover; missing keyboard navigation.
+    - path: "docs/**/*.md"
+      instructions: >-
+        Fact-check claims against research/verification.md. Flag unsourced numbers and
+        any statement that heat reuse saves lake water one-for-one.
+  tools:
+    ruff:
+      enabled: true
+    eslint:
+      enabled: true
+
+chat:
+  auto_reply: true
