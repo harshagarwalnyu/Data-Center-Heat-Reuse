@@ -5,6 +5,10 @@ import { NavBar } from "../ui";
 import type { AppData } from "@/lib/types";
 import { buildSteps } from "./steps";
 
+/** Same-origin sync between the audience window and the presenter window. */
+const CHANNEL = "thermal-commons-story";
+type SyncMsg = { type: "state"; step: number; short: boolean } | { type: "hello" };
+
 function isTyping(t: EventTarget | null) {
   const el = t as HTMLElement | null;
   if (!el) return false;
@@ -21,6 +25,10 @@ export function Story({ data }: { data: AppData }) {
   const [short, setShort] = useState(true); // default = ~5-minute path; S toggles the deep dive
   const [secs, setSecs] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [presenter, setPresenter] = useState(false); // ?presenter=1 window: notes + next slide, no audience slide
+  const chan = useRef<BroadcastChannel | null>(null);
+  const lastSynced = useRef<{ step: number; short: boolean } | null>(null);
+  const cur = useRef({ step: 0, short: true });
 
   const path = useMemo(() => steps.map((s, idx) => idx).filter((idx) => !short || !steps[idx].deepDive), [steps, short]);
   const pos = Math.max(0, path.indexOf(i));
@@ -59,11 +67,47 @@ export function Story({ data }: { data: AppData }) {
     history.replaceState(null, "", `#${i + 1}`);
   }, [i]);
 
+  useEffect(() => {
+    setPresenter(new URLSearchParams(window.location.search).get("presenter") === "1");
+  }, []);
+
+  // presenter <-> audience sync over BroadcastChannel; the remote value is recorded so it is never echoed back
+  useEffect(() => {
+    cur.current = { step: i, short };
+  }, [i, short]);
+  useEffect(() => {
+    if (typeof BroadcastChannel === "undefined") return;
+    const c = new BroadcastChannel(CHANNEL);
+    chan.current = c;
+    c.onmessage = (e: MessageEvent<SyncMsg>) => {
+      const m = e.data;
+      if (m?.type === "hello") {
+        c.postMessage({ type: "state", ...cur.current } satisfies SyncMsg);
+      } else if (m?.type === "state" && m.step >= 0 && m.step < steps.length) {
+        lastSynced.current = { step: m.step, short: m.short };
+        setDir(m.step >= cur.current.step ? 1 : -1);
+        setI(m.step);
+        setShort(m.short);
+      }
+    };
+    c.postMessage({ type: "hello" } satisfies SyncMsg);
+    return () => { c.close(); chan.current = null; };
+  }, [steps.length]);
+  useEffect(() => {
+    const l = lastSynced.current;
+    if (l && l.step === i && l.short === short) return; // came from the other window
+    chan.current?.postMessage({ type: "state", step: i, short } satisfies SyncMsg);
+  }, [i, short]);
+
   // presenter timer
   useEffect(() => {
-    if (notes) timer.current = setInterval(() => setSecs((s) => s + 1), 1000);
+    if (notes || presenter) timer.current = setInterval(() => setSecs((s) => s + 1), 1000);
     return () => { if (timer.current) clearInterval(timer.current); };
-  }, [notes]);
+  }, [notes, presenter]);
+
+  const openPresenter = useCallback(() => {
+    window.open(`${window.location.pathname}?presenter=1${window.location.hash}`, "thermal-commons-presenter", "popup,width=1100,height=800");
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -81,6 +125,7 @@ export function Story({ data }: { data: AppData }) {
         case "Home": e.preventDefault(); go(0); break;
         case "End": e.preventDefault(); go(steps.length - 1); break;
         case "p": case "P": setNotes((n) => !n); break;
+        case "o": case "O": openPresenter(); break;
         case "s": case "S": setShort((s) => !s); break;
         case "f": case "F":
           if (document.fullscreenElement) void document.exitFullscreen();
@@ -90,11 +135,45 @@ export function Story({ data }: { data: AppData }) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [move, go, steps.length]);
+  }, [move, go, steps.length, openPresenter]);
 
   const s = steps[i];
+  const nextIdx = path[Math.min(path.length - 1, pos + 1)];
+  const next = pos < path.length - 1 ? steps[nextIdx] : null;
   const mm = String(Math.floor(secs / 60)).padStart(2, "0");
   const ss = String(secs % 60).padStart(2, "0");
+
+  if (presenter) {
+    return (
+      <div className="min-h-dvh bg-bg text-ink p-5 grid gap-5 content-start" role="main" aria-label="Presenter view">
+        <div className="flex flex-wrap items-center gap-3">
+          <button className="btn" onClick={() => move(-1)} disabled={pos === 0} aria-label="Previous step">&larr; Back</button>
+          <button className="btn" onClick={() => move(1)} disabled={pos === path.length - 1} aria-label="Next step">Next &rarr;</button>
+          <span className="num font-bold text-[1.25rem]" aria-live="polite">Step {pos + 1} of {path.length}</span>
+          <span className="num font-bold text-[2rem] ml-auto" role="timer" aria-label="Elapsed time">{mm}:{ss}</span>
+          <button className="btn" onClick={() => setSecs(0)}>Reset timer</button>
+        </div>
+        <section aria-label="Current step" className="card p-5">
+          <div className="kicker mb-1">{s.kicker}</div>
+          <h1 className="serif m-0 text-[1.75rem] leading-tight">{s.headline}</h1>
+          <h2 className="m-0 mt-4 text-[1.125rem] font-bold text-ink2">Speaker notes</h2>
+          <p className="m-0 mt-1 text-[1.5rem] leading-snug">{s.notes}</p>
+        </section>
+        <section aria-label="Next step" className="card p-5">
+          <h2 className="m-0 text-[1.125rem] font-bold text-ink2">Next slide</h2>
+          {next ? (
+            <>
+              <div className="kicker mt-1">{next.kicker}</div>
+              <p className="serif m-0 text-[1.5rem] leading-tight">{next.headline}</p>
+            </>
+          ) : (
+            <p className="m-0 mt-1 text-[1.25rem]">This is the last step.</p>
+          )}
+        </section>
+        <p className="m-0 text-[1.125rem] text-ink2">Arrow keys, space or PageDown move this window and the audience window together. Open the story in another window of this browser.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="h-dvh flex flex-col bg-bg overflow-hidden">
@@ -146,8 +225,9 @@ export function Story({ data }: { data: AppData }) {
         <button className="btn" onClick={() => move(1)} aria-label="Next step" disabled={pos === path.length - 1}>Next &rarr;</button>
         <span className="num font-bold text-ink text-[1.125rem]" aria-live="polite">Step {pos + 1} of {path.length}</span>
         <button className="btn" aria-pressed={short} onClick={() => setShort((v) => !v)} title="Switch between the 5-minute path and the full deep dive (key S)">{short ? "Show deep dive" : "Back to 5-minute path"}</button>
-        <span className="ml-auto hidden xl:inline">Arrows, space or PageDown to move · P notes · F fullscreen · S deep dive on/off</span>
+        <span className="ml-auto hidden xl:inline">Arrows, space or PageDown to move · P notes · O presenter window · F fullscreen · S deep dive on/off</span>
         <button className="btn" aria-pressed={notes} onClick={() => setNotes((n) => !n)}>Notes (P)</button>
+        <button className="btn" onClick={openPresenter} title="Open notes and the next slide in a second window that stays in sync (key O)">Presenter window (O)</button>
       </footer>
 
       {notes && (
