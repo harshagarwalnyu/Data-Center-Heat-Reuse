@@ -124,3 +124,28 @@ body {
     display: none !important;
   }
 }
+
+/* One-pager: always light, Letter size, no site chrome. */
+@page {
+  size: letter;
+  margin: 0.5in;
+}
+@media print {
+  :root {
+    color-scheme: light;
+    --page: #ffffff;
+    --surface: #ffffff;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --border: rgba(11, 11, 11, 0.18);
+    --good-text: #006300;
+    --critical-text: #b42f2f;
+  }
+  html {
+    font-size: 16px;
+  }
+  header.no-print,
+  body > header {
+    display: none !important;
+  }
+}

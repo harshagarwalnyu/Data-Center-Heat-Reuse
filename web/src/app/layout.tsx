@@ -26,6 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/data/" className="text-ink-2 hover:text-ink">
               Data &amp; sources
             </Link>
+            <Link href="/print/" className="text-ink-2 hover:text-ink">
+              One-pager
+            </Link>
           </nav>
         </header>
         <main className="flex-1">{children}</main>

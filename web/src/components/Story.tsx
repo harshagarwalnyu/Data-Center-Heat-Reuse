@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { site, ringById, RING_COLOR, FUEL_LABEL } from "@/lib/data";
 import { gwh, musd, num, pct, perMWh, round, usd } from "@/lib/fmt";
 import { HBars, MonthlyColumns, WeekChart } from "./charts";
@@ -30,7 +30,7 @@ const julyShare = site.monthly[6].demand_MWh / (site.monthly.reduce((a, m) => a 
 
 type Slide = { kicker: string; title: string; lens?: string; body: React.ReactNode; visual: React.ReactNode };
 
-const slides: Slide[] = [
+export const slides: Slide[] = [
   {
     kicker: "Lansing, NY · October 2026",
     title: "Lansing is moving to ban data centers.",
@@ -395,6 +395,8 @@ function RingDot({ id }: { id: string }) {
 
 export default function Story() {
   const [i, setI] = useState(0);
+  // Presenter view (/notes/) in another window stays in step through a BroadcastChannel.
+  const channel = useRef<BroadcastChannel | null>(null);
   const go = useCallback((d: number) => setI((x) => Math.min(Math.max(x + d, 0), slides.length - 1)), []);
 
   useEffect(() => {
@@ -403,7 +405,15 @@ export default function Story() {
   }, []);
   useEffect(() => {
     history.replaceState(null, "", `#${i + 1}`);
+    channel.current?.postMessage({ step: i });
   }, [i]);
+  useEffect(() => {
+    if (!("BroadcastChannel" in window)) return;
+    const c = new BroadcastChannel("lansing-story");
+    c.onmessage = (e) => typeof e.data?.step === "number" && setI(e.data.step);
+    channel.current = c;
+    return () => c.close();
+  }, []);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).closest("input, textarea, select, [role=img]")) return;
@@ -446,8 +456,11 @@ export default function Story() {
         <button onClick={() => go(-1)} disabled={i === 0} className="rounded-lg border border-line px-5 py-3 text-lg disabled:opacity-40">
           ← Back
         </button>
-        <span className="text-ink-2 tnum">
+        <span className="flex items-center gap-4 text-ink-2 tnum">
           {i + 1} / {slides.length}
+          <a href="/notes/" target="lansing-notes" className="text-sm underline decoration-[var(--axis)] underline-offset-4">
+            Presenter notes
+          </a>
         </span>
         <button
           onClick={() => go(1)}
