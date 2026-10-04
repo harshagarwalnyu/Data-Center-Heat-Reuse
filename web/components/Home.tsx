@@ -5,7 +5,7 @@ import { useInView } from "framer-motion";
 import { useStill } from "@/lib/motion";
 import type { AppData } from "@/lib/types";
 import { dec, int, usd } from "@/lib/format";
-import { CREDITS, PUBLIC_URL } from "@/lib/config";
+import { BASE_PATH, CREDITS, PUBLIC_URL } from "@/lib/config";
 import { LCOH_ANCHOR_PCT } from "@/lib/model";
 import { NavBar, ringColor, ringText } from "./ui";
 import { StoryMap, STORY_ASPECT, type DcTip, type RingId, type RingTip } from "./viz/StoryMap";
@@ -204,6 +204,17 @@ export function Home({ data }: { data: AppData }) {
           </div>
         </section>
         <TornEdge fill="#3b2a1e" seed={11} flip className="relative z-10" />
+
+        {/* Demo video: loads only when played */}
+        <section aria-labelledby="demo-h" className="max-w-[1100px] mx-auto px-[clamp(1rem,3vw,3rem)] pt-[clamp(4rem,12dvh,8rem)]">
+          <Rise className="text-center">
+            <p className="kicker m-0 mb-3">See it in 77 seconds</p>
+            <h2 id="demo-h" className="t-h2 m-0 mb-6">A quick tour of the model</h2>
+          </Rise>
+          <video className="w-full rounded-2xl shadow-lg" controls preload="none" playsInline poster={`${BASE_PATH}/video/explainer-poster.jpg`} aria-label="Demo video with narration and subtitles">
+            <source src={`${BASE_PATH}/video/explainer.mp4`} type="video/mp4" />
+          </video>
+        </section>
 
         {/* 3. The rings */}
         <section aria-labelledby="rings-h" className="max-w-[1400px] mx-auto px-[clamp(1rem,3vw,3rem)] pt-[clamp(4rem,12dvh,8rem)]">

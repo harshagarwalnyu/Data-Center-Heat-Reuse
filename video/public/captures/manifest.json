@@ -1,0 +1,95 @@
+{
+ "w": 1920,
+ "h": 1080,
+ "shots": {
+  "hero": {
+   "file": "captures/hero.jpg"
+  },
+  "ring-1": {
+   "file": "captures/ring-1.jpg"
+  },
+  "ring-2": {
+   "file": "captures/ring-2.jpg"
+  },
+  "ring-3": {
+   "file": "captures/ring-3.jpg"
+  },
+  "explore-0": {
+   "file": "captures/explore-0.jpg"
+  },
+  "explore-1": {
+   "file": "captures/explore-1.jpg"
+  },
+  "explore-2": {
+   "file": "captures/explore-2.jpg"
+  },
+  "explore-3": {
+   "file": "captures/explore-3.jpg"
+  },
+  "explore-4": {
+   "file": "captures/explore-4.jpg"
+  },
+  "explore-5": {
+   "file": "captures/explore-5.jpg"
+  },
+  "explore-6": {
+   "file": "captures/explore-6.jpg"
+  },
+  "explore-end": {
+   "file": "captures/explore-end.jpg"
+  },
+  "explore-bar": {
+   "file": "captures/explore-bar.jpg"
+  },
+  "compare": {
+   "file": "captures/compare.jpg"
+  },
+  "how": {
+   "file": "captures/how.jpg"
+  }
+ },
+ "slider": {
+  "y": 724.484375,
+  "steps": [
+   {
+    "v": 7,
+    "x": 473.5426136363636,
+    "file": "captures/explore-0.jpg"
+   },
+   {
+    "v": 6.5,
+    "x": 454.6640625,
+    "file": "captures/explore-1.jpg"
+   },
+   {
+    "v": 6,
+    "x": 435.7855113636364,
+    "file": "captures/explore-2.jpg"
+   },
+   {
+    "v": 5.5,
+    "x": 416.90696022727275,
+    "file": "captures/explore-3.jpg"
+   },
+   {
+    "v": 5,
+    "x": 398.0284090909091,
+    "file": "captures/explore-4.jpg"
+   },
+   {
+    "v": 4.5,
+    "x": 379.14985795454544,
+    "file": "captures/explore-5.jpg"
+   },
+   {
+    "v": 4,
+    "x": 360.2713068181818,
+    "file": "captures/explore-6.jpg"
+   }
+  ]
+ },
+ "bar": {
+  "x": 1066.328125,
+  "y": 822.2734375
+ }
+}
