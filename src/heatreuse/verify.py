@@ -33,11 +33,12 @@ UNITS = [
     ("_t_yr", "t/yr"), ("_kg_kwh", "kg CO2/kWh"), ("_kwh_gal", "kWh/gal"), ("_w_m2k", "W/m2K"), ("_w_m", "W/m"),
     ("_pct", "fraction"), ("_share", "fraction"), ("_hours", "h"), ("_h", "h"), ("share", "fraction"),
     ("fraction", "fraction"), ("uptake", "fraction"), ("eta", "fraction"), ("efficiency", "fraction"),
+    ("lat", "deg"), ("lon", "deg"), ("seed", "seed"), ("community", "fraction"), ("mwh", "MWh"),
     ("years", "years"), ("year", "year"), ("homes", "homes"),
 ]
 TAG_LEGEND = re.compile(r"\[(\w+)\]=([\w./-]+)")
 ASSUMPTION = re.compile(r"\[A\]|ASSUMPTION", re.I)
-UNVERIFIED = re.compile(r"unverified|unverifiable", re.I)
+UNVERIFIED = re.compile(r"unverified|unverifiable|not checked", re.I)
 
 
 def unit_for(path: str) -> str:
@@ -61,6 +62,26 @@ def _split_comment(line: str) -> tuple[str, str]:
     return body.rstrip(), cm.strip() if sep else ""
 
 
+def _emit(rows: list[dict], path: Path, legend: dict[str, str], full: str, val, note: str) -> None:
+    """Append one row per numeric leaf of a parsed YAML value (scalar, flow mapping or list)."""
+    if isinstance(val, dict):
+        items = list(val.items())
+    elif isinstance(val, list):
+        items = [(i, v) for i, v in enumerate(val)]
+    else:
+        items = [(None, val)]
+    for k, v in items:
+        if isinstance(v, bool) or not isinstance(v, (int, float)):
+            continue
+        p = full if k is None else f"{full}[{k}]" if isinstance(k, int) else f"{full}.{k}"
+        src = note
+        for tag, where in legend.items():
+            if tag != "A":
+                src = src.replace(f"[{tag}]", f"[{tag}: {where}]")
+        conf = "unverified" if UNVERIFIED.search(src) else "assumption" if ASSUMPTION.search(src) else "sourced" if src else "untagged"
+        rows.append({"input": f"{path.stem}.{p}", "value": v, "unit": unit_for(p), "source": src, "confidence": conf})
+
+
 def register(path: Path) -> list[dict]:
     """Every numeric leaf: dotted path, value, unit, source text, confidence.
 
@@ -72,6 +93,7 @@ def register(path: Path) -> list[dict]:
     rows: list[dict] = []
     stack: list[tuple[int, str, str]] = []  # (indent, key, comment inherited by children)
     pending = ""
+    counters: dict[str, int] = {}
     for raw in lines:
         s = raw.strip()
         if not s:
@@ -82,10 +104,27 @@ def register(path: Path) -> list[dict]:
                 pending = s.lstrip("# ").strip()
             continue
         body, cm = _split_comment(raw)
-        if body.strip().startswith("-") or ":" not in body:
-            continue
         indent = len(raw) - len(raw.lstrip())
-        key, _, rest = body.strip().partition(":")
+        stripped = body.strip()
+        if stripped.startswith("- "):  # list item: belongs to the nearest enclosing key
+            while stack and stack[-1][0] >= indent:
+                stack.pop()
+            parent = ".".join(k for _, k, _ in stack)
+            n = counters.get(parent, 0)
+            counters[parent] = n + 1
+            try:
+                val = yaml.safe_load(stripped[2:])
+            except yaml.YAMLError:
+                continue
+            tag = str(val.get("id") or val.get("name") or n) if isinstance(val, dict) else str(n)
+            inherited = next((c for _, _, c in reversed(stack) if c), "")
+            note = cm or pending or inherited
+            pending = ""
+            _emit(rows, path, legend, f"{parent}[{tag}]", val, note)
+            continue
+        if ":" not in body:
+            continue
+        key, _, rest = stripped.partition(":")
         while stack and stack[-1][0] >= indent:
             stack.pop()
         full = ".".join([k for _, k, _ in stack] + [key.strip()])
@@ -100,17 +139,7 @@ def register(path: Path) -> list[dict]:
             val = yaml.safe_load(rest)
         except yaml.YAMLError:  # continuation of a multi-line flow mapping
             continue
-        items = val.items() if isinstance(val, dict) else [(None, val)]
-        for k, v in items:
-            if isinstance(v, bool) or not isinstance(v, (int, float)):
-                continue
-            p = f"{full}.{k}" if k is not None else full
-            src = note
-            for tag, where in legend.items():
-                if tag != "A":
-                    src = src.replace(f"[{tag}]", f"[{tag}: {where}]")
-            conf = "unverified" if UNVERIFIED.search(src) else "assumption" if ASSUMPTION.search(src) else "sourced" if src else "untagged"
-            rows.append({"input": f"{path.stem}.{p}", "value": v, "unit": unit_for(p), "source": src, "confidence": conf})
+        _emit(rows, path, legend, full, val, note)
     return rows
 
 
@@ -139,12 +168,12 @@ def check_facts(cfg: dict, s2: dict) -> list[Check]:
     blob = json.dumps(s2)
     stale = re.search(r"moratorium[^\"]{0,60}2014|2014[^\"]{0,60}moratorium", blob, re.I)
     ok15 = "moratorium Feb 2015" in blob
-    out.append(("FAIL" if stale else "PASS" if ok15 else "WARN", "Gas moratorium dated Feb 2015, not 2014 (verification.md 6a)",
-                "stale 2014 wording found" if stale else "Feb 2015 cited in sources" if ok15 else "no moratorium date in site2.json"))
+    out.append(("PASS" if ok15 and not stale else "FAIL", "Gas moratorium dated Feb 2015, not 2014 (verification.md 6a)",
+                "stale 2014 wording found" if stale else "Feb 2015 cited in sources" if ok15 else "moratorium date missing from site2.json"))
     lc = s2["finance"]["lcoh_usd_mwh"]["utility_7pct"]
     inc = s2["extras"].get("lcoh_incentive_scenario_if_qualifies_usd_mwh")
     lines = " ".join(x["item"].lower() for x in s2["finance"]["capex_musd"]["lines"])
-    no_itc = s2["meta"].get("scenario") == "base" and (inc is None or inc < lc) and "itc" not in lines and "grant" not in lines
+    no_itc = s2["meta"].get("scenario") == "base" and (inc is None or inc < lc) and not re.search(r"\bitc\b|\bgrant\b", lines)
     out.append(("PASS" if no_itc else "FAIL", "No federal ITC in the base case (incentive case reported separately)",
                 f"base LCOH {lc} vs incentive-if-qualifies {inc}; ITC kept in extras only"))
     return out
@@ -154,6 +183,7 @@ def check_bounds(s2: dict, cfg: dict) -> list[Check]:
     T, F, I, S = s2["totals"], s2["finance"], s2["impact"], s2["supply"]
     inc = F["incumbent_usd_mwh"]
     avail_frac = cfg["engineering"]["supply"]["capture_availability"]
+    oil_ef = cfg["impact"]["ef_kg_kwh"]["oil"]  # t/MWh == kg/kWh; oil is the highest-emitting displaced fuel
     cases = [
         ("avg COP within the organizer 2-6 range", 2.0 <= T["avg_cop"] <= 6.0, T["avg_cop"]),
         ("share of available heat used in 0-100%", 0 < T["share_of_available_pct"] < 100, T["share_of_available_pct"]),
@@ -166,11 +196,11 @@ def check_bounds(s2: dict, cfg: dict) -> list[Check]:
         ("propane incumbent within $100-$180/MWh (propane $2.74-$3.46/gal)", 100 <= inc["propane"] <= 180, inc["propane"]),
         ("tariff below propane-equivalent", F["tariff_usd_mwh"] < inc["propane"], F["tariff_usd_mwh"]),
         ("low-income tariff below standard tariff", F["low_income_tariff_usd_mwh"] < F["tariff_usd_mwh"], F["low_income_tariff_usd_mwh"]),
-        ("CO2 avoided positive and under fossil displaced x 0.252 t/MWh", 0 < I["co2_avoided_t_yr"] < I["fossil_displaced_MWh"] * 0.252, I["co2_avoided_t_yr"]),
+        (f"CO2 avoided positive and under fossil displaced x {oil_ef} t/MWh", 0 < I["co2_avoided_t_yr"] < I["fossil_displaced_MWh"] * oil_ef, I["co2_avoided_t_yr"]),
         ("ERF within 0-1", 0 <= I["erf"] <= 1, I["erf"]),
         ("heat available = IT x load factor x capture x availability x 8760 h",
          _near(S["heat_available_GWh"], S["it_load_MW"] * S["load_factor"] * S["capture_fraction"] * 8.76 * avail_frac, 0.01, 0.5), S["heat_available_GWh"]),
-        ("greenhouse area stays in hectares (<= 50 ha)", 0 < I.get("greenhouse_ha", 1) <= 50, I.get("greenhouse_ha")),
+        ("greenhouse area stays in hectares (<= 50 ha)", 0 < I["greenhouse_ha"] <= 50, I["greenhouse_ha"]),
     ]
     return [("PASS" if ok else "FAIL", n, str(v)) for n, ok, v in cases]
 
@@ -191,7 +221,7 @@ def check_balance(s2: dict) -> list[Check]:
         ("monthly backup = annual backup", _near(sum(x["backup_MWh"] for x in m), T["backup_MWh"]), ""),
         ("monthly demand = heat delivered (nothing unmet)", _near(sum(x["demand_MWh"] for x in m), deliv), f"{sum(x['demand_MWh'] for x in m):.0f}"),
         ("hourly: demand = delivered + backup (sample weeks)", worst_h < 0.01, f"worst gap {worst_h:.4f} MW"),
-        ("heat-pump electricity = corridor heat / avg COP (within 10%; on-site is direct exchange)", _near(hp, corr / cop, 0.10, 1.0), f"{hp:.0f} vs {corr / cop:.0f}"),
+        ("heat-pump electricity = corridor heat / avg COP (within 3%; on-site is direct exchange)", _near(hp, corr / cop, 0.03, 1.0), f"{hp:.0f} vs {corr / cop:.0f}"),
         ("heat drawn from the data center fits within available supply", 0 < deliv - hp <= avail, f"{deliv - hp:.0f} MWh of {avail:.0f}"),
         ("share of available = delivered / available", _near(T["share_of_available_pct"], 100 * deliv / avail, 0.02, 0.1), T["share_of_available_pct"]),
     ]

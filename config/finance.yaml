@@ -42,7 +42,7 @@ incentives:
 dc_exit:
   year: 10   # [A] data-center supply contract horizon ~10 yr (DCs rarely sign longer)
   replacement_source_usd_kw: 2000   # [A]
-tornado:
+tornado:   # [A] low/high sweep ranges for the sensitivity chart (not sourced values)
   pipe_cost: [0.7, 1.4]
   elec_price: [0.14, 0.32]
   eta: [0.4, 0.6]

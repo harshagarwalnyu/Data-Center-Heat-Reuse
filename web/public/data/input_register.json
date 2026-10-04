@@ -2,14 +2,14 @@
   {
     "input": "engineering.site.lat",
     "value": 42.602544,
-    "unit": "-",
+    "unit": "deg",
     "source": "research/offtakers.md (GEM wiki)",
     "confidence": "sourced"
   },
   {
     "input": "engineering.site.lon",
     "value": -76.635978,
-    "unit": "-",
+    "unit": "deg",
     "source": "Engineering inputs, Site 2 (Lake Hawkeye, Lansing NY).",
     "confidence": "sourced"
   },
@@ -72,7 +72,7 @@
   {
     "input": "engineering.supply.outage_seed",
     "value": 7,
-    "unit": "-",
+    "unit": "seed",
     "source": "[A] RNG seed for the outage schedule, reproducibility only",
     "confidence": "assumption"
   },
@@ -399,6 +399,27 @@
     "confidence": "assumption"
   },
   {
+    "input": "engineering.town.others[Town Hall + Highway].mwh",
+    "value": 140,
+    "unit": "MWh",
+    "source": "[A] areas; Town Hall 8,200 sf from Lansing capital plan (research/offtakers.md)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.others[Community Library + Center].mwh",
+    "value": 180,
+    "unit": "MWh",
+    "source": "[A] areas; Town Hall 8,200 sf from Lansing capital plan (research/offtakers.md)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.others[Woodsedge senior apartments].mwh",
+    "value": 1200,
+    "unit": "MWh",
+    "source": "[A] areas; Town Hall 8,200 sf from Lansing capital plan (research/offtakers.md)",
+    "confidence": "assumption"
+  },
+  {
     "input": "engineering.town.dhw_share",
     "value": 0.1,
     "unit": "fraction",
@@ -536,7 +557,7 @@
     "value": 0.108,
     "unit": "$/kWh",
     "source": "central HP + pumping behind DC utility service: NY industrial average 10.81 c/kWh, EIA Electric Power Monthly Table 5.6.A, July 2026 (https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a). NYSEG SC-7 tariff not checked; a 100+ MW campus may get less",
-    "confidence": "sourced"
+    "confidence": "unverified"
   },
   {
     "input": "finance.prices.propane_usd_gal",
@@ -770,6 +791,111 @@
     "confidence": "assumption"
   },
   {
+    "input": "finance.tornado.pipe_cost[0]",
+    "value": 0.7,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.pipe_cost[1]",
+    "value": 1.4,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.elec_price[0]",
+    "value": 0.14,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.elec_price[1]",
+    "value": 0.32,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.eta[0]",
+    "value": 0.4,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.eta[1]",
+    "value": 0.6,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.uptake[0]",
+    "value": 0.45,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.uptake[1]",
+    "value": 0.9,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.discount_rate[0]",
+    "value": 0.04,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.discount_rate[1]",
+    "value": 0.1,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.dc_it_mw[0]",
+    "value": 75,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.dc_it_mw[1]",
+    "value": 320,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tariff_scenarios_discount[0]",
+    "value": 0.15,
+    "unit": "-",
+    "source": "0.85x / 0.80x / 0.75x propane-equivalent (coordinator note: Windows lane used 0.75x)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.tariff_scenarios_discount[1]",
+    "value": 0.2,
+    "unit": "-",
+    "source": "0.85x / 0.80x / 0.75x propane-equivalent (coordinator note: Windows lane used 0.75x)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.tariff_scenarios_discount[2]",
+    "value": 0.25,
+    "unit": "-",
+    "source": "0.85x / 0.80x / 0.75x propane-equivalent (coordinator note: Windows lane used 0.75x)",
+    "confidence": "sourced"
+  },
+  {
     "input": "finance.cost_split.dc_interface.dc",
     "value": 0.5,
     "unit": "-",
@@ -996,7 +1122,7 @@
   {
     "input": "offtakers.weights.community",
     "value": 0.15,
-    "unit": "-",
+    "unit": "fraction",
     "source": "[A] scoring weights",
     "confidence": "assumption"
   },
@@ -1019,6 +1145,461 @@
     "value": 1800,
     "unit": "-",
     "source": "[A] full-load hours by load shape",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].lat",
+    "value": 42.6028,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].lon",
+    "value": -76.6336,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].supply_temp_C",
+    "value": 45,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].community",
+    "value": 0.6,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].lat",
+    "value": 42.6025,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].lon",
+    "value": -76.634,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].supply_temp_C",
+    "value": 30,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].community",
+    "value": 0.6,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].lat",
+    "value": 42.602,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].lon",
+    "value": -76.633,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].supply_temp_C",
+    "value": 40,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].lat",
+    "value": 42.585,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].lon",
+    "value": -76.6,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].supply_temp_C",
+    "value": 20,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].lat",
+    "value": 42.592,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].lon",
+    "value": -76.538,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].annual_MWh",
+    "value": 2500,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].supply_temp_C",
+    "value": 45,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].community",
+    "value": 0.6,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].lat",
+    "value": 42.618,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].lon",
+    "value": -76.53,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].annual_MWh",
+    "value": 300,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].supply_temp_C",
+    "value": 40,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].community",
+    "value": 0.4,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].lat",
+    "value": 42.5442,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].lon",
+    "value": -76.5339,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].lat",
+    "value": 42.5378,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].lon",
+    "value": -76.5036,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].annual_MWh",
+    "value": 140,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].community",
+    "value": 0.9,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].lat",
+    "value": 42.5377,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].lon",
+    "value": -76.5031,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].annual_MWh",
+    "value": 180,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].community",
+    "value": 0.9,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].lat",
+    "value": 42.538,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].lon",
+    "value": -76.5,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].annual_MWh",
+    "value": 1200,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].supply_temp_C",
+    "value": 55,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].lat",
+    "value": 42.548,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].lon",
+    "value": -76.549,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].annual_MWh",
+    "value": 250,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].supply_temp_C",
+    "value": 45,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].community",
+    "value": 0.7,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].lat",
+    "value": 42.5325,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].lon",
+    "value": -76.5258,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].annual_MWh",
+    "value": 8000,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].supply_temp_C",
+    "value": 60,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].community",
+    "value": 0.5,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].lat",
+    "value": 42.4918,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].lon",
+    "value": -76.4607,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].annual_MWh",
+    "value": 5000,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].community",
+    "value": 0.4,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].lat",
+    "value": 42.488,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].lon",
+    "value": -76.462,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].annual_MWh",
+    "value": 6000,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].supply_temp_C",
+    "value": 60,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].community",
+    "value": 0.4,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
     "confidence": "assumption"
   }
 ]
