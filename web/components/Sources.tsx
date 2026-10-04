@@ -43,7 +43,7 @@ export function Sources({ data }: { data: AppData }) {
       <NavBar active="/sources/" />
       <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1500px] w-full mx-auto text-[1.125rem]">
         <p className="kicker !text-[1.125rem] m-0 mb-2">Data &amp; sources</p>
-        <h1 className="headline m-0 !text-[clamp(2rem,3.2vw,3.25rem)] max-w-[30ch]">Every numeric input is either sourced or labeled as our assumption</h1>
+        <h1 className="t-h1 m-0 max-w-[30ch]">Every numeric input is either sourced or labeled as our assumption</h1>
         <p className="mt-3 text-ink2 max-w-[70ch]">
           Generated {d.meta.generated} ({d.meta.scenario} case). The model reads these inputs from <code>config/*.yaml</code>; a self-check (<code>python -m heatreuse.verify</code>) fails if any input has no source note. Assumptions are marked as assumptions, not presented as facts.
         </p>

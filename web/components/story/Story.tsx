@@ -30,7 +30,9 @@ export function Story({ data }: { data: AppData }) {
   const [short, setShort] = useState(() => (hash0 !== null ? !steps[hash0].deepDive : true)); // default = ~5-minute path; S toggles the deep dive
   const [secs, setSecs] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [presenter] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("presenter") === "1"); // ?presenter=1 window: notes + next slide, no audience slide
+  const [presenter] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("presenter") === "1");
+  // Presenter chrome (notes, presenter window, deep dive, step counter, key hints) only with ?present=1.
+  const [present] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("present") === "1"); // ?presenter=1 window: notes + next slide, no audience slide
   const chan = useRef<BroadcastChannel | null>(null);
   const applyingRemote = useRef(false); // set when a state change came from the other window; consumed by the publish effect
   const mounted = useRef(false); // first render never publishes; the hello reply is adopted instead
@@ -124,9 +126,9 @@ export function Story({ data }: { data: AppData }) {
           e.preventDefault(); move(-1); break;
         case "Home": e.preventDefault(); go(0); break;
         case "End": e.preventDefault(); go(steps.length - 1); break;
-        case "p": case "P": setNotes((n) => !n); break;
-        case "o": case "O": openPresenter(); break;
-        case "s": case "S": setShort((s) => !s); break;
+        case "p": case "P": if (present) setNotes((n) => !n); break;
+        case "o": case "O": if (present) openPresenter(); break;
+        case "s": case "S": if (present) setShort((s) => !s); break;
         case "f": case "F":
           if (document.fullscreenElement) void document.exitFullscreen();
           else void document.documentElement.requestFullscreen?.().catch(() => {});
@@ -135,7 +137,7 @@ export function Story({ data }: { data: AppData }) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [move, go, steps.length, openPresenter]);
+  }, [move, go, steps.length, openPresenter, present]);
 
   const s = steps[i];
   // Kicker number = position on the active path, so it always matches the "Step N of M" counter.
@@ -180,7 +182,7 @@ export function Story({ data }: { data: AppData }) {
 
   return (
     <div className="h-dvh flex flex-col bg-bg overflow-hidden">
-      <NavBar active="/" />
+      <NavBar active="/story/" />
       <div className="h-1.5 bg-line no-print" role="progressbar" aria-valuemin={1} aria-valuemax={path.length} aria-valuenow={pos + 1} aria-label="Story progress">
         <div className="h-full" style={{ width: `${((pos + 1) / path.length) * 100}%`, background: "linear-gradient(90deg,var(--ember),var(--amber))", transition: calm ? "none" : "width .4s" }} />
       </div>
@@ -229,14 +231,14 @@ export function Story({ data }: { data: AppData }) {
       <footer className="no-print flex items-center gap-3 px-5 py-2 border-t border-line bg-bg text-[1rem] text-ink2 whitespace-nowrap">
         <button className="btn shrink-0 whitespace-nowrap" onClick={() => move(-1)} aria-label="Previous step" disabled={pos === 0}>&larr; Back</button>
         <button className="btn shrink-0 whitespace-nowrap" onClick={() => move(1)} aria-label="Next step" disabled={pos === path.length - 1}>Next &rarr;</button>
-        <span className="num font-bold text-ink text-[1.125rem] shrink-0 whitespace-nowrap" aria-live="polite">Step {pos + 1} of {path.length}</span>
-        <button className="btn shrink-0 whitespace-nowrap" onClick={() => setShort((v) => !v)} title="Switch between the 5-minute path and the full deep dive (key S)">{short ? "Show deep dive" : "Back to 5-minute path"}</button>
-        <span className="ml-auto min-w-0 truncate hidden min-[1440px]:inline" title="Arrows, space or PageDown move · P notes · O presenter window · F fullscreen · S deep dive on/off">Arrows move · P notes · O presenter · F fullscreen · S deep dive</span>
-        <button className="btn shrink-0 whitespace-nowrap ml-auto min-[1440px]:ml-0" aria-pressed={notes} onClick={() => setNotes((n) => !n)}>Notes (P)</button>
-        <button className="btn shrink-0 whitespace-nowrap" onClick={openPresenter} title="Open notes and the next slide in a second window that stays in sync (key O)">Presenter (O)</button>
+        {present && <span className="num font-bold text-ink text-[1.125rem] shrink-0 whitespace-nowrap" aria-live="polite">Step {pos + 1} of {path.length}</span>}
+        {present && <button className="btn shrink-0 whitespace-nowrap" onClick={() => setShort((v) => !v)} title="Switch between the 5-minute path and the full deep dive (key S)">{short ? "Show deep dive" : "Back to 5-minute path"}</button>}
+        {present && <span className="ml-auto min-w-0 truncate hidden min-[1440px]:inline" title="Arrows, space or PageDown move · P notes · O presenter window · F fullscreen · S deep dive on/off">Arrows move · P notes · O presenter · F fullscreen · S deep dive</span>}
+        {present && <button className="btn shrink-0 whitespace-nowrap ml-auto min-[1440px]:ml-0" aria-pressed={notes} onClick={() => setNotes((n) => !n)}>Notes (P)</button>}
+        {present && <button className="btn shrink-0 whitespace-nowrap" onClick={openPresenter} title="Open notes and the next slide in a second window that stays in sync (key O)">Presenter (O)</button>}
       </footer>
 
-      {notes && (
+      {present && notes && (
         <aside className="no-print fixed bottom-0 left-0 right-0 z-30 border-t-4 border-teal bg-surface p-5 shadow-2xl max-h-[46dvh] overflow-y-auto" role="complementary" aria-label="Speaker notes">
           <div className="max-w-[1500px] mx-auto grid gap-4 lg:grid-cols-[1fr_320px]">
             <div>

@@ -22,7 +22,7 @@ function Kpi({ label, value, unit, delta, good, before, badge }: { label: string
   return (
     <div className="card p-4" style={badge ? { borderColor: "var(--ember)", borderWidth: 2 } : undefined}>
       <div className="text-[1.0625rem] text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1">{label}{badge && <span className="chip !py-0.5 !px-2.5 !text-[1rem]" style={{ background: "var(--ember)", borderColor: "var(--ember)", color: "#fff" }}>{badge}</span>}</div>
-      <div className="serif num font-bold leading-none mt-1 flex flex-wrap items-baseline gap-x-3" style={{ fontSize: "clamp(2rem,3.2vw,3rem)" }}>
+      <div className="t-stat num mt-1 flex flex-wrap items-baseline gap-x-3">
         {before && <s className="text-ink2 font-semibold" style={{ fontSize: "0.6em", textDecorationThickness: "3px", textDecorationColor: "var(--ember)" }} aria-label={`was ${before}`}>{before}</s>}
         <span style={badge ? { color: "var(--ember-text)" } : undefined}>{value}<span className="unit">{unit}</span></span>
       </div>
@@ -56,7 +56,7 @@ export function Explore({ data }: { data: AppData }) {
       <NavBar active="/explore/" />
       <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1600px] w-full mx-auto">
         <p className="kicker m-0 mb-2">Explore mode</p>
-        <h1 className="headline m-0 !text-[clamp(2rem,3vw,3rem)] max-w-[30ch]">Change the assumptions and watch the answer move</h1>
+        <h1 className="t-h1 m-0 max-w-[30ch]">Change the assumptions and watch the answer move</h1>
         <div className="grid gap-6 mt-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
           <section className="card p-5 grid gap-5 content-start" aria-label="Assumptions">
             <Slider id="price" label="Electricity price for heat pumps" value={p.elecPrice} min={60} max={300} step={5} unit="$/MWh" onChange={(v) => set("elecPrice", v)} />

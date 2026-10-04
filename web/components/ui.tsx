@@ -25,27 +25,26 @@ export function ThemeButton() {
 }
 
 const NAV = [
-  { href: "/", label: "Story" },
+  { href: "/", label: "Home" },
   { href: "/explore/", label: "Explore" },
-  { href: "/compare/", label: "Compare sites" },
+  { href: "/compare/", label: "Compare" },
   { href: "/how/", label: "How it works" },
-  { href: "/sources/", label: "Data & sources" },
-  { href: "/print/", label: "One-pager" },
+  { href: "/sources/", label: "Sources" },
 ];
 
 export function NavBar({ active, extra }: { active: string; extra?: ReactNode }) {
   return (
-    <header className="no-print flex items-center gap-3 px-5 py-2 border-b border-line bg-bg">
+    <header className="no-print flex flex-wrap items-center gap-x-3 gap-y-1 px-[clamp(0.75rem,2vw,1.25rem)] py-2 border-b border-line bg-bg">
       <Link prefetch={false} href="/" className="serif font-bold text-[1.25rem] mr-3 whitespace-nowrap text-ink no-underline">
-        <span className="text-ember">&#9650;</span> {PROJECT_TITLE}<span className="hidden md:inline font-sans font-semibold text-[1rem] text-ink2 ml-2">{PROJECT_TAGLINE}</span>
+        <span className="text-ember">&#9650;</span> {PROJECT_TITLE}<span className="hidden lg:inline font-sans font-semibold text-[1rem] text-ink2 ml-2">{PROJECT_TAGLINE}</span>
       </Link>
-      <nav aria-label="Primary" className="flex gap-1">
+      <nav aria-label="Primary" className="order-last w-full md:order-none md:w-auto flex gap-1 overflow-x-auto -mx-1 px-1">
         {NAV.map((n) => (
           <Link prefetch={false}
             key={n.href}
             href={n.href}
             aria-current={active === n.href ? "page" : undefined}
-            className="min-h-[44px] inline-flex items-center px-3 rounded-lg font-semibold text-[1.0625rem] no-underline"
+            className="min-h-[44px] inline-flex items-center px-2 sm:px-3 rounded-lg font-semibold text-[1rem] sm:text-[1.0625rem] no-underline whitespace-nowrap"
             style={active === n.href ? { background: "var(--navy)", color: "var(--bg)" } : { color: "var(--ink)" }}
           >
             {n.label}

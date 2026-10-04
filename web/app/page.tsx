@@ -1,7 +1,7 @@
 "use client";
 import { DataGate } from "@/components/ui";
-import { Story } from "@/components/story/Story";
+import { Home } from "@/components/Home";
 
-export default function Home() {
-  return <DataGate>{(d) => <Story data={d} />}</DataGate>;
+export default function Page() {
+  return <DataGate>{(d) => <Home data={d} />}</DataGate>;
 }

@@ -30,7 +30,7 @@ export function HowItWorks({ data }: { data: AppData }) {
       <NavBar active="/how/" />
       <main className="flex-1 px-[clamp(1.25rem,3vw,3rem)] py-6 max-w-[1500px] w-full mx-auto">
         <p className="kicker m-0 mb-2">How it works</p>
-        <h1 className="headline m-0 !text-[clamp(2rem,3.2vw,3.25rem)] max-w-[30ch]">Every number here comes from an hour-by-hour model you can rerun</h1>
+        <h1 className="t-h1 m-0 max-w-[30ch]">Every number here comes from an hour-by-hour model you can rerun</h1>
 
         <section aria-label="Pipeline" className="grid gap-3 mt-5 md:grid-cols-2 xl:grid-cols-4">
           <Box n="1 · Weather and demand" title="Real weather, every hour">Typical-year weather drives heating demand for each user in each of {int(HOURS)} hours of the year.</Box>
