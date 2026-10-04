@@ -96,7 +96,7 @@ The honest part. Selling below propane leaves a twenty-six-million-dollar gap. T
 
 ### 3:50, Slide 8, What Lansing gets: Philip Matchev
 
-Five hundred homes off propane and oil, a farm and a pool, and an energy reuse factor of four-point-six percent, limited by demand, not supply. Jobs and food are scenario estimates. We claim no lake water saved.
+Five hundred homes off propane and oil, a farm and a pool, and an energy reuse factor of four-point-six percent, limited by demand, not supply. Jobs and food are scenario estimates. We claim no lake water saved. And one more term we propose in the benefit agreement: one hundred fifty thousand dollars a year for computer science in Lansing's three public schools, on top of the heat money. Warm homes now, and the next generation of thinkers after them.
 
 [Click to slide 9.]
 
