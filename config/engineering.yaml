@@ -84,3 +84,29 @@ air_source:               # incumbent comparison, seasonal COP computed hourly
   eta: 0.4                # [A]
   sink_c: 40
   approach_k: 5
+hydraulics:               # screening hydraulics (heatreuse.hydraulics); not used by the base model
+  delta_t:                # [A] supply/return design intent per ring, C (sets design flow Q = P / (rho cp dT))
+    onsite:
+      supply_c: 45.0      # [A] design intent 45/25 C low-temperature campus loop
+      return_c: 25.0      # [A] design intent 45/25 C low-temperature campus loop
+      basis: "ASSUMPTION design intent 45/25 C low-temperature campus loop"
+    corridor:
+      supply_c: 20.0      # [A] design intent 20/15 C ambient loop (building HP evaporators)
+      return_c: 15.0      # [A] design intent 20/15 C ambient loop (building HP evaporators)
+      basis: "ASSUMPTION design intent 20/15 C ambient loop (building HP evaporators)"
+    town:
+      supply_c: 65.0      # [A] design intent 65/35 C hot loop
+      return_c: 35.0      # [A] design intent 65/35 C hot loop
+      basis: "ASSUMPTION design intent 65/35 C hot loop"
+  pump_eta: 0.70          # [A] pump hydraulic efficiency at duty point (shaft power = rho g Q H / eta)
+  motor_drive_eta: 0.93   # [A] motor + variable-speed drive efficiency (electrical = shaft / this)
+  fittings: 0.30          # [A] +30% on straight-pipe friction for bends, valves, tees
+  end_head_m: 10.0        # [A] plant heat exchanger + critical-customer substation / evaporator allowance (~1 bar)
+  min_flow: 0.20          # [A] variable-speed minimum-flow floor (share of design flow)
+  v_max_small_m_s: 1.5    # [A] velocity limit for small pipes (DN <= small_dn), common district-heating practice
+  v_max_large_m_s: 2.0    # [A] velocity limit for larger pipes, common district-heating practice
+  small_dn: 150           # [A] DN boundary between the small- and large-pipe velocity limits
+  r_max_pa_m: 100.0       # [A] max specific friction loss, typical district-heating sizing guide
+  roughness_mm:           # [A] absolute pipe roughness, typical handbook values
+    steel: 0.05           # [A] commercial steel
+    hdpe: 0.007           # [A] smooth plastic (HDPE)
