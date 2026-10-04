@@ -32,7 +32,7 @@ export function SiteMap() {
   const kmPx = scale;
 
   return (
-    <figure className="w-full">
+    <figure className="w-full" style={{ maxWidth: `calc(60vh * ${W / H})` }}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-lg border border-line bg-surface" role="img"
         aria-label="Schematic map: the plant on Cayuga Lake's east shore, the on-site campus beside it, a 3 km corridor of homes, and the town center 10 to 13 km southeast.">
         <path d={lake} fill="var(--wash-1)" stroke="var(--axis)" />

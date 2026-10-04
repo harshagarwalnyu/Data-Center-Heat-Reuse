@@ -418,8 +418,8 @@ export default function Story() {
 
   const s = slides[i];
   return (
-    <div className="mx-auto flex max-w-6xl flex-col px-4 py-6 lg:py-10">
-      <div className="no-print mb-6 flex items-center gap-3" aria-label="Progress">
+    <div className="mx-auto flex max-w-6xl flex-col px-4 py-6 lg:py-5">
+      <div className="no-print mb-6 flex items-center gap-3 lg:mb-4" aria-label="Progress">
         {slides.map((_, k) => (
           <button
             key={k}
@@ -437,12 +437,12 @@ export default function Story() {
             <span>{s.kicker}</span>
             {s.lens && <span className="rounded-full border border-line px-2 py-0.5 text-sm">{s.lens}</span>}
           </div>
-          <h1 className="text-3xl font-semibold leading-tight lg:text-5xl">{s.title}</h1>
+          <h1 className="text-3xl font-semibold leading-tight lg:text-[2.6rem]">{s.title}</h1>
           <div className="space-y-4">{s.body}</div>
         </div>
         <div className="min-w-0">{s.visual}</div>
       </article>
-      <div className="no-print mt-10 flex items-center justify-between">
+      <div className="no-print mt-8 flex items-center justify-between lg:mt-5">
         <button onClick={() => go(-1)} disabled={i === 0} className="rounded-lg border border-line px-5 py-3 text-lg disabled:opacity-40">
           ← Back
         </button>
@@ -452,7 +452,7 @@ export default function Story() {
         <button
           onClick={() => go(1)}
           disabled={i === slides.length - 1}
-          className="rounded-lg bg-[var(--s1)] px-5 py-3 text-lg font-semibold text-white disabled:opacity-40"
+          className="rounded-lg bg-[var(--accent-strong)] px-5 py-3 text-lg font-semibold text-white disabled:opacity-40"
         >
           Next →
         </button>

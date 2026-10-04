@@ -318,7 +318,7 @@ def _stakeholders(cfg, fins, imp, tariff, propane, hh, exit_) -> list[dict]:
         {"who": "Greenhouse / aquaculture operators", "value": "Near-free low-temperature heat year round",
          "metric": f"On-site LCOH ${fins['onsite'].lcoh[cfg['finance']['gate_rate']]:.0f}/MWh vs ${propane:.0f} propane"},
         {"who": "Cayuga Lake", "value": "No lake water for cooling; closed-loop aquaponics captures nutrients",
-         "metric": f"{imp['co2_avoided_t_yr']:,.0f} t CO2/yr avoided"},
+         "metric": f"{round(imp['co2_avoided_t_yr'], -2):,.0f} t CO2/yr avoided"},
     ]
 
 
@@ -329,7 +329,7 @@ def _hdr(imp, onsite, summer_share) -> list[dict]:
         {"lens": "Community", "petal": "Place", "claim": "Brownfield coal site becomes an agri-food campus",
          "metric": f"{imp['jobs']} jobs, {imp['local_food_t_yr']:,} t/yr food"},
         {"lens": "Ecology", "petal": "Energy", "claim": "Recovered DC heat replaces propane boilers",
-         "metric": f"{imp['co2_avoided_t_yr']:,.0f} t CO2/yr; ERF {imp['erf']:.1%}"},
+         "metric": f"{round(imp['co2_avoided_t_yr'], -2):,.0f} t CO2/yr; ERF {imp['erf']:.1%}"},
         {"lens": "Ecology", "petal": "Water", "claim": "No lake water for cooling; heat reuse cuts dry-cooler fan energy",
          "metric": f"{imp['water']['fan_energy_saved_MWh']:,.0f} MWh/yr fan energy"},
         {"lens": "Health", "petal": "Air", "claim": "Less propane and oil burned locally",

@@ -34,7 +34,7 @@ export function Ladder({ rows }: { rows: { temp: number; label: string; detail: 
   const max = 70, min = 10;
   return (
     <div className="relative rounded-lg border border-line bg-surface p-4" role="list" aria-label="Temperature ladder">
-      <div className="relative h-[380px]">
+      <div className="relative h-[min(380px,48vh)]">
         <div className="absolute left-[64px] top-0 bottom-0 w-px bg-[var(--axis)]" />
         {rows.map((r) => {
           const top = ((max - r.temp) / (max - min)) * 100;

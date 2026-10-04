@@ -148,7 +148,7 @@ export function WeekChart({ rows, title }: { rows: WeekRow[]; title: string }) {
           ]}
         />
       </figcaption>
-      <div className="relative">
+      <div className="relative" style={{ maxWidth: `calc(54vh * ${W / (H + H2)})` }}>
         <svg
           viewBox={`0 0 ${W} ${H + H2}`}
           className="w-full touch-none select-none"
@@ -166,7 +166,7 @@ export function WeekChart({ rows, title }: { rows: WeekRow[]; title: string }) {
           {bands.map(([a, b]) => (
             <g key={a}>
               <rect x={x(a)} y={padT} width={Math.max(x(b) - x(a), 2)} height={H - padT - padB + H2} fill="var(--band)" />
-              <text x={x(a) + 6} y={padT + 14} fontSize={12} fill="var(--ink-2)">
+              <text x={x(a) + 6} y={padT + 14} fontSize={14} fill="var(--ink-2)">
                 DC heat offline {b - a + 1} h
               </text>
             </g>
@@ -174,7 +174,7 @@ export function WeekChart({ rows, title }: { rows: WeekRow[]; title: string }) {
           {ticks(yMax).map((t) => (
             <g key={t}>
               <line x1={padL} x2={W - padR} y1={y(t)} y2={y(t)} stroke={t === 0 ? "var(--axis)" : "var(--grid)"} />
-              <text x={padL - 8} y={y(t) + 4} fontSize={12} textAnchor="end" fill="var(--muted)" className="tnum">
+              <text x={padL - 8} y={y(t) + 4} fontSize={14} textAnchor="end" fill="var(--muted)" className="tnum">
                 {num(t, yMax < 5 ? 1 : 0)}
               </text>
             </g>
@@ -183,7 +183,7 @@ export function WeekChart({ rows, title }: { rows: WeekRow[]; title: string }) {
             <g key={d}>
               <line x1={x(Math.min(d * 24, rows.length - 1))} x2={x(Math.min(d * 24, rows.length - 1))} y1={y(0)} y2={y(0) + 5} stroke="var(--axis)" />
               {d < 7 && (
-                <text x={x(d * 24 + 12)} y={H - padB + 18} fontSize={12} textAnchor="middle" fill="var(--muted)">
+                <text x={x(d * 24 + 12)} y={H - padB + 18} fontSize={14} textAnchor="middle" fill="var(--muted)">
                   Day {d + 1}
                 </text>
               )}
@@ -196,14 +196,14 @@ export function WeekChart({ rows, title }: { rows: WeekRow[]; title: string }) {
           {/* Storage small multiple: its own axis (MWh), never sharing the MW scale. */}
           <g transform={`translate(0, ${H})`}>
             <line x1={padL} x2={W - padR} y1={ys(0)} y2={ys(0)} stroke="var(--axis)" />
-            <text x={padL - 8} y={ys(sMax) + 4} fontSize={12} textAnchor="end" fill="var(--muted)" className="tnum">
+            <text x={padL - 8} y={ys(sMax) + 4} fontSize={14} textAnchor="end" fill="var(--muted)" className="tnum">
               {num(sMax)}
             </text>
-            <text x={padL - 8} y={ys(0) + 4} fontSize={12} textAnchor="end" fill="var(--muted)">
+            <text x={padL - 8} y={ys(0) + 4} fontSize={14} textAnchor="end" fill="var(--muted)">
               0
             </text>
             <path d={path((r) => r.storage_MWh, ys)} fill="none" stroke="var(--s3)" strokeWidth={2} />
-            <text x={W - padR} y={ys(sMax) + 4} fontSize={12} textAnchor="end" fill="var(--ink-2)">
+            <text x={W - padR} y={ys(sMax) + 4} fontSize={14} textAnchor="end" fill="var(--ink-2)">
               Storage tank, MWh
             </text>
           </g>
@@ -247,14 +247,14 @@ export type BarRow = {
 /** Horizontal bars, one baseline, value at the tip, optional per-row reference marker. */
 export function HBars({ rows, unit, title, max }: { rows: BarRow[]; unit: string; title: string; max?: number }) {
   const [hover, setHover] = useState<number | null>(null);
-  const rowH = 80, padL = 0, padR = 130, bar = 22;
+  const rowH = 86, padL = 0, padR = 150, bar = 24;
   const H = rows.length * rowH + 8;
   const vMax = max ?? niceMax(Math.max(...rows.map((r) => Math.max(r.value, r.marker?.value ?? 0))) * 1.02);
   const xs = (v: number) => padL + (Math.min(v, vMax) / vMax) * (W - padL - padR);
   return (
     <figure className="w-full">
       <figcaption className="mb-2 text-base font-semibold">{title}</figcaption>
-      <div className="relative">
+      <div className="relative" style={{ maxWidth: `calc(54vh * ${W / H})` }}>
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={`${title} (${unit})`}>
           {rows.map((r, i) => {
             const y0 = i * rowH + 26;
@@ -271,10 +271,10 @@ export function HBars({ rows, unit, title, max }: { rows: BarRow[]; unit: string
                 style={{ outline: "none" }}
               >
                 <rect x={0} y={i * rowH} width={W} height={rowH} fill="transparent" />
-                <text x={padL} y={y0 - 8} fontSize={15} fill="var(--ink)">
+                <text x={padL} y={y0 - 8} fontSize={18} fill="var(--ink)">
                   {r.label}
                   {r.note && (
-                    <tspan fill="var(--ink-2)" fontSize={13}>
+                    <tspan fill="var(--ink-2)" fontSize={15}>
                       {"  "}
                       {r.note}
                     </tspan>
@@ -287,14 +287,14 @@ export function HBars({ rows, unit, title, max }: { rows: BarRow[]; unit: string
                 />
                 <text
                   x={padL + w + 8 + (r.marker && xs(r.marker.value) >= padL + w - 2 && xs(r.marker.value) < padL + w + 90 ? xs(r.marker.value) - (padL + w) + 4 : 0)}
-                  y={y0 + bar / 2 + 5} fontSize={15} fontWeight={600} fill="var(--ink)" className="tnum">
+                  y={y0 + bar / 2 + 5} fontSize={18} fontWeight={600} fill="var(--ink)" className="tnum">
                   {r.valueLabel}
                   {clipped ? " →" : ""}
                 </text>
                 {r.marker && (
                   <g>
                     <line x1={xs(r.marker.value)} x2={xs(r.marker.value)} y1={y0 - 4} y2={y0 + bar + 4} stroke="var(--ink)" strokeWidth={2} />
-                    <text x={xs(r.marker.value)} y={y0 + bar + 20} fontSize={13} textAnchor="middle" fill="var(--ink-2)">
+                    <text x={xs(r.marker.value)} y={y0 + bar + 20} fontSize={15} textAnchor="middle" fill="var(--ink-2)">
                       {r.marker.label}
                     </text>
                   </g>
@@ -340,12 +340,12 @@ export function MonthlyColumns({ rows }: { rows: { month: number; delivered_MWh:
           ]}
         />
       </figcaption>
-      <div className="relative">
+      <div className="relative" style={{ maxWidth: `calc(54vh * ${W / H})` }}>
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Monthly heat delivered, MWh">
           {ticks(yMax).map((t) => (
             <g key={t}>
               <line x1={padL} x2={W - padR} y1={y(t)} y2={y(t)} stroke={t === 0 ? "var(--axis)" : "var(--grid)"} />
-              <text x={padL - 8} y={y(t) + 4} fontSize={12} textAnchor="end" fill="var(--muted)" className="tnum">
+              <text x={padL - 8} y={y(t) + 4} fontSize={14} textAnchor="end" fill="var(--muted)" className="tnum">
                 {num(t)}
               </text>
             </g>
@@ -381,7 +381,7 @@ export function MonthlyColumns({ rows }: { rows: { month: number; delivered_MWh:
                 ) : (
                   <path d={`M${cx - bw / 2},${y(0)} V${top + 4} a4,4 0 0 1 4,-4 h${bw - 8} a4,4 0 0 1 4,4 V${y(0)} Z`} fill="var(--s1)" />
                 )}
-                <text x={cx} y={H - 8} fontSize={12} textAnchor="middle" fill="var(--muted)">
+                <text x={cx} y={H - 8} fontSize={14} textAnchor="middle" fill="var(--muted)">
                   {months[i]}
                 </text>
               </g>
@@ -417,7 +417,7 @@ export function Tornado({ rows, base, title }: { rows: { driver: string; low: nu
       <figcaption className="mb-2 text-base font-semibold">{title}</figcaption>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={title}>
         <line x1={xs(base)} x2={xs(base)} y1={0} y2={H - 24} stroke="var(--ink-2)" />
-        <text x={xs(base)} y={H - 6} fontSize={12} textAnchor="middle" fill="var(--ink-2)" className="tnum">
+        <text x={xs(base)} y={H - 6} fontSize={14} textAnchor="middle" fill="var(--ink-2)" className="tnum">
           base ${num(base)}/MWh
         </text>
         {rows.map((r, i) => {
@@ -425,14 +425,14 @@ export function Tornado({ rows, base, title }: { rows: { driver: string; low: nu
           const x0 = xs(r.low), x1 = xs(r.high);
           return (
             <g key={r.driver}>
-              <text x={padL - 12} y={y0 + 16} fontSize={14} textAnchor="end" fill="var(--ink)">
+              <text x={padL - 12} y={y0 + 16} fontSize={15} textAnchor="end" fill="var(--ink)">
                 {r.label}
               </text>
               <rect x={x0} y={y0 + 2} width={Math.max(x1 - x0, 2)} height={20} rx={4} fill="var(--s1)" />
-              <text x={x0 - 6} y={y0 + 17} fontSize={12} textAnchor="end" fill="var(--ink-2)" className="tnum">
+              <text x={x0 - 6} y={y0 + 17} fontSize={14} textAnchor="end" fill="var(--ink-2)" className="tnum">
                 ${num(r.low)}
               </text>
-              <text x={x1 + 6} y={y0 + 17} fontSize={12} fill="var(--ink-2)" className="tnum">
+              <text x={x1 + 6} y={y0 + 17} fontSize={14} fill="var(--ink-2)" className="tnum">
                 ${num(r.high)}
               </text>
             </g>
