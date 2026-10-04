@@ -63,7 +63,7 @@ export function HowItWorks({ data }: { data: AppData }) {
               <li><Term tip="Capital recovery factor: the share of the up-front cost charged each year over the equipment life, at a given cost of money.">CRF</Term> = r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1), n = {LIFETIME_YR} yr: <span className="num">{dec(r4, 4)}</span> at 4%, <span className="num">{dec(r7, 4)}</span> at 7%.</li>
               <li>Capex ${dec(f.capex_musd.total, 1)}M, opex ${dec(f.opex_musd_yr, 2)}M per year, {int(T.heat_delivered_MWh)} MWh delivered.</li>
               <li>Result: <b className="num">${dec(f.lcoh_usd_mwh.coop_4pct, 0)}</b> at 4% (community finance), <b className="num">${dec(f.lcoh_usd_mwh.utility_7pct, 0)}</b> at 7%, <b className="num">${dec(f.lcoh_usd_mwh.private_10pct, 0)}</b> at 10% per MWh.</li>
-              <li>Tariff is set by policy at 0.8× propane (${dec(f.tariff_usd_mwh, 0)} per MWh), not by cost, so households save at any discount rate; the gap is a funding question.</li>
+              <li>The heat price is set by policy at 0.8× propane (${dec(f.tariff_usd_mwh, 0)} per MWh), not by cost, so households save at any discount rate; the gap is a funding question.</li>
             </ul>
             <p className="m-0 mt-3 text-ink2 text-caption">The Explore page recomputes this in your browser with the same formulas and scales the file&rsquo;s results, so base sliders match the model exactly.</p>
           </section>

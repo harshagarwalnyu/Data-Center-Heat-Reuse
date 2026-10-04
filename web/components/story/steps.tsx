@@ -184,7 +184,7 @@ export function buildSteps(data: AppData): Step[] {
       headline: "",
       layout: "wide",
       deepDive: true,
-      notes: "Let someone in the room pick their own fuel. Propane and oil homes save the most; natural gas homes would not save, which is why this is aimed at the homes gas never reached. The tariff is set about 20% below propane; there is a low-income tier. Be honest about gas.",
+      notes: "Let someone in the room pick their own fuel. Propane and oil homes save the most; natural gas homes would not save, which is why this is aimed at the homes gas never reached. The heat price is set about 20% below propane; there is a low-income tier. Be honest about gas.",
       full: (kicker) => <HouseholdCalc d={d} kicker={kicker} />,
     },
     {
