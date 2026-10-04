@@ -1,0 +1,1605 @@
+[
+  {
+    "input": "engineering.site.lat",
+    "value": 42.602544,
+    "unit": "deg",
+    "source": "research/offtakers.md (GEM wiki)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.site.lon",
+    "value": -76.635978,
+    "unit": "deg",
+    "source": "Engineering inputs, Site 2 (Lake Hawkeye, Lansing NY).",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.supply.it_load_mw",
+    "value": 150,
+    "unit": "MW",
+    "source": "news-reported phase 1 ~150 MW; verification.md 3a: TeraWulf filing = 400 MW gross / 320 MW critical IT (full-build scenario), ops ~2029",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.supply.load_factor",
+    "value": 0.8,
+    "unit": "-",
+    "source": "PLAN.md section 1 (0.7-0.9)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.supply.capture_fraction",
+    "value": 0.75,
+    "unit": "fraction",
+    "source": "[A] base; scenarios 0.40 (RII 33-42% of power) and 0.85 (T5 s11 / opening deck s7-8 \"up to 85% recoverable\")",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.supply.capture_temp_c",
+    "value": 50,
+    "unit": "C",
+    "source": "[CG: resources/text/Colocating-Data-Centers_Greenhouses-RII-Virginia.txt] DLC waste heat 45-55 C; [HR: resources/text/20230623_Data_Centers_HeatReuse_101_3.2.docx.txt] 45-65 C",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.supply.air_capture_temp_c",
+    "value": 30,
+    "unit": "C",
+    "source": "[CG: resources/text/Colocating-Data-Centers_Greenhouses-RII-Virginia.txt] legacy air-cooled 30-40 C; [HR: resources/text/20230623_Data_Centers_HeatReuse_101_3.2.docx.txt] 27-28 C return",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.supply.diurnal_amp",
+    "value": 0.03,
+    "unit": "-",
+    "source": "[A] +/-3% IT load swing",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.supply.capture_availability",
+    "value": 0.99,
+    "unit": "-",
+    "source": "[A] sidestream trips / maintenance, ~88 h/yr",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.supply.outage_mean_h",
+    "value": 22,
+    "unit": "h",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.supply.outage_seed",
+    "value": 7,
+    "unit": "seed",
+    "source": "[A] RNG seed for the outage schedule, reproducibility only",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.supply.pue",
+    "value": 1.2,
+    "unit": "-",
+    "source": "[A] liquid-cooled new build; used only for ERF",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.hp.eta",
+    "value": 0.5,
+    "unit": "fraction",
+    "source": "task spec (0.5 x Carnot); [T5: resources/text/Topic_5_-_Heat_reuse] COP 2-5 typical, COP 2.95 at 75 C supply realized",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.hp.approach_k",
+    "value": 3,
+    "unit": "K",
+    "source": "per heat exchanger, task spec / PLAN section 1.3",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.hp.cop_min",
+    "value": 2.0,
+    "unit": "-",
+    "source": "organizer COP range 2-6 (research/digest-organizer.md sec 2.3)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.hp.cop_max",
+    "value": 6.0,
+    "unit": "-",
+    "source": "organizer COP ranges 2-6 (research/digest-organizer.md sec 2.3; T5 s26 COP 2-5 typical)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.onsite.supply_temp_c",
+    "value": 45,
+    "unit": "C",
+    "source": "data-contract",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.onsite.pipe_km",
+    "value": 0.5,
+    "unit": "km",
+    "source": "data-contract",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.onsite.loss_w_per_m",
+    "value": 15,
+    "unit": "-",
+    "source": "[A] pre-insulated twin pipe, 45 C, short run",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.greenhouse.area_ha",
+    "value": 10,
+    "unit": "ha",
+    "source": "task brief; [CG: resources/text/Colocating-Data-Centers_Greenhouses-RII-Virginia.txt] 10 ha ~ 10 MW peak; 2 acres/MW",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.onsite.greenhouse.u_eff_w_m2k",
+    "value": 3.5,
+    "unit": "W/m2K",
+    "source": "[A] calibrated so peak ~ 12 MW at -17 C ([CG: resources/text/Colocating-Data-Centers_Greenhouses-RII-Virginia.txt] 10 ha ~ 10 MW; ~2 acres/MW => 12 MW)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.greenhouse.setpoint_c",
+    "value": 18.5,
+    "unit": "C",
+    "source": "[A] day 20 / night 17 C blend",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.greenhouse.yield_kg_m2",
+    "value": 40,
+    "unit": "m2",
+    "source": "[A] high-tech tomato, no supplemental lighting, NY winter",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.aquaculture.fish_t_yr",
+    "value": 1500,
+    "unit": "t/yr",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.aquaculture.kwh_per_kg",
+    "value": 3.0,
+    "unit": "-",
+    "source": "[A] RAS heating incl. makeup water and building loss",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.aquaculture.const_share",
+    "value": 0.7,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.aquaculture.t_base_c",
+    "value": 15,
+    "unit": "C",
+    "source": "[A] base temperature for aquaculture heat demand",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.rec.pool_mwh",
+    "value": 600,
+    "unit": "MWh",
+    "source": "[A] 25 m + leisure pool; Deep Green precedent: 222 MWh/yr UK 25 m + children's pool (research/case-studies.md)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.rec.building_m2",
+    "value": 4000,
+    "unit": "m2",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.rec.kwh_m2",
+    "value": 140,
+    "unit": "m2",
+    "source": "[A] cold-climate rec building space heat",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.rec.dhw_share",
+    "value": 0.15,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.onsite.rec.t_base_c",
+    "value": 15,
+    "unit": "C",
+    "source": "[A] base temperature for rec building heat demand",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.homes",
+    "value": 500,
+    "unit": "homes",
+    "source": "task brief",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.corridor.uptake",
+    "value": 0.7,
+    "unit": "fraction",
+    "source": "[A] signed share of homes along route; pipe sized to all potential homes",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.mwh_per_home",
+    "value": 27,
+    "unit": "MWh/home",
+    "source": "[A] 23.5 space + 3.5 DHW",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.dhw_mwh_per_home",
+    "value": 3.5,
+    "unit": "MWh/home",
+    "source": "[A] ~250 L/day, 45 K rise",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.t_balance_c",
+    "value": 15.5,
+    "unit": "C",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.trunk_km",
+    "value": 3.0,
+    "unit": "km",
+    "source": "[A] plant to first cluster",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.frontage_m_per_home",
+    "value": 25,
+    "unit": "-",
+    "source": "[A] 1/4 acre lots, hamlet/lakeshore density",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.loop_temp_c",
+    "value": 18,
+    "unit": "C",
+    "source": "task: building HP source ~15-20 C",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.corridor.loop_loss_w_per_m",
+    "value": 6,
+    "unit": "-",
+    "source": "[A] uninsulated HDPE, ~8 K over ground",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.dhw_temp_c",
+    "value": 55,
+    "unit": "C",
+    "source": "[A] domestic hot water setpoint (legionella-safe)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.space_sink.t_min",
+    "value": 35,
+    "unit": "-",
+    "source": "[A] weather-compensated heating curve",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.space_sink.t_max",
+    "value": 55,
+    "unit": "-",
+    "source": "[A] weather-compensated heating curve",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.space_sink.slope",
+    "value": 0.6,
+    "unit": "-",
+    "source": "[A] weather-compensated heating curve",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.space_sink.t_ref",
+    "value": 15,
+    "unit": "-",
+    "source": "[A] weather-compensated heating curve",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.corridor.supply_temp_c",
+    "value": 20,
+    "unit": "C",
+    "source": "data-contract: ambient loop ~20 C",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.town.supply_temp_c",
+    "value": 65,
+    "unit": "C",
+    "source": "hot anchor loop 55-65 C base (AG p14: 55 C newest, T5 s19: 4G 50-60 C); 70 C = sensitivity",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.town.trunk_km",
+    "value": 11.0,
+    "unit": "km",
+    "source": "task brief (6-7 mi); school campus 10.4-10.6 km (research/offtakers.md OSM)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.town.spur_km",
+    "value": 3.0,
+    "unit": "km",
+    "source": "[A] school to Town Hall/library cluster (~2.5 km apart)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.loss_w_per_m",
+    "value": 15,
+    "unit": "-",
+    "source": "[A] DN100-150 twin pre-insulated 70/40 C",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.sink.t_min",
+    "value": 55,
+    "unit": "-",
+    "source": "weather compensation per AG p12-13 (-20 C=75 C, +10 C=61 C; ours lower, existing school radiators may need 70 C: sensitivity)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.town.sink.t_max",
+    "value": 65,
+    "unit": "-",
+    "source": "weather compensation per AG p12-13 (-20 C=75 C, +10 C=61 C; ours lower, existing school radiators may need 70 C: sensitivity)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.town.sink.slope",
+    "value": 0.5,
+    "unit": "-",
+    "source": "weather compensation per AG p12-13 (-20 C=75 C, +10 C=61 C; ours lower, existing school radiators may need 70 C: sensitivity)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.town.sink.t_ref",
+    "value": 10,
+    "unit": "-",
+    "source": "weather compensation per AG p12-13 (-20 C=75 C, +10 C=61 C; ours lower, existing school radiators may need 70 C: sensitivity)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.town.schools.floor_m2",
+    "value": 18700,
+    "unit": "m2",
+    "source": "[A] 1,118 students (NCES via research/offtakers.md) x ~180 sf/student; NE school heating+DHW ~110 kWh/m2",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.schools.kwh_m2",
+    "value": 110,
+    "unit": "m2",
+    "source": "[A] 1,118 students (NCES via research/offtakers.md) x ~180 sf/student; NE school heating+DHW ~110 kWh/m2",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.others[Town Hall + Highway].mwh",
+    "value": 140,
+    "unit": "MWh",
+    "source": "[A] areas; Town Hall 8,200 sf from Lansing capital plan (research/offtakers.md)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.others[Community Library + Center].mwh",
+    "value": 180,
+    "unit": "MWh",
+    "source": "[A] areas; Town Hall 8,200 sf from Lansing capital plan (research/offtakers.md)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.others[Woodsedge senior apartments].mwh",
+    "value": 1200,
+    "unit": "MWh",
+    "source": "[A] areas; Town Hall 8,200 sf from Lansing capital plan (research/offtakers.md)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.town.dhw_share",
+    "value": 0.1,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.storage.hours_of_peak",
+    "value": 6,
+    "unit": "-",
+    "source": "task brief",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.storage.delta_t_k",
+    "value": 20,
+    "unit": "K",
+    "source": "[A] 50/30 C source-side store",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.storage.loss_per_day",
+    "value": 0.01,
+    "unit": "-",
+    "source": "[A] large insulated tank",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.storage.charge_hours",
+    "value": 4,
+    "unit": "h",
+    "source": "[A] max charge rate = capacity / 4 h",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.backup.efficiency",
+    "value": 0.9,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.backup.capacity_share",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "of peak (D+L); N+1 not modeled",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.network.pump_share",
+    "value": 0.015,
+    "unit": "fraction",
+    "source": "[A] circulation electricity as share of delivered heat",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.air_source.eta",
+    "value": 0.4,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "engineering.air_source.sink_c",
+    "value": 40,
+    "unit": "C",
+    "source": "incumbent comparison, seasonal COP computed hourly",
+    "confidence": "sourced"
+  },
+  {
+    "input": "engineering.air_source.approach_k",
+    "value": 5,
+    "unit": "K",
+    "source": "incumbent comparison, seasonal COP computed hourly",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.years",
+    "value": 30,
+    "unit": "years",
+    "source": "analysis horizon (annuity of revenue/opex)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.life_years.pipe",
+    "value": 30,
+    "unit": "-",
+    "source": "[A] separate CRF by asset life: pipe/trench 30 (conservative vs 40-50), tank 30, heat pumps/HX/boilers/pumps 20 (code-review #10; replacement captured via the shorter-life CRF)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.life_years.tank",
+    "value": 30,
+    "unit": "-",
+    "source": "[A] separate CRF by asset life: pipe/trench 30 (conservative vs 40-50), tank 30, heat pumps/HX/boilers/pumps 20 (code-review #10; replacement captured via the shorter-life CRF)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.life_years.equip",
+    "value": 20,
+    "unit": "-",
+    "source": "[A] separate CRF by asset life: pipe/trench 30 (conservative vs 40-50), tank 30, heat pumps/HX/boilers/pumps 20 (code-review #10; replacement captured via the shorter-life CRF)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.discount_rates.coop_4pct",
+    "value": 0.04,
+    "unit": "-",
+    "source": "[A] scenario rates: 4% public/co-op finance, 7% utility, 10% private",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.discount_rates.utility_7pct",
+    "value": 0.07,
+    "unit": "-",
+    "source": "[A] scenario rates: 4% public/co-op finance, 7% utility, 10% private",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.discount_rates.private_10pct",
+    "value": 0.1,
+    "unit": "-",
+    "source": "[A] scenario rates: 4% public/co-op finance, 7% utility, 10% private",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.elec_price_usd_kwh",
+    "value": 0.245,
+    "unit": "$/kWh",
+    "source": "facts-site2.md sec 4 (NYSEG residential, EnergySage) (verified 2026-10-03)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.elec_price_central_usd_kwh",
+    "value": 0.108,
+    "unit": "$/kWh",
+    "source": "central HP + pumping behind DC utility service: NY industrial average 10.81 c/kWh, EIA Electric Power Monthly Table 5.6.A, July 2026 (https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a). NYSEG SC-7 tariff not checked; a 100+ MW campus may get less",
+    "confidence": "unverified"
+  },
+  {
+    "input": "finance.prices.propane_usd_gal",
+    "value": 3.1,
+    "unit": "$/gal",
+    "source": "coordinator/verification.md: NYSERDA Central NY 2025-26 season range 2.74-3.46; base 3.10; low sensitivity 2.85 (facts-site2 had 2.849)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.oil_usd_gal",
+    "value": 5.186,
+    "unit": "$/gal",
+    "source": "facts-site2.md sec 4, NYSERDA Central NY + EIA",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.gas_usd_therm",
+    "value": 1.6,
+    "unit": "$/therm",
+    "source": "facts-site2.md sec 4, NYSERDA Central NY + EIA",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.propane_kwh_gal",
+    "value": 26.8,
+    "unit": "kWh/gal",
+    "source": "91,452 BTU/gal",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.oil_kwh_gal",
+    "value": 40.6,
+    "unit": "kWh/gal",
+    "source": "138,500 BTU/gal",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.eff.propane",
+    "value": 0.85,
+    "unit": "-",
+    "source": "facts-site2.md sec 4, NYSERDA Central NY + EIA",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.eff.oil",
+    "value": 0.82,
+    "unit": "-",
+    "source": "facts-site2.md sec 4, NYSERDA Central NY + EIA",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.prices.eff.gas",
+    "value": 0.85,
+    "unit": "-",
+    "source": "facts-site2.md sec 4, NYSERDA Central NY + EIA",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.capex.dc_interface_usd_kw",
+    "value": 120,
+    "unit": "$/kW",
+    "source": "[A] plate HX + isolation + N+1 + controls per kW peak DC draw",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.tank_usd_m3",
+    "value": 300,
+    "unit": "$/m3",
+    "source": "[A] steel atmospheric tank; Danish pit stores 33-38 EUR/m3 (iea-shc.org) are a floor",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.onsite_pipe_usd_m",
+    "value": 900,
+    "unit": "$/m",
+    "source": "[A] pre-insulated twin pipe rural trench",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.substation_usd_kw",
+    "value": 100,
+    "unit": "$/kW",
+    "source": "[A] customer HX substation",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.loop_pipe_usd_m",
+    "value": 450,
+    "unit": "$/m",
+    "source": "[A] uninsulated HDPE ambient loop rural; MIT OCW 2025: circulation ~1/3 of ~$50k per residence",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.building_hp_usd",
+    "value": 16000,
+    "unit": "$",
+    "source": "[A] MIT OCW 2025 res-env-007 lec07: ~1/3 of ~$50k per residence in-home",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.lateral_usd",
+    "value": 2500,
+    "unit": "$",
+    "source": "[A] service lateral + meter per home",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.pump_plant_usd_kw",
+    "value": 40,
+    "unit": "$/kW",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.backup_usd_kw",
+    "value": 120,
+    "unit": "$/kW",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.trunk_usd_m",
+    "value": 1100,
+    "unit": "$/m",
+    "source": "[A] insulated twin pipe rural, DN150-200 incl. trench",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.central_hp_usd_kw",
+    "value": 700,
+    "unit": "$/kW",
+    "source": "[A] large HP 50->70 C",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.soft_cost_pct",
+    "value": 0.15,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.capex.contingency_pct",
+    "value": 0.2,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.opex.om_pct_capex",
+    "value": 0.015,
+    "unit": "-",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.opex.hp_service_usd_home",
+    "value": 150,
+    "unit": "$/home",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.opex.customer_usd_home",
+    "value": 120,
+    "unit": "$/home",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.opex.program_usd_yr",
+    "value": 400000,
+    "unit": "$/yr",
+    "source": "[A] operator staff and insurance",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.opex.heat_purchase_usd_mwh",
+    "value": 0.0,
+    "unit": "$/MWh",
+    "source": "[A] heat at zero price (Deep Green precedent gives heat free)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tariff.discount_vs_propane",
+    "value": 0.2,
+    "unit": "-",
+    "source": "PLAN section 4.3 example",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.tariff.low_income_discount",
+    "value": 0.35,
+    "unit": "-",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tariff.low_income_share",
+    "value": 0.2,
+    "unit": "fraction",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tariff.onsite_tariff_usd_mwh",
+    "value": 50,
+    "unit": "$/MWh",
+    "source": "[A] ~40% of propane-equivalent; greenhouse alternative without gas is propane/oil/electric",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.incentives.itc_pct",
+    "value": 0.3,
+    "unit": "fraction",
+    "source": "incentive scenario ONLY, \"if structured to qualify (counsel needed)\": waste-heat network most likely not eligible (verification.md 9d-i); base = no credit",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.dc_exit.year",
+    "value": 10,
+    "unit": "year",
+    "source": "[A] data-center supply contract horizon ~10 yr (DCs rarely sign longer)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.dc_exit.replacement_source_usd_kw",
+    "value": 2000,
+    "unit": "$/kW",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.pipe_cost[0]",
+    "value": 0.7,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.pipe_cost[1]",
+    "value": 1.4,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.elec_price[0]",
+    "value": 0.14,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.elec_price[1]",
+    "value": 0.32,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.eta[0]",
+    "value": 0.4,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.eta[1]",
+    "value": 0.6,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.uptake[0]",
+    "value": 0.45,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.uptake[1]",
+    "value": 0.9,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.discount_rate[0]",
+    "value": 0.04,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.discount_rate[1]",
+    "value": 0.1,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.dc_it_mw[0]",
+    "value": 75,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tornado.dc_it_mw[1]",
+    "value": 320,
+    "unit": "-",
+    "source": "[A] low/high sweep ranges for the sensitivity chart (not sourced values)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.tariff_scenarios_discount[0]",
+    "value": 0.15,
+    "unit": "-",
+    "source": "0.85x / 0.80x / 0.75x propane-equivalent (coordinator note: Windows lane used 0.75x)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.tariff_scenarios_discount[1]",
+    "value": 0.2,
+    "unit": "-",
+    "source": "0.85x / 0.80x / 0.75x propane-equivalent (coordinator note: Windows lane used 0.75x)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.tariff_scenarios_discount[2]",
+    "value": 0.25,
+    "unit": "-",
+    "source": "0.85x / 0.80x / 0.75x propane-equivalent (coordinator note: Windows lane used 0.75x)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.cost_split.dc_interface.dc",
+    "value": 0.5,
+    "unit": "-",
+    "source": "OCP p7-8 (digest sec 2.4): extraction costs split DC + host; transformation (storage, lift, HPs) paid by host",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.cost_split.dc_interface.host",
+    "value": 0.5,
+    "unit": "-",
+    "source": "OCP p7-8 (digest sec 2.4): extraction costs split DC + host; transformation (storage, lift, HPs) paid by host",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.reference_checks.cbs_hp_plant_eur_per_mw",
+    "value": 600000,
+    "unit": "MW",
+    "source": "CBS white paper p13,17,19 (digest sec 4.2): 10 MW HP plant ~EUR 6M, ~9 yr simple payback; connection cost 3% -> 50% of capex from 50 m to 4 km",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.reference_checks.eur_usd",
+    "value": 1.08,
+    "unit": "$",
+    "source": "[A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "finance.reference_checks.cbs_poor_distance_km",
+    "value": 2.0,
+    "unit": "km",
+    "source": "CBS white paper p13,17,19 (digest sec 4.2): 10 MW HP plant ~EUR 6M, ~9 yr simple payback; connection cost 3% -> 50% of capex from 50 m to 4 km",
+    "confidence": "sourced"
+  },
+  {
+    "input": "finance.cba.dc_capex_usd_per_mw_it",
+    "value": 10000000,
+    "unit": "$/MW IT",
+    "source": "Turner & Townsend Data Centre Construction Cost Index 2025: US$6.6-13.3 per W across markets; ~$10/W midpoint [A] for Upstate NY (https://reports.turnerandtownsend.com/data-centre-construction-cost-index-2025/)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.ef_kg_kwh.grid",
+    "value": 0.1101,
+    "unit": "-",
+    "source": "facts-site2.md sec 7 (EPA GHG Hub; eGRID2023 NYUP 242.8 lb/MWh)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "impact.ef_kg_kwh.grid_marginal",
+    "value": 0.315,
+    "unit": "-",
+    "source": "midpoint of 0.28-0.35 kg/kWh; source: research/facts-site2.md line 142 (NYISO Zone C marginal gas-peaker range, https://www.nyiso.com, verified 2026-10-03). Range is a secondary estimate, midpoint is [A].",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.ef_kg_kwh.propane",
+    "value": 0.2145,
+    "unit": "-",
+    "source": "corrected: liquid propane 62.87 kg/MMBtu (research/verification.md 10d), not 61.46 (gaseous)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "impact.ef_kg_kwh.oil",
+    "value": 0.252,
+    "unit": "-",
+    "source": "facts-site2.md sec 7 (EPA GHG Hub; eGRID2023 NYUP 242.8 lb/MWh)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "impact.ef_kg_kwh.gas",
+    "value": 0.181,
+    "unit": "-",
+    "source": "facts-site2.md sec 7 (EPA GHG Hub; eGRID2023 NYUP 242.8 lb/MWh)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "impact.mix_corridor.propane",
+    "value": 0.419355,
+    "unit": "-",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.mix_corridor.oil",
+    "value": 0.129032,
+    "unit": "-",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.mix_corridor.electric",
+    "value": 0.387097,
+    "unit": "-",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.mix_corridor.other",
+    "value": 0.064516,
+    "unit": "-",
+    "source": "renormalised (26/62, 8/62, 24/62, 4/62). 'other' (wood etc.) is ignored in the CO2 sum (conservative). Household shares, not energy-weighted [A].",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.mix_onsite.propane",
+    "value": 1.0,
+    "unit": "-",
+    "source": "ASSUMPTION: [A] no piped gas near plant (facts-site2.md)",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.mix_town.propane",
+    "value": 0.4,
+    "unit": "-",
+    "source": "ASSUMPTION: [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.mix_town.oil",
+    "value": 0.3,
+    "unit": "-",
+    "source": "ASSUMPTION: [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.mix_town.gas",
+    "value": 0.3,
+    "unit": "-",
+    "source": "ASSUMPTION: [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.kg_co2_per_car_yr",
+    "value": 4290,
+    "unit": "-",
+    "source": "EPA GHG Equivalencies Calculator 4.29 t CO2e/vehicle-yr (FHWA 2022 22.8 mpg, 10,917 mi; https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references, verified 2026-10-04)",
+    "confidence": "sourced"
+  },
+  {
+    "input": "impact.fan_kwh_per_kwh_rejected",
+    "value": 0.02,
+    "unit": "-",
+    "source": "ASSUMPTION: [A] dry-cooler fan electricity per kWh heat rejected",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.jobs.gh_fte_10ac",
+    "value": 6.5,
+    "unit": "-",
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.jobs.gh_pte_10ac",
+    "value": 35,
+    "unit": "-",
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.jobs.gh_fte_65ac",
+    "value": 13,
+    "unit": "-",
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.jobs.gh_pte_65ac",
+    "value": 130,
+    "unit": "-",
+    "source": "Source: CG Table 2 (greenhouse benchmark; see research/verification.md and docs/assumptions.md for the citation) (10 acres: 6.5 FTE + 35 PTE; 65 acres: 13 + 130); the 10/65-acre scales are benchmark sizes, not our site footprint",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.jobs.aqua_t_per_job",
+    "value": 40,
+    "unit": "-",
+    "source": "ASSUMPTION: [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.jobs.rec_jobs",
+    "value": 12,
+    "unit": "-",
+    "source": "ASSUMPTION: [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "impact.jobs.network_ops_jobs",
+    "value": 8,
+    "unit": "-",
+    "source": "ASSUMPTION: [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.weights.temp_fit",
+    "value": 0.2,
+    "unit": "-",
+    "source": "[A] scoring weights",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.weights.size",
+    "value": 0.25,
+    "unit": "-",
+    "source": "[A] scoring weights",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.weights.proximity",
+    "value": 0.25,
+    "unit": "-",
+    "source": "[A] scoring weights",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.weights.fuel",
+    "value": 0.15,
+    "unit": "-",
+    "source": "[A] scoring weights",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.weights.community",
+    "value": 0.15,
+    "unit": "fraction",
+    "source": "[A] scoring weights",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.flh.greenhouse",
+    "value": 2800,
+    "unit": "-",
+    "source": "[A] full-load hours by load shape",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.flh.constant",
+    "value": 7000,
+    "unit": "-",
+    "source": "[A] full-load hours by load shape",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.flh.building",
+    "value": 1800,
+    "unit": "-",
+    "source": "[A] full-load hours by load shape",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].lat",
+    "value": 42.6028,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].lon",
+    "value": -76.6336,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].supply_temp_C",
+    "value": 45,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[gh_onsite].community",
+    "value": 0.6,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].lat",
+    "value": 42.6025,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].lon",
+    "value": -76.634,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].supply_temp_C",
+    "value": 30,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[aqua_onsite].community",
+    "value": 0.6,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].lat",
+    "value": 42.602,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].lon",
+    "value": -76.633,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].supply_temp_C",
+    "value": 40,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[rec_onsite].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].lat",
+    "value": 42.585,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].lon",
+    "value": -76.6,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].supply_temp_C",
+    "value": 20,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[corridor_homes].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].lat",
+    "value": 42.592,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].lon",
+    "value": -76.538,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].annual_MWh",
+    "value": 2500,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].supply_temp_C",
+    "value": 45,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[mckissick].community",
+    "value": 0.6,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].lat",
+    "value": 42.618,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].lon",
+    "value": -76.53,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].annual_MWh",
+    "value": 300,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].supply_temp_C",
+    "value": 40,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[dutch_harvest].community",
+    "value": 0.4,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].lat",
+    "value": 42.5442,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].lon",
+    "value": -76.5339,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[lansing_csd].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].lat",
+    "value": 42.5378,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].lon",
+    "value": -76.5036,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].annual_MWh",
+    "value": 140,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[town_hall].community",
+    "value": 0.9,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].lat",
+    "value": 42.5377,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].lon",
+    "value": -76.5031,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].annual_MWh",
+    "value": 180,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[library].community",
+    "value": 0.9,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].lat",
+    "value": 42.538,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].lon",
+    "value": -76.5,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].annual_MWh",
+    "value": 1200,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].supply_temp_C",
+    "value": 55,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[woodsedge].community",
+    "value": 1.0,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].lat",
+    "value": 42.548,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].lon",
+    "value": -76.549,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].annual_MWh",
+    "value": 250,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].supply_temp_C",
+    "value": 45,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[myers_park].community",
+    "value": 0.7,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].lat",
+    "value": 42.5325,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].lon",
+    "value": -76.5258,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].annual_MWh",
+    "value": 8000,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].supply_temp_C",
+    "value": 60,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cargill].community",
+    "value": 0.5,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].lat",
+    "value": 42.4918,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].lon",
+    "value": -76.4607,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].annual_MWh",
+    "value": 5000,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].supply_temp_C",
+    "value": 70,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[airport].community",
+    "value": 0.4,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].lat",
+    "value": 42.488,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].lon",
+    "value": -76.462,
+    "unit": "deg",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].annual_MWh",
+    "value": 6000,
+    "unit": "MWh",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].supply_temp_C",
+    "value": 60,
+    "unit": "C",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  },
+  {
+    "input": "offtakers.rows[cbtp].community",
+    "value": 0.4,
+    "unit": "fraction",
+    "source": "lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]",
+    "confidence": "assumption"
+  }
+]

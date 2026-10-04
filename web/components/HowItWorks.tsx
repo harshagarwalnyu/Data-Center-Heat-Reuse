@@ -3,6 +3,7 @@ import { useState } from "react";
 import type { AppData } from "@/lib/types";
 import { dec, int } from "@/lib/format";
 import { COP_MAX, COP_MIN, ETA, APPROACH_K, LIFETIME_YR, cop, crf } from "@/lib/model";
+import Link from "next/link";
 import { NavBar } from "./ui";
 
 const HOURS = 8760;
@@ -84,6 +85,7 @@ export function HowItWorks({ data }: { data: AppData }) {
           </section>
           <section className="card p-5" aria-label="Sources">
             <h2 className="m-0 text-[1.5rem] serif">Sources</h2>
+            <p className="m-0 mt-2 text-[1.125rem]">Every input with its value, unit, source and confidence: <Link prefetch={false} href="/sources/" className="underline font-semibold">Data &amp; sources</Link>.</p>
             <ul className="m-0 mt-2 pl-5 grid gap-1.5 text-[1.0625rem] leading-snug">
               {d.sources.map((s) => (
                 <li key={s.id}>{s.label.length > 150 ? s.label.slice(0, 147) + "…" : s.label}{s.url && <> <a href={s.url} target="_blank" rel="noreferrer" className="underline">link</a></>}</li>

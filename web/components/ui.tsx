@@ -29,6 +29,7 @@ const NAV = [
   { href: "/explore/", label: "Explore" },
   { href: "/compare/", label: "Compare sites" },
   { href: "/how/", label: "How it works" },
+  { href: "/sources/", label: "Data & sources" },
   { href: "/print/", label: "One-pager" },
 ];
 

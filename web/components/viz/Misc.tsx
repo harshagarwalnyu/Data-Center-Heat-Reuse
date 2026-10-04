@@ -108,7 +108,7 @@ const FUELS: FuelKey[] = ["propane", "heating_oil", "natural_gas", "electric_res
 export function HouseholdCalc({ d }: { d: Site2Data }) {
   const [fuel, setFuel] = useState<FuelKey>("propane");
   const [size, setSize] = useState<(typeof HOME_SIZES)[number]["id"]>("typical");
-  const f = HOME_SIZES.find((s) => s.id === size)!.factor;
+  const f = (HOME_SIZES.find((s) => s.id === size) ?? HOME_SIZES[0]).factor;
   const r = household(d, fuel, f);
   const saves = r.savingsUsd >= 0;
   const maxBar = Math.max(r.incumbentCost, r.coopCost);

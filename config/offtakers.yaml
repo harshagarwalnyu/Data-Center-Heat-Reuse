@@ -2,7 +2,7 @@
 # Loads are ASSUMPTIONS (floor area x intensity or stated), peak = annual / full_load_hours. "model" = taken from the engineering model.
 weights: {temp_fit: 0.20, size: 0.25, proximity: 0.25, fuel: 0.15, community: 0.15}   # [A] scoring weights
 flh: {greenhouse: 2800, constant: 7000, building: 1800}   # [A] full-load hours by load shape
-rows:
+rows:   # lat/lon: OSM Nominatim (research/offtakers.md) or facts-site2.md sec 3; loads, supply temperature and community weight are [A]
   - {id: gh_onsite, name: "On-site greenhouse campus (10 ha)", type: greenhouse, lat: 42.6028, lon: -76.6336, annual_MWh: model, supply_temp_C: 45, fuel: propane, ring: onsite, community: 0.6, flh: greenhouse}
   - {id: aqua_onsite, name: "On-site aquaculture (RAS)", type: aquaculture, lat: 42.6025, lon: -76.6340, annual_MWh: model, supply_temp_C: 30, fuel: propane, ring: onsite, community: 0.6, flh: constant}
   - {id: rec_onsite, name: "Community rec center + pool", type: recreation, lat: 42.6020, lon: -76.6330, annual_MWh: model, supply_temp_C: 40, fuel: propane, ring: onsite, community: 1.0, flh: building}
