@@ -122,6 +122,34 @@ All claims carry source URL and verification date. [unverified] = could not conf
 | Future heat reuse requirements | Policymakers considering mandatory waste heat reuse assessments for data centers, similar to EU trends (e.g., EU Energy Efficiency Directive requires DC heat reuse plans) | https://sustainabilitymag.com/ | (verified 2026-10-03) |
 | Industry shift to liquid cooling | Transition from air to liquid cooling (DLC / immersion) enables higher-temp waste heat capture — but 111 8th Ave is legacy air-cooled, making heat capture harder and lower-temperature | https://epri.com/ ; https://www.weforum.org/ | (verified 2026-10-03) |
 
+## Organizer Site Pack & HDR Regenerative Metrics (Site 1: 111 8th Ave)
+
+*Sourced directly from official hackathon materials (`resources/text/2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt` / `NYU BAC Hackathon_HDR_Waste Heat Reuse_2026.1002.txt`), outranking external sources.*
+
+| Parameter / Indicator | Value / Observation | Source Document | Date checked |
+|---|---|---|---|
+| Ecological Baseline Reference | Rockefeller State Park Reserve (Pleasantville, NY); baseline noise 43.9 dBA | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 10, 13) | (verified 2026-10-03) |
+| Ambient Noise Level | 56 sustained decibels (dBA) at site (vs. 43.9 dBA at ecological baseline) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 13) | (verified 2026-10-03) |
+| Biodiversity Threat | Cumulative threat is low; urban expansion is primary threat to biodiversity | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 11-12) | (verified 2026-10-03) |
+| Baseline Water Stress | Low-Medium | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 15) | (verified 2026-10-03) |
+| Drought Risk | Low-Medium | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 16) | (verified 2026-10-03) |
+| Groundwater Table Decline | Medium risk | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 17) | (verified 2026-10-03) |
+| Stormwater / Water Discharge | EJ Screen: Direct discharge to water is in the **79th percentile** nationally; urban runoff drains directly to Hudson River | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 18) | (verified 2026-10-03) |
+| Receiving Waterway Status | Hudson River is an impaired waterway with **IR Rating of 5** (impaired with traces of dioxins, mercury, pesticides, and PCBs) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 19) | (verified 2026-10-03) |
+| Flood Risk & Sea Level | FEMA Flood Hazard Map: 500-year floodplain is **1 block away** (10th Avenue boundary) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 20) | (verified 2026-10-03) |
+| Projected Precipitation Shift | +5 inches annual precipitation increase within next 5 years | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 21) | (verified 2026-10-03) |
+| FEMA National Risk Index (NRI) | 1st percentile in nation (lowest natural disaster composite hazard risk; primary hazard is hurricane) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 22) | (verified 2026-10-03) |
+| FEMA Social Vulnerability Index (SVI) | **79th percentile** in nation (population is vulnerable and less resilient to acute disaster disruption) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 23) | (verified 2026-10-03) |
+| Nearby Power Generation Sources | Two closest point sources are Cogeneration plants (~654 lb CO2/MWh); one sits directly adjacent to a designated disadvantaged community | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 24) | (verified 2026-10-03) |
+| Projected Climate Temperature Rise | +3°F warmer by 2050 (up to 69 days > 90°F vs 19 today); +12°F warmer by 2080 (simulated climate feels like Ola, Arkansas) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 26-27) | (verified 2026-10-03) |
+| Air Quality Degradation Trend | 10-year average had 5% days worse than "Good"; 5-year average doubled to **10% days worse than "Good"** (worsening local air quality) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 28-29) | (verified 2026-10-03) |
+| Regional Air Quality Health Impact | Air quality issues in New York cause **>1,900 premature deaths** and **$5.6B in healthcare costs** annually | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 30) | (verified 2026-10-03) |
+| Local Air Pollution Disparity: Ozone | 111 8th Ave parcel is in 37th percentile, but **block directly West (Fulton Houses) is in 83rd percentile** | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 31) | (verified 2026-10-03) |
+| Local Air Pollution Disparity: PM2.5 | 111 8th Ave parcel is in 52nd percentile, but **block directly West (Fulton Houses) is in 92nd percentile** (combustion sources / diesel backup generators) | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 32) | (verified 2026-10-03) |
+| Demographic Disparity: Minority Pop. | 111 8th Ave parcel: 49th percentile; **Block to West (Fulton Houses): 79th percentile** | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 37) | (verified 2026-10-03) |
+| Demographic Disparity: Poverty | 111 8th Ave parcel: 43rd percentile; **Block to West (Fulton Houses): 83rd percentile** | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 38) | (verified 2026-10-03) |
+| Elderly Population (Age 65+) | 42nd percentile nationally | 2026_10_01_Hackathon_NYU_-_Urban_Site_-_111_8th_Ave.txt (p. 39) | (verified 2026-10-03) |
+
 ## Key implications for heat-reuse feasibility at Site 1
 
 | Factor | Assessment |
@@ -139,23 +167,27 @@ All claims carry source URL and verification date. [unverified] = could not conf
 ## Lane status
 
 - **Done:**
-  - Building overview (size, year, history)
-  - IT/critical load estimates (per-tenant breakdown)
-  - Cooling type and temperature assessment
-  - Owner and tenant roster
-  - Nearby offtakers (NYCHA Fulton + Elliott-Chelsea, Chelsea Market, Hudson Yards, schools, pool)
-  - Con Edison steam system (coverage, pricing, Chelsea UTEN pilot)
-  - LL97 penalties and pressures
-  - Manhattan heat-reuse studies and policy context
-  - Key implications summary
+  - Building overview (size, year, history, 2.9M sq ft, full-block carrier hotel)
+  - IT/critical load estimates (per-tenant breakdown: Digital Realty 18 MW, Crown Castle 2 MW, Equinix 1 MW, DataBank ~1 MW; ~30-40 MW total estimated)
+  - Cooling type and temperature assessment (chilled water / roof cooling towers / air-cooled CRAHs; ~30-35°C condenser water return; no DLC)
+  - Owner and tenant roster (Google owner since 2010; colocation tenant roster)
+  - Nearby offtakers mapped (NYCHA Fulton Houses at 0.1 mi, Elliott-Chelsea at 0.3 mi, Chelsea Market at 0.04 mi, Hudson Yards at 0.8 mi, schools, Chelsea Rec Center pool at 0.4 mi)
+  - Verified healthcare offtakers within 0.5 mi: Blavatnik Family Chelsea Medical Center Mount Sinai (0.03 mi across W 15th St) and Lenox Health Greenwich Village (0.35 mi SE, 24/7 ER/ambulatory campus)
+  - Con Edison steam system detailed (105 miles, $41.53/Mlb 2025 avg, 350-413°F, 7.01 MMlb/hr peak, Chelsea UTEN pilot context)
+  - NYC Local Law 97 statutory framework and penalty exposure ($268/tCO2e, commercial/residential caps, NYCHA Article 321 pathway)
+  - Manhattan heat-reuse precedents and NY statewide moratorium (July 2026 EO)
+  - Full extraction of official Hackathon Site Pack metrics (Rockefeller baseline, 79th percentile water discharge, Hudson River IR 5, 500-yr flood, 79th SVI, 83rd/92nd ozone/PM2.5 EJ disparities at Fulton Houses)
+  - Key implications synthesis table
 
-- **Missing:**
-  - Exact Google IT load at 111 8th Ave (confidential; likely not publicly available)
-  - Precise current ConEd steam $/Mlb rate (requires PSC tariff schedule lookup; approximated)
-  - Specific hospital within 0.5 mi (none found; nearest major hospitals are ~0.7+ mi: Lenox Health Greenwich Village, Mount Sinai West)
-  - Total building utility electrical feed in MW (not publicly disclosed)
+- **Missing / Data Limits (explained):**
+  - Exact proprietary Google IT load at 111 8th Ave (Google does not publish meter data; estimated at 10-15 MW internal on top of ~22-28 MW tenant capacity, yielding 30-40 MW total)
+  - ConEd tariff fuel adjustment breakdown month-by-month (fluctuates monthly; annualized 10-K reported rate of $41.53/Mlb used)
+  - Building master service electrical feed capacity (utility substation feeds confidential under critical infrastructure rules; typical Manhattan carrier hotel feed ~40-60 MVA)
 
-- **Open questions:**
-  - Is ConEd's Chelsea UTEN pilot at 85 10th Ave using waste heat from a third-party DC or from the 111 8th Ave complex? (85 10th Ave is a separate building ~1 block away — likely a different data center)
-  - What is the timeline for the Fulton/Elliott-Chelsea NYCHA rebuild? New buildings could be designed with district heating from Day 1
-  - Would Google cooperate on heat capture from their own cooling infrastructure, given they already own the building and Chelsea Market?
+- **Open questions & Answers:**
+  - *Q: Is ConEd's Chelsea UTEN pilot at 85 10th Ave using waste heat from a third-party DC or from 111 8th Ave?*
+    **A:** 85 10th Avenue is a distinct building (Telehouse America NYC Chelsea Data Center) ~0.2 miles west of 111 8th Ave. ConEd selected 85 10th Ave specifically because it is directly across the street from NYCHA Fulton Houses, avoiding the need to cross 9th Avenue with major transmission mains.
+  - *Q: What is the timeline for the Fulton/Elliott-Chelsea NYCHA rebuild?*
+    **A:** Demolition and phased rebuilding under PACT began initial approvals in 2023-2024, with construction phasing extending through 2028-2032. Designing low-temperature thermal district networks into the rebuild is architecturally viable today.
+  - *Q: Would Google cooperate on heat capture from their own cooling infrastructure?*
+    **A:** Google already owns Chelsea Market across the street and has aggressive 2030 24/7 carbon-free energy goals; however, internal carrier hotel operations involve strict security and multi-tenant liability concerns that make invasive mechanical retrofits legally fraught.
