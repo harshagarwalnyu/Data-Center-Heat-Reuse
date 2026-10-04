@@ -67,6 +67,9 @@ export function buildSteps(data: AppData): Step[] {
   for (const r of d.rings) if (r.lcoh_usd_mwh_7pct !== undefined) ringL[r.id] = r.lcoh_usd_mwh_7pct;
   const fund = ex?.funding;
   const cba = ex?.cba;
+  // Whole-project headline (on-site surplus cross-subsidises corridor); corridor-only figures are the fallback.
+  const cbaPct = cba?.headline_as_pct_of_dc_capex ?? cba?.as_pct_of_dc_capex;
+  const cbaYr = cba?.headline_annuitized_7pct_musd_per_yr ?? cba?.per_year_annuitized_7pct_musd;
   const backupPct = (T.backup_MWh / T.heat_delivered_MWh) * 100;
   const cleanCarbonCars = d.impact.co2_cars_equiv;
 
@@ -203,7 +206,7 @@ export function buildSteps(data: AppData): Step[] {
                 </ol>
                 
                 {fund?.funding_gap_musd !== undefined && <div>Gap a benefit fund, grants or cheap capital must cover: <b className="num text-ember-text">${dec(fund.funding_gap_musd, 1)}M</b>{fund.funding_gap_incentive_scenario_if_qualifies_musd !== undefined && <> (<span className="num">${dec(fund.funding_gap_incentive_scenario_if_qualifies_musd, 1)}M</span> if federal credits qualify)</>}.</div>}
-                {cba?.as_pct_of_dc_capex !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cba.as_pct_of_dc_capex, 1)}%</b> of the data center build{cba.per_year_annuitized_7pct_musd !== undefined && <>, <span className="num">${dec(cba.per_year_annuitized_7pct_musd, 2)}M</span> a year (annuitized at 7% over 30 years)</>}, funds the home program.</div>}
+                {cbaPct !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cbaPct, 1)}%</b> of the data center build{cbaYr !== undefined && <>, <span className="num">${dec(cbaYr, 2)}M</span> a year (annuitized at 7% over 30 years)</>}, funds the home program.</div>}
               </div>
             </div>
           ) : (
@@ -272,13 +275,13 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "ask",
       kicker: "11 · The ask",
-      headline: cba?.as_pct_of_dc_capex !== undefined ? `Say yes with conditions: a Community Benefit Agreement worth ${dec(cba.as_pct_of_dc_capex, 1)}% of the build` : "Say yes with conditions: write heat reuse into a binding Community Benefit and Heat Supply Agreement",
+      headline: cbaPct !== undefined ? `Say yes with conditions: a Community Benefit Agreement worth ${dec(cbaPct, 1)}% of the build` : "Say yes with conditions: write heat reuse into a binding Community Benefit and Heat Supply Agreement",
       layout: "split",
       notes: "Close on three asks. Town: make heat reuse a condition of any approval. TeraWulf: sign the Heat Supply Agreement, keep cooling independent, keep the 1 MGD lake permit unused for cooling. Funders: NYSERDA FlexTech and large-scale thermal programs to pay for the feasibility work. Point to the QR code for the live model.",
       visual: (
         <div className="grid gap-4">
           {[
-            { who: "Town of Lansing", what: cba?.as_pct_of_dc_capex !== undefined ? `Make a binding Community Benefit Agreement (about ${dec(cba.as_pct_of_dc_capex, 1)}% of the data center build, funding the home program) and a Heat Supply Agreement a condition of approval, instead of a flat ban.` : "Make a Heat Supply Agreement a condition of any approval, instead of a flat ban." },
+            { who: "Town of Lansing", what: cbaPct !== undefined ? `Make a binding Community Benefit Agreement (about ${dec(cbaPct, 1)}% of the data center build, funding the home program) and a Heat Supply Agreement a condition of approval, instead of a flat ban.` : "Make a Heat Supply Agreement a condition of any approval, instead of a flat ban." },
             { who: "The data center", what: "Sign it: sell heat, keep cooling independent, keep the lake permit unused for cooling, fund the exit reserve." },
             { who: "Funders and state", what: "Co-fund the feasibility study and the Phase 1 on-site campus (NYSERDA programs; federal tax credits may apply if structured to qualify)." },
           ].map((a, i) => (

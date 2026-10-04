@@ -71,7 +71,7 @@ export function HowItWorks({ data }: { data: AppData }) {
           <section className="card p-5" aria-label="Tests">
             <h2 className="m-0 text-[1.5rem] serif">Tests (verified 2026-10-04)</h2>
             <ul className="m-0 mt-2 pl-5 grid gap-1 text-[1.125rem]">
-              <li><b className="num">15</b> Python tests: energy balance, storage bounds, COP, CRF, finance. Run <code>uv run pytest</code>.</li>
+              <li><b className="num">17</b> Python tests: energy balance, storage bounds, COP, CRF, finance, backup sizing. Run <code>uv run pytest</code>.</li>
               <li><b className="num">20</b> web tests: COP and clip, CRF, LCOH, household savings, scenario scaling reproduces the data file. Run <code>bun run test</code> in <code>web/</code>.</li>
               <li>Python output JSON is the same JSON this app loads.</li>
             </ul>

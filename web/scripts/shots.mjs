@@ -16,7 +16,7 @@ for (const [w, h] of sizes) {
     await p.waitForSelector("h1", { timeout: 15000 }); await p.waitForTimeout(2200);
     await p.screenshot({ path: `screenshots/story-${String(i).padStart(2, "0")}-${w}.png` });
   }
-  for (const r of ["explore", "compare", "print"]) {
+  for (const r of ["explore", "compare", "how", "print"]) {
     await p.goto(`${base}/${r}/`);
     await p.waitForTimeout(2500);
     await p.screenshot({ path: `screenshots/${r}-${w}.png`, fullPage: r !== "print" });

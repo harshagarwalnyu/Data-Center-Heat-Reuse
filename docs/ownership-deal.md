@@ -9,7 +9,7 @@ Context (FACT): Town Board told its attorney to draft a data-center ban and set 
 
 ## 1. Ownership model comparison
 
-| | **A. TeraWulf-owned** | **B. NYSEG utility thermal network (UTENJA)** | **C. Community co-op / municipal thermal utility** | **D. Third-party concession (ESCO/DBFOM)** |
+| | **A. TeraWulf-owned** | **B. NYSEG utility thermal network (UTENJA)** | **C. Community thermal co-op (alternative: municipal thermal utility)** | **D. Third-party concession (ESCO/DBFOM)** |
 |---|---|---|---|---|
 | Who funds capex | TeraWulf balance sheet (ITC if taxable: 30% w/ prevailing wage, see s5) | NYSEG; recovered from ratepayers if PSC approves (rate base) | Public/co-op debt + grants + direct-pay ITC (only if entity is an "applicable entity", see note 3) | Concessionaire equity/debt; repaid by tariff + availability payment from town or TeraWulf (PROPOSAL) |
 | Who earns | TeraWulf (heat sales; or gives free as goodwill) | NYSEG regulated return | Members/town; Danish-style non-profit, cost-based price (note 2) | Concessionaire margin over term |
@@ -28,22 +28,26 @@ Precedents and sources (all `(verified 2026-10-03)` unless marked):
 
 Notes:
 - (2) Sourcing for the Danish cost-based rule is a search summary; the DATA HEAT file confirms the cooperative/municipal ownership and that a surplus-heat price cap was removed in early 2025 (Appendix A p.15).
-- (3) Section 6417 direct pay: applicable entities are tax-exempt orgs, state/local governments, and **rural electric cooperatives** (https://www.federalregister.gov/documents/2023/06/21/2023-12798/section-6417-elective-payment-of-applicable-credits, search summary). A heat co-op is **not** automatically eligible; a town or town-created public entity is. This favors municipal over co-op.
+- (3) Section 6417 direct pay: applicable entities are tax-exempt orgs, state/local governments, and **rural electric cooperatives** (https://www.federalregister.gov/documents/2023/06/21/2023-12798/section-6417-elective-payment-of-applicable-credits, search summary). A heat co-op is **not** automatically eligible; a town or town-created public entity is. This favors municipal over co-op on federal credit alone; we accept that cost, see section 2.
 - Cross-model fact: DATA_HEAT says supply-side risk is the main barrier; many DCs plan on a 10-year horizon and will not guarantee heat longer (Appendix A p.34).
 
 ## 2. Recommendation
 
-**PROPOSAL: Model C, structured as a municipal (town-chartered) thermal utility, with a concession-style O&M contract (borrowing from D) and NYSEG as a later Phase 3 partner option.** Not a co-op. Reasoning:
+**PROPOSAL (decided by the team, 2026-10-04): Model C, structured as a community thermal co-op, with a concession-style O&M contract (borrowing from D) and NYSEG as a later Phase 3 partner option.** The municipal (town-chartered) thermal utility was the alternative we considered and is kept as the fallback. Reasoning:
 
-1. **Trust.** The town is the veto player (ban draft, $500k reserve). Heat the town owns and prices at cost is the one concession that cannot be read as TeraWulf PR. Model A fails this test; it is the opposite of the ask.
-2. **Direct-pay ITC.** Local governments are applicable entities; a bare co-op may not be (note 3). Phase 1 on a former coal site also claims the Energy Community adder per facts-site2 s6 (eligibility itself [unverified], see s5 note).
-3. **Risk fit.** DC cannot promise >10 years (Appendix A p.34), so the long-lived asset (pipes, community side) must sit with a patient public owner, while TeraWulf only owns a replaceable heat-extraction skid. Cost-based non-profit pricing is the Danish pattern (precedent 3).
-4. **Why not B.** UTENJA is the cleanest ratepayer-protection regime and gives NYSEG capital, but: pilots are slow and staged, the Ithaca pilot cost grew from $13.5M to $35.45M, NYSEG is the utility behind the Lansing gas moratorium, and a 150 MW source vs a ~4,450-household town (facts-site2 s2) is not its pilot shape. Keep as Phase 3 (town-center main) and as the **fallback** if the town cannot form an entity.
-5. **Why not D alone.** A concessionaire needs a creditworthy off-taker; the town, not the concessionaire, is the entity the public trusts. Hire the O&M expertise (the town does not have it) via concession, keep ownership public.
+1. **Community control.** Households, growers and the school district hold membership and a governance vote, with a town seat on the board. Heat that members own and price at cost is the one concession that cannot be read as TeraWulf PR, and it does not depend on a Town Board that is currently drafting a ban to also become a utility operator. Model A fails this test; it is the opposite of the ask.
+2. **A direct answer to the ban politics.** The ask to the town is not "approve the data center and trust us" but "make approval conditional on a recorded Community Benefit Agreement and Heat Supply Agreement with a community-owned counterparty". A co-op is that counterparty without asking a skeptical Town Board to take on debt, staff or liability, which a municipal utility would.
+3. **Member patronage returns.** A co-op returns surplus to members in proportion to heat bought (patronage), consistent with cost-based, non-profit pricing (the Danish pattern, precedent 3: 323 co-ops, about 34 percent of heat sold in 2019). Any windfall above the tariff rule flows back to members, not to a third party.
+4. **Risk fit.** The DC cannot promise more than 10 years (Appendix A p.34), so the long-lived assets (pipes, community side) must sit with a patient owner whose members have a long-term stake, while TeraWulf owns only a replaceable heat-extraction skid. The HSA step-in right and decommissioning bond protect the co-op.
+5. **Why not the municipal utility (the alternative).** It has real advantages: local governments are applicable entities for Section 6417 direct pay, and it carries public-debt access and sovereign-style trust (note 3). We still prefer the co-op because it puts control with the people who pay the bills, keeps the heat business out of Town Board politics, and avoids loading a small town's balance sheet with the weakest-credit part of the project. Cost of the choice: a bare co-op may not qualify for direct pay, so the base case assumes no federal credit anyway (`finance.incentives`), and the co-op can ask the town to hold the tax-exempt financing or the interface assets if counsel confirms a structure. **Fallback:** if a co-op cannot be formed or financed, the same agreements can be assigned to a town-chartered utility.
+6. **Why not B.** UTENJA is the cleanest ratepayer-protection regime and gives NYSEG capital, but pilots are slow and staged, the Ithaca pilot cost grew from $13.5M to $35.45M, NYSEG is the utility behind the Lansing gas moratorium, and a 150 MW source against a ~4,450-household town (facts-site2 s2) is not its pilot shape. Keep as a Phase 3 partner (town-center main).
+7. **Why not D alone.** A concessionaire needs a creditworthy off-taker; the co-op, not the concessionaire, is the entity the public trusts. Hire the O&M expertise (the co-op does not have it) via concession, keep ownership with members.
 
-Biggest gap in this recommendation: whether a NY town can legally own and charge for a thermal utility under current law is **[unverified]**. Needs a municipal-law check before the pitch states it as feasible.
+**[unverified] New York co-op law for thermal networks.** We have not confirmed which New York statute a thermal co-op would be formed under (for example the Cooperative Corporations Law versus a not-for-profit corporation), whether selling heat to households triggers Public Service Commission jurisdiction, or how patronage returns and tax treatment would work for a heat co-op. What is sourced (`research/verification.md` rows 11a-11d, verified 2026-10-03): Public Service Law section 66-t tells the PSC to exempt small-scale thermal networks not owned by utilities, Town Law section 190 does not list a heating district, and a nonprofit-cooperative carve-out exists in the PSL steam definition where steam is produced solely for members, but whether hot-water service fits it is unverified. The Danish and rural-electric-co-op precedents are not New York law. Needs a co-op and municipal-law check before the pitch states the structure as feasible. The same question for a town-owned utility is also unverified.
 
-## 3. Term sheet: Heat Supply Agreement (HSA) between TeraWulf/Lake Hawkeye LLC and the Thermal Utility
+---
+
+## 3. Term sheet: Heat Supply Agreement (HSA) between TeraWulf/Lake Hawkeye LLC and the Thermal Utility (the community thermal co-op)
 
 All bullets are **PROPOSAL** unless a source is attached. Bracketed values are placeholders to fill from the engineering model.
 
@@ -92,7 +96,7 @@ Price inputs are **FACT** from facts-site2 s4 (NYSERDA central region weekly sur
 | Capacity (fixed) charge | Customer | `$/kW_th contracted/yr` set to recover [x%] of debt service | level [unverified] |
 | Connection fee | Customer, financeable | `Fee = trench + HX per household, minus grants/ITC` ; low-income waiver | level [unverified]; rural trenching $200 to $400 per ft in research/site-selection.md (not independently checked) |
 | Anchor contract (greenhouse/aquaculture) | Operator | Low heat price per kWh_th plus minimum annual take; soaks summer surplus | PROPOSAL; demand [unverified] |
-| Federal ITC (Section 48, geothermal heat pump property) | Treasury, via direct pay if town-owned | 30% base with prevailing wage and apprenticeship; Energy Community +10% in facts-site2 | see note |
+| Federal ITC (Section 48, geothermal heat pump property) | Treasury, via direct pay only if the owner is an applicable entity (town-owned yes; co-op [unverified]) | 30% base with prevailing wage and apprenticeship; Energy Community +10% in facts-site2 | see note |
 | State grants | NYSERDA | PON 5614 large-scale thermal; FlexTech up to 50% of studies; NYSEG NPA program for Lansing (facts-site2 s6, s2) | amounts [unverified] |
 | TeraWulf contribution | TeraWulf | Capital contribution for site-side skid and a seed decommissioning reserve | amount [unverified] |
 
@@ -115,11 +119,11 @@ Honest headline: **direct cost savings are small; the value is permit survival.*
 
 ## Lane status
 
-**Done:** four-model comparison with sources; one recommendation (municipal thermal utility, concession-style O&M, NYSEG as Phase 3/fallback); HSA and CBA term sheets; revenue table with traceable inputs; TeraWulf value table.
+**Done:** four-model comparison with sources; one recommendation (community thermal co-op, concession-style O&M, NYSEG as a Phase 3 partner; municipal utility as the fallback); HSA and CBA term sheets; revenue table with traceable inputs; TeraWulf value table.
 
 **[unverified] / weak sourcing (do not present as fact):**
 - NYSEG Ithaca pilot cost ($35.45M, was $13.5M), Danish co-op share (323 co-ops, 34%), Jamestown 72 customers, Section 48 phase-down dates, Section 6417 eligibility: taken from web-search summaries; the primary PDFs/pages were not opened (one NYSEG page fetch timed out).
-- Whether a NY town can legally form and charge for a thermal utility; whether PSC jurisdiction would attach to any sale to households.
+- Whether NY law supports a community thermal co-op (formation statute, PSC jurisdiction, patronage and tax treatment); whether a NY town can legally form and charge for a thermal utility; whether PSC jurisdiction would attach to any sale to households.
 - Whether a waste-heat heat-pump network qualifies for Section 48; the Energy Community adder on that network.
 - All dollar values for TeraWulf (approval probability, project NPV, fan-energy ratio, power price, export share), decommissioning reserve size, connection fee, capacity charge, grant amounts.
 - Noise limit and minimum-delivery numbers (X, T, Y); DC supply/return temperatures (open question in facts-site2).

@@ -11,7 +11,7 @@ export function PrintSheet({ data }: { data: AppData }) {
   const homes = d.rings.find((r) => r.id === "corridor")?.homes ?? d.impact.homes_served;
   const demand = d.totals.heat_delivered_MWh;
   const ha = d.extras?.greenhouse_check?.area_ha;
-  const cbaPct = d.extras?.cba?.as_pct_of_dc_capex;
+  const cbaPct = d.extras?.cba?.headline_as_pct_of_dc_capex ?? d.extras?.cba?.as_pct_of_dc_capex;
   const bars = [
     { n: "Our heat (community-owned)", v: f.lcoh_usd_mwh.coop_4pct, c: "var(--teal)" },
     { n: "Propane", v: f.incumbent_usd_mwh.propane, c: "var(--ember)" },

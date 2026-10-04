@@ -123,7 +123,7 @@ Ring 1 occupies the former coal station brownfield and directly adjacent parcels
 Ring 2 extends eastward and southward along Route 34B (Cayuga Drive, Lake Road, and Ridge Road), serving single-family homes, multi-family residences, and rural farms.
 - Infrastructure: 20.9 km total trench length, comprising a 3.0 km main transmission spine and 17.9 km of distribution laterals (sized for 714 potential frontage structures, serving 500 connected homes at an assumed 70% customer uptake).
 - Hydraulic Standard: 5th-generation ambient thermal energy network (5G TEN). Uninsulated high-density polyethylene (HDPE) SDR-11 pipe buried at standard 1.5 m frost depth. Fluid circulates at 15 °C to 20 °C, eliminating ground thermal distribution losses and avoiding expensive pre-insulated piping.
-- Building Systems: Each connected household is equipped with a centralized water-to-water or water-to-air heat pump (average capacity 12 kW thermal; $16,000 unit installed capital cost, owned and maintained by the municipal thermal utility). Because evaporator water enters at 15 °C to 20 °C, the building heat pumps achieve a seasonal average heating COP of 4.71.
+- Building Systems: Each connected household is equipped with a centralized water-to-water or water-to-air heat pump (average capacity 12 kW thermal; $16,000 unit installed capital cost, owned and maintained by the community thermal co-op). Because evaporator water enters at 15 °C to 20 °C, the building heat pumps achieve a seasonal average heating COP of 4.71.
 - Demand & Cost: Peak coincident thermal demand is 6.84 MW thermal, delivering 13,500.0 MWh/yr (27.0 MWh/yr per home for heating and domestic hot water). The linear heat density is 0.65 MWh per linear meter of pipe annually. Unsubsidized standalone LCOH is $285.8/MWh at 7%.
 
 #### Ring 3: Town Center Main (Fails Gate Test)
@@ -283,7 +283,7 @@ Table 4 compares the levelized cost of heat delivered by Thermal Commons against
 ## 6. Economics and Funding Framework
 
 ### 6.1 Tariff Design and Household Savings
-To guarantee immediate, tangible economic relief to Lansing residents, the municipal utility implements a heat-as-a-service tariff structure:
+To guarantee immediate, tangible economic relief to Lansing residents, the community thermal co-op implements a heat-as-a-service tariff structure:
 - Corridor Standard Tariff: Pegged at a permanent 20% discount to delivered propane ($108.9/MWh delivered heat, equivalent to $0.1089/kWh thermal).
 - Low-Income / Energy-Burdened Tier: Qualifying households (aligned with Tompkins County HEAP eligibility) receive an additional 35% discount on the volumetric rate ($88.5/MWh delivered).
 - Zero Customer Upfront Cost: Trenching, service laterals, indoor hydronic heat exchangers, and building heat pumps ($16,000 per home) are capitalized entirely by the utility. Residents pay only for metered thermal energy consumed.
@@ -296,7 +296,7 @@ Under this tariff:
 ### 6.2 Project Financial Gap and Cross-Subsidization
 At the adopted tariff of $108.9/MWh for residential customers and $50.0/MWh wholesale for on-site agricultural customers, annual system revenue is $3.27M/yr. 
 
-Operating under a 7% municipal discount rate over a 30-year lifecycle:
+Operating under a 7% utility discount rate over a 30-year lifecycle:
 - The standalone Corridor Ring (Ring 2) incurs an annualized shortfall of $2.443M/yr, representing a standalone present value funding gap of $30.32M PV.
 - The On-Site Campus (Ring 1) generates an operational surplus with a present value of $4.31M PV, driven by its high linear density and direct 45 °C heat exchange.
 - Netting the on-site surplus against the corridor deficit yields a single whole-project present value funding gap of $26.01M PV ($26.0M), equivalent to an annuitized requirement of $2.096M/yr (~$2.10M/yr).
@@ -323,7 +323,7 @@ Many clean energy proposals inappropriately assume a 30% to 50% federal Investme
 - Statutory Limitation: Treasury Final Regulations (2024-28190) expressly limit Section 48 "geothermal heat pump property" to systems using the ground, ground water, or underground fluids as thermal sources. Treasury specifically rejected petitions to extend this classification to waste-heat-sourced networks.
 - Section 48(c)(5) Limitation: "Waste energy recovery property" under Section 48(c)(5) applies exclusively to facilities generating electricity from waste heat; it does not cover thermal distribution or heat pumps delivering space heating.
 
-Therefore, our base-case financial model assumes exactly $0 in federal ITC support. As an upside scenario, if portions of the ambient loop are co-located with dedicated borehole ground-source thermal energy storage, a municipal utility could claim Section 6417 direct pay for qualifying ground-coupled assets (30% base with prevailing wage/apprenticeship, plus a 10-percentage-point Energy Community adder for Census Tract 36109002300). Under this qualifying incentive scenario, the whole-project funding gap drops from $26.01M PV to $13.28M PV, and blended project LCOH drops to $85.8/MWh. We treat this strictly as project upside subject to formal tax counsel opinion.
+Therefore, our base-case financial model assumes exactly $0 in federal ITC support. As an upside scenario, if portions of the ambient loop are co-located with dedicated borehole ground-source thermal energy storage, a town-owned entity could claim Section 6417 direct pay (eligibility of a co-op is unverified, so the co-op would need the town or counsel to hold qualifying assets) for qualifying ground-coupled assets (30% base with prevailing wage/apprenticeship, plus a 10-percentage-point Energy Community adder for Census Tract 36109002300). Under this qualifying incentive scenario, the whole-project funding gap drops from $26.01M PV to $13.28M PV, and blended project LCOH drops to $85.8/MWh. We treat this strictly as project upside subject to formal tax counsel opinion.
 
 ---
 
@@ -355,13 +355,13 @@ Thermal Commons evaluates environmental and community value across the seven pet
 To determine the optimal institutional vehicle, four governance models were evaluated:
 - Model A: TeraWulf Owned and Operated. TeraWulf capitalizes and operates the thermal network. This model has the lowest community trust; in the wake of the Lansing, Michigan Deep Green controversy, a private network owned by the data center would be viewed as public relations and rejected by the Town Board.
 - Model B: NYSEG Utility Thermal Network. Developed under New York's Utility Thermal Energy Network and Jobs Act (UTENJA, PSL Section 66-t). While UTENJA provides a structured regulatory framework, IOU thermal pilots have suffered severe cost escalations and regulatory delays (for example, NYSEG's Ithaca UTEN pilot budget grew from an initial $15.0M estimate to $35.45M in its July 2025 Stage 2 filing). Furthermore, NYSEG is viewed critically in Lansing due to the 11-year gas moratorium.
-- Model C: Town-Chartered Municipal Thermal Utility (Recommended). Sited as an independent municipal authority or public benefit corporation (precedent: Jamestown Board of Public Utilities, which has operated district heating in New York since 1984). The town utility contracts an experienced third-party operator (concessionaire) for mechanical operations and maintenance, while the town retains ownership of the distribution assets and sets non-profit, cost-of-service tariffs.
+- Model C: Community Thermal Co-op (Recommended). A member-owned, non-profit cooperative whose members are connected households, growers and the school district, with a seat for the Town on its board. It contracts an experienced third-party operator (concessionaire) for mechanical operations and maintenance, prices heat at cost, and returns surplus to members as patronage. The alternative we considered is a Town-Chartered Municipal Thermal Utility (precedent: Jamestown Board of Public Utilities, which has operated district heating in New York since 1984); it remains the fallback if a co-op cannot be formed or financed. New York co-op law for thermal networks is unverified (see docs/ownership-deal.md, section 2).
 - Model D: Pure Third-Party Concession (ESCO). A private energy service company finances and operates the system. While technically viable, an ESCO requires commercial returns (10% to 12% discount rates), driving LCOH above affordable levels and requiring extensive public revenue guarantees.
 
-Recommendation: Model C. Public ownership ensures that the physical network remains a permanent community asset, provides democratic accountability through an appointed board with community representation, and creates the institutional framework required to enforce contractual compliance.
+Recommendation: Model C. Member ownership keeps the physical network a permanent community asset under community control, gives a direct answer to the ban politics (approval conditional on a recorded agreement with a community-owned counterparty, without asking the Town Board to run a utility), returns surplus to members through patronage, and creates the institutional framework required to enforce contractual compliance. The municipal utility is weaker on community control and loads the town's balance sheet, but stronger on direct-pay eligibility.
 
 ### 8.2 Heat Supply Agreement (HSA) Term Sheet
-The HSA is executed between Lake Hawkeye LLC, Cayuga Operating Company LLC (landlord and water permit holder), and the Municipal Thermal Utility:
+The HSA is executed between Lake Hawkeye LLC, Cayuga Operating Company LLC (landlord and water permit holder), and the Thermal Commons co-op:
 1. Primary Subordination (Cooling Always Wins): The HSA explicitly establishes that data center heat extraction is subordinate to primary server cooling. The data center retains the unencumbered right to activate modulating bypass valves and reject 100% of heat through its dry coolers at any time. No heat delivery interruption shall constitute a data center operational default.
 2. Commodity Heat Pricing: Waste heat is delivered at $0.00/MWh thermal at the boundary heat exchanger interface. The utility pays only for secondary circulation electricity and its proportional share of plate heat exchanger maintenance.
 3. Contract Term: Initial term of 10 years, with automatic 5-year renewal options coinciding with data center IT equipment refresh cycles.
@@ -386,7 +386,7 @@ The CBA is executed between the Town of Lansing, Tompkins County, and TeraWulf I
 | **Operational** | Extended winter freeze during IT curtailment | Critical | Low | 23.2 MW dual-fuel backup boilers provide 100% peak demand coverage. 5,558 m3 storage provides 6 h thermal buffer. |
 | **Commercial** | Premature data center tenant exit (Year 10) | High | Medium | HSA step-in rights; $5.71M decommissioning bond; secondary electrification plan converting central plant to modular air-to-water HPs. |
 | **Market** | Residential uptake falls below 70% design target | Moderate | Medium | Heat-as-a-Service model eliminates upfront customer equipment costs; guaranteed 20% discount vs propane drives voluntary conversion. |
-| **Regulatory** | NY Town Law challenges to municipal thermal utility | High | Low | Structured as a Town Improvement District under Town Law Art 12-A, or partnered with NYSEG under UTENJA Section 66-t as a fallback. |
+| **Regulatory** | NY law challenges to a community thermal co-op (formation, PSC jurisdiction) [unverified] | High | Low | Obtain a co-op and municipal-law opinion before signing; fall back to a town-chartered utility (for example a Town Improvement District under Town Law Art 12-A) or partner with NYSEG under UTENJA Section 66-t. |
 | **Financial** | Local electricity rates escalate rapidly | Moderate | Medium | Central pumping uses wholesale/industrial rate ($0.108/kWh); building HPs have high COP (4.71), buffering volumetric electricity risk. |
 | **Environmental** | Accidental glycol release to Cayuga Lake watershed | Critical | Extremely Low | Food-grade non-toxic glycol specified; secondary containment berms; closed hydronic loop isolated by double-wall plate exchangers. |
 
@@ -404,10 +404,10 @@ Phase 2:                           [Corridor Ambient Loop (500 Homes)]
 Phase 3:                                                   [Monitoring & Tech Transition]
 ```
 
-### Phase 0: Municipal Governance, Permitting, and Agreements (Months 1 to 12)
+### Phase 0: Co-op Governance, Permitting, and Agreements (Months 1 to 12)
 - Formal adoption of the Community Benefit Agreement and Heat Supply Agreement by the Lansing Town Board.
 - Town Board votes to withdraw the draft data center prohibition law in response to binding contractual covenants.
-- Chartering of the Lansing Municipal Thermal Utility and execution of the operating concession agreement.
+- Formation of the Lansing community thermal co-op (member enrollment, board with a Town seat) and execution of the operating concession agreement.
 - Completion of NY State Environmental Quality Review Act (SEQRA) Full Environmental Impact Statement.
 - Final engineering design and procurement specifications for the sidestream extraction skid and thermal storage.
 

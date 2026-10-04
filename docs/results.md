@@ -7,7 +7,7 @@ Base case for Site 2, Lake Hawkeye, Lansing NY: phases 1 and 2 (on-site campus p
 1. There is far more heat than anyone can use. The base case makes 777.6 GWh/yr available and the reuse system takes 6.5 percent of it. Heat supply is not the constraint on this project; **distance and density** are.
 2. The **on-site campus is cheap**: heat at the fence costs 40.6 USD/MWh (7 percent), against 136.1 USD/MWh for propane.
 3. The **corridor is uneconomic standalone**: 285.8 USD/MWh at 7 percent, against 104.8 USD/MWh blended tariff revenue and 96.9 USD/MWh for each home simply installing an air-source heat pump. We do not claim otherwise.
-4. The honest answer is a **funding answer**: the whole project has a present-value gap of 26.0 million USD at 7 percent over 30 years, about 2.1 million USD per year annuitized, which is 1.73 percent of a 1.5 billion USD data-center capex benchmark. The proposal is conditional on a binding Community Benefit Agreement that closes that gap, and on staging so that nothing is trenched before it does.
+4. The honest answer is a **funding answer**: the whole project has a present-value gap of 26.0 million USD at 7 percent over 30 years, about 2.1 million USD per year annuitized, which is 1.73 percent of a 1.5 billion USD data-center capex benchmark. The proposal, owned by a community thermal co-op, is conditional on a binding Community Benefit Agreement that closes that gap, and on staging so that nothing is trenched before it does.
 
 ## Base-case headline numbers (outputs/site2.json)
 
@@ -74,7 +74,7 @@ Break-even scan (`extras.cba.breakeven_homes_if_cba_pays_pipe`, corridor LCOH ve
 
 | Who pays what | Corridor LCOH at 2,000 homes (USD/MWh) | Break-even homes |
 |---|---|---|
-| Utility pays everything (base) | 285.8 at 500 homes (ring LCOH) | not scanned |
+| Co-op pays everything (base) | 285.8 at 500 homes (ring LCOH) | not scanned |
 | Community Benefit pays loop pipe and laterals | 179.6 | none up to 2,000 |
 | Pays pipe, laterals and half of building heat pumps | 135.8 | none up to 2,000 |
 | Pays pipe, laterals and all building heat pumps | 103.3 (at the break-even point) | 50 homes |
@@ -92,7 +92,7 @@ The binding cost is the roughly 16,000 USD in-home heat pump, not the trench. Pa
 | As share of data-center capex benchmark | 1.73 percent | 1,500 million USD = 10 million USD/MW x 150 MW (Turner & Townsend 2025, midpoint assumed) |
 | With 30 percent ITC, if it qualified | 13.28 million USD | Incentive scenario only; not assumed in the base, eligibility unverified |
 
-The gap is what a funding stack must cover so that tariffs stay below incumbent fuels. Candidate sources, none of them committed: a Community Benefit Agreement contribution from the data center, state programs (NYSERDA clean-heat funding, a utility non-pipes alternative), and low-cost municipal capital. The 4 percent co-op LCOH of 89.5 USD/MWh against 124.6 USD/MWh at 10 percent shows how much the cost of capital alone is worth. The structure and term sheets are in [ownership-deal.md](ownership-deal.md). We present the gap as the price of a license to operate, about 1.7 percent of the data-center's own capital, not as a business that pays for itself.
+The gap is what a funding stack must cover so that tariffs stay below incumbent fuels. Candidate sources, none of them committed: a Community Benefit Agreement contribution from the data center, state programs (NYSERDA clean-heat funding, a utility non-pipes alternative), and low-cost municipal capital. The 4 percent co-op LCOH of 89.5 USD/MWh against 124.6 USD/MWh at 10 percent shows how much the cost of capital alone is worth. The owner we propose is a community thermal co-op; the structure, the municipal-utility alternative and the term sheets are in [ownership-deal.md](ownership-deal.md). We present the gap as the price of a license to operate, about 1.7 percent of the data-center's own capital, not as a business that pays for itself.
 
 ## Sensitivity (tornado)
 
@@ -151,7 +151,7 @@ Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`
 - **Simplified hydraulics.** No pipe network hydraulics, ground-temperature loop model, tank stratification or seasonal storage; pipe losses are constant W/m.
 - **COP at the cap.** The central heat pump for the town ring runs at the 6.0 cap in the base, which is optimistic. The ring fails regardless.
 - **Unmet hours are zero by construction** because backup is sized at 100 percent of peak. Use the peak-share and backup-share metrics to judge resilience.
-- **Legal and regulatory.** Whether a New York town can own a thermal utility, the status of the Town Board's data-center ban draft, and eligibility of a waste-heat network for federal credits are unverified or open. See [risk-matrix.md](risk-matrix.md).
+- **Legal and regulatory.** Whether New York law supports a community thermal co-op for heat (formation statute, PSC jurisdiction, patronage and tax treatment) or a town-owned utility, the status of the Town Board's data-center ban draft, and eligibility of a waste-heat network for federal credits are unverified or open. See [risk-matrix.md](risk-matrix.md).
 - **Site 1 is indicative only.**
 
 ## What we would do next
@@ -161,5 +161,5 @@ Why we chose Site 2 (`site1.json` `why_not_chosen`, `research/site-selection.md`
 3. Obtain letters of intent from at least two anchor offtakers (greenhouse operator and the school district or recreation operator) and re-price the on-site tariff against them.
 4. Ask TeraWulf for its cooling design and capture temperature, and test the sidestream interface against the cooling-always-wins principle with its engineers.
 5. Run a multi-year weather and outage Monte Carlo and a hydraulic model, with Grundfos pump and heat-exchanger selection, for the on-site loop.
-6. Draft the Community Benefit Agreement and Heat Supply Agreement terms with municipal counsel and confirm the town-owned utility option ([ownership-deal.md](ownership-deal.md)); price the funding stack against the 26.0 million USD gap.
+6. Draft the Community Benefit Agreement and Heat Supply Agreement terms with co-op and municipal counsel, confirm that the community thermal co-op is legally feasible in New York and keep the town-owned utility as the fallback ([ownership-deal.md](ownership-deal.md), section 2); price the funding stack against the 26.0 million USD gap.
 7. Stage the build as the schedule in [proposal/12-implementation-timeline.md](proposal/12-implementation-timeline.md) states: on-site first, corridor in sign-up clusters only after a funding gate, town center not before a much larger anchor load exists (for example the salt mine, load unverified).
