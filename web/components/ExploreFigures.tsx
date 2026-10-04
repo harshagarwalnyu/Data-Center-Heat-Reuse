@@ -60,7 +60,7 @@ export function FlowStrip({ producedGWh, deliveredGWh, sharePct }: { producedGWh
   const has = Number.isFinite(sharePct) && producedGWh > 0;
   const share = has ? sharePct : 0;
   const label = has
-    ? `Live flow: the data center makes ${dec(producedGWh, 0)} GWh of heat a year, the exchanger passes ${dec(deliveredGWh, 0)} GWh to the farm and homes, ${dec(Math.min(share, 100), 1)} percent of it.`
+    ? `Live flow: the data center makes ${dec(producedGWh, 0)} GWh of heat a year, ${dec(deliveredGWh, 0)} GWh is delivered to the farm and homes after the heat pumps, ${dec(Math.min(share, 100), 1)} percent of it.`
     : "Live flow: the data center makes no heat at this size, so nothing reaches the farm and homes.";
   const node = (icon: ReactNode, text: string) => (
     <div className="grid justify-items-center gap-1 text-center w-[84px] sm:w-[104px] shrink-0">

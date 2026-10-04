@@ -20,8 +20,8 @@ export const barToPsi = (bar: number) => bar * 14.5038;
 export const kgToLb = (kg: number) => kg * 2.20462;
 
 const numStr = (n: number, digits = n < 10 ? 1 : 0) => dec(n, digits);
-const num = (s: string) => parseFloat(s.replace(/,/g, ""));
-const UNIT_RE = /(\d[\d,]*(?:\.\d+)?)(?:\s?(-|–|to)\s?(\d[\d,]*(?:\.\d+)?))?\s?(°C|km|ha|tonnes?|m³|m3)(?![\w/])/g;
+const num = (s: string) => parseFloat(s.replace(/,/g, "").replace("−", "-"));
+const UNIT_RE = /((?:(?<![\w.])[-−])?\d[\d,]*(?:\.\d+)?)(?:\s?(-|–|to)\s?((?:[-−])?\d[\d,]*(?:\.\d+)?))?\s?(°C|km|ha|tonnes?|t(?=\/yr)|m³|m3)(?![\w])(?!\/(?!yr))/g;
 const HECT_RE = /(\d[\d,]*(?:\.\d+)?)([- ])hectares?\b/g;
 
 /** Rewrite metric quantities inside a prose string to US units. Numbers need a digit directly before the unit, so ids, paths and "$/m3" rates are untouched. */
@@ -36,9 +36,9 @@ export function imperialText(s: string): string {
         unit === "°C" ? (x) => String(Math.round(cToF(x)))
         : unit === "km" ? (x) => numStr(kmToMi(x))
         : unit === "ha" ? (x) => numStr(haToAcres(x), haToAcres(x) < 10 ? 1 : 0)
-        : unit.startsWith("tonne") ? (x) => int(tonnesToTons(x))
+        : unit.startsWith("tonne") || unit === "t" ? (x) => int(tonnesToTons(x))
         : (x) => int(m3ToGal(x));
-      const u = unit === "°C" ? "°F" : unit === "km" ? "mi" : unit === "ha" ? "acres" : unit.startsWith("tonne") ? "tons" : "gal";
+      const u = unit === "°C" ? "°F" : unit === "km" ? "mi" : unit === "ha" ? "acres" : unit.startsWith("tonne") || unit === "t" ? "tons" : "gal";
       const first = f(num(a));
       return b !== undefined ? `${first}${sep === "to" ? " to " : sep}${f(num(b))} ${u}` : `${first} ${u}`;
     });
@@ -76,6 +76,6 @@ export function imperialInput(input: string, value: unknown, unit: string): { va
   if (unit === "W/m2K") return o(value * 0.17611, "BTU/h·ft²·°F");
   if (unit === "$/m3") return o(value / m3ToGal(1), "$/gal");
   if (unit === "$/m") return o(value / mToFt(1), "$/ft");
-  if (unit === "Pa/m") return o(value * 0.0442, "psi per 100 ft");
+  if (unit === "Pa/m") return o(value * 0.00442, "psi per 100 ft");
   return same;
 }

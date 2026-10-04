@@ -36,11 +36,17 @@ describe("imperialText", () => {
     expect(imperialText("1,500 tonnes")).toBe("1,653 tons");
     expect(imperialText("10.4-10.6 km")).toBe("6.5-6.6 mi");
     expect(imperialText("0.5 km")).toBe("0.3 mi");
+    expect(imperialText("down to -10 °C")).toBe("down to 14 °F");
+    expect(imperialText("−17 °C design")).toBe("1 °F design");
+    expect(imperialText("5500 t/yr fish + produce")).toBe("6,063 tons/yr fish + produce");
+    expect(imperialText("10.4-10.6 km")).toBe("6.5-6.6 mi");
   });
   it("leaves ids, paths and rates alone", () => {
     expect(imperialText("$300/m3 tank")).toBe("$300/m3 tank");
     expect(imperialText("research/offtakers.md")).toBe("research/offtakers.md");
     expect(imperialText("co2_avoided_t_yr")).toBe("co2_avoided_t_yr");
+    expect(imperialText("5 t of salt")).toBe("5 t of salt");
+    expect(imperialText("DN-150 km")).toBe("DN-93 mi");
   });
   it("imperialize only touches string values", () => {
     expect(imperialize({ a: 70, b: "70 °C", c: ["5 km"], "10 km": 1 })).toEqual({ a: 70, b: "158 °F", c: ["3.1 mi"], "10 km": 1 });
@@ -56,5 +62,11 @@ describe("imperialInput", () => {
     expect(imperialInput("x.yield_kg_m2", 40, "m2").unit).toBe("lb/ft²");
     expect(imperialInput("x.lat", 42.6, "deg")).toEqual({ value: 42.6, unit: "deg" });
     expect(imperialInput("x.s", "text", "C")).toEqual({ value: "text", unit: "C" });
+  });
+});
+
+describe("imperialInput pressure", () => {
+  it("Pa/m to psi per 100 ft", () => {
+    expect(imperialInput("network.dp_pa_m", 100, "Pa/m")).toEqual({ value: 0.442, unit: "psi per 100 ft" });
   });
 });

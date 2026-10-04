@@ -348,7 +348,7 @@ A 25-acre greenhouse, fish farming and a rec center with a pool, all fed directl
 About 0.4 MW of heat per acre (Virginia greenhouse study). The campus uses 37.1 GWh a year with a 16.4 MW peak. The greenhouse figure (29 kWh per ft² a year) matches a Dutch benchmark (`docs/evidence.md`).
 
 **→→ And 126 jobs, 6,060 short tons of food?**
-Jobs come from a greenhouse jobs benchmark plus our assumptions for the fish farm (one job per 44 short tons), rec center (12) and network operations (8). Food is 6,060 short tons a year, 1,500 of it fish. **These are indicative, not commitments.** Say so if asked.
+Jobs come from a greenhouse jobs benchmark plus our assumptions for the fish farm (one job per 44 short tons), rec center (12) and network operations (8). Food is 6,060 short tons a year, 1,650 of it fish. **These are indicative, not commitments.** Say so if asked.
 
 ---
 
