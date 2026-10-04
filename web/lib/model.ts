@@ -8,7 +8,8 @@ import type { FuelKey, Ring, Site2Data } from "./types";
 export const ETA = 0.5; // fraction of Carnot
 export const APPROACH_K = 3; // heat exchanger approach, each side
 export const LIFETIME_YR = 30;
-export const COP_MAX = 8;
+export const COP_MIN = 2; // same clip as the Python model: COP in [2, 6]
+export const COP_MAX = 6;
 export const DIRECT_PUMP_FRACTION = 0.02; // pumping power when heat is used directly, no lift
 export const CAPTURE_TEMP_C = { air: 30, liquid: 50 } as const;
 // Default sink temperatures if a ring does not carry sink_temp_C (assumption, documented in docs/frontend-notes.md).
@@ -33,13 +34,13 @@ export interface Params {
 
 const K = 273.15;
 
-/** cop = eta * T_sink_K / (T_sink_K - T_source_K + 2*approach). Capped at COP_MAX. */
+/** cop = eta * T_sink_K / (T_sink_K - T_source_K + 2*approach), clipped to [COP_MIN, COP_MAX] like the Python model. */
 export function cop(tSinkC: number, tSourceC: number, eta = ETA, approach = APPROACH_K): number {
   const sink = tSinkC + K;
   const src = tSourceC + K;
   const denom = sink - src + 2 * approach;
   if (denom <= 0) return COP_MAX;
-  return Math.min(COP_MAX, (eta * sink) / denom);
+  return Math.max(COP_MIN, Math.min(COP_MAX, (eta * sink) / denom));
 }
 
 /** True when the source is warm enough to feed the user directly with no heat pump lift. */
@@ -73,9 +74,21 @@ export function co2Avoided(fossilMWh: number, efKgPerMWh: number, eff: number, h
 }
 
 // ---------------------------------------------------------------------------------------------
+/** Industrial (central heat pump + pumping) electricity price, $/MWh. Read from the data file; never hardcoded. */
+export function baseElecPrice(d: Site2Data): number {
+  const e = d.finance.elec_price_usd_mwh as unknown;
+  if (typeof e === "number") return e;
+  if (e && typeof e === "object") {
+    const o = e as Record<string, number>;
+    if (typeof o.industrial === "number") return o.industrial;
+  }
+  const k = d.extras?.electricity_rates_usd_kwh?.central_hp_and_pumping_industrial;
+  return typeof k === "number" ? k * 1000 : 108;
+}
+
 export function baseParams(d: Site2Data): Params {
   return {
-    elecPrice: d.finance.elec_price_usd_mwh ?? 140,
+    elecPrice: baseElecPrice(d),
     cooling: d.supply.capture_temp_C >= 40 ? "liquid" : "air",
     uptakePct: 100,
     discountPct: d.assumptions?.discount_rate_base_pct ?? 4,
@@ -130,7 +143,8 @@ function raw(d: Site2Data, p: Params): Raw {
   const incPipe = d.rings.reduce((s, r) => s + (ringDemandFactor(r, p) > 0 ? r.pipe_km : 0), 0);
   const incPeak = d.rings.reduce((s, r) => s + r.peak_MW * ringDemandFactor(r, p), 0);
   const scale = 0.55 * (incPipe / totPipe) + 0.45 * (incPeak / totPeak);
-  const l = lcoh(d.finance.capex_musd.total * 1e6 * scale, d.finance.opex_musd_yr * 1e6 * scale, p.elecPrice, elec, delivered, p.discountPct / 100);
+  // opex_musd_yr already contains electricity at the base price, so only the price DELTA is added (no double count).
+  const l = lcoh(d.finance.capex_musd.total * 1e6 * scale, d.finance.opex_musd_yr * 1e6 * scale, p.elecPrice - baseElecPrice(d), elec, delivered, p.discountPct / 100);
 
   const ef = d.assumptions?.ef_kg_per_MWh_th ?? {};
   const eff = d.assumptions?.fuel_efficiency ?? {};
@@ -162,6 +176,7 @@ export interface Scenario {
   tariffUsdMWh: number;
   householdSavingsPropane: number;
   householdSavingsOil: number;
+  marginUsdMWh: number; // tariff minus LCOH at the scenario's discount rate
   co2TYr: number;
   supplyLimited: boolean;
   homesServed: number;
@@ -178,7 +193,7 @@ export function scenario(d: Site2Data, p: Params): Scenario {
   const deliveredMWh = d.totals.heat_delivered_MWh * rate(s.deliveredMWh, b.deliveredMWh);
   const availGWh = d.supply.heat_available_GWh * rate(s.availMWh, b.availMWh);
   const lcohV = d.finance.lcoh_usd_mwh.coop_4pct * rate(s.lcoh, b.lcoh);
-  const tariff = d.finance.tariff_usd_mwh * rate(s.lcoh, b.lcoh);
+  const tariff = d.finance.tariff_usd_mwh; // policy-set (0.8x propane), does not move with cost
   const hh = d.finance.household.typical_MWh_yr;
   const corridor = d.rings.find((r) => r.id === "corridor");
   return {
@@ -192,6 +207,7 @@ export function scenario(d: Site2Data, p: Params): Scenario {
     tariffUsdMWh: tariff,
     householdSavingsPropane: householdSavings(hh, d.finance.incumbent_usd_mwh.propane, tariff),
     householdSavingsOil: householdSavings(hh, d.finance.incumbent_usd_mwh.heating_oil, tariff),
+    marginUsdMWh: tariff - lcohV,
     co2TYr: d.impact.co2_avoided_t_yr * rate(s.co2, b.co2),
     supplyLimited: s.supplyLimited,
     homesServed: Math.round((corridor?.homes ?? d.impact.homes_served) * (p.uptakePct / 100)),
@@ -226,7 +242,7 @@ export function household(d: Site2Data, fuel: FuelKey, factor: number): Househol
   const mwh = d.finance.household.typical_MWh_yr * factor;
   const inc = d.finance.incumbent_usd_mwh[fuel];
   const tariff = d.finance.tariff_usd_mwh;
-  const given = factor === 1 ? (fuel === "propane" ? d.finance.household.savings_vs_propane_usd : fuel === "heating_oil" ? d.finance.household.savings_vs_oil_usd : undefined) : undefined;
+  const given = fuel === "propane" ? d.finance.household.savings_vs_propane_usd * factor : fuel === "heating_oil" ? d.finance.household.savings_vs_oil_usd * factor : undefined;
   const ef = d.assumptions?.ef_kg_per_MWh_th?.[fuel] ?? FALLBACK_EF[fuel];
   const eff = d.assumptions?.fuel_efficiency?.[fuel] ?? FALLBACK_EFF[fuel];
   const grid = d.assumptions?.grid_kg_per_MWh ?? FALLBACK_GRID;

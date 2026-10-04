@@ -72,23 +72,34 @@ def capex_lines(cfg, sim) -> list[dict]:
     return L
 
 
+def life_class(item: str) -> str:
+    it = item.lower()
+    if "pipe" in it or "lateral" in it:
+        return "pipe"
+    if "tank" in it:
+        return "tank"
+    return "equip"
+
+
 def allocate(lines, sim):
+    """Per-ring capex split by life class: {ring: {pipe, tank, equip}} incl. soft cost and contingency pro rata."""
     d = sim["disp"]
     act = d["active"]
     w = {r: float((sim["rings"][r]["D"] + sim["rings"][r]["L"]).sum()) for r in act}
     tot = sum(w.values())
     share = {r: w[r] / tot for r in act}
-    own = {r: 0.0 for r in act}
-    shared = 0.0
+    base = {r: {"pipe": 0.0, "tank": 0.0, "equip": 0.0} for r in act}
     for x in lines:
+        c = life_class(x["item"])
         if x["ring"] in act:
-            own[x["ring"]] += x["usd"]
+            base[x["ring"]][c] += x["usd"]
         elif x["ring"] == "shared":
-            shared += x["usd"]
-    base = {r: own[r] + shared * share[r] for r in act}
-    sub = sum(base.values())
+            for r in act:
+                base[r][c] += x["usd"] * share[r]
+    sub = sum(sum(v.values()) for v in base.values())
     pro = sum(x["usd"] for x in lines if x["ring"] == "pro_rata")
-    return {r: base[r] + pro * base[r] / sub for r in act}, share
+    out = {r: {c: v * (1 + pro / sub) for c, v in base[r].items()} for r in act}
+    return out, share
 
 
 def evaluate(cfg, sim) -> dict:
@@ -100,7 +111,9 @@ def evaluate(cfg, sim) -> dict:
     price_c = fin["elec_price_central_usd_kwh"] * 1000  # large-industrial $/MWh (central HP, pumping)
     lines = capex_lines(cfg, sim)
     capex_total = sum(x["usd"] for x in lines)
-    capex_ring, share = allocate(lines, sim)
+    capex_cls, share = allocate(lines, sim)
+    capex_ring = {r: sum(v.values()) for r, v in capex_cls.items()}
+    life = fin["life_years"]
     f = d["f"]
     p = fin["prices"]
     backup_cost_mwh = p["propane_usd_gal"] / p["propane_kwh_gal"] * 1000 / e["backup"]["efficiency"]
@@ -117,15 +130,18 @@ def evaluate(cfg, sim) -> dict:
         fixed += o["program_usd_yr"] * share[r]
         p_hp = price if r == "corridor" else price_c
         var = Er * p_hp + pump * price_c + bk * backup_cost_mwh + o["heat_purchase_usd_mwh"] * Dr
-        ring[r] = dict(D=Dr, capex=capex_ring[r], fixed=fixed, var=var, elec_mwh=Er + pump, backup_mwh=bk)
+        ring[r] = dict(D=Dr, capex=capex_ring[r], cls=capex_cls[r], fixed=fixed, var=var, elec_mwh=Er + pump, backup_mwh=bk)
     D = sum(v["D"] for v in ring.values())
     capex = sum(v["capex"] for v in ring.values())
     fixed = sum(v["fixed"] for v in ring.values())
     var = sum(v["var"] for v in ring.values())
 
+    def ann(v, r_, itc=0.0):
+        return sum(usd * (1 - itc) * crf(r_, life[c]) for c, usd in v["cls"].items())
+
     def lcoh(r_, parts=None):
         pr = parts or list(ring.values())
-        return sum(v["capex"] * crf(r_, n_years) + v["fixed"] + v["var"] for v in pr) / sum(v["D"] for v in pr)
+        return sum(ann(v, r_) + v["fixed"] + v["var"] for v in pr) / sum(v["D"] for v in pr)
 
     rates = fin["discount_rates"]
     lcoh_tot = {k: lcoh(v) for k, v in rates.items()}
@@ -133,7 +149,7 @@ def evaluate(cfg, sim) -> dict:
     itc = fin["incentives"]["itc_pct"]
 
     def lcoh_itc(parts):
-        return sum(v["capex"] * (1 - itc) * crf(rates["utility_7pct"], n_years) + v["fixed"] + v["var"] for v in parts) / sum(v["D"] for v in parts)
+        return sum(ann(v, rates["utility_7pct"], itc) + v["fixed"] + v["var"] for v in parts) / sum(v["D"] for v in parts)
 
     lcoh_itc_tot = lcoh_itc(list(ring.values()))
     lcoh_itc_ring = {r: lcoh_itc([ring[r]]) for r in act}
@@ -153,8 +169,11 @@ def evaluate(cfg, sim) -> dict:
         rev += ring[r]["D"] * (ti["onsite_tariff_usd_mwh"] if r == "onsite" else blend)
     opex_tot = fixed + var
     af = annuity(rates["utility_7pct"], n_years)
-    npv = rev * af - opex_tot * af - capex
-    npv_itc = rev * af - opex_tot * af - capex * (1 - fin["incentives"]["itc_pct"])
+    ann_capex = sum(ann(v, rates["utility_7pct"]) for v in ring.values())
+    ann_capex_itc = sum(ann(v, rates["utility_7pct"], fin["incentives"]["itc_pct"]) for v in ring.values())
+    npv = (rev - opex_tot - ann_capex) * af   # capex enters as life-class equivalent annual cost (replacement included)
+    npv_itc = (rev - opex_tot - ann_capex_itc) * af
+    realised = rev / D
     cor_cop = R["corridor"]["D"].sum() / max(R["corridor"]["E"].sum(), 1e-9)
     scen = []
     for dsc in fin["tariff_scenarios_discount"]:
@@ -162,13 +181,14 @@ def evaluate(cfg, sim) -> dict:
         b = (1 - ti["low_income_share"]) * tf + ti["low_income_share"] * (1 - ti["low_income_discount"]) * ref
         rv = sum(ring[r]["D"] * (ti["onsite_tariff_usd_mwh"] if r == "onsite" else b) for r in act)
         scen.append(dict(multiple_of_ref=round(1 - dsc, 2), tariff_usd_mwh=tf,
-                         margin_vs_lcoh7_usd_mwh=tf - lcoh_tot["utility_7pct"],
+                         realised_revenue_usd_mwh=rv / D,
+                         margin_vs_lcoh7_usd_mwh=rv / D - lcoh_tot["utility_7pct"],
                          margin_over_hp_elec_usd_mwh=tf - price / cor_cop,
-                         npv7_musd=(rv * af - opex_tot * af - capex) / 1e6,
-                         npv7_itc_musd=(rv * af - opex_tot * af - capex * (1 - fin["incentives"]["itc_pct"])) / 1e6,
+                         npv7_musd=(rv - opex_tot - ann_capex) * af / 1e6,
+                         npv7_itc_musd=(rv - opex_tot - ann_capex_itc) * af / 1e6,
                          household_savings_vs_propane_usd=typ * (inc["propane"] - tf)))
     rc = ring["corridor"]
-    npv_cor = (rc["D"] * blend - rc["fixed"] - rc["var"]) * af - rc["capex"]
+    npv_cor = (rc["D"] * blend - rc["fixed"] - rc["var"] - ann(rc, rates["utility_7pct"])) * af
     mult = 1 + fin["capex"]["soft_cost_pct"] + fin["capex"]["contingency_pct"]
     dc_specific = sum(x["usd"] for x in lines if x["item"].startswith(("DC-side", "Source-side", "On-site"))) * mult
     yr = fin["dc_exit"]["year"]
@@ -181,7 +201,7 @@ def evaluate(cfg, sim) -> dict:
                lcoh=lcoh_tot, lcoh_ring=lcoh_ring, lcoh_itc7=lcoh_itc_tot, lcoh_itc_ring=lcoh_itc_ring, incumbents=inc, tariff=tariff, li_tariff=li, blend_tariff=blend,
                ref=ref, ref_name=ref_name, household=hh, revenue=rev, npv7=npv, npv7_itc=npv_itc,
                funding_gap_musd=max(0, -npv) / 1e6, funding_gap_itc_musd=max(0, -npv_itc) / 1e6,
-               tariff_scenarios=scen, share=share, corridor_npv7=npv_cor, corridor_gap_musd=max(0, -npv_cor) / 1e6, capex_ring=capex_ring,
+               tariff_scenarios=scen, share=share, realised_revenue_usd_mwh=realised, ann_capex_usd=ann_capex, corridor_npv7=npv_cor, corridor_gap_musd=max(0, -npv_cor) / 1e6, capex_ring=capex_ring,
                dc_exit=dict(year=yr, stranded_musd=stranded / 1e6, replacement_source_musd=repl / 1e6,
                             corridor_cost_uplift_usd_mwh=uplift))
     tr = [x for x in lines if x["item"].startswith("Town transmission")]

@@ -66,7 +66,7 @@ export interface Site2Data {
   finance: {
     capex_musd: { total: number; lines: { item: string; musd: number; source: string }[] };
     opex_musd_yr: number;
-    elec_price_usd_mwh?: number;
+    elec_price_usd_mwh?: number | { industrial: number; residential: number };
     lcoh_usd_mwh: { coop_4pct: number; utility_7pct: number; private_10pct: number };
     incumbent_usd_mwh: Record<FuelKey, number>;
     tariff_usd_mwh: number;
@@ -104,7 +104,7 @@ export interface Extras {
   with_town?: { totals?: Partial<Site2Data["totals"]>; lcoh_usd_mwh?: Partial<Site2Data["finance"]["lcoh_usd_mwh"]>; capex_musd?: number; town_ring_lcoh_usd_mwh?: number; verdict?: string };
   greenhouse_check?: { peak_MW?: number; area_ha?: number };
   linear_heat_density_corridor_MWh_per_m?: number;
-  cba?: { corridor_gap_musd?: number; per_year_musd?: number; as_pct_of_dc_capex?: number; dc_capex_musd?: number; whole_project_gap_musd?: number; breakeven_homes_if_cba_pays_pipe?: Record<string, unknown> };
+  cba?: { corridor_gap_musd?: number; per_year_musd?: number; per_year_annuitized_7pct_musd?: number; as_pct_of_dc_capex?: number; dc_capex_musd?: number; whole_project_gap_musd?: number; breakeven_homes_if_cba_pays_pipe?: Record<string, unknown> };
   air_source_hp_seasonal_cop?: number;
   lcoh_incentive_scenario_if_qualifies_usd_mwh?: number;
 }

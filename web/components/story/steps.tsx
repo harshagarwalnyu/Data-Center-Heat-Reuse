@@ -60,7 +60,7 @@ export function buildSteps(data: AppData): Step[] {
   const peakMonth = Math.max(...d.monthly.map((m) => m.demand_MWh));
   const lowMonth = Math.min(...d.monthly.map((m) => m.demand_MWh));
   const totalPeak = incl.reduce((s, r) => s + r.peak_MW, 0);
-  const storageMWh = (d.totals.storage_m3 * 1.163 * 40) / 1000; // water: 1.163 kWh/m3/K, 40 K swing
+  const storageMWh = (d.totals.storage_m3 * 1.163 * 20) / 1000; // water: 1.163 kWh/m3/K, 20 K swing (model config)
   const storageHours = storageMWh / totalPeak;
   const allBeatOil = f.lcoh_usd_mwh.private_10pct < Math.min(f.incumbent_usd_mwh.propane, f.incumbent_usd_mwh.heating_oil);
   const ringL: Partial<Record<string, number>> = { ...(ex?.ring_lcoh_usd_mwh ?? {}) };
@@ -203,7 +203,7 @@ export function buildSteps(data: AppData): Step[] {
                 </ol>
                 
                 {fund?.funding_gap_musd !== undefined && <div>Gap a benefit fund, grants or cheap capital must cover: <b className="num text-ember-text">${dec(fund.funding_gap_musd, 1)}M</b>{fund.funding_gap_incentive_scenario_if_qualifies_musd !== undefined && <> (<span className="num">${dec(fund.funding_gap_incentive_scenario_if_qualifies_musd, 1)}M</span> if federal credits qualify)</>}.</div>}
-                {cba?.as_pct_of_dc_capex !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cba.as_pct_of_dc_capex, 1)}%</b> of the data center build{cba.per_year_musd !== undefined && <>, <span className="num">${dec(cba.per_year_musd, 2)}M</span> a year over 30 years</>}, funds the home program.</div>}
+                {cba?.as_pct_of_dc_capex !== undefined && <div>Community Benefit Agreement: about <b className="num text-teal-text">{dec(cba.as_pct_of_dc_capex, 1)}%</b> of the data center build{cba.per_year_annuitized_7pct_musd !== undefined && <>, <span className="num">${dec(cba.per_year_annuitized_7pct_musd, 2)}M</span> a year (annuitized at 7% over 30 years)</>}, funds the home program.</div>}
               </div>
             </div>
           ) : (

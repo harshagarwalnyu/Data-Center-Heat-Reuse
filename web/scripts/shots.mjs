@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import fs from "node:fs";
 const base = process.env.BASE || "http://localhost:4173";
-const sizes = [[1920, 1080], [1366, 768]];
+const sizes = (process.env.SIZES || "1920x1080,1366x768").split(",").map((s) => s.split("x").map(Number));
 fs.mkdirSync("screenshots", { recursive: true });
 const b = await chromium.launch({ executablePath: process.env.CHROME || undefined });
 for (const [w, h] of sizes) {
