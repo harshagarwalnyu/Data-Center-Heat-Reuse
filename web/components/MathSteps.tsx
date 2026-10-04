@@ -217,7 +217,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
         <Row label="CO₂ per car per year" value={`${KG_CAR} t`} src={[cfg("config/impact.yaml")]} />
       </Step>
 
-      <Step n={9} fig={mc ? <RangeBar p10={mc.stats.lcoh_blended_7pct.P10} p50={mc.stats.lcoh_blended_7pct.P50} p90={mc.stats.lcoh_blended_7pct.P90} propane={f.incumbent_usd_mwh.propane} /> : null} title="How sure are we" stat={mc ? usd(mc.stats.lcoh_blended_7pct.P50) : "..."} unit="per MWh, middle of 500 runs" tone={tone}
+      <Step n={9} fig={mc ? <RangeBar p10={mc.stats.lcoh_blended_7pct.P10} p50={mc.stats.lcoh_blended_7pct.P50} p90={mc.stats.lcoh_blended_7pct.P90} propane={f.incumbent_usd_mwh.propane} runs={mc.n_draws} /> : null} title="How sure are we" stat={mc ? usd(mc.stats.lcoh_blended_7pct.P50) : "..."} unit={mc ? `per MWh, middle of ${int(mc.n_draws)} runs` : "per MWh, middle of the runs"} tone={tone}
         formula="re-run the whole model with random inputs, then read the 10th, 50th and 90th percentile of the cost of heat"
         check={mc ? <>{int(mc.n_draws)} full runs: P10 {usd(mc.stats.lcoh_blended_7pct.P10)}, P50 {usd(mc.stats.lcoh_blended_7pct.P50)}, P90 {usd(mc.stats.lcoh_blended_7pct.P90)} per MWh. Propane is {usd(f.incumbent_usd_mwh.propane)}.</> : detailFailed ? <>The Monte Carlo file could not be loaded; see outputs/analysis_detail.json in the repo.</> : <>Loading the Monte Carlo file...</>}>
         <Row label="Inputs varied" value="capture share, pipe cost, uptake, heat pump cost, power price, propane price, discount rate" src={[cfg("outputs/analysis_detail.json")]} />

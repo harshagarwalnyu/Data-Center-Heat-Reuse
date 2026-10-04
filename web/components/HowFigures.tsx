@@ -296,11 +296,11 @@ export function CarsRow({ cars, per = 250, tonnes }: { cars: number; per?: numbe
 }
 
 /** Step 9: P10 to P90 range with the P50 marker and propane to the right. */
-export function RangeBar({ p10, p50, p90, propane }: { p10: number; p50: number; p90: number; propane: number }) {
+export function RangeBar({ p10, p50, p90, propane, runs }: { p10: number; p50: number; p90: number; propane: number; runs: number }) {
   const lo = Math.floor(p10 - 22), hi = Math.ceil(Math.max(p90, propane) + 8);
   const x = (t: number) => 12 + (276 * (t - lo)) / (hi - lo);
   return (
-    <Fig label={`Cost of heat per MWh over 500 runs: P10 $${dec(p10, 1)}, P50 $${dec(p50, 1)}, P90 $${dec(p90, 1)}. Propane is $${dec(propane, 1)}, to the right of the whole range.`} w={300} h={116}>
+    <Fig label={`Cost of heat per MWh over ${runs} runs: P10 $${dec(p10, 1)}, P50 $${dec(p50, 1)}, P90 $${dec(p90, 1)}. Propane is $${dec(propane, 1)}, to the right of the whole range.`} w={300} h={116}>
       <g aria-hidden>
         <path d="M12 60 H288" stroke={LINE} strokeWidth={1.4} strokeLinecap="round" />
         <rect x={x(p10)} y={46} width={x(p90) - x(p10)} height={28} rx={8} fill="var(--sage)" stroke={LINE} strokeWidth={W} />
