@@ -1,0 +1,474 @@
+{
+  "meta": {
+    "site": "Lake Hawkeye, Lansing NY",
+    "source": "heatreuse.analysis",
+    "base_json": "outputs/site2.json (not modified)",
+    "weather": "cached TMYx weather_site2.csv"
+  },
+  "headline_check": {
+    "lcoh_blended_7pct": {
+      "model": 106.07,
+      "site2_json": 106.1,
+      "mc_P50": 106.81
+    },
+    "lcoh_corridor_7pct": {
+      "model": 285.76,
+      "site2_json": 285.8,
+      "mc_P50": 290.23
+    },
+    "funding_gap_7pct_musd": {
+      "model": 26.01,
+      "site2_json": 26.01,
+      "mc_P50": 26.42
+    },
+    "co2_avoided_t_yr": {
+      "model": 11408.41,
+      "site2_json": 11408.0,
+      "mc_P50": 11396.24
+    },
+    "delivered_MWh": {
+      "model": 50575.75,
+      "site2_json": 50576.0,
+      "mc_P50": 50500.49
+    },
+    "propane_usd_mwh": {
+      "model": 136.08,
+      "site2_json": 136.1,
+      "mc_P50": 135.72
+    }
+  },
+  "monte_carlo": {
+    "n_draws": 500,
+    "seed": 20261004,
+    "method": "full_8760h_model_per_draw",
+    "method_note": "Every draw re-runs simulate -> dispatch -> finance -> impact on the TMYx weather year; '_7pct' metrics hold the discount rate at the 7% headline basis, '_sampled_rate' metrics re-run finance on the same dispatch with the draw's discount rate (exact: the rate does not enter dispatch).",
+    "inputs": [
+      {
+        "key": "capture_fraction",
+        "dist": "triangular",
+        "low": 0.4,
+        "mode": 0.75,
+        "high": 0.85,
+        "unit": "share",
+        "basis": "engineering.yaml supply.capture_fraction [A]: base 0.75, scenarios 0.40 and 0.85"
+      },
+      {
+        "key": "elec_price_usd_kwh",
+        "dist": "triangular",
+        "low": 0.14,
+        "mode": 0.245,
+        "high": 0.32,
+        "unit": "$/kWh residential",
+        "basis": "finance.yaml tornado.elec_price; central (industrial) rate scaled by the same ratio, as in the tornado"
+      },
+      {
+        "key": "building_hp_usd",
+        "dist": "triangular",
+        "low": 11200.0,
+        "mode": 16000,
+        "high": 22400.0,
+        "unit": "$/home",
+        "basis": "finance.yaml capex.building_hp_usd [A]; no range in config, so the tornado capex multiplier 0.7x-1.4x is reused"
+      },
+      {
+        "key": "loop_pipe_usd_m",
+        "dist": "triangular",
+        "low": 315.0,
+        "mode": 450,
+        "high": 630.0,
+        "unit": "$/m",
+        "basis": "finance.yaml capex.loop_pipe_usd_m [A] x tornado.pipe_cost"
+      },
+      {
+        "key": "uptake",
+        "dist": "triangular",
+        "low": 0.45,
+        "mode": 0.7,
+        "high": 0.9,
+        "unit": "share",
+        "basis": "engineering.yaml corridor.uptake [A] x tornado.uptake; homes = potential x uptake, pipe held at potential (as the tornado)"
+      },
+      {
+        "key": "discount_rate",
+        "dist": "uniform",
+        "low": 0.04,
+        "high": 0.1,
+        "unit": "rate",
+        "basis": "finance.yaml tornado.discount_rate (4% co-op to 10% private)"
+      },
+      {
+        "key": "propane_usd_gal",
+        "dist": "triangular",
+        "low": 2.74,
+        "mode": 3.1,
+        "high": 3.46,
+        "unit": "$/gal",
+        "basis": "finance.yaml prices.propane_usd_gal: NYSERDA Central NY 2025-26 season range 2.74-3.46, base 3.10"
+      }
+    ],
+    "stats": {
+      "lcoh_blended_7pct": {
+        "P10": 98.14,
+        "P50": 106.81,
+        "P90": 114.66,
+        "mean": 106.7,
+        "min": 90.98,
+        "max": 123.56
+      },
+      "lcoh_corridor_7pct": {
+        "P10": 264.22,
+        "P50": 290.23,
+        "P90": 327.11,
+        "mean": 293.38,
+        "min": 244.24,
+        "max": 377.87
+      },
+      "funding_gap_7pct_musd": {
+        "P10": 21.26,
+        "P50": 26.42,
+        "P90": 31.73,
+        "mean": 26.53,
+        "min": 16.47,
+        "max": 38.05
+      },
+      "npv_7pct_musd": {
+        "P10": -31.73,
+        "P50": -26.42,
+        "P90": -21.26,
+        "mean": -26.53,
+        "min": -38.05,
+        "max": -16.47
+      },
+      "lcoh_blended_sampled_rate": {
+        "P10": 91.34,
+        "P50": 107.05,
+        "P90": 123.61,
+        "mean": 107.4,
+        "min": 81.28,
+        "max": 139.87
+      },
+      "lcoh_corridor_sampled_rate": {
+        "P10": 247.02,
+        "P50": 292.36,
+        "P90": 344.04,
+        "mean": 295.38,
+        "min": 215.85,
+        "max": 430.59
+      },
+      "funding_gap_sampled_rate_musd": {
+        "P10": 20.51,
+        "P50": 26.21,
+        "P90": 31.89,
+        "mean": 26.33,
+        "min": 12.63,
+        "max": 37.86
+      },
+      "co2_avoided_t_yr": {
+        "P10": 10938.14,
+        "P50": 11396.24,
+        "P90": 11774.86,
+        "mean": 11377.18,
+        "min": 10678.72,
+        "max": 12012.17
+      },
+      "delivered_MWh": {
+        "P10": 47665.97,
+        "P50": 50500.49,
+        "P90": 52843.17,
+        "mean": 50382.53,
+        "min": 46060.76,
+        "max": 54311.54
+      },
+      "propane_usd_mwh": {
+        "P10": 126.33,
+        "P50": 135.72,
+        "P90": 144.89,
+        "mean": 135.65,
+        "min": 121.8,
+        "max": 151.23
+      }
+    },
+    "prob_blended_lcoh_below_propane_7pct": 1.0,
+    "prob_blended_lcoh_below_propane_sampled_rate": 0.986,
+    "prob_funding_gap_zero_7pct": 0.0,
+    "spearman_vs_lcoh_blended_sampled_rate": {
+      "discount_rate": 0.866,
+      "loop_pipe_usd_m": 0.292,
+      "uptake": 0.267,
+      "building_hp_usd": 0.237,
+      "elec_price_usd_kwh": 0.123,
+      "propane_usd_gal": 0.024,
+      "capture_fraction": -0.003
+    }
+  },
+  "monthly": {
+    "months": [
+      {
+        "month": 1,
+        "demand_MWh": 8953.7,
+        "delivered_MWh": 8804.5,
+        "backup_MWh": 149.2,
+        "hp_elec_MWh": 546.6,
+        "avg_cop": 4.51,
+        "soc_mean_pct": 97.9,
+        "soc_min_pct": 0.0,
+        "hours_storage_below_50pct": 17
+      },
+      {
+        "month": 2,
+        "demand_MWh": 7456.6,
+        "delivered_MWh": 7456.6,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 448.6,
+        "avg_cop": 4.62,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 3,
+        "demand_MWh": 6609.8,
+        "delivered_MWh": 6609.8,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 380.2,
+        "avg_cop": 4.73,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 4,
+        "demand_MWh": 4360.1,
+        "delivered_MWh": 4135.9,
+        "backup_MWh": 224.2,
+        "hp_elec_MWh": 212.5,
+        "avg_cop": 5.04,
+        "soc_mean_pct": 92.0,
+        "soc_min_pct": 0.0,
+        "hours_storage_below_50pct": 59
+      },
+      {
+        "month": 5,
+        "demand_MWh": 2096.3,
+        "delivered_MWh": 2096.3,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 99.0,
+        "avg_cop": 4.99,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 6,
+        "demand_MWh": 1125.7,
+        "delivered_MWh": 1125.7,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 57.1,
+        "avg_cop": 4.53,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 7,
+        "demand_MWh": 734.9,
+        "delivered_MWh": 734.9,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 44.4,
+        "avg_cop": 4.09,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 8,
+        "demand_MWh": 901.1,
+        "delivered_MWh": 901.1,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 48.9,
+        "avg_cop": 4.26,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 9,
+        "demand_MWh": 1452.8,
+        "delivered_MWh": 1452.8,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 68.2,
+        "avg_cop": 4.76,
+        "soc_mean_pct": 99.8,
+        "soc_min_pct": 81.8,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 10,
+        "demand_MWh": 3096.8,
+        "delivered_MWh": 3096.8,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 147.1,
+        "avg_cop": 5.13,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 11,
+        "demand_MWh": 6166.4,
+        "delivered_MWh": 6166.4,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 346.5,
+        "avg_cop": 4.81,
+        "soc_mean_pct": 99.7,
+        "soc_min_pct": 72.8,
+        "hours_storage_below_50pct": 0
+      },
+      {
+        "month": 12,
+        "demand_MWh": 7621.6,
+        "delivered_MWh": 7621.6,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 444.2,
+        "avg_cop": 4.73,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      }
+    ],
+    "seasons": {
+      "winter_DJF": {
+        "demand_MWh": 24031.9,
+        "delivered_MWh": 23882.7,
+        "backup_MWh": 149.2,
+        "hp_elec_MWh": 1439.4,
+        "avg_cop": 4.61,
+        "soc_mean_pct": 99.3,
+        "soc_min_pct": 0.0,
+        "hours_storage_below_50pct": 17
+      },
+      "spring_MAM": {
+        "demand_MWh": 13066.3,
+        "delivered_MWh": 12842.0,
+        "backup_MWh": 224.2,
+        "hp_elec_MWh": 691.8,
+        "avg_cop": 4.86,
+        "soc_mean_pct": 97.4,
+        "soc_min_pct": 0.0,
+        "hours_storage_below_50pct": 59
+      },
+      "summer_JJA": {
+        "demand_MWh": 2761.7,
+        "delivered_MWh": 2761.7,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 150.5,
+        "avg_cop": 4.31,
+        "soc_mean_pct": 100.0,
+        "soc_min_pct": 100.0,
+        "hours_storage_below_50pct": 0
+      },
+      "fall_SON": {
+        "demand_MWh": 10716.0,
+        "delivered_MWh": 10716.0,
+        "backup_MWh": 0.0,
+        "hp_elec_MWh": 561.8,
+        "avg_cop": 4.89,
+        "soc_mean_pct": 99.8,
+        "soc_min_pct": 72.8,
+        "hours_storage_below_50pct": 0
+      }
+    },
+    "annual": {
+      "demand_MWh": 50575.8,
+      "delivered_MWh": 50202.3,
+      "backup_MWh": 373.4,
+      "hp_elec_MWh": 2843.4,
+      "avg_cop": 4.71,
+      "soc_mean_pct": 99.1,
+      "soc_min_pct": 0.0,
+      "hours_storage_below_50pct": 76
+    },
+    "storage_soc": {
+      "percentiles_pct": {
+        "P1": 75.0,
+        "P5": 100.0,
+        "P10": 100.0,
+        "P25": 100.0,
+        "P50": 100.0,
+        "P75": 100.0,
+        "P90": 100.0
+      },
+      "hours_full_ge_99pct": 8634,
+      "hours_below_50pct": 76,
+      "hours_empty_le_1pct": 49,
+      "histogram_hours": {
+        "0-10%": 52,
+        "10-20%": 6,
+        "20-30%": 8,
+        "30-40%": 4,
+        "40-50%": 6,
+        "50-60%": 4,
+        "60-70%": 3,
+        "70-80%": 11,
+        "80-90%": 12,
+        "90-100%": 8654
+      },
+      "capacity_MWh": 129.3
+    },
+    "note": "delivered = customer demand x DC-served fraction f; backup = demand x (1-f) (same as site2.json monthly/totals); hp_elec = building heat-pump electricity actually served; avg_cop = HP heat served / HP electricity (on-site ring is direct exchange, excluded). demand here equals site2.json totals.heat_delivered_MWh (all customer heat, DC plus backup); delivered is the DC-served part."
+  },
+  "ring_breakdown": {
+    "rings": {
+      "onsite": {
+        "delivered_MWh": 36801.8,
+        "demand_MWh": 37075.8,
+        "peak_MW": 16.36,
+        "peak_dc_draw_MW": 16.37,
+        "capex_musd": 10.56,
+        "capex_share_pct": 27.2,
+        "energy_share_pct": 71.8,
+        "lcoh_7pct_usd_mwh": 40.6,
+        "co2_avoided_t_yr": 9230.0,
+        "co2_share_pct": 80.9,
+        "backup_MWh": 274.3
+      },
+      "corridor": {
+        "delivered_MWh": 13400.6,
+        "demand_MWh": 13500.0,
+        "peak_MW": 6.84,
+        "peak_dc_draw_MW": 5.17,
+        "capex_musd": 28.2,
+        "capex_share_pct": 72.8,
+        "energy_share_pct": 28.2,
+        "lcoh_7pct_usd_mwh": 285.8,
+        "co2_avoided_t_yr": 2179.0,
+        "co2_share_pct": 19.1,
+        "backup_MWh": 105.4
+      }
+    },
+    "co2_sum_t_yr": 11408.0,
+    "co2_headline_t_yr": 11408.0,
+    "note": "capex includes shared items (tank, DC interface, pumps, backup) split by energy share, then soft cost and contingency pro rata (finance.allocate). CO2 per ring = displaced counterfactual fuel - (served HP electricity + pumping) x grid factor - backup propane, the same terms as impact.evaluate."
+  },
+  "load_duration": {
+    "peak_MW": 23.21,
+    "peak_hour_index": 1086,
+    "peak_hour_calendar": "Feb 15 06:00",
+    "peak_outdoor_C": -24.0,
+    "hours_above_50pct_peak": 1239,
+    "hours_above_80pct_peak": 29,
+    "mean_MW": 5.77,
+    "load_factor": 0.249,
+    "duration_curve_MW": {
+      "h1": 23.21,
+      "h10": 21.46,
+      "h100": 16.68,
+      "h500": 13.91,
+      "h1000": 12.13,
+      "h2000": 9.8,
+      "h4380": 4.94,
+      "h8760": 0.54
+    },
+    "note": "Demand is customer heat (on-site + corridor), before pipe losses; the calendar is the 2023 non-leap TMY index."
+  }
+}
