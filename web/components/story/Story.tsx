@@ -197,7 +197,7 @@ export function Story({ data }: { data: AppData }) {
             className="absolute inset-0 overflow-y-auto"
             aria-labelledby="step-h"
           >
-            <div className="min-h-full flex items-center px-[clamp(1.25rem,4vw,4.5rem)] py-5">
+            <div className="min-h-full flex items-center px-[clamp(1.25rem,4vw,4.5rem)] py-[clamp(0.5rem,1.6dvh,1.5rem)]">
               {s.full ? (
                 <div className="w-full max-w-[1500px] mx-auto">{s.full(kicker)}</div>
               ) : s.layout === "split" ? (
@@ -210,7 +210,7 @@ export function Story({ data }: { data: AppData }) {
                   <div className="min-w-0 lg:h-[min(62dvh,640px)]">{s.visual}</div>
                 </div>
               ) : (
-                <div className="w-full max-w-[1600px] mx-auto grid gap-4 content-center">
+                <div className="w-full max-w-[1600px] mx-auto grid gap-[clamp(0.75rem,1.6dvh,1rem)] content-center">
                   <div>
                     <p className="kicker m-0 mb-2">{kicker}</p>
                     <h1 id="step-h" className="headline m-0 max-w-[44ch] !text-[clamp(2rem,2.6vw,3.25rem)]">{s.headline}</h1>

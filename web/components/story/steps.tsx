@@ -27,8 +27,8 @@ export interface Step {
 function Tile({ big, unit, label, tone }: { big: string; unit?: string; label: ReactNode; tone?: "ember" | "teal" | "violet" }) {
   const c = tone === "teal" ? "var(--teal-text)" : tone === "violet" ? "var(--violet-text)" : "var(--ember-text)";
   return (
-    <div className="card p-4">
-      <div className="serif num font-bold leading-none whitespace-nowrap" style={{ color: c, fontSize: "clamp(2rem,3.2vw,3.25rem)" }}>{big}{unit && <span className="unit">{unit}</span>}</div>
+    <div className="card p-[clamp(0.75rem,1.7dvh,1rem)]">
+      <div className="serif num font-bold leading-none whitespace-nowrap" style={{ color: c, fontSize: "clamp(2rem,min(3.2vw,5.2dvh),3.25rem)" }}>{big}{unit && <span className="unit">{unit}</span>}</div>
       <div className="mt-1.5 text-[1.0625rem] text-ink leading-snug">{label}</div>
     </div>
   );
@@ -36,7 +36,7 @@ function Tile({ big, unit, label, tone }: { big: string; unit?: string; label: R
 
 function Pill({ n, title, children, tone }: { n?: string; title: string; children: ReactNode; tone?: string }) {
   return (
-    <div className="card p-4 h-full">
+    <div className="card p-[clamp(0.75rem,1.7dvh,1rem)] h-full">
       <div className="font-bold text-[1.125rem]" style={{ color: tone ?? "var(--ink)" }}>{n && <span className="num mr-1">{n}</span>}{title}</div>
       <div className="text-[1.0625rem] text-ink2 leading-snug mt-1">{children}</div>
     </div>
@@ -86,7 +86,7 @@ export function buildSteps(data: AppData): Step[] {
       layout: "split",
       notes: "Open with the fight, not the technology. Precedent: Deep Green's $120M downtown Lansing, Michigan data center offered free heat to the city utility, withdrew its application on April 6, 2026. Free heat is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG has had a moratorium on new gas connections here since February 2015 (2026 status unverified), so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
       visual: (
-        <div className="grid gap-4">
+        <div className="grid gap-[clamp(0.5rem,1.6dvh,1rem)]">
           <Tile big="Sept 29" label="2026: the Town Board directed its attorney to draft a data-center ban, and set aside $500,000 in next year's proposed budget for legal costs" />
           <Tile tone="teal" big="2015" label="year the NYSEG moratorium on new gas connections began (2026 status unverified)" />
           <Tile big={`$${int(f.incumbent_usd_mwh.propane)}`} unit="per MWh" label={<>what a propane home pays for each MWh of heat (propane ran $2.74 to $3.46 per gallon last season, NYSERDA Central NY). Heating oil: <b className="num">${int(f.incumbent_usd_mwh.heating_oil)}</b>.</>} />
@@ -144,7 +144,7 @@ export function buildSteps(data: AppData): Step[] {
       notes: "Temperature match. Air-cooled data centers hand over about 30 °C heat, which needs a big lift. Direct liquid cooling returns about 50 °C, so the greenhouse and aquaculture sit at or below source temperature and need no heat pump. Homes need the loop plus a building heat pump; town buildings need a 55-65 °C hot loop. Show the COP comparison between air and liquid.",
       visual: (
         <div className="grid gap-3 h-full min-h-0">
-          <div className="min-h-[360px]"><TempLadder data={data} /></div>
+          <div className="min-h-[320px]"><TempLadder data={data} /></div>
           <ul className="flex flex-wrap gap-x-6 gap-y-1 list-none p-0 m-0 text-[1.0625rem]">
             {d.cop_compare.map((c) => (<li key={c.source}><b>{c.source}</b>: heat pump COP <b className="num text-teal-text">{dec(c.cop, 1)}</b></li>))}
           </ul>
@@ -167,8 +167,8 @@ export function buildSteps(data: AppData): Step[] {
             <li><Pill n="5" title="Continuity" tone="var(--ember-text)">{int(T.unmet_hours)} unmet hours; backup supplies {dec(backupPct, 1)}% of heat.</Pill></li>
           </ul>
           <div className="grid gap-5 lg:grid-cols-2 min-h-0">
-            <div className="min-h-[280px]"><MonthlyChart d={d} /></div>
-            <div className="min-h-[280px]"><WeekChart d={d} /></div>
+            <div className="min-h-[200px]"><MonthlyChart d={d} /></div>
+            <div className="min-h-[200px]"><WeekChart d={d} /></div>
           </div>
         </div>
       ),
@@ -251,7 +251,7 @@ export function buildSteps(data: AppData): Step[] {
       layout: "wide",
       notes: "Map it to the four judging lenses and HDR's seven regenerative domains. Technical and economic were covered in steps 4 to 8. Environmental: CO2 avoided is displaced fuel minus heat-pump electricity at the upstate grid factor. Social and regenerative: Lansing has no designated disadvantaged community, so equity here means older residents and propane and oil households. Lake: closed-loop aquaponics keeps phosphorus out of an already phosphorus-impaired Cayuga Lake.",
       visual: (
-        <div className="grid gap-4 min-h-0">
+        <div className="grid gap-3 min-h-0">
           <div className="grid gap-3 grid-cols-2 lg:grid-cols-4">
             <Tile tone="teal" big={int(d.impact.co2_avoided_t_yr)} unit="t CO₂/yr" label={<>about {int(cleanCarbonCars)} cars off the road</>} />
             <Tile big={int(d.impact.homes_served)} unit="homes" label="on recovered heat" />
@@ -262,13 +262,13 @@ export function buildSteps(data: AppData): Step[] {
             {d.hdr_scorecard.map((s) => (
               <div key={s.petal} className="card p-2.5">
                 <div className="flex items-center gap-2 font-bold text-[1.0625rem]">
-                  <span className="chip !py-0.5 !px-2.5 !text-[0.9375rem]" style={{ borderColor: s.lens === "Community" ? "var(--violet)" : s.lens === "Health" ? "var(--ember)" : "var(--teal)" }}>{s.lens}</span>
+                  <span className="chip !py-0.5 !px-2.5 !text-[1rem]" style={{ borderColor: s.lens === "Community" ? "var(--violet)" : s.lens === "Health" ? "var(--ember)" : "var(--teal)" }}>{s.lens}</span>
                   {s.petal}
                 </div>
                 <div className="text-[1.0625rem] text-ink2 leading-snug mt-1">{s.claim}</div>
               </div>
             ))}
-            <div className="card p-3" style={{ background: "var(--surface2)" }}>
+            <div className="card p-2.5" style={{ background: "var(--surface2)" }}>
               <div className="font-bold text-[1.0625rem]">Lansing context</div>
               <div className="text-[1rem] text-ink2 leading-snug mt-1">No designated disadvantaged community: equity here means older residents and propane and oil households. Energy reuse factor (ERF) <span className="num">{dec(d.impact.erf, 3)}</span>{d.impact.ere !== undefined && <>, ERE <span className="num">{dec(d.impact.ere, 2)}</span></>}. Up to 69 days above 90 °F by 2050 (19 today).</div>
             </div>
@@ -279,26 +279,26 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "ask",
       kicker: "The ask",
+      lede: <span className="block text-[1rem] leading-snug">{CREDITS}</span>,
       headline: cbaPct !== undefined ? `Say yes with conditions: a Community Benefit Agreement worth ${dec(cbaPct, 1)}% of the build` : "Say yes with conditions: write heat reuse into a binding Community Benefit and Heat Supply Agreement",
       layout: "split",
       notes: "Close on three asks. Town: make heat reuse a condition of any approval. TeraWulf: sign the Heat Supply Agreement, keep cooling independent, keep the 1 MGD lake permit unused for cooling. Funders: NYSERDA FlexTech and large-scale thermal programs to pay for the feasibility work. Point to the QR code for the live model.",
       visual: (
-        <div className="grid gap-4">
+        <div className="grid gap-[clamp(0.5rem,1.6dvh,1rem)]">
           {[
             { who: "Town of Lansing", what: cbaPct !== undefined ? `Make a binding Community Benefit Agreement (about ${dec(cbaPct, 1)}% of the data center build, funding the home program) and a Heat Supply Agreement a condition of approval, instead of a flat ban.` : "Make a Heat Supply Agreement a condition of any approval, instead of a flat ban." },
             { who: "The data center", what: "Sign it: sell heat, keep cooling independent, keep the lake permit unused for cooling, fund the exit reserve." },
             { who: "Funders and state", what: "Co-fund the feasibility study and the Phase 1 on-site campus (NYSERDA programs; federal tax credits may apply if structured to qualify)." },
           ].map((a, i) => (
-            <div key={a.who} className="card p-4 flex gap-4 items-start">
+            <div key={a.who} className="card p-[clamp(0.75rem,1.7dvh,1rem)] flex gap-4 items-start">
               <div className="serif num font-bold text-[2.5rem] leading-none text-ember-text">{i + 1}</div>
               <div><div className="font-bold text-[1.25rem]">{a.who}</div><div className="text-ink2 text-[1.125rem] leading-snug">{a.what}</div></div>
             </div>
           ))}
-          <div className="flex items-center gap-5 card p-4">
-            <QrCode url={PUBLIC_URL} size={110} hideCaption />
+          <div className="flex items-center gap-5 card p-[clamp(0.75rem,1.7dvh,1rem)]">
+            <QrCode url={PUBLIC_URL} size={96} hideCaption />
             <div className="text-[1.125rem]"><b>Try the model yourself.</b><div className="text-ink2">Move the sliders in Explore mode and watch the cost of heat change.</div><div className="text-[1rem] text-ink2 break-all mt-1">{PUBLIC_URL}</div></div>
           </div>
-          <p className="m-0 text-[0.9375rem] text-ink2 leading-snug">{CREDITS}</p>
         </div>
       ),
     },
