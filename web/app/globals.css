@@ -249,6 +249,7 @@ g[tabindex]:focus-visible { outline: 3px solid var(--ember); outline-offset: 2px
 }
 .brown-section { background: #3b2a1e; color: #f6ecdc; }
 .brown-section .kicker { color: #e2cdb0; }
+.brown-section :focus-visible { outline-color: #f6ecdc; }
 .hero-glow { background: radial-gradient(closest-side, rgba(253, 248, 236, 0.82), rgba(253, 248, 236, 0.55) 55%, rgba(253, 248, 236, 0)); }
 .stat-glass { background: rgba(253, 250, 243, 0.8); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.7); box-shadow: 0 10px 30px rgba(59,42,30,.12); }
 @keyframes rise-heat { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -220; } }

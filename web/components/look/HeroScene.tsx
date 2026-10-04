@@ -12,7 +12,7 @@ const W = 1600, H = 1000;
 
 function Layer({ p, depth, still, children }: { p: MotionValue<number>; depth: number; still: boolean; children: ReactNode }) {
   const y = useTransform(p, [0, 1000], [0, depth], { clamp: true });
-  return <motion.g style={still ? undefined : { y }}>{children}</motion.g>;
+  return <motion.g style={still ? undefined : { y, willChange: "transform" }}>{children}</motion.g>;
 }
 
 const House = ({ x, y, s = 1, roof = "#9c4a2e", wall = "#f1e2c6" }: { x: number; y: number; s?: number; roof?: string; wall?: string }) => (

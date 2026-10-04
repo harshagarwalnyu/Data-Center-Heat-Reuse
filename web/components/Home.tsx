@@ -142,7 +142,7 @@ export function Home({ data }: { data: AppData }) {
     { q: "Is Lansing banning data centers?",
       a: <>Not yet. On 29 September 2026 the Town Board directed its attorney to draft a local law prohibiting data centers. There has been no vote on the ban itself. Our answer is a set of terms the town can sign instead.</> },
     { q: "Does taking the heat put the servers at risk?",
-      a: <>No. Under our proposed heat supply agreement, cooling always wins: the data center keeps its own dry coolers, our heat exchanger is a sidestream, and a fault on our side falls back to those fans. Backup boilers carry <span className="num">{int(d.totals.backup_MWh)}</span> MWh a year, about <span className="num">{dec(backupPct, 1)}%</span> of the heat we deliver.</> },
+      a: <>Not by design. Under our proposed heat supply agreement, cooling always wins: the data center keeps its own dry coolers, our heat exchanger is a sidestream, and a fault on our side falls back to those fans. Backup boilers carry <span className="num">{int(d.totals.backup_MWh)}</span> MWh a year, about <span className="num">{dec(backupPct, 1)}%</span> of the heat we deliver.</> },
     { q: "What if the data center leaves?",
       a: <>We modelled an exit in year <span className="num">{int(ex10.year)}</span>: <span className="num">${dec(ex10.stranded_musd, 1)}</span> million of capital stranded{ex10.replacement_source_musd !== undefined ? <> and <span className="num">${dec(ex10.replacement_source_musd, 1)}</span> million for a replacement heat source</> : null}. The pipes and the building heat pumps stay; only the central source changes.</> },
     { q: "Why would a home connect?",
@@ -193,7 +193,7 @@ export function Home({ data }: { data: AppData }) {
             <Rise className="order-1 lg:order-2">
               <p className="kicker m-0 mb-4">The problem</p>
               <h2 id="problem-h" className="m-0 leading-[1.08] text-[#fdf6ea]" style={{ fontSize: "clamp(2.1rem, 1.2rem + 2.6vw, 3.4rem)", textWrap: "balance" }}>Lansing directed its attorney to draft a data-center ban.</h2>
-              <p className="m-0 mt-6 text-[#efe2cf] max-w-[46ch]" style={{ fontSize: "var(--text-lead)" }}>Free heat alone did not win towns over. Terms do: who owns the pipe, who pays for the gap, and what happens if the data center leaves.</p>
+              <p className="m-0 mt-6 text-[#efe2cf] max-w-[46ch]" style={{ fontSize: "var(--text-lead)" }}>Lansing&apos;s board has moved toward a ban. Terms are the alternative: who owns the pipe, who pays for the gap, and what happens if the data center leaves.</p>
               {cbaStat && (
                 <p className="m-0 mt-6 text-[#efe2cf] text-body">
                   <span className="serif text-[#fdf6ea]" style={{ fontSize: "1.6rem" }}>{cbaStat.value}</span> {cbaStat.caption}
@@ -219,7 +219,7 @@ export function Home({ data }: { data: AppData }) {
           <Rise className="text-center mb-12">
             <p className="kicker m-0 mb-4">Features</p>
             <h2 id="bento-h" className="m-0 text-ink leading-[1.08]" style={{ fontSize: "clamp(2.1rem, 1.2rem + 2.6vw, 3.4rem)" }}>What you can do here</h2>
-            <p className="lede m-0 mt-4 mx-auto max-w-[44ch]">Every number on this site is read from the model&apos;s output file. Try it, check it, take it apart.</p>
+            <p className="lede m-0 mt-4 mx-auto max-w-[44ch]">Every number on this site comes from the model&apos;s output files. Try it, check it, take it apart.</p>
           </Rise>
           <Bento data={data} />
         </section>
@@ -235,7 +235,7 @@ export function Home({ data }: { data: AppData }) {
             <Faq items={faq} />
             <div className="card mt-14 p-[clamp(1.25rem,3vw,2rem)] flex flex-col sm:flex-row gap-5 sm:items-center justify-between !border-transparent">
               <div>
-                <h2 id="close-h" className="m-0 text-ink" style={{ fontSize: "clamp(1.6rem, 1.2rem + 1vw, 2.1rem)" }}>Don&apos;t ban it. Set the terms.</h2>
+                <h2 className="m-0 text-ink" style={{ fontSize: "clamp(1.6rem, 1.2rem + 1vw, 2.1rem)" }}>Don&apos;t ban it. Set the terms.</h2>
                 <p className="m-0 mt-2 text-ink2">Still have questions? Run the numbers yourself, or read every source we used.</p>
               </div>
               <Link prefetch={false} href="/explore/" className="btn btn-primary no-underline shrink-0">Try the model</Link>
