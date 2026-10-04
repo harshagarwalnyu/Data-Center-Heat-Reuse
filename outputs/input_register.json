@@ -689,15 +689,15 @@
     "input": "finance.prices.propane_usd_gal_range[0]",
     "value": 2.74,
     "unit": "$/gal",
-    "source": "NYSERDA Central NY 2025-26 heating-season range (coordinator/verification.md); Monte Carlo bounds only (heatreuse.analysis), base stays 3.10",
-    "confidence": "sourced"
+    "source": "NYSERDA Central NY 2025-26 heating-season range as recorded in research/model-notes.md (headline inputs); NYSERDA dashboard page not re-read, no direct URL in repo [unverified]; Monte Carlo bounds only (heatreuse.analysis), base stays 3.10",
+    "confidence": "unverified"
   },
   {
     "input": "finance.prices.propane_usd_gal_range[1]",
     "value": 3.46,
     "unit": "$/gal",
-    "source": "NYSERDA Central NY 2025-26 heating-season range (coordinator/verification.md); Monte Carlo bounds only (heatreuse.analysis), base stays 3.10",
-    "confidence": "sourced"
+    "source": "NYSERDA Central NY 2025-26 heating-season range as recorded in research/model-notes.md (headline inputs); NYSERDA dashboard page not re-read, no direct URL in repo [unverified]; Monte Carlo bounds only (heatreuse.analysis), base stays 3.10",
+    "confidence": "unverified"
   },
   {
     "input": "finance.prices.oil_usd_gal",

@@ -99,7 +99,7 @@ export function Sources({ data }: { data: AppData }) {
                         <td className="py-2 pr-3 num">{r.value}</td>
                         <td className="py-2 pr-3">{r.unit}</td>
                         <td className="py-2 pr-3 leading-snug">{sourceLabel(r.source)}</td>
-                        <td className="py-2 font-semibold">{r.confidence}</td>
+                        <td className="py-2 font-semibold">{confOf(r)}</td>
                       </tr>
                     ))}
                   </tbody>
