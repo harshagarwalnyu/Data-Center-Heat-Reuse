@@ -4,7 +4,7 @@ import { dec, int, usd } from "@/lib/format";
 import { NavBar, ringColor, ringShort } from "./ui";
 import { RingMapSvg } from "./viz/RingMap";
 import { QrCode } from "./viz/Misc";
-import { CREDITS, PUBLIC_URL, PROJECT_TAGLINE, PROJECT_TITLE } from "@/lib/config";
+import { BASE_PATH, CREDITS, PUBLIC_URL, PROJECT_TAGLINE, PROJECT_TITLE } from "@/lib/config";
 
 export function PrintSheet({ data }: { data: AppData }) {
   const d = data.site2, f = d.finance;
@@ -13,7 +13,8 @@ export function PrintSheet({ data }: { data: AppData }) {
   const ha = d.extras?.greenhouse_check?.area_ha;
   const cbaPct = d.extras?.cba?.headline_as_pct_of_dc_capex ?? d.extras?.cba?.as_pct_of_dc_capex;
   const bars = [
-    { n: "Our heat (community-owned)", v: f.lcoh_usd_mwh.coop_4pct, c: "var(--teal)" },
+    { n: "Our cost of heat (7% financing)", v: f.lcoh_usd_mwh.utility_7pct, c: "var(--teal)" },
+    { n: "Our price to homes (0.8 × propane)", v: f.tariff_usd_mwh, c: "var(--teal)" },
     { n: "Propane", v: f.incumbent_usd_mwh.propane, c: "var(--ember)" },
     { n: "Heating oil", v: f.incumbent_usd_mwh.heating_oil, c: "var(--ember)" },
   ];
@@ -25,9 +26,9 @@ export function PrintSheet({ data }: { data: AppData }) {
     [int(d.impact.co2_avoided_t_yr), "t CO₂ avoided per year", "var(--teal-text)"],
   ];
   return (
-    <div className="bg-surface2 min-h-dvh">
-      <NavBar active="/print/" extra={<button className="btn" onClick={() => window.print()}>Print this page</button>} />
-      <div className="py-6 flex justify-center overflow-x-auto no-print-pad">
+    <div className="bg-surface2 min-h-dvh print:bg-white print:min-h-0">
+      <NavBar active="/print/" extra={<><a className="btn no-underline" href={`${BASE_PATH}/one-pager.pdf`} download>Download PDF</a><button className="btn" onClick={() => window.print()}>Print</button></>} />
+      <div className="py-6 print:py-0 flex justify-center overflow-x-auto no-print-pad">
         <article className="letter sheet-light shadow-xl p-[0.4in] flex flex-col gap-2 overflow-hidden shrink-0" style={{ fontSize: "11pt", lineHeight: 1.35 }}>
           <header>
             <div className="flex items-center justify-between">
@@ -54,7 +55,7 @@ export function PrintSheet({ data }: { data: AppData }) {
               <h2 className="serif m-0" style={{ fontSize: "13pt" }}>The rings</h2>
               {d.rings.map((r) => (
                 <div key={r.id} className="border-l-4 pl-2" style={{ borderColor: ringColor(r.id) }}>
-                  <div className="font-bold" style={{ fontSize: "11pt" }}>Phase {r.phase}: {ringShort(r.id)}{r.conditional ? " (conditional)" : ""}</div>
+                  <div className="font-bold" style={{ fontSize: "11pt" }}>Phase {r.phase}: {ringShort(r.id)}{r.conditional ? " (fails the cost test today)" : ""}</div>
                   <div className="num text-ink2" style={{ fontSize: "10pt" }}>{int(r.annual_MWh / 1000)} GWh/yr · {r.supply_temp_C} °C{r.homes ? ` · ${int(r.homes)} homes` : ""}</div>
                 </div>
               ))}
@@ -65,6 +66,7 @@ export function PrintSheet({ data }: { data: AppData }) {
                   <div className="h-3 rounded" style={{ width: `${(b.v / mx) * 100}%`, background: b.c }} />
                 </div>
               ))}
+              {(() => { const on = d.rings.find((r) => r.id === "onsite")?.lcoh_usd_mwh_7pct, co = d.rings.find((r) => r.id === "corridor")?.lcoh_usd_mwh_7pct; return on !== undefined && co !== undefined ? <p className="m-0 text-ink2" style={{ fontSize: "10pt" }}>The cost is an average: the farm campus costs ${int(on)}, the homes ${int(co)}. The benefit agreement covers the gap.</p> : null; })()}
               <p className="m-0 text-ink2" style={{ fontSize: "10pt" }}>Safeguard: dry coolers keep 100% heat-rejection backup; {int(d.totals.unmet_hours)} unmet hours modelled.</p>
             </div>
           </section>
@@ -72,7 +74,7 @@ export function PrintSheet({ data }: { data: AppData }) {
             <QrCode url={PUBLIC_URL} size={84} hideCaption />
             <div>
               <div className="font-bold" style={{ fontSize: "12pt" }}>The ask</div>
-              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement (about {dec(cbaPct ?? 0, 1)}% of the data-center build) a condition of any approval. {int(d.impact.jobs)} jobs · {int(d.impact.local_food_t_yr)} t local food/yr · scan for the live model: {PUBLIC_URL}</div>
+              <div style={{ fontSize: "10.5pt" }} className="text-ink2">Make a binding Community Benefit and Heat Supply Agreement (about {dec(cbaPct ?? 0, 1)}% of the data-center build) a condition of any approval, plus a proposed $150k a year for computer science in Lansing&apos;s public schools. About {int(d.impact.jobs)} jobs and {int(d.impact.local_food_t_yr)} t of local food a year (estimates). Code and model: {PUBLIC_URL}</div>
             </div>
           </footer>
           <div className="text-ink2" style={{ fontSize: "8.5pt" }}>{CREDITS}</div>

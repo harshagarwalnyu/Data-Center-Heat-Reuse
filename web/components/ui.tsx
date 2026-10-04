@@ -31,6 +31,7 @@ const NAV = [
   { href: "/compare/", label: "Compare" },
   { href: "/how/", label: "How it works" },
   { href: "/sources/", label: "Sources" },
+  { href: "/print/", label: "One-pager" },
 ];
 
 /** Clean top bar: wordmark left, links right, outlined pill. `overlay` floats it over the home hero. */
