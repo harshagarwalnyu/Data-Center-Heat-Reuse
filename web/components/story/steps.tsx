@@ -247,6 +247,7 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "impact",
       kicker: "Impact",
+      lede: <><b className="text-ink">Lansing context:</b> no designated disadvantaged community, so equity here means older residents and propane and oil households. Up to 69 days above 90 °F by 2050 (19 today).</>,
       headline: `Every year: ${int(d.impact.co2_avoided_t_yr)} tonnes of CO₂ avoided, ${int(d.impact.jobs)} local jobs, ${int(d.impact.local_food_t_yr)} tonnes of local food`,
       layout: "wide",
       notes: "Map it to the four judging lenses and HDR's seven regenerative domains. Technical and economic were covered in steps 4 to 8. Environmental: CO2 avoided is displaced fuel minus heat-pump electricity at the upstate grid factor. Social and regenerative: Lansing has no designated disadvantaged community, so equity here means older residents and propane and oil households. Lake: closed-loop aquaponics keeps phosphorus out of an already phosphorus-impaired Cayuga Lake.",
@@ -266,11 +267,15 @@ export function buildSteps(data: AppData): Step[] {
                   {s.petal}
                 </div>
                 <div className="text-[1.0625rem] text-ink2 leading-snug mt-1">{s.claim}</div>
+                {s.metric && <div className="num font-bold text-[1.0625rem] text-teal-text leading-snug mt-0.5">{s.metric.replace(/\d{4,}/g, (m) => int(Number(m)))}</div>}
               </div>
             ))}
-            <div className="card p-2.5" style={{ background: "var(--surface2)" }}>
-              <div className="font-bold text-[1.0625rem]">Lansing context</div>
-              <div className="text-[1rem] text-ink2 leading-snug mt-1">No designated disadvantaged community: equity here means older residents and propane and oil households. Energy reuse factor (ERF) <span className="num">{dec(d.impact.erf, 3)}</span>{d.impact.ere !== undefined && <>, ERE <span className="num">{dec(d.impact.ere, 2)}</span></>}. Up to 69 days above 90 °F by 2050 (19 today).</div>
+            <div className="card p-2.5 grid grid-cols-2 gap-x-3 content-start" style={{ background: "var(--surface2)" }}>
+              <div className="serif num font-bold leading-none text-[2rem] text-teal-text">{dec(d.impact.erf * 100, 1)}%</div>
+              {d.impact.ere !== undefined ? <div className="serif num font-bold leading-none text-[2rem] text-teal-text">{dec(d.impact.ere, 2)}</div> : <div />}
+              <div className="text-[1rem] font-bold mt-1">ERF</div>
+              {d.impact.ere !== undefined ? <div className="text-[1rem] font-bold mt-1">ERE</div> : <div />}
+              <div className="col-span-2 text-[1rem] text-ink2 leading-snug">Limited by demand, not supply ({dec(sharePct, 1)}% of available heat is used)</div>
             </div>
           </div>
         </div>

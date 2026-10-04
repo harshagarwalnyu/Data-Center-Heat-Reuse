@@ -211,9 +211,12 @@ export function Story({ data }: { data: AppData }) {
                 </div>
               ) : (
                 <div className="w-full max-w-[1600px] mx-auto grid gap-[clamp(0.75rem,1.6dvh,1rem)] content-center">
-                  <div>
-                    <p className="kicker m-0 mb-2">{kicker}</p>
-                    <h1 id="step-h" className="headline m-0 max-w-[44ch] !text-[clamp(2rem,2.6vw,3.25rem)]">{s.headline}</h1>
+                  <div className={s.lede ? "grid gap-3 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end" : undefined}>
+                    <div>
+                      <p className="kicker m-0 mb-2">{kicker}</p>
+                      <h1 id="step-h" className="headline m-0 max-w-[44ch] !text-[clamp(2rem,2.6vw,3.25rem)]">{s.headline}</h1>
+                    </div>
+                    {s.lede && <p className="m-0 text-[1.0625rem] text-ink2 leading-snug">{s.lede}</p>}
                   </div>
                   <div className="min-w-0">{s.visual}</div>
                 </div>
