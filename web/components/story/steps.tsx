@@ -17,8 +17,8 @@ export interface Step {
   layout: "split" | "wide";
   visualWide?: boolean;
   visual?: ReactNode;
-  /** Replaces the whole screen (own headline). */
-  full?: ReactNode;
+  /** Replaces the whole screen (own headline). Receives the numbered kicker for the active path. */
+  full?: (kicker: string) => ReactNode;
   notes: string;
   /** Deep-dive steps are skipped on the 5-minute path. */
   deepDive?: boolean;
@@ -80,7 +80,7 @@ export function buildSteps(data: AppData): Step[] {
   return [
     {
       id: "fight",
-      kicker: "1 · Lansing today",
+      kicker: "Lansing today",
       headline: "Lansing's Town Board has told its attorney to draft a data-center ban, and most of its heat still comes from delivered fuel",
       lede: "Free heat was not enough in Lansing, Michigan: a data center that offered free heat withdrew its application on April 6, 2026. Lansing, New York needs ownership, guarantees and proof.",
       layout: "split",
@@ -95,7 +95,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "insight",
-      kicker: "2 · The insight",
+      kicker: "The insight",
       headline: <>The data center makes <span className="text-ember-text num">{dec(ratio, 0)}&times;</span> more heat than we use: only <span className="text-ember-text num">{dec(sharePct, 1)}%</span> is needed</>,
       lede: <>Our base case is a {int(d.supply.it_load_MW)} MW first phase; about {int(d.supply.capture_fraction * 100)}% of its power can be captured as {d.supply.capture_temp_C} °C heat. Supply is not the constraint. Matching it to users is.</>,
       layout: "split",
@@ -104,7 +104,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "plan",
-      kicker: "3 · The plan",
+      kicker: "The plan",
       headline: `A data center's heat could warm a ${ha ? `${int(ha)}-hectare ` : ""}year-round farm campus and ${int(homes)} homes`,
       lede: <>Bring the users to the heat. Start next to the data center (a proposed campus on adjacent land), then follow the road toward town, and reach the town center only if the numbers pass.{townNo && <> They do not pass today: Ring 3 would cost <b className="num">${int(townLcoh)}</b> per MWh against <b className="num">${int(f.incumbent_usd_mwh.propane)}</b> for propane, so we leave it out.</>}</>,
       layout: "split",
@@ -126,7 +126,7 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "flow",
       visualWide: true,
-      kicker: "4 · How heat flows",
+      kicker: "How heat flows",
       headline: "Heat export is a side-stream: the data center never depends on us to stay cool",
       lede: <>A heat exchanger takes heat from the sealed cooling loop; heat pumps lift it where needed. The dry coolers keep working exactly as designed.</>,
       layout: "split",
@@ -136,7 +136,7 @@ export function buildSteps(data: AppData): Step[] {
     {
       id: "ladder",
       visualWide: true,
-      kicker: "5 · Temperature ladder",
+      kicker: "Temperature ladder",
       headline: `Liquid cooling hands over ${d.supply.capture_temp_C} °C heat: greenhouses take it directly, buildings get a small boost`,
       lede: <>Average heat-pump COP across the network is <b className="num">{dec(T.avg_cop, 1)}</b>: one unit of electricity moves about {dec(T.avg_cop, 1)} units of heat.</>,
       layout: "split",
@@ -153,7 +153,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "match",
-      kicker: "6 · Matching through the year",
+      kicker: "Matching through the year",
       headline: `Even in the leanest month, the data center makes ${dec(minMonthRatio, 1)}× the heat the network needs`,
       layout: "wide",
       notes: "Five axes of the match, left to right. Temperature: direct or lifted. Capacity: supply is many times demand. Timing: the winter week chart shows daily peaks smoothed by storage. Seasonality: monthly bars show demand falling in summer while the on-site greenhouse, aquaculture and pool keep a year-round base. Continuity: backup covers the remainder, zero unmet hours.",
@@ -175,17 +175,17 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "household",
-      kicker: "7 · Your household",
+      kicker: "Your household",
       headline: "",
       layout: "wide",
       deepDive: true,
       notes: "Let someone in the room pick their own fuel. Propane and oil homes save the most; natural gas homes would not save, which is why this is aimed at the homes gas never reached. The tariff is set about 20% below propane; there is a low-income tier. Be honest about gas.",
-      full: <HouseholdCalc d={d} />,
+      full: (kicker) => <HouseholdCalc d={d} kicker={kicker} />,
     },
     {
       id: "own",
       visualWide: false,
-      kicker: "8 · Who pays, who owns",
+      kicker: "Who pays, who owns",
       headline: ringL.onsite !== undefined ? "The right tool at every density: the farm first, a loop where homes cluster, rebates for the rest" : allBeatOil ? "Heat from the data center beats propane and oil under every ownership model; community ownership is cheapest" : `Community ownership cuts the cost of heat from $${int(f.lcoh_usd_mwh.private_10pct)} to $${int(f.lcoh_usd_mwh.coop_4pct)} per MWh`,
       layout: "wide",
       notes: "A community thermal utility, the Thermal Commons co-op, owns the pipes and heat pumps; the data center sells heat under a Heat Supply Agreement. Cheaper money is the biggest lever: public 4% finance vs private 10%. Be transparent that natural gas elsewhere is cheaper, but new gas hookups have been restricted in Lansing since 2015 (2026 status unverified). Federal tax credits may apply if the project is structured to qualify, and NYSERDA programs may help; neither is in the base case.",
@@ -221,7 +221,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "exit",
-      kicker: "9 · What if the data center leaves?",
+      kicker: "What if the data center leaves?",
       headline: `If the data center leaves in year ${f.dc_exit.year}, the heat keeps flowing and the town is not left holding the bill`,
       layout: "wide",
       notes: "Data centers rarely sign beyond about 10 years, so we answer this before the Q&A does. Three layers: thermal storage rides through the first hours; backup boilers sized to 100% of peak cover days; step-in rights let the utility keep the loop. The stranded-asset exposure is covered by a decommissioning reserve funded from the Heat Supply Agreement, so the risk sits with the party that controls it.",
@@ -246,7 +246,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "impact",
-      kicker: "10 · Impact",
+      kicker: "Impact",
       headline: `Every year: ${int(d.impact.co2_avoided_t_yr)} tonnes of CO₂ avoided, ${int(d.impact.jobs)} local jobs, ${int(d.impact.local_food_t_yr)} tonnes of local food`,
       layout: "wide",
       notes: "Map it to the four judging lenses and HDR's seven regenerative domains. Technical and economic were covered in steps 4 to 8. Environmental: CO2 avoided is displaced fuel minus heat-pump electricity at the upstate grid factor. Social and regenerative: Lansing has no designated disadvantaged community, so equity here means older residents and propane and oil households. Lake: closed-loop aquaponics keeps phosphorus out of an already phosphorus-impaired Cayuga Lake.",
@@ -278,7 +278,7 @@ export function buildSteps(data: AppData): Step[] {
     },
     {
       id: "ask",
-      kicker: "11 · The ask",
+      kicker: "The ask",
       headline: cbaPct !== undefined ? `Say yes with conditions: a Community Benefit Agreement worth ${dec(cbaPct, 1)}% of the build` : "Say yes with conditions: write heat reuse into a binding Community Benefit and Heat Supply Agreement",
       layout: "split",
       notes: "Close on three asks. Town: make heat reuse a condition of any approval. TeraWulf: sign the Heat Supply Agreement, keep cooling independent, keep the 1 MGD lake permit unused for cooling. Funders: NYSERDA FlexTech and large-scale thermal programs to pay for the feasibility work. Point to the QR code for the live model.",

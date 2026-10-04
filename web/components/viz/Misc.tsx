@@ -105,7 +105,7 @@ export function TempLadder({ data }: { data: AppData }) {
 
 const FUELS: FuelKey[] = ["propane", "heating_oil", "natural_gas", "electric_resistance"];
 
-export function HouseholdCalc({ d }: { d: Site2Data }) {
+export function HouseholdCalc({ d, kicker = "Your household" }: { d: Site2Data; kicker?: string }) {
   const [fuel, setFuel] = useState<FuelKey>("propane");
   const [size, setSize] = useState<(typeof HOME_SIZES)[number]["id"]>("typical");
   const f = (HOME_SIZES.find((s) => s.id === size) ?? HOME_SIZES[0]).factor;
@@ -115,7 +115,7 @@ export function HouseholdCalc({ d }: { d: Site2Data }) {
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] items-center w-full">
       <div>
-        <p className="kicker m-0 mb-3">Step 7 · Your household</p>
+        <p className="kicker m-0 mb-3">{kicker}</p>
         <h1 className="headline m-0">
           {saves ? <>A {size === "typical" ? "typical" : size} {FUEL_LABEL[fuel].toLowerCase()} home saves about <span className="text-teal-text num">{usd(r.savingsUsd)}</span> a year</> : <>Gas is already cheap; this heat is for homes the gas pipe cannot reach</>}
         </h1>
