@@ -19,15 +19,21 @@ function isTyping(t: EventTarget | null) {
 export function Story({ data }: { data: AppData }) {
   const steps = useMemo(() => buildSteps(data), [data]);
   const calm = useReducedMotion();
-  const [i, setI] = useState(0);
+  const hash0 = useMemo(() => {
+    if (typeof window === "undefined") return null;
+    const h = parseInt(window.location.hash.replace("#", ""), 10);
+    return h >= 1 && h <= steps.length ? h - 1 : null;
+  }, [steps.length]);
+  const [i, setI] = useState(hash0 ?? 0);
   const [dir, setDir] = useState(1);
   const [notes, setNotes] = useState(false);
-  const [short, setShort] = useState(true); // default = ~5-minute path; S toggles the deep dive
+  const [short, setShort] = useState(() => (hash0 !== null ? !steps[hash0].deepDive : true)); // default = ~5-minute path; S toggles the deep dive
   const [secs, setSecs] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [presenter, setPresenter] = useState(false); // ?presenter=1 window: notes + next slide, no audience slide
+  const [presenter] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("presenter") === "1"); // ?presenter=1 window: notes + next slide, no audience slide
   const chan = useRef<BroadcastChannel | null>(null);
-  const lastSynced = useRef<{ step: number; short: boolean } | null>(null);
+  const applyingRemote = useRef(false); // set when a state change came from the other window; consumed by the publish effect
+  const mounted = useRef(false); // first render never publishes; the hello reply is adopted instead
   const cur = useRef({ step: 0, short: true });
 
   const path = useMemo(() => steps.map((s, idx) => idx).filter((idx) => !short || !steps[idx].deepDive), [steps, short]);
@@ -58,18 +64,10 @@ export function Story({ data }: { data: AppData }) {
     [path, i, go],
   );
 
-  // hash sync (#3 = step 3)
-  useEffect(() => {
-    const h = parseInt(window.location.hash.replace("#", ""), 10);
-    if (h >= 1 && h <= steps.length) { setI(h - 1); if (steps[h - 1].deepDive) setShort(false); }
-  }, [steps.length]);
+  // hash sync (#3 = step 3): initial value is read in the lazy useState initialisers above
   useEffect(() => {
     history.replaceState(null, "", `#${i + 1}`);
   }, [i]);
-
-  useEffect(() => {
-    setPresenter(new URLSearchParams(window.location.search).get("presenter") === "1");
-  }, []);
 
   // presenter <-> audience sync over BroadcastChannel; the remote value is recorded so it is never echoed back
   useEffect(() => {
@@ -83,9 +81,11 @@ export function Story({ data }: { data: AppData }) {
       const m = e.data;
       if (m?.type === "hello") {
         c.postMessage({ type: "state", ...cur.current } satisfies SyncMsg);
-      } else if (m?.type === "state" && m.step >= 0 && m.step < steps.length) {
-        lastSynced.current = { step: m.step, short: m.short };
+      } else if (m?.type === "state" && Number.isInteger(m.step) && m.step >= 0 && m.step < steps.length && typeof m.short === "boolean") {
+        if (m.step === cur.current.step && m.short === cur.current.short) return; // nothing changes, so no effect will consume a flag
+        applyingRemote.current = true;
         setDir(m.step >= cur.current.step ? 1 : -1);
+        cur.current = { step: m.step, short: m.short };
         setI(m.step);
         setShort(m.short);
       }
@@ -94,8 +94,8 @@ export function Story({ data }: { data: AppData }) {
     return () => { c.close(); chan.current = null; };
   }, [steps.length]);
   useEffect(() => {
-    const l = lastSynced.current;
-    if (l && l.step === i && l.short === short) return; // came from the other window
+    if (!mounted.current) { mounted.current = true; return; }
+    if (applyingRemote.current) { applyingRemote.current = false; return; } // came from the other window
     chan.current?.postMessage({ type: "state", step: i, short } satisfies SyncMsg);
   }, [i, short]);
 
