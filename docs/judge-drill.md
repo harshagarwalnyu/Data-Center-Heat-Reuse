@@ -146,13 +146,13 @@ Europe already requires reuse: Germany requires new data centers to reuse 10% of
 ## 9b. "What else does the town get?"
 
 **Q. Is it only heat?**
-No. The benefit agreement also commits TeraWulf to **$150,000 a year for computer science in Lansing's three public schools** (1,118 students, about $134 per student). It pays for computer science teaching, classroom equipment, teacher training, and student visits to the heat plant and data center. The data center in their town becomes the place they learn how computing and energy work. We enable the next generation of thinkers, not just warmer homes.
+No. We also propose that the benefit agreement include **$150,000 a year from TeraWulf for computer science in Lansing's three public schools** (1,118 students, about $134 per student). It would pay for computer science teaching, classroom equipment, teacher training, and student visits to the heat plant and data center. The data center in their town becomes the place they learn how computing and energy work. We enable the next generation of thinkers, not just warmer homes.
 
 **→ Where does $150,000 come from?**
 It is our proposal, not a negotiated figure. It is about 7% of the $2.1M heat payment and about 0.01% of the assumed $1.5B build. It is separate from, and on top of, the heat funding gap, so it does not change any heat number. The amount and its term are open in the term sheet (8.3).
 
 **→→ Isn't that just buying votes?**
-It is restricted money with a public report every year, written into the same agreement the town can enforce. Benefit agreements routinely fund local education and training. Ours is tied to what the facility actually is, a computing and energy site, and it is small enough that TeraWulf can say yes without a fight.
+As proposed, it is restricted money with a public report every year, written into the same agreement the town would enforce. Until TeraWulf signs, it is a proposal, and we say so. Benefit agreements routinely fund local education and training. Ours is tied to what the facility actually is, a computing and energy site, and it is small enough that TeraWulf can say yes without a fight.
 
 ---
 
