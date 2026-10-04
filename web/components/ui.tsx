@@ -35,16 +35,16 @@ const NAV = [
 export function NavBar({ active, extra }: { active: string; extra?: ReactNode }) {
   return (
     <header className="no-print flex flex-wrap items-center gap-x-3 gap-y-1 px-[clamp(0.75rem,2vw,1.25rem)] py-2 border-b border-line bg-bg">
-      <Link prefetch={false} href="/" className="serif font-bold text-[1.25rem] mr-3 whitespace-nowrap text-ink no-underline">
-        <span className="text-ember">&#9650;</span> {PROJECT_TITLE}<span className="hidden lg:inline font-sans font-semibold text-[1rem] text-ink2 ml-2">{PROJECT_TAGLINE}</span>
+      <Link prefetch={false} href="/" className="serif font-bold text-h3 mr-3 whitespace-nowrap text-ink no-underline">
+        <span className="text-ember">&#9650;</span> {PROJECT_TITLE}<span className="hidden lg:inline font-sans font-semibold text-caption text-ink2 ml-2">{PROJECT_TAGLINE}</span>
       </Link>
-      <nav aria-label="Primary" className="order-last w-full md:order-none md:w-auto flex gap-1 overflow-x-auto -mx-1 px-1">
+      <nav aria-label="Primary" className="order-last w-full md:order-none md:w-auto flex gap-1 overflow-x-auto -mx-1 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-md:[mask-image:linear-gradient(to_right,#000_calc(100%-1.75rem),transparent)]">
         {NAV.map((n) => (
           <Link prefetch={false}
             key={n.href}
             href={n.href}
             aria-current={active === n.href ? "page" : undefined}
-            className="min-h-[44px] inline-flex items-center px-2 sm:px-3 rounded-lg font-semibold text-[1rem] sm:text-[1.0625rem] no-underline whitespace-nowrap"
+            className="min-h-[44px] inline-flex items-center px-2 sm:px-3 rounded-lg font-semibold text-caption sm:text-caption no-underline whitespace-nowrap"
             style={active === n.href ? { background: "var(--navy)", color: "var(--bg)" } : { color: "var(--ink)" }}
           >
             {n.label}
@@ -62,8 +62,8 @@ export function NavBar({ active, extra }: { active: string; extra?: ReactNode })
 
 export function DataGate({ children }: { children: (d: AppData) => ReactNode }) {
   const { data, error } = useApp();
-  if (error) return <div className="p-10 text-[1.25rem]">Could not load data files: {error}. Run the app from a web server (for example <code>bunx serve out</code>).</div>;
-  if (!data) return <div className="p-10 text-[1.25rem] text-ink2" role="status">Loading data...</div>;
+  if (error) return <div className="p-8 text-h3">Could not load data files: {error}. Run the app from a web server (for example <code>bunx serve out</code>).</div>;
+  if (!data) return <div className="p-8 text-h3 text-ink2" role="status">Loading data...</div>;
   return <>{children(data)}</>;
 }
 
@@ -75,7 +75,7 @@ export function Stat({ value, unit, label, tone = "ink", big = false }: { value:
         {value}
         {unit && <span className="unit">{unit}</span>}
       </div>
-      <div className="text-ink2 mt-1 text-[1.0625rem]">{label}</div>
+      <div className="text-ink2 mt-1 text-caption">{label}</div>
     </div>
   );
 }
