@@ -1,11 +1,12 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import type { AppData } from "@/lib/types";
 import { baseParams, LCOH_ANCHOR_PCT, scenario, type Cooling, type Params } from "@/lib/model";
 import { dec, int, usd } from "@/lib/format";
 import { NavBar, ringText, ringShort } from "./ui";
 import { LcohBars, lcohTitle } from "./viz/Charts";
 import { Tween } from "./Tween";
+import { Info, TipKey } from "./Tooltip";
 
 function Slider({ id, label, value, min, max, step, unit, onChange, fmt }: { id: string; label: string; value: number; min: number; max: number; step: number; unit: string; onChange: (v: number) => void; fmt?: (v: number) => string }) {
   return (
@@ -19,10 +20,10 @@ function Slider({ id, label, value, min, max, step, unit, onChange, fmt }: { id:
   );
 }
 
-function Kpi({ label, num, fmt, instant, unit, delta, good, before, badge }: { label: string; num: number; fmt: (n: number) => string; instant: boolean; unit: string; delta?: string; good?: boolean | null; before?: string; badge?: string }) {
+function Kpi({ label, num, fmt, instant, unit, delta, good, before, badge, tip }: { label: string; num: number; fmt: (n: number) => string; instant: boolean; unit: string; delta?: string; good?: boolean | null; before?: string; badge?: string; tip?: ReactNode }) {
   return (
     <div className="card p-4" style={badge ? { borderColor: "var(--ember)", borderWidth: 2 } : undefined}>
-      <div className="text-caption text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1">{label}{badge && <span className="chip !py-1 !px-2 !text-caption" style={{ background: "var(--ember)", borderColor: "var(--ember)", color: "#fff" }}>{badge}</span>}</div>
+      <div className="text-caption text-ink2 flex flex-wrap items-center gap-x-2 gap-y-1">{label}{tip && <Info tip={tip} />}{badge && <span className="chip !py-1 !px-2 !text-caption" style={{ background: "var(--ember)", borderColor: "var(--ember)", color: "#fff" }}>{badge}</span>}</div>
       <div className="t-stat num mt-1 flex flex-wrap items-baseline gap-x-3">
         {before && <s className="text-ink2 font-semibold" style={{ fontSize: "0.6em", textDecorationThickness: "3px", textDecorationColor: "var(--ember)" }} aria-label={`was ${before}`}>{before}</s>}
         <span style={badge ? { color: "var(--ember-text)" } : undefined}><Tween value={num} format={fmt} instant={instant} /><span className="unit">{unit}</span></span>
@@ -100,15 +101,15 @@ export function Explore({ data }: { data: AppData }) {
           <section aria-label="Results" aria-live="polite" className="grid gap-4 content-start">
             {notes.map((n) => <div key={n} role="note" className="card p-3 font-semibold" style={{ background: "var(--warn-bg)", borderColor: "var(--amber)" }}>{n}</div>)}
             <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              <Kpi label="Heat the data center produces" num={s.heatAvailableGWh} fmt={int} instant={live} unit="GWh/yr" delta={`${dec(s.surplusGWh, 0)} GWh/yr left over`} />
-              <Kpi label="Heat delivered to Lansing" num={s.heatDeliveredMWh / 1000} fmt={int} instant={live} unit="GWh/yr" delta={shareText} />
-              <Kpi label="Average heat pump COP" num={s.avgCop} fmt={(n) => dec(n, 1)} instant={live} unit="" delta={cp.t} good={cp.g} />
-              <Kpi label="Cost to make heat" num={s.lcohUsdMWh} fmt={(n) => `$${int(n)}`} instant={live} unit="per MWh" delta={noTown ? `+$${Math.round(s.lcohUsdMWh) - Math.round(noTown.lcohUsdMWh)} per MWh from adding the town ring` : lc.t} good={noTown ? false : lc.g} before={noTown ? `$${int(noTown.lcohUsdMWh)}` : undefined} badge={noTown && d.extras?.with_town?.town_ring_lcoh_usd_mwh !== undefined ? `town ring alone: $${int(d.extras.with_town.town_ring_lcoh_usd_mwh)} per MWh` : undefined} />
-              <Kpi label="Saving for a propane home" num={s.householdSavingsPropane} fmt={usd} instant={live} unit="per year" delta={hh.g === null ? `unchanged: tariff fixed at ${int((s.tariffUsdMWh / d.finance.incumbent_usd_mwh.propane) * 100)}% of propane` : hh.t} good={hh.g} />
-              <Kpi label="CO₂ avoided" num={s.co2TYr} fmt={int} instant={live} unit="t/yr" delta={co.t} good={co.g} />
+              <Kpi label="Heat the data center produces" tip={<>IT load times load factor times the share of heat captured, over a year. At the base case this is <TipKey k="supply.heat_available_GWh" /></>} num={s.heatAvailableGWh} fmt={int} instant={live} unit="GWh/yr" delta={`${dec(s.surplusGWh, 0)} GWh/yr left over`} />
+              <Kpi label="Heat delivered to Lansing" tip={<>The heat the three rings' users need in a year. At the base case this is <TipKey k="totals.heat_delivered_MWh" /></>} num={s.heatDeliveredMWh / 1000} fmt={int} instant={live} unit="GWh/yr" delta={shareText} />
+              <Kpi label="Average heat pump COP" tip={<>Units of heat a heat pump delivers per unit of electricity. At the base case this is <TipKey k="totals.avg_cop" /></>} num={s.avgCop} fmt={(n) => dec(n, 1)} instant={live} unit="" delta={cp.t} good={cp.g} />
+              <Kpi label="Cost to make heat" tip={<>Capex times the capital recovery factor, plus operating cost, divided by heat delivered. Base case: <TipKey k="finance.lcoh_usd_mwh" /></>} num={s.lcohUsdMWh} fmt={(n) => `$${int(n)}`} instant={live} unit="per MWh" delta={noTown ? `+$${Math.round(s.lcohUsdMWh) - Math.round(noTown.lcohUsdMWh)} per MWh from adding the town ring` : lc.t} good={noTown ? false : lc.g} before={noTown ? `$${int(noTown.lcohUsdMWh)}` : undefined} badge={noTown && d.extras?.with_town?.town_ring_lcoh_usd_mwh !== undefined ? `town ring alone: $${int(d.extras.with_town.town_ring_lcoh_usd_mwh)} per MWh` : undefined} />
+              <Kpi label="Saving for a propane home" tip={<>Tariff fixed at {dec(d.finance.tariff_usd_mwh / propane, 1)} times propane's price, applied to a typical home's {int(d.finance.household.typical_MWh_yr)} MWh a year. Base case: <TipKey k="finance.household.savings_vs_propane_usd" /></>} num={s.householdSavingsPropane} fmt={usd} instant={live} unit="per year" delta={hh.g === null ? `unchanged: tariff fixed at ${int((s.tariffUsdMWh / d.finance.incumbent_usd_mwh.propane) * 100)}% of propane` : hh.t} good={hh.g} />
+              <Kpi label="CO₂ avoided" tip={<>Emissions of the fossil fuel displaced, minus the emissions of the electricity and backup fuel used. Base case: <TipKey k="impact.co2_avoided_t_yr" /></>} num={s.co2TYr} fmt={int} instant={live} unit="t/yr" delta={co.t} good={co.g} />
             </div>
             <div className="grid gap-4 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
-              <div className="card p-4 min-h-[400px] flex flex-col"><h2 className="m-0 mb-1 text-h3">{lcohTitle(d, s.lcohUsdMWh)}</h2><div className="flex-1 min-h-0"><LcohBars d={d} lcohOverride={s.lcohUsdMWh} /></div></div>
+              <div className="card p-4 min-h-[400px] flex flex-col"><h2 className="m-0 mb-1 text-h3">{lcohTitle(d, s.lcohUsdMWh)}</h2><div className="flex-1 min-h-0"><LcohBars d={d} lcohOverride={s.lcohUsdMWh} onPickRate={(pct) => set("discountPct", pct)} activePct={p.discountPct} /></div></div>
               <div className="card p-4">
                 <h2 className="m-0 mb-2 text-h3">By ring</h2>
                 <table className="w-full text-caption">

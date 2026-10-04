@@ -5,6 +5,7 @@ import { dec, int } from "@/lib/format";
 import { COP_MAX, COP_MIN, ETA, APPROACH_K, LIFETIME_YR, cop, crf } from "@/lib/model";
 import Link from "next/link";
 import { NavBar } from "./ui";
+import { Term } from "./Tooltip";
 
 const HOURS = 8760;
 
@@ -41,7 +42,7 @@ export function HowItWorks({ data }: { data: AppData }) {
 
         <div className="grid gap-6 mt-6 lg:grid-cols-2">
           <section className="card p-6" aria-label="COP calculator">
-            <h2 className="m-0 text-h2 serif">Heat pump efficiency (COP), live</h2>
+            <h2 className="m-0 text-h2 serif">Heat pump efficiency (<Term tip="Coefficient of performance: units of heat a heat pump delivers for each unit of electricity it uses. Higher is better.">COP</Term>), live</h2>
             <p className="num m-0 mt-2 text-body">COP = {ETA} × T<sub>sink</sub> / (T<sub>sink</sub> − T<sub>source</sub> + 2 × {APPROACH_K} K), clipped to {COP_MIN} to {COP_MAX}</p>
             <div className="grid gap-3 mt-3 text-body">
               <label className="grid gap-1">Sink (delivery) temperature: <b className="num">{sink} °C</b>
@@ -57,9 +58,9 @@ export function HowItWorks({ data }: { data: AppData }) {
 
           <section className="card p-6" aria-label="Finance">
             <h2 className="m-0 text-h2 serif">Cost of heat</h2>
-            <p className="num m-0 mt-2 text-body">LCOH = (capex × CRF + opex) / delivered MWh</p>
+            <p className="num m-0 mt-2 text-body"><Term tip="Levelized cost of heat: the cost of producing one MWh of delivered heat, with capital cost spread over the equipment's life.">LCOH</Term> = (capex × CRF + opex) / delivered MWh</p>
             <ul className="m-0 mt-2 pl-6 grid gap-1 text-body">
-              <li>CRF = r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1), n = {LIFETIME_YR} yr: <span className="num">{dec(r4, 4)}</span> at 4%, <span className="num">{dec(r7, 4)}</span> at 7%.</li>
+              <li><Term tip="Capital recovery factor: the share of the up-front cost charged each year over the equipment life, at a given cost of money.">CRF</Term> = r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1), n = {LIFETIME_YR} yr: <span className="num">{dec(r4, 4)}</span> at 4%, <span className="num">{dec(r7, 4)}</span> at 7%.</li>
               <li>Capex ${dec(f.capex_musd.total, 1)}M, opex ${dec(f.opex_musd_yr, 2)}M per year, {int(T.heat_delivered_MWh)} MWh delivered.</li>
               <li>Result: <b className="num">${dec(f.lcoh_usd_mwh.coop_4pct, 0)}</b> at 4% (community finance), <b className="num">${dec(f.lcoh_usd_mwh.utility_7pct, 0)}</b> at 7%, <b className="num">${dec(f.lcoh_usd_mwh.private_10pct, 0)}</b> at 10% per MWh.</li>
               <li>Tariff is set by policy at 0.8× propane (${dec(f.tariff_usd_mwh, 0)} per MWh), not by cost, so households save at any discount rate; the gap is a funding question.</li>
