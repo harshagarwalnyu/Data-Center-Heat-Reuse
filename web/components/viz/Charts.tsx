@@ -104,8 +104,10 @@ export function WeekChart({ d, initial = "winter" }: { d: Site2Data; initial?: "
 /** Horizontal bars of cost per MWh of delivered heat: ours (3 ownership models) vs what Lansing pays today. */
 export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: number }) {
   const f = d.finance;
+  // The three ownership bars stay fixed at the model's published values; Explore's live result is its own bar.
   const ours = [
-    { name: "Community co-op (4% finance)", v: lcohOverride ?? f.lcoh_usd_mwh.coop_4pct, kind: "ours" },
+    ...(lcohOverride !== undefined ? [{ name: "Your settings", v: lcohOverride, kind: "live" }] : []),
+    { name: "Community co-op (4% finance)", v: f.lcoh_usd_mwh.coop_4pct, kind: "ours" },
     { name: "Utility (7%)", v: f.lcoh_usd_mwh.utility_7pct, kind: "ours" },
     { name: "Private (10%)", v: f.lcoh_usd_mwh.private_10pct, kind: "ours" },
   ];
@@ -115,7 +117,7 @@ export function LcohBars({ d, lcohOverride }: { d: Site2Data; lcohOverride?: num
     kind: k === "natural_gas" ? "gas" : "inc",
   }));
   const rows = [...ours, ...inc];
-  const color = (k: string) => (k === "ours" ? "var(--teal)" : k === "gas" ? "var(--ink2)" : "var(--ember)");
+  const color = (k: string) => (k === "live" ? "var(--ink)" : k === "ours" ? "var(--teal)" : k === "gas" ? "var(--ink2)" : "var(--ember)");
   return (
     <div className="flex flex-col h-full min-h-0">
       <Legend items={[{ color: "var(--teal)", label: "Recovered heat, cost to produce" }, { color: "var(--ember)", label: "What Lansing pays today" }]} />
