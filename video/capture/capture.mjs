@@ -34,12 +34,8 @@ const scrollToText = async (sel, text, block = "center") => {
 // 1. home
 await p.goto(BASE + "/", { waitUntil: "networkidle" });
 await hideCursor();
-await p.waitForTimeout(1800);
+await p.waitForTimeout(5000); // let the hero stat odometers finish
 await shot("hero");
-// 3. stat strip (after odometers finish)
-await scrollToText("section", "The numbers", "center");
-await p.waitForTimeout(3500);
-await shot("stats");
 // 2. rings: on-site, corridor, town (map steps follow scroll)
 await scrollToText("h3", "Build first", "center");
 await shot("ring-1");

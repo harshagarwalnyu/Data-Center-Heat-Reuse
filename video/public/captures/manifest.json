@@ -5,9 +5,6 @@
   "hero": {
    "file": "captures/hero.jpg"
   },
-  "stats": {
-   "file": "captures/stats.jpg"
-  },
   "ring-1": {
    "file": "captures/ring-1.jpg"
   },
@@ -52,7 +49,7 @@
   }
  },
  "slider": {
-  "y": 660.875,
+  "y": 724.484375,
   "steps": [
    {
     "v": 7,
@@ -93,6 +90,6 @@
  },
  "bar": {
   "x": 1066.328125,
-  "y": 789.9296875
+  "y": 822.2734375
  }
 }

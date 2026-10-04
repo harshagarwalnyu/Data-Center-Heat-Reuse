@@ -20,7 +20,7 @@ const c = (line: number, phrase: string, base: number, off = 0) => cue(line, phr
 
 const steps = manifest.slider.steps; // 7% ... 4%, x in capture px
 const sy = manifest.slider.y;
-const BAR = { x: 1050, y: 798 };
+const BAR = { x: 1050, y: 830 };
 
 // frames (local to the product scene)
 const T = {
@@ -41,10 +41,10 @@ const SEGS: Seg[] = [
   { from: T.ring1, shot: "ring-1", cam: { x: 1275, y: 520, z: 1.7 } },
   { from: T.ring2, shot: "ring-2", cam: { x: 1275, y: 520, z: 1.7 } },
   { from: T.ring3, shot: "ring-3", cam: { x: 1275, y: 540, z: 1.75 } },
-  { from: T.stats, shot: "stats", cam: { x: 960, y: 500, z: 1.45 } },
-  { from: T.explore, shot: "explore", cam: { x: 760, y: 560, z: 1.55 } },
-  { from: T.bar - 30, shot: "explore-end", cam: { x: 1000, y: 700, z: 1.5 } },
-  { from: T.bar + 2, shot: "explore-bar", cam: { x: 1000, y: 700, z: 1.5 } },
+  { from: T.stats, shot: "hero", cam: { x: 960, y: 600, z: 1.6 } },
+  { from: T.explore, shot: "explore", cam: { x: 760, y: 600, z: 1.55 } },
+  { from: T.bar - 30, shot: "explore-end", cam: { x: 1000, y: 740, z: 1.5 } },
+  { from: T.bar + 2, shot: "explore-bar", cam: { x: 1000, y: 740, z: 1.5 } },
   { from: T.compare, shot: "compare", cam: { x: 960, y: 520, z: 1.12 } },
 ];
 
@@ -58,8 +58,8 @@ const CUR: Pt[] = [
   { f: T.ring3 - 8, x: 1281, y: 494 },
   { f: T.ring3 + 24, x: 1500, y: 632 },
   { f: T.stats - 12, x: 1506, y: 636 },
-  { f: T.stats + 34, x: 600, y: 480 },
-  { f: T.stats + 80, x: 1300, y: 480 },
+  { f: T.stats + 34, x: 640, y: 580 },
+  { f: T.stats + 80, x: 1280, y: 580 },
   { f: T.explore + 36, x: steps[0].x - 2, y: sy },
   { f: T.drag - 8, x: steps[0].x - 2, y: sy },
   { f: T.dragEnd, x: steps[steps.length - 1].x, y: sy },
@@ -192,10 +192,10 @@ export const Product: React.FC = () => {
             <Callout at={T.ring1 + 26} x={sPt(1102, 432).x} y={sPt(1102, 432).y} color={C.teal} text={`$${Math.round(D.onsite.lcoh_usd_mwh_7pct)} per MWh`} sub="build first" dx={70} dy={-150} />
             <Callout at={T.ring2 + 26} x={sPt(1277, 492).x} y={sPt(1277, 492).y} color={C.ember} text={`${D.corridor.homes} homes`} sub="along the corridor" dx={40} dy={90} dur={50} />
             <Callout at={T.ring3 + 30} x={stamp.x} y={stamp.y} color={C.violet} text="Fails the cost test" sub={`$${Math.round(D.townLcoh)} vs $${Math.round(D.propane)} propane`} dx={-760} dy={-140} />
-            <Callout at={T.stats + 30} x={sPt(960, 480).x} y={sPt(960, 480).y} color={C.teal} text="Live from the model" dx={-260} dy={-170} />
-            <Callout at={T.dragEnd - 6} x={sPt(560, 520).x} y={sPt(560, 520).y} color={C.ember} text={`$${Math.round(D.lcoh7)} → $${Math.round(D.lcoh4)}`} sub="with co-op finance" dx={-430} dy={-190} />
-            <Callout at={T.bar + 12} x={sPt(BAR.x, BAR.y).x} y={sPt(BAR.x, BAR.y).y} color={C.teal} text="Click any bar" sub="see what drives it" dx={300} dy={200} />
-            <Callout at={T.compare + 14} x={sPt(960, 300).x} y={sPt(960, 300).y} color={C.violet} text="Two sites, side by side" dx={-330} dy={-60} />
+            <Callout at={T.stats + 30} x={sPt(960, 580).x} y={sPt(960, 580).y} color={C.teal} text="Live from the model" dx={-260} dy={150} dur={34} />
+            <Callout at={T.dragEnd - 6} x={sPt(560, 520).x} y={sPt(560, 520).y} color={C.ember} text={`$${Math.round(D.lcoh7)} → $${Math.round(D.lcoh4)}`} sub="with co-op finance" dx={-430} dy={-190} dur={90} />
+            <Callout at={T.bar + 12} x={sPt(BAR.x, BAR.y).x} y={sPt(BAR.x, BAR.y).y} color={C.teal} text="Click any bar" sub="see what drives it" dx={260} dy={-300} />
+            <Callout at={T.compare + 14} x={sPt(960, 300).x} y={sPt(960, 300).y} color={C.violet} text="Two sites, side by side" dx={-560} dy={470} />
           </div>
         </div>
       </div>
