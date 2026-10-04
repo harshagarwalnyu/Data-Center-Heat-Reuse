@@ -145,6 +145,7 @@ Rules for reading it:
 |---|---|
 | Heat commitment | The HSA is an exhibit. Failure to build or maintain the heat interface by `[date]` triggers the permit-condition remedies in section 4. |
 | Local anchors | Heat to the on-site greenhouse, aquaculture and recreation users at the on-site cost of heat, with their own backup heat. Priority hiring from Lansing for network and campus jobs. The jobs count is **unverified** and not stated here. |
+| Computer science for Lansing schools | **$150,000 a year** from TeraWulf to the Lansing Central School District (Raymond C. Buckley Elementary, Lansing Middle and Lansing High, 1,118 students, `research/offtakers.md`), about $134 per student. Restricted to computer science teaching, classroom equipment, teacher training, and student visits to the heat plant and data center. Paid **on top of** the heat contribution in section 3.1, not out of it, and reported in the annual public statement. The amount is our proposal, not a negotiated figure (item 8.3). |
 | Land | Buffer land for a community agriculture and energy park on long lease at nominal rent. Acreage is **open**; the lease is about 183 acres (`research/verification.md` row 3c) and total site acreage beyond that is unverified (row 3d). |
 | Reporting | Annual public statement: heat delivered, supply temperature, hours curtailed, backup fuel burned, and whether any of the water permit was used for cooling. |
 | Remedies | Cure periods, then liquidated payments, then permit-condition remedies and co-op step-in. |
@@ -261,6 +262,8 @@ The Town ring is refused, not forgotten: it costs $734.2/MWh against propane at 
 - Whether any DEC application was complete before 14 July 2026.
 
 ### 8.3 Open numbers (blanks left on purpose)
+
+- The school computer science contribution (section 3.2): $150,000 a year is our proposed starting figure, with the term and any indexing open.
 
 - Decommissioning reserve in dollars, and whether it also covers the replacement source ($10.35M, `finance.dc_exit.replacement_source_musd`).
 - CBA payment term and indexing, and the cap and share in the windfall reopener.
