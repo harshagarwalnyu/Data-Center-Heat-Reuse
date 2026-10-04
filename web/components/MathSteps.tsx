@@ -75,6 +75,7 @@ function Step({ n, title, stat, unit, formula, children, check, tone }: { n: num
 
 export function MathSteps({ d }: { d: Site2Data }) {
   const [detail, setDetail] = useState<Detail | null>(null);
+  const [detailFailed, setDetailFailed] = useState(false);
   const [sink, setSink] = useState(55);
   const [src, setSrc] = useState(d.supply.capture_temp_C);
 
@@ -82,8 +83,8 @@ export function MathSteps({ d }: { d: Site2Data }) {
     const ac = new AbortController();
     fetch(`${BASE_PATH}/data/analysis_detail.json`, { cache: "no-cache", signal: ac.signal })
       .then((r) => (r.ok ? (r.json() as Promise<Detail>) : null))
-      .then((j) => j && setDetail(j))
-      .catch(() => {});
+      .then((j) => (j ? setDetail(j) : setDetailFailed(true)))
+      .catch((e) => { if ((e as Error)?.name !== "AbortError") setDetailFailed(true); });
     return () => ac.abort();
   }, []);
 
@@ -120,7 +121,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
   const lcohSimple7 = (f.capex_musd.total * crf(0.07, 30) + f.opex_musd_yr) * 1e6 / T.heat_delivered_MWh;
   const lcOn = on?.lcoh_usd_mwh_7pct ?? d.extras?.ring_lcoh_usd_mwh?.onsite ?? 0;
   const lcCo = co?.lcoh_usd_mwh_7pct ?? d.extras?.ring_lcoh_usd_mwh?.corridor ?? 0;
-  const blend = ((lcOn * (on?.annual_MWh ?? 0)) + (lcCo * (co?.annual_MWh ?? 0))) / used;
+  const blend = ((lcOn * (on?.annual_MWh ?? 0)) + (lcCo * (co?.annual_MWh ?? 0))) / Math.max(used, 1);
   // 7. funding gap
   const gap = cba?.whole_project_gap_musd ?? 0;
   const corr = cba?.corridor_gap_musd ?? 0;
@@ -215,7 +216,7 @@ export function MathSteps({ d }: { d: Site2Data }) {
 
       <Step n={9} title="How sure are we" stat={mc ? usd(mc.stats.lcoh_blended_7pct.P50) : "..."} unit="per MWh, middle of 500 runs" tone={tone}
         formula="re-run the whole model with random inputs, then read the 10th, 50th and 90th percentile of the cost of heat"
-        check={mc ? <>{int(mc.n_draws)} full runs: P10 {usd(mc.stats.lcoh_blended_7pct.P10)}, P50 {usd(mc.stats.lcoh_blended_7pct.P50)}, P90 {usd(mc.stats.lcoh_blended_7pct.P90)} per MWh. Propane is {usd(f.incumbent_usd_mwh.propane)}.</> : <>Loading the Monte Carlo file...</>}>
+        check={mc ? <>{int(mc.n_draws)} full runs: P10 {usd(mc.stats.lcoh_blended_7pct.P10)}, P50 {usd(mc.stats.lcoh_blended_7pct.P50)}, P90 {usd(mc.stats.lcoh_blended_7pct.P90)} per MWh. Propane is {usd(f.incumbent_usd_mwh.propane)}.</> : detailFailed ? <>The Monte Carlo file could not be loaded; see outputs/analysis_detail.json in the repo.</> : <>Loading the Monte Carlo file...</>}>
         <Row label="Inputs varied" value="capture share, pipe cost, uptake, heat pump cost, power price, propane price, discount rate" src={[cfg("outputs/analysis_detail.json")]} />
         <Row label="Biggest driver" value="discount rate" />
       </Step>

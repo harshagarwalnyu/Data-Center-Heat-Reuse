@@ -42,8 +42,8 @@ export function HowItWorks({ data }: { data: AppData }) {
             It sits on a side loop. Cooling always wins: if we take too little or nothing, dry coolers carry the full load.
           </Flow>
           <Arrow />
-          <Flow n={3} bg="var(--sage)" temp={`${on?.supply_temp_C ?? 45} °C / ${co?.supply_temp_C ?? 20} °C`} title="Farm and homes use it">
-            The farm campus is fed directly at {on?.supply_temp_C ?? 45} °C. The {int(co?.homes ?? 0)} homes sit on a {co?.supply_temp_C ?? 20} °C loop and each has its own small heat pump.
+          <Flow n={3} bg="var(--sage)" temp={on && co ? `${on.supply_temp_C} °C / ${co.supply_temp_C} °C` : undefined} title="Farm and homes use it">
+            {on && co ? <>The farm campus is fed directly at {on.supply_temp_C} °C. The {int(co.homes ?? d.impact.homes_served)} homes sit on a {co.supply_temp_C} °C loop and each has its own small heat pump.</> : <>Ring data is unavailable.</>}
           </Flow>
           <Arrow />
           <Flow n={4} bg="var(--sky)" temp={`${int(d.totals.storage_m3)} m³`} title="A tank and backup boilers cover the gaps">
