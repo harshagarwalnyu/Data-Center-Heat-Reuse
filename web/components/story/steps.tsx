@@ -68,6 +68,8 @@ export function buildSteps(data: AppData): Step[] {
   const fund = ex?.funding;
   const cba = ex?.cba;
   // Whole-project headline (on-site surplus cross-subsidises corridor); corridor-only figures are the fallback.
+  const townLcoh = ex?.with_town?.town_ring_lcoh_usd_mwh;
+  const townNo = townLcoh !== undefined && townLcoh > f.incumbent_usd_mwh.propane; // honest gate: say no when the data say no
   const cbaPct = cba?.headline_as_pct_of_dc_capex ?? cba?.as_pct_of_dc_capex;
   const cbaYr = cba?.headline_annuitized_7pct_musd_per_yr ?? cba?.per_year_annuitized_7pct_musd;
   const backupPct = (T.backup_MWh / T.heat_delivered_MWh) * 100;
@@ -102,7 +104,7 @@ export function buildSteps(data: AppData): Step[] {
       id: "plan",
       kicker: "3 · The plan",
       headline: `A data center's heat could warm a ${ha ? `${int(ha)}-hectare ` : ""}year-round farm campus and ${int(homes)} homes`,
-      lede: "Bring the users to the heat. Start next to the data center (a proposed campus on adjacent land), then follow the road toward town, and reach the town center only if the numbers pass.",
+      lede: <>Bring the users to the heat. Start next to the data center (a proposed campus on adjacent land), then follow the road toward town, and reach the town center only if the numbers pass.{townNo && <> They do not pass today: Ring 3 would cost <b className="num">${int(townLcoh)}</b> per MWh against <b className="num">${int(f.incumbent_usd_mwh.propane)}</b> for propane, so we leave it out.</>}</>,
       layout: "split",
       notes: "Three rings. Ring 1, Phase 1 (proposed): on-site greenhouse, aquaculture and a community rec center with pool on adjacent land. The 183-acre site is on an 80-year lease to TeraWulf's Lake Hawkeye LLC and the landlord is an affiliate, so the campus is framed as proposed. It is a year-round sink with no public trenching. Ring 2: homes and farms along the road on an ambient loop, gated by sign-up density. Ring 3: school campus and town buildings, 5-7 miles away, built only if its cost of heat beats propane and oil.",
       visual: (
