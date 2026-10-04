@@ -270,6 +270,7 @@ export function Home({ data }: { data: AppData }) {
               <li><Link prefetch={false} href="/sources/" className="text-ink">Sources</Link></li>
               <li><a href={PUBLIC_URL} target="_blank" rel="noreferrer" className="text-ink">Code on GitHub &#8599;</a></li>
               <li><a href={DECK_PDF} target="_blank" rel="noreferrer" className="text-ink">Slide deck (PDF) &#8599;</a></li>
+              <li><a href={`${BASE_PATH}/one-pager.pdf`} download className="text-ink">One-pager (PDF)</a></li>
             </ul>
           </nav>
           <p className="t-caption m-0 md:col-span-2 border-t border-line/70 pt-4">{CREDITS}</p>
