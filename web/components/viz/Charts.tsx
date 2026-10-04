@@ -188,12 +188,18 @@ export function Tornado({ d }: { d: Site2Data }) {
 }
 
 const RING_NAME: Record<string, string> = { onsite: "On-site farm campus", corridor: "Corridor homes", town: "Town center" };
-const RING_VERDICT: Record<string, string> = { onsite: "pays for itself", corridor: "needs a benefit fund", town: "not yet", ashp: "the honest alternative" };
 const RING_COLOR: Record<string, string> = { onsite: "var(--teal)", corridor: "var(--ember)", town: "var(--violet)", ashp: "var(--ink2)" };
 
 /** Cost of heat by ring (7% finance) against what propane costs today. */
 export function RingLcoh({ d, ringL }: { d: Site2Data; ringL: Partial<Record<string, number>> }) {
   const propane = d.finance.incumbent_usd_mwh.propane;
+  /** Verdict derived from the data, never fixed per ring: below propane pays for itself; failing the gate is not built. */
+  const verdict = (r: { id: string; v: number }) => {
+    if (r.id === "ashp") return "the honest alternative";
+    if (r.v < propane) return "pays for itself";
+    const ring = d.rings.find((x) => x.id === r.id);
+    return ring?.passes_gate === false ? "not built" : "needs a benefit fund";
+  };
   const rows: { id: string; name: string; v: number }[] = (["onsite", "corridor", "town"] as const).filter((k) => ringL[k] !== undefined).map((k) => ({ id: k, name: RING_NAME[k], v: ringL[k] as number }));
   rows.push({ id: "ashp", name: "Air-source heat pump per home", v: d.finance.incumbent_usd_mwh.air_source_hp });
   const below = rows.filter((r) => r.id !== "ashp" && r.v < propane);
@@ -217,7 +223,7 @@ export function RingLcoh({ d, ringL }: { d: Site2Data; ringL: Partial<Record<str
                 if (!r) return null;
                 const x = Number(p.x ?? 0) + Number(p.width ?? 0) + 8;
                 const y = Number(p.y ?? 0) + Number(p.height ?? 0) / 2;
-                return <text x={x} y={y} dominantBaseline="middle" fontSize={16} fill="var(--ink)"><tspan fontWeight={700}>${int(r.v)}</tspan><tspan fill="var(--ink2)"> {RING_VERDICT[r.id]}</tspan></text>;
+                return <text x={x} y={y} dominantBaseline="middle" fontSize={16} fill="var(--ink)"><tspan fontWeight={700}>${int(r.v)}</tspan><tspan fill="var(--ink2)"> {verdict(r)}</tspan></text>;
               }} />
             </Bar>
           </BarChart>

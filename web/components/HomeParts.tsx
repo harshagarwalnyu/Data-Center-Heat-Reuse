@@ -1,15 +1,17 @@
 "use client";
 import { useRef, type ReactNode } from "react";
-import { motion, useInView, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { motion, useInView, useScroll, useTransform, type MotionValue } from "framer-motion";
+
+import { useStill } from "@/lib/motion";
 
 const EASE = [0.05, 0.7, 0.1, 1] as const;
 
 /** Content rises and fades in once as it enters view. Plain markup under reduced motion. */
 export function Rise({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const reduce = useReducedMotion();
+  const reduce = useStill();
   if (reduce) return <div className={className}>{children}</div>;
   return (
-    <motion.div className={className} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE, delay }}>
+    <motion.div data-rise className={className} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE, delay }}>
       {children}
     </motion.div>
   );
@@ -17,10 +19,10 @@ export function Rise({ children, className, delay = 0 }: { children: ReactNode; 
 
 /** Small icon that springs in with a slight overshoot as it enters view. */
 export function Pop({ children, delay = 0 }: { children: ReactNode; delay?: number }) {
-  const reduce = useReducedMotion();
+  const reduce = useStill();
   if (reduce) return <span className="inline-flex">{children}</span>;
   return (
-    <motion.span className="inline-flex" initial={{ scale: 0.6, opacity: 0 }} whileInView={{ scale: [0.6, 1.1, 1], opacity: 1 }} viewport={{ once: true, amount: 0.8 }} transition={{ duration: 0.45, ease: "easeOut", delay }}>
+    <motion.span data-rise className="inline-flex" initial={{ scale: 0.6, opacity: 0 }} whileInView={{ scale: [0.6, 1.1, 1], opacity: 1 }} viewport={{ once: true, amount: 0.8 }} transition={{ duration: 0.45, ease: "easeOut", delay }}>
       {children}
     </motion.span>
   );
@@ -34,7 +36,7 @@ function Word({ w, p, i, n }: { w: string; p: MotionValue<number>; i: number; n:
 /** Big serif statement that fills in word by word as you scroll. Native scroll only; each word goes from 20% to 100% opacity. */
 export function ScrollReveal({ text }: { text: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useStill();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.85", "end 0.6"] });
   const words = text.split(" ");
   return (
@@ -44,7 +46,7 @@ export function ScrollReveal({ text }: { text: string }) {
   );
 }
 
-const COL = "inline-block h-[1.1em] overflow-hidden align-bottom";
+const COL = "inline-block w-[1ch] text-center h-[1.1em] overflow-hidden align-bottom";
 
 function Column({ digit, go, still, i }: { digit: number; go: boolean; still: boolean; i: number }) {
   return (
@@ -65,7 +67,7 @@ function Column({ digit, go, still, i }: { digit: number; go: boolean; still: bo
 export function Odometer({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const go = useInView(ref, { once: true, amount: 0.6 });
-  const reduce = !!useReducedMotion();
+  const reduce = useStill();
   return (
     <span ref={ref} className="num whitespace-nowrap">
       <span className="sr-only">{value}</span>

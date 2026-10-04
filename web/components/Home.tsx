@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useStill } from "@/lib/motion";
 import type { AppData } from "@/lib/types";
 import { dec, int, usd } from "@/lib/format";
 import { CREDITS, PUBLIC_URL } from "@/lib/config";
@@ -35,7 +36,7 @@ function Caption({ step, index, on, setActive }: { step: Step; index: number; on
 
 /** Apple-style sticky scene: the map stays pinned while three captions scroll past and each ring pops in. Stacked, unpinned on small screens. */
 function RingsStory({ data, steps, townBuilt }: { data: AppData; steps: Step[]; townBuilt: boolean }) {
-  const reduce = !!useReducedMotion();
+  const reduce = useStill();
   const [active, setActive] = useState(0);
   const [reached, setReached] = useState(0);
   const [stacked, setStacked] = useState(false);
@@ -66,7 +67,7 @@ function RingsStory({ data, steps, townBuilt }: { data: AppData; steps: Step[]; 
 
 /** Landing page as a scroll story. Every number is read from site2.json. */
 export function Home({ data }: { data: AppData }) {
-  const reduce = useReducedMotion();
+  const reduce = useStill();
   const d = data.site2;
   const f = d.finance;
   const ex = d.extras;
