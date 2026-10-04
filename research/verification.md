@@ -63,3 +63,52 @@ Started 2026-10-03. Rows appended as verified. Verdicts: CONFIRMED / CORRECTED /
 | 10c | Natural gas 53.06 kg CO2/MMBtu | CONFIRMED (CO2 only; CH4 1.0 g/MMBtu, N2O 0.10 g/MMBtu; 0.05444 kg CO2/scf not verified legibly) | 53.06 | Hub 2025 PDF https://www.epa.gov/system/files/documents/2025-01/ghg-emission-factors-hub-2025.pdf (read from image) + 40 CFR 98 Table C-1 https://www.govinfo.gov/content/pkg/CFR-2020-title40-vol23/xml/CFR-2020-title40-vol23-part98-subpartC-appC.xml | "53.06 kg CO2/mmBtu" | (verified 2026-10-03) |
 | 10d | Propane 61.46 kg/MMBtu; 5.72 or 5.75 kg/gal | CORRECTED. Liquid propane (per gallon) = 62.87 kg CO2/MMBtu, HHV 0.091 MMBtu/gal, 5.72 kg CO2/gal. 61.46 kg/MMBtu is "Propane Gas" (gaseous, per scf, HHV 2.516e-3 MMBtu/scf). 5.75 is not an EPA value. Use 62.87 / 5.72 for delivered LP gas. CH4 3.0 g, N2O 0.60 g per MMBtu (liquid petroleum rows). | 62.87 kg/MMBtu; 5.72 kg/gal | 40 CFR 98 Table C-1 (govinfo URL above); Hub 2025 PDF | "62.87 kg CO2/mmBtu" ; "61.46 kg CO2/mmBtu" (summarized by WebFetch; Hub 5.72 read from image) | (verified 2026-10-03) |
 | 10e | Distillate No.2 73.96 kg/MMBtu; 10.21 kg/gal | CONFIRMED. HHV 0.138 MMBtu/gal x 73.96 = 10.21. CH4 3.0 g, N2O 0.60 g per MMBtu. Note: some secondary sources mislabel 73.96 as per gallon -- it is per MMBtu. | 73.96 kg/MMBtu; 10.21 kg/gal | same | "73.96 kg CO2/mmBtu" | (verified 2026-10-03) |
+
+## Corrections to apply
+
+Line numbers as of 2026-10-03. Row refs point to the table above. Lane did not edit these files.
+
+### research/facts-site2.md
+- L19: "183-acre site" is fine (3c) but the site-wide 434 acres / ~250 other acres is UNVERIFIABLE (3d); do not add it as fact.
+- L20: "300-400 MW" -> "~400 MW gross / ~320 MW critical IT; operations ~2029" (TeraWulf Q2 2026 release; 3a/3b). 300 MW is website-only.
+- L21: "~138-150 MW" -> 138 MW (Aug 2025 PR, H2 2026) is stale; latest filing gives no phase-1 split; website says ~150 MW basis unstated (3a).
+- L22: "late 2026 / 2027" -> TeraWulf Q2 2026 release says operations not contemplated until ~2029 (3b).
+- L26: "topped off every 7-15 years" -> "fluid renewal every 7-15 years" (developer claim) (4b). L25: glycol type unspecified ("food-grade, non-toxic"), not propylene (4a).
+- L27: "water withdrawal and SPDES permit" -> Article 15 Title 15 water-withdrawal permit only, not SPDES (5b). "down from 245 MGD" is unchecked; drop or source. Replace cornellsun URL (404) with https://dec.ny.gov/sites/default/files/2026-04/cayugaoperatingwwpermit.pdf; effective 4/13/2026 to 4/30/2031 (5a, 5g).
+- L28: replace cornellsun URL with the DEC PDF; wording "maintenance, sump pumping, and dust control" (drop "remediation"); emergency fire pumps exempt (5c).
+- L31 (and L164): "voted" -> directed attorney at 9/29 special meeting, no vote on the ban itself; "$500,000 litigation reserve" -> $500,000 in NEXT year's proposed budget for legal costs; URL 404 -> https://www.fingerlakes1.com/2026/10/02/lansing-moves-toward-data-center-ban-as-terawulf-debate-reaches-turning-point/ (1a, 1c, 1d).
+- L33: cornellsun URL 404 -> Tompkins Resolution 2026-3, adopted 2026-01-20, 14-1, asks DEC to require a NEW application (5d, 5g). Add Seneca County Res. 63-26 if desired (5e).
+- L32: cornellsun 2026/04/22 URL not checked in this lane; re-verify.
+- L35: "Governor signed study/review requirements in July 2026" -> Executive Order 62 (2026-07-14) is a temporary MORATORY on DEC discretionary permits for new/expanded data centers >=50 MW, until DPS submits final GEIS; no fixed end date. Coverage of Lake Hawkeye is UNVERIFIABLE (2a, 2b).
+- L56 and L186, L199: "moratorium since 2014" -> Feb 2015 (PSC Case 20-G-0131 order, 5/12/2022). Cause: capacity/low design-day pressure, later described as distribution-related low pressure (<50% MAOP). Status in 2026 UNVERIFIABLE; confirmed through 7/14/2025 (6a-6e).
+- L94 and L201: "$5.186/gal (weekly survey late Sept 2026)" -> $5.186 is the Central MONTHLY average, not a late-Sept weekly value; statewide weekly 9/21/2026 = $6.271. Central weekly not extractable (7a). Recompute $/MMBtu if swapped. Fix URL to https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Monthly-Average-Home-Heating-Oil-Prices.
+- L95 and L201: "$2.849 propane (weekly survey Sept 9, 2026)" -> unsupported; statewide propane 9/21/2026 = $3.120, Central unreadable (7b). Sept 9 is not a survey date.
+- L125: UTEN: add current numbers (3/2026 report): 27 res + 8 non-res + 1 church, 36 buildings signed LOI; pilot cost $35.45M; Stage 2 filed, awaiting DPS (8a, 8-cost, 8-bldg, 8-status). "NYSEG provides geothermal heat pumps" and "Northside" not confirmed in text read.
+- L131 and L172, L203: "up to 40-50% total ITC" -> not defensible for total capex. Use wording in row 9h: 30% of eligible basis (PWA or <1 MW), +10 pts energy community, +10 pts domestic content, only for qualifying GHP (ground-source) property; waste-heat-sourced networks do NOT qualify as GHP (9d-i); also "Commercial Geothermal & Heat Network ITC" is not a statutory category (9d-iii). Rates step down for construction beginning 2033/2034 (base 5.2%/4.4%, i.e. 26%/22% with PWA); nothing from 2035 (9b).
+- L132 and L203: "former Cayuga site qualifies as Energy Community" -> UNVERIFIABLE; tract 36109002300, coal-closure test likely but must be checked against Treasury EC_CC_V5.xlsx (9f-ii). Adder is +10 percentage points, not "10% bonus".
+- L140/L141: eGRID values correct (242.8 / 865.7). Edition note: eGRID2023 Rev 2, released 2025-06-12 (original 2025-01-15); re-check for eGRID2024 (10a).
+- L144 (and L149): propane "61.46 kg/MMBtu (5.75 kg/gal)" -> 62.87 kg CO2/MMBtu and 5.72 kg CO2/gal for liquid propane; 61.46 is gaseous propane per scf. Recompute L149: 62.87/0.85 = 74.0 kg CO2 (10d).
+- L164: also see L31 fix. Add "Executive Order 62" nuance per L35.
+
+### research/site-selection.md
+- L20 and L144: "36 of 38 public speakers opposed" -> single-source (607newsnow); Ithaca Voice reports only two speakers against the ban. Cite with attribution or drop. "$500,000 legal reserve set aside on Sept 29" -> $500,000 in next year's proposed budget (1b, 1c).
+- L23, L79, L80: $5.186 oil and $2.849 propane, same corrections as facts-site2 L94/L95 (7a, 7b). "44% to 65% savings" recompute after price fix.
+- L61: "150 MW Phase 1, scalable to 300-400 MW" -> ~400 MW gross / ~320 MW critical IT; 150 MW phase 1 basis unstated (3a, 3b).
+- L78, L23, L130, L146 (and "10-year moratorium" phrasings at L175): "since 2014" -> Feb 2015; "10-year" -> about 11 years; 2026 status unverified (6a, 6c).
+- L117/L118: "closed-loop dry coolers, no lake water" is a developer claim, label so (4a); "legally restricted to coal site remediation and dust control" -> maintenance, sump pumping, dust control; permit text does not forbid evaporative cooling by name, it limits uses (5c). Do not say "no consumptive water" about make-up/domestic water (4a).
+- L37-39 (long lines, not fully read): check for ITC "30%" / any "40-50%" claims against row 9h.
+
+### docs/ownership-deal.md
+- L6: "fingerlakes1.com 2026-10-01" cite -> 2026/10/02 URL (1d); "set aside $500,000" -> proposed in next year's budget (1c). "Phase 1 is ~150 MW" -> basis unstated; 138 MW (Aug 2025 PR) vs ~150 (website); flag (3a).
+- L18 and L41, L109: "gas moratorium since 2014" (L18 "see facts-site2") -> 2015 (6a). L41: "NYSEG is the utility behind the Lansing gas moratorium" -> NYSEG invoked it (PSC order): OK.
+- L41 and L121: "Ithaca pilot cost grew from $13.5M to $35.45M" -> $35.45M confirmed (initial pilot development cost; $52.48M total forecast Stages 1-5); original estimate was ~$15M (Guidance Order cap math, snippet $15.4M, not primary), $13.5M unsupported (8-cost). L121 "primary PDFs not opened" is now stale for 8: primary opened.
+- L14, L95, L99 and L39: "30% w/ prevailing wage" / "Energy Community +10%": add that only ground-source GHP property qualifies; waste-heat network not GHP (9d-i); EC status unverified (9f-ii); direct pay for town CONFIRMED (9e). Use defensible wording in row 9h; never "40-50% of capex".
+- L30/L31 note (3): co-op direct pay -> rural ELECTRIC cooperatives only are applicable entities (9e): the existing note is correct that a heat co-op is not automatically eligible.
+- L44: "whether a NY town can legally own a thermal utility is [unverified]" -> update: UTENJA / PSL 66-t only authorizes gas/electric corporations (11a); PSL 81 requires PSC certificate for a municipality selling steam to non-municipal customers (hot-water coverage unconfirmed) (11b); no Town Law district type for heating found (11d); PSC staff stance on municipal TENs unverified (11e); precedent: Jamestown BPU (a city municipal utility) runs district heat (11f). Net: still open, needs municipal-law counsel; do not call it feasible.
+- L24: "Deep Green ... 28 kW pool" case is UK, unaffected. L53 area: if the Lansing, MI Deep Green/BWL project is cited anywhere, it was WITHDRAWN 2026-04-06 (12).
+- L52: "Permit holder is the landlord, not TeraWulf (cornellsun 2026-04-16)" -> holder Cayuga Operating Company LLC is CONFIRMED (5a); replace the cornellsun cite (404) with the DEC PDF.
+- L78: "~250 unleased acres" vs 183: unresolved; 434/250 UNVERIFIABLE (3d). Keep the [conflict] flag; add that Ithaca Voice says Riesling bought "the plant and the surrounding 183 acres".
+- L128 (checklist, long): re-check any 250-acre claim as per L78.
+
+### Still open (not resolvable from primary sources in this run)
+- 1b 36/38 count; 2b EO 62 coverage of Lake Hawkeye; 3d acreage/ownership of rest of site; 6c 2026 moratorium status; 7a/7b Central weekly oil/propane (needs NYSERDA dashboard); 9d-iii eligible category for waste-heat network (tax counsel); 9f-ii energy community list check; 11a-e municipal thermal authority (counsel).
