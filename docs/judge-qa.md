@@ -166,7 +166,7 @@ Defend as model outputs, not as signed contracts. `impact` reports **126** jobs,
 
 ### 26. What is the embodied carbon of the build, and when does it pay back?
 
-It is a screening estimate, not an LCA. We take 21.4 km of pipe (`rings[onsite].pipe_km` plus `rings[corridor].pipe_km`), 500 heat pumps, one plate exchanger skid and a 5,558 m3 tank (`totals.storage_m3`), and apply generic per-unit factors that we label as assumptions with low and high values. The result is about 1,700 to 6,300 t CO2e. Against `impact.co2_avoided_t_yr` of **11,408 t/yr** (already net of heat pump and pumping electricity), payback is about **0.15 to 0.56 years**. The soft spot is not the embodied side. It is that the 11,408 counts phases 1 and 2 fully built. Refrigerant leakage, building works and end-of-life are not modeled.
+It is a screening estimate, not an LCA. We take 21.4 km of pipe (`rings[onsite].pipe_km` plus `rings[corridor].pipe_km`), 500 heat pumps, one plate exchanger skid and a 5,558 m3 tank (`totals.storage_m3`), and apply generic per-unit factors that we label as assumptions with low and high values. The result is about 1,700 to 6,300 t CO2e. Against `impact.co2_avoided_t_yr` of **11,408 t/yr** (already net of heat pump and pumping electricity), payback is about **0.15 to 0.55 years**. The soft spot is not the embodied side. It is that the 11,408 counts phases 1 and 2 fully built. Refrigerant leakage, building works and end-of-life are not modeled.
 
 **Source:** `docs/council-gaps.md` section 1 (factors and arithmetic). `impact.co2_avoided_t_yr`, `totals.storage_m3`, `rings[].pipe_km`.
 
@@ -178,7 +178,7 @@ No change is claimed. WUE is water used on site per unit of IT energy. The publi
 
 ### 28. Who is liable if it breaks?
 
-The cooling-priority clause keeps the data center safe: TeraWulf may curtail heat at any time without penalty, a hard-wired bypass fails safe to the dry coolers, and no heat-side event is a data-center default or claim. On the heat side the co-op carries the risk for the network it owns, covers shortfalls with storage then backup boilers sized to 100% of peak (`totals.backup_share_annual_pct` **0.73%**; `totals.unmet_hours` is 0 only by construction), and holds liability and property insurance. We have no premium or limit. If TeraWulf leaves, a funded reserve applies, with `finance.dc_exit.stranded_musd` **$5.71M** as the starting reference. The Town is a counterparty and one board seat, not the operator or guarantor.
+Under our proposed terms, the cooling-priority clause keeps the data center safe: TeraWulf may curtail heat at any time without penalty, a hard-wired bypass fails safe to the dry coolers, and no heat-side event is a data-center default or claim. On the heat side the co-op carries the risk for the network it owns, covers shortfalls with storage then backup boilers sized to 100% of peak (`totals.backup_share_annual_pct` **0.73%**; `totals.unmet_hours` is 0 only by construction), and would hold liability and property insurance. We have no premium or limit. If TeraWulf leaves, a funded reserve is proposed, with `finance.dc_exit.stranded_musd` **$5.71M** as the starting reference. The Town is a counterparty and one board seat, not the operator or guarantor.
 
 **Source:** `docs/term-sheet.md` 2.3, 2.4, 2.6; `docs/council-gaps.md` section 5. The Town's authority to attach these conditions is not verified (G0.5).
 

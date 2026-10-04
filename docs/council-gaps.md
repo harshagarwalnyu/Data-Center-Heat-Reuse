@@ -15,7 +15,7 @@ An expert review panel found seven gaps. This file closes each one, or says plai
 
 **Gap:** the 11,408 t/yr CO2 headline counts avoided operating emissions only. It says nothing about the carbon locked into the pipe, heat pumps, exchanger and tank we would build.
 
-**Label: screening estimate.** This is a ranged back-of-envelope, not a life-cycle assessment. Every per-unit factor is an **ASSUMPTION** from generic published ranges for that kind of equipment (a materials-and-construction factor type, such as steel, plastic pipe and trenching). We cite no specific study. A real number needs an LCA by a qualified practitioner using product data.
+**Label: screening estimate.** This is a ranged back-of-envelope, not a life-cycle assessment. Every per-unit factor is an **ASSUMPTION**, our own generic range for that kind of equipment (a materials-and-construction factor type, such as steel, plastic pipe and trenching). We cite no study. A real number needs an LCA by a qualified practitioner using product data.
 
 ### 1.1 Quantities (from the model)
 
@@ -57,7 +57,7 @@ An expert review panel found seven gaps. This file closes each one, or says plai
 | Case | Payback |
 |---|---|
 | Low embodied (1,700 t) over 11,408 t/yr | about 0.15 years (under 2 months) |
-| High embodied (6,300 t) over 11,408 t/yr | about 0.56 years (under 7 months) |
+| High embodied (6,300 t) over 11,408 t/yr | about 0.55 years (under 7 months) |
 | Same range on the marginal-grid case, `extras.co2_avoided_marginal_grid_t_yr` = 10,670 t/yr | about 0.16 to 0.59 years |
 
 **What to say.** Even at the high end the build pays back its carbon in well under a year, if the 11,408 t/yr is real. That condition is the weak point, not the embodied side: the figure counts phases 1 and 2 fully built and assumes the fuel mix in the model (`docs/methodology.md`). If the corridor stops at the Gate 6 test (`term-sheet.md` section 7), the avoided CO2 falls and the pipe share of embodied carbon falls with it. We have not modeled that split.
@@ -74,7 +74,7 @@ An expert review panel found seven gaps. This file closes each one, or says plai
 
 **Our position: no change is claimed.**
 1. The published design is a sealed closed-loop glycol system with air-cooled dry coolers and no draw from or discharge to the lake (`research/verification.md` row 4a). That is a developer claim, not an independent finding. Make-up and domestic water are not addressed there.
-2. A dry-cooled design already has near-zero cooling water, so there is no evaporative water to save. Sending some heat to customers instead of the dry coolers does not retire any gallons.
+2. A dry-cooled design has no evaporative cooling water in the published description, so there is none to save. Sending some heat to customers instead of the dry coolers does not retire any gallons.
 3. The model says so itself: `impact.water.note` ("heat reuse does not save lake water 1:1 ... No lake-water savings are claimed"). We claim **0 gallons**.
 4. The quantified water-adjacent result is fan energy: `impact.water.fan_energy_saved_MWh` = 970 MWh/yr. That is electricity, not water.
 5. The DEC permit allows up to 1,008,000 gallons per day, held by Cayuga Operating Company LLC, effective 13 April 2026, expiring 30 April 2031, with uses limited to maintenance, sump pumping and dust control (`research/verification.md` rows 5a, 5c). The covenant in `term-sheet.md` section 4 item 2 is a promise not to turn that permit into cooling water. It is a promise, not a saving.
@@ -100,7 +100,7 @@ All of this restates `term-sheet.md` section 6 and `ownership-deal.md` (governan
 | Tariff rule | 0.8 times propane, never above propane. Surplus above cost goes back to members by heat bought. | `finance.tariff_rule`, `term-sheet.md` section 6 |
 | Public meters | A co-op-owned heat meter at the interface reading flow and temperature. | `term-sheet.md` section 4 item 1 |
 | Public dashboard | Monthly data to the Town and online: heat delivered, supply temperature, hours on backup, curtailments. **NEW PROPOSAL:** add monthly delta-T and pumping kWh per MWh delivered (section 7). | `term-sheet.md` section 4 item 1 |
-| Annual report | Annual public meeting and annual statement. TeraWulf gives a signed annual heat statement. | `term-sheet.md` section 6; `ownership-deal.md` (reporting row) |
+| Annual report | Annual public meeting and annual statement. The co-op gives a signed annual heat statement (`ownership-deal.md` calls the heat-network operator "utility"). | `term-sheet.md` section 6; `ownership-deal.md` (reporting row) |
 | Conflict of interest | **NEW PROPOSAL** (not in the term sheet). See below. | n/a |
 
 **Conflict-of-interest rule (NEW PROPOSAL, for counsel).**
@@ -146,14 +146,14 @@ We found no verified local noise standard (`term-sheet.md` section 4 item 3), so
 
 ## 5. Liability stack: who bears which risk
 
-Nothing here is an insurance quote or legal allocation. It maps the proposed positions to who pays when something breaks. Model reference points: backup boilers sized to 100% of peak (`totals.peak_share_backup_pct` = 4.7, `totals.backup_share_annual_pct` = 0.73, `totals.unmet_hours` = 0, which is zero by construction, `totals.unmet_note`).
+Nothing here is an insurance quote or legal allocation. It maps the proposed positions to who pays when something breaks. Rows on the Town's and customers' liability, and on who bears pump or exchanger faults, are **NEW PROPOSAL** (not in the term sheet) and need counsel. Model reference points: backup boilers sized to 100% of peak (`totals.peak_share_backup_pct` = 4.7, `totals.backup_share_annual_pct` = 0.73, `totals.unmet_hours` = 0, which is zero by construction, `totals.unmet_note`).
 
 | Risk | Heat supplier (TeraWulf) | Co-op | Town | Customers |
 |---|---|---|---|---|
 | Heat curtailed or lost (data-center trip, tenant change, maintenance) | Free to curtail without penalty or liability under the cooling-priority clause. Gives notice `[N]` minutes where feasible. | Bears supply risk to its members. Covers the gap with storage (`totals.storage_m3` = 5,558), then backup boilers, within the limits above. | None. | Keep their existing propane or oil system as a third layer. Vulnerable customers are shed last. |
 | Data-center cooling harmed by heat side | Protected: a heat-side fault is not a default, SLA breach or claim. Hard-wired bypass fails safe to the dry coolers. | Bears cost of its own pump trip or exchanger fault. | None. | None. |
 | Heat-side equipment failure, burst pipe, injury, property damage | Liable for its own site-side equipment and the cooling loop. | Liable for pipe, substations and the network it owns. Carries liability and property insurance (see below). | Not liable for co-op operations. Town must not be the operator of last resort unless the fallback is triggered. | Liable for building-side equipment. Co-op meters and laterals up to the property line `[to be set by counsel]`. |
-| Data center leaves in year 10 | Funds the decommissioning reserve (letter of credit or escrow). | Receives step-in rights and the reserve. | Holds the CBA and HSA that run with the lease. | Move to backup heat, then the year-10 fallback. |
+| Data center leaves in year 10 | Funds the decommissioning reserve (letter of credit or escrow). | Receives step-in rights and the reserve. | Holds the CBA, which runs with the lease (the HSA is an exhibit). | Move to backup heat, then the year-10 fallback. |
 | Cost of that exit | Reserve size is **open**. Starting reference `finance.dc_exit.stranded_musd` = 5.71. | Meets the uplift from the reserve and transition fund, not from members. | None. | Tariff multiple does not rise because the source changed. |
 | Water covenant breach | Default under the CBA. Step-in on the exchanger. | Gains step-in. | Enforces the CBA. | None. |
 | Tariff and price risk | None. | Cost-based tariff, 0.8 times propane. | None. | Pay at most propane price. |
@@ -162,7 +162,7 @@ Source for the allocation rows: `term-sheet.md` 2.3 (cooling priority), 2.4 (ste
 
 **Insurance.** The sources do not give a premium, a limit or a carrier. The DATA HEAT guide's "Insurance schemes" section (p. 34) gave us no insurance examples (`docs/risk-matrix.md` source S6). Proposed forms only:
 - **Co-op:** general liability, property and boiler-and-machinery cover, in amounts `[set by an insurance broker]`, with the Town and TeraWulf as additional insureds on the network.
-- **TeraWulf:** keeps its own data-center cover. The HSA requires a waiver of subrogation for heat-side events, consistent with "no claim" under the cooling-priority clause.
+- **TeraWulf:** keeps its own data-center cover. **NEW PROPOSAL:** the HSA would require a waiver of subrogation for heat-side events, consistent with "no claim" under the cooling-priority clause.
 - **Directors and officers** cover for the co-op board, because it holds a Town-appointed seat.
 - **Reserve:** the letter of credit or escrow in `term-sheet.md` 2.6 is the only dollar protection we have a model number for (`finance.dc_exit.stranded_musd` = 5.71, `finance.dc_exit.replacement_source_musd` = 10.35).
 
@@ -237,7 +237,7 @@ Open: `[X]`, `[N]` and the surcharge are blanks for the parties and an engineer.
 
 | Gap | Status |
 |---|---|
-| Embodied carbon | Screening estimate only: about 1,700 to 6,300 t CO2e, payback about 0.15 to 0.56 years. No LCA. |
+| Embodied carbon | Screening estimate only: about 1,700 to 6,300 t CO2e, payback about 0.15 to 0.55 years. No LCA. |
 | WUE | No change claimed. No site water or IT-energy data. Aquaponics nutrient plan not designed. |
 | Governance | Consistent with the term sheet. Conflict-of-interest rule is new and needs counsel. Board size `[N]` open. |
 | Lake and noise | Forms only. No dBA number, no discharge permit identified. |
