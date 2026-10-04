@@ -25,7 +25,7 @@ An expert review panel found seven gaps. This file closes each one, or says plai
 | Pipe route, corridor | 20.9 km | `rings[corridor].pipe_km` |
 | Pipe route used here | 21.4 km (phases 1 and 2 only; the 14.0 km town main fails its gate and is excluded) | sum of the two keys above; `rings[town].passes_gate` = false |
 | Building heat pumps | 500 units | `finance.capex_musd.lines` ("Building heat pumps (500 units)"), `impact.homes_served` |
-| Plate heat exchanger and DC-side interface | 1 skid, N+1 | `finance.capex_musd.lines` ("DC-side sidestream interface") |
+| Plate heat exchanger and DC-side interface | 1 interface skid with N+1 plate exchangers | `finance.capex_musd.lines` ("DC-side sidestream interface") |
 | Source-side hot-water tank | 5,558 m3 | `totals.storage_m3` |
 
 ### 1.2 Per-unit factors (all ASSUMPTION, low and high)
@@ -70,11 +70,11 @@ An expert review panel found seven gaps. This file closes each one, or says plai
 
 **Gap:** a reviewer asked whether heat reuse changes the data center's water-use effectiveness (WUE).
 
-**What WUE means.** WUE is litres of water used on site per kWh of IT energy. It measures water consumed to reject heat, for example by evaporative cooling.
+**What WUE means.** WUE is annual site water use in litres per kWh of IT energy. Most of it is usually water used to reject heat, for example by evaporative cooling. The definition is the industry's, not from `research/verification.md` [unverified].
 
 **Our position: no change is claimed.**
 1. The published design is a sealed closed-loop glycol system with air-cooled dry coolers and no draw from or discharge to the lake (`research/verification.md` row 4a). That is a developer claim, not an independent finding. Make-up and domestic water are not addressed there.
-2. A dry-cooled design has no evaporative cooling water in the published description, so there is none to save. Sending some heat to customers instead of the dry coolers does not retire any gallons.
+2. A dry-cooled design has no evaporative cooling water in the published description, so heat reuse has none to save unless adiabatic or mist assist is added, which the proposed covenant would forbid. Sending some heat to customers instead of the dry coolers does not retire any gallons.
 3. The model says so itself: `impact.water.note` ("heat reuse does not save lake water 1:1 ... No lake-water savings are claimed"). We claim **0 gallons**.
 4. The quantified water-adjacent result is fan energy: `impact.water.fan_energy_saved_MWh` = 970 MWh/yr. That is electricity, not water.
 5. The DEC permit allows up to 1,008,000 gallons per day, held by Cayuga Operating Company LLC, effective 13 April 2026, expiring 30 April 2031, with uses limited to maintenance, sump pumping and dust control (`research/verification.md` rows 5a, 5c). The covenant in `term-sheet.md` section 4 item 2 is a promise not to turn that permit into cooling water. It is a promise, not a saving.
@@ -125,7 +125,7 @@ All are **proposals**. Whether the Town can attach each one is untested (section
 | No cooling use of the lake withdrawal | TeraWulf and the landlord covenant not to use any part of the DEC permit for process, evaporative or mist cooling, and not to seek a new or expanded withdrawal for cooling, for the life of the lease. | Permit 1,008,000 gpd, uses limited to maintenance, sump pumping and dust control, expires 30 April 2031 (`research/verification.md` rows 5a, 5c). The landlord must sign because it holds the permit (rows 3c, 5a). |
 | The lake is not a heat sink | The HSA states the lake is not a cooling fallback. | `docs/risk-matrix.md` (correction note: the lake is NOT a fallback heat sink; the permit is not for continuous cooling) |
 | No discharge to the lake | No discharge of coolant, greenhouse or aquaculture water to the lake or surface water without the separate permit that applies. Which permit applies is for counsel and DEC to say. | none |
-| Coolant containment | Leak detection and containment on the glycol loop and the exchanger skid, with a spill report to the Town within `[N]` hours. The glycol type is not settled in our sources (`docs/judge-qa.md` open questions). | none |
+| Coolant containment | Leak detection and containment on the glycol loop and the exchanger skid, with a spill report to the Town within `[N]` hours. The glycol type is not settled in our sources (`docs/judge-qa.md` Q7; `research/verification.md` row 4a). | none |
 | Nutrient plan | A nutrient and effluent plan for the aquaponics and greenhouse loop, approved before heat is delivered. The intent is that nutrients stay in the building (section 2). The lake's nutrient status is a stated concern in `hdr_scorecard` (Nutrients). | none; we model no nutrient flows |
 | Monitoring and reporting | Independent monitoring, an annual public report, and a covenant audit before the 2031 permit renewal. | `term-sheet.md` section 4 item 2 |
 | Remedy | Breach is a CBA default and triggers co-op step-in on the site exchanger. | `term-sheet.md` section 4 item 2 and 2.4 |
@@ -146,7 +146,7 @@ We found no verified local noise standard (`term-sheet.md` section 4 item 3), so
 
 ## 5. Liability stack: who bears which risk
 
-Nothing here is an insurance quote or legal allocation. It maps the proposed positions to who pays when something breaks. Rows on the Town's and customers' liability, and on who bears pump or exchanger faults, are **NEW PROPOSAL** (not in the term sheet) and need counsel. Model reference points: backup boilers sized to 100% of peak (`totals.peak_share_backup_pct` = 4.7, `totals.backup_share_annual_pct` = 0.73, `totals.unmet_hours` = 0, which is zero by construction, `totals.unmet_note`).
+Nothing here is an insurance quote or legal allocation. It maps the proposed positions to who pays when something breaks. Rows on the Town's and customers' liability, and on who bears pump or exchanger faults, are **NEW PROPOSAL** (not in the term sheet) and need counsel. Model reference points: backup boilers sized to 100% of peak (`totals.unmet_note`); backup covers 4.7% of peak (`totals.peak_share_backup_pct`) and 0.73% of annual heat (`totals.backup_share_annual_pct`); `totals.unmet_hours` = 0 is zero by construction.
 
 | Risk | Heat supplier (TeraWulf) | Co-op | Town | Customers |
 |---|---|---|---|---|
@@ -168,19 +168,19 @@ Source for the allocation rows: `term-sheet.md` 2.3 (cooling priority), 2.4 (ste
 
 **Backup boilers.** Capex line "Backup boilers (100% of peak)" = $2.80M (`finance.capex_musd.lines`). They are the co-op's asset and the co-op's duty. The risk matrix prefers electric boilers or heat pumps on stored heat, and delivered fuel only for rare emergencies, because piped gas is not assumed near the plant (`docs/risk-matrix.md` R22).
 
-**Plain answer to "who is liable if it breaks?"** On the heat side, the co-op, up to the limit of its insurance and reserve. On the data-center side, TeraWulf, and the heat side can never be the cause of a data-center claim. The Town is a counterparty and one board seat, not an operator or guarantor.
+**Plain answer to "who is liable if it breaks?"** On the heat side, the co-op, up to the limit of its insurance and reserve. On the data-center side, TeraWulf, and the heat side can never be the cause of a data-center claim. The Town is a counterparty and one board seat, not an operator or guarantor, unless the fallback in `term-sheet.md` section 6 is used and a town-chartered entity takes over the agreements.
 
 ---
 
 ## 6. Legal-authority gate (G0.5)
 
-**We did not verify the Town's legal authority to attach any of these conditions.** `term-sheet.md` section 4 says the same: we cite no legal authority and none is assumed. The related legal facts we did check are limited and mostly negative:
+**We did not verify the Town's legal authority to attach any of these conditions.** `term-sheet.md` section 4 and 8.1 item 2 say the same: we cite no legal authority and none is assumed. The related legal facts we did check are limited and mostly negative:
 - Utility thermal network law (PSL 66-t) authorizes gas and electric corporations, not municipalities (`research/verification.md` row 11a).
 - A municipality selling steam to non-municipal customers needs a PSC certificate; whether that covers hot water is **unconfirmed** (row 11b).
-- Town Law section 190 does not list a heating district (row 11d).
+- Town Law section 190 appears not to list a heating district; row 11d rates this unconfirmed (likely no), based on a paraphrase rather than the statute text.
 - Executive Order 62 coverage of Lake Hawkeye is unverified (row 2b).
 
-**New gate, G0.5: counsel opinion on the Town's authority.** It sits between G0 (Town choice, 31 March 2027) and G2 (legal form memo, 30 June 2027) in `term-sheet.md` section 7.
+**New gate, G0.5 (NEW PROPOSAL, not in the term sheet): counsel opinion on the Town's authority.** It sits between G0 (Town choice, 31 March 2027) and G2 (legal form memo, 30 June 2027) in `term-sheet.md` section 7, and turns `term-sheet.md` 8.1 item 2 into a pass-or-fail gate.
 
 | Item | Position |
 |---|---|

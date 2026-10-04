@@ -178,7 +178,7 @@ No change is claimed. WUE is water used on site per unit of IT energy. The publi
 
 ### 28. Who is liable if it breaks?
 
-Under our proposed terms, the cooling-priority clause keeps the data center safe: TeraWulf may curtail heat at any time without penalty, a hard-wired bypass fails safe to the dry coolers, and no heat-side event is a data-center default or claim. On the heat side the co-op carries the risk for the network it owns, covers shortfalls with storage then backup boilers sized to 100% of peak (`totals.backup_share_annual_pct` **0.73%**; `totals.unmet_hours` is 0 only by construction), and would hold liability and property insurance. We have no premium or limit. If TeraWulf leaves, a funded reserve is proposed, with `finance.dc_exit.stranded_musd` **$5.71M** as the starting reference. The Town is a counterparty and one board seat, not the operator or guarantor.
+Under our proposed terms, the cooling-priority clause keeps the data center safe: TeraWulf may curtail heat at any time without penalty, a hard-wired bypass fails safe to the dry coolers, and no heat-side event is a data-center default or claim. On the heat side the co-op carries the risk for the network it owns, covers shortfalls with storage then backup boilers sized to 100% of peak (`totals.backup_share_annual_pct` **0.73%**; `totals.unmet_hours` is 0 only by construction), and would hold liability and property insurance. We have no premium or limit. If TeraWulf leaves, a funded reserve is proposed, with `finance.dc_exit.stranded_musd` **$5.71M** as the starting reference. The Town is a counterparty and one board seat, not the operator or guarantor, unless the term-sheet fallback is used and a town-chartered entity takes over the agreements.
 
 **Source:** `docs/term-sheet.md` 2.3, 2.4, 2.6; `docs/council-gaps.md` section 5. The Town's authority to attach these conditions is not verified (G0.5).
 
@@ -196,7 +196,7 @@ This sheet serves Presentation (the value and the workings in the same answer) a
 
 ### Done
 
-- `docs/judge-qa.md` holds 29 questions with 2–3 sentence answers.
+- `docs/judge-qa.md` holds 29 questions with short answers (2 to 3 sentences for Q1 to Q25; the council-gap answers Q26 to Q29 run longer).
 - Engineering: COP and the 6.0 clip, 30 °C versus 50 °C, the three supply temperatures, curtailment and backup shares, the unmet-hours caveat, year-10 exit, glycol disagreement, legionella gap, town pipe loss.
 - Economics: corridor LCOH $285.8, ASHP at $96.9 versus tariff $108.9, LCOH versus realised revenue, ITC excluded with the upside case labeled as upside, pipe-versus-heat-pump breakeven, $26.01 million gap.
 - Delivery: co-op statute rows 11a–11d, HSA/CBA signatories, Town Board draft ban without the 36/38 count.
