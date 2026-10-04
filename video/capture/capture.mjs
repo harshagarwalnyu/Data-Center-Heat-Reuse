@@ -4,14 +4,15 @@ import { createRequire } from "node:module";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-const require = createRequire("C:/Users/007ha/Desktop/Business-Analytics-Club/main-wt/web/package.json");
-const { chromium } = require("playwright");
 const here = dirname(fileURLToPath(import.meta.url));
+// Playwright comes from the web app's devDependencies; WEB_DIR overrides the sibling web/ folder.
+const require = createRequire(resolve(process.env.WEB_DIR || resolve(here, "../../web"), "package.json"));
+const { chromium } = require("playwright");
 const out = resolve(here, "../public/captures");
 mkdirSync(out, { recursive: true });
 const BASE = process.env.BASE || "http://localhost:4190";
-const CHROME = "C:\\Program Files\\Google\\Chrome Beta\\Application\\chrome.exe";
-const b = await chromium.launch({ executablePath: CHROME, headless: true });
+// CHROME=<path to chrome.exe> picks a local browser; unset uses Playwright's bundled one.
+const b = await chromium.launch({ ...(process.env.CHROME ? { executablePath: process.env.CHROME } : {}), headless: true });
 const ctx = await b.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 2 });
 const p = await ctx.newPage();
 await p.addInitScript(() => localStorage.setItem("theme", "light"));
