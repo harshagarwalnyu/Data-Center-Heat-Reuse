@@ -112,7 +112,7 @@ Every key model input, with value, unit, source and our confidence in it. Values
 |---|---|---|---|
 | IT load | 30 MW | `research/facts-site1.md` (22-28 MW named tenants, 30-40 assumed) | Low |
 | Capture | 0.55 of IT power at 32 deg C | **ASSUMPTION** legacy cooling; condenser return 29-35 deg C per facts-site1 | Low |
-| Customers | 2,056 NCHYA apartments (Fulton plus Elliott-Chelsea) | `research/facts-site1.md` | Medium |
+| Customers | 2,056 NYCHA apartments (Fulton plus Elliott-Chelsea) | `research/facts-site1.md` | Medium |
 | Con Edison steam | 118.7 USD per MWh | 41.53 USD per Mlb (Con Edison 10-K via facts-site1) converted at 1.194 MMBtu per Mlb | Medium |
 | Manhattan pipe costs | loop 3,500, on-site 4,500, trunk 5,000 USD per m | **ASSUMPTION** 4 to 8 times rural | Low |
 | Grid factor | 0.3927 kg CO2 per kWh | eGRID NYCW 865.7 lb per MWh | High |
@@ -126,7 +126,7 @@ These are the inputs we would replace first with a quote or a measurement.
 
 1. **Building heat-pump cost (16,000 USD) and loop pipe cost per metre.** Both rest on one lecture-note benchmark, not a contractor quote. They set the corridor LCOH.
 2. **Corridor uptake and frontage.** The pipe is sized to all potential homes (signed / 0.70) at 25 m of trench each. No survey of actual lots, road geometry or sign-up exists.
-3. **Greenhouse load and tariff.** U_eff and the 50 USD per MWh tariff are our estimates. No grower has signed a letter of intent (see R10 in [risk-matrix.md](risk-matrix.md)). The greenhouse is 70 percent of delivered MWh.
+3. **Greenhouse load and tariff.** U_eff and the 50 USD per MWh tariff are our estimates. No grower has signed a letter of intent (see R10 in [risk-matrix.md](risk-matrix.md)). The greenhouse alone is about 62 percent of delivered MWh (31,416 of 50,576 MWh, `outputs/offtakers.json` and `outputs/site2.json`).
 4. **Capture fraction and capture temperature.** Neither TeraWulf nor its cooling vendor has published a heat-recovery design. The model is insensitive to the fraction because supply exceeds demand by about 15 times, but it is sensitive to temperature if the facility is air-cooled.
 5. **Heat price of zero.** A negotiated term, not a fact. If TeraWulf charged for heat, LCOH rises by the same amount per MWh.
 6. **Weather.** One typical meteorological year, which understates cold extremes and sizing risk.
